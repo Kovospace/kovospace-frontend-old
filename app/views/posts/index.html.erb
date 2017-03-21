@@ -1,0 +1,12 @@
+<%= link_to t(:new), new_post_path %>
+
+<br>
+
+<% @posts.each do |post| %>
+
+	<%= post.title %> 
+	<%= link_to t(:edit), edit_post_path(post) %>
+	<%= link_to t(:delete), destroy_post_path(post.id), method: :delete, :confirm => "Are you sure ?", remote: true %>
+	<br>
+
+<% end %>
