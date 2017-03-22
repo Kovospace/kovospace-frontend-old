@@ -1,54 +1,58 @@
 <%= form_for @post do |p| %>
 
-	<article>
-		<%= p.label :title %>
-		<%= p.text_field :title %>
-	</article>
+	<section>
+		<article>
+			<%= p.label :title %>
+			<%= p.text_field :title %>
+		</article>
+	</section>
 
 	<br>
 
-	<article>
-		<%= p.collection_check_boxes(
-			:category_ids,
-			@categories,
-			:id,
-			:title
-		) %>
-	</article>
+	<section>
+		<article>
+			<%= p.collection_check_boxes(
+				:category_ids,
+				@categories,
+				:id,
+				:title
+			) %>
+		</article>
+		<br>
+		<article>
+			<%= p.fields_for :categories, @new_category do |t| %>
+				<%= t.label :title %>
+				<%= t.text_field :title %>
+			<% end %>
+		</article>
+	</section>
 
 	<br>
 
-	<article>
-		<%= p.fields_for :categories, @new_category do |t| %>
-			<%= t.label :title %>
-			<%= t.text_field :title %>
-		<% end %>
-	</article>
-
-	<br>
-
-	<article>
-		<%= p.collection_check_boxes(
-			:tag_ids,
-			@tags,
-			:id,
-			:title
-		) %>
-	</article>
-
-	<br>
-
-	<article>
-		<%= p.fields_for :tags, @new_tag do |t| %>
-			<%= t.label :title %>
-			<%= t.text_field :title %>
-		<% end %>
-	</article>
+	<section>
+		<article>
+			<%= p.collection_check_boxes(
+				:tag_ids,
+				@tags,
+				:id,
+				:title
+			) %>
+		</article>
+		<br>
+		<article>
+			<%= p.fields_for :tags, @new_tag do |t| %>
+				<%= t.label :title %>
+				<%= t.text_field :title %>
+			<% end %>
+		</article>
+	</section>
 	
 	<br>
 
-	<article>
-		<%= p.submit %>
-	</article>
+	<section>
+		<article>
+			<%= p.submit %>
+		</article>
+	</section>
 	
 <% end %>
