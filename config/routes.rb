@@ -23,18 +23,18 @@ Rails.application.routes.draw do
     to: "posts#new",
     as: "new_post"
 
-  post '/post',
-    to: "posts#create"
-
   get '/post/:id/edit',
     to: "posts#edit",
     as: "edit_post"
 
-  patch '/post/:id/update',
+  post '/post',
+    to: "posts#create"
+
+  patch '/post.:id',
     to: "posts#update",
     as: "update_post"
 
-  delete '/post/:id/destroy',
+  delete '/post.:id',
     to: "posts#destroy",
     as: "destroy_post"
 

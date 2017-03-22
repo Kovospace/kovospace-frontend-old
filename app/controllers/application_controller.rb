@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
 
-	include ApplicationConcern
+    include ApplicationConcern
 
-  	# Prevent CSRF attacks by raising an exception.
-  	# For APIs, you may want to use :null_session instead.
-  	protect_from_forgery with: :exception
+    # Prevent CSRF attacks by raising an exception.
+    # For APIs, you may want to use :null_session instead.
+    protect_from_forgery with: :exception
 
     def initialize
       super
@@ -13,9 +13,9 @@ class ApplicationController < ActionController::Base
       @model = model_exist?
     end
 
-  	before_action :index_action, only: :index
+    before_action :index_action, only: :index
 
-  	before_action :new_action, only: :new
+    before_action :new_action, only: :new
 
     before_action :create_action, only: :create
 
@@ -25,13 +25,18 @@ class ApplicationController < ActionController::Base
 
     before_action :destroy_action, only: :destroy
 
-  	def index_action
-  		instance_variable_set(@plural_varname, @model.all) if @model
-  	end
+    def index_action
+      instance_variable_set(@plural_varname, @model.all) if @model
+    end
 
-  	def new_action
-  		instance_variable_set(@singular_varname, @model.new) if @model
-  	end
+    def show_action
+
+    end
+
+    def new_action
+      instance_variable_set(@singular_varname, @model.new) if @model
+      load_form_vars
+    end
 
     def create_action 
       instance_variable_set(
@@ -47,17 +52,18 @@ class ApplicationController < ActionController::Base
 
     def edit_action
       instance_variable_set(
-          @singular_varname,
-          @model.find(params[:id])
+        @singular_varname,
+        @model.find(params[:id])
       )
+      load_form_vars
     end
 
     def update_action
       tmp = edit_action
       if tmp.update(permitted_params)
-         redirect_to controller: controller_name, action: 'index'
+        redirect_to controller: controller_name, action: 'index'
       else
-          render "new"
+        render "new"
       end
     end
 
@@ -71,6 +77,10 @@ class ApplicationController < ActionController::Base
 
     end
 
+    def show
+
+    end
+
     def new 
       
     end
@@ -80,7 +90,7 @@ class ApplicationController < ActionController::Base
     end
 
     def edit
-
+      render "new"
     end
 
     def update
@@ -92,6 +102,12 @@ class ApplicationController < ActionController::Base
     end
 
     def destroy
+
+    end
+
+    private
+
+    def load_form_vars
 
     end
 
