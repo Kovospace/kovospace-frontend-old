@@ -29,8 +29,10 @@ class Post < ActiveRecord::Base
 	)
 	accepts_nested_attributes_for(
 		:categories,
-		allow_destroy: true,
-		reject_if: lambda { |c| c[:title].blank? } 
+		allow_destroy: true#,
+		#reject_if: lambda { |c| c[:title].blank? } 
 	)
+
+	#attr_accessible :tags_attributes
 
 end

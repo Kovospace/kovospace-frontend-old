@@ -13,14 +13,14 @@
 		<article>
 			<%= p.collection_check_boxes(
 				:category_ids,
-				@categories,
+				@categories_all,
 				:id,
 				:title
 			) %>
 		</article>
 		<br>
 		<article>
-			<%= p.fields_for :categories, @new_category do |t| %>
+			<%= p.fields_for :categories, @categories do |t| %>
 				<%= t.label :title %>
 				<%= t.text_field :title %>
 			<% end %>
@@ -33,14 +33,14 @@
 		<article>
 			<%= p.collection_check_boxes(
 				:tag_ids,
-				@tags,
+				@tags_all,
 				:id,
 				:title
 			) %>
 		</article>
 		<br>
 		<article>
-			<%= p.fields_for :tags, @new_tag do |t| %>
+			<%= p.fields_for :tags, @tags do |t| %>
 				<%= t.label :title %>
 				<%= t.text_field :title %>
 			<% end %>

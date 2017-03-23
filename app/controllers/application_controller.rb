@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
 
     include ApplicationConcern
+    include BeforeRender
 
     # Prevent CSRF attacks by raising an exception.
     # For APIs, you may want to use :null_session instead.
@@ -19,9 +20,9 @@ class ApplicationController < ActionController::Base
 
     before_action :create_action, only: :create
 
-    before_action :edit_action, only: :edit
+    before_action :edit_action, only: [:edit, :update]
 
-    before_action :update_action, only: :update
+    #before_action :update_action, only: :update
 
     before_action :destroy_action, only: :destroy
 
@@ -35,7 +36,7 @@ class ApplicationController < ActionController::Base
 
     def new_action
       instance_variable_set(@singular_varname, @model.new) if @model
-      load_form_vars
+      #load_form_vars
     end
 
     def create_action 
@@ -43,6 +44,10 @@ class ApplicationController < ActionController::Base
         @singular_varname,
         @model.new(permitted_params)
       )
+      load_form_vars
+    end
+
+    def create_action_2
       if instance_variable_get(@singular_varname).save
         redirect_to public_send("#{controller_name.pluralize}_path")
       else
@@ -55,12 +60,11 @@ class ApplicationController < ActionController::Base
         @singular_varname,
         @model.find(params[:id])
       )
-      load_form_vars
+      #load_form_vars
     end
 
-    def update_action
-      tmp = edit_action
-      if tmp.update(permitted_params)
+    def update_action_2
+      if instance_variable_get(@singular_varname).update(permitted_params)
         redirect_to controller: controller_name, action: 'index'
       else
         render "new"
@@ -68,7 +72,7 @@ class ApplicationController < ActionController::Base
     end
 
     def destroy_action
-      tmp = edit_action
+      tmp = @model.find(params[:id])
       tmp.destroy
       redirect_to controller: controller_name, action: 'index'
     end
@@ -86,7 +90,7 @@ class ApplicationController < ActionController::Base
     end
 
     def create
-
+      create_action_2
     end
 
     def edit
@@ -94,7 +98,7 @@ class ApplicationController < ActionController::Base
     end
 
     def update
-
+      update_action_2
     end
 
     def delete
