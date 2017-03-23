@@ -4,6 +4,12 @@
 		<article>
 			<%= p.label :title %>
 			<%= p.text_field :title %>
+			<%= p.errors :title %>
+		</article>
+		<article>
+			<%= p.label :text %>
+			<%= p.text_area :text %>
+			<%= p.errors :text %>
 		</article>
 	</section>
 
@@ -23,6 +29,7 @@
 			<%= p.fields_for :categories, @categories do |t| %>
 				<%= t.label :title %>
 				<%= t.text_field :title %>
+				<%= t.errors :title %>
 			<% end %>
 		</article>
 	</section>
@@ -43,6 +50,7 @@
 			<%= p.fields_for :tags, @tags do |t| %>
 				<%= t.label :title %>
 				<%= t.text_field :title %>
+				<%= t.errors :title %>
 			<% end %>
 		</article>
 	</section>

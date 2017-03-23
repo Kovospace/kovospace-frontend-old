@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      Category: Category
+    attributes:
+      category:
+        title: New category
+
+sk:
+  activerecord:
+    models:
+      Category: Kategória
+    attributes:
+      category:
+        title: Nová kategória

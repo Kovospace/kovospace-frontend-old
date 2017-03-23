@@ -1,0 +1,9 @@
+<% 
+if !defined? obj 
+	obj = instance_variable_get("@#{controller_name.singularize}")
+end
+%>
+
+<% obj.errors[field].each do |error| %>
+	<span><%= error %></span>
+<% end %>

@@ -21,6 +21,16 @@ module MojWeb
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+
+    config.encoding = "utf-8"
+
+    config.i18n.default_locale = :sk
+
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
+
     config.active_record.raise_in_transactional_callbacks = true
+
+    require 'action_view/helpers/form_builder'
+
   end
 end

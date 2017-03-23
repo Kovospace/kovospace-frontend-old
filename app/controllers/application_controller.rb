@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
     include ApplicationConcern
     include BeforeRender
 
-    # Prevent CSRF attacks by raising an exception.
-    # For APIs, you may want to use :null_session instead.
     protect_from_forgery with: :exception
 
     def initialize
@@ -22,9 +20,14 @@ class ApplicationController < ActionController::Base
 
     before_action :edit_action, only: [:edit, :update]
 
-    #before_action :update_action, only: :update
-
     before_action :destroy_action, only: :destroy
+
+    before_action :load_new_edit_vars, only: [:new, :edit, :show]
+
+    before_action :load_create_update_vars, only: [:create]
+
+    before_render :load_create_update_vars, only: [:update]
+
 
     def index_action
       instance_variable_set(@plural_varname, @model.all) if @model
@@ -36,7 +39,6 @@ class ApplicationController < ActionController::Base
 
     def new_action
       instance_variable_set(@singular_varname, @model.new) if @model
-      #load_form_vars
     end
 
     def create_action 
@@ -44,7 +46,6 @@ class ApplicationController < ActionController::Base
         @singular_varname,
         @model.new(permitted_params)
       )
-      load_form_vars
     end
 
     def create_action_2
@@ -60,7 +61,6 @@ class ApplicationController < ActionController::Base
         @singular_varname,
         @model.find(params[:id])
       )
-      #load_form_vars
     end
 
     def update_action_2
@@ -72,8 +72,7 @@ class ApplicationController < ActionController::Base
     end
 
     def destroy_action
-      tmp = @model.find(params[:id])
-      tmp.destroy
+      @model.find(params[:id]).destroy
       redirect_to controller: controller_name, action: 'index'
     end
 
@@ -111,7 +110,11 @@ class ApplicationController < ActionController::Base
 
     private
 
-    def load_form_vars
+    def load_new_edit_vars
+
+    end
+
+    def load_create_update_vars
 
     end
 

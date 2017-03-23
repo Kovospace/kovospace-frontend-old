@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      Tag: Tag
+    attributes:
+      tag:
+        title: New tag
+
+sk:
+  activerecord:
+    models:
+      Tag: Tag
+    attributes:
+      tag:
+        title: Nový tag

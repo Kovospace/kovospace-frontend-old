@@ -1,0 +1,31 @@
+en:
+  activerecord:
+    models:
+      Post: Article
+    attributes:
+      post:
+        title: Article title
+
+sk:
+  activerecord:
+    models:
+      Post: Článok
+    attributes:
+      post:
+        title: Nadpis
+
+en:
+  controllers:
+    posts:
+      links:
+        create_article: Create new article
+        edit_article: Edit article
+        delete_article: Delete article
+
+sk:
+  controllers:
+    posts:
+      links:
+        create_article: Vytvoriť nový článok
+        edit_article: Upraviť článok
+        delete_article: Odstrániť článok

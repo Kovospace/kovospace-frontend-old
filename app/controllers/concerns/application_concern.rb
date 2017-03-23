@@ -2,8 +2,8 @@ module ApplicationConcern
 	extend ActiveSupport::Concern
 
 	### log to console with better visibility
-	def logger(input)
-		Rails.logger.info "------------------------------------"
+	def logger(input, description="")
+		Rails.logger.info "-- #{description} ----------------------------------"
 		Rails.logger.info input
 	end
 
@@ -20,7 +20,7 @@ module ApplicationConcern
 	### using @model.something.build in create action for example results in one empty field
 	### not using it results that fields are also generated from checked checkboxes
 	def load_unsaved_assocs assoc
-		instance_variable_get(@singular_varname)
+		r = instance_variable_get(@singular_varname)
 		.send(assoc)
 		.select { |p| p.id == nil }
 	end
