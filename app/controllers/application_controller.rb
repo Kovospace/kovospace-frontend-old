@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
 
     before_action :index_action, only: :index
 
+    before_action :show_action, only: :show
+
     before_action :new_action, only: :new
 
     before_action :create_action, only: :create
@@ -24,68 +26,15 @@ class ApplicationController < ActionController::Base
 
     before_action :destroy_action, only: :destroy
 
-    before_action :load_new_edit_vars, only: [:new, :edit]
-
-    before_render :load_create_update_vars, only: [:update, :create]
-
-
-    def index_action
-      instance_variable_set(@plural_varname, @model.all) if @model
-    end
-
-    def show_action
-
-    end
-
-    def new_action
-      instance_variable_set(@singular_varname, @model.new) if @model
-    end
-
-    def create_action 
-      instance_variable_set(
-        @singular_varname,
-        @model.new(permitted_params)
-      )
-    end
-
-    def create_action_2
-      if instance_variable_get(@singular_varname).save
-        redirect_to public_send("#{controller_name.pluralize}_path")
-      else
-         render "new"
-      end
-    end
-
-    def edit_action
-      instance_variable_set(
-        @singular_varname,
-        @model.find(params[:id])
-      )
-    end
-
-    def update_action_2
-      if instance_variable_get(@singular_varname).update(permitted_params)
-        redirect_to controller: controller_name, action: 'index'
-      else
-        render "new"
-      end
-    end
-
-    def destroy_action
-      @model.find(params[:id]).destroy
-      redirect_to controller: controller_name, action: 'index'
-    end
+    before_action :load_vars, only: [:new, :edit, :update, :create]
 
     def index
-
     end
 
     def show
-
     end
 
     def new 
-      
     end
 
     def create
@@ -101,21 +50,96 @@ class ApplicationController < ActionController::Base
     end
 
     def delete
-
     end
 
     def destroy
-
     end
 
     private
 
-    def load_new_edit_vars
+    def index_action
+      instance_variable_set(@plural_varname, @model.all) if @model
+    end
 
+    def show_action
+      instance_variable_set(
+        @singular_varname,
+        @model.find(params[:id])
+      )
+    end
+
+    def new_action
+      instance_variable_set(@singular_varname, @model.new) if @model
+      around_new
+    end
+
+    def create_action 
+      instance_variable_set(
+        @singular_varname,
+        @model.new(permitted_params)
+      )
+      around_create
+    end
+
+    def create_action_2
+      saved = instance_variable_get(@singular_varname).save
+      around_create_after_save
+      if saved
+        redirect_to public_send("#{controller_name.pluralize}_path")
+      else
+         render "new"
+      end
+    end
+
+    def edit_action
+      instance_variable_set(
+        @singular_varname,
+        @model.find(params[:id])
+      )
+      around_edit
+    end
+
+    def update_action_2
+      around_update
+      saved = instance_variable_get(@singular_varname).update(permitted_params)
+      around_update_after_save
+      if saved
+        redirect_to controller: controller_name, action: 'index'
+      else
+        render "new"
+      end
+    end
+
+    def destroy_action
+      @model.find(params[:id]).destroy
+      redirect_to controller: controller_name, action: 'index'
+    end
+
+    def around_new
+    end
+
+    def around_edit
+    end
+
+    def around_create
+    end
+
+    def around_create_after_save
+    end
+
+    def around_update
+    end
+
+    def around_update_after_save
+    end
+
+    def load_vars
+    end
+
+    def load_new_edit_vars
     end
 
     def load_create_update_vars
-
     end
 
 end

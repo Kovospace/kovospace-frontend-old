@@ -34,6 +34,12 @@
 				<% end %>
 			<% end %>
 		</article>
+		<article>
+			<%= render(
+				'layouts/shared_elements/form_errors_field',
+				field: :categories_attributes
+			) %>
+		</article>
 	</section>
 
 	<br>
@@ -49,11 +55,19 @@
 		</article>
 		<br>
 		<article>
-			<%#= p.fields_for :tags, @tags do |t| %>
-				<%#= t.label :title %>
-				<%#= t.text_field :title %>
-				<%#= t.errors :title %>
-			<%# end %>
+			<%= p.fields_for :tags, @tags do |t| %>
+				<% if t.object.id.blank? %>
+					<%= t.label :title %>
+					<%= t.text_field :title %>
+					<%= t.errors :title %>
+				<% end %>
+			<% end %>
+		</article>
+		<article>
+			<%= render(
+				'layouts/shared_elements/form_errors_field',
+				field: :tagss_attributes
+			) %>
 		</article>
 	</section>
 	

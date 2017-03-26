@@ -15,8 +15,8 @@ class Post < ActiveRecord::Base
 	)
 	accepts_nested_attributes_for(
 		:tags,
-		allow_destroy: true
-		#reject_if: lambda { |c| c[:title].blank? } 
+		allow_destroy: true,
+		reject_if: lambda { |c| c[:title].blank? } 
 		# skip saving empty tag association if field for new tag is not filled
 		# but do not raise validation error
 	)
@@ -28,42 +28,28 @@ class Post < ActiveRecord::Base
 	)
 	has_many(
 		:categories,
-		through: :category_posts
+		through: :category_posts,
+		validate: false
+		# skip validations if saved using autosave of parent model (this model)
 	)
 	accepts_nested_attributes_for(
 		:categories,
 		allow_destroy: true,
-		reject_if: :no_category_selected
+		reject_if: lambda { |c| c[:title].blank? } 
 	)
 
-	nested_attrs_getter_for :categories
+	nested_attrs_getter_for :categories, :tags
 
 	validates :title, presence: true
 	validates :text, presence: true
 
+	validate :no_category_selected
+
 	def no_category_selected
-		Rails.logger.info "*-------------"
-		#!self.category_ids.any?
-		#Rails.logger.info self.category_ids
-		#Rails.logger.info self.categories
-		#self.categories.each { |w| Rails.logger.info "kok #{w.title}" }
-		#Rails.logger.info !self.category_ids.any?
-		a = self.categories_attributes.map { |k,v| v[:title] }
-		#Rails.logger.info a 
-		Rails.logger.info a.all?(&:empty?)
-		(!self.category_ids.any?)&&(a.all?(&:empty?))
+		if nested_selected_or_created_any?(:categories, :title)
+			self.errors.add(:categories_attributes, :not_selected_or_created)
+		end
+		# check if post belongs to at least one category - from checkboxes or newly created
 	end
-
-	#def categories_attributes=(attrs)
-		#Rails.logger.info "cat attrs #{attrs}"
-		#super(attrs)
-	#end
-
-	#validate :n
-
-	#def n
-		#logger model_name.plural
-		#Rails.logger.info "----- #{model_name.plural}"
-	#end
 
 end
