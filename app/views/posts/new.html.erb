@@ -27,9 +27,11 @@
 		<br>
 		<article>
 			<%= p.fields_for :categories, @categories do |t| %>
-				<%= t.label :title %>
-				<%= t.text_field :title %>
-				<%= t.errors :title %>
+				<% if t.object.id.blank? %>
+					<%= t.label :title %>
+					<%= t.text_field :title %>
+					<%= t.errors :title %>
+				<% end %>
 			<% end %>
 		</article>
 	</section>
@@ -47,11 +49,11 @@
 		</article>
 		<br>
 		<article>
-			<%= p.fields_for :tags, @tags do |t| %>
-				<%= t.label :title %>
-				<%= t.text_field :title %>
-				<%= t.errors :title %>
-			<% end %>
+			<%#= p.fields_for :tags, @tags do |t| %>
+				<%#= t.label :title %>
+				<%#= t.text_field :title %>
+				<%#= t.errors :title %>
+			<%# end %>
 		</article>
 	</section>
 	

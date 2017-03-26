@@ -5,16 +5,15 @@ en:
     attributes:
       post:
         title: Article title
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: Fill up title for article
+            text:
+              blank: Write about something
 
-sk:
-  activerecord:
-    models:
-      Post: Článok
-    attributes:
-      post:
-        title: Nadpis
-
-en:
   controllers:
     posts:
       links:
@@ -23,9 +22,25 @@ en:
         delete_article: Delete article
 
 sk:
+  activerecord:
+    models:
+      Post: Článok
+    attributes:
+      post:
+        title: Nadpis
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: Vyplň nadpis pre článok
+            text:
+              blank: Napíš o niečom!
+
   controllers:
     posts:
       links:
         create_article: Vytvoriť nový článok
         edit_article: Upraviť článok
         delete_article: Odstrániť článok
+

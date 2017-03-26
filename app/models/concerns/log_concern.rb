@@ -12,6 +12,11 @@ module LogConcern
 
 	module ClassMethods
 		
+		def logger(input)
+			Rails.logger.info "-- #{model_name} ----------------------------------"
+			Rails.logger.info input
+		end
+	
 	end
 
 end

@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
 
     include ApplicationConcern
     include BeforeRender
+    include ClassOnInputWithError
+    
 
     protect_from_forgery with: :exception
 
@@ -22,11 +24,9 @@ class ApplicationController < ActionController::Base
 
     before_action :destroy_action, only: :destroy
 
-    before_action :load_new_edit_vars, only: [:new, :edit, :show]
+    before_action :load_new_edit_vars, only: [:new, :edit]
 
-    before_action :load_create_update_vars, only: [:create]
-
-    before_render :load_create_update_vars, only: [:update]
+    before_render :load_create_update_vars, only: [:update, :create]
 
 
     def index_action

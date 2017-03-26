@@ -6,6 +6,14 @@ en:
       category:
         title: New category
 
+    errors:
+      models:
+        category:
+          attributes:
+            title:
+              blank: Cannot be blank!
+            
+
 sk:
   activerecord:
     models:
@@ -13,3 +21,10 @@ sk:
     attributes:
       category:
         title: Nová kategória
+
+    errors:
+      models:
+        category:
+          attributes:
+            title:
+              blank: Vyplniť aspoň jednu kategóriu!

@@ -6,11 +6,10 @@ class ActionView::Helpers::FormBuilder
 	    	err = ""
 	    	if continue
 		    	@object.errors[field].each do |e|
-		    		err += @template.content_tag(:span, @object.errors.full_message(field, e))
+		    		err += @template.content_tag(:span, e, class: "validation_error_message")
 		    	end
 		    else
-		    	e = @object.errors[field].first
-		    	err += @template.content_tag(:span, @object.errors.full_message(field, e))
+		    	err += @template.content_tag(:span, @object.errors[field].first, class: "validation_error_message")
 		    end
 	    	return err.html_safe
 	    end
