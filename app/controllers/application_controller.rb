@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
     include ApplicationConcern
     include BeforeRender
     include ClassOnInputWithError
-    
+    include ApplicationAbstract
 
     protect_from_forgery with: :exception
 
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     def show
     end
 
-    def new 
+    def new
     end
 
     def create
@@ -73,7 +73,7 @@ class ApplicationController < ActionController::Base
       around_new
     end
 
-    def create_action 
+    def create_action
       instance_variable_set(
         @singular_varname,
         @model.new(permitted_params)
@@ -113,33 +113,6 @@ class ApplicationController < ActionController::Base
     def destroy_action
       @model.find(params[:id]).destroy
       redirect_to controller: controller_name, action: 'index'
-    end
-
-    def around_new
-    end
-
-    def around_edit
-    end
-
-    def around_create
-    end
-
-    def around_create_after_save
-    end
-
-    def around_update
-    end
-
-    def around_update_after_save
-    end
-
-    def load_vars
-    end
-
-    def load_new_edit_vars
-    end
-
-    def load_create_update_vars
     end
 
 end
