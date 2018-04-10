@@ -35237,3 +35237,1529 @@ Processing by PostsController#index as HTML
   Rendered posts/index.html.erb within layouts/application (31.9ms)
   Rendered layouts/global_partials/_main_menu.html.erb (1.4ms)
 Completed 200 OK in 162ms (Views: 159.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/post/new" for 127.0.0.1 at 2018-04-10 20:13:01 +0200
+Processing by PostsController#new as HTML
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/shared_elements/_form_errors_field.html.erb (0.5ms)
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered layouts/shared_elements/_form_errors_field.html.erb (0.5ms)
+  Rendered posts/new.html.erb within layouts/application (38.3ms)
+  Rendered layouts/global_partials/_main_menu.html.erb (1.8ms)
+Completed 200 OK in 321ms (Views: 127.8ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/post" for 127.0.0.1 at 2018-04-10 20:13:06 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SErjuTxUrswdMYSWx2t3DF+X7a5M4ZHEsmMtN0UJpmYECfkQdVzU210lQmHC75/MIh8TY599OExOjzAKFnwE4w==", "post"=>{"title"=>"", "text"=>"", "category_ids"=>[""], "categories_attributes"=>{"0"=>{"title"=>""}}, "tag_ids"=>[""], "tags_attributes"=>{"0"=>{"title"=>""}}}, "commit"=>"Create Post"}
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  Rendered layouts/shared_elements/_form_errors_field.html.erb (0.5ms)
+  [1m[35mTag Load (0.5ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered layouts/shared_elements/_form_errors_field.html.erb (0.4ms)
+  Rendered posts/new.html.erb within layouts/application (41.7ms)
+  Rendered layouts/global_partials/_main_menu.html.erb (1.6ms)
+Completed 200 OK in 153ms (Views: 113.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 20:14:43 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/global_partials/_main_menu.html.erb (2.1ms)
+Completed 200 OK in 84ms (Views: 81.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 20:24:32 +0200
+Processing by HomepageController#index as HTML
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template homepage/index, application/index with {:locale=>[:sk], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views"
+):
+  app/controllers/concerns/before_render.rb:12:in `block in render_with_before_render_action'
+  app/controllers/concerns/before_render.rb:11:in `render_with_before_render_action'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 20:50:11 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial layouts/global_partials/_main_menu with {:locale=>[:sk], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views"
+):
+    12: 
+    13: 	<body>
+    14: 
+    15: 		<%= render 'layouts/global_partials/main_menu' %>
+    16: 
+    17: 		<%= yield %>
+    18: 
+  app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__2338191283784728020_70181216195740'
+  app/controllers/concerns/before_render.rb:12:in `block in render_with_before_render_action'
+  app/controllers/concerns/before_render.rb:11:in `render_with_before_render_action'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 20:56:04 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/application (0.2ms)
+  Rendered application/_main_menu.html.erb (3.2ms)
+Completed 200 OK in 88ms (Views: 86.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 20:56:35 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 20:59:00 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 21:07:01 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered application/_includes.html.erb (73.6ms)
+  Rendered application/_main_menu_top.html.erb (2.9ms)
+Completed 200 OK in 114ms (Views: 103.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 21:07:52 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered application/_includes.html.erb (53.8ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 21:55:25 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered application/_head_includes.html.erb (91.6ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+Completed 200 OK in 107ms (Views: 104.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 21:55:43 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered application/_head_includes.html.erb (119.9ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+Completed 200 OK in 154ms (Views: 146.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 21:56:45 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered application/_head_includes.html.erb (61.8ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+Completed 200 OK in 81ms (Views: 75.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blog" for 127.0.0.1 at 2018-04-10 22:00:01 +0200
+Processing by BlogsController#index as HTML
+  Rendered blogs/index.html.erb within layouts/application (0.2ms)
+  Rendered application/_head_includes.html.erb (67.7ms)
+Completed 200 OK in 100ms (Views: 95.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/post" for 127.0.0.1 at 2018-04-10 22:00:04 +0200
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (88.3ms)
+  Rendered application/_head_includes.html.erb (57.9ms)
+Completed 200 OK in 173ms (Views: 167.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:09:31 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered application/_head_includes.html.erb (93.7ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+Completed 200 OK in 112ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:16:02 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:19:34 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial homepage/_application, application/_application with {:locale=>[:sk], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views"
+):
+    1: 
+    2: <%= render layout: 'application' do %>
+    3:   <p>Here is some content</p>
+    4: <% end %>
+  app/views/layouts/homepage.html.erb:2:in `_app_views_layouts_homepage_html_erb___438291329020336750_70181317730760'
+  app/controllers/concerns/before_render.rb:12:in `block in render_with_before_render_action'
+  app/controllers/concerns/before_render.rb:11:in `render_with_before_render_action'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:30:24 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.3ms)
+  Rendered application/_main_menu_top.html.erb (2.3ms)
+  Rendered layouts/_base.html.erb (88.0ms)
+Completed 200 OK in 118ms (Views: 114.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:31:37 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered application/_main_menu_top.html.erb (3.2ms)
+  Rendered layouts/_base.html.erb (56.3ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:31:58 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered layouts/_base.html.erb (73.1ms)
+Completed 200 OK in 82ms (Views: 78.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:47:40 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (2.2ms)
+  Rendered application/_main_menu_top.html.erb (9.4ms)
+  Rendered layouts/_base.html.erb (137.2ms)
+Completed 200 OK in 153ms (Views: 150.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:47:57 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.5ms)
+  Rendered homepage/_basic_about_me.html.erb (1.2ms)
+  Rendered application/_main_menu_top.html.erb (5.5ms)
+  Rendered layouts/_base.html.erb (120.1ms)
+Completed 200 OK in 139ms (Views: 131.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:52:10 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (1.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered layouts/_base.html.erb (90.8ms)
+Completed 200 OK in 103ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 22:53:12 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (69.9ms)
+Completed 200 OK in 83ms (Views: 80.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:01:46 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (3.9ms)
+  Rendered application/_main_menu_top.html.erb (4.0ms)
+  Rendered layouts/_base.html.erb (385.6ms)
+Completed 200 OK in 403ms (Views: 401.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-10 23:01:46 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:04:44 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered layouts/_base.html.erb (91.2ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Undefined variable: "$black".):
+    4: <html>
+    5: 
+    6:     <head>
+    7:         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    8:         <%= javascript_include_tag "application" %>
+    9:         <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   10:         <%= csrf_meta_tags %>
+  app/assets/stylesheets/parts/_top_menu.css.scss:2
+  app/views/layouts/_base.html.erb:7:in `_app_views_layouts__base_html_erb___3716200650240464342_70181214671900'
+  app/helpers/layouts_helper.rb:4:in `parent_layout'
+  app/views/layouts/homepage.html.erb:26:in `_app_views_layouts_homepage_html_erb___438291329020336750_70181213103340'
+  app/controllers/concerns/before_render.rb:12:in `block in render_with_before_render_action'
+  app/controllers/concerns/before_render.rb:11:in `render_with_before_render_action'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:05:17 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181214671900 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181214671900 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (404.0ms)
+Completed 200 OK in 419ms (Views: 415.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/_variables.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-10 23:05:18 +0200
+
+
+Started GET "/assets/parts/_top_menu.self-dffbedaa83ac447699620080d7192392a7ba7cb76d2dc732fff84e1b1db789b6.css?body=1" for 127.0.0.1 at 2018-04-10 23:05:18 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:06:10 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered layouts/_base.html.erb (124.6ms)
+Completed 200 OK in 135ms (Views: 132.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_main.self-b51e5b29165ed5d1b40b3642489711d53065e4bf1e399a22492d75e811c91946.css?body=1" for 127.0.0.1 at 2018-04-10 23:06:10 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:06:59 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.1ms)
+  Rendered layouts/_base.html.erb (109.8ms)
+Completed 200 OK in 119ms (Views: 117.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_main.self-320e78a84fcadce7d057723910efd0795cba49a8a22aac924040b403f960ee93.css?body=1" for 127.0.0.1 at 2018-04-10 23:06:59 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:09:20 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (3.2ms)
+  Rendered application/_main_menu_top.html.erb (2.3ms)
+  Rendered layouts/_base.html.erb (76.3ms)
+Completed 200 OK in 86ms (Views: 84.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:15:44 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (5.1ms)
+  Rendered application/_main_menu_top.html.erb (2.7ms)
+  Rendered layouts/_base.html.erb (223.0ms)
+Completed 200 OK in 234ms (Views: 232.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_main_classes.self-7bd6838202464be709788f7f7b6b93e057133c5878fa5ad2a15f3471dd5c67a3.css?body=1" for 127.0.0.1 at 2018-04-10 23:15:44 +0200
+
+
+Started GET "/assets/parts/_top_menu.self-2124c653dd9d28937dee6bccf291747c2ad2b893acc21a1a8a93a6664f11ce7d.css?body=1" for 127.0.0.1 at 2018-04-10 23:15:45 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:17:01 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.1ms)
+  Rendered layouts/_base.html.erb (230.5ms)
+Completed 200 OK in 241ms (Views: 238.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-dc932fc1519171750b4f24614cceccc40b9622dcd9e0f4176d557719aaf17e3d.css?body=1" for 127.0.0.1 at 2018-04-10 23:17:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:17:55 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered layouts/_base.html.erb (162.1ms)
+Completed 200 OK in 173ms (Views: 171.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-d19f6a5c757455f59b1044b02b9779c7da122af193b46ca64ba827caf54b595b.css?body=1" for 127.0.0.1 at 2018-04-10 23:17:55 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:18:53 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.3ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (2.8ms)
+  Rendered application/_main_menu_top.html.erb (2.8ms)
+  Rendered layouts/_base.html.erb (305.4ms)
+Completed 200 OK in 317ms (Views: 314.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-ec3acfcadd00773e62d88b43992ba4528672e0511bcd6a409d09917b992b194b.css?body=1" for 127.0.0.1 at 2018-04-10 23:18:54 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:22:02 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (4.6ms)
+  Rendered application/_main_menu_top.html.erb (3.6ms)
+  Rendered layouts/_base.html.erb (335.7ms)
+Completed 200 OK in 347ms (Views: 345.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_resset_css.self-b987142b0e45771e78d2c9ab9f086ff3ee80811ad0f7ac75a8bea8150fddb244.css?body=1" for 127.0.0.1 at 2018-04-10 23:22:03 +0200
+
+
+Started GET "/assets/parts/_top_menu.self-6188babd4d28623671152f7a8e4ae7c191883c3798a1a791d4536236d8ee8be7.css?body=1" for 127.0.0.1 at 2018-04-10 23:22:03 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:22:22 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.9ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (246.9ms)
+Completed 200 OK in 258ms (Views: 255.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-78b9c95f1933c0c36523fda9e164c381058ade13bf31485553086cb317b9fb7d.css?body=1" for 127.0.0.1 at 2018-04-10 23:22:23 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:22:49 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.1ms)
+  Rendered layouts/_base.html.erb (189.7ms)
+Completed 200 OK in 205ms (Views: 200.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-abe9f4d693f02fffaf58adf8a2e3eb46b2b130a66e4fdbf4543c11b8fa465cae.css?body=1" for 127.0.0.1 at 2018-04-10 23:22:49 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:23:49 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (2.2ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (229.0ms)
+Completed 200 OK in 245ms (Views: 242.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_main_classes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-10 23:23:49 +0200
+
+
+Started GET "/assets/parts/_top_menu.self-ce970ff5cfd932cb16a834f20a7f416fae64a518e3a27395192e5dc5ca6f6b6f.css?body=1" for 127.0.0.1 at 2018-04-10 23:23:49 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:24:56 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered layouts/_base.html.erb (415.6ms)
+Completed 200 OK in 429ms (Views: 426.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/_mixins.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-10 23:24:56 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:27:13 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (5.1ms)
+  Rendered layouts/_base.html.erb (426.7ms)
+Completed 200 OK in 463ms (Views: 455.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-65a6a3550e7d17becba698420009de1a989333ae89e6f9afd110bca2c04e69e3.css?body=1" for 127.0.0.1 at 2018-04-10 23:27:14 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:28:02 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered application/_main_menu_top.html.erb (1.1ms)
+  Rendered layouts/_base.html.erb (200.3ms)
+Completed 200 OK in 211ms (Views: 209.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-10c9d7bceccb79a36c8c6ff8fca1f394b8a5624c50c70bc7461327ae516859b5.css?body=1" for 127.0.0.1 at 2018-04-10 23:28:02 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:33:13 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered layouts/_base.html.erb (189.0ms)
+Completed 200 OK in 200ms (Views: 197.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_reset_css.self-55427d8971f5dd828654a21e89c521f328af9225c5fc9320f3120d9ddc231bbb.css?body=1" for 127.0.0.1 at 2018-04-10 23:33:13 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:34:13 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.css.scss to /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/assets/stylesheets/_mixins.scss. (called from _app_views_layouts__base_html_erb___3716200650240464342_70181325788420 at /home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:7)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (186.5ms)
+Completed 200 OK in 198ms (Views: 195.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_top_menu.self-61c937abe190f6d958b49dfbde45b0f41651578acb4091d8a5095ed3d65ea2fe.css?body=1" for 127.0.0.1 at 2018-04-10 23:34:14 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-10 23:35:14 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (130.4ms)
+Completed 200 OK in 140ms (Views: 138.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_main.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-10 23:35:14 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:08:47 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.3ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (2.1ms)
+  Rendered layouts/_base.html.erb (171.4ms)
+Completed 200 OK in 189ms (Views: 187.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2018-04-11 00:08:48 +0200
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-d4faa6cfc1a0514fd5f03103086cb48305f44633da7d9a8dcbd48fbe4630f1d8.css?body=1" for 127.0.0.1 at 2018-04-11 00:08:48 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:10:13 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (131.4ms)
+Completed 200 OK in 153ms (Views: 144.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_main.self-ea538fb0dc0d5f3ed4b3a8f97964a6f8f51ab24feb44bd65de992c44e9cf8dc9.css?body=1" for 127.0.0.1 at 2018-04-11 00:10:13 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:11:03 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (1.0ms)
+  Rendered application/_main_menu_top.html.erb (2.8ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (127.9ms)
+Completed 200 OK in 166ms (Views: 149.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:11:36 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (131.4ms)
+Completed 200 OK in 142ms (Views: 140.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/parts/_main.self-f3bfdef633a225d0f94ef722508dac2c75fd77f0258831c4591c7f087b20c17c.css?body=1" for 127.0.0.1 at 2018-04-11 00:11:36 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:14:21 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (2.2ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (180.0ms)
+Completed 200 OK in 190ms (Views: 188.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage.self-d882161ae6cd66dd6a575f2b786fe3f3b153235f6bac27ee02df4374ca66639e.css?body=1" for 127.0.0.1 at 2018-04-11 00:14:21 +0200
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-f49ba18f8bcc3dbd1672636b6c4b13615d97f70eb2d8830fcfeef02f34f2a284.css?body=1" for 127.0.0.1 at 2018-04-11 00:14:21 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:25:54 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (2.9ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered layouts/_base.html.erb (146.0ms)
+Completed 200 OK in 160ms (Views: 157.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:26:18 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered layouts/_base.html.erb (4.7ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:29: syntax error, unexpected '<', expecting ')'
+        </header>
+         ^
+/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:34: unknown regexp option - a
+/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:36: syntax error, unexpected '<'
+        <footer>
+         ^
+/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:40: unknown regexp options - bdy
+/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:42: syntax error, unexpected '<'
+</html>
+ ^
+/home/kovo/:. WWW/kovoweb-3.0/mojWeb/app/views/layouts/_base.html.erb:42: unterminated regexp meets end of file):
+  app/views/layouts/_base.html.erb:29: syntax error, unexpected '<', expecting ')'
+  app/views/layouts/_base.html.erb:34: unknown regexp option - a
+  app/views/layouts/_base.html.erb:36: syntax error, unexpected '<'
+  app/views/layouts/_base.html.erb:40: unknown regexp options - bdy
+  app/views/layouts/_base.html.erb:42: syntax error, unexpected '<'
+  app/views/layouts/_base.html.erb:42: unterminated regexp meets end of file
+  app/helpers/layouts_helper.rb:4:in `parent_layout'
+  app/views/layouts/homepage.html.erb:26:in `_app_views_layouts_homepage_html_erb___438291329020336750_47373965337180'
+  app/controllers/concerns/before_render.rb:12:in `block in render_with_before_render_action'
+  app/controllers/concerns/before_render.rb:11:in `render_with_before_render_action'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:26:30 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (109.4ms)
+Completed 200 OK in 129ms (Views: 124.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:27:39 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (93.3ms)
+Completed 200 OK in 103ms (Views: 101.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:28:47 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (2.0ms)
+  Rendered layouts/_base.html.erb (209.4ms)
+Completed 200 OK in 230ms (Views: 228.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage.self-d9c69049f336cab47959b7177ea2e6dfd7243e2f3e19eacf0514948866fc547d.css?body=1" for 127.0.0.1 at 2018-04-11 00:28:47 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:29:02 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (167.9ms)
+Completed 200 OK in 179ms (Views: 177.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage.self-a162674858c466dc154bff25aee2f6c08e0b27c9e0734acfeb5c3855e2b3b5b1.css?body=1" for 127.0.0.1 at 2018-04-11 00:29:02 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:35:01 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (2.4ms)
+  Rendered layouts/_base.html.erb (167.6ms)
+Completed 200 OK in 196ms (Views: 194.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-dad62de6600d498719c8464b58189f9543e030811fa4e622b4612ffc4547e1fe.css?body=1" for 127.0.0.1 at 2018-04-11 00:35:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:38:26 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (1.0ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (93.2ms)
+Completed 200 OK in 119ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:40:32 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (3.7ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.9ms)
+  Rendered layouts/_base.html.erb (171.8ms)
+Completed 200 OK in 210ms (Views: 206.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-c15c968dabed08a5df13f593f4410e6dd087cad74b793573b88d044174f5c18e.css?body=1" for 127.0.0.1 at 2018-04-11 00:40:32 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:43:56 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.6ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered layouts/_base.html.erb (201.4ms)
+Completed 200 OK in 215ms (Views: 213.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-ffa7de74d3a3cf64e7a54670ffa31bc090cf02d5e88bb99f60b7610ec0e7f73c.css?body=1" for 127.0.0.1 at 2018-04-11 00:43:57 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:44:12 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (1.1ms)
+  Rendered layouts/_base.html.erb (186.7ms)
+Completed 200 OK in 203ms (Views: 201.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-2ac4390fe56ac2087c4f56f8da1d9db3c763880e68d7bdfbf0a56e9e8d504c56.css?body=1" for 127.0.0.1 at 2018-04-11 00:44:13 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:52:23 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (172.3ms)
+Completed 200 OK in 184ms (Views: 182.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-7e6314f66db73412e13f8c605b2db8498059a286bb2c7f404903e2381b1443b9.css?body=1" for 127.0.0.1 at 2018-04-11 00:52:23 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:53:42 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (286.2ms)
+Completed 200 OK in 301ms (Views: 298.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-684b6b008b22dc7bee3020180ab0651f23530f5edcaa30e227f45de027b8a1f1.css?body=1" for 127.0.0.1 at 2018-04-11 00:53:43 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:53:56 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (150.9ms)
+Completed 200 OK in 166ms (Views: 162.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-20df6ea8372199281d5ed8d96400a3780e3ff4912d7789733091ae20ebfa74c8.css?body=1" for 127.0.0.1 at 2018-04-11 00:53:57 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:54:14 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.9ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (203.5ms)
+Completed 200 OK in 222ms (Views: 219.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-5c3aba11af404fa7b58811d202b5bf696ed7597617bd41d13530009c9bb70ad2.css?body=1" for 127.0.0.1 at 2018-04-11 00:54:15 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:54:33 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.5ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered application/_main_menu_top.html.erb (1.9ms)
+  Rendered layouts/_base.html.erb (154.4ms)
+Completed 200 OK in 180ms (Views: 171.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-33bf54b6be66d15fe7bd10d5630f24613be66c2ca5b530dc2d1db8cc4c0e432d.css?body=1" for 127.0.0.1 at 2018-04-11 00:54:33 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:54:45 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered application/_main_menu_top.html.erb (2.0ms)
+  Rendered layouts/_base.html.erb (170.1ms)
+Completed 200 OK in 185ms (Views: 183.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-e94d51689ede4d19ceb706f38a8581cf49b99fe4082e3e8d676d8a2bd9d6a4c2.css?body=1" for 127.0.0.1 at 2018-04-11 00:54:46 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:55:07 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (168.0ms)
+Completed 200 OK in 185ms (Views: 183.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-889d0d047ad71d6b7ed7107c99ac996d4f45e4180f366153158ae9bdcf90704a.css?body=1" for 127.0.0.1 at 2018-04-11 00:55:07 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:55:18 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (191.5ms)
+Completed 200 OK in 204ms (Views: 202.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-a1be1d4c9a40ca82fddcf75f5c9f24e26b4a0bbbe3802050f15d23424f50de93.css?body=1" for 127.0.0.1 at 2018-04-11 00:55:18 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:55:31 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (2.0ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (221.3ms)
+Completed 200 OK in 244ms (Views: 239.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-c4f9b02a455048e845a42a77f34e94b809e8e1804a1a8bcf25cbb4285f7f7395.css?body=1" for 127.0.0.1 at 2018-04-11 00:55:31 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:55:52 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (175.8ms)
+Completed 200 OK in 201ms (Views: 199.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-a1c48dbefaf1b2ac9cc4182fbad94a47a5d2a853225a3100ce2330f6f138fd8a.css?body=1" for 127.0.0.1 at 2018-04-11 00:55:52 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:56:09 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.5ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (152.9ms)
+Completed 200 OK in 167ms (Views: 164.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-91cfdc92fa3b966d952bf4150c624b699ddfb39cf0a749cab0680821436d1b07.css?body=1" for 127.0.0.1 at 2018-04-11 00:56:09 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:56:35 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.3ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered layouts/_base.html.erb (152.4ms)
+Completed 200 OK in 178ms (Views: 168.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-3e5aff8a60b340a4dbd0658859b70f109bdd30f258a321e94d769c4fb7510bd2.css?body=1" for 127.0.0.1 at 2018-04-11 00:56:35 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:57:16 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.3ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.9ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (166.2ms)
+Completed 200 OK in 180ms (Views: 177.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-8ad2f7c189f1b6ff9dc5d0aec34ace13a5e538113ee85e38b3cfdb3e5416d0fa.css?body=1" for 127.0.0.1 at 2018-04-11 00:57:17 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:57:51 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.3ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (172.7ms)
+Completed 200 OK in 185ms (Views: 183.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-44dc0a1d1248839df2235e3c153d917eeb4f57d9f96b190b677c901e2cb43f04.css?body=1" for 127.0.0.1 at 2018-04-11 00:57:52 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 00:58:15 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (226.2ms)
+Completed 200 OK in 240ms (Views: 238.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-f846c226738b404a464baa70f30e1803d5aa86318e2e6ee01e096c44c8fe09c9.css?body=1" for 127.0.0.1 at 2018-04-11 00:58:15 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:02:21 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (2.2ms)
+  Rendered application/_main_menu_top.html.erb (6.7ms)
+  Rendered layouts/_base.html.erb (181.7ms)
+Completed 200 OK in 195ms (Views: 192.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-a50bfbd51111b278d26a00b5f06db71104102e701cfd23d3fedeaff1e154d26b.css?body=1" for 127.0.0.1 at 2018-04-11 01:02:21 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:05:22 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.3ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (186.7ms)
+Completed 200 OK in 201ms (Views: 199.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-16f24fa8da3a5da6f724c9e8d85615c8ed077d8b3bae5328dc40697a7f17806f.css?body=1" for 127.0.0.1 at 2018-04-11 01:05:22 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:05:36 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (240.0ms)
+Completed 200 OK in 266ms (Views: 256.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-0c5c4e09cd2687242f2c9167f2c47e0c2faa6d77d920b631ecd70e6f87e4acd2.css?body=1" for 127.0.0.1 at 2018-04-11 01:05:36 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:05:56 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (1.1ms)
+  Rendered layouts/_base.html.erb (179.5ms)
+Completed 200 OK in 192ms (Views: 189.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-bb6d526ec700499bbe3d1a3026a9b6f8c82bca5229bfcaf24dc591f9755c0453.css?body=1" for 127.0.0.1 at 2018-04-11 01:05:56 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:06:48 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered layouts/_base.html.erb (193.8ms)
+Completed 200 OK in 206ms (Views: 204.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-0b128991e95d743de059c4a1175f7ee34a626230173725ffd242e24fe0cb52fb.css?body=1" for 127.0.0.1 at 2018-04-11 01:06:48 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:06:58 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (180.8ms)
+Completed 200 OK in 193ms (Views: 190.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-b6ef53bb7db74072e31ef9d2c3d82ddf9178779aed9a761357483755fc6e7e9b.css?body=1" for 127.0.0.1 at 2018-04-11 01:06:58 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:07:05 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (121.5ms)
+Completed 200 OK in 135ms (Views: 133.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:07:41 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (12.3ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (90.9ms)
+Completed 200 OK in 115ms (Views: 113.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:07:58 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (297.6ms)
+Completed 200 OK in 324ms (Views: 322.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-3e206be1e7132e682c7fd09149c80dd50fdfa48c5bd71da6157e1775272f5596.css?body=1" for 127.0.0.1 at 2018-04-11 01:07:58 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:08:27 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered layouts/_base.html.erb (57.3ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "    // IE 10+": expected "}", was "/*/display:flex;"):
+    4: <html>
+    5: 
+    6:     <head>
+    7:         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    8:         <%= javascript_include_tag "application" %>
+    9:         <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   10:         <%= csrf_meta_tags %>
+  app/assets/stylesheets/controllers/homepage/_intro_section.css.scss:11
+  app/views/layouts/_base.html.erb:7:in `_app_views_layouts__base_html_erb___3716200650240464342_70181321365640'
+  app/helpers/layouts_helper.rb:4:in `parent_layout'
+  app/views/layouts/homepage.html.erb:26:in `_app_views_layouts_homepage_html_erb___438291329020336750_70181211631600'
+  app/controllers/concerns/before_render.rb:12:in `block in render_with_before_render_action'
+  app/controllers/concerns/before_render.rb:11:in `render_with_before_render_action'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:08:37 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (2.9ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (2.3ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (129.0ms)
+Completed 200 OK in 163ms (Views: 158.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:08:46 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (2.9ms)
+  Rendered application/_main_menu_top.html.erb (2.7ms)
+  Rendered layouts/_base.html.erb (121.0ms)
+Completed 200 OK in 156ms (Views: 151.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:08:56 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (4.6ms)
+  Rendered application/_main_menu_top.html.erb (3.6ms)
+  Rendered layouts/_base.html.erb (181.8ms)
+Completed 200 OK in 201ms (Views: 199.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-fbcadc887db370d7b0b06d7637379284ca95c5a2d89d26fc5ee51efaa2f5bf5e.css?body=1" for 127.0.0.1 at 2018-04-11 01:08:57 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:09:06 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered layouts/_base.html.erb (146.6ms)
+Completed 200 OK in 159ms (Views: 157.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-44ab2a7b7e1d168f72fdd171449bb60113ce0f34c130fe8aeba3efc2d6e9e631.css?body=1" for 127.0.0.1 at 2018-04-11 01:09:06 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:10:19 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (2.4ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (202.1ms)
+Completed 200 OK in 222ms (Views: 219.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-333a74e69c9dad3d5f5a1b0e1b9dbe6ed88f7541ea1972aecd546689a6403dd1.css?body=1" for 127.0.0.1 at 2018-04-11 01:10:20 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:10:29 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.3ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (171.0ms)
+Completed 200 OK in 195ms (Views: 184.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-3f0c1fcbea2acd65becff6c6033ed28f163f1727c0de6c802e8ffbc173e34ed4.css?body=1" for 127.0.0.1 at 2018-04-11 01:10:29 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:11:36 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (183.5ms)
+Completed 200 OK in 196ms (Views: 194.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-00c9808b331611c2e64ae93d5dbc825bf24e3a4bc4c5c843693e13d6231b14b0.css?body=1" for 127.0.0.1 at 2018-04-11 01:11:36 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:12:13 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (24.3ms)
+  Rendered homepage/_menu.html.erb (13.8ms)
+  Rendered application/_main_menu_top.html.erb (2.6ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (326.1ms)
+Completed 200 OK in 391ms (Views: 388.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-66a4dd4272da86ae05729d9237e8dca1456658ebd9d5fc102f0ba13aa031d44c.css?body=1" for 127.0.0.1 at 2018-04-11 01:12:14 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:12:28 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (206.1ms)
+Completed 200 OK in 218ms (Views: 215.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-c992520402b4135b2159c10ddb311622af3ec46b7e804f884dabfd2504cbb7ae.css?body=1" for 127.0.0.1 at 2018-04-11 01:12:29 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:13:36 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered layouts/_base.html.erb (193.7ms)
+Completed 200 OK in 208ms (Views: 206.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-4565b944b0b8dc8cd2019b3dde3bf3259edc9e2ce27691243c49d82009dfd587.css?body=1" for 127.0.0.1 at 2018-04-11 01:13:37 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:15:08 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.6ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (218.7ms)
+Completed 200 OK in 238ms (Views: 233.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-80d810623245c67eb951ce29975a01debce759df7fc629b7cafa673e70ffdeef.css?body=1" for 127.0.0.1 at 2018-04-11 01:15:08 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:15:38 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (177.4ms)
+Completed 200 OK in 190ms (Views: 188.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-bd45a0145b3addd51d7d15fdc997da8a6a4600976a55a3db2d1df85bd3b0e4eb.css?body=1" for 127.0.0.1 at 2018-04-11 01:15:39 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:15:55 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (109.7ms)
+Completed 200 OK in 126ms (Views: 124.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:16:39 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (218.4ms)
+Completed 200 OK in 232ms (Views: 230.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-9a36a5c2d1f612aff7ca426e6a7b152c16f8521ebd36c2859ba4ec40e5f62db5.css?body=1" for 127.0.0.1 at 2018-04-11 01:16:39 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:18:00 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.8ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (230.2ms)
+Completed 200 OK in 275ms (Views: 271.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-a9f24a4cc82469421941885a54961944b507fd873c5035ff47df8824bb9a5f2d.css?body=1" for 127.0.0.1 at 2018-04-11 01:18:01 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:19:00 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.4ms)
+  Rendered homepage/_basic_about_me.html.erb (0.8ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered layouts/_base.html.erb (257.4ms)
+Completed 200 OK in 274ms (Views: 271.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-b1579a2aa7f5e227394a131432e343941e4d07a122ea507d0d47b6f4e6b27ad2.css?body=1" for 127.0.0.1 at 2018-04-11 01:19:00 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:19:53 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.9ms)
+  Rendered application/_main_menu_top.html.erb (3.0ms)
+  Rendered layouts/_base.html.erb (203.7ms)
+Completed 200 OK in 224ms (Views: 221.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-e4203b03b9d8ba982e9dedabb0ef038805feca689090001dac5fad50f271330a.css?body=1" for 127.0.0.1 at 2018-04-11 01:19:54 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:21:00 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.7ms)
+  Rendered layouts/_base.html.erb (257.1ms)
+Completed 200 OK in 287ms (Views: 283.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-57c6c2533c022caf7d1492aca6287ea10ee13f2b2a985c5a6f66fbf4a18e2fc0.css?body=1" for 127.0.0.1 at 2018-04-11 01:21:00 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:21:53 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (9.7ms)
+  Rendered application/_main_menu_top.html.erb (1.1ms)
+  Rendered layouts/_base.html.erb (181.1ms)
+Completed 200 OK in 193ms (Views: 191.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:28:24 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.4ms)
+  Rendered layouts/_base.html.erb (278.0ms)
+Completed 200 OK in 312ms (Views: 308.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-704d4bf35b5c63499640ee17552b6cce80ed9a75545e487661a3e749109c792f.css?body=1" for 127.0.0.1 at 2018-04-11 01:28:24 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:28:40 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (6.8ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (191.3ms)
+Completed 200 OK in 232ms (Views: 220.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:31:05 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered layouts/_base.html.erb (181.8ms)
+Completed 200 OK in 207ms (Views: 205.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-60f208e9065c57d3c113fa45863fd3068b7aa517846fc7cda9c835fe98740bdc.css?body=1" for 127.0.0.1 at 2018-04-11 01:31:05 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:31:45 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered layouts/_base.html.erb (232.2ms)
+Completed 200 OK in 271ms (Views: 268.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-c7084aa2f6356e5b3bbe8f4f853e2c23ea3dc91508b49725b0f2afff3ca5547a.css?body=1" for 127.0.0.1 at 2018-04-11 01:31:45 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:32:40 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (214.3ms)
+Completed 200 OK in 244ms (Views: 228.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-441bf2f28321c9d5a7e0b2bf16bb4865170c6c14a8cc7de9f32d48a5aa18d38a.css?body=1" for 127.0.0.1 at 2018-04-11 01:32:41 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:35:21 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered application/_main_menu_top.html.erb (1.6ms)
+  Rendered layouts/_base.html.erb (179.5ms)
+Completed 200 OK in 192ms (Views: 190.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:36:35 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (2.0ms)
+  Rendered application/_main_menu_top.html.erb (1.2ms)
+  Rendered layouts/_base.html.erb (264.0ms)
+Completed 200 OK in 296ms (Views: 291.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-af5afd9ece5ed555c8181bd23bdb1ea242e8ce46ba8e9d0a11dd7f4044cfbf93.css?body=1" for 127.0.0.1 at 2018-04-11 01:36:36 +0200
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:37:19 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.5ms)
+  Rendered application/_main_menu_top.html.erb (1.1ms)
+  Rendered layouts/_base.html.erb (223.2ms)
+Completed 200 OK in 238ms (Views: 234.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:37:45 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (2.3ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (216.3ms)
+Completed 200 OK in 229ms (Views: 227.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:39:44 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.1ms)
+  Rendered homepage/_basic_about_me.html.erb (0.2ms)
+  Rendered homepage/_menu.html.erb (0.2ms)
+  Rendered application/_main_menu_top.html.erb (1.8ms)
+  Rendered application/_main_menu_top.html.erb (2.8ms)
+  Rendered layouts/_base.html.erb (174.0ms)
+Completed 200 OK in 200ms (Views: 198.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-11 01:40:45 +0200
+Processing by HomepageController#index as HTML
+  Rendered homepage/index.html.erb within layouts/homepage (0.2ms)
+  Rendered homepage/_basic_about_me.html.erb (0.1ms)
+  Rendered homepage/_menu.html.erb (0.1ms)
+  Rendered application/_main_menu_top.html.erb (1.9ms)
+  Rendered application/_main_menu_top.html.erb (1.3ms)
+  Rendered layouts/_base.html.erb (188.7ms)
+Completed 200 OK in 205ms (Views: 198.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/controllers/homepage/_intro_section.self-2b6e40c6dfd176e1be47fab14aebc309c8881e5192ecaa61fef9f37ef510b569.css?body=1" for 127.0.0.1 at 2018-04-11 01:40:45 +0200

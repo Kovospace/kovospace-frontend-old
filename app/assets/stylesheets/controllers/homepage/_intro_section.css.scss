@@ -1,0 +1,38 @@
+section.intro {
+    background-color: grey;
+
+    // sroty
+    display:table;
+    width:100%;
+    border-spacing: 1em;
+    border-collapse: separate;
+
+    // IE 10+
+    display:flex;
+
+    article.basic_about_me, aside.where_to {
+        border: 1px solid black;
+
+        // pre srot
+        display:table-cell;
+
+        // ignorovane pri table-cell
+        margin:1%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    article.basic_about_me {
+        width: 35%; // pre srot
+        flex: 0 1 32%;
+        min-width:16em; // ignorovane pri table-cell
+        max-width:24em; // ignorovane pri table-cell
+        margin-left: 2%; // ignorovane pri table-cell
+    }
+
+    aside.where_to {
+        width: 65%; // pre srot
+        flex: 1 1 62%;
+        margin-right: 2%; // ignorovane pri table-cell
+    }
+}
