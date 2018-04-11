@@ -5,3 +5,37 @@
     display: table;
   }
 }
+
+@mixin flex_container() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin flex_children($arg) {
+  -webkit-box-flex: $arg;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $arg;         /* OLD - Firefox 19- */
+  -webkit-flex: $arg;          /* Chrome */
+  -ms-flex: $arg;              /* IE 10 */
+  flex: $arg;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+
+@mixin box_sizing() {
+  -webkit-box-sizing: border-box;   // okrem IE 6 a 7 vraj všetko
+  -moz-box-sizing:    border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+}
+
+@mixin box_shadow() {
+  $color: #444444;
+  -moz-box-shadow: 3px 3px 4px $color;
+  -webkit-box-shadow: 3px 3px 4px $color;
+  box-shadow: 3px 3px 4px $color;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
+}
+

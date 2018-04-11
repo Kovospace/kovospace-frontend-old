@@ -1,38 +1,68 @@
-section.intro {
-    background-color: grey;
+@import "variables";
 
-    // sroty
+section.intro {
+    background-color: $white;
+
+    // kvoli IE srotom
     display:table;
     width:100%;
-    border-spacing: 1em;
+    border-spacing: 1.5em;
     border-collapse: separate;
 
-    // IE 10+
-    display:flex;
+    @include flex_container();
 
     article.basic_about_me, aside.where_to {
-        border: 1px solid black;
+        //border: 1px solid black;
 
-        // pre srot
+        // pre srot IE
         display:table-cell;
 
-        // ignorovane pri table-cell
+        // ignorovane IE srotmi (table-cell)
         margin:1%;
         margin-top: 2%;
         margin-bottom: 2%;
     }
 
     article.basic_about_me {
-        width: 35%; // pre srot
-        flex: 0 1 32%;
-        min-width:16em; // ignorovane pri table-cell
+        width: 35%; // pre IE srot
+        min-width:16em; // zobrazene pri table-cell
         max-width:24em; // ignorovane pri table-cell
         margin-left: 2%; // ignorovane pri table-cell
+        height: 100%;
+        @include flex_children(0 1 30%);
+        background-color: $darker_dirty_white;
+        @include box_shadow();
+
+        div#me_photo {
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
+
+            picture {
+                position: absolute;
+                top: 1em;
+                left: 1em;
+                bottom:1em;
+                right:1em;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+
+        div#me_shortinfo {
+            width: 100%;
+            padding: 0 0.75em;
+            padding-bottom: 0.75em;
+            @include box_sizing();
+        }
     }
 
     aside.where_to {
-        width: 65%; // pre srot
-        flex: 1 1 62%;
+        width: 65%; // pre IE srot
         margin-right: 2%; // ignorovane pri table-cell
+        @include flex_children(1 1 64%);
     }
 }
