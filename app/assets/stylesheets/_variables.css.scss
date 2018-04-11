@@ -1,8 +1,15 @@
+$pure_black: #000;
 $black: #111;
+$mid_black: #222;
+$soft_black: #333;
 
 $pure_white: #fff;
 $white: #fafafa;
 $dirty_white: #eee;
 $darker_dirty_white: #e8e8e8;
 
+$transition_time: 0.3s;
+$transition_time_fast: 0.15s;
+
 @import "mixins";
+@import "effects";

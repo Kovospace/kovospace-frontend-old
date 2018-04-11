@@ -1,0 +1,38 @@
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin background_transition($time) {
+    @include transition(background-color $time ease-in-out);
+}
+
+@mixin underline_on_hover($color) {
+
+    & {
+        text-decoration:none;
+        position: relative;
+    }
+
+    &::after {
+        @include background_transition($transition_time_fast);
+        content: '';
+        display: block;
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        left:0;
+        right:0;
+        height: 0.0625em;
+    }
+
+    &:hover {
+
+        &::after {
+            background-color: $color;
+        }
+    }
+}

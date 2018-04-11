@@ -1,3 +1,4 @@
+@import "variables";
 
 header.homepage {
     height: 12em;
@@ -7,4 +8,19 @@ header.homepage {
 
 section {
     min-height: 100%;
+
+    &.intro {
+        background-color: $white;
+        // kvoli IE srotom
+        display:table;
+        width:100%;
+        border-spacing: 1.5em;
+        border-collapse: separate;
+        /* --- */
+        @include flex_container();
+
+        border: 1px solid red;
+    }
 }
+
+
