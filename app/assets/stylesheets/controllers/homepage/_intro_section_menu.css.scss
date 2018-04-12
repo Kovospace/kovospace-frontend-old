@@ -11,12 +11,38 @@ aside.where_to {
         ul {
 
             li {
+                display:table;
+                border-spacing:0;
 
-                figure.menuicon {
+                div.menuicon, div.menuitem {
+                    display:table-cell;
+                    //display: inline-block;
+                }
 
+                div.menuicon {
+                    //float:left;
+                    position: relative;
+                    //display: inline-block;
+                    //display: block;
+                    height: 100%;
+                    //width: 100%;
+
+                    & > img {
+                        height: 100%;
+                    }
+                    //height:100%;
+                    //float:left;
+                    figure {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                    }
                 }
 
                 div.menuitem {
+                    //float:right;
 
                     h2 {
                         font-size: 2.5em;
