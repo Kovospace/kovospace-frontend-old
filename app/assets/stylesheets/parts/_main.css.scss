@@ -1,11 +1,36 @@
+@import "variables";
+
 html {
     height: 100%;
+    @include scrollbars();
 
     body {
         height: 100%;
 
         main {
             height: 100%;
+            overflow-y: visible;
+
+            section#foot {
+                min-height:2em;
+                line-height: 2em;
+                background-color: $pure_black;
+                padding: 0.25em 0.5em;
+                color: $half;
+                font-size:0.75em;
+
+                a, span {
+                    padding: 0 0.375em;
+                }
+
+                a:hover {
+                    text-decoration: underline;
+                }
+
+                b {
+                    font-weight: bold;
+                }
+            }
         }
     }
 }

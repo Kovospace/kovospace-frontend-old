@@ -7,9 +7,32 @@ header.homepage {
 }
 
 section {
-    min-height: 100%;
 
-    &.intro {
+    &#intro, &#skills {
+        min-height: 100%;
+    }
+
+    &#news {
+        min-height: 50%;
+    }
+
+    &#news, &#skills, &#contact {
+        padding: 2%;
+
+        h2 {
+            font-size:5em;
+        }
+
+        article {
+            padding-left:0.5em;
+        }
+    }
+
+    &#contact {
+        min-height: 5em;
+    }
+
+    &#intro {
         background-color: $white;
         // kvoli IE srotom
         display:table;
@@ -17,9 +40,32 @@ section {
         border-spacing: 1.5em;
         border-collapse: separate;
         /* --- */
+        padding-left: 0.25em;
+        @include box_sizing();
         @include flex_container();
 
-        border: 1px solid red;
+        article#basic_about_me, aside#intro_where_to {
+            display:table-cell; // pre srot IE
+            // ignorovane IE srotmi (table-cell)
+            margin:1%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            /* --- */
+        }
+
+    }
+
+    &#skills {
+        background-color: $sky_blue_light;
+    }
+
+    &#news {
+        background-color: #CCFFC9;
+    }
+
+    &#contact {
+        background-color: $soft_black;
+        color: $white;
     }
 }
 

@@ -1,26 +1,26 @@
 
-<section class="intro">
+<section id="intro">
 
-    <article class="basic_about_me">
+    <article id="basic_about_me">
         <%= render 'basic_about_me' %>
     </article>
 
-    <aside class="where_to">
+    <aside id="intro_where_to">
         <%= render 'menu' %>
     </aside>
 
 </section>
 
-<section class="skills">
-
+<section id="news">
+    <h2>Najnovšie & plánované</h2>
 </section>
 
-<section class="news">
-
+<section id="skills">
+    <%= render 'skills' %>
 </section>
 
-<section class="contact" id="contact_section">
-
+<section id="contact">
+    <%= render 'kontakt' %>
 </section>
 
 <% parent_layout '_base' %>

@@ -25,7 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 ### GEMS ADDED BY ME SECTION
 
-gem 'hirb'
+gem 'kaminari'
+
+gem 'devise'
 
 ### END OF SECTION GEMS ADDED BY ME
 
@@ -49,5 +51,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'hirb'
+
 end
 

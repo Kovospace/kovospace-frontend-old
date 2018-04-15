@@ -1,88 +1,82 @@
  // parent - section.intro
 @import "variables";
 
-article.basic_about_me, aside.where_to {
-    display:table-cell; // pre srot IE
-    // ignorovane IE srotmi (table-cell)
-    margin:1%;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    /* --- */
-}
+section#intro {
 
-article.basic_about_me {
-    background-color: $darker_dirty_white;
-    width: 35%; // pre IE srot
-    min-width:16em; // zobrazene pri table-cell
-    max-width:24em; // ignorovane pri table-cell
-    margin-left: 2%; // ignorovane pri table-cell
-    height: 100%;
-    @include flex_children(0 1 26%);
-    @include box_shadow();
+    article#basic_about_me {
+        background-color: $darker_dirty_white;
+        width: 35%; // pre IE srot
+        min-width:16em; // zobrazene pri table-cell
+        max-width:24em; // ignorovane pri table-cell
+        margin-left: 2%; // ignorovane pri table-cell
+        height: 100%;
+        @include flex_children(0 1 26%);
+        @include box_shadow();
 
-    section#me_photo {
-        width: 100%;
-        padding-top: 100%;
-        position: relative;
+        section#me_photo {
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
 
-        picture {
-            position: absolute;
-            top: 1em;
-            left: 1em;
-            bottom:1em;
-            right:1em;
+            picture {
+                position: absolute;
+                top: 1em;
+                left: 1em;
+                bottom:1em;
+                right:1em;
 
-            img {
-                max-width: 100%;
-                max-height: 100%;
-            }
-        }
-    }
-
-    section#me_shortinfo {
-        width: 100%;
-        padding: 0 0.75em;
-        @include box_sizing();
-
-        div {
-            padding-bottom: 0.75em;
-
-            em, h2, a, span {
-                display:block;
-                padding-bottom: 0.125em;
-            }
-
-            em {
-                color: $half;
-            }
-
-            a {
-
-                &:hover {
-                    text-decoration: underline;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
                 }
             }
         }
 
-        div#me_name {
-            h2 { font-size: 1.5em; font-weight: bold; }
-            em { font-size: 1.125em; }
-        }
+        section#me_shortinfo {
+            width: 100%;
+            padding: 0 0.75em;
+            @include box_sizing();
 
-        div#me_location, div#me_work, div#me_interests {
-            padding-left: 2em;
-        }
+            div {
+                padding-bottom: 0.75em;
 
-        div#me_location {
-            em { font-size: 0.875em; }
-        }
+                em, h2, a, span {
+                    display:block;
+                    padding-bottom: 0.125em;
+                }
 
-        div#me_work {
-            em { font-size: 0.875em; }
-        }
+                em {
+                    color: $half;
+                }
 
-        div#me_interests {
-            span { padding-bottom: 0.375em; }
+                a {
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            div#me_name {
+                h2 { font-size: 1.5em; font-weight: bold; }
+                em { font-size: 1.125em; }
+            }
+
+            div#me_location, div#me_work, div#me_interests {
+                padding-left: 2em;
+            }
+
+            div#me_location {
+                em { font-size: 0.875em; }
+            }
+
+            div#me_work {
+                em { font-size: 0.875em; }
+            }
+
+            div#me_interests {
+                span { padding-bottom: 0.375em; }
+            }
         }
     }
 }

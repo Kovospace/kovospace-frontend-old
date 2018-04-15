@@ -1,96 +1,96 @@
 // parent - section.intro
 @import "variables";
 
-aside.where_to {
-    width: 65%; // pre IE srot
-    margin-right: 2%; // ignorovane pri table-cell
-    @include flex_children(1 1 68%);
+section#intro {
 
-    nav.intro {
+    aside#intro_where_to {
+        width: 65%; // pre IE srot
+        margin-right: 2%; // ignorovane pri table-cell
+        @include flex_children(1 1 68%);
 
-        ul {
+        nav {
 
-            li {
-                display:table;
-                border-spacing:0;
-                width:100%;
-                padding: 1.5em 0;
+            ul {
 
-                h2 {
-                    font-size: 5em;
-                    @include underline_on_hover($black);
-                    display: inline-block;
-                    margin-bottom: 0.125em; // 0.25em real
-
-                    a {
-
-                    }
-                }
-
-                div.menuitem_content {
+                li {
                     display:table;
                     border-spacing:0;
+                    width:100%;
+                    padding: 1.5em 0;
 
-                    a, div {
-                        vertical-align: middle;
+                    h2 {
+                        font-size: 5em;
+                        @include underline_on_hover($black);
+                        display: inline-block;
+                        margin-bottom: 0.125em; // 0.25em real
                     }
 
-                    a {
-                        @include background_transition($transition_time);
-                        background-color: $soft_black;
-                        color: $white;
+                    div.menuitem_content {
+                        display:table;
+                        border-spacing:0;
 
-                        &:hover {
-                            background-color: $pure_black;
-                            color: $pure_white;
+                        a, div {
+                            vertical-align: middle;
                         }
-                    }
-
-                    > a {
-                        display: table-cell;
-                        width: 1%;
-                        white-space: nowrap;
-                        padding: 0.25em 0.375em;
-                        border: 0.125em solid $white;
-                        border-right: 0.125em solid $white;
-
-                        h3 {
-                            font-size: 1.5em;
-                        }
-                    }
-
-                    div {
 
                         a {
-                            display: block;
-                            float: left;
+                            @include background_transition($transition_time);
+                            background-color: $soft_black;
+                            color: $white;
+
+                            &:hover {
+                                background-color: $pure_black;
+                                color: $pure_white;
+                            }
+                        }
+
+                        > a {
+                            display: table-cell;
+                            width: 1%;
+                            white-space: nowrap;
+                            padding: 0.25em 0.375em;
                             border: 0.125em solid $white;
-                            padding: 0.125em 0.25em;
-                            font-size:1.25em;
+                            border-right: 0.125em solid $white;
+
+                            h3 {
+                                font-size: 1.5em;
+                            }
+                        }
+
+                        div {
+
+                            a {
+                                display: block;
+                                float: left;
+                                border: 0.125em solid $white;
+                                padding: 0.125em 0.25em;
+                                font-size:1.25em;
+                            }
+                        }
+
+                        @include clearfix();
+                    }
+                }
+
+                li.rtl {
+                    text-align: right;
+
+                    div.menuitem_content {
+
+                        div {
+
+                            a {
+                                float:right;
+                            }
                         }
                     }
-
-                    @include clearfix();
                 }
-            }
 
-            li.rtl {
-                text-align: right;
-
-                div.menuitem_content {
-
-                    div {
-
-                        a {
-                            float:right;
-                        }
-                    }
+                li:first-child {
+                    padding-top:0;
                 }
-            }
-
-            li:first-child {
-                padding-top:0;
             }
         }
     }
 }
+
