@@ -20,7 +20,7 @@ article.basic_about_me {
     @include flex_children(0 1 26%);
     @include box_shadow();
 
-    div#me_photo {
+    section#me_photo {
         width: 100%;
         padding-top: 100%;
         position: relative;
@@ -39,11 +39,51 @@ article.basic_about_me {
         }
     }
 
-    div#me_shortinfo {
+    section#me_shortinfo {
         width: 100%;
         padding: 0 0.75em;
-        padding-bottom: 0.75em;
         @include box_sizing();
+
+        div {
+            padding-bottom: 0.75em;
+
+            em, h2, a, span {
+                display:block;
+                padding-bottom: 0.125em;
+            }
+
+            em {
+                color: $half;
+            }
+
+            a {
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        div#me_name {
+            h2 { font-size: 1.5em; font-weight: bold; }
+            em { font-size: 1.125em; }
+        }
+
+        div#me_location, div#me_work, div#me_interests {
+            padding-left: 2em;
+        }
+
+        div#me_location {
+            em { font-size: 0.875em; }
+        }
+
+        div#me_work {
+            em { font-size: 0.875em; }
+        }
+
+        div#me_interests {
+            span { padding-bottom: 0.375em; }
+        }
     }
 }
 

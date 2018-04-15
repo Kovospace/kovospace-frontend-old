@@ -13,94 +13,83 @@ aside.where_to {
             li {
                 display:table;
                 border-spacing:0;
+                width:100%;
+                padding: 1.5em 0;
 
-                div.menuicon, div.menuitem {
-                    display:table-cell;
-                    //display: inline-block;
-                }
+                h2 {
+                    font-size: 5em;
+                    @include underline_on_hover($black);
+                    display: inline-block;
+                    margin-bottom: 0.125em; // 0.25em real
 
-                div.menuicon {
-                    //float:left;
-                    position: relative;
-                    //display: inline-block;
-                    //display: block;
-                    height: 100%;
-                    //width: 100%;
+                    a {
 
-                    & > img {
-                        height: 100%;
-                    }
-                    //height:100%;
-                    //float:left;
-                    figure {
-                        position: absolute;
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        right: 0;
                     }
                 }
 
-                div.menuitem {
-                    //float:right;
+                div.menuitem_content {
+                    display:table;
+                    border-spacing:0;
 
-                    h2 {
-                        font-size: 2.5em;
-                        @include underline_on_hover($black);
-                        display: inline-block;
-                        margin-bottom: 0.125em; // 0.25em real
+                    a, div {
+                        vertical-align: middle;
+                    }
 
-                        a {
+                    a {
+                        @include background_transition($transition_time);
+                        background-color: $soft_black;
+                        color: $white;
 
+                        &:hover {
+                            background-color: $pure_black;
+                            color: $pure_white;
                         }
                     }
 
-                    div.menuitem_content {
-                        display:table;
-                        border-spacing:0;
+                    > a {
+                        display: table-cell;
+                        width: 1%;
+                        white-space: nowrap;
+                        padding: 0.25em 0.375em;
+                        border: 0.125em solid $white;
+                        border-right: 0.125em solid $white;
 
-                        a, div {
-                            vertical-align: middle;
+                        h3 {
+                            font-size: 1.5em;
                         }
+                    }
+
+                    div {
 
                         a {
-                            @include background_transition($transition_time);
-                            background-color: $soft_black;
-                            color: $white;
-
-                            &:hover {
-                                background-color: $pure_black;
-                                color: $pure_white;
-                            }
-                        }
-
-                        > a {
-                            display: table-cell;
-                            width: 1%;
-                            white-space: nowrap;
-                            padding: 0.25em 0.375em;
+                            display: block;
+                            float: left;
                             border: 0.125em solid $white;
-                            border-right: 0.125em solid $white;
-
-                            h3 {
-                                font-size: 1.5em;
-                            }
+                            padding: 0.125em 0.25em;
+                            font-size:1.25em;
                         }
+                    }
 
-                        div {
+                    @include clearfix();
+                }
+            }
 
-                            a {
-                                display: block;
-                                float: left;
-                                border: 0.125em solid $white;
-                                padding: 0.125em 0.25em;
-                                font-size:1.25em;
-                            }
+            li.rtl {
+                text-align: right;
+
+                div.menuitem_content {
+
+                    div {
+
+                        a {
+                            float:right;
                         }
-
-                        @include clearfix();
                     }
                 }
+            }
+
+            li:first-child {
+                padding-top:0;
             }
         }
     }

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   ### set up homepage
   root to: 'homepage#index'
 
@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
   get 'blog',
     to: "blogs#index",
-    as: "blogs"
+    as: "blog"
+
+  get 'portfolio',
+    to: "portfolios#index",
+    as: "portfolio"
 
 
 
