@@ -1,0 +1,25 @@
+main {
+    z-index: 0;
+
+    section {
+        z-index: 1;
+
+        article {
+            z-index: 2;
+        }
+
+        &#skills {
+
+            article {
+
+                figure {
+                    z-index: 3;
+
+                    h3, h6 {
+                        z-index:4;
+                    }
+                }
+            }
+        }
+    }
+}
