@@ -20,6 +20,12 @@ section#skills {
 
         figure {
             width: 100%;
+            &.size_1 { /* bezo zmien */ }
+            &.size_2 { width: 94%; font-size:0.94em; }
+            &.size_3 { width: 88%; font-size:0.88em; }
+            &.size_4 { width: 82%; font-size:0.82em; }
+            &.size_5 { width: 76%; font-size:0.76em; }
+
             height: 100%;
             position: relative;
 
@@ -45,12 +51,32 @@ section#skills {
 
             h3 {
                 font-size:2em;
+                //font-size: 100%;
                 min-width: 30%;
                 max-width: 40%;
                 height: 40%;
                 padding: 0.5em;
                 display: block;
                 text-align:center;
+                @include box_shadow_big();
+            }
+
+            h6 {
+                bottom:0;
+                right:0;
+                font-size: 2em;
+                //height: 2em;
+                height: 28%;
+                min-width: 21%;
+                font-weight: bold;
+
+                small {
+                    font-size:0.5em;
+                    font-weight: bold;
+                }
+            }
+
+            h3, h6 {
 
                 span {
                     display: table;
@@ -62,11 +88,6 @@ section#skills {
                         vertical-align:middle;
                     }
                 }
-            }
-
-            h6 {
-                bottom:0;
-                right:0;
             }
         }
 

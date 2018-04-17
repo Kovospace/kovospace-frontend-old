@@ -11,12 +11,10 @@
 }
 
 @mixin underline_on_hover($color) {
-
     & {
         text-decoration:none;
         position: relative;
     }
-
     &::after {
         @include background_transition($transition_time_fast);
         content: '';
@@ -28,11 +26,28 @@
         right:0;
         height: 0.0625em;
     }
-
     &:hover {
 
         &::after {
             background-color: $color;
         }
     }
+}
+
+@mixin box_shadow() {
+  $color: #444444;
+  -moz-box-shadow: 3px 3px 4px $color;
+  -webkit-box-shadow: 3px 3px 4px $color;
+  box-shadow: 3px 3px 4px $color;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
+}
+
+@mixin box_shadow_big() {
+  $color: #000;
+  -moz-box-shadow: 4px 3px 4px $color;
+  -webkit-box-shadow: 3px 0px 4px $color;
+  box-shadow: 4px 3px 4px $color;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }

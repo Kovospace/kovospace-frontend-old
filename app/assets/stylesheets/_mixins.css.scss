@@ -22,21 +22,11 @@
   flex: $arg;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
-
 @mixin box_sizing() {
   -webkit-box-sizing: border-box;   // okrem IE 6 a 7 vraj všetko
   -moz-box-sizing:    border-box;
   -o-box-sizing:      border-box;
   box-sizing:         border-box;
-}
-
-@mixin box_shadow() {
-  $color: #444444;
-  -moz-box-shadow: 3px 3px 4px $color;
-  -webkit-box-shadow: 3px 3px 4px $color;
-  box-shadow: 3px 3px 4px $color;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
 }
 
 @mixin scrollbars($color_fg:#333, $color_bg:#e8e8e8) {

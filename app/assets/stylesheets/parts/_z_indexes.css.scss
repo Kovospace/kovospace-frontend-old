@@ -13,11 +13,10 @@ main {
             article {
 
                 figure {
-                    z-index: 3;
 
-                    h3, h6 {
-                        z-index:4;
-                    }
+                    div { z-index: 4; }
+                    h3 { z-index:5; }
+                    h6 { z-index:3; }
                 }
             }
         }
