@@ -11,12 +11,58 @@ section#intro {
         nav {
 
             ul {
+                padding-left:3em;
 
                 li {
+                    background-color: $solar_panel_bg;
                     display:table;
-                    border-spacing:0;
+                    //border-spacing:0;
                     width:100%;
-                    padding: 1.5em 0;
+                    margin: 1.5em 0;
+                    //margin-left: 3em;
+                    position: relative;
+
+                    div.triangle {
+                        position:absolute;
+                        //position: relative;
+                        top:0;
+                        bottom:0;
+                        right:100%;
+                        width: 3.25em;
+                        overflow:hidden;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            //top:0;
+                            height: 51%;
+                            bottom: 50%;
+                            width:100%;
+                            background: linear-gradient(to bottom right, transparent 48%, $solar_panel_bg 49%);
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top:50%;
+                            height: 51%;
+                            //bottom: 0;
+                            width:100%;
+                            background: linear-gradient(to top right, transparent 48%, $solar_panel_bg 49%);
+                        }
+
+                      /* div {
+                            position: absolute;
+                            //background: linear-gradient(to bottom left, transparent 50%, red 51%),
+                               // linear-gradient(to top left, transparent 50%, red 51%);
+                            height:100%;
+                            //width: 200%;
+                            width: 100%;
+                            //right: 25%;
+                            background: linear-gradient(to bottom right, red 50%, transparent 51%)//,
+                                //linear-gradient(to bottom le, red 50%, transparent 51%);
+                        }*/
+                    }
 
                     h2 {
                         font-size: 5em;

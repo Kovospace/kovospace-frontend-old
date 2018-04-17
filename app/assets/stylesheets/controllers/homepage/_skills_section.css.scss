@@ -16,22 +16,21 @@ section#skills {
         display: inline-block;
         width: 30%;
         padding:1%;
-        text-align: left;
 
         figure {
             width: 100%;
             &.size_1 { /* bezo zmien */ }
-            &.size_2 { width: 94%; font-size:0.94em; }
-            &.size_3 { width: 88%; font-size:0.88em; }
-            &.size_4 { width: 82%; font-size:0.82em; }
-            &.size_5 { width: 76%; font-size:0.76em; }
+            &.size_2 { width: 93%; font-size:0.93em; }
+            &.size_3 { width: 86%; font-size:0.86em; }
+            &.size_4 { width: 79%; font-size:0.79em; }
+            &.size_5 { width: 72%; font-size:0.72em; }
 
             height: 100%;
             position: relative;
+            display: inline-block;
 
             h3, h6 {
                 position: absolute;
-                background-color: $soft_black;
                 color: $white;
                 display: inline-block;
                 padding:0.25em;
@@ -47,25 +46,26 @@ section#skills {
                 position: relative;
 
                 background-color: red;
+                @include box_shadow_planets($space_blue);
             }
 
             h3 {
+                background-color: $moonlight_black;
                 font-size:2em;
-                //font-size: 100%;
                 min-width: 30%;
                 max-width: 40%;
                 height: 40%;
                 padding: 0.5em;
                 display: block;
                 text-align:center;
-                @include box_shadow_big();
+                @include box_shadow_planets($black);
             }
 
             h6 {
+                background-color: $moonshadow_black;
                 bottom:0;
-                right:0;
+                left:77%;
                 font-size: 2em;
-                //height: 2em;
                 height: 28%;
                 min-width: 21%;
                 font-weight: bold;
@@ -91,7 +91,8 @@ section#skills {
             }
         }
 
-        div {
+        div.description {
+            padding-top: 1em;
             text-align: center;
         }
     }
