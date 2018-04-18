@@ -50,3 +50,20 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
+
+@mixin box_shadow_solar_panel($color, $size) {
+  -moz-box-shadow: inset 0px 0px 0px $size $color;
+  -webkit-box-shadow: inset 0px 0px 0px $size $color;
+  box-shadow: inset 0px 0px 0px $size $color;
+  //-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+  //filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+@mixin box_shadow_solar_panel_items($color, $size) {
+  -moz-box-shadow: 0px 0px 0px $size $color;
+  -webkit-box-shadow: 0px 0px 0px $size $color;
+  box-shadow: 0px 0px 0px $size $color;
+  //-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+  //filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+

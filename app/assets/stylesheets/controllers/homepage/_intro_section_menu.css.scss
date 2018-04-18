@@ -4,9 +4,9 @@
 section#intro {
 
     aside#intro_where_to {
-        width: 65%; // pre IE srot
-        margin-right: 2%; // ignorovane pri table-cell
-        @include flex_children(1 1 68%);
+        //width: 65%; // pre IE srot
+        //margin-right: 2%; // ignorovane pri table-cell
+        //@include flex_children(1 1 68%);
 
         nav {
 
@@ -14,31 +14,30 @@ section#intro {
                 padding-left:3em;
 
                 li {
+                    // solarny panel
+                    @include box_shadow_solar_panel($space_black, 0.125em);
                     background-color: $solar_panel_bg;
                     display:table;
-                    //border-spacing:0;
                     width:100%;
                     margin: 1.5em 0;
-                    //margin-left: 3em;
                     position: relative;
 
                     div.triangle {
                         position:absolute;
-                        //position: relative;
                         top:0;
                         bottom:0;
                         right:100%;
                         width: 3.25em;
                         overflow:hidden;
+                        margin: 0.125em 0;
 
                         &::before {
                             content: '';
                             position: absolute;
-                            //top:0;
                             height: 51%;
                             bottom: 50%;
                             width:100%;
-                            background: linear-gradient(to bottom right, transparent 48%, $solar_panel_bg 49%);
+                            background: linear-gradient(to bottom right, transparent 48%, $solar_panel_holder_bg 49%);
                         }
 
                         &::after {
@@ -46,29 +45,35 @@ section#intro {
                             position: absolute;
                             top:50%;
                             height: 51%;
-                            //bottom: 0;
                             width:100%;
-                            background: linear-gradient(to top right, transparent 48%, $solar_panel_bg 49%);
+                            background: linear-gradient(to top right, transparent 48%, $solar_panel_holder_bg 49%);
                         }
+                    }
 
-                      /* div {
-                            position: absolute;
-                            //background: linear-gradient(to bottom left, transparent 50%, red 51%),
-                               // linear-gradient(to top left, transparent 50%, red 51%);
-                            height:100%;
-                            //width: 200%;
-                            width: 100%;
-                            //right: 25%;
-                            background: linear-gradient(to bottom right, red 50%, transparent 51%)//,
-                                //linear-gradient(to bottom le, red 50%, transparent 51%);
-                        }*/
+                    a {
+                        // polozky v solarnom paneli
+                        @include background_transition($transition_time);
+                        background-color: $solar_panel_item_bg;
+                        color: $solar_panel_item_txt;
+
+                        &:hover {
+                            background-color: $solar_panel_item_bg_hover;
+                            color: $solar_panel_item_txt_hover;
+                        }
                     }
 
                     h2 {
+                        // nadpis
                         font-size: 5em;
-                        @include underline_on_hover($black);
-                        display: inline-block;
-                        margin-bottom: 0.125em; // 0.25em real
+                        display: table;
+
+                        a {
+                            @include box_shadow_solar_panel_items($space_black, 0.025em);
+                            padding: 0.125em;
+                            display: block;
+                            border: 0.025em solid $space_black;
+                            border-left: 0.050em solid $space_black;
+                        }
                     }
 
                     div.menuitem_content {
@@ -80,37 +85,29 @@ section#intro {
                         }
 
                         a {
-                            @include background_transition($transition_time);
-                            background-color: $soft_black;
-                            color: $white;
-
-                            &:hover {
-                                background-color: $pure_black;
-                                color: $pure_white;
-                            }
+                            @include box_shadow_solar_panel_items($space_black, 0.125em);
+                            border: 0.125em solid $space_black;
+                            font-size: 1.25em;
+                            padding: 0.25em 0.375em;
                         }
 
                         > a {
+                            //kategoria blogu
                             display: table-cell;
                             width: 1%;
                             white-space: nowrap;
-                            padding: 0.25em 0.375em;
-                            border: 0.125em solid $white;
-                            border-right: 0.125em solid $white;
+                            border-left: 0.25em solid $space_black;
 
                             h3 {
-                                font-size: 1.5em;
+                                font-weight: bold;
                             }
                         }
 
                         div {
-
+                            //jednotlive clanky, serialy
                             a {
                                 display: block;
                                 float: left;
-                                border: 0.125em solid $white;
-                                padding: 0.125em 0.25em;
-                                font-size:1.25em;
                             }
                         }
 
@@ -118,23 +115,9 @@ section#intro {
                     }
                 }
 
-                li.rtl {
-                    text-align: right;
-
-                    div.menuitem_content {
-
-                        div {
-
-                            a {
-                                float:right;
-                            }
-                        }
-                    }
-                }
-
-                li:first-child {
+                /*li:first-child {
                     padding-top:0;
-                }
+                }*/
             }
         }
     }

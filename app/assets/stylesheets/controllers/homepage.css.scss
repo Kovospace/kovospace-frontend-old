@@ -1,74 +1,86 @@
 @import "variables";
 
-header.homepage {
-    height: 1em;
-    width: 100%;
-    background-color: black;
-}
+body {
 
-section {
-
-    &#intro, &#skills {
-        min-height: 100%;
+    header.homepage {
+        height: 0em;
+        width: 100%;
+        background-color: black;
     }
 
-    &#news {
-        min-height: 50%;
-    }
+    main {
 
-    &#news, &#skills, &#contact {
-        padding: 2%;
+        section {
+            padding: 2%;
+            @include box_sizing();
 
-        h2 {
-            font-size:5em;
+            &#intro, &#skills {
+                min-height: 100%;
+            }
+
+            &#news {
+                min-height: 50%;
+            }
+
+            &#news, &#skills, &#contact {
+
+                h2 {
+                    font-size:5em;
+                }
+
+                article {
+                    padding-left:0.5em;
+                }
+            }
+
+            &#contact {
+                min-height: 5em;
+            }
+
+            &#intro {
+                background-color: $space_black;
+                color: $white;
+                // kvoli IE srotom
+                display:table;
+                width:100%;
+                //border-spacing: 1.5em;
+                //border-collapse: separate;
+                /* --- */
+                //padding-left: 0.25em;
+                //@include box_sizing();
+                //@include flex_container();
+
+                article#basic_about_me, aside#intro_where_to {
+                    display:table-cell; // pre srot IE
+                    vertical-align:middle;
+                    // ignorovane IE srotmi (table-cell)
+                    //margin:1%;
+                    //margin-top: 2%;
+                    //margin-bottom: 2%;
+                    /* --- */
+                }
+
+                article#basic_about_me {
+                    width: 20%;
+                }
+
+            }
+
+            &#skills {
+                color: $white;
+                background-color: $space_blue;
+            }
+
+            &#news {
+                background-color: $sky_blue;
+                color: $black;
+            }
+
+            &#contact {
+                background-color: $ground_beige;
+                color: $white;
+            }
         }
-
-        article {
-            padding-left:0.5em;
-        }
-    }
-
-    &#contact {
-        min-height: 5em;
-    }
-
-    &#intro {
-        background-color: $space_black;
-        color: $white;
-        // kvoli IE srotom
-        display:table;
-        width:100%;
-        //border-spacing: 1.5em;
-        //border-collapse: separate;
-        /* --- */
-        //padding-left: 0.25em;
-        @include box_sizing();
-        @include flex_container();
-
-        article#basic_about_me, aside#intro_where_to {
-            display:table-cell; // pre srot IE
-            // ignorovane IE srotmi (table-cell)
-            //margin:1%;
-            margin-top: 2%;
-            margin-bottom: 2%;
-            /* --- */
-        }
-
-    }
-
-    &#skills {
-        color: $white;
-        background-color: $space_blue;
-    }
-
-    &#news {
-        background-color: $sky_blue;
-        color: $black;
-    }
-
-    &#contact {
-        background-color: $ground_beige;
-        color: $white;
     }
 }
 
