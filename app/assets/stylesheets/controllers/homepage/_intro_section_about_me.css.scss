@@ -20,7 +20,7 @@ section#intro {
         section#me_photo {
             width: 64%;
             padding:0;
-            padding-top: 64%;
+            padding-bottom: 70%;
             position: relative;
             margin: 0 auto;
             margin-bottom:1em;
@@ -33,12 +33,15 @@ section#intro {
                 right:0;
                 border: 0.375em solid $rocket_parts_1_bg;
                 border-radius:50%;
+                overflow: hidden;
+                //text-align: center;
 
                 img {
-                    max-width: 100%;
-                    max-height: 100%;
+                    position: relative;
+                    right: 5%; // (6/64*100)/2
+                    height:100%;
                     border-radius:50%;
-                    display:block;
+                    display: block;
                 }
             }
         }
