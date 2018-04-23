@@ -10,8 +10,11 @@ html {
         height: 100vm;
         height: 100vmin;
 
+        font-size: 1.25em;
         font-size: 1.25vw;
-        font-size: 1.20vmax;
+        font-size: 1.2vmax;
+
+        -webkit-backface-visibility: hidden;
 
         main {
             height: 100%;

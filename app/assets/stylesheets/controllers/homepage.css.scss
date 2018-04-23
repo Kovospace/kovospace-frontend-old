@@ -11,7 +11,8 @@ body {
     main {
 
         section {
-            padding: 2%;
+            padding: 3%;
+
             @include box_sizing();
 
             &#intro, &#skills {
@@ -43,6 +44,8 @@ body {
                 // kvoli IE srotom
                 display:table;
                 width:100%;
+                perspective: 1000px;
+                padding-left: 4%;
                 //border-spacing: 1.5em;
                 //border-collapse: separate;
                 /* --- */
@@ -53,6 +56,7 @@ body {
                 article#basic_about_me, aside#intro_where_to {
                     display:table-cell; // pre srot IE
                     vertical-align:middle;
+                    transform: rotateX(10deg);
                     // ignorovane IE srotmi (table-cell)
                     //margin:1%;
                     //margin-top: 2%;
