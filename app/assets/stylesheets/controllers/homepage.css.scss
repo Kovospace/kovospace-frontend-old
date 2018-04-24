@@ -3,7 +3,7 @@
 body {
 
     header.homepage {
-        height: 0em;
+        height: 25%;
         width: 100%;
         background-color: black;
     }
@@ -41,31 +41,41 @@ body {
             &#intro {
                 background-color: $space_black;
                 color: $white;
-                // kvoli IE srotom
-                display:table;
-                width:100%;
-                perspective: 1000px;
-                padding-left: 4%;
-                //border-spacing: 1.5em;
-                //border-collapse: separate;
-                /* --- */
-                //padding-left: 0.25em;
-                //@include box_sizing();
-                //@include flex_container();
 
-                article#basic_about_me, aside#intro_where_to {
-                    display:table-cell; // pre srot IE
-                    vertical-align:middle;
-                    transform: rotateX(10deg);
-                    // ignorovane IE srotmi (table-cell)
-                    //margin:1%;
-                    //margin-top: 2%;
-                    //margin-bottom: 2%;
-                    /* --- */
+                article#short_about_me {
+                    padding-bottom: 3em;
                 }
 
-                article#basic_about_me {
-                    width: 20%;
+                article#menu {
+                    display:table;      // kvoli IE srotom
+                    width:100%;
+                    padding-left:2em;
+                    @include box_sizing();
+                    //padding-bottom: 2%;
+                    //perspective: 1000px;
+                    //padding-left: 4%;
+                    //border-spacing: 1.5em;
+                    //border-collapse: separate;
+                    /* --- */
+                    //padding-left: 0.25em;
+                    //@include box_sizing();
+                    //@include flex_container();
+
+                    div#ship_body, div#ship_solar_panels {
+                        display:table-cell; // pre srot IE
+                        vertical-align:middle;
+                        //transform: rotateX(10deg);
+                        // ignorovane IE srotmi (table-cell)
+                        //margin:1%;
+                        //margin-top: 2%;
+                        //margin-bottom: 2%;
+                        /* --- */
+                    }
+
+                    div#ship_body {
+                        width: 20%;
+                        vertical-align: top;
+                    }
                 }
 
             }

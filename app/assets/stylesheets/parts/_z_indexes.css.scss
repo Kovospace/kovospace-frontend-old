@@ -8,6 +8,25 @@ main {
             z-index: 2;
         }
 
+        &#intro {
+
+            /*article#short_about_me {
+
+                div#sputnik {
+                    z-index: 4;
+
+                    span:nth-child(4) {
+                        z-index:3;
+                    }
+                }
+            }*/
+
+            article#menu {
+
+                div#ship_body { z-index: 3; }
+            }
+        }
+
         &#skills {
 
             article {
@@ -15,8 +34,8 @@ main {
                 figure {
 
                     div { z-index: 4; }
-                    h3 { z-index:5; }
-                    h6 { z-index:3; }
+                    //h3 { z-index:5; }
+                    h6 { z-index:5; }
                 }
             }
         }

@@ -43,13 +43,29 @@
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#444444');
 }
 
-@mixin box_shadow_planets($color) {
-  -moz-box-shadow: 4px 3px 4px $color;
-  -webkit-box-shadow: 3px 0px 4px $color;
-  box-shadow: 4px 3px 4px $color;
+@mixin box_shadow_planet($color) {
+  -moz-box-shadow: inset -1.5em -1.5em 2em rgba(0,0,0,.5);
+  -webkit-box-shadow: inset -1.5em -1.5em 2em rgba(0,0,0,.5);
+  box-shadow: inset -1.5em -1.5em 2em rgba(0,0,0,.5);
+  //-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+  //filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+@mixin box_shadow_moon($color) {
+  -moz-box-shadow: 4px 3px 4px $color, inset -1.5em -1.5em 2em rgba(0,0,0,.5);
+  -webkit-box-shadow: 3px 0px 4px $color, inset -1.5em -1.5em 2em rgba(0,0,0,.5);
+  box-shadow: 4px 3px 4px $color, inset -1.5em -1.5em 2em rgba(0,0,0,.5);
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
+
+/*@mixin box_shadow_planets_inset_only($color) {
+  -moz-box-shadow: inset -1.5em -1.5em 2em rgba(0,0,0,.5);
+  -webkit-box-shadow: inset -1.5em -1.5em 2em rgba(0,0,0,.5);
+  box-shadow: inset -1.5em -1.5em 2em rgba(0,0,0,.5);
+  //-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+  //filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}/*/
 
 @mixin box_shadow_solar_panel($color, $size) {
   -moz-box-shadow: inset 0px 0px 0px $size $color;

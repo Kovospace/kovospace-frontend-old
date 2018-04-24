@@ -31,9 +31,9 @@ section#skills {
 
             h3, h6 {
                 position: absolute;
-                color: $white;
-                display: inline-block;
-                padding:0.25em;
+                //color: $white;
+                //display: inline-block;
+                //padding:0.25em;
                 border-radius: 50%;
             }
 
@@ -46,10 +46,10 @@ section#skills {
                 position: relative;
 
                 background-color: red;
-                @include box_shadow_planets($space_blue);
+                @include box_shadow_planet($space_blue);
             }
 
-            h3 {
+            /*h3 {
                 background-color: $moonlight_black;
                 font-size:2em;
                 min-width: 30%;
@@ -59,24 +59,66 @@ section#skills {
                 display: block;
                 text-align:center;
                 @include box_shadow_planets($black);
-            }
+            }*/
 
             h6 {
-                background-color: $moonshadow_black;
-                bottom:0;
-                left:77%;
-                font-size: 2em;
-                height: 28%;
-                min-width: 21%;
-                font-weight: bold;
+                //background-color: $moonshadow_black;
+                @include box_shadow_moon($space_blue);
+                //bottom:0;
+                //left:77%;
+                //top: 10%;
+                top: 5%;
+                font-size: 1em;
+                /*height: 28%;
+                min-width: 21%;*/
+                //font-weight: bold;
 
-                small {
+                /*small {
                     font-size:0.5em;
                     font-weight: bold;
+                }*/
+                &:nth-child(1) {
+                    background-color: $moon1_bg;
+                    left:0;
+                    top: 5%;
+                    height: 21%;
+                    width: 15.75%;
+                }
+
+                &:nth-child(2) {
+                    background-color: $moon2_bg;
+                    top:2.5%;
+                    left:20%;
+                    height: 28%;
+                    width: 21%;
+                }
+
+                &:nth-child(3) {
+                    background-color: $moon2_bg;
+                    top:2.5%;
+                    left:20%;
+                    height: 28%;
+                    width: 21%;
+                }
+
+                &:nth-child(4) {
+                    background-color: $moon2_bg;
+                    top:2.5%;
+                    left:20%;
+                    height: 28%;
+                    width: 21%;
+                }
+
+                &:nth-child(5) {
+                    background-color: $moon2_bg;
+                    top:2.5%;
+                    left:20%;
+                    height: 28%;
+                    width: 21%;
                 }
             }
 
-            h3, h6 {
+            /*h3, h6 {
 
                 span {
                     display: table;
@@ -88,7 +130,7 @@ section#skills {
                         vertical-align:middle;
                     }
                 }
-            }
+            }*/
         }
 
         div.description {

@@ -1,0 +1,128 @@
+ // parent - section.intro
+@import "variables";
+
+section#intro {
+
+    article#menu {
+
+        div#ship_body {
+
+            //outline: 1px solid transparent;
+            position: relative;
+            border-top: 5em solid $rocket_nose_bg;
+            border-top-left-radius: 100em;
+            border-top-right-radius: 100em;
+            position: relative;
+            background-color: $rocket_bg;
+
+            //width: 35%; // pre IE srot
+            //min-width:16em; // zobrazene pri table-cell
+            //max-width:24em; // ignorovane pri table-cell
+            //margin-left: 2%; // ignorovane pri table-cell
+            height: 100%;
+            //@include flex_children(0 1 26%);
+            //@include box_shadow();
+            border-bottom: 2.5em solid black;
+
+            &::after {
+                content: '';
+                position: absolute;
+                display:block;
+                left:0;
+                right:0;
+                bottom:-2em;
+                height: 4em;
+                width:100%;
+                background-color: $rocket_parts_1_bg;
+                border-radius: 50%;
+            }
+
+            section#me_photo {
+                border-top: 3em solid transparent;
+                margin-top: 10%;
+                width: 64%;
+                padding:0;
+                padding-bottom: 70%;
+                position: relative;
+                margin: 0 auto;
+                margin-bottom:1em;
+
+                picture {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom:0;
+                    right:0;
+                    border: 0.375em solid $rocket_parts_1_bg;
+                    border-radius:50%;
+                    overflow: hidden;
+
+                    img {
+                        position: relative;
+                        right: 5%; // (6/64*100)/2
+                        height:100%;
+                        border-radius:50%;
+                        display: block;
+                    }
+                }
+            }
+            /*
+            section#me_shortinfo {
+                width: 100%;
+                padding: 0 0.75em;
+                text-align: center;
+                @include box_sizing();
+
+                div {
+                    background-color: $rocket_parts_1_bg;
+                    display:inline-block;
+                    padding: 0.25em;
+                    border-top: 1em solid $rocket_parts_1_bg;
+                    border-top-left-radius: 100em;
+                    border-top-right-radius: 100em;
+
+                    em, h2, a, span {
+                        display:inline-block;
+                        padding-bottom: 0.125em;
+                    }
+
+                    em {
+                        color: $half;
+                    }
+
+                    a {
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                div#me_name {
+                    h2 { font-size: 1.5em; font-weight: bold; }
+                    em { font-size: 1.125em; }
+                }
+
+                div#me_location, div#me_work, div#me_interests {
+
+                }
+
+                div#me_location {
+                    em { font-size: 0.875em; }
+                }
+
+                div#me_work {
+                    em { font-size: 0.875em; }
+                }
+
+                div#me_interests {
+                    span { padding-bottom: 0.375em; }
+                }
+            }
+            */
+        }
+
+    }
+}
+
+
