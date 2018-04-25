@@ -4,52 +4,13 @@
 section#intro {
 
     article#short_about_me {
+        min-height: 8em;
+        position: relative;
+        @include sputnik(80%, 0em, 8em, 45deg);
 
-        div#sputnik {
-            position: relative;
-            width:10%;
-            padding-bottom: 10%;
-            background-color: red;
-            border-radius: 50%;
-            //border-top-left-color: green;
-            //border-top: 50% solid green;
-            transform: rotate(45deg);
-
-            left:5%;
-            @include box_shadow_planet($space_black);
-
-            span {
-                position: absolute;
-                right: 50%;
-                height: 0.25em;
-                width:200%;
-                background-color: green;
-                display: block;
-                transform-origin: right;
-
-                &:nth-child(1) {
-                    transform: rotate(20deg);
-                }
-
-                &:nth-child(2) {
-                    top: 50%;
-                    right: 55%;
-                    transform: rotate(-2deg);
-                }
-
-                &:nth-child(3) {
-                   bottom:0;
-                   transform: rotate(-20deg);
-                }
-
-                &:nth-child(4) {
-                    transform-origin: 150%;
-                    top:50%;
-                    transform: rotate(2deg);
-                    width: 150%;
-                    right:100%;
-                }
-            }
+        div#about_me_short {
+            width:80%;
+            min-height: 4em;
         }
     }
 }

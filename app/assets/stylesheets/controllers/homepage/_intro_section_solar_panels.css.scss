@@ -17,7 +17,7 @@ section#intro {
 
                     li {
                         // solarny panel
-                        transform: skew(-5deg);
+                        @include skew_solar_panel(5deg);
                         @include box_shadow_solar_panel($space_black, 0.125em);
                         background-color: $solar_panel_bg;
                         display:table;

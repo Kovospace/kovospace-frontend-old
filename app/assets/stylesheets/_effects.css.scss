@@ -83,3 +83,10 @@
   //filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
 
+@mixin skew_solar_panel($angle) {
+    //-webkit-backface-visibility: hidden; // praveze to dojebe
+    //backface-visibility: hidden;
+    //text-rendering: geometricPrecision;
+    transform: skew($angle);
+}
+

@@ -1,0 +1,79 @@
+
+@mixin sputnik($x, $y, $size, $rotate) {
+    // $x, $y - lubovolne jednotky
+    // $size -  EM
+    // $rotate - uhol
+
+    $color: #FFCF40;
+    $color2: #9FBCBD;
+    $shadow_offset: ($size / 5);
+    $shadow_disperse: ($shadow_offset / 0.75);
+
+    div#sputnik {
+        //telo
+        position: relative;
+        width: $size;
+        padding-bottom: $size;
+        left: $x;
+        bottom: $y;
+        background-color: $color;
+        border-radius: 50%;
+        transform: rotate($rotate);
+        font-size: 1em;
+        -moz-box-shadow: inset (-$shadow_offset) (-$shadow_offset) $shadow_disperse rgba(0,0,0,.5);
+        -webkit-box-shadow: inset (-$shadow_offset) (-$shadow_offset) $shadow_disperse rgba(0,0,0,.5);
+        box-shadow: inset (-$shadow_offset) (-$shadow_offset) $shadow_disperse rgba(0,0,0,.5);
+
+        //background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+
+        //background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+            transform: translateX(-25%) translateY(0%) skewX(-20deg);
+            filter: blur(($size / 16));
+        }
+
+        span {
+            // anteny
+            position: absolute;
+            height: 200%;
+            width: 1.5%;
+            background-color: $color2;
+            display: block;
+            transform-origin: bottom;
+            bottom: 50%;
+
+            &:nth-child(1) {
+                transform: rotate(-20deg);
+            }
+
+            &:nth-child(2) {
+                left: 50%;
+                transform: rotate(-2deg);
+            }
+
+            &:nth-child(3) {
+               right: 0;
+               transform: rotate(20deg);
+            }
+
+            &:nth-child(4) {
+                transform-origin: 150%;
+                bottom:100%;
+                transform: rotate(2deg);
+                height: 150%;
+                left:50%;
+            }
+        }
+    }
+
+}
