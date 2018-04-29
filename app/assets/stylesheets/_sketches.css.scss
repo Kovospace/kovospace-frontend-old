@@ -77,9 +77,8 @@
     // pouzit EM na zmenu velkosti
     width:1em;
     height:1em;
-    //font-size:1em;
     border-radius:50%;
-    background-color: $bg_color;
+    //background-color: $bg_color;
     display: inline-block;
     vertical-align:middle;
     margin: 0.125em;
@@ -96,19 +95,19 @@
 @mixin info_icon($bg_color, $fake_trans_color) {
 
     &::before, &::after {
-        background-color: $fake_trans_color;
+        background-color: $bg_color;
         width:20%;
         left:40%;
         right: 40%;
     }
 
     &::before {
-        bottom:0;
-        height: 50%;
+        bottom: 10%;
+        height: 45%;
     }
 
     &::after {
-        bottom: 56%;
+        bottom: 65%;
         height: 20%;
     }
 }
@@ -116,18 +115,16 @@
 @mixin home_icon($bg_color, $fake_trans_color) {
 
     &::before, &::after {
-        background-color: $bg_color;
+        background-color: $fake_trans_color;
     }
 
     &::before {
         width: 0.15em;
-        height: 0.175em;
-        border:0.2em solid $fake_trans_color;
-        border-top-width:0.15em;
-        border-bottom-width:0.25em;
-        left:0.225em;
-        right:0.225em;
-        bottom:0;
+        height: 0.15em;
+        border: 0.175em solid $bg_color;
+        left:0.25em;
+        right:0.25em;
+        bottom:0.2em;
     }
 
     &::after {
@@ -136,7 +133,7 @@
         left:0.10em;
         right:0.10em;
         bottom:0.55em;
-        border-bottom: 0.3em solid $fake_trans_color;
+        border-bottom: 0.3em solid $bg_color;
         border-left: 0.4em solid transparent;
         border-right:0.4em solid transparent;
         border-top: 0em solid transparent;
@@ -146,7 +143,7 @@
 @mixin work_icon($bg_color, $fake_trans_color) {
 
     &::before {
-        background-color: $fake_trans_color;
+        background-color: $bg_color;
         width:0.6em;
         height:0.4em;
         left:0.2em;
@@ -155,7 +152,7 @@
     }
 
     &::after {
-        border: 0.1em solid $fake_trans_color;
+        border: 0.1em solid $bg_color;
         background-color: transparent;
         width:0.15em;
         height:0.2em;
@@ -167,32 +164,29 @@
 
 @mixin heart_icon($bg_color, $fake_trans_color) {
 
-    /*width: 0.5em;
-    height:0.5em;
-    background-color: $fake_trans_color;
-    transform-origin: bottom;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);*/
-
-
     &::before, &::after {
-        background-color: $fake_trans_color;
-
+        background-color: $bg_color;
+        width:30%;
+        height:60%;
+        bottom:20%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
     }
 
     &::before {
-
+        left:21%;
+        transform-origin: bottom right;
+        transform: rotate(45deg);
+        border-bottom-left-radius: 50%;
     }
 
     &::after {
-
+        right:21%;
+        transform-origin: bottom left;
+        transform: rotate(-45deg);
+        border-bottom-right-radius: 50%;
     }
 }
-
-//https://jsfiddle.net/L5uug2mf/5/
 
 
 

@@ -18,8 +18,7 @@ section#intro {
             vertical-align:middle;
             min-height: 4em;
             width:80%;
-            //float: left;
-            padding: 0 3em;
+            padding: 0 4em;
             text-align:right;
 
             p {
@@ -28,16 +27,21 @@ section#intro {
                 position: relative;
                 padding: 0 0.25em;
                 padding-top: 1.5em;
-                padding-bottom: 0.25em;
+                padding-bottom: 0.375em;
                 padding-right: 0.5em;
                 background-color: $terminal_bg;
                 color: $terminal_green;
 
-                a {
-                    font-style: italic;
+                span {
+                    vertical-align:middle;
+                    display: inline-block;
 
-                    &:hover {
-                        text-decoration: underline;
+                    a {
+                        font-style: italic;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
 
@@ -49,14 +53,9 @@ section#intro {
                     color: $white;
                     width:100%;
                     display:block;
-                    //font-size: 1em;
-                    //line-height:1.25em;
-
                     vertical-align: bottom;
                     padding: 0.125em 0.25em;
                     @include box_sizing();
-                    //border-left: 0.25em solid $bord;
-                    //border-right: 0.25em solid $bord;
                 }
 
                 span.icon {
@@ -82,15 +81,8 @@ section#intro {
             }
         }
 
-        //div {
-            //width:80%;
-            //min-height: 4em;
-        //}
-
         figure {
             width:20%;
-            //float: right;
-            //float: left;
             position: relative;
 
             & > span {
@@ -98,18 +90,10 @@ section#intro {
                 font-size:5em;
                 font-weight: bold;
                 position:absolute;
-                //bottom: 100%;
                 transform: rotate(-45deg);
                 right: 100%;
                 bottom: 80%;
-
-
-
             }
-
-            /*div.sputnik {
-                position: absolute;
-            }*/
         }
     }
 }
