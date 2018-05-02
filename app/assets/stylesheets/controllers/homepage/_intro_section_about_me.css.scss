@@ -4,9 +4,6 @@
 section#intro {
 
     article#short_about_me {
-        display:table;
-        width:100%;
-        min-height: 8em;
         position: relative;
         @include sputnik(0, 0, 8em, 45deg);
 

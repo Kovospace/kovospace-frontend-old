@@ -42,40 +42,65 @@ body {
             &#intro {
                 background-color: $space_black;
                 color: $white;
+                display: block;
+                display:flex;
+                flex-direction: column;
 
                 article#short_about_me {
-                    padding-bottom: 3em;
+                    display:table; //IE
+                    flex: 0 0 auto;
+                    width:100%;
+                    min-height: 8em;
                 }
 
                 article#menu {
-                    display:table;      // kvoli IE srotom
+                    height: 100%;
                     width:100%;
                     padding-left:2em;
                     @include box_sizing();
-                    //padding-bottom: 2%;
-                    //perspective: 1000px;
-                    //padding-left: 4%;
-                    //border-spacing: 1.5em;
-                    //border-collapse: separate;
-                    /* --- */
-                    //padding-left: 0.25em;
-                    //@include box_sizing();
-                    //@include flex_container();
+                    display:table;      // kvoli IE srotom
+                    display:flex;
+                    flex-direction: row;
+                    flex: 1 0 100%;
 
                     div#ship_body, div#ship_solar_panels {
-                        display:table-cell; // pre srot IE
-                        vertical-align:middle;
-                        //transform: rotateX(10deg);
-                        // ignorovane IE srotmi (table-cell)
-                        //margin:1%;
-                        //margin-top: 2%;
-                        //margin-bottom: 2%;
-                        /* --- */
+                        display:table-cell;     // pre srot IE
+                        vertical-align:middle;  // pre srot IE
+                        display: flex;
+                        flex-direction: column;
                     }
 
                     div#ship_body {
                         width: 20%;
                         vertical-align: top;
+                        flex: 0 0 20%;
+                        justify-content: center;
+                    }
+
+                    div#ship_solar_panels {
+                        flex: 1 0 80%;
+                        display: flex;
+                        flex-direction: column;
+
+                        nav {
+                            flex: 1 0 auto;
+                            display: flex;
+                            flex-direction: column;
+
+                            ul {
+                                padding-left:5%;
+                                flex: 1 0 auto;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+
+                                li {
+                                    display:table; // IE srot fallback
+                                    width:100%;
+                                    margin: 3% 0;
+                                }
+                            }
+                        }
                     }
                 }
 

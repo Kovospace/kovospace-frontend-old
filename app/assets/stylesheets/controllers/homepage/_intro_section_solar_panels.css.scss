@@ -13,16 +13,12 @@ section#intro {
             nav {
 
                 ul {
-                    padding-left:5%;
 
                     li {
                         // solarny panel
                         @include skew_solar_panel(5deg);
                         @include box_shadow_solar_panel($space_black, 0.125em);
                         background-color: $solar_panel_bg;
-                        display:table;
-                        width:100%;
-                        margin: 1.5em 0;
                         position: relative;
 
                         div.triangle {
