@@ -24,18 +24,9 @@ section#skills {
             &.size_3 { width: 86%; font-size:0.86em; }
             &.size_4 { width: 79%; font-size:0.79em; }
             &.size_5 { width: 72%; font-size:0.72em; }
-
             height: 100%;
             position: relative;
             display: inline-block;
-
-            h3, h6 {
-                position: absolute;
-                //color: $white;
-                //display: inline-block;
-                //padding:0.25em;
-                border-radius: 50%;
-            }
 
             div {
                 width: 75%;
@@ -46,91 +37,41 @@ section#skills {
                 position: relative;
 
                 background-color: red;
-                @include box_shadow_planet($space_blue);
             }
 
-            /*h3 {
-                background-color: $moonlight_black;
-                font-size:2em;
-                min-width: 30%;
-                max-width: 40%;
-                height: 40%;
-                padding: 0.5em;
-                display: block;
-                text-align:center;
-                @include box_shadow_planets($black);
-            }*/
+            span {
+                position: absolute;
+                top:25%;
+                left:0;
+                width:100%;
+                text-align: left;
 
-            h6 {
-                //background-color: $moonshadow_black;
-                @include box_shadow_moon($space_blue);
-                //bottom:0;
-                //left:77%;
-                //top: 10%;
-                top: 5%;
-                font-size: 1em;
-                /*height: 28%;
-                min-width: 21%;*/
-                //font-weight: bold;
+                abbr {
+                    border-radius:50%;
+                    display: inline-block;
+                    width:1em;
+                    padding-bottom:1em;
+                    vertical-align:middle;
+                    margin: 0 2%;
+                    @include box_shadow_moon($space_lightblack);
 
-                /*small {
-                    font-size:0.5em;
-                    font-weight: bold;
-                }*/
-                &:nth-child(1) {
-                    background-color: $moon1_bg;
-                    left:0;
-                    top: 5%;
-                    height: 21%;
-                    width: 15.75%;
-                }
+                    &.active {
+                        @include moon(22%, $moon_active);
+                    }
 
-                &:nth-child(2) {
-                    background-color: $moon2_bg;
-                    top:2.5%;
-                    left:20%;
-                    height: 28%;
-                    width: 21%;
-                }
+                    &.planned {
+                        @include moon(20%, $moon_planned);
+                    }
 
-                &:nth-child(3) {
-                    background-color: $moon2_bg;
-                    top:2.5%;
-                    left:20%;
-                    height: 28%;
-                    width: 21%;
-                }
+                    &.paused {
+                        @include moon(15%, $moon_paused);
+                    }
 
-                &:nth-child(4) {
-                    background-color: $moon2_bg;
-                    top:2.5%;
-                    left:20%;
-                    height: 28%;
-                    width: 21%;
-                }
-
-                &:nth-child(5) {
-                    background-color: $moon2_bg;
-                    top:2.5%;
-                    left:20%;
-                    height: 28%;
-                    width: 21%;
-                }
-            }
-
-            /*h3, h6 {
-
-                span {
-                    display: table;
-                    height:100%;
-                    width:100%;
-
-                    span {
-                        display: table-cell;
-                        vertical-align:middle;
+                    &.abandoned {
+                        @include moon(13%, $moon_abandoned);
                     }
                 }
-            }*/
+            }
         }
 
         div.description {

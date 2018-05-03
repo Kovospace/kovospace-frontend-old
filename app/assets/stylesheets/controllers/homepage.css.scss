@@ -3,6 +3,7 @@
 body {
 
     header.homepage {
+        background-color: $space_black;
         height: 25%;
         width: 100%;
         background-color: black;
@@ -20,7 +21,7 @@ body {
                 min-height: 100%;
             }
 
-            &#news {
+            &#news, &#skills_description {
                 min-height: 50%;
             }
 
@@ -40,7 +41,7 @@ body {
             }
 
             &#intro {
-                background-color: $space_black;
+                background-color: $space_softblack;
                 color: $white;
                 display: block;
                 display:flex;
@@ -51,6 +52,7 @@ body {
                     flex: 0 0 auto;
                     width:100%;
                     min-height: 8em;
+                    //transform: rotateX(50deg);
                 }
 
                 article#menu {
@@ -107,6 +109,11 @@ body {
             }
 
             &#skills {
+                color: $white;
+                background-color: $space_lightblack;
+            }
+
+            &#skills_description {
                 color: $white;
                 background-color: $space_blue;
             }

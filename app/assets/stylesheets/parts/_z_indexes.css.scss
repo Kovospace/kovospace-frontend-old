@@ -35,7 +35,8 @@ main {
 
                     div { z-index: 4; }
                     //h3 { z-index:5; }
-                    h6 { z-index:5; }
+                    span { z-index:5; }
+                    span > abbr { z-index:6; }
                 }
             }
         }

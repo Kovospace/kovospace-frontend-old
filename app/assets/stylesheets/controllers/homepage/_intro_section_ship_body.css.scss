@@ -7,35 +7,16 @@ section#intro {
 
         div#ship_body {
             position: relative;
-            border-top: 5em solid $rocket_nose_bg;
-            border-top-left-radius: 100em;
-            border-top-right-radius: 100em;
+            border-radius: 1000em;
             position: relative;
             background-color: $rocket_bg;
-            border-bottom: 2.5em solid black;
-
-            &::after {
-                content: '';
-                position: absolute;
-                display:block;
-                left:0;
-                right:0;
-                bottom:-2em;
-                height: 4em;
-                width:100%;
-                background-color: $rocket_parts_1_bg;
-                border-radius: 50%;
-            }
 
             section#me_photo {
-                border-top: 3em solid transparent;
-                margin-top: 10%;
-                width: 64%;
+                width: 72%;
                 padding:0;
-                padding-bottom: 70%;
+                padding-bottom: 72%;
                 position: relative;
-                margin: 0 auto;
-                margin-bottom:3em;
+                margin: 3em auto;
 
                 picture {
                     position: absolute;
@@ -43,13 +24,12 @@ section#intro {
                     left: 0;
                     bottom:0;
                     right:0;
-                    border: 0.375em solid $rocket_parts_1_bg;
+                    border: 1em solid $rocket_parts_1_bg;
                     border-radius:50%;
                     overflow: hidden;
 
                     img {
                         position: relative;
-                        right: 5%; // (6/64*100)/2
                         height:100%;
                         border-radius:50%;
                         display: block;
