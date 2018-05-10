@@ -1,0 +1,20 @@
+@import "variables";
+
+section#skills_description {
+
+    article {
+        display: table;
+        width:100%;
+
+        & > div {
+            display: table-cell;
+        }
+
+        div#voyager {
+            width: 30%;
+            vertical-align: middle;
+
+            @include voyager(100%, 60deg);
+        }
+    }
+}

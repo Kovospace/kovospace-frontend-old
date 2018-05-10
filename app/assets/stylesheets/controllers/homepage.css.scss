@@ -21,7 +21,7 @@ body {
                 min-height: 100%;
             }
 
-            &#news, &#skills_description {
+            &#news {
                 min-height: 50%;
             }
 
@@ -111,6 +111,30 @@ body {
             &#skills {
                 color: $white;
                 background-color: $space_lightblack;
+                display: block;
+                text-align:center;
+                vertical-align: middle;
+                display:flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items:center;
+
+                h2 {
+                    text-align: left;
+                    padding-bottom: 0.25em;
+                    flex: 0 0 100%;
+                    align-self: flex-start;
+                }
+
+                article {
+                    height: 100%;
+                    vertical-align: middle;
+                    display: inline-block;
+                    width: 30%;
+                    padding:2% 1%;
+                    flex: 0 1 30%;
+                }
             }
 
             &#skills_description {

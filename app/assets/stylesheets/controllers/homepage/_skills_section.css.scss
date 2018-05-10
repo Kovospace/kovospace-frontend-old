@@ -1,21 +1,8 @@
 @import "variables";
 
 section#skills {
-    text-align:center;
-    vertical-align: middle;
-
-    h2 {
-        text-align: left;
-        padding-bottom: 0.25em;
-    }
 
     article {
-        height: 100%;
-        padding:0;
-        vertical-align: middle;
-        display: inline-block;
-        width: 30%;
-        padding:1%;
 
         figure {
             width: 100%;
@@ -35,7 +22,6 @@ section#skills {
                 margin: 0 auto;
                 border-radius:51%;
                 position: relative;
-
                 background-color: red;
             }
 
