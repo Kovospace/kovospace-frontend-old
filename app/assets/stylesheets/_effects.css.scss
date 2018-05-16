@@ -34,13 +34,13 @@
     }
 }
 
-@mixin box_shadow_moon($color) {
+/*@mixin box_shadow_moon($color) {
   -moz-box-shadow: 4px 4px 0px $color;
   -webkit-box-shadow: 4px 4px 0px $color;
   box-shadow: 4px 4px 0px $color;
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
   filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
-}
+}*/
 
 @mixin box_shadow_solar_panel($color, $size) {
   -moz-box-shadow: inset 0px 0px 0px $size $color;

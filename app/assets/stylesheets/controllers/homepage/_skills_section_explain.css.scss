@@ -16,5 +16,22 @@ section#skills_description {
 
             @include voyager(100%, 60deg);
         }
+
+        div#skills_description_message {
+            vertical-align: middle;
+
+            div.terminal {
+                text-align: left;
+                padding: 0 3em;
+
+                span.planet_desc {
+                    width: 4em;
+                    height: 4em;
+                    border-radius:50%;
+                    //padding:0.5em;
+                    margin:0.5em;
+                }
+            }
+        }
     }
 }

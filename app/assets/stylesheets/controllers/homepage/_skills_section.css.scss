@@ -24,45 +24,32 @@ section#skills {
                 position: relative;
                 background-color: red;
             }
-
-            span {
-                position: absolute;
-                top:25%;
-                left:0;
-                width:100%;
-                text-align: left;
-
-                abbr {
-                    border-radius:50%;
-                    display: inline-block;
-                    width:1em;
-                    padding-bottom:1em;
-                    vertical-align:middle;
-                    margin: 0 2%;
-                    @include box_shadow_moon($space_lightblack);
-
-                    &.active {
-                        @include moon(22%, $moon_active);
-                    }
-
-                    &.planned {
-                        @include moon(20%, $moon_planned);
-                    }
-
-                    &.paused {
-                        @include moon(15%, $moon_paused);
-                    }
-
-                    &.abandoned {
-                        @include moon(13%, $moon_abandoned);
-                    }
-                }
-            }
         }
 
         div.description {
             padding-top: 1em;
             text-align: center;
+
+            h4  {
+                font-size: 2.5em;
+                padding-bottom:0.25em;
+                font-weight:bold;
+            }
+
+            h3 {
+               font-size: 2em;
+               padding-bottom:0.25em;
+               font-weight:bold;
+            }
+
+            b {
+                font-size: 1.5em;
+            }
+
+            a {
+                font-size:1.125em;
+                padding: 0 0.25em;
+            }
         }
     }
 }
