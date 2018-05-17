@@ -24,6 +24,66 @@ section#skills {
                 position: relative;
                 background-color: red;
             }
+
+            span {
+                background-color: green;
+                min-width:2em;
+                position:relative;
+                //display: block;
+                display:inline-block;
+                overflow: visible;
+                height:0;
+                // width:2em;
+                //padding-bottom: 100%;
+                //vertical-align: middle;
+
+                z-index:9;
+                /*&::after {
+                    content: "";
+                    display: block;
+                    padding-bottom: 100%;
+                }*/
+
+                b {
+                     z-index:9;
+                    //position:relative;
+                    //display: table;
+                    //display: inline-block;
+                    display: block;
+                    //height: 0;
+                    //vertical-align: middle;
+                    width:100%;
+                    //padding-bottom: 100%;
+                    opacity: 0;
+                    background-color:yellow;
+                    //overflow-y: hidden;
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        padding-bottom: 100%;
+                    }
+
+                    /*u {
+                         z-index:9;
+                        //position: absolute;
+                        //top:0;
+                        //left:0;
+                        //right:0;
+                        //bottom:0;
+                        display:table-cell;
+                        vertical-align: middle;
+                        //height:100%;
+                    }*/
+                }
+
+                u {
+                    position: absolute;
+                    top:0;
+                    left:0;
+                }
+
+            }
         }
 
         div.description {
