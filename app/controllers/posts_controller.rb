@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-	
-	private 
+
+	private
 
 	def load_vars
 		@tags_all = Tag.all

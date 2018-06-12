@@ -1,0 +1,27 @@
+
+<table>
+
+    <thead>
+        <%= cntrl = @result.model.name.underscore.pluralize %>
+    </thead>
+
+    <tbody>
+        <% @result.each do |row| %>
+            <tr>
+                <% fields.each do |field| %>
+                    <td> <%= row.send(field) %> </td>
+                <% end %>
+                <td> <%= link_to "Upraviť", { controller: cntrl, action: :edit, id: row.id } %> </td>
+                <td> <%#= link_to "Odstrániť", { controller: cntrl, action: :destroy, id: row.id }, method: :delete %>
+                <%= link_to "Odstrániť", { controller: cntrl, action: :destroy, id: row.id }, method: :delete, data: { confirm: 'Isto?' } %>
+                <%#= link_to "Odstrániť", destroy_post_path(row.id) %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+
+    <tfoot>
+
+    </tfoot>
+
+</table>
+

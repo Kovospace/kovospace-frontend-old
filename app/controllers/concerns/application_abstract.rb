@@ -28,4 +28,7 @@ module ApplicationAbstract
     def load_create_update_vars
     end
 
+    def permitted_params
+    end
+
 end

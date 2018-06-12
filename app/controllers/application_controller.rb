@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     include ApplicationConcern
-    include BeforeRender
+    #include BeforeRender
     include ClassOnInputWithError
     include ApplicationAbstract
 
@@ -14,17 +14,19 @@ class ApplicationController < ActionController::Base
       @model = model_exist?
     end
 
+    before_action :authenticate_user!, only: :admin
+
     before_action :index_action, only: :index
 
     before_action :show_action, only: :show
 
     before_action :new_action, only: :new
 
-    before_action :create_action, only: :create
+    #before_action :create_action, only: :create, if: :user_signed_in?
 
     before_action :edit_action, only: [:edit, :update]
 
-    before_action :destroy_action, only: :destroy
+    before_action :destroy_action, only: :destroy, if: :user_signed_in?
 
     before_action :load_vars, only: [:new, :edit, :update, :create]
 
@@ -74,10 +76,12 @@ class ApplicationController < ActionController::Base
     end
 
     def create_action
-      instance_variable_set(
-        @singular_varname,
-        @model.new(permitted_params)
-      )
+      #if user_signed_in?
+        instance_variable_set(
+          @singular_varname,
+          @model.new(permitted_params)
+        )
+      #end
       around_create
     end
 

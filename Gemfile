@@ -29,6 +29,12 @@ gem 'kaminari'
 
 gem 'devise'
 
+#gem 'activeadmin'
+# Plus integrations with:
+#gem 'cancan' # or cancancan
+#gem 'draper'
+#gem 'pundit'
+
 ### END OF SECTION GEMS ADDED BY ME
 
 # Use ActiveModel has_secure_password

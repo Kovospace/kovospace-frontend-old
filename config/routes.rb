@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  ### set up homepage
+
+  devise_for :users
   root to: 'homepage#index'
 
   get 'home',
@@ -15,6 +16,28 @@ Rails.application.routes.draw do
     to: "portfolios#index",
     as: "portfolio"
 
+  get 'admin',
+    to: 'admin#index',
+    as: 'admin'
+
+
+
+get '/skill',
+    to: "skills#index",
+    as: "skills"
+
+ get "/admin/skills",
+    to: "admin#list_skills",
+    as: "list_skills"
+
+ get '/skill/:id/edit',
+    to: "skills#edit",
+    as: "edit_skill"
+
+ delete '/skill.:id',
+    to: "skills#destroy",
+    as: "destroy_skill"
+
 
 
   ### articles page
@@ -22,6 +45,10 @@ Rails.application.routes.draw do
   get '/post',
     to: "posts#index",
     as: "posts"
+
+  get "/admin/posts",
+    to: "admin#list_posts",
+    as: "list_posts"
 
   get '/post/new',
     to: "posts#new",
