@@ -1,0 +1,58 @@
+@import "variables";
+@import "admin_vars";
+
+body.admin {
+
+    main {
+
+        form {
+            display: table;
+
+            div {
+                margin: 0.5em 0;
+
+                input, select, textarea {
+                    @include reset_input_browser_styles();
+                    background-color: $admin_bg;;
+                    border-width: 0;
+                    padding:0.25em;
+                    min-width:4em;
+                    font-size: 1em;
+
+                    &:hover, &:active, &:focus {
+                        background-color: $admin_hover_bg;
+                    }
+                }
+
+                button, .button, input[type=submit] {
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $admin_hover_bg;
+                    }
+                }
+
+                span.select_wrapper {
+                    position: relative;
+                    display: inline-block;
+
+                    &::after {
+                        content: "▼";
+                        display: inline-block;
+                        color: black;
+                        position: absolute;
+                        top:0.25em;
+                        bottom:0.25em;
+                        right:0.125em;
+                        width:auto;
+                        vertical-align:middle;
+                    }
+
+                    select {
+                        padding-right:1em;
+                    }
+                }
+            }
+        }
+    }
+}

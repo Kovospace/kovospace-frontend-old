@@ -1,0 +1,18 @@
+<ul>
+    <li>
+        <%= active_link_to(
+            'Články',
+            list_posts_path
+        ) %>
+    </li>
+    <li>
+        <%= active_link_to(
+            'Skills',
+            list_skills_path,
+            active: [['admin', 'skills'], ['new', 'list_skills']]
+        ) %>
+    </li>
+    <li>
+        <%= link_to("Na Web", root_path, class: "red") %>
+    </li>
+</ul>

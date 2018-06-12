@@ -1,0 +1,77 @@
+@import "admin_vars";
+
+body.admin {
+
+    main {
+
+        table {
+
+            tr {
+                line-height:1.25em;
+
+                &:nth-child(2n-1) {
+                    background-color: $admin_bg;
+                }
+
+                &:hover {
+                    background-color: $admin_prelight_bg;
+                }
+
+                td, th {
+                    padding: 0 0.25em;
+
+                    a {
+                        vertical-align: middle;
+                        padding: 0 0.125em;
+                        cursor: pointer;
+
+                        &:hover {
+                             background-color: $admin_hover_bg;
+                        }
+                    }
+
+                    a.delete_item {
+                        color: white;
+                        background-color:#B00;
+
+                        &:hover {
+                              background-color:#F00;
+                        }
+                    }
+
+                    a.add_item {
+                        background-color: $admin_bg;
+
+                        &:hover {
+                             background-color: $admin_hover_bg;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+
+            }
+
+            tfoot {
+                display: block;
+                margin-top: 1.25em;
+                width:100%;
+
+                tr {
+                    background-color: white !important;
+
+                    th {
+                        padding:0;
+                        display: inline-block;
+
+                        a {
+                            display: inline-block;
+                            padding:0.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

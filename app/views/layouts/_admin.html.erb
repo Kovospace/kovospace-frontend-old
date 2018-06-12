@@ -14,9 +14,15 @@
         <%#= content_for :head %>
     </head>
 
-    <body>
+    <body class="admin">
 
-        <%= yield %>
+        <nav>
+            <%= render 'admin/top_menu' %>
+        </nav>
+
+        <main>
+             <%= yield %>
+        </main>
 
     </body>
 

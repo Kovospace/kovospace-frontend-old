@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
     before_action :new_action, only: :new
 
-    #before_action :create_action, only: :create, if: :user_signed_in?
+    before_action :create_action, only: :create, if: :user_signed_in?
 
     before_action :edit_action, only: [:edit, :update]
 
@@ -77,11 +77,12 @@ class ApplicationController < ActionController::Base
 
     def create_action
       #if user_signed_in?
+      if @model
         instance_variable_set(
           @singular_varname,
           @model.new(permitted_params)
         )
-      #end
+      end
       around_create
     end
 
@@ -115,8 +116,10 @@ class ApplicationController < ActionController::Base
     end
 
     def destroy_action
-      @model.find(params[:id]).destroy
-      redirect_to controller: controller_name, action: 'index'
+      if @model
+        @model.find(params[:id]).destroy
+        redirect_to controller: controller_name, action: 'index'
+      end
     end
 
 end

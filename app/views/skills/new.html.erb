@@ -1,0 +1,23 @@
+<%= form_for @skill do |s| %>
+
+    <div>
+        <%= s.label :title %>
+        <%= s.text_field :title %>
+    </div>
+    <div>
+        <%= s.label :description %>
+        <%= s.text_field :description %>
+    </div>
+
+    <div>
+        <%= s.label :degree %>
+        <span class="select_wrapper">
+            <%= s.collection_select :degree, [1,2,3,4,5], :to_s, :to_s %>
+        </span>
+    </div>
+
+    <div>
+        <%= s.submit %>
+    </div>
+
+<% end %>

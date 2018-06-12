@@ -29,6 +29,8 @@ gem 'kaminari'
 
 gem 'devise'
 
+gem 'active_link_to'
+
 #gem 'activeadmin'
 # Plus integrations with:
 #gem 'cancan' # or cancancan

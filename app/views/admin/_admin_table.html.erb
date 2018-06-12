@@ -2,24 +2,49 @@
 <table>
 
     <thead>
-        <%= cntrl = @result.model.name.underscore.pluralize %>
+        <% cntrl = @result.model.name.underscore.pluralize %>
     </thead>
 
     <tbody>
-        <% @result.each do |row| %>
-            <tr>
-                <% fields.each do |field| %>
-                    <td> <%= row.send(field) %> </td>
-                <% end %>
-                <td> <%= link_to "Upraviť", { controller: cntrl, action: :edit, id: row.id } %> </td>
-                <td> <%#= link_to "Odstrániť", { controller: cntrl, action: :destroy, id: row.id }, method: :delete %>
-                <%= link_to "Odstrániť", { controller: cntrl, action: :destroy, id: row.id }, method: :delete, data: { confirm: 'Isto?' } %>
-                <%#= link_to "Odstrániť", destroy_post_path(row.id) %> </td>
-            </tr>
+        <% if @result.size > 0 %>
+            <% @result.each do |row| %>
+                <tr>
+                    <% fields.each do |field| %>
+                        <td> <%= row.send(field) %> </td>
+                    <% end %>
+                    <td>
+                        <%= link_to(
+                            "Upraviť",
+                            { controller: cntrl, action: :edit, id: row.id },
+                            class: "edit_item"
+                        ) %>
+                    </td>
+                    <td>
+                        <%= link_to(
+                            "Odstrániť",
+                            { controller: cntrl, action: :destroy, id: row.id },
+                            method: :delete,
+                            data: { confirm: 'Isto?' },
+                            class: "delete_item"
+                        ) %>
+                    </td>
+                </tr>
+            <% end %>
+        <% else %>
+            <tr> <td> NIČ TU NENI </td> </tr>
         <% end %>
     </tbody>
 
     <tfoot>
+        <tr>
+            <th COLSPAN="20">
+                <%= link_to(
+                    "Pridať novú položku",
+                    { controller: cntrl, action: :new },
+                    class: "add_item"
+                ) %>
+            </th>
+        </tr>
 
     </tfoot>
 
