@@ -8,6 +8,7 @@ class AdminController < ApplicationController
 
     def list_skills
         @result = Skill.all
+        @work_progress = WorkState.all
     end
 
     def list_posts

@@ -1,13 +1,27 @@
 
+<%
+    if !defined? obj
+        var = @result
+    else
+        var = obj
+    end
+    cntrl = var.model.name.underscore.pluralize
+%>
+
+
 <table>
 
+    <caption> <%= var.model.model_name.human %> </caption>
+
     <thead>
-        <% cntrl = @result.model.name.underscore.pluralize %>
+        <tr>
+            <th></th>
+        </tr>
     </thead>
 
     <tbody>
-        <% if @result.size > 0 %>
-            <% @result.each do |row| %>
+        <% if var.size > 0 %>
+            <% var.each do |row| %>
                 <tr>
                     <% fields.each do |field| %>
                         <td> <%= row.send(field) %> </td>
@@ -31,7 +45,7 @@
                 </tr>
             <% end %>
         <% else %>
-            <tr> <td> NIČ TU NENI </td> </tr>
+            <tr class="no_items"> <td> NIČ TU NENI </td> </tr>
         <% end %>
     </tbody>
 

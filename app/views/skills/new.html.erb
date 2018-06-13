@@ -16,6 +16,13 @@
         </span>
     </div>
 
+     <div>
+        <%= s.label :work_state_id %>
+        <span class="select_wrapper">
+            <%= s.collection_select :work_state_id, WorkState.all, :id, :title %>
+        </span>
+    </div>
+
     <div>
         <%= s.submit %>
     </div>

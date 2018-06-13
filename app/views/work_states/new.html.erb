@@ -1,0 +1,16 @@
+<%= form_for @work_state do |s| %>
+
+    <div>
+        <%= s.label :title %>
+        <%= s.text_field :title %>
+    </div>
+    <div>
+        <%= s.label :description %>
+        <%= s.text_field :description %>
+    </div>
+
+    <div>
+        <%= s.submit %>
+    </div>
+
+<% end %>

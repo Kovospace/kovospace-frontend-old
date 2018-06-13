@@ -5,52 +5,80 @@ body.admin {
     main {
 
         table {
+            margin-bottom: 1.5em;
 
-            tr {
-                line-height:1.25em;
+            td, th {
+                padding: 0 0.25em;
 
-                &:nth-child(2n-1) {
+                a {
+                    vertical-align: middle;
+                    padding: 0 0.125em;
+                    cursor: pointer;
+
+                    &:hover {
+                         background-color: $admin_hover_bg;
+                    }
+                }
+
+                a.delete_item {
+                    color: $admin_danger_fg;
+                    background-color:$admin_danger_bg;
+
+                    &:hover {
+                        background-color:$admin_danger_hover_bg;
+                        color: $admin_danger_hover_fg;
+                    }
+                }
+
+                a.add_item {
                     background-color: $admin_bg;
-                }
 
-                &:hover {
-                    background-color: $admin_prelight_bg;
-                }
-
-                td, th {
-                    padding: 0 0.25em;
-
-                    a {
-                        vertical-align: middle;
-                        padding: 0 0.125em;
-                        cursor: pointer;
-
-                        &:hover {
-                             background-color: $admin_hover_bg;
-                        }
-                    }
-
-                    a.delete_item {
-                        color: white;
-                        background-color:#B00;
-
-                        &:hover {
-                              background-color:#F00;
-                        }
-                    }
-
-                    a.add_item {
-                        background-color: $admin_bg;
-
-                        &:hover {
-                             background-color: $admin_hover_bg;
-                        }
+                    &:hover {
+                         background-color: $admin_hover_bg;
                     }
                 }
             }
 
+            caption {
+                background-color: $admin_bg_invert;
+                color: $admin_fg_invert;
+                font-weight:bold;
+                font-size: 1.5em;
+                padding: 0.25em;
+                text-align: left;
+                margin-bottom: 0.25em;
+            }
+
             tbody {
 
+                tr {
+                    line-height:1.25em;
+
+                    &:nth-child(2n-1) {
+                        background-color: $admin_bg;
+                    }
+
+                    &:hover {
+                        background-color: $admin_prelight_bg;
+                    }
+
+                    &.no_items {
+                        background-color:$admin_danger_bg;
+                        color: $admin_danger_fg;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            thead {
+
+                tr {
+                    line-height: 1.5em;
+
+                    th {
+
+                    }
+                }
             }
 
             tfoot {

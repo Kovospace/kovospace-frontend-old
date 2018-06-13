@@ -12,31 +12,22 @@
             <br>
             <br>
 
-            <span class="planet_desc planet_ruby"></span>
-            <span>
-                Vynikajúce podmienky, správna vzdialenosť aj perióda rotácie a obehu
+            <% @work_states.each do |work_state| %>
+
+                <% work_state.skills.each do |skill| %>
+                    <span class="planet_desc planet_ruby"></span>
+                <% end %>
+
+                <span>
+                    <%= work_state.title %>
+                    <br>
+                    <%= work_state.description %>
+                </span>
                 <br>
-                Svetlo, teplo, atmosféra vynikajúca pre život, známky života
-            </span>
-            <br>
 
-            <span class="icon" id="about_me_home_icon"></span>
-            <span>
-                Chladno, zaprášený povrch a atmosféra
-            </span>
-            <br>
+            <% end %>
 
-            <span class="icon" id="about_me_work_icon"></span>
-            <span>Roulage SK s.r.o. <a href="http://roulage.sk">www.roulage.sk</a></span>
-            <br>
 
-            <span class="icon" id="about_me_hobby_icon"></span>
-            <span>
-                Webdesign & programovanie <br>
-                PC & hardware, elektronika & bastlenie, garáž & dielňa, DIY <br>
-                Cestovanie, turistika, hudba, festivaly & koncerty <br>
-                Literatúra, blogging
-            </span>
     </div>
 
 

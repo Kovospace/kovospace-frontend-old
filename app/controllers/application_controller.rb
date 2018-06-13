@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
     before_action :destroy_action, only: :destroy, if: :user_signed_in?
 
-    before_action :load_vars, only: [:new, :edit, :update, :create]
+    before_action :_load_vars, only: [:new, :edit, :update, :create]
 
     def index
     end
@@ -72,7 +72,7 @@ class ApplicationController < ActionController::Base
 
     def new_action
       instance_variable_set(@singular_varname, @model.new) if @model
-      around_new
+      _around_new
     end
 
     def create_action
@@ -80,19 +80,23 @@ class ApplicationController < ActionController::Base
       if @model
         instance_variable_set(
           @singular_varname,
-          @model.new(permitted_params)
+          @model.new(_permitted_params)
         )
       end
-      around_create
+      _around_create
     end
 
     def create_action_2
       saved = instance_variable_get(@singular_varname).save
-      around_create_after_save
+      _around_create_after_save
       if saved
-        redirect_to public_send("#{controller_name.pluralize}_path")
+        if !(r = _after_ok_redirect_to).nil?
+          redirect_to r
+        else
+          redirect_to public_send("#{controller_name.pluralize}_path")
+        end
       else
-         render "new"
+        render "new"
       end
     end
 
@@ -101,15 +105,19 @@ class ApplicationController < ActionController::Base
         @singular_varname,
         @model.find(params[:id])
       )
-      around_edit
+      _around_edit
     end
 
     def update_action_2
-      around_update
-      saved = instance_variable_get(@singular_varname).update(permitted_params)
-      around_update_after_save
+      _around_update
+      saved = instance_variable_get(@singular_varname).update(_permitted_params)
+      _around_update_after_save
       if saved
-        redirect_to controller: controller_name, action: 'index'
+        if !(r = _after_ok_redirect_to).nil?
+          redirect_to r
+        else
+          redirect_to controller: controller_name, action: 'index'
+        end
       else
         render "new"
       end
@@ -118,7 +126,11 @@ class ApplicationController < ActionController::Base
     def destroy_action
       if @model
         @model.find(params[:id]).destroy
-        redirect_to controller: controller_name, action: 'index'
+        if !(r = _after_ok_redirect_to).nil?
+          redirect_to r
+        else
+          redirect_to controller: controller_name, action: 'index'
+        end
       end
     end
 

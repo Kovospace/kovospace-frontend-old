@@ -1,111 +1,20 @@
 <h2> Skills </h2>
 
-<article>
-    <figure class="size_1">
-        <span>
-            <b>
-                kokooot
-            </b>
-            <u>
-                kokooot
-            </u>
-        </span>
-        <div class="planet_ruby"></div>
-    </figure>
-    <div class="description">
 
-        <h3>#CSS</h3>
-        <b>Misie:</b>
-        <a href="">tiririr</a>
-        <a href="">tiririr</a>
-        <a href="">tiririr</a>
-    </div>
-</article>
+<% @skills.each do |skill| %>
 
-<article>
-    <figure class="size_1 ">
-        <div></div>
-    </figure>
-    <div class="description">
-        <h3>#HTML</h3>
-        <b>Misie:</b>
-        <a href="">tiririr</a>
-        <a href="">tiririr</a>
-        <a href="">tiririr</a>
-    </div>
-</article>
+    <article>
+        <figure class="size_<%= skill.degree %> ">
+            <div></div>
+        </figure>
+        <div class="description">
+            <h3> <%= skill.title %> </h3>
+            <b>Misie:</b>
+            <a href="">tiririr</a>
+            <a href="">tiririr</a>
+            <a href="">tiririr</a>
+        </div>
+    </article>
 
-<article>
-    <figure class="size_2 ">
-        <div></div>
-    </figure>
-    <div class="description">
-        <h4>Ruby</h4>
-        <h3>[on Rails]</h3>
-        <b>Misie:</b>
-        <a href="">tiririr</a>
-        <a href="">tiririr</a>
-        <a href="">tiririr</a>
-    </div>
-</article>
+<% end %>
 
-<article>
-    <figure class="size_2">
-        <span>
-            <abbr class="active"></abbr>
-            <abbr class="planned"></abbr>
-            <abbr class="paused"></abbr>
-            <abbr class="abandoned"></abbr>
-        </span>
-        <div></div>
-    </figure>
-    <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </div>
-</article>
-
-<article>
-    <figure class="size_3">
-        <span>
-            <abbr class="active"></abbr>
-            <abbr class="planned"></abbr>
-            <abbr class="paused"></abbr>
-            <abbr class="abandoned"></abbr>
-        </span>
-        <div></div>
-    </figure>
-    <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </div>
-</article>
-
-<article>
-    <figure class="size_4">
-        <span>
-            <abbr class="active"></abbr>
-            <abbr class="planned"></abbr>
-            <abbr class="paused"></abbr>
-            <abbr class="abandoned"></abbr>
-        </span>
-        <div></div>
-    </figure>
-    <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </div>
-</article>
-
-<article>
-    <figure class="size_5">
-       <span>
-            <abbr class="active"></abbr>
-            <abbr class="planned"></abbr>
-            <abbr class="paused"></abbr>
-            <abbr class="abandoned"></abbr>
-        </span>
-        <div></div>
-    </figure>
-    <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    </div>
-</article>

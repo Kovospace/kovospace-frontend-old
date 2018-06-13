@@ -1,4 +1,4 @@
-class SkillsController < ApplicationController
+class WorkStatesController < ApplicationController
 
     layout "admin", only: [:new, :create, :edit, :update]
 
@@ -9,11 +9,9 @@ class SkillsController < ApplicationController
     end
 
     def _permitted_params
-         params[:skill].permit(
+         params[:work_state].permit(
             :title,
-            :description,
-            :degree,
-            :work_state_id
+            :description
          )
     end
 

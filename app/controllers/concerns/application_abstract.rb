@@ -1,34 +1,38 @@
 module ApplicationAbstract
     extend ActiveSupport::Concern
 
-    def around_new
+    def _around_new
     end
 
-    def around_edit
+    def _around_edit
     end
 
-    def around_create
+    def _around_create
     end
 
-    def around_create_after_save
+    def _around_create_after_save
     end
 
-    def around_update
+    def _after_ok_redirect_to
+        nil
     end
 
-    def around_update_after_save
+    def _around_update
     end
 
-    def load_vars
+    def _around_update_after_save
     end
 
-    def load_new_edit_vars
+    def _load_vars
     end
 
-    def load_create_update_vars
+    def _load_new_edit_vars
     end
 
-    def permitted_params
+    def _load_create_update_vars
+    end
+
+    def _permitted_params
     end
 
 end
