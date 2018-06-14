@@ -6,9 +6,10 @@ class AdminController < ApplicationController
 
     end
 
-    def list_skills
+    def list_homepage
         @result = Skill.all
         @work_progress = WorkState.all
+        @contacts = Contact.all
     end
 
     def list_posts

@@ -1,0 +1,105 @@
+@import "variables";
+
+section#contact{
+
+    article {
+        margin-top: 1.5em;
+
+        form {
+            width: 50%;
+
+            div {
+                display: table;
+                font-size: 1.5em;
+                width:100%;
+
+                span {
+                    display: table-cell;
+                    padding: 0.25em;
+                    vertical-align: top;
+
+                    &:first-child {
+                         width:1%;
+                    }
+
+                    input, textarea {
+                        @include background_transition($transition_time_fast);
+                        width:100%;
+                        padding:0.25em;
+                        font-family: verdana,tahoma,"Bitstream Vera Sans","DejaVu Sans",arial,helvetica,sans-serif;
+                        box-sizing: border-box;
+                        background-color: $dirty_white;
+
+                        &:active, &:focus {
+                            background-color: $pure_white;
+                        }
+                    }
+
+                    textarea {
+                        min-height: 25vh;
+                    }
+
+                }
+
+                &#no_sputnik_check {
+                    text-align: right;
+                    display: block;
+
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width:auto;
+
+                        input, label {
+                            vertical-align: middle;
+                            cursor: pointer;
+                        }
+
+                        input {
+                            width:1.25em;
+                            height:1.25em;
+                            border: 0.25em solid $white;
+                            border-radius:1em;
+                            background-color: $grey;
+
+                            &:hover, &:focus {
+                                background-color: $grey_stronger;
+                                border-color: $pure_white;
+                            }
+
+                            &:checked {
+                                background-color: $soft_black;
+
+                                &:hover, &:focus {
+                                    background-color: $black;
+                                }
+                            }
+                        }
+
+                        label {
+                            line-height:1.25em;
+                        }
+                    }
+                }
+
+                &#submit_contact {
+
+                    span {
+
+                        input {
+                            background-color: $hell_grey;
+                            color: $white;
+                            font-weight: bold;
+                            cursor: pointer;
+
+                            &:hover, &:focus {
+                                background-color: $light_black;
+                                color: $pure_white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

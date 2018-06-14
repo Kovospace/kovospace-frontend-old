@@ -1,4 +1,37 @@
 <h2> Kontakt </h2>
+
 <article>
+
+    <%= form_for @contact do |c| %>
+
+        <div>
+            <span> <%= c.label :sender %> </span>
+            <span> <%= c.text_field :sender %> </span>
+        </div>
+
+        <div>
+            <span> <%= c.label :title %> </span>
+            <span> <%= c.text_field :title %> </span>
+        </div>
+
+        <div>
+            <span> <%= c.label :msg %> </span>
+            <span> <%= c.text_area :msg %> </span>
+        </div>
+
+        <div id="no_sputnik_check">
+            <span>
+                <%= c.check_box :i_am_not_sputnik %>
+            </span>
+            <span>
+                <%= c.label :i_am_not_sputnik %>
+            </span>
+        </div>
+
+        <div id="submit_contact">
+            <span> <%= c.submit "Odoslať" %> </span>
+        </div>
+
+    <% end %>
 
 </article>

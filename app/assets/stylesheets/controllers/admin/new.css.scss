@@ -12,8 +12,8 @@ body.admin {
                 margin: 0.5em 0;
 
                 input, select, textarea {
-                    @include reset_input_browser_styles();
-                    background-color: $admin_bg;;
+                    //@include reset_input_browser_styles();
+                    background-color: $admin_bg;
                     border-width: 0;
                     padding:0.25em;
                     min-width:4em;

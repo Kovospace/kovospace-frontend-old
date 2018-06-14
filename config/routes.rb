@@ -18,6 +18,10 @@ Rails.application.routes.draw do
     to: 'admin#index',
     as: 'admin'
 
+  get "/admin/homepage",
+    to: "admin#list_homepage",
+    as: "list_homepage"
+
 ### HLAVNA STRANKA
 
   # skills
@@ -26,9 +30,9 @@ Rails.application.routes.draw do
     to: "skills#index",
     as: "skills"
 
-  get "/admin/skills",
-    to: "admin#list_skills",
-    as: "list_skills"
+  #get "/admin/skills",
+    #to: "admin#list_skills",
+    #as: "list_skills"
 
   get '/skill/new',
     to: "skills#new",
@@ -77,6 +81,45 @@ Rails.application.routes.draw do
   delete '/work_state.:id',
     to: "work_states#destroy",
     as: "destroy_work_state"
+
+  # kontaktny formular
+
+  get '/contact',
+    to: "contacts#index",
+    as: "contacts"
+
+  get "/admin/contacts",
+    to: "admin#list_contacts",
+    as: "list_contacts"
+
+  get '/contact/new',
+    to: "contacts#new",
+    as: "new_contact"
+
+  get '/contact/:id/edit',
+    to: "contacts#edit",
+    as: "edit_contact"
+
+  get '/contact/:id',
+    to: "contacts#show",
+    as: "show_contact"
+
+  post '/contact',
+    to: "contacts#create"
+
+  post '/contact/:id/seen',
+    to: "contacts#seen"
+
+  post '/contact/:id/unseen',
+    to: "contacts#unseen"
+
+  patch '/contact.:id',
+    to: "contacts#update",
+    as: "update_contact"
+
+  delete '/contact.:id',
+    to: "contacts#destroy",
+    as: "destroy_contact"
 
 
 

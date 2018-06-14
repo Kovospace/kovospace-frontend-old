@@ -1,0 +1,20 @@
+<%
+=begin
+    if !defined? obj
+        var = @result
+    else
+        var = obj
+    end
+    cntrl = var.model.name.underscore.pluralize
+=end
+%>
+
+<article>
+
+    <h1> <%= title %> </h1>
+
+    <p> <%= content %> </p>
+
+    <%= link_to 'Back', :back %>
+
+</article>
