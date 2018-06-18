@@ -8,14 +8,17 @@
         <p>
             <span id="shortinfo_window_title">&lt; terminál &gt; DOJÍŽDER 1</span>
 
-            <br>&nbsp; úloha #!?x:D:O.zzzz - Prieskum planét sústavy K0.v.0&gt;_
-            <br>
-            <br>
-
             <% @work_states.each do |work_state| %>
 
                 <% work_state.skills.each do |skill| %>
-                    <span class="planet_desc planet_ruby"></span>
+                    <span
+                        class="planet size_<%= skill.degree %> "
+                        style="background-color:#<%= skill.bg %>; "
+                    >
+                        <picture>
+                            <%= image_tag(skill.icon, alt: skill.title) %>
+                        </picture>
+                    </span>
                 <% end %>
 
                 <span>

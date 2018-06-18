@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180614223042) do
+ActiveRecord::Schema.define(version: 20180618222405) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -69,6 +69,11 @@ ActiveRecord::Schema.define(version: 20180614223042) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "portfolios_skills", id: false, force: :cascade do |t|
+    t.integer "portfolio_id", null: false
+    t.integer "skill_id",     null: false
+  end
+
   create_table "post_tags", force: :cascade do |t|
     t.integer  "post_id"
     t.integer  "tag_id"
@@ -95,6 +100,8 @@ ActiveRecord::Schema.define(version: 20180614223042) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "work_state_id"
+    t.string   "bg"
+    t.string   "icon"
   end
 
   add_index "skills", ["work_state_id"], name: "index_skills_on_work_state_id"

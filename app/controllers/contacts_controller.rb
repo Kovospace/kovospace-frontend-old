@@ -6,9 +6,6 @@ class ContactsController < ApplicationController
         redirect_to controller: "homepage", action: 'index'
     end
 
-    def show
-    end
-
     def seen
         update_seen true
         redirect_to _after_ok_redirect_to
@@ -26,7 +23,11 @@ class ContactsController < ApplicationController
     end
 
     def _after_ok_redirect_to
-        { controller: "admin", action: "list_homepage" }
+        if action_name == "create"
+            { controller: "homepage", action: "index" }
+        else
+            { controller: "admin", action: "list_homepage" }
+        end
     end
 
     def _permitted_params

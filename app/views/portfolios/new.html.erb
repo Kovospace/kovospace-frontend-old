@@ -1,0 +1,53 @@
+<%= form_for @portfolio do |s| %>
+
+    <div>
+        <%= s.label :title %>
+        <%= s.text_field :title %>
+    </div>
+
+    <div>
+        <%= s.label :intro %>
+        <%= s.text_area :intro %>
+    </div>
+
+    <div>
+        <%= s.label :description %>
+        <%= s.text_area :description %>
+    </div>
+
+    <div>
+        <%= s.label :link %>
+        <%= s.text_field :link %>
+    </div>
+
+    <div>
+        <%#= s.label :degree %>
+        <span class="select_wrapper">
+            <%#= s.collection_select :degree, [1,2,3,4,5], :to_s, :to_s %>
+        </span>
+    </div>
+
+    <div>
+        <%#= s.label :bg %>
+        <%#= s.text_field :bg %>
+    </div>
+
+    <div>
+        <%#= s.label :icon %>
+        <%#= s.file_field :icon %>
+    </div>
+
+    <div>
+        <%#= s.label :work_state_id %>
+        <span class="select_wrapper">
+            <%#= s.collection_select :work_state_id, WorkState.all, :id, :link %>
+        </span>
+    </div>
+
+    <br>
+
+    <div>
+        <%= s.submit %>
+    </div>
+
+<% end %>

@@ -16,4 +16,13 @@ class AdminController < ApplicationController
         @result = Post.all
     end
 
+    def list_blogs
+
+    end
+
+    def list_portfolios
+         @result = Portfolio.all
+    end
+
+
 end

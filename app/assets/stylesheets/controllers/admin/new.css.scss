@@ -11,6 +11,10 @@ body.admin {
             div {
                 margin: 0.5em 0;
 
+                & > * {
+                    vertical-align:middle;
+                }
+
                 input, select, textarea {
                     //@include reset_input_browser_styles();
                     background-color: $admin_bg;
@@ -22,6 +26,11 @@ body.admin {
                     &:hover, &:active, &:focus {
                         background-color: $admin_hover_bg;
                     }
+                }
+
+                textarea {
+                    min-width: 50vw;
+                    min-height: 50vh;
                 }
 
                 button, .button, input[type=submit] {

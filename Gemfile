@@ -33,6 +33,8 @@ gem 'active_link_to'
 
 gem 'recursive-open-struct'
 
+gem 'carrierwave', '~> 1.0'
+
 #gem 'activeadmin'
 # Plus integrations with:
 #gem 'cancan' # or cancancan

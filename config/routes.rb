@@ -30,10 +30,6 @@ Rails.application.routes.draw do
     to: "skills#index",
     as: "skills"
 
-  #get "/admin/skills",
-    #to: "admin#list_skills",
-    #as: "list_skills"
-
   get '/skill/new',
     to: "skills#new",
     as: "new_skill"
@@ -121,9 +117,67 @@ Rails.application.routes.draw do
     to: "contacts#destroy",
     as: "destroy_contact"
 
+### portfolio
 
+  get '/portfolio',
+    to: "portfolios#index",
+    as: "portfolios"
 
-  ### articles page
+  get "/admin/portfolio",
+    to: "admin#list_portfolios",
+    as: "list_portfolio"
+
+  get '/portfolio/new',
+    to: "portfolios#new",
+    as: "new_portfolio"
+
+  get '/portfolio/:id/edit',
+    to: "portfolios#edit",
+    as: "edit_portfolio"
+
+  post '/portfolio',
+    to: "portfolios#create"
+
+  patch '/portfolio.:id',
+    to: "portfolios#update",
+    as: "update_portfolio"
+
+  delete '/portfolio.:id',
+    to: "posts#destroy",
+    as: "destroy_portfolio"
+
+### blog
+
+  # kategorie
+
+  get '/blog',
+    to: "blogs#index",
+    as: "blogs"
+
+  get "/admin/blogs",
+    to: "admin#list_blogs",
+    as: "list_blogs"
+
+  get '/blog/new',
+    to: "blogs#new",
+    as: "new_blog"
+
+  get '/blog/:id/edit',
+    to: "blogs#edit",
+    as: "edit_blog"
+
+  post '/blog',
+    to: "blogs#create"
+
+  patch '/blog.:id',
+    to: "blogs#update",
+    as: "update_blog"
+
+  delete '/blog.:id',
+    to: "blogs#destroy",
+    as: "destroy_blog"
+
+  # clanky
 
   get '/post',
     to: "posts#index",
@@ -151,6 +205,7 @@ Rails.application.routes.draw do
   delete '/post.:id',
     to: "posts#destroy",
     as: "destroy_post"
+
 
 
   devise_for :users, skip: :all

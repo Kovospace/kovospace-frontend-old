@@ -5,7 +5,7 @@ class SkillsController < ApplicationController
     private
 
     def _after_ok_redirect_to
-        { controller: "admin", action: "list_skills" }
+        { controller: "admin", action: "list_homepage" }
     end
 
     def _permitted_params
@@ -13,7 +13,9 @@ class SkillsController < ApplicationController
             :title,
             :description,
             :degree,
-            :work_state_id
+            :work_state_id,
+            :bg,
+            :icon
          )
     end
 

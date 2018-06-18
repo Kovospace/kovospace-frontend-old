@@ -23,6 +23,20 @@ section#skills {
                 border-radius:51%;
                 position: relative;
                 background-color: red;
+
+                picture {
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    bottom:0;
+                    right:0;
+
+                    img {
+                        border-radius:51%;
+                        max-width: 100%;
+                        max-height: 100%;
+                    }
+                }
             }
 
             span {

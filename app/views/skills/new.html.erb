@@ -4,9 +4,10 @@
         <%= s.label :title %>
         <%= s.text_field :title %>
     </div>
+
     <div>
         <%= s.label :description %>
-        <%= s.text_field :description %>
+        <%= s.text_area :description %>
     </div>
 
     <div>
@@ -16,12 +17,24 @@
         </span>
     </div>
 
-     <div>
+    <div>
+        <%= s.label :bg %>
+        <%= s.text_field :bg %>
+    </div>
+
+    <div>
+        <%= s.label :icon %>
+        <%= s.file_field :icon %>
+    </div>
+
+    <div>
         <%= s.label :work_state_id %>
         <span class="select_wrapper">
             <%= s.collection_select :work_state_id, WorkState.all, :id, :title %>
         </span>
     </div>
+
+    <br>
 
     <div>
         <%= s.submit %>
