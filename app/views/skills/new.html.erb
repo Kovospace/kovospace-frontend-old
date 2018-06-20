@@ -25,6 +25,13 @@
     <div>
         <%= s.label :icon %>
         <%= s.file_field :icon %>
+        <%= s.hidden_field :icon_cache %>
+    </div>
+
+    <div>
+        <picture>
+             <%= image_tag(s.object.icon) if !s.object.icon.nil? %>
+        </picture>
     </div>
 
     <div>

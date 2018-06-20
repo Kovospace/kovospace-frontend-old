@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180618222405) do
+ActiveRecord::Schema.define(version: 20180619234915) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -60,6 +60,17 @@ ActiveRecord::Schema.define(version: 20180618222405) do
     t.boolean  "seen"
   end
 
+  create_table "portfolio_screenshots", force: :cascade do |t|
+    t.integer  "portfolio_id"
+    t.string   "screenshot"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "alt_text"
+    t.integer  "explicit_order"
+  end
+
+  add_index "portfolio_screenshots", ["portfolio_id"], name: "index_portfolio_screenshots_on_portfolio_id"
+
   create_table "portfolios", force: :cascade do |t|
     t.string   "title"
     t.text     "intro"
@@ -67,6 +78,7 @@ ActiveRecord::Schema.define(version: 20180618222405) do
     t.text     "link"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "screenshots"
   end
 
   create_table "portfolios_skills", id: false, force: :cascade do |t|

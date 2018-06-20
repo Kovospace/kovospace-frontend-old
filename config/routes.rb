@@ -143,7 +143,7 @@ Rails.application.routes.draw do
     as: "update_portfolio"
 
   delete '/portfolio.:id',
-    to: "posts#destroy",
+    to: "portfolios#destroy",
     as: "destroy_portfolio"
 
 ### blog

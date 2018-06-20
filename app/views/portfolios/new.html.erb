@@ -21,27 +21,47 @@
     </div>
 
     <div>
-        <%#= s.label :degree %>
-        <span class="select_wrapper">
-            <%#= s.collection_select :degree, [1,2,3,4,5], :to_s, :to_s %>
-        </span>
+        <%= s.collection_check_boxes(
+            :skill_ids,
+            @skills_all,
+            :id,
+            :title
+        ) do |checkbox| %>
+            <span>
+                <%= checkbox.label %> <%= checkbox.check_box %>
+            </span>
+        <% end %>
     </div>
 
     <div>
-        <%#= s.label :bg %>
-        <%#= s.text_field :bg %>
+        <%#= s.file_field :screenshots, multiple: true %>
     </div>
 
     <div>
-        <%#= s.label :icon %>
-        <%#= s.file_field :icon %>
-    </div>
 
-    <div>
-        <%#= s.label :work_state_id %>
-        <span class="select_wrapper">
-            <%#= s.collection_select :work_state_id, WorkState.all, :id, :link %>
-        </span>
+        <%= @portfolio_screenshots %>
+
+        <% s.fields_for :portfolio_screenshots do |ps| %>
+
+            <%= ps %>
+
+            <%= ps.file_field :screenshot %>
+
+        <% end %>
+
+        <%# if !s.object.screenshots.nil? %>
+            <%# s.object.screenshots.each_with_index do |screenshot, index| %>
+                <picture>
+                    <%#= s.check_box(
+                        :remove_screenshot,
+                        { multiple: true },
+                        index,
+                        nil
+                    ) %>
+                    <%#= image_tag(screenshot) %>
+                </picture>
+            <% #end %>
+        <% #end %>
     </div>
 
     <br>
