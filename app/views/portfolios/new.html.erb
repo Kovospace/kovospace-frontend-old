@@ -38,30 +38,18 @@
     </div>
 
     <div>
-
-        <%= @portfolio_screenshots %>
-
-        <% s.fields_for :portfolio_screenshots do |ps| %>
-
-            <%= ps %>
-
-            <%= ps.file_field :screenshot %>
-
+        <%= s.fields_for :portfolio_screenshots do |ps| %>
+            <% blank = ps.object.screenshot.blank? %>
+            <picture>
+                <%#= ps.file_field :screenshot, multiple: true, name: "portfolio_screenshots[screenshot][]" %>
+                <%= ps.file_field :screenshot, class: "hidden" %>
+                <%= ps.hidden_field :screenshot_cache %>
+                <%= ps.label :screenshot do %>
+                    <%= image_tag(ps.object.screenshot) if !blank %>
+                    <%= ps.check_box(:remove_screenshot) if !blank %>
+                <% end %>
+            </picture>
         <% end %>
-
-        <%# if !s.object.screenshots.nil? %>
-            <%# s.object.screenshots.each_with_index do |screenshot, index| %>
-                <picture>
-                    <%#= s.check_box(
-                        :remove_screenshot,
-                        { multiple: true },
-                        index,
-                        nil
-                    ) %>
-                    <%#= image_tag(screenshot) %>
-                </picture>
-            <% #end %>
-        <% #end %>
     </div>
 
     <br>

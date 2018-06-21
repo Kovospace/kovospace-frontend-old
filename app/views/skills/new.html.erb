@@ -30,7 +30,9 @@
 
     <div>
         <picture>
-             <%= image_tag(s.object.icon) if !s.object.icon.nil? %>
+            <%= s.label :icon do %>
+                <%= image_tag(s.object.icon) if !s.object.icon.nil? %>
+            <% end %>
         </picture>
     </div>
 

@@ -14,12 +14,12 @@ class PortfoliosController < ApplicationController
 
     def _load_vars
        @skills_all = Skill.all
-       @portfolio_screenshots = @portfolio.portfolio_screenshots.all
+       #@portfolio_screenshots = @portfolio.portfolio_screenshots.all
     end
 
     def _around_new
-        build_if_empty :skills#, :portfolio_screenshots
-        @portfolio.portfolio_screenshots.build
+        build_if_empty :skills, :portfolio_screenshots
+        #@portfolio.portfolio_screenshots.build
     end
 
     def _around_create_after_save
@@ -36,16 +36,14 @@ class PortfoliosController < ApplicationController
     end
 
     def _permitted_params
-         params[:portfolio].permit(
+         params.require(:portfolio).permit(
             :id,
             :title,
             :intro,
             :description,
             :link,
             skill_ids: [],
-            remove_screenshot: [],
-            add_screenshot: [],
-            portfolio_screenshots_attributes: [:id, :portfolio_id, :screenshot]
+            portfolio_screenshots_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache]
          )
     end
 

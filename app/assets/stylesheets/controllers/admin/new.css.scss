@@ -47,10 +47,39 @@ body.admin {
                 }
 
                 picture {
+                    display: inline-block;
 
-                    img {
-                        max-width: 8em;
-                        max-height: 8em;
+                    label {
+                        display: inline-block;
+                        position: relative;
+                        /*max-width: 8em;
+                        max-height: 8em;*/
+                        min-height: 4em;
+                        min-width: 4em;
+                        background-color: $admin_bg;
+
+                        &:hover, &:active, &:focus {
+                            background-color: $admin_hover_bg;
+                        }
+
+                        img {
+                            display: block;
+                            max-width: 8em;
+                            max-height: 8em;
+                        }
+
+                        input[type='checkbox'] {
+                            position: absolute;
+                            top:0.25em;
+                            right:0.25em;
+                            background-color: $admin_danger_bg;
+                            border-color: $admin_danger_bg;
+
+                            &:hover {
+                                background-color: $admin_danger_hover_bg;
+                                border-color: $admin_danger_hover_bg;
+                            }
+                        }
                     }
                 }
 
