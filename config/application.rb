@@ -2,6 +2,9 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -29,6 +32,8 @@ module MojWeb
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
 
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.assets.paths << Rails.root.join("app", "assets", "stylesheets-admin")
 
     require 'action_view/helpers/form_builder'
 

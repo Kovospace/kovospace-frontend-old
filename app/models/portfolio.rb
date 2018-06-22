@@ -4,11 +4,11 @@ class Portfolio < ActiveRecord::Base
 
     has_and_belongs_to_many :skills
 
-    has_many :portfolio_screenshots
+    has_many :portfolio_screenshots, dependent: :destroy
     accepts_nested_attributes_for(
         :portfolio_screenshots,
-        allow_destroy: true#,
-        #reject_if: lambda { |c| c['screenshot'].blank? }
+        allow_destroy: true,
+        reject_if: proc { |c| c[:screenshot].blank? }
     )
 
 end

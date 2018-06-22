@@ -40,16 +40,25 @@
     <div>
         <%= s.fields_for :portfolio_screenshots do |ps| %>
             <% blank = ps.object.screenshot.blank? %>
+
             <picture>
-                <%#= ps.file_field :screenshot, multiple: true, name: "portfolio_screenshots[screenshot][]" %>
                 <%= ps.file_field :screenshot, class: "hidden" %>
                 <%= ps.hidden_field :screenshot_cache %>
-                <%= ps.label :screenshot do %>
-                    <%= image_tag(ps.object.screenshot) if !blank %>
-                    <%= ps.check_box(:remove_screenshot) if !blank %>
-                <% end %>
+                <span>
+                    <%= ps.label :screenshot do %>
+                        <%= ps.check_box(:_destroy) if !blank %>
+                        <%= image_tag(ps.object.screenshot) if !blank %>
+                        <% if blank %> <q></q> <% end %>
+                    <% end %>
+                </span>
+                <span>
+                    <%= ps.text_area(:alt_text) %>
+                </span>
             </picture>
+
         <% end %>
+
+        <br class="clear">
     </div>
 
     <br>

@@ -66,3 +66,9 @@
  transform: rotate($angle);
 }
 
+@mixin inner_border($color, $size) {
+  -moz-box-shadow: inset 0px 0px 0px $size $color;
+  -webkit-box-shadow: inset 0px 0px 0px $size $color;
+  box-shadow: inset 0px 0px 0px $size $color;
+}
+

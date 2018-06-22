@@ -24,7 +24,9 @@ class ApplicationController < ActionController::Base
 
     before_action :create_action, only: :create, if: :user_signed_in?
 
-    before_action :edit_action, only: [:edit, :update]
+    before_action :edit_action, only: :edit
+
+    before_action :update_action, only: :update
 
     before_action :destroy_action, only: :destroy, if: :user_signed_in?
 
@@ -106,6 +108,13 @@ class ApplicationController < ActionController::Base
         @model.find(params[:id])
       )
       _around_edit
+    end
+
+    def update_action
+      instance_variable_set(
+        @singular_varname,
+        @model.find(params[:id])
+      )
     end
 
     def update_action_2

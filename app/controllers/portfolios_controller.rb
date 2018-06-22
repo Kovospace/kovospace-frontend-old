@@ -23,12 +23,11 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_create_after_save
-        build_if_empty :skills, :portfolio_screenshots
+        build_if_empty :skills#, :portfolio_screenshots
     end
 
     def _around_edit
         build_if_empty :skills, :portfolio_screenshots
-        #also runs around update
     end
 
     def _after_ok_redirect_to
@@ -43,7 +42,7 @@ class PortfoliosController < ApplicationController
             :description,
             :link,
             skill_ids: [],
-            portfolio_screenshots_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache]
+            portfolio_screenshots_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy]
          )
     end
 
