@@ -231,13 +231,13 @@ Rails.application.routes.draw do
      # to: "devise/passwords#create",
      # as: "user_password"
 
-    #get "/password/new",
-    #  to: "devise/passwords#new",
-     # as: "new_user_password"
+    get "/password/new",
+      to: "devise/passwords#new",
+      as: "new_user_password"
 
-    #get "/password/edit",
-    #  to: "devise/passwords#edit",
-     # as: "edit_user_password"
+   get "/password/edit",
+     to: "devise/passwords#edit",
+     as: "edit_user_password"
 
    # patch "/password",
     #  to: "devise/passwords#update"
