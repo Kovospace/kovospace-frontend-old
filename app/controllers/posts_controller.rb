@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+	layout "admin", only: [:new, :create, :edit, :update]
+
 	private
 
 	def _load_vars

@@ -4,12 +4,13 @@
 		<article>
 			<%= p.label :title %>
 			<%= p.text_field :title %>
-			<%= p.errors :title %>
+			<%#= p.errors :title %>
 		</article>
 		<article>
 			<%= p.label :text %>
-			<%= p.text_area :text %>
-			<%= p.errors :text %>
+			<%#= p.text_area :text %>
+			<%= p.cktext_area :text %>
+			<%#= p.errors :text %>
 		</article>
 	</section>
 
@@ -30,12 +31,12 @@
 				<% if t.object.id.blank? %>
 					<%= t.label :title %>
 					<%= t.text_field :title %>
-					<%= t.errors :title %>
+					<%#= t.errors :title %>
 				<% end %>
 			<% end %>
 		</article>
 		<article>
-			<%= render(
+			<%#= render(
 				'layouts/shared_elements/form_errors_field',
 				field: :categories_attributes
 			) %>
@@ -59,18 +60,18 @@
 				<% if t.object.id.blank? %>
 					<%= t.label :title %>
 					<%= t.text_field :title %>
-					<%= t.errors :title %>
+					<%#= t.errors :title %>
 				<% end %>
 			<% end %>
 		</article>
 		<article>
-			<%= render(
+			<%#= render(
 				'layouts/shared_elements/form_errors_field',
-				field: :tagss_attributes
+				field: :tags_attributes
 			) %>
 		</article>
 	</section>
-	
+
 	<br>
 
 	<section>
@@ -78,5 +79,5 @@
 			<%= p.submit %>
 		</article>
 	</section>
-	
+
 <% end %>

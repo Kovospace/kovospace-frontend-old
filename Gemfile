@@ -35,6 +35,10 @@ gem 'recursive-open-struct'
 
 gem 'carrierwave', '~> 1.0'
 
+gem 'ckeditor'
+
+gem 'mini_magick'
+
 #gem 'activeadmin'
 # Plus integrations with:
 #gem 'cancan' # or cancancan
