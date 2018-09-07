@@ -22,6 +22,10 @@ class PostsController < ApplicationController
 		#also runs around update
 	end
 
+	def _after_ok_redirect_to
+        { controller: "admin", action: "list_posts" }
+    end
+
 	def _permitted_params
 		 params[:post].permit(
 		 	:title,

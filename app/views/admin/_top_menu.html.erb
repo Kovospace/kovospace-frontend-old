@@ -12,19 +12,31 @@
      <li>
         <%= active_link_to(
             'Portfolio',
-            list_portfolio_path
+            list_portfolio_path,
+            active: [
+                ['admin', 'portfolios'],     # kontrollery
+                ['new', 'edit', 'list_portfolios']          # akcie v kontrolleroch
+            ]
         ) %>
     </li>
     <li>
         <%= active_link_to(
             'Blog',
-            list_blogs_path
+            list_blogs_path,
+            active: [
+                ['admin', 'blogs'],     # kontrollery
+                ['new', 'edit', 'list_blogs']          # akcie v kontrolleroch
+            ]
         ) %>
     </li>
     <li>
         <%= active_link_to(
             'Články',
-            list_posts_path
+            list_posts_path,
+            active: [
+                ['admin', 'posts'],     # kontrollery
+                ['new', 'edit', 'list_posts']          # akcie v kontrolleroch
+            ]
         ) %>
     </li>
     <li>

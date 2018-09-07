@@ -5,7 +5,7 @@ section#intro {
 
     article#short_about_me {
         position: relative;
-        @include sputnik(0, 0, 8em, 45deg);
+        @include sputnik(0, 0, 8em, 115deg);
 
         & > div, & > figure {
             display: table-cell;
@@ -44,6 +44,7 @@ section#intro {
         figure {
             width:20%;
             position: relative;
+            vertical-align:middle;
 
             & > span {
                 color: $red;
@@ -52,7 +53,8 @@ section#intro {
                 position:absolute;
                 transform: rotate(-45deg);
                 right: 100%;
-                bottom: 80%;
+                //bottom: 80%;
+                bottom:2em;
             }
         }
     }

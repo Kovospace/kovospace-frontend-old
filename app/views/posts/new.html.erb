@@ -1,83 +1,66 @@
 <%= form_for @post do |p| %>
 
-	<section>
-		<article>
-			<%= p.label :title %>
-			<%= p.text_field :title %>
-			<%#= p.errors :title %>
-		</article>
-		<article>
-			<%= p.label :text %>
-			<%#= p.text_area :text %>
-			<%= p.cktext_area :text %>
-			<%#= p.errors :text %>
-		</article>
-	</section>
+	<div>
+		<%= p.label :title %>
+		<%= p.text_field :title %>
+		<%#= p.errors :title %>
+	</div>
 
-	<br>
+	<div>
+		<%= p.label :text %>
+		<%#= p.text_area :text %>
+		<%= p.cktext_area :text %>
+		<%#= p.errors :text %>
+	</div>
 
-	<section>
-		<article>
-			<%= p.collection_check_boxes(
-				:category_ids,
-				@categories_all,
-				:id,
-				:title
-			) %>
-		</article>
-		<br>
-		<article>
-			<%= p.fields_for :categories, @categories do |t| %>
-				<% if t.object.id.blank? %>
-					<%= t.label :title %>
-					<%= t.text_field :title %>
-					<%#= t.errors :title %>
-				<% end %>
+	<div>
+		<%= p.collection_check_boxes(
+			:category_ids,
+			@categories_all,
+			:id,
+			:title
+		) %>
+	</div>
+
+	<div>
+		<%= p.fields_for :categories, @categories do |t| %>
+			<% if t.object.id.blank? %>
+				<%= t.label :title %>
+				<%= t.text_field :title %>
+				<%#= t.errors :title %>
 			<% end %>
-		</article>
-		<article>
-			<%#= render(
-				'layouts/shared_elements/form_errors_field',
-				field: :categories_attributes
-			) %>
-		</article>
-	</section>
+		<% end %>
+		<%#= render(
+			'layouts/shared_elements/form_errors_field',
+			field: :categories_attributes
+		) %>
+	</div>
 
-	<br>
+	<div>
+		<%= p.collection_check_boxes(
+			:tag_ids,
+			@tags_all,
+			:id,
+			:title
+		) %>
+	</div>
 
-	<section>
-		<article>
-			<%= p.collection_check_boxes(
-				:tag_ids,
-				@tags_all,
-				:id,
-				:title
-			) %>
-		</article>
-		<br>
-		<article>
-			<%= p.fields_for :tags, @tags do |t| %>
-				<% if t.object.id.blank? %>
-					<%= t.label :title %>
-					<%= t.text_field :title %>
-					<%#= t.errors :title %>
-				<% end %>
+	<div>
+		<%= p.fields_for :tags, @tags do |t| %>
+			<% if t.object.id.blank? %>
+				<%= t.label :title %>
+				<%= t.text_field :title %>
+				<%#= t.errors :title %>
 			<% end %>
-		</article>
-		<article>
-			<%#= render(
-				'layouts/shared_elements/form_errors_field',
-				field: :tags_attributes
-			) %>
-		</article>
-	</section>
+		<% end %>
+		<%#= render(
+			'layouts/shared_elements/form_errors_field',
+			field: :tags_attributes
+		) %>
+	</div>
 
-	<br>
-
-	<section>
-		<article>
-			<%= p.submit %>
-		</article>
-	</section>
+	<div>
+		<%= p.submit %>
+	</div>
 
 <% end %>

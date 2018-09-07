@@ -1,0 +1,13 @@
+<%= form_for @blog do |s| %>
+
+    <div>
+        <%= s.label :title %>
+        <%= s.text_field :title %>
+    </div>
+
+    <div>
+        <%= s.label :description %>
+        <%= s.text_area :description %>
+    </div>
+
+<% end %>

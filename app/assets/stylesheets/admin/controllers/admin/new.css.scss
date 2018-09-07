@@ -45,6 +45,11 @@ body.admin {
                     }
                 }
 
+                input[type=checkbox] + label {
+                    margin-left: 0.125em;
+                    margin-right: 0.5em;
+                }
+
                 picture {
                     display: table;
                     float:left;
