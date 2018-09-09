@@ -50,6 +50,7 @@ header.homepage {
             color: $logo_orange;
             font-weight:bold;
             font-size:1.5em;
+            padding-bottom:0.5em;
             /*padding-top:0.125em;
             padding-left:0.125em;
             padding-right:0.125em;*/
@@ -57,9 +58,38 @@ header.homepage {
             line-height:1em;
 
             span {
+                position:relative;
                 /*display: inline-block;
                 vertical-align: middle;*/
-                border-bottom: 0.25em solid white;
+                //border-bottom: 0.25em solid white;
+                &::after {
+                    content: '';
+                    height:0.2em;
+                    background-color: $white;
+                    position:absolute;
+                    top:100%;
+                    left:0;
+                    right:0;
+                    margin-top:0.125em;
+                    //border-radius:0.25em;
+                }
+
+                &:first-child {
+
+                    &::after {
+                        border-top-left-radius: 0.25em;
+                        border-bottom-left-radius: 0.25em;
+                    }
+                }
+
+                &:last-child {
+
+                    &::after {
+                        border-top-right-radius: 0.25em;
+                        border-bottom-right-radius: 0.25em;
+                    }
+                }
+
             }
         }
 
