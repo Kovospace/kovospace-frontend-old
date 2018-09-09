@@ -4,10 +4,11 @@ body {
 
     header.homepage {
         background-color: $space_black;
-        height: 25%;
+        //height: 25%;
         width: 100%;
         background-color: black;
         border-bottom: 1px dashed red;
+        display:table;
     }
 
     main {
@@ -94,12 +95,20 @@ body {
                                 flex: 1 0 auto;
                                 display: flex;
                                 flex-direction: column;
-                                justify-content: center;
+                                justify-content: space-around;
 
                                 li {
                                     display:table; // IE srot fallback
                                     width:100%;
-                                    margin: 3% 0;
+                                    //margin: 3% 0;
+
+                                    &:first-child {
+                                        margin-top: 5%;
+                                    }
+
+                                    &:last-child {
+                                        margin-bottom: 5%;
+                                    }
                                 }
                             }
                         }

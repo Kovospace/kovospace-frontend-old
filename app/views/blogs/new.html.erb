@@ -10,4 +10,31 @@
         <%= s.text_area :description %>
     </div>
 
+    <div>
+        <%= s.label :title_bg %>
+        <%= s.file_field :title_bg %>
+        <%= s.hidden_field :title_bg_cache %>
+    </div>
+
+    <div>
+        <picture>
+            <%= s.label :title_bg do %>
+                <%= image_tag(s.object.title_bg) if !s.object.title_bg.nil? %>
+            <% end %>
+        </picture>
+    </div>
+
+    <div>
+        <%= s.collection_check_boxes(
+            :category_ids,
+            @categories_all,
+            :id,
+            :title
+        ) %>
+    </div>
+
+    <div>
+        <%= s.submit %>
+    </div>
+
 <% end %>

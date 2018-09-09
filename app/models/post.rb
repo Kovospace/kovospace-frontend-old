@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 	has_many(
 		:post_tags,
 		inverse_of: :post,
-		dependent: :destroy 
+		dependent: :destroy
 		# destroy references (joins) to tags in post_tags intertable, not created tags
 	)
 	has_many(
@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
 	accepts_nested_attributes_for(
 		:tags,
 		allow_destroy: true,
-		reject_if: lambda { |c| c[:title].blank? } 
+		reject_if: lambda { |c| c[:title].blank? }
 		# skip saving empty tag association if field for new tag is not filled
 		# but do not raise validation error
 	)
@@ -24,7 +24,7 @@ class Post < ActiveRecord::Base
 	has_many(
 		:category_posts,
 		inverse_of: :post,
-		dependent: :destroy 
+		dependent: :destroy
 	)
 	has_many(
 		:categories,
@@ -35,8 +35,20 @@ class Post < ActiveRecord::Base
 	accepts_nested_attributes_for(
 		:categories,
 		allow_destroy: true,
-		reject_if: lambda { |c| c[:title].blank? } 
+		reject_if: lambda { |c| c[:title].blank? }
 	)
+
+	has_many(
+        :blog_posts,
+        inverse_of: :post,
+        dependent: :destroy
+    )
+    has_many(
+        :blogs,
+        through: :blog_posts
+        #validate: false
+        # skip validations if saved using autosave of parent model (this model)
+    )
 
 	nested_attrs_getter_for :categories, :tags
 

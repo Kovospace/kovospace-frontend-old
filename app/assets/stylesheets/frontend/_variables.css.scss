@@ -23,6 +23,9 @@ $space_lightblack: #0f0f0f;
 $space_blue: #000542;
 $sky_blue: #C9E9FF;
 $ground_beige: #D5A549;
+$logo_orange: #FFAD00;
+$earth_blue: #00A3FF;
+$moon_grey: #5F5F5F;
 
 // hlasky
 $terminal_green: #00FF00;
@@ -62,6 +65,7 @@ $moon5_bg: #00A7FF;
 $transition_time: 0.3s;
 $transition_time_fast: 0.15s;
 
+@import "base";
 @import "mixins";
 @import "effects";
 @import "sketches";
