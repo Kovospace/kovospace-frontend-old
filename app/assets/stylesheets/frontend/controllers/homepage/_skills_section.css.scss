@@ -3,128 +3,88 @@
 section#skills {
 
     article {
+        white-space:nowrap;
+        display: table;
+        vertical-align:middle;
+        margin: 1em 0;
 
-        figure {
-            width: 100%;
-            &.size_1 { /* bezo zmien */ }
-            &.size_2 { width: 93%; font-size:0.93em; }
-            &.size_3 { width: 86%; font-size:0.86em; }
-            &.size_4 { width: 79%; font-size:0.79em; }
-            &.size_5 { width: 72%; font-size:0.72em; }
-            height: 100%;
-            position: relative;
-            display: inline-block;
+        div.description {
+            display: table-cell;
+            vertical-align:middle;
 
-            div {
-                width: 75%;
-                height: 100%;
-                padding-bottom: 75%;
-                margin: 0 auto;
-                border-radius:51%;
+            figure {
+                font-size:2em;
+                &.size_1 { /* default */ }
+                &.size_2 { font-size:1.75em; }
+                &.size_3 { font-size:1.5em; }
+                &.size_4 { font-size:1.25em; }
+                &.size_5 { font-size:1em; }
+                min-width: 9em;
+                height: 9em;
                 position: relative;
-                background-color: red;
+                display: inline-table;
+                border-radius: 50%;
+                text-align: center;
+                margin-right:1em;
+                vertical-align:middle;
 
-                picture {
-                    position:absolute;
-                    top:0;
-                    left:0;
-                    bottom:0;
-                    right:0;
-
-                    img {
-                        border-radius:51%;
-                        max-width: 100%;
-                        max-height: 100%;
-                    }
-                }
-            }
-
-            span {
-                background-color: green;
-                min-width:2em;
-                position:relative;
-                //display: block;
-                display:inline-block;
-                overflow: visible;
-                height:0;
-                // width:2em;
-                //padding-bottom: 100%;
-                //vertical-align: middle;
-
-                z-index:9;
-                /*&::after {
-                    content: "";
+                div.bg {
                     display: block;
-                    padding-bottom: 100%;
-                }*/
-
-                b {
-                     z-index:9;
-                    //position:relative;
-                    //display: table;
-                    //display: inline-block;
-                    display: block;
-                    //height: 0;
-                    //vertical-align: middle;
-                    width:100%;
-                    //padding-bottom: 100%;
-                    opacity: 0;
-                    background-color:yellow;
-                    //overflow-y: hidden;
-
-                    &::after {
-                        content: "";
-                        display: block;
-                        padding-bottom: 100%;
-                    }
-
-                    /*u {
-                         z-index:9;
-                        //position: absolute;
-                        //top:0;
-                        //left:0;
-                        //right:0;
-                        //bottom:0;
-                        display:table-cell;
-                        vertical-align: middle;
-                        //height:100%;
-                    }*/
-                }
-
-                u {
                     position: absolute;
-                    top:0;
-                    left:0;
-                    bottom:0;
-                    right:0;
+                    top: 0.5em;
+                    bottom: 0.5em;
+                    left:0.5em;
+                    right:0.5em;
+                    margin-left: auto;
+                    margin-right: auto;
+                    border-radius: 50%;
+                    width: 8em;
+                    height: 8em;
                 }
 
+                h3 {
+                    vertical-align:middle;
+                    display: table-cell;
+                    position:relative;
+
+                    span {
+                        display:block;
+                        background-color: black;
+                        color: $white;
+                        vertical-align:middle;
+                        font-weight:bold;
+                        padding:0.125em 0.5em;
+                        @include box_sizing();
+                        border-radius:1em;
+                    }
+                }
             }
         }
 
-        div.description {
-            padding-top: 1em;
-            text-align: center;
-
-            h4  {
-                font-size: 2.5em;
-                padding-bottom:0.25em;
-                font-weight:bold;
-            }
-
-            h3 {
-               font-size: 2em;
-               padding-bottom:0.25em;
-               font-weight:bold;
-            }
-
-            b {
-                font-size: 1.5em;
-            }
+        div.projects {
+            display: table-cell;
+            white-space: normal;
+            vertical-align:middle;
 
             a {
-                font-size:1.125em;
-                padding: 0 0.25em;
+                display: inline-table;
+                font-size:1.375em;
+                border-radius: 50%;
+                background-color: red;
+                margin: 0.5em;
+
+                &:before {
+                    content: '\200B';
+                    display: inline-block;
+                    padding-top:100%;
+                    height:0;
+                    vertical-align:middle;
+                }
+
+                span {
+                    vertical-align:middle;
+                    padding:0 0.25em;
+                }
             }
         }
     }

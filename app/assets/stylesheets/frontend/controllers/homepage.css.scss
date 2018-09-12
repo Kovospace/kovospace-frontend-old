@@ -4,10 +4,8 @@ body {
 
     header.homepage {
         background-color: $space_black;
-        //height: 25%;
         width: 100%;
         background-color: black;
-        border-bottom: 1px dashed red;
         display:table;
     }
 
@@ -17,6 +15,11 @@ body {
             padding: 3%;
 
             @include box_sizing();
+
+            &#shortinfo {
+                color: $white;
+                background-color: $space_softblack;
+            }
 
             &#intro, &#skills {
                 min-height: 100%;
@@ -42,7 +45,7 @@ body {
             }
 
             &#intro {
-                background-color: $space_softblack;
+                background-color: $space_near;
                 color: $white;
                 display: block;
                 display:flex;
@@ -121,13 +124,13 @@ body {
                 color: $white;
                 background-color: $space_lightblack;
                 display: block;
-                text-align:center;
-                vertical-align: middle;
-                display:flex;
+                //text-align:center;
+                //vertical-align: middle;
+                /*display:flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-around;
-                align-items:center;
+                align-items:center;*/
 
                 h2 {
                     text-align: left;
@@ -139,10 +142,10 @@ body {
                 article {
                     height: 100%;
                     vertical-align: middle;
-                    display: inline-block;
-                    width: 30%;
-                    padding:2% 1%;
-                    flex: 0 1 30%;
+                    //display: inline-block;
+                    //width: 30%;
+                    //padding:2% 1%;
+                    //flex: 0 1 30%;
                 }
             }
 

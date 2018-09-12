@@ -14,18 +14,5 @@ main {
                 div#ship_body { z-index: 3; }
             }
         }
-
-        &#skills {
-
-            article {
-
-                figure {
-
-                    div { z-index: 4; }
-                    span { z-index:5; }
-                    span > abbr { z-index:6; }
-                }
-            }
-        }
     }
 }

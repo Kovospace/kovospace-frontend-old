@@ -1,44 +1,15 @@
 @import "./frontend/variables";
 
 header.homepage {
-    //height:auto;
 
     figure#web_logo {
-        @include rotate(-25deg);
-        display:table;
+        @include rotate(20deg);
+        display: inline-table;
+        vertical-align:middle;
         position:relative;
         font-size:4em;
         height:4em;
-        margin:0.5em;
-
-        /*span::after {
-             content: '';
-                display: block;
-                background-color: $white;
-                height: 0.1em;
-                width:100%;
-                //position:absolute;
-                //bottom:0;
-
-        }*/
-
-        /*span {
-            border-bottom: 0.25em solid red;
-
-            b {
-                display:inline;
-
-                &::after {
-                    content: '';
-                    display: inline-block;
-                    background-color: $white;
-                    height: 0.1em;
-                    width:100%;
-                    position:absolute;
-                    bottom:0;
-                }
-            }
-        }*/
+        margin:0.5em 0;
 
         div.text {
             position:relative;
@@ -48,33 +19,14 @@ header.homepage {
             letter-spacing:0.0625em;
             font-family: StarFont;
             color: $logo_orange;
-            //background-color: $logo_orange;
-            //color: transparent;
-            //font-weight:bold;
             font-size:1.25em;
             padding-bottom:0.5em;
-            /*padding-top:0.125em;
-            padding-left:0.125em;
-            padding-right:0.125em;*/
             text-shadow: 0.0312em 0.0312em 0 $pure_black;
-            /*-0.0312em -0.0312em 0 $pure_black,
-            -0.0312em 0.0312em 0 $pure_black,
-            0.0312em -0.0312em 0 $pure_black;*/
-            //,
-                         //-2px -2px 0 $pure_black,
-                         //2px -2px 0 $pure_black,
-                         //-2px 2px 0 $pure_black;
             line-height:1em;
-            /*-webkit-background-clip: text;
-             -moz-background-clip: text;
-                  background-clip: text;*/
 
             span {
                 position:relative;
 
-                //display: inline-block;
-                //vertical-align: middle;
-                //border-bottom: 0.25em solid white;
                 &::after {
                     content: '';
                     height:0.25em;
@@ -84,7 +36,6 @@ header.homepage {
                     left:0;
                     right:0;
                     margin-top:0.125em;
-                    //border-radius:0.25em;
                 }
 
                 &:first-child {
@@ -105,59 +56,23 @@ header.homepage {
             }
 
             span.text {
-               /* background-color: $logo_orange;
-                color: transparent;
-                -webkit-background-clip: text;
-             -moz-background-clip: text;
-                  background-clip: text;*/
-                  //font-weight:bold;
-                padding-left:0.0625em;
+                padding-left:0.125em;
             }
 
             span.dot {
-                //min-width:1em;
-                //height:1em;
-                //position:relative;
-                //display:inline-block;
-
-                /*&::before {
-                    display: block;
-                    content: '';
-                    //margin-top: 0.75em;
-                    width:0.75em;
-                    height:0.75em;
-                    background-color: $moon_grey;
-                    position:absolute;
-                    //top:100%;
-                    top:0.3125em;
-                    //left:0;
-                   //right:0;
-                    margin:0 auto;
-                    border-radius: 50%;
-                    z-index:10;
-                }*/
 
                 b {
                     display: inline-block;
-                    min-width: 0.75em;
-                    //min-height: 0.75em;
-                    height:0.125em;
+                    min-width: 0.5em;
                     position:relative;
-                    //background-color:red;
 
                     &::before {
                         display: block;
                         content: '';
-                        //margin-top: 0.75em;
-                        width:0.75em;
-                        height:0.75em;
+                        width:0.5em;
+                        height:0.5em;
                         background-color: $moon_grey;
                         position:absolute;
-                        //top:100%;
-                        //top:0.25em;
-                        //left:0;
-                       //right:0;
-                       //bottom:0;
                         margin:0 auto;
                         border-radius: 50%;
                         z-index:10;
@@ -184,21 +99,5 @@ header.homepage {
                 height: 100%;
             }
         }
-
-        /*span.dot {
-            display:table-cell;
-            vertical-align: middle;
-
-            b {
-                display: block;
-                content: '';
-                margin-top: 0.75em;
-                width:0.75em;
-                height:0.75em;
-                background-color: $moon_grey;
-                position:relative;
-                border-radius: 50%;
-            }
-        }*/
     }
 }

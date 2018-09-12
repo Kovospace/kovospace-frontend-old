@@ -1,24 +1,49 @@
 header.homepage {
-
-    figure#web_logo {
-        float:left;
-
-    }
+    vertical-align: middle;
+    text-align:center;
 
     nav {
-        //float: right;
-        background-color: #333;
         height:100%;
-        display: block;
-         float:left;
-
+        display: inline-table;
+        vertical-align: middle;
         font-size: 1.5em;
+        margin: 0.5em 0;
 
         ul {
 
-            li {
+            &.bookmarks {
 
+            }
+
+            &.pagelinks {
+                font-size:1.625em;
+            }
+
+            li {
+                display: inline-table;
+
+                a {
+                    text-align: center;
+                    background: #c0c0c0;
+                    margin: 0.375em;
+                    display: inline-table;
+                    border-radius: 50%;
+
+                    &:before {
+                        content: '\200B';
+                        display: inline-block;
+                        padding-top:100%;
+                        height:0;
+                        vertical-align:middle;
+                    }
+
+                    span {
+                        vertical-align:middle;
+                        padding: 0.25em;
+                    }
+                }
             }
         }
     }
 }
+

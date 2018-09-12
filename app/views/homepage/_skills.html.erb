@@ -5,19 +5,20 @@
 
     <article>
 
-        <figure class="size_<%= skill.degree %> ">
-            <div style="background-color:#<%= skill.bg %>; ">
-                <picture>
-                    <%= image_tag(skill.icon, alt: skill.title) %>
-                </picture>
-            </div>
-        </figure>
-
         <div class="description">
-            <h3> <%= skill.title %> </h3>
-            <b>Misie:</b>
+             <figure class="size_<%= skill.degree %> ">
+                <div class="bg" style="background-color:#<%= skill.bg %>;"></div>
+                <h3>
+                    <span> <%= skill.title %> </span>
+                </h3>
+            </figure>
+        </div>
+
+        <div class="projects">
             <% skill.portfolios.each do |portfolio| %>
-                <%= link_to portfolio.title, portfolio %>
+                <%= link_to(portfolio) do %>
+                    <span> <%= portfolio.title %> </span>
+                <% end %>
             <% end %>
         </div>
 
