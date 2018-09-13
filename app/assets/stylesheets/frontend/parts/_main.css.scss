@@ -3,6 +3,9 @@
 html {
     height: 100%;
     @include scrollbars($soft_black, $space_black);
+    font-family: Arial, Helvetica, Sans-serif;
+    //font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
+
     //backgrund-image: image-url('fixer.gif');
 
     body {

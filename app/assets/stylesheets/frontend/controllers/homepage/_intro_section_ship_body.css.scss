@@ -36,6 +36,14 @@ section#intro {
                     }
                 }
             }
+
+            section#ship_body_text {
+                font-family: "Courier New", Courier, monospace;
+                text-align: center;
+                font-size:4em;
+                font-weight: bold;
+                padding-bottom:1em;
+            }
         }
     }
 }

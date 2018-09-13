@@ -16,8 +16,6 @@ section#intro {
 
                     li {
                         // solarny panel
-                        @include box_shadow_solar_panel($space_black, 0.125em);
-                        background-color: $solar_panel_bg;
                         position: relative;
 
                         div.triangle {
@@ -65,74 +63,84 @@ section#intro {
                             }
                         }
 
-                        a {
-                            // polozky v solarnom paneli
-                            @include background_transition($transition_time);
-                            background-color: $solar_panel_item_bg;
-                            color: $solar_panel_item_txt;
-
-                            &:hover {
-                                background-color: $solar_panel_item_bg_hover;
-                                color: $solar_panel_item_txt_hover;
-                            }
-                        }
-
                         h2 {
                             // nadpis
                             font-size: 5em;
                             display: table;
 
                             a {
-                                @include box_shadow_solar_panel_items($space_black, 0.025em);
                                 padding: 0.125em;
                                 display: block;
-                                border: 0.025em solid $space_black;
-                                border-left: 0.050em solid $space_black;
+                                margin:0.03125em;
+                                margin-left: 0.05em;
                             }
                         }
 
                         div.menuitem_content {
                             display:table;
                             border-spacing:0;
+                            white-space: nowrap;
 
                             a, div {
                                 vertical-align: middle;
                             }
 
                             a {
-                                @include box_shadow_solar_panel_items($space_black, 0.125em);
-                                border: 0.125em solid $space_black;
                                 font-size: 1.25em;
-                                padding: 0.25em 0.375em;
                             }
 
                             > a {
                                 //kategoria blogu
                                 display: table-cell;
-                                width: 1%;
+                                height: 100%;
+                                padding: 0.125em;
+                                padding-left:0;
+                                padding-right: 0.175em;
+                                background-color: $space_softblack;
                                 white-space: nowrap;
-                                border-left: 0.25em solid $space_black;
+                                border-left: 0.3125em solid $space_softblack;
 
                                 h3 {
+                                    display:table;
                                     font-weight: bold;
+                                    height: 100%;
+                                    padding: 0.25em 0.375em;
+
+                                    span {
+                                       display: table-cell;
+                                       vertical-align:middle;
+                                    }
                                 }
                             }
 
                             div {
-                                //jednotlive clanky, serialy
+                                display: inline-block;
+
                                 a {
                                     display: block;
                                     float: left;
+                                    margin:0.125em;
+                                    padding: 0.25em 0.375em;
                                 }
                             }
+                        }
 
-                            @include clearfix();
+                        a, h3 {
+                            // polozky v solarnom paneli
+                            @include background_transition($transition_time);
+                            background-color: $solar_panel_item_bg;
+                            color: $solar_panel_item_txt;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: $solar_panel_item_bg_hover;
+                                color: $solar_panel_item_txt_hover;
+                            }
                         }
                     }
                 }
             }
         }
-
     }
 }
 
