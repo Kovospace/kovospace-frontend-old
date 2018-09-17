@@ -80,6 +80,7 @@ section#intro {
                             display:table;
                             border-spacing:0;
                             white-space: nowrap;
+                            height: 100%;
 
                             a, div {
                                 vertical-align: middle;
@@ -99,16 +100,19 @@ section#intro {
                                 background-color: $space_softblack;
                                 white-space: nowrap;
                                 border-left: 0.3125em solid $space_softblack;
+                                @include box_sizing();
 
                                 h3 {
                                     display:table;
                                     font-weight: bold;
                                     height: 100%;
                                     padding: 0.25em 0.375em;
+                                    @include box_sizing();
 
                                     span {
                                        display: table-cell;
                                        vertical-align:middle;
+                                       height:100%;
                                     }
                                 }
                             }
