@@ -5,7 +5,6 @@ body {
     header.homepage {
         background-color: $space_black;
         width: 100%;
-        background-color: black;
         display:table;
     }
 
@@ -16,15 +15,15 @@ body {
 
             @include box_sizing();
 
-            &#intro, &#skills {
+            &#top, &#skills {
                 min-height: 100%;
             }
 
-            &#news, &#shortinfo {
+            &#novinky, &#o-mne {
                 min-height: 50%;
             }
 
-            &#news, &#skills, &#contact, &#shortinfo {
+            &#novinky, &#skills, &#kontakt, &#o-mne {
 
                 h2 {
                     font-size:5em;
@@ -35,13 +34,13 @@ body {
                 }
             }
 
-            &#contact {
+            &#kontakt {
                 min-height: 5em;
             }
 
 /* ----------------------------------------------------------------------------- */
 
-            &#intro {
+            &#top {
                 background-color: $space_softblack;
                 color: $white;
                 display: block;
@@ -117,7 +116,7 @@ body {
 
             }
 
-            &#news {
+            &#novinky {
                 background-color: $space_lightblack;
                 color: $white;
             }
@@ -140,19 +139,19 @@ body {
                 }
             }
 
-            &#skills_description {
-                color: $white;
+            &#o-mne {
+                color: $dirty_white;
                 background-color: $space_blue;
             }
 
-            &#shortinfo {
-                color: $black;
-                background-color: $sky_blue;
+            &#kontakt {
+                background-color: $earth_blue;
+                color: $white;
             }
 
-            &#contact {
+            &#foot {
                 background-color: $ground_beige;
-                color: $white;
+                color: $black;
             }
         }
     }

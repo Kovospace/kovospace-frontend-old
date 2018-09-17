@@ -4,9 +4,6 @@ html {
     height: 100%;
     @include scrollbars($soft_black, $space_black);
     font-family: Arial, Helvetica, Sans-serif;
-    //font-family: Lato, "Lucida Grande", Tahoma, Sans-Serif;
-
-    //backgrund-image: image-url('fixer.gif');
 
     body {
         height: 100%;
@@ -25,11 +22,9 @@ html {
             overflow-y: visible;
 
             section#foot {
-                min-height:2em;
-                line-height: 2em;
-                background-color: $pure_black;
+                min-height:3em;
+                line-height: 3em;
                 padding: 0.25em 0.5em;
-                color: $half;
                 font-size:0.75em;
 
                 a, span {

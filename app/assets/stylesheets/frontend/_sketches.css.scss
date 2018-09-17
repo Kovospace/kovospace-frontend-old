@@ -148,7 +148,7 @@
     }
 }
 
-@mixin icons_base($bg_color) {
+@mixin icons_base() {
     // pouzit EM na zmenu velkosti
     width:1em;
     height:1em;
@@ -166,7 +166,7 @@
     }
 }
 
-@mixin info_icon($bg_color, $fake_trans_color) {
+@mixin info_icon($bg_color) {
 
     &::before, &::after {
         background-color: $bg_color;
@@ -186,10 +186,10 @@
     }
 }
 
-@mixin home_icon($bg_color, $fake_trans_color) {
+@mixin home_icon($bg_color) {
 
     &::before, &::after {
-        background-color: $fake_trans_color;
+        background-color: transparent;
     }
 
     &::before {
@@ -214,7 +214,7 @@
     }
 }
 
-@mixin work_icon($bg_color, $fake_trans_color) {
+@mixin work_icon($bg_color) {
 
     &::before {
         background-color: $bg_color;
@@ -236,7 +236,7 @@
     }
 }
 
-@mixin heart_icon($bg_color, $fake_trans_color) {
+@mixin heart_icon($bg_color) {
 
     &::before, &::after {
         background-color: $bg_color;
