@@ -19,6 +19,15 @@
         transform: rotate($rotate);
         font-size: 1em;
 
+        h2 {
+            position: absolute;
+            bottom: 0;
+            right:0;
+            transform: rotate(110deg);
+            transform-origin: bottom right;
+            //font-size:75%;
+        }
+
         span {
             // anteny
             position: absolute;
@@ -53,7 +62,7 @@
     }
 }
 
-@mixin voyager($width, $rotate) {
+@mixin voyager($width, $rotate, $offset_perc: 10) {
     $antena_color: #eee;
     $construction_color: #666;
 
@@ -64,18 +73,26 @@
 
         div {
             position: absolute;
-            top: $width/100*10;
-            left: $width/100*10;
+            top: $width/100 * $offset_perc;
+            left: $width/100 * $offset_perc;
             border-radius:50%;
             background-color: $antena_color;
-            width:$width/100*80;
-            height: $width/100*80;
+            width:$width/100 * (100 - ($offset_perc * 2));
+            height: $width/100 * (100 - ($offset_perc * 2));
             transform: rotate($rotate);
 
             span, b, i, u, &::before, &::after {
                 position: absolute;
                 display: block;
                 background-color: $construction_color;
+            }
+
+            h2 {
+                position: absolute;
+                top:100%;
+                right:100%;
+                transform: rotate(-60deg);
+                transform-origin: top right;
             }
 
             &::before, &::after {

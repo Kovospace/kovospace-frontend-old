@@ -5,9 +5,9 @@ section#skills {
     aside {
         display: block;
         text-align: right;
-        @include voyager(16em, 60deg);
+        @include voyager(12em, 55deg, 0);
 
-        figure { 
+        figure {
             margin-right:5%;
             display: inline-block;
         }
@@ -17,7 +17,7 @@ section#skills {
         white-space:nowrap;
         display: table;
         vertical-align:middle;
-        margin: 1em 0;
+        margin: 2em auto;
 
         div.description {
             display: table-cell;
@@ -36,7 +36,6 @@ section#skills {
                 display: inline-table;
                 border-radius: 50%;
                 text-align: center;
-                margin-right:1em;
                 vertical-align:middle;
 
                 div.bg {
@@ -76,6 +75,7 @@ section#skills {
             display: table-cell;
             white-space: normal;
             vertical-align:middle;
+            text-align:center;
 
             a {
                 display: inline-table;

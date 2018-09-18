@@ -1,11 +1,17 @@
 <aside>
-    <%= render 'voyager' %>
+    <%= render 'voyager', title: "skills" %>
 </aside>
 
 
 <% @skills.each do |skill| %>
 
+    <% skill_projects(skill) %>
+
     <article>
+
+        <div class="projects">
+            <%= content_for :homepage_skills_projects_0 %>
+        </div>
 
         <div class="description">
              <figure class="size_<%= skill.degree %> ">
@@ -17,11 +23,7 @@
         </div>
 
         <div class="projects">
-            <% skill.portfolios.each do |portfolio| %>
-                <%= link_to(portfolio) do %>
-                    <span> <%= portfolio.title %> </span>
-                <% end %>
-            <% end %>
+            <%= content_for :homepage_skills_projects_1 %>
         </div>
 
     </article>
