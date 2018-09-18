@@ -64,12 +64,12 @@
 
         div {
             position: absolute;
-            top: $width/100*20;
-            left: $width/4;
+            top: $width/100*10;
+            left: $width/100*10;
             border-radius:50%;
             background-color: $antena_color;
-            width:$width/2;
-            height: $width/2;
+            width:$width/100*80;
+            height: $width/100*80;
             transform: rotate($rotate);
 
             span, b, i, u, &::before, &::after {

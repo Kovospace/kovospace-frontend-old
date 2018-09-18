@@ -2,6 +2,17 @@
 
 section#skills {
 
+    aside {
+        display: block;
+        text-align: right;
+        @include voyager(16em, 60deg);
+
+        figure { 
+            margin-right:5%;
+            display: inline-block;
+        }
+    }
+
     article {
         white-space:nowrap;
         display: table;
