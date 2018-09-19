@@ -12,7 +12,6 @@ body {
 
         section {
             padding: 3%;
-
             @include box_sizing();
 
             &#top, &#skills {
@@ -47,17 +46,10 @@ body {
                 display:flex;
                 flex-direction: column;
 
-                article#short_about_me {
-                    display:table; //IE
-                    flex: 0 0 auto;
-                    width:100%;
-                    min-height: 8em;
-                    //transform: rotateX(50deg);
-                }
-
                 article#menu {
                     height: 100%;
                     width:100%;
+                    max-width:100%;
                     padding-left:2em;
                     @include box_sizing();
                     display:table;      // kvoli IE srotom

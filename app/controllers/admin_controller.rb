@@ -22,8 +22,7 @@ class AdminController < ApplicationController
     end
 
     def list_portfolios
-         @result = Portfolio.all
+        @result = Portfolio.all
     end
-
 
 end

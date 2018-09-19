@@ -1,3 +1,5 @@
+@import "./admin/admin_vars";
+
 body.admin {
 
     nav {
@@ -16,6 +18,10 @@ body.admin {
                     &.active {
                         color: white;
                         background-color: black;
+                    }
+
+                    &.red {
+                        background-color: $admin_top_menu_back_to_web;
                     }
 
                     &:hover {

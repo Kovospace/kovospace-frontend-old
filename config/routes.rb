@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     as: "portfolio"
 
   get 'admin',
-    to: 'admin#index',
+    to: 'admin#list_homepage',
     as: 'admin'
 
   get "/admin/homepage",
@@ -117,6 +117,35 @@ Rails.application.routes.draw do
   delete '/contact.:id',
     to: "contacts#destroy",
     as: "destroy_contact"
+
+  # novinky
+
+  get '/newslog',
+    to: "newslogs#index",
+    as: "newslogs"
+
+  get "/admin/newslogs",
+    to: "admin#list_newslogs",
+    as: "list_newslogs"
+
+  get '/newslog/new',
+    to: "newslogs#new",
+    as: "new_newslog"
+
+  get '/newslog/:id/edit',
+    to: "newslogs#edit",
+    as: "edit_newslog"
+
+  post '/newslog',
+    to: "newslogs#create"
+
+  patch '/newslog.:id',
+    to: "newslogs#update",
+    as: "update_newslog"
+
+  delete '/newslog.:id',
+    to: "newslogs#destroy",
+    as: "destroy_newslog"
 
 ### portfolio
 

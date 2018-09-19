@@ -17,7 +17,7 @@
 }) %>
 
 <%= render(partial: 'admin_table', locals: {
-    fields: [:title, :txt],
-    buttons: [:show, :delete, :new],
+    fields: [:title],
+    buttons: [:edit, :delete, :new],
     obj: @newslog
 }) %>
