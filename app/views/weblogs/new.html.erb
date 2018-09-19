@@ -1,0 +1,16 @@
+<%= form_for @weblog do |s| %>
+
+    <div>
+        <%= s.label :title %>
+        <%= s.text_field :title %>
+    </div>
+    <div>
+        <%= s.label :txt %>
+        <%= s.text_area :txt %>
+    </div>
+
+    <div>
+        <%= s.submit %>
+    </div>
+
+<% end %>

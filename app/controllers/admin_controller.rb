@@ -10,6 +10,7 @@ class AdminController < ApplicationController
         @result = Skill.all
         @work_progress = WorkState.all
         @contacts = Contact.all
+        @newslog = Newslog.all
     end
 
     def list_posts

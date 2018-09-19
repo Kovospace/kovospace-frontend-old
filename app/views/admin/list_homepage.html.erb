@@ -15,3 +15,9 @@
     buttons: [:show, :delete, :seen],
     obj: @contacts
 }) %>
+
+<%= render(partial: 'admin_table', locals: {
+    fields: [:title, :txt],
+    buttons: [:show, :delete, :new],
+    obj: @newslog
+}) %>
