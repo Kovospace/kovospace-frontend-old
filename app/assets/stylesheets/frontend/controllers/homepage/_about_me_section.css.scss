@@ -21,38 +21,54 @@ section#o-mne {
 
     article {
         font-size:2em;
+        //white-space: nowrap;
+        display: table;
+        //vertical-align: middle;
 
-        span {
-            display:inline-block;
-            vertical-align: middle;
-            line-height:1.125em;
+        p {
+            padding-bottom: 1em;
 
-            a {
+            span {
+                display:table-cell;
+                line-height:1.25em;
 
-                &:hover {
-                    text-decoration: underline;
+                i.icon {
+                    font-size:2em;
+                    margin-right: 0.25em;
+                    @include icons_base();
+
+                    &#about_me_info_icon {
+                        @include person_icon($dirty_white);
+                    }
+
+                    &#about_me_home_icon {
+                        @include home_icon($dirty_white);
+                    }
+
+                    &#about_me_work_icon {
+                        @include work_icon($dirty_white);
+                    }
+
+                    &#about_me_hobby_icon {
+                        @include heart_icon($dirty_white);
+                    }
                 }
-            }
-        }
 
-        span.icon {
-            font-size:2em;
-            @include icons_base();
+                &:last-child {
+                    vertical-align: bottom;
+                }
 
-            &#about_me_info_icon {
-                @include person_icon($dirty_white);
-            }
+                &:first-child {
+                    vertical-align: middle;
+                }
 
-            &#about_me_home_icon {
-                @include home_icon($dirty_white);
-            }
+                a {
 
-            &#about_me_work_icon {
-                @include work_icon($dirty_white);
-            }
-
-            &#about_me_hobby_icon {
-                @include heart_icon($dirty_white);
+                    &:hover {
+                        text-decoration: underline;
+                        cursor:pointer;
+                    }
+                }
             }
         }
     }
