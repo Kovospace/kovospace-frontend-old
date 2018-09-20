@@ -13,6 +13,8 @@ body {
         section {
             padding: 3%;
             @include box_sizing();
+            //position: relative;
+            //overflow-x: hidden;
 
             &#top, &#skills {
                 min-height: 100%;

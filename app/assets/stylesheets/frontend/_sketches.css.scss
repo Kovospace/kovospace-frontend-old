@@ -102,10 +102,10 @@
         border: 0.0625em solid $bg_color;
         background-color: transparent;
         width:0.125em;
-        height:0.125em;
-        left:0.325em;
-        //right:0.325em;
-        top:0.25em;
+        height:0.0625em;
+        //left:0.325em;
+        right:0.375em;
+        top:0.3125em;
     }
 }
 
@@ -204,8 +204,11 @@
 
     figure.voyager {
         width:$width;
-        padding-bottom: $width;
-        position:relative;
+        //padding-bottom: $width;
+        height: $width;
+        //position:relative;
+        position: absolute ;
+            right:12em;
 
         div {
             position: absolute;
@@ -307,6 +310,9 @@
     figure.kozmonaut {
         position:relative;
         font-size:$size;
+        padding-bottom:2em;
+        padding-left: 0.5em;
+        padding-right:0.5em;
         $color: #EEE;
         $color2: #111;
         $color3:#1A5DAD;

@@ -14,5 +14,12 @@ main {
                 div#ship_body { z-index: 3; }
             }
         }
+
+        &#skills {
+
+            aside {
+                figure { z-index: 10; }
+            }
+        }
     }
 }

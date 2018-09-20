@@ -4,12 +4,22 @@ section#skills {
 
     aside {
         display: block;
-        text-align: right;
+        position: relative;
+        height: 12em;
+        //text-align: right;
+        /*position: absolute;
+        top:0;
+        left:0;
+        right:0;*/
+        //height:12em;
         @include voyager(12em, 55deg, 0);
 
         figure {
-            margin-right:5%;
+            //margin-right:5%;
             display: inline-block;
+            //position: absolute ;
+            //right:0;
+            //right: 0em;
         }
     }
 
