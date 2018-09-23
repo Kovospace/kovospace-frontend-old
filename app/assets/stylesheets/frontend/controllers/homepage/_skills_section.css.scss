@@ -3,35 +3,14 @@
 section#skills {
 
     aside {
-        display: block;
-        position: relative;
-        height: 12em;
-        //text-align: right;
-        /*position: absolute;
-        top:0;
-        left:0;
-        right:0;*/
-        //height:12em;
+        text-align: right;
         @include voyager(12em, 55deg, 0);
-
-        figure {
-            //margin-right:5%;
-            display: inline-block;
-            //position: absolute ;
-            //right:0;
-            //right: 0em;
-        }
     }
 
     article {
         white-space:nowrap;
-        display: table;
-        vertical-align:middle;
-        margin: 2em auto;
 
         div.description {
-            display: table-cell;
-            vertical-align:middle;
 
             figure {
                 font-size:2em;
@@ -40,10 +19,7 @@ section#skills {
                 &.size_3 { font-size:1.5em; }
                 &.size_4 { font-size:1.25em; }
                 &.size_5 { font-size:1em; }
-                min-width: 9em;
-                height: 9em;
                 position: relative;
-                display: inline-table;
                 border-radius: 50%;
                 text-align: center;
                 vertical-align:middle;
@@ -82,17 +58,14 @@ section#skills {
         }
 
         div.projects {
-            display: table-cell;
             white-space: normal;
             vertical-align:middle;
             text-align:center;
 
             a {
-                display: inline-table;
                 font-size:1.125em;
                 border-radius: 50%;
                 background-color: red;
-                margin: 0.5em;
 
                 &:before {
                     content: '\200B';
@@ -105,6 +78,7 @@ section#skills {
                 span {
                     vertical-align:middle;
                     padding:0 0.25em;
+                    white-space: nowrap;
                 }
             }
         }

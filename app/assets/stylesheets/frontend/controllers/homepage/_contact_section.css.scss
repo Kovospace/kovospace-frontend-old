@@ -3,10 +3,9 @@
 section#kontakt {
 
     article {
-        margin-top: 1.5em;
+        @include box_sizing();
 
         form {
-            width: 50%;
 
             div {
                 display: table;
@@ -27,7 +26,7 @@ section#kontakt {
                         width:100%;
                         padding:0.25em;
                         font-family: verdana,tahoma,"Bitstream Vera Sans","DejaVu Sans",arial,helvetica,sans-serif;
-                        box-sizing: border-box;
+                        @include box_sizing();
                         background-color: $dirty_white;
 
                         &:active, &:focus {
@@ -101,5 +100,11 @@ section#kontakt {
                 }
             }
         }
+    }
+
+    aside {
+        text-align:center;
+        @include parabola(4em);
+        @include box_sizing();
     }
 }

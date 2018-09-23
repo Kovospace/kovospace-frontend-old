@@ -55,7 +55,6 @@
         width:0.375em;
         height:0.375em;
         left:0.3125em;
-        //height: 20%;
         border-radius:50%;
     }
 }
@@ -161,7 +160,6 @@
             right:0;
             transform: rotate(110deg);
             transform-origin: bottom right;
-            //font-size:75%;
         }
 
         span {
@@ -204,14 +202,11 @@
 
     figure.voyager {
         width:$width;
-        //padding-bottom: $width;
         height: $width;
-        //position:relative;
-        position: absolute ;
-            right:12em;
+        position:relative;
 
         div {
-            position: absolute;
+            position: relative;
             top: $width/100 * $offset_perc;
             left: $width/100 * $offset_perc;
             border-radius:50%;
@@ -240,6 +235,7 @@
                width:2%;
                height: 150%;
                transform-origin: top;
+               position: absolute;
             }
 
             &::before {
@@ -424,6 +420,81 @@
             }
         }
     }
+}
+
+@mixin parabola($size) {
+
+    $color: #666666;
+    $color2: #eee;
+    $color3: #2C5326;
+
+    span {
+
+        display: block;
+        font-size: $size;
+        width: 0;
+        height: 0;
+        border-left: 1em solid transparent;
+        border-right: 1em solid transparent;
+        border-top: 0em solid transparent;
+        border-bottom: 1.5em solid $color;
+        margin: 0 auto;
+
+        &:before {
+            background-color: $color2;
+            content: '';
+            display:block;
+            width:3em;
+            height:1.5em;
+            position:relative;
+            bottom:1.5em;
+            right:1em;
+            border-bottom-left-radius: 1.5em;
+            border-bottom-right-radius: 1.5em;
+            transform: rotate(-45deg);
+            z-index: 10;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            background-color: transparent;
+            position:relative;
+            width: 1em;
+            height:1em;
+            bottom: 3.25em;
+            right: 0.5em;
+            border-left: 0.25em solid $color;
+            border-top: 0.25em solid $color;
+        }
+    }
+
+    h2 {
+        display: table;
+        margin: 0 auto;
+        background-color:#666666;
+        padding-left: 0.25em;
+        padding-right:0.25em;
+        padding-bottom:0.5em;
+        padding-top:0.125em;
+        border-top-left-radius: 0.125em;
+        border-top-right-radius: 0.125em;
+        position:relative;
+
+        /*&:before {
+            content: '';
+            display:block;
+            height:0.5em;
+            position: absolute;
+            bottom:0;
+            left: 10%;
+            width:0.625em;
+            background-color: $color3;
+            border: 0.0625em solid black;
+            border-bottom-width: 0;
+        }*/
+    }
+
 }
 
 

@@ -1,38 +1,16 @@
 @import "./frontend/variables";
 
 section#o-mne {
-    //padding-left: 16em;
-    //position:relative;
     display:table;
-
-    aside, article {
-        display:table-cell;
-        vertical-align: middle;
-    }
 
     aside {
         @include kozmonaut(4em);
-
-        /*position: absolute;
-        top:0;
-        bottom:0;
-        left:2em;*/
-        //right:3%;
-        //width: 13em;
-
-        figure {
-            //top: 50%;
-            //margin-top: -1.5em;
-        }
     }
 
     article {
         font-size:2em;
         width: 99%;
-        //padding-left: 1.5em;
-        //white-space: nowrap;
-        //display: table;
-        //vertical-align: middle;
+        @include box_sizing();
 
         p {
             padding-bottom: 1em;

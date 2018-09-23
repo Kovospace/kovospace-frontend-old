@@ -13,8 +13,11 @@ body {
         section {
             padding: 3%;
             @include box_sizing();
-            //position: relative;
-            //overflow-x: hidden;
+            overflow-x: hidden;
+
+            h2 {
+                font-size:5em;
+            }
 
             &#top, &#skills {
                 min-height: 100%;
@@ -24,26 +27,43 @@ body {
                 min-height: 50%;
             }
 
-            &#novinky, &#skills, &#kontakt, &#o-mne {
+            &#kontakt {
+                min-height: 5em;
+            }
 
-                h2 {
-                    font-size:5em;
-                }
+            &#top {
+                background-color: $space_softblack;
+                color: $white;
+            }
 
-                article {
-                    padding-left:0.5em;
-                }
+            &#novinky {
+                background-color: $space_lightblack;
+                color: $white;
+            }
+
+            &#skills {
+                color: $white;
+                background-color: $space_near;
+            }
+
+            &#o-mne {
+                color: $dirty_white;
+                background-color: $space_blue;
             }
 
             &#kontakt {
-                min-height: 5em;
+                background-color: $earth_blue;
+                color: $white;
+            }
+
+            &#foot {
+                background-color: $ground_beige;
+                color: $black;
             }
 
 /* ----------------------------------------------------------------------------- */
 
             &#top {
-                background-color: $space_softblack;
-                color: $white;
                 display: block;
                 display:flex;
                 flex-direction: column;
@@ -85,6 +105,7 @@ body {
 
                             ul {
                                 padding-left:5%;
+                                @include box_sizing();
                                 flex: 1 0 auto;
                                 display: flex;
                                 flex-direction: column;
@@ -107,45 +128,99 @@ body {
                         }
                     }
                 }
-
             }
 
             &#novinky {
-                background-color: $space_lightblack;
-                color: $white;
-            }
+                display: table;
+                width: 100%;
 
-            &#skills {
-                color: $white;
-                background-color: $space_near;
-                display: block;
-
-                h2 {
-                    text-align: left;
-                    padding-bottom: 0.25em;
-                    flex: 0 0 100%;
-                    align-self: flex-start;
+                aside {
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding-left:6em;
+                    padding-right:3.5em;
+                    padding-top:6em;
                 }
 
                 article {
-                    height: 100%;
+                    padding-left:1em;
+                }
+            }
+
+            &#skills {
+
+                aside {
+                    display: block;
+                    position: relative;
+                    padding-top:2.125em;
+                    padding-bottom:1.5em;
+
+                    figure {
+                        display: inline-block;
+                        padding-right: 6em;
+                        //@include box_sizing();
+                    }
+                }
+
+                article {
                     vertical-align: middle;
+                    display: table;
+                    vertical-align:middle;
+                    margin: 2em auto;
+
+                    div.description {
+                        display: table-cell;
+                        vertical-align:middle;
+
+                        figure {
+                            min-width: 9em;
+                            height: 9em;
+                            display: inline-table;
+                        }
+                    }
+
+                    div.projects {
+                        display: table-cell;
+
+                        a {
+                            display: inline-table;
+                            margin: 0.5em;
+                        }
+                    }
                 }
             }
 
             &#o-mne {
-                color: $dirty_white;
-                background-color: $space_blue;
+
+                aside, article {
+                    display:table-cell;
+                    vertical-align: middle;
+                }
+
+                article {
+                    padding-left: 1em;
+                }
             }
 
             &#kontakt {
-                background-color: $earth_blue;
-                color: $white;
-            }
+                padding-bottom:0;
+                display: table;
+                width: 100%;
 
-            &#foot {
-                background-color: $ground_beige;
-                color: $black;
+                article, aside {
+                    display: table-cell;
+                    vertical-align:bottom;
+                }
+
+                article {
+                    padding-right: 1.5%;
+                    padding-bottom: 3%;
+                }
+
+                aside {
+                    width:1%;
+                    padding-left: 1.5%;
+                }
             }
         }
     }

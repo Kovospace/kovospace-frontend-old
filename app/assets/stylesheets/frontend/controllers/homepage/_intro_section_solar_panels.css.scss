@@ -17,8 +17,8 @@ section#top {
                     li {
                         // solarny panel
                         position: relative;
-                        overflow-wrap: break-word;
-                        word-break: break-word;
+                        //overflow-wrap: break-word;
+                        //word-break: break-word;
 
                         div.triangle {
                             outline: 1px solid transparent;
@@ -75,6 +75,7 @@ section#top {
                                 display: block;
                                 margin:0.03125em;
                                 margin-left: 0.05em;
+                                @include box_sizing();
                             }
                         }
 
@@ -127,6 +128,8 @@ section#top {
                                     float: left;
                                     margin:0.125em;
                                     padding: 0.25em 0.375em;
+                                    overflow-wrap: break-word;
+                                    word-break: break-word;
                                 }
                             }
                         }

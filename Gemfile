@@ -59,6 +59,17 @@ gem 'mini_magick'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  #gem 'guard'
+
+  #gem 'guard-livereload', '~> 2.5', require: false
+
+  #gem 'rack-livereload'
+
+  #gem 'rb-fsevent', require: false
+  #
+  gem 'browser_sync_rails'
+
 end
 
 group :development do

@@ -42,6 +42,8 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    browser_sync_rails (0.1.1)
+      rails
     builder (3.2.3)
     byebug (9.0.6)
     carrierwave (1.2.2)
@@ -178,6 +180,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
+  browser_sync_rails
   byebug
   carrierwave (~> 1.0)
   ckeditor

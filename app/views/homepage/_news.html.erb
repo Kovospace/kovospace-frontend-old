@@ -3,12 +3,14 @@
 </aside>
 
 <article>
-    <% @newslogs.each do |newslog| %>
+    <% 2.times do %>
+        <% @newslogs.each do |newslog| %>
 
-        <h3> <%= newslog.title %> </h3>
-        <p> <%= newslog.txt %>
-        <br>
-        <br>
+            <h3> <%= newslog.title %> </h3>
+            <p> <%= newslog.txt %>
+            <br>
+            <br>
 
+        <% end %>
     <% end %>
 </article>

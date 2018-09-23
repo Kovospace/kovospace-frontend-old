@@ -11,33 +11,19 @@ section#top {
             position: relative;
             background-color: $rocket_bg;
 
-            section#me_photo {
-                width: 72%;
-                padding:0;
-                padding-bottom: 72%;
-                position: relative;
-                margin: 3em auto;
-
-                picture {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    bottom:0;
-                    right:0;
-                    border: 1em solid $rocket_parts_1_bg;
-                    border-radius:50%;
-                    overflow: hidden;
-
-                    img {
-                        position: relative;
-                        height:100%;
-                        border-radius:50%;
-                        display: block;
-                    }
-                }
+            &:before {
+                content: '';
+                width:50%;
+                padding-bottom: 50%;
+                border: 1em solid $rocket_parts_1_bg;
+                background-color: $rocket_window_bg;
+                margin:0 auto;
+                margin-bottom: 1em;
+                border-radius:50%;
             }
 
-            section#ship_body_text {
+            &:after {
+                content: 'TOP10';
                 font-family: "Courier New", Courier, monospace;
                 text-align: center;
                 font-size:4em;
