@@ -1,14 +1,23 @@
 <%= render 'web_logo' %>
 
 <ul>
+
     <li>
-        <%= link_to 'Domov', home_path %>
+        <%= link_to home_path do %>
+            <span>Domov</span>
+        <% end %>
     </li>
+
     <li>
-        <%= link_to 'Tvorba', portfolio_path %>
+        <%= link_to portfolio_path do %>
+            <span>Tvorba</span>
+        <% end %>
     </li>
+
     <li>
-        <%= link_to 'Blog', blog_path %>
+        <%= link_to blog_path do %>
+            <span>Blog</span>
+        <% end %>
     </li>
 
 </ul>

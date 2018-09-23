@@ -35,7 +35,7 @@ body.admin {
                     min-height: 50vh;
                 }
 
-                input[type=checkbox] {
+                input[type=checkbox], input[type=radio] {
                     min-width:1em;
                     min-height:1em;
                     border-width: 0.25em;
@@ -45,10 +45,15 @@ body.admin {
                     }
                 }
 
-                input[type=checkbox] + label {
+                label + input[type=radio], label + input[type=checkbox] {
                     margin-left: 0.125em;
-                    margin-right: 0.5em;
+                    margin-right: 1em;
                 }
+
+                /*input[type=radio] + label {
+                    margin-left: 0.125em;
+                    margin-right: 1em;
+                }*/
 
                 picture {
                     display: table;
@@ -117,7 +122,7 @@ body.admin {
                                 }
                             }
 
-                            input[type='checkbox'] {
+                            input[type='checkbox'], input[type='radio'] {
                                 position: absolute;
                                 top:0.25em;
                                 right:0.25em;

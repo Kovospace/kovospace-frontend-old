@@ -1,23 +1,10 @@
 @import "./frontend/variables";
 
-body {
-
-    header.homepage {
-        background-color: $space_black;
-        width: 100%;
-        display:table;
-    }
+body.homepage {
 
     main {
 
         section {
-            padding: 3%;
-            @include box_sizing();
-            overflow-x: hidden;
-
-            h2 {
-                font-size:5em;
-            }
 
             &#top, &#skills {
                 min-height: 100%;

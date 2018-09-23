@@ -2,6 +2,10 @@ class PortfoliosController < ApplicationController
 
     layout "admin", only: [:new, :create, :edit, :update]
 
+    def index
+        @skillsets = Skillset.all
+    end
+
     def add_screenshots
 
     end
@@ -14,6 +18,7 @@ class PortfoliosController < ApplicationController
 
     def _load_vars
        @skills_all = Skill.all
+       @skillsets_all = Skillset.all
        #@portfolio_screenshots = @portfolio.portfolio_screenshots.all
     end
 
@@ -41,6 +46,8 @@ class PortfoliosController < ApplicationController
             :intro,
             :description,
             :link,
+            :skillset_id,
+            :alt_text,
             skill_ids: [],
             portfolio_screenshots_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy]
          )

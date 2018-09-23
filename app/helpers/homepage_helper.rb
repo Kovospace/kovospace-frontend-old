@@ -6,7 +6,7 @@ module HomepageHelper
             res = ""
             side_group.each do |project|
                 res << link_to(project) do
-                    ("<span>" + project.title + "</span>").html_safe
+                    ("<span><i>" + project.title + "</i></span>").html_safe
                 end
             end
             content_for "homepage_skills_projects_#{i.to_s}".to_sym, flush: true do

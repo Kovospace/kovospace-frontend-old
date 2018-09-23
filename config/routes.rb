@@ -149,6 +149,8 @@ Rails.application.routes.draw do
 
 ### portfolio
 
+  # projekty
+
   get '/portfolio',
     to: "portfolios#index",
     as: "portfolios"
@@ -175,6 +177,35 @@ Rails.application.routes.draw do
   delete '/portfolio.:id',
     to: "portfolios#destroy",
     as: "destroy_portfolio"
+
+  # kategorie projektov
+
+  get '/skillset',
+    to: "skillsets#index",
+    as: "skillsets"
+
+  get "/admin/skillset",
+    to: "admin#list_skillsets",
+    as: "list_skillset"
+
+  get '/skillset/new',
+    to: "skillsets#new",
+    as: "new_skillset"
+
+  get '/skillset/:id/edit',
+    to: "skillsets#edit",
+    as: "edit_skillset"
+
+  post '/skillset',
+    to: "skillsets#create"
+
+  patch '/skillset.:id',
+    to: "skillsets#update",
+    as: "update_skillset"
+
+  delete '/skillset.:id',
+    to: "skillsets#destroy",
+    as: "destroy_skillset"
 
 ### blog
 

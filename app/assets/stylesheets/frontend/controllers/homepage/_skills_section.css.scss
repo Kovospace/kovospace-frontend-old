@@ -66,19 +66,12 @@ section#skills {
                 font-size:1.125em;
                 border-radius: 50%;
                 background-color: red;
-
-                &:before {
-                    content: '\200B';
-                    display: inline-block;
-                    padding-top:100%;
-                    height:0;
-                    vertical-align:middle;
-                }
+                @include height_expander();
 
                 span {
+                    display: inline-block;
                     vertical-align:middle;
-                    padding:0 0.25em;
-                    white-space: nowrap;
+                    padding:0 0.5em;
                 }
             }
         }

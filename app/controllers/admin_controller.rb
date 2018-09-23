@@ -23,6 +23,7 @@ class AdminController < ApplicationController
 
     def list_portfolios
         @result = Portfolio.all
+        @skillsets = Skillset.all
     end
 
 end

@@ -11,4 +11,6 @@ class Portfolio < ActiveRecord::Base
         reject_if: proc { |c| c[:screenshot].blank? }
     )
 
+    belongs_to :skillset, inverse_of: :portfolios
+
 end

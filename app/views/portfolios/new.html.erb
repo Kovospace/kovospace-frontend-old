@@ -34,6 +34,19 @@
     </div>
 
     <div>
+        <%= s.collection_radio_buttons(
+            :skillset_id,
+            @skillsets_all,
+            :id,
+            :title
+        ) do |radiobtn| %>
+            <span>
+                <%= radiobtn.label %> <%= radiobtn.radio_button %>
+            </span>
+        <% end %>
+    </div>
+
+    <div>
         <%#= s.file_field :screenshots, multiple: true %>
     </div>
 

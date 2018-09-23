@@ -19,6 +19,10 @@
             font-size:1.25em;
             padding-bottom:0.5em;
             text-shadow: 0.0312em 0.0312em 0.0625em $fake_bg,
+                         -0.0312em 0.0312em 0.0625em $fake_bg,
+                         0.0312em -0.0312em 0.0625em $fake_bg,
+                         -0.0312em -0.0312em 0.0625em $fake_bg,
+                         0em 0em 0.0625em $fake_bg,
                          0.0625em 0.0625em 0.125em $fake_bg,
                          0.0937em 0.0937em 0.1875em $fake_bg,
                          0.125em 0.125em 0.25em $fake_bg,

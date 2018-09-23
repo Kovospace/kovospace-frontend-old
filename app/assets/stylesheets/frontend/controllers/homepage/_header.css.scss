@@ -1,49 +1,22 @@
 @import "./frontend/variables";
 
 header.homepage {
-    vertical-align: middle;
-    text-align:center;
     @include web_logo();
 
     nav {
-        height:100%;
-        display: inline-table;
-        vertical-align: middle;
         font-size: 1.5em;
-        margin: 0.5em 0;
 
         ul {
-
-            &.bookmarks {
-
-            }
 
             &.pagelinks {
                 font-size:1.625em;
             }
 
             li {
-                display: inline-table;
 
                 a {
-                    text-align: center;
                     background: #c0c0c0;
                     margin: 0.375em;
-                    display: inline-table;
-                    border-radius: 50%;
-
-                    &:before {
-                        content: '\200B';
-                        display: inline-block;
-                        padding-top:100%;
-                        height:0;
-                        vertical-align:middle;
-                    }
-
-                    span {
-                        vertical-align:middle;
-                        padding: 0.25em;
-                    }
                 }
             }
         }

@@ -1,0 +1,52 @@
+<% content_for :header do %>
+
+    <nav>
+
+        <ul>
+
+            <li class="<%= active_link_to_class(home_path) %>">
+                <%= active_link_to home_path do %>
+                    <span>Domov</span>
+                <% end %>
+
+            </li>
+
+            <li class="<%= active_link_to_class(portfolio_path) %>">
+                <%= active_link_to portfolio_path do %>
+                    <span>Tvorba</span>
+                <% end %>
+                <ul>
+                    <li>
+                        <%= active_link_to portfolio_path do %>
+                            <span><%= @portfolios.all.size %></span>
+                        <% end %>
+                        <%= active_link_to portfolio_path, class: 'title' do %>
+                            <span>Všetko</span>
+                        <% end %>
+                    </li>
+                    <% @skillsets.each do |skillset| %>
+                        <li>
+                            <a href="#">
+                                <span><%= skillset.portfolios.size %></span>
+                            </a>
+                            <a href="#" class="title">
+                                <span><%= skillset.title %></span>
+                            </a>
+                        </li>
+                    <% end %>
+                </ul>
+            </li>
+
+            <li class="<%= active_link_to_class(blog_path) %>">
+                <%= active_link_to blog_path do %>
+                    <span>Blog</span>
+                <% end %>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <br class="clear">
+
+<% end %>

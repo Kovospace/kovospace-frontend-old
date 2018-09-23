@@ -1,0 +1,57 @@
+@import "./frontend/variables";
+
+header.portfolios {
+
+    nav {
+        font-size: 2em;
+
+        ul {
+
+            li {
+                margin: 0 0.5em;
+
+                &.active {
+
+                    a {
+                        font-size: 2em;
+                    }
+
+                    ul {
+
+                    }
+                }
+
+                a {
+                    background-color: red;
+
+                    span {
+                        //text-align:center;
+                    }
+                }
+
+                ul {
+                    display: inline-table;
+                    vertical-align: middle;
+                    text-align: left;
+
+                    li {
+                        display: block;
+                        margin: 0.25em;
+
+                        a {
+                            font-size: 1em !important;
+                        }
+
+                        a.title {
+                             background: none;
+
+                            &:before {
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

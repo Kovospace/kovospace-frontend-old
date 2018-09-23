@@ -3,27 +3,48 @@
 nav.regular, nav.for_nojs {
     background-color: $black;
     color: $white;
-    padding: 0 0.5em;
-    @include web_logo(2em);
+    padding: 0.25em 0.5em;
+    @include web_logo(1em);
+
+    figure.web_logo {
+        display:inline-block;
+
+        div.text {
+            font-size: 2.25em;
+        }
+    }
 
     & > * {
         display: block;
     }
 
-    h1 {
-        float:left;
-        padding: 0.25em;
-    }
-
     ul {
-        float: right;
+        display:inline-block;
+        padding: 0 1em;
 
         li {
             display: inline-block;
-            padding: 0.25em;
+            margin: 0 0.5em;
 
             a {
+                display: inline-table;
+                padding: 0.25em;
+                border-radius:50%;
+                background-color: red;
 
+                &:before {
+                    content: '\200B';
+                    display: inline-block;
+                    padding-top: 100%;
+                    height: 0;
+                    vertical-align: middle;
+                }
+
+                span {
+                     vertical-align: middle;
+                     font-weight: bold;
+                     font-size:1.125em;
+                }
             }
         }
     }

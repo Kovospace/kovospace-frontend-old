@@ -49,3 +49,13 @@
       box-shadow: inset 0 0 10px 10px $color_bg;
   }
 }
+
+@mixin height_expander() {
+  &:before {
+      content: '\200B';
+      display: inline-block;
+      padding-top:100%;
+      height:0;
+      vertical-align:middle;
+  }
+}
