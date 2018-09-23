@@ -4,6 +4,7 @@ nav.regular, nav.for_nojs {
     background-color: $black;
     color: $white;
     padding: 0 0.5em;
+    @include web_logo(2em);
 
     & > * {
         display: block;
@@ -32,6 +33,11 @@ nav.regular, nav.for_nojs {
     }
 
     &.regular {
+        display:block;
+        position: fixed;
+        top: 0;
+        left:0;
+        right:0;
         display:none;
     }
 

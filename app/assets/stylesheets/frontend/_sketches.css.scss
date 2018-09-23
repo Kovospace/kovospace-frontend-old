@@ -1,3 +1,134 @@
+@mixin web_logo($size:4em, $fake_bg: #000) {
+
+    figure.web_logo {
+        display: inline-table;
+        vertical-align:middle;
+        position:relative;
+        font-size:$size;
+        height:4em;
+        margin:0.5em 0;
+
+        div.text {
+            position:relative;
+            overflow: hidden;
+            display: table-cell;
+            vertical-align: middle;
+            letter-spacing:0.0625em;
+            font-family: StarFont;
+            color: $logo_orange;
+            font-size:1.25em;
+            padding-bottom:0.5em;
+            text-shadow: 0.0312em 0.0312em 0.0625em $fake_bg,
+                         0.0625em 0.0625em 0.125em $fake_bg,
+                         0.0937em 0.0937em 0.1875em $fake_bg,
+                         0.125em 0.125em 0.25em $fake_bg,
+                         0.156em 0.156em 0.3125em $fake_bg;
+            line-height:1em;
+
+            span {
+                position:relative;
+                //background-color: #5A523B;
+                padding: 0.0625em 0;
+
+                &::after {
+                    content: '';
+                    height:0.125em;
+                    background-color: $darker_dirty_white;
+                    position:absolute;
+                    top:100%;
+                    left:0;
+                    right:0;
+                    margin-top:0.0625em;
+                    -moz-box-shadow:    0.125em 0.125em 0.125em 0 $fake_bg;
+                    -webkit-box-shadow: 0.125em 0.125em 0.125em 0 $fake_bg;
+                    box-shadow:         0.125em 0.125em 0.125em 0 $fake_bg;
+                }
+
+                &:first-child {
+
+                    &::after {
+                        border-top-left-radius: 0.25em;
+                        border-bottom-left-radius: 0.25em;
+                    }
+                }
+
+                &:last-child {
+
+                    &::after {
+                        border-top-right-radius: 0.25em;
+                        border-bottom-right-radius: 0.25em;
+                    }
+                }
+
+                b {
+                    font-weight: normal;
+                }
+            }
+
+            span.dot {
+                padding-left:0.0625em;
+                padding-right:0.125em;
+
+                b {
+                    display: inline-block;
+                    min-width: 0.5em;
+                    position:relative;
+                    height:0.5em;
+
+                    &:before, &:after {
+                        display: block;
+                        content: '';
+                        margin: 0 auto;
+                        border-radius: 50%;
+                        position:absolute;
+                        top: 0.4375em;
+                    }
+
+                    &::before {
+                        width:0.5em;
+                        height:0.5em;
+                        background-color: $logo_moon;
+                        z-index:10;
+                        -moz-box-shadow:    0.125em 0.125em 0.125em 0 #000;
+                        -webkit-box-shadow: 0.125em 0.125em 0.125em 0 #000;
+                        box-shadow:         0.125em 0.125em 0.125em 0 #000;
+                    }
+
+                    &::after {
+                        width:0.1875em;
+                        height:0.1875em;
+                        background-color: $moon_grey;
+                        z-index:11;
+                        left:0.125em;
+                        -moz-box-shadow:    0.0625em 0.0625em 0.0625em 0 #000;
+                        -webkit-box-shadow: 0.0625em 0.0625em 0.0625em 0 #000;
+                        box-shadow:         0.0625em 0.0625em 0.0625em 0 #000;
+                    }
+                }
+            }
+        }
+
+        div.bg {
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            position: absolute;
+            display: block;
+
+            &::before {
+                content: '';
+                display: block;
+                background-color: $earth_blue;
+                margin: 0 auto;
+                width: 4em;
+                border-radius:50%;
+                height: 100%;
+            }
+        }
+    }
+}
+
 
 @mixin icons_base() {
     // pouzit EM na zmenu velkosti

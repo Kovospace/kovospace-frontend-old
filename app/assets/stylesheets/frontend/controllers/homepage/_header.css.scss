@@ -3,6 +3,7 @@
 header.homepage {
     vertical-align: middle;
     text-align:center;
+    @include web_logo();
 
     nav {
         height:100%;
