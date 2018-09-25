@@ -2,7 +2,33 @@
 <% @portfolios.each do |p| %>
 
     <article>
-        tririri
+
+        <h2>
+            <%= link_to p.title, p %>
+
+            <%# if p.link.blank? %>
+                <%#= p.title %>
+            <%# else %>
+                <!--<a href="http://<%= p.link %>"> <%= p.title %> </a>-->
+            <%# end %>
+        </h2>
+
+        <figure>
+            <picture>
+                <img src="">
+            </picture>
+        </figure>
+
+        <h3>
+            <%= p.intro %>
+        </h3>
+
+        <div>
+            <%= p.description %>
+        </div>
+
+        <br class="clear">
+
     </article>
 
 <% end %>

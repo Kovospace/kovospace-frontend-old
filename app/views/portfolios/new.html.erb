@@ -21,6 +21,11 @@
     </div>
 
     <div>
+        <%= s.label :realis_date %>
+        <%= s.date_select :realis_date, { discard_day: true } %>
+    </div>
+
+    <div>
         <%= s.collection_check_boxes(
             :skill_ids,
             @skills_all,

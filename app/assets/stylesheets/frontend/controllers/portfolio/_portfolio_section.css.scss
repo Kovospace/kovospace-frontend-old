@@ -1,0 +1,90 @@
+@import "./frontend/variables";
+
+body.portfolio {
+
+    main {
+
+        section#portfolio {
+
+            article {
+                vertical-align: middle;
+
+                h2 {
+                    font-size: 4em;
+                    display: inline-block; // pre mobil zmenit
+                    margin-bottom:0.5em;
+
+                    a {
+                        @include underline_on_hover($white, 0.125em);
+                    }
+                }
+
+                i {
+                    /*float:right;
+                    margin-top:2.5em;
+                    margin-right:2em;*/
+                    margin-left: 2em;
+                }
+
+                h3 {
+                    font-size: 2em;
+                    font-weight: normal;
+                    margin-bottom:0.625em;
+                }
+
+                div {
+                    position:relative;
+                    font-size: 1.125em;
+                    line-height: 1.25em;
+                    //max-height: 8.75em;
+                    //display: inline-table;
+                    //float:right;
+                    //overflow-y:hidden;
+
+                    /*&:after {
+                        content: '';
+                        display: block;
+                        height: 3em;
+                        width:100%;
+                        position: absolute;
+                        bottom:0;
+                        background-color: red;
+                    }*/
+                }
+
+                figure {
+                    display:block;
+                    //max-width: 33%;
+                    width: 33%;
+                    max-width: 33%;
+                    padding-bottom:33%;
+                    position: relative;
+                    //margin: 1.5em 0.5em;
+                    float:left;
+                    //margin-right: 2em;
+                    border-radius: 50%;
+                    border: 1em solid transparent;
+                    shape-outside: border-box;
+
+                    picture {
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        right: 0;
+                        bottom: 0;
+
+                        img {
+                            background-color: $grey;
+                            //width: 100%;
+                            height: 100%;
+                            display: block;
+                            border-radius:50%;
+                        }
+                    }
+                }
+
+                //@include clearfix();
+            }
+        }
+    }
+}

@@ -48,6 +48,7 @@ class PortfoliosController < ApplicationController
             :link,
             :skillset_id,
             :alt_text,
+            :realis_date,
             skill_ids: [],
             portfolio_screenshots_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy]
          )

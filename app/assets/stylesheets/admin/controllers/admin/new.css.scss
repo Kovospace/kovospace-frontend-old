@@ -50,10 +50,9 @@ body.admin {
                     margin-right: 1em;
                 }
 
-                /*input[type=radio] + label {
-                    margin-left: 0.125em;
-                    margin-right: 1em;
-                }*/
+                & > span {
+                   line-height: 1.625em;
+                }
 
                 picture {
                     display: table;

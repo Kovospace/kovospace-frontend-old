@@ -39,6 +39,8 @@ gem 'ckeditor'
 
 gem 'mini_magick'
 
+gem 'rails-i18n'
+
 #gem 'activeadmin'
 # Plus integrations with:
 #gem 'cancan' # or cancancan

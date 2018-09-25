@@ -10,7 +10,7 @@
     @include transition(background-color $time ease-in-out);
 }
 
-@mixin underline_on_hover($color) {
+@mixin underline_on_hover($color, $height:0.0625em) {
     & {
         text-decoration:none;
         position: relative;
@@ -24,7 +24,7 @@
         bottom: 0;
         left:0;
         right:0;
-        height: 0.0625em;
+        height: $height;
     }
     &:hover {
 
