@@ -3,75 +3,69 @@
 header.portfolios {
 
     nav {
+        height: 100%;
         font-size: 2em;
         display: block;
+        margin-bottom: 3em;
 
         ul {
             display: inline-block;
-            margin: 0.5em 0;
 
             li {
                 margin: 0 0.5em;
-                vertical-align: middle;
-                //display: flex;
 
                 a {
                     background-color: red;
                     text-align:center;
-                    vertical-align: middle;
-                }
-
-                a.top_menu {
-                    //float: left;
                 }
 
                 &.active {
-                    //display: flex;
-                    //align-items: center;
-                    //
-                    /*p {
-                        text-align: left;
-                    }*/
 
                     a {
                         font-size: 2em;
-                        //display: block;
-                        //shape-outside: border-box;
                     }
 
                     ul {
-
+                        margin-top: -3em;
                     }
                 }
 
                 ul {
                     display: inline-table;
-                    vertical-align: middle;
+                    vertical-align: baseline;
                     text-align: left;
                     padding-left: 0.5em;
                     height:100%;
-                    //display: inline;;
-                    //margin-left:6em;
-
-                    & > a {
-                       //margin-bottom: 25%;
-                       //position: relative;
-                       //top: 50
-                       //bottom: 50%;
-                       //float:left;
-                    }
 
                     li {
-                        display: block;
-                        margin: 0.25em;
+                        display: inline-block;
+                        margin:0 0.25em;
                         white-space: nowrap;
+                        vertical-align: baseline;
+                        text-align: center;
 
                         a {
-                            font-size: 1em !important;
+                            display: inline-block;
+                            text-align: center;
                         }
 
                         a.title {
-                             background: none;
+                            text-emphasis: none;
+                            font-style: normal;
+                            font-size: 1em !important;
+                            background: none;
+                            writing-mode: vertical-rl;
+                            margin: 0 auto;
+                            padding-bottom: 0.25em;
+                            @include rotate(45deg);
+                            transform-origin: left bottom;
+                            position: relative;
+                            left:0.75em;
+
+                            b {
+                                display: inline-block;
+                                @include rotate(180deg);
+                            }
 
                             &:before {
                                 display: none !important;

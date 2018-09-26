@@ -21,34 +21,37 @@
         <ul>
 
             <li class="<%= active_link_to_class(portfolio_path) %>">
+
                 <%= active_link_to portfolio_path, class: 'top_menu' do %>
                     <span>Tvorba</span>
                 <% end %>
 
                 <ul>
-                    <!--
-                    <li>
-                        <%= active_link_to portfolio_path do %>
-                            <span><%= @portfolios.all.size %></span>
-                        <% end %>
-                        <%= active_link_to portfolio_path, class: 'title' do %>
-                            <span>Všetko</span>
-                        <% end %>
-                    </li>
-                    -->
-                    <% 2.times do %>
-                        <% @skillsets.each do |skillset| %>
-                            <li>
-                                <a href="#">
-                                    <span><%= skillset.portfolios.size %></span>
-                                </a>
-                                <a href="#" class="title">
-                                    <span><%= skillset.title %></span>
-                                </a>
-                            </li>
-                        <% end %>
+
+                    <li><!--
+                        --><%= active_link_to portfolio_path, class: 'title' do %><!--
+                            --><b>Všetko</b><!--
+                        --><% end %><!--
+                        --><br><!--
+                        --><%= active_link_to portfolio_path do %><!--
+                            --><span><%= @portfolios.all.size %></span><!--
+                        --><% end %><!--
+                    --></li>
+
+                    <% @skillsets.each do |skillset| %>
+                        <li><!--
+                            --><a href="#" class="title"><!--
+                                --><b><%= skillset.title %></b><!--
+                            --></a><!--
+                            --><br><!--
+                            --><a href="#"><!--
+                                --><span><%= skillset.portfolios.size %></span><!--
+                            --></a><!--
+                        --></li>
                     <% end %>
+
                 </ul>
+
             </li>
 
         </ul>
