@@ -41,6 +41,8 @@ gem 'mini_magick'
 
 gem 'rails-i18n'
 
+gem 'redcarpet'
+
 #gem 'activeadmin'
 # Plus integrations with:
 #gem 'cancan' # or cancancan

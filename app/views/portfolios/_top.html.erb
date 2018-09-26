@@ -21,10 +21,12 @@
         <ul>
 
             <li class="<%= active_link_to_class(portfolio_path) %>">
-                <%= active_link_to portfolio_path do %>
+                <%= active_link_to portfolio_path, class: 'top_menu' do %>
                     <span>Tvorba</span>
                 <% end %>
+
                 <ul>
+                    <!--
                     <li>
                         <%= active_link_to portfolio_path do %>
                             <span><%= @portfolios.all.size %></span>
@@ -33,15 +35,18 @@
                             <span>Všetko</span>
                         <% end %>
                     </li>
-                    <% @skillsets.each do |skillset| %>
-                        <li>
-                            <a href="#">
-                                <span><%= skillset.portfolios.size %></span>
-                            </a>
-                            <a href="#" class="title">
-                                <span><%= skillset.title %></span>
-                            </a>
-                        </li>
+                    -->
+                    <% 2.times do %>
+                        <% @skillsets.each do |skillset| %>
+                            <li>
+                                <a href="#">
+                                    <span><%= skillset.portfolios.size %></span>
+                                </a>
+                                <a href="#" class="title">
+                                    <span><%= skillset.title %></span>
+                                </a>
+                            </li>
+                        <% end %>
                     <% end %>
                 </ul>
             </li>

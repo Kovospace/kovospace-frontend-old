@@ -9,18 +9,10 @@ body.portfolio {
 
         section#portfolio {
             flex: 1 0 auto;
-            //text-align: center;
 
             article {
-                //display: inline-table;
                 vertical-align: middle;
-                //padding: 3% 2%;
-                margin-bottom: 6%;
-                //margin: 0 2%;
-                //min-width: 33%;
-                //max-width:46%;
-                //margin: 0 auto;
-                //@include box-sizing();
+                margin-bottom: 10%;
             }
         }
 

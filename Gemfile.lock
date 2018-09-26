@@ -135,6 +135,7 @@ GEM
     rake (12.0.0)
     rdoc (4.3.0)
     recursive-open-struct (1.0.1)
+    redcarpet (3.4.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -197,6 +198,7 @@ DEPENDENCIES
   rails (= 4.2.6)
   rails-i18n
   recursive-open-struct
+  redcarpet
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

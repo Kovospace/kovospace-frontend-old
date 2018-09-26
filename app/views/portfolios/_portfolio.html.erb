@@ -20,14 +20,20 @@
         </figure>
 
         <h3>
-            <%= p.intro %>
+            <%= markdown p.intro %>
         </h3>
 
-        <div>
-            <%= p.description %>
+        <div class="portfolio_text_preview">
+            <%= limit_lines(markdown(p.description)) %>
         </div>
 
-        <br class="clear">
+        <div class="portfolio_actions">
+            <div>
+                <a href="#">Dozvedieť sa viac</a>
+                <a href="#">Galéria</a>
+                <a href="#">Navštíviť web</a>
+            </div>
+        </div>
 
     </article>
 
