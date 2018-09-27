@@ -16,17 +16,23 @@
                 <% end %>
             </li>
 
+            <li class="<%= active_link_to_class(portfolio_path) %>">
+                <%= active_link_to portfolio_path do %>
+                    <span>Tvorba</span>
+                <% end %>
+            </li>
+
         </ul>
 
         <ul>
 
+
+
             <li class="<%= active_link_to_class(portfolio_path) %>">
 
-                <%= active_link_to portfolio_path, class: 'top_menu' do %>
-                    <span>Tvorba</span>
-                <% end %>
-
                 <ul>
+
+
 
                     <li><!--
                         --><%= active_link_to portfolio_path, class: 'title' do %><!--
@@ -38,17 +44,41 @@
                         --><% end %><!--
                     --></li>
 
-                    <% @skillsets.each do |skillset| %>
-                        <li><!--
-                            --><a href="#" class="title"><!--
-                                --><b><%= skillset.title %></b><!--
-                            --></a><!--
-                            --><br><!--
-                            --><a href="#"><!--
-                                --><span><%= skillset.portfolios.size %></span><!--
-                            --></a><!--
-                        --></li>
-                    <% end %>
+                    <% #2.times do %>
+                        <% @skillsets.each do |skillset| %>
+                            <li><!--
+                                --><a href="#" class="title"><!--
+                                    --><b><%= skillset.title %></b><!--
+                                --></a><!--
+                                --><br><!--
+                                --><a href="#"><!--
+                                    --><span><%= skillset.portfolios.size %></span><!--
+                                --></a><!--
+                            --></li>
+                        <% end %>
+                    <%# end %>
+
+                    <br>
+
+                    <!--
+                    <li class="expaner active">
+                        <% counts_elem = []
+                        str = "<a><span>" + @portfolios.all.size.to_s + "</span></a>" %>
+                        <% 2.times do %>
+                            <% @skillsets.each_with_index do |skillset, i| %>
+                                <% str = str + "<a><span>" + skillset.portfolios.size.to_s + "</span></a>" %>
+                                <% counts_elem[i] = str %>
+                            <% end %>
+                        <% end %>
+
+                        <% @skillsets.each_with_index do |skillset, i| %>
+
+                            <%= (counts_elem[i] + "<b>" + skillset.title + "</b><br>").html_safe %>
+
+                        <% end %>
+
+                    </li>
+                -->
 
                 </ul>
 

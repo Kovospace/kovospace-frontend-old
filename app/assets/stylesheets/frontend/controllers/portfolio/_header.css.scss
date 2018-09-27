@@ -7,13 +7,9 @@ header.portfolios {
         font-size: 2em;
         display: block;
         margin-bottom: 3em;
-        display: flex;
-        flex-direction: row;
 
         ul {
             display: inline-block;
-            flex: 1 0 auto;
-            align-self: baseline;
 
             li {
                 margin: 0 0.5em;
@@ -24,28 +20,16 @@ header.portfolios {
                 }
 
                 &.active {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-around;
-                    //justify-content: space-evenly;
 
                     a {
                         font-size: 2em;
-                        flex: 0 0 auto;
                     }
 
                     ul {
-                        margin-top: -3em;
-                        flex: 1 0 auto;
-                        //display: flex;
-
-                        //li {
-                          //  align-self: baseline;
-                        //}
+                        margin-top: -2.5em;
                     }
 
                     a, ul {
-                        align-self: baseline;
                     }
                 }
 
@@ -53,12 +37,31 @@ header.portfolios {
                     display: inline-table;
                     vertical-align: baseline;
                     text-align: left;
-                    padding-left: 0.5em;
                     height:100%;
+                    margin-right: 3em;
+
+                    /*li.expaner {
+                        display: none;
+                        margin:0;
+                        height:1px;
+                        background-color: orange;
+                        overflow:hidden;
+                        display: inline-block;
+
+                        a {
+                            margin: 0 0.25em;
+                        }
+
+                        b {
+                            display: inline-block;
+                            overflow: hidden;
+                            font-size: 71%;
+                        }
+                    }*/
 
                     li {
                         display: inline-block;
-                        margin:0 0.25em;
+                        margin:0 0.5em;
                         white-space: nowrap;
                         vertical-align: baseline;
                         text-align: center;
