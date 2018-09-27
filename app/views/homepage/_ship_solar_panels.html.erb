@@ -9,54 +9,25 @@
                 <h2>
                     <%= link_to t(:portfolio), portfolio_path %>
                 </h2>
-                <div class="menuitem_content">
-                    <a><h3><span>
-                        Názov kategórie
-                    </span></h3></a>
-                    <div>
-                        <a href="#">kat 1</a>
+
+                <% @skillsets.all.each do |skillset| %>
+
+                    <div class="menuitem_content">
+
+                        <a><h3><span>
+                            <%= skillset.title %>
+                        </span></h3></a>
+
+                        <% skillset.portfolios.all.each do |portfolio| %>
+                            <div>
+                                <%= link_to portfolio.title, portfolio %>
+                            </div>
+                        <% end %>
+
                     </div>
-                </div>
-                <div class="menuitem_content">
-                    <a><h3><span>
-                        Názov kategórie
-                    </span></h3></a>
-                    <div>
-                        <a>kat 1</a>
-                        <a>iná kategoria</a>
-                        <a>iná kategoria</a>
-                        <a>dlhynazovnezaloeneslovotestlinebreak</a>
-                        <a>nieco</a>
-                        <a>nieco</a>
-                        <a>kat 1</a>
-                        <a>iná kategoria</a>
-                        <a>iná kategoria</a>
-                    </div>
-                </div>
-                 <div class="menuitem_content">
-                    <a><h3><span>
-                        Názov kategórie
-                    </span></h3></a>
-                    <div>
-                        <a>kat 1</a>
-                        <a>iná kategoria</a>
-                        <a>iná kategoria</a>
-                        <a>dlhynazovnezaloeneslovotestlinebreak</a>
-                        <a>nieco</a>
-                        <a>nieco</a>
-                        <a>kat 1</a>
-                        <a>iná kategoria</a>
-                        <a>iná kategoria</a>
-                    </div>
-                </div>
-                <div class="menuitem_content">
-                    <a><h3><span>
-                        Názov kategórie
-                    </span></h3></a>
-                    <div>
-                        <a href="#">kat 1</a>
-                    </div>
-                </div>
+
+                <% end %>
+
             </li>
 
             <li>

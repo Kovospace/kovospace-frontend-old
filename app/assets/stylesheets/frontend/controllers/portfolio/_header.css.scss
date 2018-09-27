@@ -28,9 +28,6 @@ header.portfolios {
                     ul {
                         margin-top: -2.5em;
                     }
-
-                    a, ul {
-                    }
                 }
 
                 ul {
@@ -39,25 +36,6 @@ header.portfolios {
                     text-align: left;
                     height:100%;
                     margin-right: 3em;
-
-                    /*li.expaner {
-                        display: none;
-                        margin:0;
-                        height:1px;
-                        background-color: orange;
-                        overflow:hidden;
-                        display: inline-block;
-
-                        a {
-                            margin: 0 0.25em;
-                        }
-
-                        b {
-                            display: inline-block;
-                            overflow: hidden;
-                            font-size: 71%;
-                        }
-                    }*/
 
                     li {
                         display: inline-block;
@@ -87,6 +65,10 @@ header.portfolios {
                             b {
                                 display: inline-block;
                                 @include rotate(180deg);
+
+                                &:hover {
+                                    text-decoration: underline;
+                                }
                             }
 
                             &:before {
