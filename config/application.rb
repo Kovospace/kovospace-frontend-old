@@ -37,5 +37,9 @@ module MojWeb
 
     require 'action_view/helpers/form_builder'
 
+    require 'string'
+
+    require 'color'
+
   end
 end

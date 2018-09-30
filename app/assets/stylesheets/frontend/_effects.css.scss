@@ -43,9 +43,9 @@
 }
 
 @mixin shadow($x, $y, $blur:0, $expand:0, $color:#000) {
-    -moz-box-shadow:    $x $y $blur $expand $color;
-    -webkit-box-shadow: $x $y $blur $expand $color;
-    box-shadow:         $x $y $blur $expand $color;
+    -moz-box-shadow:    $x $y $blur $expand /*$color*/;
+    -webkit-box-shadow: $x $y $blur $expand /*$color*/;
+    box-shadow:         $x $y $blur $expand /*$color*/;
 }
 
 @mixin inner_border($color, $size) {
@@ -60,6 +60,18 @@
     -o-transform: scale($x, $y);
     -ms-transform: scale($x, $y);
     transform: scale($x, $y);
+}
+
+@mixin zoom($factor: 1.125) {
+    @include transition(all 0.25s ease-in-out);
+
+    &:hover {
+        -webkit-transform: scale($factor);
+        -moz-transform: scale($factor);
+        -ms-transform: scale($factor);
+        -o-transform: scale($factor);
+        transform: scale($factor);
+    }
 }
 
 

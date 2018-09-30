@@ -163,6 +163,10 @@ Rails.application.routes.draw do
     to: "portfolios#new",
     as: "new_portfolio"
 
+  get 'portfolio/:id',
+    to: "portfolios#show",
+    as: "show_portfolio"
+
   get '/portfolio/:id/edit',
     to: "portfolios#edit",
     as: "edit_portfolio"

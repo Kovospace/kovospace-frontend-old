@@ -4,19 +4,17 @@
     <article>
 
         <h2>
-            <%= link_to p.title, p %>
-
-            <%# if p.link.blank? %>
-                <%#= p.title %>
-            <%# else %>
-                <!--<a href="http://<%= p.link %>"> <%= p.title %> </a>-->
-            <%# end %>
+            <%= link_to p.title, show_portfolio_path(p) %>
         </h2>
 
-        <figure>
-            <picture>
-                <img src="">
-            </picture>
+        <figure style="color:<%= p.theme_color %>;">
+            <% if p.portfolio_screenshot.blank? %>
+
+            <% else %>
+                <picture>
+                    <%= image_tag(p.portfolio_screenshot.screenshot.thumb) %>
+                </picture>
+            <% end %>
         </figure>
 
         <h3>
@@ -29,9 +27,19 @@
 
         <div class="portfolio_actions">
             <div>
-                <a href="#">Dozvedieť sa viac</a>
-                <a href="#">Galéria</a>
-                <a href="#">Navštíviť web</a>
+                <a href="<%= show_portfolio_url(p) %>"
+                    <%= colors_for_actions(p.theme_color) %> >
+                        Dozvedieť sa viac
+                </a>
+                <a href="#" <%= colors_for_actions(p.theme_color) %> >
+                        Galéria
+                </a>
+                <% if !p.link.blank? %>
+                    <a  href="http://<%= p.link %>"
+                        <%= colors_for_actions(p.theme_color) %> >
+                        Navštíviť web
+                    </a>
+                <% end %>
             </div>
         </div>
 

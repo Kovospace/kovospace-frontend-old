@@ -63,6 +63,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    color (1.8)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.2)
     devise (4.4.0)
@@ -73,6 +74,8 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    friendly_id (5.2.4)
+      activerecord (>= 4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
@@ -189,7 +192,9 @@ DEPENDENCIES
   carrierwave (~> 1.0)
   ckeditor
   coffee-rails (~> 4.1.0)
+  color
   devise
+  friendly_id (~> 5.2.0)
   hirb
   jbuilder (~> 2.0)
   jquery-rails

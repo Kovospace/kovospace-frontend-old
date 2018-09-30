@@ -6,6 +6,11 @@
     </div>
 
     <div>
+        <%= s.label :slug %>
+        <%= s.text_field :slug %>
+    </div>
+
+    <div>
         <%= s.label :intro %>
         <%= s.text_area :intro %>
     </div>
@@ -52,11 +57,13 @@
     </div>
 
     <div>
+        <%= s.label :theme_color %>
+        <%= s.text_field :theme_color %>
         <%#= s.file_field :screenshots, multiple: true %>
     </div>
 
     <div>
-        <%= s.fields_for :portfolio_screenshots do |ps| %>
+        <%= s.fields_for :portfolio_screenshot do |ps| %>
             <% blank = ps.object.screenshot.blank? %>
 
             <picture>

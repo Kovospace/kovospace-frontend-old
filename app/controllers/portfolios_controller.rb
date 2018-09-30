@@ -23,7 +23,7 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_new
-        build_if_empty :skills, :portfolio_screenshots
+        build_if_empty :skills, :portfolio_screenshot
         #@portfolio.portfolio_screenshots.build
     end
 
@@ -32,7 +32,7 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_edit
-        build_if_empty :skills, :portfolio_screenshots
+        build_if_empty :skills, :portfolio_screenshot
     end
 
     def _after_ok_redirect_to
@@ -49,8 +49,10 @@ class PortfoliosController < ApplicationController
             :skillset_id,
             :alt_text,
             :realis_date,
+            :theme_color,
+            :slug,
             skill_ids: [],
-            portfolio_screenshots_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy]
+            portfolio_screenshot_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy]
          )
     end
 

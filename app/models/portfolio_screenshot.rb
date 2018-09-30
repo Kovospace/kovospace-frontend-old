@@ -4,7 +4,7 @@ class PortfolioScreenshot < ActiveRecord::Base
 
   #attr_accessor :screenshot, :screenshot_cache
 
-  belongs_to :portfolio
+  #belongs_to :portfolio
 
   mount_uploader :screenshot, ScreenshotUploader
 

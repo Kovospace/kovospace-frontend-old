@@ -43,6 +43,10 @@ gem 'rails-i18n'
 
 gem 'redcarpet'
 
+gem 'color'
+
+gem 'friendly_id', '~> 5.2.0'
+
 #gem 'activeadmin'
 # Plus integrations with:
 #gem 'cancan' # or cancancan
