@@ -21,4 +21,16 @@ class Portfolio < ActiveRecord::Base
     validates_format_of :title, :without => /^\d/, multiline: true
     validates :slug, uniqueness: true
 
+    def bg_color
+        if !theme_color.blank?
+            return Color::RGB.by_css(theme_color).hex
+        end
+    end
+
+    def text_color
+        if !theme_color.blank?
+            return (Color::RGB.by_css(theme_color).brightness > 0.5) ? "111" : "fafafa"
+        end
+    end
+
 end

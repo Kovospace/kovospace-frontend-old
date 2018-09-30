@@ -27,16 +27,14 @@
 
         <div class="portfolio_actions">
             <div>
-                <a href="<%= show_portfolio_url(p) %>"
-                    <%= colors_for_actions(p.theme_color) %> >
-                        Dozvedieť sa viac
+                <a href="<%= show_portfolio_url(p) %>" <%= colors(p) %> >
+                    Dozvedieť sa viac
                 </a>
-                <a href="#" <%= colors_for_actions(p.theme_color) %> >
-                        Galéria
+                <a href="#" <%= colors(p) %> >
+                    Galéria
                 </a>
                 <% if !p.link.blank? %>
-                    <a  href="http://<%= p.link %>"
-                        <%= colors_for_actions(p.theme_color) %> >
+                    <a  href="http://<%= p.link %>" <%= colors(p) %> >
                         Navštíviť web
                     </a>
                 <% end %>

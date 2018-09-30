@@ -5,7 +5,7 @@ module HomepageHelper
         proj_parts.each_with_index do |side_group, i|
             res = ""
             side_group.each do |project|
-                res << link_to(project) do
+                res << link_to(project, style: "background-color: ##{project.bg_color}; color: ##{project.text_color};") do
                     ("<span><i>" + project.title + "</i></span>").html_safe
                 end
             end
