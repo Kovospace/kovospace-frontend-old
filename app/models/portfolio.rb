@@ -33,4 +33,20 @@ class Portfolio < ActiveRecord::Base
         end
     end
 
+    def bg_style
+        return "style=\"background-color:##{bg_color};\"".html_safe
+    end
+
+    def fg_style
+        return "style=\"color:##{text_color};\"".html_safe
+    end
+
+    def style
+        return "style=\"color:##{text_color};background-color:##{bg_color};\"".html_safe
+    end
+
+    def style_inverted
+        return "style=\"color:##{bg_color};background-color:##{text_color};\"".html_safe
+    end
+
 end

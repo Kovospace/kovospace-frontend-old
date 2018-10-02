@@ -61,17 +61,31 @@ section#skills {
             white-space: normal;
             vertical-align:middle;
             text-align:center;
+            $planet_width: 66%;
 
             a {
                 font-size:1.125em;
-                border-radius: 50%;
-                background-color: red;
-                @include height_expander();
+                position: relative;
+                margin: 0.5em;
+                vertical-align: middle;
+                white-space: nowrap;
+                @include height_expander($planet_width);
 
                 span {
-                    display: inline-block;
-                    vertical-align:middle;
-                    padding:0 0.5em;
+                    vertical-align: middle;
+                    position: relative;
+                    border-radius: 1em;
+                    padding: 0 0.375em;
+                }
+
+                b {
+                   position: absolute;
+                   top:0;
+                   bottom:0;
+                   width: $planet_width;
+                   left:(100%-$planet_width)/2;
+                   right:(100%-$planet_width)/2;
+                   border-radius: 50%;
                 }
             }
         }

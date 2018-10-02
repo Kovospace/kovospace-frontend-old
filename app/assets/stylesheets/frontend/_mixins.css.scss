@@ -50,11 +50,11 @@
   }
 }
 
-@mixin height_expander() {
+@mixin height_expander($size: 100%) {
   &:before {
       content: '\200B';
       display: inline-block;
-      padding-top:100%;
+      padding-top:$size;
       height:0;
       vertical-align:middle;
   }
