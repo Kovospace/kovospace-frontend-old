@@ -4,13 +4,10 @@
 
 <% @skills.each do |skill| %>
 
-    <%# skill_projects(skill) %>
-
     <article>
 
         <div class="description">
-             <figure class="size_<%= skill.degree %> ">
-                <div class="bg" style="background-color:#<%= skill.bg %>;"></div>
+             <figure class="size_<%= skill.degree %> " <%= skill.style %>>
                 <h3>
                     <span> <%= skill.title %> </span>
                 </h3>
@@ -18,11 +15,10 @@
         </div>
 
         <div class="projects">
-            <%#= content_for :homepage_skills_projects_1 %>
 
             <% skill.portfolios.each do |project| %>
 
-                <a href="#"><!--
+                <a href="<%= show_portfolio_path(project) %>"><!--
                     --><b <%= project.bg_style %>></b><!--
                     --><span <%= project.style_inverted %>><%= project.title %></span><!--
                 --></a>

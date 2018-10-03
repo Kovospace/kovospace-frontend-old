@@ -59,8 +59,25 @@
     <div>
         <%= s.label :theme_color %>
         <%= s.text_field :theme_color %>
-        <%#= s.file_field :screenshots, multiple: true %>
     </div>
+
+    <% blank = s.object.title_bg.blank? %>
+    <div>
+        <picture>
+            <%= s.file_field :title_bg, class: "hidden" %>
+            <%= s.hidden_field :title_bg_cache %>
+            <span>
+                <%= s.label :title_bg do %>
+                <%#= ps.check_box(:_destroy) if !blank %>
+                <%= image_tag(s.object.title_bg) if !blank %>
+                <% if blank %> <q></q> <% end %>
+                <% end %>
+            </span>
+
+        </picture>
+        <div class="clear">
+    </div>
+
 
     <div>
         <%= s.fields_for :portfolio_screenshot do |ps| %>

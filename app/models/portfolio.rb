@@ -1,10 +1,13 @@
 class Portfolio < ActiveRecord::Base
     extend FriendlyId
     include FriendlyIdConcern
+    include ColorConcern
 
     friendly_id :title, use: [:slugged, :finders]
 
     has_and_belongs_to_many :skills
+
+    mount_uploader :title_bg, PortfolioTitleUploader
 
     has_one :portfolio_screenshot, dependent: :destroy
     accepts_nested_attributes_for(
@@ -20,33 +23,5 @@ class Portfolio < ActiveRecord::Base
     validates :title, presence: true
     validates_format_of :title, :without => /^\d/, multiline: true
     validates :slug, uniqueness: true
-
-    def bg_color
-        if !theme_color.blank?
-            return Color::RGB.by_css(theme_color).hex
-        end
-    end
-
-    def text_color
-        if !theme_color.blank?
-            return (Color::RGB.by_css(theme_color).brightness > 0.5) ? "111" : "fafafa"
-        end
-    end
-
-    def bg_style
-        return "style=\"background-color:##{bg_color};\"".html_safe
-    end
-
-    def fg_style
-        return "style=\"color:##{text_color};\"".html_safe
-    end
-
-    def style
-        return "style=\"color:##{text_color};background-color:##{bg_color};\"".html_safe
-    end
-
-    def style_inverted
-        return "style=\"color:##{bg_color};background-color:##{text_color};\"".html_safe
-    end
 
 end

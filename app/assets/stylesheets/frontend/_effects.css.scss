@@ -6,6 +6,14 @@
     transition: $args;
 }
 
+@mixin transform($args...) {
+    webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
 @mixin background_transition($time) {
     @include transition(background-color $time ease-in-out);
 }
@@ -34,14 +42,6 @@
     }
 }
 
-@mixin rotate($angle) {
-  -webkit-transform: rotate($angle);
- -moz-transform: rotate($angle);
- -ms-transform: rotate($angle);
- -o-transform: rotate($angle);
- transform: rotate($angle);
-}
-
 @mixin shadow($x, $y, $blur:0, $expand:0, $color:#000) {
     -moz-box-shadow:    $x $y $blur $expand /*$color*/;
     -webkit-box-shadow: $x $y $blur $expand /*$color*/;
@@ -54,23 +54,19 @@
   box-shadow: inset 0px 0px 0px $size $color;
 }
 
+@mixin rotate($angle) {
+  @include transform(rotate($angle));
+}
+
 @mixin scale($x:-1, $y:-1) {
-    -moz-transform: scale($x, $y);
-    -webkit-transform: scale($x, $y);
-    -o-transform: scale($x, $y);
-    -ms-transform: scale($x, $y);
-    transform: scale($x, $y);
+    @include transform(scale($x, $y));
 }
 
 @mixin zoom($factor: 1.125) {
     @include transition(all 0.25s ease-in-out);
 
     &:hover {
-        -webkit-transform: scale($factor);
-        -moz-transform: scale($factor);
-        -ms-transform: scale($factor);
-        -o-transform: scale($factor);
-        transform: scale($factor);
+        @include transform(scale($factor));
     }
 }
 

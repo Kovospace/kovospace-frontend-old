@@ -51,6 +51,8 @@ class PortfoliosController < ApplicationController
             :realis_date,
             :theme_color,
             :slug,
+            :title_bg,
+            :title_bg_cache,
             skill_ids: [],
             portfolio_screenshot_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy]
          )

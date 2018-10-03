@@ -20,7 +20,7 @@
 
                         <% skillset.portfolios.all.each do |portfolio| %>
                             <div>
-                                <%= link_to portfolio.title, portfolio %>
+                                <%= link_to portfolio.title, show_portfolio_path(portfolio) %>
                             </div>
                         <% end %>
 

@@ -13,30 +13,17 @@ section#skills {
         div.description {
 
             figure {
-                font-size:2em;
+                font-size:2.25em;
                 &.size_1 { /* default */ }
-                &.size_2 { font-size:1.75em; }
-                &.size_3 { font-size:1.5em; }
-                &.size_4 { font-size:1.25em; }
-                &.size_5 { font-size:1em; }
+                &.size_2 { font-size:2em; }
+                &.size_3 { font-size:1.75em; }
+                &.size_4 { font-size:1.5em; }
+                &.size_5 { font-size:1.25em; }
                 position: relative;
                 border-radius: 50%;
                 text-align: center;
                 vertical-align:middle;
-
-                div.bg {
-                    display: block;
-                    position: absolute;
-                    top: 0.5em;
-                    bottom: 0.5em;
-                    left:0.5em;
-                    right:0.5em;
-                    margin-left: auto;
-                    margin-right: auto;
-                    border-radius: 50%;
-                    width: 8em;
-                    height: 8em;
-                }
+                margin-right: 1em;
 
                 h3 {
                     vertical-align:middle;
@@ -45,13 +32,13 @@ section#skills {
 
                     span {
                         display:block;
-                        background-color: black;
-                        color: $white;
                         vertical-align:middle;
                         font-weight:bold;
                         padding:0.125em 0.5em;
                         @include box_sizing();
                         border-radius:1em;
+                        white-space: normal;
+                        line-height: 1.125em;
                     }
                 }
             }
@@ -76,6 +63,7 @@ section#skills {
                     position: relative;
                     border-radius: 1em;
                     padding: 0 0.375em;
+                    background-color: $black;
                 }
 
                 b {
@@ -86,6 +74,7 @@ section#skills {
                    left:(100%-$planet_width)/2;
                    right:(100%-$planet_width)/2;
                    border-radius: 50%;
+                   background-color: $black;
                 }
             }
         }

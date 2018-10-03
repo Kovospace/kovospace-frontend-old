@@ -1,6 +1,7 @@
 class Skill < ActiveRecord::Base
 
     include ModelConcern
+    include ColorConcern
 
     belongs_to :work_state, inverse_of: :skills
 

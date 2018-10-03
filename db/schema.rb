@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180930001657) do
+ActiveRecord::Schema.define(version: 20181003223936) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20180930001657) do
     t.date     "realis_date"
     t.text     "theme_color"
     t.string   "slug"
+    t.text     "title_bg"
   end
 
   add_index "portfolios", ["skillset_id"], name: "index_portfolios_on_skillset_id"
@@ -168,7 +169,7 @@ ActiveRecord::Schema.define(version: 20180930001657) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "work_state_id"
-    t.string   "bg"
+    t.string   "theme_color"
     t.string   "icon"
   end
 
