@@ -3,10 +3,11 @@
 
 <section id="show_work">
 
-    <figure <%= @portfolio.style %>>
-        <picture>
+    <figure>
+        <picture <%= @portfolio.style %>>
              <%= image_tag(@portfolio.title_bg) %>
         </picture>
+        <h2> <%= @portfolio.title %> </h2>
     </figure>
 
     <article>

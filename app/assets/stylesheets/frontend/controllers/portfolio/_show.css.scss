@@ -1,3 +1,5 @@
+@import "./frontend/variables";
+
 body.portfolio {
 
     main {
@@ -5,13 +7,24 @@ body.portfolio {
         section#show_work {
 
             figure {
+                position: relative;
 
                 picture {
+                    display: block;
 
                     img {
                         display: block;
                         margin: 0 auto;
                     }
+                }
+
+                h2 {
+                    position: relative;
+                    bottom: 0.5em;
+                    margin-left: 0.5em;
+                    padding: 0.125em;
+                    background-color: $black;
+                    display: inline-block; 
                 }
             }
         }
