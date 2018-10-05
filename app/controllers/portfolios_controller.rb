@@ -6,6 +6,10 @@ class PortfoliosController < ApplicationController
         @skillsets = Skillset.all
     end
 
+    def show
+        @title_bgs = @portfolio.portfolio_titlebgs
+    end
+
     def add_screenshots
 
     end
@@ -23,7 +27,7 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_new
-        build_if_empty :skills, :portfolio_screenshot
+        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs
         #@portfolio.portfolio_screenshots.build
     end
 
@@ -32,7 +36,7 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_edit
-        build_if_empty :skills, :portfolio_screenshot
+        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs
     end
 
     def _after_ok_redirect_to
@@ -47,14 +51,18 @@ class PortfoliosController < ApplicationController
             :description,
             :link,
             :skillset_id,
-            :alt_text,
             :realis_date,
             :theme_color,
             :slug,
-            :title_bg,
-            :title_bg_cache,
             skill_ids: [],
-            portfolio_screenshot_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy]
+            portfolio_screenshot_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy],
+            portfolio_titlebgs_attributes: [
+                :id, :portfolio_id,
+                :title_bg, :title_bg_cache, :remove_title_bg,
+                :title_bg_tablet, :title_bg_tablet_cache, :remove_title_bg_tablet,
+                :title_bg_mobile, :title_bg_mobile_cache, :remove_title_bg_mobile,
+                :_destroy
+            ]
          )
     end
 

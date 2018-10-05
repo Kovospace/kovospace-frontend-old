@@ -1,0 +1,18 @@
+
+<% typ = showsection_decide_titlebg_type(@portfolio) %>
+
+<figure>
+
+    <%= typ %>
+
+    <% if typ == :desktop %>
+
+        <picture <%= @portfolio.style %>>
+            <%= image_tag(@title_bgs.first.title_bg) %>
+        </picture>
+
+    <% elsif typ == :responsive %>
+
+    <% end %>
+
+</figure>

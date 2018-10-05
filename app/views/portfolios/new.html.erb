@@ -31,6 +31,7 @@
     </div>
 
     <div>
+        <%= s.label :skills %>
         <%= s.collection_check_boxes(
             :skill_ids,
             @skills_all,
@@ -44,6 +45,7 @@
     </div>
 
     <div>
+        <%= s.label :categories %>
         <%= s.collection_radio_buttons(
             :skillset_id,
             @skillsets_all,
@@ -61,46 +63,66 @@
         <%= s.text_field :theme_color %>
     </div>
 
-    <% blank = s.object.title_bg.blank? %>
     <div>
-        <picture>
-            <%= s.file_field :title_bg, class: "hidden" %>
-            <%= s.hidden_field :title_bg_cache %>
-            <span>
-                <%= s.label :title_bg do %>
-                <%#= ps.check_box(:_destroy) if !blank %>
-                <%= image_tag(s.object.title_bg) if !blank %>
-                <% if blank %> <q></q> <% end %>
-                <% end %>
-            </span>
+        <%= s.label :avatar %>
+        <div class="pictures">
+            <%= s.fields_for :portfolio_screenshot do |ps| %>
+                <% blank = ps.object.screenshot.blank? %>
 
-        </picture>
-        <div class="clear">
+                <picture>
+                    <%= ps.file_field :screenshot, class: "hidden" %>
+                    <%= ps.hidden_field :screenshot_cache %>
+                    <span>
+                        <%= ps.label :screenshot do %>
+                            <%= ps.check_box(:_destroy) if !blank %>
+                            <%= image_tag(ps.object.screenshot) if !blank %>
+                            <% if blank %> <q></q> <% end %>
+                        <% end %>
+                    </span>
+                    <span>
+                        <%= ps.text_area(:alt_text) %>
+                    </span>
+                </picture>
+
+            <% end %>
+
+            <br class="clear">
+        </div>
     </div>
 
-
     <div>
-        <%= s.fields_for :portfolio_screenshot do |ps| %>
-            <% blank = ps.object.screenshot.blank? %>
+        <%= s.label :title_bgs %>
+        <div class="pictures">
+            <%= s.fields_for :portfolio_titlebgs do |pbg| %>
+                <%# blank = pbg.object.screenshot.blank? %>
+                <%#= pbg_types %>
 
-            <picture>
-                <%= ps.file_field :screenshot, class: "hidden" %>
-                <%= ps.hidden_field :screenshot_cache %>
-                <span>
-                    <%= ps.label :screenshot do %>
-                        <%= ps.check_box(:_destroy) if !blank %>
-                        <%= image_tag(ps.object.screenshot) if !blank %>
-                        <% if blank %> <q></q> <% end %>
+                <article>
+                    <% pbg_types.each do |pbg_type|
+                        obj_name = "title_bg#{pbg_type}"
+                        blank = pbg.object.send(obj_name).blank? %>
+
+                        <picture>
+                            <%= pbg.file_field "#{obj_name}", class: "hidden" %>
+                            <%= pbg.hidden_field "#{obj_name}_cache" %>
+                            <span>
+                                <%= pbg.label "#{obj_name}" do %>
+                                    <%#= pbg.check_box(:_destroy) if !blank %>
+                                    <%= image_tag(pbg.object.send(obj_name)) if !blank %>
+                                    <% if blank %> <q></q> <% end %>
+                                <% end %>
+                                <%= pbg_type %>
+                            </span>
+
+                        </picture>
+
                     <% end %>
-                </span>
-                <span>
-                    <%= ps.text_area(:alt_text) %>
-                </span>
-            </picture>
 
-        <% end %>
+                    <div class="clear"></div>
+                </article>
 
-        <br class="clear">
+            <% end %>
+        </div>
     </div>
 
     <br>

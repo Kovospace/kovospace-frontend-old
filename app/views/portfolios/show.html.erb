@@ -1,17 +1,10 @@
 
-<% @portfolio %>
-
 <section id="show_work">
 
-    <figure>
-        <picture <%= @portfolio.style %>>
-             <%= image_tag(@portfolio.title_bg) %>
-        </picture>
-        <h2> <%= @portfolio.title %> </h2>
-    </figure>
+    <%= render 'portfolios/show/title_bg' %>
 
     <article>
-
+         <h2> <%= @portfolio.title %> </h2>
     </article>
 
 </section>
