@@ -1,0 +1,61 @@
+@import "./frontend/variables";
+
+header.blogs {
+
+    &:before {
+
+    }
+
+    &:after {
+
+    }
+
+    nav {
+        font-size:4em;
+        line-height: 1em;
+        background-color: $rocket_bg;
+        margin: 1em auto;
+        padding: 0.5em;
+
+        ul {
+
+            li {
+
+                &:first-child {
+                    writing-mode: vertical-rl;
+                }
+
+                &:last-child {
+                    writing-mode: vertical-rl;
+                    @include rotate(180deg);
+                }
+
+                a {
+
+                    &:before {
+                        display: none;
+                    }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
+                    span {
+                        vertical-align: baseline;
+                    }
+                }
+
+                &.active {
+
+                    a {
+
+                    }
+
+                    ul {
+
+                    }
+                }
+            }
+        }
+    }
+}
