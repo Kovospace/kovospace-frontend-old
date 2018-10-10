@@ -1,6 +1,7 @@
 @import "./frontend/variables";
 
 header.blogs {
+    //position: relative;
 
     &:before {
 
@@ -13,13 +14,48 @@ header.blogs {
     nav {
         font-size:4em;
         line-height: 1em;
-        background-color: $rocket_bg;
-        margin: 1em auto;
-        padding: 0.5em;
+        margin: 0 auto;
+        position: relative;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            display: block;
+        }
+
+        &:before {
+            top:0;
+            right: 100%;
+            height: 100%;
+            width:2em;
+            border-right: 1em solid $white;
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+            z-index: 9;
+        }
+
+        &:after {
+            right: 90%;
+            top:0;
+            bottom:0;
+            margin: auto;
+            border-left: 0.25em solid $rocket_parts_1_bg;
+            border-bottom: 0.25em solid $rocket_parts_1_bg;
+            width:2em;
+            height:2em;
+            @include rotate(45deg);
+            z-index: 8;
+        }
 
         ul {
+            background-color: $rocket_bg;
+            position: relative;
+            z-index: 10;
+            padding:0.5em;
+            border-radius: 0.125em;
 
             li {
+                display: inline-block;;
 
                 &:first-child {
                     writing-mode: vertical-rl;
@@ -31,6 +67,9 @@ header.blogs {
                 }
 
                 a {
+                    background-color: $rocket_parts_1_bg;
+                    border-radius: 0.125em;
+                    display: inline-block;;
 
                     &:before {
                         display: none;
@@ -41,7 +80,7 @@ header.blogs {
                     }
 
                     span {
-                        vertical-align: baseline;
+                        display: inline-block;
                     }
                 }
 
@@ -56,6 +95,34 @@ header.blogs {
                     }
                 }
             }
+        }
+    }
+
+     div {
+        min-height:5em;
+        position: relative;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top:0;
+            height: 100%;
+            width:47%;
+        }
+
+        &::before {
+            left:3%;
+            background: linear-gradient(to bottom right, transparent 48%, $solar_panel_holder_bg 49%);
+        }
+
+        &::after {
+            right:3%;
+            background: linear-gradient(to bottom left, transparent 48%, $solar_panel_holder_bg 49%);
+        }
+
+        &.top_panel {
+            @include rotate(180deg);
+            margin-top: -1em;
         }
     }
 }
