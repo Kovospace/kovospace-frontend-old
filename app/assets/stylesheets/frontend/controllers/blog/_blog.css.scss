@@ -1,0 +1,23 @@
+@import "./frontend/variables";
+
+
+body.blog {
+
+    main {
+
+        section#blogs {
+
+            article {
+                background-color: $solar_panel_bg;
+
+                h2 {
+                    display: inline-block;
+                    background-color: $solar_panel_item_bg;
+                    padding: 0em 0.25em;
+                    vertical-align: middle;
+                    line-height: 1.25em;
+                }
+            }
+        }
+    }
+}
