@@ -43,9 +43,9 @@
 }
 
 @mixin shadow($x, $y, $blur:0, $expand:0, $color:#000) {
-    -moz-box-shadow:    $x $y $blur $expand /*$color*/;
-    -webkit-box-shadow: $x $y $blur $expand /*$color*/;
-    box-shadow:         $x $y $blur $expand /*$color*/;
+    -moz-box-shadow:    $x $y $blur $expand $color;
+    -webkit-box-shadow: $x $y $blur $expand $color;
+    box-shadow:         $x $y $blur $expand $color;
 }
 
 @mixin inner_border($color, $size) {

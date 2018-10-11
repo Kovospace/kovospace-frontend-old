@@ -2,7 +2,21 @@
 <% @blogs.each do |blog| %>
 
     <article>
+
         <h2><%= blog.title %></h2>
+        <h3><%= blog.description %></h3>
+
+        <div class="top_serials"><!--
+            --><b>TOP3 seriály</b><!--
+            --><div><% blog.categories.each do |category| %><!--
+                --><span> <%= category.title %> </span><!--
+            --><% end %></div><!--
+        --></div>
+
+        <div class="top_posts">
+
+        </div>
+
     </article>
 
 <% end %>

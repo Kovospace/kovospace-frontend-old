@@ -101,6 +101,7 @@ header.blogs {
      div {
         min-height:5em;
         position: relative;
+        margin: 0 0.625em;
 
         &::before, &::after {
             content: '';
