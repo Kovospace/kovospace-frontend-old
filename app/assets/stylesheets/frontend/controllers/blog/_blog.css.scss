@@ -43,19 +43,58 @@ body.blog {
 
                 div.top_serials, div.top_posts {
                     text-align: right;
-                    margin:0.175em;
+                    //margin:0.125em;
                     //@include shadow(0, 0, 0, 0.175em);
                     //display: inline-block;
-
-                    span {
-                        vertical-align: bottom;
-                        display: inline-table;
-                        font-size:1.25em;
-                        padding: 0.5em;
-                        margin:0.175em;
-                        @include shadow(0, 0, 0, 0.175em);
-                        background-color: $solar_panel_item_bg;
+                    //
+                    b, span {
+                         vertical-align: bottom;
+                            display: table;
+                            font-size:1.25em;
+                            padding: 0.5em;
+                            //margin:0.175em;
+                            //@include shadow(0, 0, 0, 0.175em);
+                            background-color: $solar_panel_item_bg;
+                            //float:right;
+                            margin-left:auto;
+                            margin-right:0;
                     }
+
+                    b {
+                        font-size: 1.5em;
+                        margin:0.25em;
+                        //margin-right: 0.25em;
+                        @include shadow(0, 0, 0, 0.25em);
+                        margin-left:auto;
+                        margin-bottom: 0;
+                        //margin-right:0;
+                    }
+
+                    //div {
+                        //display: inline-block;
+                        //margin:0.175em;
+                        //@include shadow(0, 0, 0, 0.175em);
+                        //
+                        span {
+                            margin:0.3125em;
+                            @include shadow(0, 0, 0, 0.3125em);
+                            margin-left:auto;
+                            //float:left;
+                            display: inline-table;
+                        }
+
+
+
+                        /*span {
+                            vertical-align: bottom;
+                            display: inline-table;
+                            font-size:1.25em;
+                            padding: 0.5em;
+                            margin:0.175em;
+                            @include shadow(0, 0, 0, 0.175em);
+                            background-color: $solar_panel_item_bg;
+                        }*/
+                    //}
                 }
             }
         }

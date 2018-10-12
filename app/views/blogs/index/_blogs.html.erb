@@ -7,15 +7,20 @@
         <h3><%= blog.description %></h3>
 
         <div class="top_serials"><!--
-            --><b>TOP3 seriály</b><!--
-            --><div><% blog.categories.each do |category| %><!--
+            --><b>Seriály</b><!--
+            --><% blog.categories.each do |category| %><!--
                 --><span> <%= category.title %> </span><!--
-            --><% end %></div><!--
+            --><% end %><!--
         --></div>
 
-        <div class="top_posts">
+        <br>
 
-        </div>
+        <div class="top_posts"><!--
+            --><b>TOP články</b><!--
+            --><% blog.posts.each do |post| %><!--
+                --><span> <%= post.title %> </span><!--
+            --><% end %><!--
+        --></div>
 
     </article>
 
