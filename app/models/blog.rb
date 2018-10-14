@@ -1,6 +1,10 @@
 class Blog < ActiveRecord::Base
+    extend FriendlyId
+    include FriendlyIdConcern
 
 	belongs_to :user
+
+    friendly_id :title, use: [:slugged, :finders]
 
     mount_uploader :title_bg, BlogTitleBgUploader
 
@@ -16,7 +20,7 @@ class Blog < ActiveRecord::Base
         # skip validations if saved using autosave of parent model (this model)
     )
 
-     has_many(
+    has_many(
         :blog_posts,
         inverse_of: :blog,
         dependent: :destroy
@@ -27,5 +31,9 @@ class Blog < ActiveRecord::Base
         #validate: false
         # skip validations if saved using autosave of parent model (this model)
     )
+
+    validates :title, presence: true
+    validates_format_of :title, :without => /^\d/, multiline: true
+    validates :slug, uniqueness: true
 
 end

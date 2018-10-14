@@ -29,8 +29,15 @@ main {
         &#portfolio {
 
             article {
-
                 figure { z-index: 3; }
+            }
+        }
+
+        &#blogs {
+
+            article {
+                figure { z-index: 3; }
+                h2, h3, div { z-index: 4; }
             }
         }
     }

@@ -3,22 +3,32 @@
 
     <article>
 
-        <h2><%= blog.title %></h2>
-        <h3><%= blog.description %></h3>
+        <figure>
+            <picture>
+                <%= image_tag blog.title_bg %>
+            </picture>
+        </figure>
+
+        <h2>
+            <%= link_to blog.title, show_blog_path(blog) %>
+        </h2>
+        <h3>
+            <%= link_to blog.description, show_blog_path(blog) %>
+        </h3>
 
         <div class="top_serials"><!--
-            --><b>Seriály</b><!--
+            --><b><%= link_to "Seriály", show_blog_path(blog) %></b><!--
             --><% blog.categories.each do |category| %><!--
-                --><span> <%= category.title %> </span><!--
+                --><span><a><%= category.title %></a></span><!--
             --><% end %><!--
         --></div>
 
         <br>
 
         <div class="top_posts"><!--
-            --><b>TOP články</b><!--
+            --><b><%= link_to "TOP ćlánky", show_blog_path(blog) %></b><!--
             --><% blog.posts.each do |post| %><!--
-                --><span> <%= post.title %> </span><!--
+                --><span><a><%= post.title %></a></span><!--
             --><% end %><!--
         --></div>
 

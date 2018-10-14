@@ -227,6 +227,10 @@ Rails.application.routes.draw do
     to: "blogs#new",
     as: "new_blog"
 
+  get 'blog/:id',
+    to: "blogs#show",
+    as: "show_blog"
+
   get '/blog/:id/edit',
     to: "blogs#edit",
     as: "edit_blog"
