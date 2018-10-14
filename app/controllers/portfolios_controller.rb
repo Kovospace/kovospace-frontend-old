@@ -2,10 +2,12 @@ class PortfoliosController < ApplicationController
 
     layout "admin", only: [:new, :create, :edit, :update]
 
+    ## override
     def index
         @skillsets = Skillset.all
     end
 
+    ## override
     def show
         @title_bgs = @portfolio.portfolio_titlebgs
     end
@@ -19,6 +21,11 @@ class PortfoliosController < ApplicationController
     end
 
     private
+
+    ## override
+    def index_action
+        @portfolios = Portfolio.category_filter(params[:skillset_id]).page(params[:page])
+    end
 
     def _load_vars
        @skills_all = Skill.all

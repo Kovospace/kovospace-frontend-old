@@ -47,6 +47,10 @@ gem 'color'
 
 gem 'friendly_id', '~> 5.2.0'
 
+gem 'ransack'
+
+#gem 'canonical-rails', github: 'jumph4x/canonical-rails'
+
 #gem 'activeadmin'
 # Plus integrations with:
 #gem 'cancan' # or cancancan

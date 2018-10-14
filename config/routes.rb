@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     to: "admin#list_homepage",
     as: "list_homepage"
 
+  get "sitemap",
+    to: "homepage#user_sitemap",
+    as: "user_sitemap"
+
 ### HLAVNA STRANKA
 
   # skills
@@ -155,6 +159,13 @@ Rails.application.routes.draw do
     to: "portfolios#index",
     as: "portfolios"
 
+  get '/portfolio/:skillset_id',
+    to: "portfolios#index",
+    constraints: PortfolioConstraint.new
+
+  get '/portfolio/:skillset_id/strana/:page',
+    to: "portfolios#index"
+
   get "/admin/portfolio",
     to: "admin#list_portfolios",
     as: "list_portfolio"
@@ -166,6 +177,13 @@ Rails.application.routes.draw do
   get 'portfolio/:id',
     to: "portfolios#show",
     as: "show_portfolio"
+
+  get '/portfolio/strana/:page',
+    to: "portfolios#index"
+
+  get 'portfolio/:skillset_id/:id',
+    to: "portfolios#show",
+    as: "show_portfolio_fullpath"
 
   get '/portfolio/:id/edit',
     to: "portfolios#edit",

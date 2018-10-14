@@ -4,7 +4,7 @@
 </div>
 
 <div class="right">
-    <a href="">sitemap</a>
+    <%= link_to "sitemap", user_sitemap_path %>
     <a href="">HTML5</a>
     <a href="">CSS3</a>
     <%= link_to("login", user_session_path) if !user_signed_in? %>

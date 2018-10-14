@@ -3,6 +3,10 @@
 body.blog {
     height:100%;
 
+    header {
+        padding-top: 3%;
+    }
+
     main {
         display: flex;
         flex-direction: column;

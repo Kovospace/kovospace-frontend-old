@@ -1,0 +1,31 @@
+
+<h2> <%= link_to "Domov", home_url %> </h2>
+<%= link_to home_url %>
+
+<br><br>
+
+<h2> <%= link_to "Portfólio", portfolio_url %> </h2>
+<%= link_to portfolio_url %>
+    <div class="sub_1">
+        <% @portfolios.each do |portfolio| %>
+            <h3> <%= link_to portfolio.title, show_portfolio_url(portfolio) %> </h3>
+            <p>
+                <%= link_to show_portfolio_url(portfolio) %>
+                <br>
+                <%= link_to show_portfolio_fullpath_url(portfolio.skillset.slug, portfolio.slug) %>
+        <% end %>
+    </div>
+
+<br><br>
+
+<h2> <%= link_to "Blog", blog_url %> </h2>
+<%= link_to blog_url %>
+    <div class="sub_1">
+        <% @blogs.each do |blog| %>
+            <h3> <%= link_to blog.title, show_blog_url(blog) %> </h3>
+            <%= link_to show_blog_url(blog) %>
+        <% end %>
+    </div>
+
+
+

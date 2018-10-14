@@ -11,7 +11,8 @@ class SkillsetsController < ApplicationController
     def _permitted_params
          params[:skillset].permit(
             :title,
-            :description
+            :description,
+            :slug
          )
     end
 

@@ -45,4 +45,8 @@ module ApplicationHelper
         text.split("<br>")[0..(lines-1)].join("<br>").html_safe
     end
 
+    def canonical_tag(url)
+        tag(:link, href: url, :rel => 'canonical')
+    end
+
 end

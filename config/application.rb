@@ -35,6 +35,8 @@ module MojWeb
 
     config.assets.paths << Rails.root.join("app", "assets")
 
+    config.eager_load_paths << Rails.root.join('lib')
+
     require 'action_view/helpers/form_builder'
 
     require 'string'

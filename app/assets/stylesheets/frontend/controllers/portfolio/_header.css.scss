@@ -4,7 +4,7 @@ header.portfolios {
 
     nav {
         height: 100%;
-        font-size: 2em;
+        font-size: 1.875em;
         display: block;
         margin-bottom: 3em;
 
@@ -35,7 +35,7 @@ header.portfolios {
                     vertical-align: baseline;
                     text-align: left;
                     height:100%;
-                    margin-right: 3em;
+                    //margin-right: 3em;
 
                     li {
                         display: inline-block;
@@ -43,6 +43,13 @@ header.portfolios {
                         white-space: nowrap;
                         vertical-align: baseline;
                         text-align: center;
+
+                        &.phantom {
+                            font-size: 0.707em; //sin 45 deg
+                            font-weight: bold;
+                            margin:0;
+                            opacity: 0;
+                        }
 
                         a {
                             display: inline-block;

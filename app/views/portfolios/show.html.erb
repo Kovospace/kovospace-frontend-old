@@ -1,4 +1,10 @@
 
+<% content_for :head do %>
+
+    <%= canonical_tag show_portfolio_url(@portfolio) %>
+
+<% end %>
+
 <section id="show_work">
 
     <%= render 'portfolios/show/title_bg' %>

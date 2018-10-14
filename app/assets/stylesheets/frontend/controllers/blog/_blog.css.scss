@@ -58,7 +58,7 @@ body.blog {
                     vertical-align: middle;
                     line-height: 1.25em;
                     margin: 0.125em;
-                    @include shadow(0, 0, 0, 0.125em);
+                    //@include shadow(0, 0, 0, 0.125em, $space_black);
                     font-size:3em;
 
                     a {
@@ -68,7 +68,7 @@ body.blog {
 
                 h3 {
                     font-size: 1.5em;
-                    @include shadow(0, 0, 0, 0.25em);
+                    //@include shadow(0, 0, 0, 0.25em, $space_black);
                     margin: 0.25em;
                     font-weight: normal;
 
@@ -97,14 +97,14 @@ body.blog {
                     b {
                         font-size: 1.5em;
                         margin:0.25em;
-                        @include shadow(0, 0, 0, 0.25em);
+                        //@include shadow(0, 0, 0, 0.25em, $space_black);
                         margin-left:auto;
                         margin-bottom: 0;
                     }
 
                     span {
                         margin:0.3125em;
-                        @include shadow(0, 0, 0, 0.3125em);
+                        //@include shadow(0, 0, 0, 0.3125em, $space_black);
                         margin-left:auto;
                         display: inline-table;
                     }

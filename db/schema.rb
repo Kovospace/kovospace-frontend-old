@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181013190234) do
+ActiveRecord::Schema.define(version: 20181014123852) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -187,8 +187,10 @@ ActiveRecord::Schema.define(version: 20181013190234) do
   create_table "skillsets", force: :cascade do |t|
     t.text     "title"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "slug"
+    t.integer  "portfolios_count"
   end
 
   create_table "tags", force: :cascade do |t|

@@ -36,21 +36,25 @@
                         --><% end %><!--
                         --><br><!--
                         --><%= active_link_to portfolio_path do %><!--
-                            --><span><%= @portfolios.all.size %></span><!--
+                            --><span><%= Portfolio.all.size %></span><!--
                         --><% end %><!--
                     --></li>
 
                     <% @skillsets.each do |skillset| %>
                         <li><!--
-                            --><a href="#" class="title"><!--
+                            --><a href="<%= "#{portfolio_url}/#{skillset.slug}" %>"
+                                  class="title <%= active_link_to_class("#{portfolio_url}/#{skillset.slug}") %> "><!--
                                 --><b><%= skillset.title %></b><!--
                             --></a><!--
                             --><br><!--
-                            --><a href="#"><!--
+                            --><a href="<%= "#{portfolio_url}/#{skillset.slug}" %>"
+                                  class="<%= active_link_to_class("#{portfolio_url}/#{skillset.slug}") %> "><!--
                                 --><span><%= skillset.portfolios.size %></span><!--
                             --></a><!--
                         --></li>
                     <% end %>
+
+                    <li class="phantom"><%= @skillsets.last.title %></li>
 
                 </ul>
 
