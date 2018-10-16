@@ -24,4 +24,13 @@ module PortfolioHelper
         end
     end
 
+    def is_sortlink_show_all_active?
+        rgx = /(^\/portfolio\/strana\/\d$)|(^\/portfolio$)/
+        active = !(rgx =~ request.path).nil?
+    end
+
+    def active_class_for_sortlink(skillset)
+         active_link_to_class("#{portfolio_url}/#{skillset.slug}")
+    end
+
 end

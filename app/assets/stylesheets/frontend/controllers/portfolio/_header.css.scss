@@ -15,7 +15,7 @@ header.portfolios {
                 margin: 0 0.5em;
 
                 a {
-                    background-color: red;
+                    background-color: $hell_grey;
                     text-align:center;
                 }
 
@@ -23,6 +23,11 @@ header.portfolios {
 
                     a {
                         font-size: 2em;
+                    }
+
+                    & > a.active {
+                        background-color: $logo_orange;
+                        color: $black;
                     }
 
                     ul {
@@ -35,7 +40,6 @@ header.portfolios {
                     vertical-align: baseline;
                     text-align: left;
                     height:100%;
-                    //margin-right: 3em;
 
                     li {
                         display: inline-block;
@@ -54,6 +58,10 @@ header.portfolios {
                         a {
                             display: inline-block;
                             text-align: center;
+
+                            &.active {
+                                background-color: $earth_blue;
+                            }
                         }
 
                         a.title {
