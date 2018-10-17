@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root to: 'homepage#index'
 
+  %w( 404 422 500 503 ).each do |code|
+    get code, :to => "errors#show", :code => code
+  end
+
   get 'home',
     to: "homepage#index",
     as: "home"
@@ -181,13 +185,13 @@ Rails.application.routes.draw do
   get '/portfolio/strana/:page',
     to: "portfolios#index"
 
-  get 'portfolio/:skillset_id/:id',
-    to: "portfolios#show",
-    as: "show_portfolio_fullpath"
-
   get '/portfolio/:id/edit',
     to: "portfolios#edit",
     as: "edit_portfolio"
+
+  get 'portfolio/:skillset_id/:id',
+    to: "portfolios#show",
+    as: "show_portfolio_fullpath"
 
   post '/portfolio',
     to: "portfolios#create"

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<html>
+
+    <head>
+        <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track' => true %>
+        <%#= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title> Kovo.Space </title>
+    </head>
+
+    <body class="error">
+
+        <main>
+            <%= yield %>
+        </main>
+
+     </body>
+
+</html>
+

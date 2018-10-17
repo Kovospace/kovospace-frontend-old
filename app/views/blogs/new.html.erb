@@ -21,7 +21,8 @@
         <%= s.hidden_field :title_bg_cache %>
     </div>
 
-    <div>
+    <div class="picture">
+        <%= s.label :title_bg %>
         <picture>
             <%= s.label :title_bg do %>
                 <%= image_tag(s.object.title_bg) if !s.object.title_bg.nil? %>
@@ -30,12 +31,15 @@
     </div>
 
     <div>
-        <%= s.collection_check_boxes(
-            :category_ids,
-            @categories_all,
-            :id,
-            :title
-        ) %>
+        <%= s.label :categories %>
+        <div>
+            <%= s.collection_check_boxes(
+                :category_ids,
+                @categories_all,
+                :id,
+                :title
+            ) %>
+        </div>
     </div>
 
     <div>

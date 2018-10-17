@@ -18,8 +18,8 @@
     </div>
 
     <div>
-        <%= s.label :bg %>
-        <%= s.text_field :bg %>
+        <%= s.label :theme_color %>
+        <%= s.text_field :theme_color %>
     </div>
 
     <div>
@@ -28,7 +28,8 @@
         <%= s.hidden_field :icon_cache %>
     </div>
 
-    <div>
+    <div class="picture">
+        <%= s.label :icon %>
         <picture>
             <%= s.label :icon do %>
                 <%= image_tag(s.object.icon) if !s.object.icon.nil? %>

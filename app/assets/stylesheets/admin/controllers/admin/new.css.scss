@@ -11,6 +11,11 @@ body.admin {
             div {
                 margin: 0.5em 0;
 
+                div {
+                    display: inline-block;
+                    float:left;
+                }
+
                 input, select, textarea, label {
                     vertical-align:middle;
                 }
@@ -152,6 +157,29 @@ body.admin {
                                         background-color: $admin_danger_hover_bg;
                                     }
                                 }
+                            }
+                        }
+                    }
+                }
+
+                &.picture {
+                    display: table;
+
+                    label, picture {
+                        display: table-cell;
+                    }
+
+                    label {
+
+                    }
+
+                    picture {
+
+                        label {
+                            display: inline-block;
+
+                            img {
+                                max-width: 100%;
                             }
                         }
                     }

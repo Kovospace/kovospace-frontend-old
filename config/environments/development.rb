@@ -49,5 +49,7 @@ Rails.application.configure do
   #config.assets.paths << Rails.root.join("app", "assets", "stylesheets-admin")
   #
   #config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+  #
+  config.exceptions_app = self.routes
 
 end
