@@ -183,8 +183,21 @@ body.admin {
                 &.checkboxes {
                     display: table;
 
+                    label {
+                       vertical-align:middle;
+                       display: table-cell;
+                    }
+
                     div {
                         display: table-cell;
+
+                        label {
+                            display: inline-block;
+                        }
+
+                        input {
+
+                        }
                     }
                 }
 

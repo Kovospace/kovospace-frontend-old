@@ -38,7 +38,11 @@
                 @categories_all,
                 :id,
                 :title
-            ) %>
+            ) do |checkbox| %>
+                <span>
+                    <%= checkbox.label %> <%= checkbox.check_box %>
+                </span>
+            <% end %>
         </div>
     </div>
 

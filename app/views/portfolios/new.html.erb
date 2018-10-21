@@ -30,32 +30,36 @@
         <%= s.date_select :realis_date, { discard_day: true } %>
     </div>
 
-    <div>
+    <div class="checkboxes">
         <%= s.label :skills %>
-        <%= s.collection_check_boxes(
-            :skill_ids,
-            @skills_all,
-            :id,
-            :title
-        ) do |checkbox| %>
-            <span>
-                <%= checkbox.label %> <%= checkbox.check_box %>
-            </span>
-        <% end %>
+        <div>
+            <%= s.collection_check_boxes(
+                :skill_ids,
+                @skills_all,
+                :id,
+                :title
+            ) do |checkbox| %>
+                <span>
+                    <%= checkbox.label %> <%= checkbox.check_box %>
+                </span>
+            <% end %>
+        </div>
     </div>
 
-    <div>
+    <div class="checkboxes">
         <%= s.label :categories %>
-        <%= s.collection_radio_buttons(
-            :skillset_id,
-            @skillsets_all,
-            :id,
-            :title
-        ) do |radiobtn| %>
-            <span>
-                <%= radiobtn.label %> <%= radiobtn.radio_button %>
-            </span>
-        <% end %>
+        <div>
+            <%= s.collection_radio_buttons(
+                :skillset_id,
+                @skillsets_all,
+                :id,
+                :title
+            ) do |radiobtn| %>
+                <span>
+                    <%= radiobtn.label %> <%= radiobtn.radio_button %>
+                </span>
+            <% end %>
+        </div>
     </div>
 
     <div>

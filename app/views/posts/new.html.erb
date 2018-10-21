@@ -13,13 +13,20 @@
 		<%#= p.errors :text %>
 	</div>
 
-	<div>
-		<%= p.collection_check_boxes(
-			:category_ids,
-			@categories_all,
-			:id,
-			:title
-		) %>
+	<div class="checkboxes">
+		<%= p.label :categories %>
+		<div>
+			<%= p.collection_check_boxes(
+				:category_ids,
+				@categories_all,
+				:id,
+				:title
+			) do |checkbox| %>
+                <span>
+                    <%= checkbox.label %> <%= checkbox.check_box %>
+                </span>
+            <% end %>
+		</div>
 	</div>
 
 	<div>
@@ -36,13 +43,20 @@
 		) %>
 	</div>
 
-	<div>
-		<%= p.collection_check_boxes(
-			:tag_ids,
-			@tags_all,
-			:id,
-			:title
-		) %>
+	<div class="checkboxes">
+		<%= p.label :tags %>
+		<div>
+			<%= p.collection_check_boxes(
+				:tag_ids,
+				@tags_all,
+				:id,
+				:title
+			) do |checkbox| %>
+                <span>
+                    <%= checkbox.label %> <%= checkbox.check_box %>
+                </span>
+            <% end %>
+		</div>
 	</div>
 
 	<div>
