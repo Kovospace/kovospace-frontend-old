@@ -1,7 +1,11 @@
 class Post < ActiveRecord::Base
 
+	extend FriendlyId
+    include FriendlyIdConcern
 	include ModelConcern
 	include NestedAttributesGetterConcern
+
+	friendly_id :title, use: [:slugged, :finders]
 
 	has_many(
 		:post_tags,
@@ -52,10 +56,12 @@ class Post < ActiveRecord::Base
 
 	nested_attrs_getter_for :categories, :tags
 
-	validates :title, presence: true
+	validates :title, presence: true, uniqueness: true
+	validates_format_of :title, :without => /^\d/, multiline: true
 	validates :text, presence: true
-
+	validates :slug, uniqueness: true
 	validate :no_category_selected
+
 
 	def no_category_selected
 		if nested_selected_or_created_any?(:categories, :title)

@@ -257,6 +257,10 @@ Rails.application.routes.draw do
     to: "blogs#edit",
     as: "edit_blog"
 
+  get 'blog/:id/:category_id',
+    to: "blogs#show",
+    as: "show_category"
+
   post '/blog',
     to: "blogs#create"
 

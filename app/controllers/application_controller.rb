@@ -92,6 +92,7 @@ class ApplicationController < ActionController::Base
       saved = instance_variable_get(@singular_varname).save
       _around_create_after_save
       if saved
+        _after_save_ok
         if !(r = _after_ok_redirect_to).nil?
           redirect_to r
         else
@@ -122,6 +123,7 @@ class ApplicationController < ActionController::Base
       saved = instance_variable_get(@singular_varname).update(_permitted_params)
       _around_update_after_save
       if saved
+        _after_save_ok
         if !(r = _after_ok_redirect_to).nil?
           redirect_to r
         else

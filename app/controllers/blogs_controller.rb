@@ -2,10 +2,18 @@ class BlogsController < ApplicationController
 
     layout "admin", only: [:new, :create, :edit, :update]
 
+    def show
+        @posts = Blog.where(slug: params[:id])
+                    .joins(categories: [:posts])
+                    .select('distinct "posts"."id"')
+
+    end
+
     private
 
     def _load_vars
         @categories_all = Category.all
+        #@posts_all = Blog
     end
 
     def _after_ok_redirect_to

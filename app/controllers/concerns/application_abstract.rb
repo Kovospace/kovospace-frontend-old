@@ -35,4 +35,8 @@ module ApplicationAbstract
     def _permitted_params
     end
 
+    def _after_save_ok
+
+    end
+
 end

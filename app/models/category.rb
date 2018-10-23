@@ -1,11 +1,15 @@
 class Category < ActiveRecord::Base
-
+    extend FriendlyId
+    include FriendlyIdConcern
 	include ModelConcern
+
+    friendly_id :title, use: [:slugged, :finders]
 
 	has_many :category_posts, inverse_of: :category
 	has_many :posts, through: :category_posts
 
-	validates :title, presence: true
+	validates :title, presence: true, uniqueness: true
+    validates_format_of :title, :without => /^\d/, multiline: true
 
 	has_many(
         :blog_categories,

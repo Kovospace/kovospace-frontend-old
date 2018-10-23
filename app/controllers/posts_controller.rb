@@ -26,6 +26,13 @@ class PostsController < ApplicationController
         { controller: "admin", action: "list_posts" }
     end
 
+    def _after_save_ok
+    	## upravit asociacie priradit blogom jednotlive clanky
+    	#posts_ids = Blog.where(slug: params[:id])
+                   	#.joins(categories: [:posts])
+                   	#.select('distinct "posts"."id"')
+    end
+
 	def _permitted_params
 		 params[:post].permit(
 		 	:title,

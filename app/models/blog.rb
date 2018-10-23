@@ -32,8 +32,19 @@ class Blog < ActiveRecord::Base
         # skip validations if saved using autosave of parent model (this model)
     )
 
-    validates :title, presence: true
+    validates :title, presence: true, uniqueness: true
     validates_format_of :title, :without => /^\d/, multiline: true
     validates :slug, uniqueness: true
+
+    scope :uncategorized_posts, -> {
+
+    }
+
+    scope :regenerate_associations, -> {
+        ## z kategorii zistit dotknute blogy
+        ## tym pdatnut clanky podla clankov z kategorii
+    }
+
+
 
 end
