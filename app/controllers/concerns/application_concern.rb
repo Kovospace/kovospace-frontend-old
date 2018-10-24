@@ -46,6 +46,17 @@ module ApplicationConcern
 		end
 	end
 
+	def sluggable_where(param_name, raw_sql=false)
+		p = params[param_name]
+		if raw_sql
+			col = (/^\d/ =~ p) ? "id" : "slug"
+			query = "#{param_name.to_s.sub('_id', '').pluralize}.#{col} = ?"
+			return [query, p]
+		else
+			return (/^\d/ =~ p) ? { id: p.to_i } : { slug: p }
+		end
+	end
+
 	module ClassMethods
 
 	end

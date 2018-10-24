@@ -1,10 +1,9 @@
 class Blog < ActiveRecord::Base
     extend FriendlyId
     include FriendlyIdConcern
+    include BlogConcern
 
 	belongs_to :user
-
-    friendly_id :title, use: [:slugged, :finders]
 
     mount_uploader :title_bg, BlogTitleBgUploader
 
@@ -32,10 +31,6 @@ class Blog < ActiveRecord::Base
         # skip validations if saved using autosave of parent model (this model)
     )
 
-    validates :title, presence: true, uniqueness: true
-    validates_format_of :title, :without => /^\d/, multiline: true
-    validates :slug, uniqueness: true
-
     scope :uncategorized_posts, -> {
 
     }
@@ -44,7 +39,6 @@ class Blog < ActiveRecord::Base
         ## z kategorii zistit dotknute blogy
         ## tym pdatnut clanky podla clankov z kategorii
     }
-
 
 
 end

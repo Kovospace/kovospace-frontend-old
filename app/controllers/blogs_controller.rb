@@ -3,10 +3,22 @@ class BlogsController < ApplicationController
     layout "admin", only: [:new, :create, :edit, :update]
 
     def show
-        @posts = Blog.where(slug: params[:id])
-                    .joins(categories: [:posts])
-                    .select('distinct "posts"."id"')
-
+        # na uvodke blogu len top clanky, bez strankovania
+        #
+        if params[:category_id].blank?
+            posts_ids = Blog.where(sluggable_where :id)
+                        .joins(categories: [:posts])
+                        .select('distinct "posts"."id"')
+                        .map(&:id)
+        else
+            posts_ids = Blog.where(sluggable_where :id)
+                        .joins(categories: [:posts])
+                        .where(sluggable_where :category_id, true)
+                        .select('distinct "posts"."id"')
+                        .map(&:id)
+            @category = Category.find(params[:category_id])
+        end
+        @posts = Post.find(posts_ids)
     end
 
     private

@@ -1,0 +1,127 @@
+@import "./frontend/variables";
+
+header.blogs.show {
+    text-align: left;
+    padding:0;
+
+    nav {
+        padding-top: 2%;
+        padding-left: 2%;
+
+        ul, ol {
+            display: inline-block;
+            vertical-align: bottom;
+        }
+
+        ul {
+
+            li {
+                border-radius: 50%;
+                vertical-align: top;
+
+                &:first-child {
+                    background-color: $earth_blue;
+                    font-size: 4em;
+                }
+
+                &:last-child {
+                    background-color: $logo_moon;
+                    font-size: 2em;
+                    margin-left: 1em;
+                    -moz-box-shadow:    inset -0.5em 0 0em -2px $logo_orange;
+                    -webkit-box-shadow: inset -0.5em 0 0em -2px $logo_orange;
+                    box-shadow:         inset -0.5em 0 0em -2px $logo_orange;
+                }
+
+                a {
+
+                    span {
+                        padding: 0 0.25em;
+                    }
+                }
+            }
+        }
+
+        ol {
+            display:inline-table;
+
+            li {
+                display:table-cell;
+                background-color: $rocket_2_bg;
+                vertical-align:middle;
+
+                a {
+                    display:inline-block;
+                    font-size: 1.5em;
+                    line-height: 2em;
+                    height: 100%;
+
+                    span {
+                        display: block;
+                        background-color: $rocket_2_bg;
+                        color: #CD0000;
+                        position: relative;
+                        padding:0.25em;
+                    }
+                }
+
+                &:first-child {
+                    background-color: transparent;
+
+                    a {
+                        position: relative;
+                        z-index: 10;
+                        font-size: 2em;
+                        line-height: 2em;
+
+                        span {
+                            padding:0.25em;
+                            z-index: 10;
+                            border-top-left-radius: 0.25em;
+                            border-bottom-left-radius: 0.25em;
+                        }
+
+                        &:before {
+                            display: block;
+                            position: absolute;
+                            right: 100%;
+                            margin-right: -0.5em;
+                            overflow:hidden;
+                            content: '';
+                            border-right: 0px solid black;
+                            border-left: 2em solid $rocket_2_engine;
+                            border-top: 1em solid transparent;
+                            border-bottom: 1em solid transparent;
+                            border-top-left-radius: 0.25em;
+                            border-bottom-left-radius: 0.25em;
+                            top:0.25em;
+                            bottom:0.25em;
+                            z-index: 9;
+                        }
+                    }
+
+                }
+
+                &:last-child {
+                    position: relative;
+
+                    &:before {
+                        display: block;
+                        position: absolute;
+                        left: 100%;
+                        margin-right: -0.5em;
+                        overflow:hidden;
+                        content: '';
+                        border-right: 0px solid $space_black;
+                        border-left: 5em solid $rocket_2_bg;
+                        border-top: 2.5em solid transparent;
+                        border-bottom: 2.5em solid transparent;
+                        top:0;
+                        bottom:0;
+                        z-index: 9;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -5,7 +5,6 @@ class Portfolio < ActiveRecord::Base
 
     EXCLUDED_SLUG_VALUES = Skillset.all.pluck(:slug)
     friendly_id_config.reserved_words.concat(EXCLUDED_SLUG_VALUES)
-    friendly_id :title, use: [:slugged, :finders]
 
     has_and_belongs_to_many :skills
 
@@ -26,10 +25,6 @@ class Portfolio < ActiveRecord::Base
     belongs_to :skillset, inverse_of: :portfolios, counter_cache: true
 
     default_scope { order(realis_date: :desc) }
-
-    validates :title, presence: true
-    validates_format_of :title, :without => /^\d/, multiline: true
-    validates :slug, uniqueness: true
 
     scope :category_filter, -> (category_slug) {
         if category_slug.blank?

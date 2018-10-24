@@ -1,0 +1,43 @@
+<% content_for :header do %>
+
+    <nav>
+
+        <ul class="main">
+            <li>
+                <%= link_to home_path do %>
+                    <span>Domov</span>
+                <% end %>
+
+            </li>
+            <li>
+                <%= link_to portfolio_path do %>
+                    <span>Tvorba</span>
+                <% end %>
+            </li>
+        </ul>
+
+        <ol>
+            <li>
+                <%= link_to blogs_path do %>
+                    <span>Blog</span>
+                <% end %>
+            </li>
+            <% if !params[:id].blank? %>
+                <li>
+                    <%= link_to show_blog_path(@blog) do %>
+                        <span><%= @blog.title %></span>
+                    <% end %>
+                </li>
+            <% end %>
+            <% if !params[:category_id].blank? %>
+                <li>
+                    <%= link_to show_category_path(@blog, @category) do %>
+                        <span><%= @category.title %></span>
+                    <% end %>
+                </li>
+            <% end %>
+        </ol>
+
+    </nav>
+
+<% end %>
