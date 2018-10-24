@@ -1,5 +1,5 @@
 <% @blog.categories.each do |category| %>
 
-    <%= link_to category.title, show_category_path(@blog.slug, category.slug) %>
+    <%= link_to category.title, show_blog_category_path(@blog.slug, category.slug) %>
 
 <% end %>

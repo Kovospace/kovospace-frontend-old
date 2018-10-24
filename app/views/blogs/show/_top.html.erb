@@ -31,7 +31,7 @@
             <% end %>
             <% if !params[:category_id].blank? %>
                 <li>
-                    <%= link_to show_category_path(@blog, @category) do %>
+                    <%= link_to show_blog_category_path(@blog, @category) do %>
                         <span><%= @category.title %></span>
                     <% end %>
                 </li>

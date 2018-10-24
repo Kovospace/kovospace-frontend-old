@@ -249,7 +249,7 @@ Rails.application.routes.draw do
     to: "blogs#new",
     as: "new_blog"
 
-  get 'blog/:id',
+  get '/blog/:id',
     to: "blogs#show",
     as: "show_blog"
 
@@ -257,9 +257,17 @@ Rails.application.routes.draw do
     to: "blogs#edit",
     as: "edit_blog"
 
+  #get 'blog/:id/:post_id',
+   # to: "posts#show",
+   # as: "show_blog_post"
+
   get 'blog/:id/:category_id',
     to: "blogs#show",
-    as: "show_category"
+    as: "show_blog_category"
+
+  get 'blog/:id/:category_id/:post_id',
+    to: "posts#show",
+    as: "show_blog_category_post"
 
   post '/blog',
     to: "blogs#create"
@@ -285,6 +293,10 @@ Rails.application.routes.draw do
   get '/post/new',
     to: "posts#new",
     as: "new_post"
+
+  get '/post/:id',
+    to: "posts#show",
+    as: "show_post"
 
   get '/post/:id/edit',
     to: "posts#edit",
