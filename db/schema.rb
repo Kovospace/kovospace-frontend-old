@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181023212132) do
+ActiveRecord::Schema.define(version: 20181025214204) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 20181023212132) do
     t.integer "blog_id"
   end
 
+  create_table "blog_tags", force: :cascade do |t|
+    t.integer "blog_id"
+    t.integer "tag_id"
+  end
+
+  add_index "blog_tags", ["blog_id"], name: "index_blog_tags_on_blog_id"
+  add_index "blog_tags", ["tag_id"], name: "index_blog_tags_on_tag_id"
+
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
@@ -60,6 +68,7 @@ ActiveRecord::Schema.define(version: 20181023212132) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "slug"
+    t.text     "title_bg"
   end
 
   create_table "category_posts", force: :cascade do |t|

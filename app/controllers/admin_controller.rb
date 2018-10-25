@@ -19,6 +19,7 @@ class AdminController < ApplicationController
 
     def list_blogs
         @result = Blog.all
+        @categories = Category.all
     end
 
     def list_portfolios

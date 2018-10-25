@@ -35,6 +35,7 @@ class PostsController < ApplicationController
 		 params[:post].permit(
 		 	:title,
 		 	:text,
+		 	:slug,
 		 	tags_attributes: [:id, :title],
 		 	tag_ids: [],
 		 	categories_attributes: [:id, :title],

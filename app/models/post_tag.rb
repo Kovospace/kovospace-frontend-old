@@ -10,11 +10,11 @@ class PostTag < ActiveRecord::Base
 		:tag,
 		inverse_of: :post_tags#,
 		#dependent: :destroy
-		# deletes also tag when deleting post that contains this tag 
+		# deletes also tag when deleting post that contains this tag
 		# no matter if others posts also use this tag
 	)
 
-	after_destroy :remove_unused_tags
+	#after_destroy :remove_unused_tags
 
 	def remove_unused_tags
 		# runs multiple times, depending of how much joins is with Tag model

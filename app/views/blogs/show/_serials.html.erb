@@ -1,5 +1,20 @@
+
+<h2>Seriály</h2>
+
 <% @blog.categories.each do |category| %>
 
-    <%= link_to category.title, show_blog_category_path(@blog.slug, category.slug) %>
+    <article>
+
+        <figure>
+            <picture>
+                <%= image_tag category.title_bg.thumb_320p %>
+            </picture>
+        </figure>
+
+        <%= link_to show_blog_category_path(@blog.slug, category.slug) do %>
+            <span><b><%= category.title %></b></span>
+        <% end %>
+
+    </article>
 
 <% end %>

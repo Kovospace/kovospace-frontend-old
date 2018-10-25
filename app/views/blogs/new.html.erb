@@ -47,6 +47,50 @@
     </div>
 
     <div>
+        <%= s.fields_for :categories, @categories do |t| %>
+            <% if t.object.id.blank? %>
+                <%= t.label :title %>
+                <%= t.text_field :title %>
+                <%#= t.errors :title %>
+            <% end %>
+        <% end %>
+        <%#= render(
+            'layouts/shared_elements/form_errors_field',
+            field: :categories_attributes
+        ) %>
+    </div>
+
+    <div class="checkboxes">
+        <%= s.label :tags %>
+        <div>
+            <%= s.collection_check_boxes(
+                :tag_ids,
+                @tags_all,
+                :id,
+                :title
+            ) do |checkbox| %>
+                <span>
+                    <%= checkbox.label %> <%= checkbox.check_box %>
+                </span>
+            <% end %>
+        </div>
+    </div>
+
+    <div>
+        <%= s.fields_for :tags, @tags do |t| %>
+            <% if t.object.id.blank? %>
+                <%= t.label :title %>
+                <%= t.text_field :title %>
+                <%#= t.errors :title %>
+            <% end %>
+        <% end %>
+        <%#= render(
+            'layouts/shared_elements/form_errors_field',
+            field: :tags_attributes
+        ) %>
+    </div>
+
+    <div>
         <%= s.submit %>
     </div>
 

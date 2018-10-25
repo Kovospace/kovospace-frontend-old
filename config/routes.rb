@@ -313,6 +313,26 @@ Rails.application.routes.draw do
     to: "posts#destroy",
     as: "destroy_post"
 
+  # kategorie clankov
+
+  get '/category/new',
+    to: "categories#new",
+    as: "new_category"
+
+  get '/category/:id/edit',
+    to: "categories#edit",
+    as: "edit_category"
+
+  post '/category',
+    to: "categories#create"
+
+  patch '/category.:id',
+    to: "categories#update",
+    as: "update_category"
+
+  delete '/category.:id',
+    to: "categories#destroy",
+    as: "destroy_category"
 
 
   devise_for :users, skip: :all

@@ -1,6 +1,9 @@
 class Blog < ActiveRecord::Base
+
     extend FriendlyId
     include FriendlyIdConcern
+    include ModelConcern
+    include NestedAttributesGetterConcern
     include BlogConcern
 
 	belongs_to :user
@@ -30,6 +33,20 @@ class Blog < ActiveRecord::Base
         #validate: false
         # skip validations if saved using autosave of parent model (this model)
     )
+
+    has_many(
+        :blog_tags,
+        inverse_of: :blog#,
+        #dependent: :destroy
+    )
+    has_many(
+        :tags,
+        through: :blog_tags
+        #validate: false
+        # skip validations if saved using autosave of parent model (this model)
+    )
+
+    nested_attrs_getter_for :categories, :tags
 
     scope :uncategorized_posts, -> {
 

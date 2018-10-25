@@ -20,7 +20,7 @@ class Post < ActiveRecord::Base
 	)
 	accepts_nested_attributes_for(
 		:tags,
-		allow_destroy: true,
+		#allow_destroy: true,
 		reject_if: lambda { |c| c[:title].blank? }
 		# skip saving empty tag association if field for new tag is not filled
 		# but do not raise validation error

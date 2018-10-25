@@ -5,7 +5,7 @@
             list_homepage_path,
             active: [
                 ['admin', 'skills', 'work_states', 'contacts', 'newslogs'],     # kontrollery
-                ['new', 'edit', 'list_homepage', 'show']          # akcie v kontrolleroch
+                ['new', 'edit', 'list_homepage', 'show', 'create', 'update']          # akcie v kontrolleroch
             ]
         ) %>
     </li>
@@ -15,7 +15,7 @@
             list_portfolio_path,
             active: [
                 ['admin', 'portfolios', 'skillsets'],     # kontrollery
-                ['new', 'edit', 'list_portfolios']          # akcie v kontrolleroch
+                ['new', 'edit', 'list_portfolios', 'create', 'update']          # akcie v kontrolleroch
             ]
         ) %>
     </li>
@@ -24,8 +24,8 @@
             'Blog',
             list_blogs_path,
             active: [
-                ['admin', 'blogs'],     # kontrollery
-                ['new', 'edit', 'list_blogs']          # akcie v kontrolleroch
+                ['admin', 'blogs', 'categories'],     # kontrollery
+                ['new', 'edit', 'list_blogs', 'create', 'update']          # akcie v kontrolleroch
             ]
         ) %>
     </li>
@@ -35,7 +35,7 @@
             list_posts_path,
             active: [
                 ['admin', 'posts'],     # kontrollery
-                ['new', 'edit', 'list_posts']          # akcie v kontrolleroch
+                ['new', 'edit', 'create', 'update', 'list_posts']          # akcie v kontrolleroch
             ]
         ) %>
     </li>

@@ -76,4 +76,10 @@
     }
 }
 
+@mixin text_wrap_fix($padding, $color) {
+    -moz-box-shadow:    $padding 0 0 0 $color, -$padding 0 0 0 $color;
+    -webkit-box-shadow: $padding 0 0 0 $color, -$padding 0 0 0 $color;
+    box-shadow:         $padding 0 0 0 $color, -$padding 0 0 0 $color;
+}
+
 

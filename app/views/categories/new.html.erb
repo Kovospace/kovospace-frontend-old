@@ -1,0 +1,34 @@
+<%= form_for @category do |s| %>
+
+    <div>
+        <%= s.label :title %>
+        <%= s.text_field :title %>
+    </div>
+
+    <div>
+        <%= s.label :slug %>
+        <%= s.text_field :slug %>
+    </div>
+
+    <div>
+        <%= s.label :title_bg %>
+        <%= s.file_field :title_bg %>
+        <%= s.hidden_field :title_bg_cache %>
+    </div>
+
+    <div class="picture">
+        <%= s.label :title_bg %>
+        <picture>
+            <%= s.label :title_bg do %>
+                <%= image_tag(s.object.title_bg) if !s.object.title_bg.nil? %>
+            <% end %>
+        </picture>
+    </div>
+
+    <br>
+
+    <div>
+        <%= s.submit %>
+    </div>
+
+<% end %>

@@ -1,8 +1,11 @@
 class Category < ActiveRecord::Base
+
     extend FriendlyId
     include FriendlyIdConcern
 	include ModelConcern
     include BlogConcern
+
+    mount_uploader :title_bg, CategoryTitleBgUploader
 
 	has_many :category_posts, inverse_of: :category
 	has_many :posts, through: :category_posts

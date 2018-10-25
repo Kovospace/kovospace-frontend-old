@@ -25,7 +25,21 @@ class BlogsController < ApplicationController
 
     def _load_vars
         @categories_all = Category.all
+        @tags_all = Tag.all
         #@posts_all = Blog
+    end
+
+    def _around_new
+        build_if_empty :categories, :tags
+    end
+
+    def _around_create_after_save
+        build_if_empty :categories, :tags
+    end
+
+    def _around_edit
+        build_if_empty :categories, :tags
+        #also runs around update
     end
 
     def _after_ok_redirect_to

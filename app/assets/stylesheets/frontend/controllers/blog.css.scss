@@ -11,12 +11,25 @@ body.blog {
         display: flex;
         flex-direction: column;
 
-        section#blogs {
+        section {
             flex: 1 0 auto;
+        }
+
+        section#serials {
+            text-align: center;
+
+            article {
+                width: 288px;
+                height: 216px;
+            }
+        }
+
+        section#blogs {
 
             article {
                 min-height: 320px;
                 min-height: 24em;
+                max-height: 480px;
                 //height:320px;
             }
         }
