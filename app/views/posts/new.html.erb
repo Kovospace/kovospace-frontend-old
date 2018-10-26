@@ -12,12 +12,32 @@
 		<%= p.errors :slug %>
 	</div>
 
+    <div>
+        <%= p.text_area :intro %>
+        <%= p.errors :intro %>
+    </div>
+
 	<div>
 		<%= p.label :text %>
 		<%#= p.text_area :text %>
 		<%= p.cktext_area :text %>
 		<%#= p.errors :text %>
 	</div>
+
+	<div>
+        <%= p.label :avatar %>
+        <%= p.file_field :avatar %>
+        <%= p.hidden_field :avatar_cache %>
+    </div>
+
+    <div class="picture">
+        <%= p.label :avatar %>
+        <picture>
+            <%= p.label :avatar do %>
+                <%= image_tag(p.object.avatar) if !p.object.avatar.nil? %>
+            <% end %>
+        </picture>
+    </div>
 
 	<div class="checkboxes">
 		<%= p.label :categories %>
@@ -78,6 +98,8 @@
 			field: :tags_attributes
 		) %>
 	</div>
+
+	<br>
 
 	<div>
 		<%= p.submit %>

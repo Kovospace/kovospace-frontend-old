@@ -4,12 +4,16 @@ body.blog {
 
     main {
 
-        section#serials {
+        h2 {
+            margin-bottom: 0.5em;
+            text-align: left;
+        }
 
-            h2 {
-                margin-bottom: 0.5em;
-                text-align: left;
-            }
+        h3 {
+            font-size: 2.5em;
+        }
+
+        section#serials {
 
             article {
                 border-radius: 1em;
@@ -52,11 +56,49 @@ body.blog {
                         padding-left: 0.5em;
                         padding-top: 0.375em;
 
-                        b {
+                        h4 {
+                            display: inline;
                             background: $black;
                             @include text_wrap_fix(0.25em, $black);
                         }
                     }
+                }
+            }
+        }
+
+        section.posts {
+
+            figure {
+                display: block;
+                float:left;
+                margin-right: 1em;
+                margin-bottom:0.5em;
+                border-radius: 1em;
+                overflow:hidden;
+
+                a {
+                    display: block;
+
+                    picture {
+                        display: block;
+
+                        img {
+                            display: block;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+
+            div {
+                display: table;
+
+                h3 {
+                    margin-bottom: 0.5em;
+                }
+
+                p {
+                    font-size: 1.25em;
                 }
             }
         }

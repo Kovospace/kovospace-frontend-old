@@ -19,6 +19,10 @@ class BlogsController < ApplicationController
             @category = Category.find(params[:category_id])
         end
         @posts = Post.find(posts_ids)
+        if params[:category_id].blank?
+            @posts_best = @posts
+            @posts_new = @posts
+        end
     end
 
     private

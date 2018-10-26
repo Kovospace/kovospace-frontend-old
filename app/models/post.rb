@@ -8,6 +8,8 @@ class Post < ActiveRecord::Base
 
 	friendly_id :title, use: [:slugged, :finders]
 
+	mount_uploader :avatar, PostAvatarUploader
+
 	has_many(
 		:post_tags,
 		inverse_of: :post,

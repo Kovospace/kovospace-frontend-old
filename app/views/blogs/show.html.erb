@@ -1,10 +1,33 @@
 
-<%= render 'blogs/show/top' %>
+<%= render 'blogs/show/top', klass: (params[:category_id].blank? ? "maximized" : "minimized") %>
 
-<section id="serials">
-    <%= render 'blogs/show/serials' %>
-</section>
+<% if params[:category_id].blank? %>
 
-<section class="posts best">
-    <%= render 'blogs/show/posts' %>
-</section>
+    <section id="serials">
+        <%= render 'blogs/show/serials' %>
+    </section>
+
+    <section class="posts best">
+        <h2>Top články</h2>
+        <% @posts_best.each do |post| %>
+            <%= render 'blogs/show/post', p: post %>
+        <% end %>
+    </section>
+
+    <section class="posts new">
+        <h2>Najnovšie</h2>
+        <% @posts_new.each do |post| %>
+            <%= render 'blogs/show/post', p: post %>
+        <% end %>
+    </section>
+
+<% else %>
+
+    <section class="posts categorized">
+        <h2>---</h2>
+        <% @posts.each do |post| %>
+            <%= render 'blogs/show/post', p: post %>
+        <% end %>
+    </section>
+
+<% end %>

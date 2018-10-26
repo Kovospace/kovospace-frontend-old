@@ -5,3 +5,18 @@
     src: asset-url('/assets/fonts/starjhol-webfont.ttf') format('truetype');
 }
 
+del {
+    //text-decoration: line-through;
+    position: relative;
+
+    &:after {
+        border-bottom: 0.125em solid red;
+        content: "";
+        left: 0;
+        //margin-top: calc(0.125em / 2 * -1);
+        position: absolute;
+        right: 0;
+        top: 50%;
+    }
+}
+
