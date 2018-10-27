@@ -3,39 +3,49 @@
     <nav class="<%= klass %>">
 
         <ul class="main">
-            <li>
-                <%= link_to home_path do %>
-                    <span>Domov</span>
-                <% end %>
-
-            </li>
-            <li>
-                <%= link_to portfolio_path do %>
-                    <span>Tvorba</span>
-                <% end %>
-            </li>
+            <%= blog_topmenu_link home_path, "Domov" %>
+            <%= blog_topmenu_link portfolio_path, "Tvorba" %>
         </ul>
 
         <ol>
-            <li>
-                <%= link_to blogs_path do %>
-                    <span>Blog</span>
+            <%= blog_topmenu_link blogs_path, "Blog" %>
+
+            <% if !params[blog_id].blank? %>
+
+                <%= blog_topmenu_link show_blog_path(@blog), @blog.title %>
+
+                <% if !params[post_id].blank? %>
+
+                    <%= blog_topmenu_link show_blog_post_path(@blog, params[:page], @post), @post.title %>
+
                 <% end %>
-            </li>
-            <% if !params[:id].blank? %>
-                <li>
-                    <%= link_to show_blog_path(@blog) do %>
-                        <span><%= @blog.title %></span>
-                    <% end %>
-                </li>
+
+            <% else %>
+
+                <% if !params[post_id].blank? %>
+
+                    <%= blog_topmenu_link show_post_path(params[:page], @post), @post.title %>
+
+                <% else %>
+
+                    <%= blog_topmenu_link all_posts_path, "Všetky články" %>
+
+                <% end %>
+
             <% end %>
-            <% if !params[:category_id].blank? %>
-                <li>
-                    <%= link_to show_blog_category_path(@blog, @category) do %>
-                        <span><%= @category.title %></span>
-                    <% end %>
-                </li>
+
+            <% if !params[blog_id].blank?&&!params[category_id].blank? %>
+
+                <%= blog_topmenu_link show_blog_category_path(@blog, @category, params[:page]), @category.title %>
+
             <% end %>
+
+            <% if !params[blog_id].blank?&&!params[category_id].blank?&&!params[post_id].blank? %>
+
+                <%= blog_topmenu_link show_blog_category_post_path(@blog, @category, params[:page], @post), @post.title %>
+
+            <% end %>
+
         </ol>
 
     </nav>

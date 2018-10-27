@@ -36,7 +36,9 @@ module ApplicationAbstract
     end
 
     def _after_save_ok
+    end
 
+    def _after_save_fail
     end
 
 end

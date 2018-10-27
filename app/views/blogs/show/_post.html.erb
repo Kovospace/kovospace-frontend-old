@@ -2,17 +2,17 @@
 <article>
 
     <figure>
-        <a href="">
+        <%= link_to generate_post_url(p) do %>
             <picture>
                 <%= image_tag p.avatar.thumb_288p %>
             </picture>
-        </a>
+        <% end %>
     </figure>
 
     <div>
-        <a href="">
+        <%= link_to generate_post_url(p) do %>
             <h3> <%= p.title.html_safe %> </h3>
-        </a>
+        <% end %>
         <p> <%= p.intro %> </p>
     </div>
 

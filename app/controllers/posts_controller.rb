@@ -2,6 +2,16 @@ class PostsController < ApplicationController
 
 	layout "admin", only: [:new, :create, :edit, :update]
 
+	## override
+	def show
+		if_urlpart_set_instance :blog, :category
+	end
+
+	def all
+		@posts = Post.all.page(params[:page]).per(10)
+		render "index"
+	end
+
 	private
 
 	def _load_vars
@@ -13,7 +23,7 @@ class PostsController < ApplicationController
 		build_if_empty :categories, :tags
 	end
 
-	def _around_create_after_save
+	def _after_save_fail
 		build_if_empty :categories, :tags
 	end
 
@@ -44,6 +54,15 @@ class PostsController < ApplicationController
 		 	categories_attributes: [:id, :title],
 		 	category_ids: []
 		 )
+	end
+
+	def if_urlpart_set_instance(*mdls)
+		mdls.each do |mdl_name|
+			if !(p = params["#{mdl_name.to_s}_id"]).blank?
+				content = mdl_name.to_s.classify.constantize.find(p)
+				instance_variable_set("@#{mdl_name.to_s}", content)
+			end
+		end
 	end
 
 end

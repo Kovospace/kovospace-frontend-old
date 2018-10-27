@@ -99,6 +99,7 @@ class ApplicationController < ActionController::Base
           redirect_to public_send("#{controller_name.pluralize}_path")
         end
       else
+        _after_save_fail
         render "new"
       end
     end
@@ -130,6 +131,7 @@ class ApplicationController < ActionController::Base
           redirect_to controller: controller_name, action: 'index'
         end
       else
+        _after_save_fail
         render "new"
       end
     end

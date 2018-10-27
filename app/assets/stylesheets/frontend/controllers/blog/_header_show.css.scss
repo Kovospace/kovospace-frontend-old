@@ -1,6 +1,6 @@
 @import "./frontend/variables";
 
-header.blogs.show {
+header.blogs.show, header.posts.show, header.posts.all {
     text-align: left;
     padding:0;
 
@@ -172,3 +172,4 @@ header.blogs.show {
         }
     }
 }
+

@@ -1,5 +1,10 @@
 
-<%= render 'blogs/show/top', klass: (params[:category_id].blank? ? "maximized" : "minimized") %>
+<%= render('blogs/show/top',
+    klass: (params[:category_id].blank? ? "maximized" : "minimized"),
+    blog_id: :id,
+    post_id: :post_id,
+    category_id: :category_id
+) %>
 
 <% if params[:category_id].blank? %>
 
@@ -25,18 +30,25 @@
 
     <section class="posts categorized">
 
-        <figure>
+        <figure class="title_bg">
             <picture>
                 <%= image_tag @category.title_bg %>
             </picture>
         </figure>
 
-        <h2> <%= @category.title %> </h2>
+        <h2>
+            <%= @category.title %>
+            <i><%= @posts.total_count %>čl</i>
+        </h2>
 
         <% @posts.each do |post| %>
             <%= render 'blogs/show/post', p: post %>
         <% end %>
 
+    </section>
+
+    <section class="pagination">
+        <%= paginate @posts %>
     </section>
 
 <% end %>

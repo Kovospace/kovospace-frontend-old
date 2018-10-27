@@ -1,14 +1,18 @@
-<%= t_link_to :create_article, new_post_path %>
 
-<br><br>
+<%= render('blogs/show/top',
+    klass: (params[:category_id].blank? ? "maximized" : "minimized"),
+    blog_id: :id,
+    post_id: :post_id,
+    category_id: :category_id
+) %>
 
-<% @posts.each do |post| %>
+<section class="posts all">
 
-	<%= post.title %> 
+    <% @posts.all.each do |p| %>
 
-	<%= t_link_to :edit_article, edit_post_path(post) %>
+        <%= render "blogs/show/post", p: p %>
 
-	<%= t_link_to :delete_article, destroy_post_path(post.id), method: :delete, :confirm => "Are you sure ?", remote: true %>
-	<br>
+    <% end %>
 
-<% end %>
+</section>
+

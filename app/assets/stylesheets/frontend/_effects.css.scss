@@ -54,10 +54,16 @@
     }
 }
 
-@mixin inner_border($color, $size) {
-  -moz-box-shadow: inset 0px 0px 0px $size $color;
-  -webkit-box-shadow: inset 0px 0px 0px $size $color;
-  box-shadow: inset 0px 0px 0px $size $color;
+@mixin inner_border($color, $size, $blur:0) {
+  -moz-box-shadow: inset 0px 0px $blur $size $color;
+  -webkit-box-shadow: inset 0px 0px $blur $size $color;
+  box-shadow: inset 0px 0px $blur $size $color;
+}
+
+@mixin both_shadows($x_o, $y_o, $blur_o:0, $expand_o:0, $color_o:transparent, $x_i:0, $y_i:0, $blur_i:0, $expand_i:0, $color_i:transparent ) {
+    -moz-box-shadow:    inset $x_i $y_i $blur_i $expand_i $color_i, $x_o $y_o $blur_o $expand_o $color_o;
+    -webkit-box-shadow: inset $x_i $y_i $blur_i $expand_i $color_i, $x_o $y_o $blur_o $expand_o $color_o;
+    box-shadow:         inset $x_i $y_i $blur_i $expand_i $color_i, $x_o $y_o $blur_o $expand_o $color_o;
 }
 
 @mixin rotate($angle) {

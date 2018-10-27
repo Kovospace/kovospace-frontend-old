@@ -1,0 +1,25 @@
+<% content_for :head do %>
+
+    <%#= canonical_tag show_portfolio_url(@portfolio) %>
+
+<% end %>
+
+<% minimized_menu = (controller_name == "posts")||(!params[:category_id].blank?) %>
+
+<%= render('blogs/show/top',
+    klass: (minimized_menu ? "minimized" : "maximized"),
+    blog_id: :blog_id,
+    post_id: :id,
+    category_id: :category_id
+) %>
+
+<section id="show_post">
+
+    <%#= render 'portfolios/show/title_bg' %>
+
+    <article>
+         <h2> <%= @post.title.html_safe %> </h2>
+         <%= @post.intro %>
+    </article>
+
+</section>

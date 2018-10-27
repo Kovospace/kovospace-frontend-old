@@ -167,7 +167,7 @@ Rails.application.routes.draw do
     to: "portfolios#index",
     constraints: PortfolioConstraint.new
 
-  get '/portfolio/:skillset_id/strana/:page',
+  get '/portfolio/:skillset_id/strana-:page',
     to: "portfolios#index"
 
   get "/admin/portfolio",
@@ -178,12 +178,12 @@ Rails.application.routes.draw do
     to: "portfolios#new",
     as: "new_portfolio"
 
+  get '/portfolio/strana-:page',
+    to: "portfolios#index"
+
   get 'portfolio/:id',
     to: "portfolios#show",
     as: "show_portfolio"
-
-  get '/portfolio/strana/:page',
-    to: "portfolios#index"
 
   get '/portfolio/:id/edit',
     to: "portfolios#edit",
@@ -241,6 +241,13 @@ Rails.application.routes.draw do
     to: "blogs#index",
     as: "blogs"
 
+  get '/blog/vsetky-clanky',
+    to: "posts#all",
+    as: "all_posts"
+
+  #get '/blog/vsetky-clanky/:id',
+   # to: "posts#all"
+
   get "/admin/blogs",
     to: "admin#list_blogs",
     as: "list_blogs"
@@ -251,23 +258,36 @@ Rails.application.routes.draw do
 
   get '/blog/:id',
     to: "blogs#show",
-    as: "show_blog"
+    as: "show_blog",
+    constraints: BlogConstraint.new
+
+  get '/blog(/vsetky-clanky)(/strana-:page)/:id',
+    to: "posts#show",
+    as: "show_post"
 
   get '/blog/:id/edit',
     to: "blogs#edit",
     as: "edit_blog"
 
-  #get 'blog/:id/:post_id',
-   # to: "posts#show",
-   # as: "show_blog_post"
-
-  get 'blog/:id/:category_id',
+  get 'blog/:id/:category_id(/strana-:page)',
     to: "blogs#show",
-    as: "show_blog_category"
+    as: "show_blog_category",
+    constraints: BlogCategoryConstraint.new
 
-  get 'blog/:id/:category_id/:post_id',
+
+  get 'blog/:blog_id(/strana-:page)/:id',
+    to: "posts#show",
+    as: "show_blog_post"
+
+  #get 'blog/:id/:category_id/strana-:page',
+    #to: "blogs#show"
+
+  get 'blog/:blog_id/:category_id(/strana-:page)/:id',
     to: "posts#show",
     as: "show_blog_category_post"
+
+  #get 'blog/:blog_id/:category_id(/strana-:page)/:id',
+    #to: "posts#show"
 
   post '/blog',
     to: "blogs#create"
@@ -294,9 +314,9 @@ Rails.application.routes.draw do
     to: "posts#new",
     as: "new_post"
 
-  get '/post/:id',
-    to: "posts#show",
-    as: "show_post"
+  #get '/post/:id',
+    #to: "posts#show",
+    #as: "show_post"
 
   get '/post/:id/edit',
     to: "posts#edit",
