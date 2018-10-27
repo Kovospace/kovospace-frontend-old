@@ -24,10 +24,19 @@
 <% else %>
 
     <section class="posts categorized">
-        <h2>---</h2>
+
+        <figure>
+            <picture>
+                <%= image_tag @category.title_bg %>
+            </picture>
+        </figure>
+
+        <h2> <%= @category.title %> </h2>
+
         <% @posts.each do |post| %>
             <%= render 'blogs/show/post', p: post %>
         <% end %>
+
     </section>
 
 <% end %>

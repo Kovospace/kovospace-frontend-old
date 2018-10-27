@@ -314,6 +314,10 @@ Rails.application.routes.draw do
     as: "destroy_post"
 
   # kategorie clankov
+  #
+  get '/category',
+    to: "categories#index",
+    as: "categories"
 
   get '/category/new',
     to: "categories#new",
