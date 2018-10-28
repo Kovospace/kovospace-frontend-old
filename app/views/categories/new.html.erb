@@ -49,14 +49,16 @@
                             show_post2_path(id),
                             target: :_blank
                         ) %></td>
-                        <td class="down" id="<%= id %>"> &#9660; </td>
-                        <td class="up" id="<%= id %>"> &#9650; </td>
+                        <td class="down" id="<%= id %>"><span>&#9660;</span></td>
+                        <td class="up" id="<%= id %>"><span>&#9650;</span></td>
                         <%= t.hidden_field :id %>
                     </tr>
                 <% end %>
             </tbody>
             <tfoot>
-                <th>celkom: <%= s.object.posts.size %></th>
+                <tr>
+                    <td colspan="10"> celkom: <%= s.object.posts.size %> </td>
+                </tr>
             </tfoot>
         </table>
     </div>
