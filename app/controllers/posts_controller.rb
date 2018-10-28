@@ -2,18 +2,34 @@ class PostsController < ApplicationController
 
 	layout "admin", only: [:new, :create, :edit, :update]
 
+	before_action :decide_breadcrumbs, only: [:show, :all]
+
 	## override
 	def show
 		if_urlpart_set_instance :blog, :category
-		decide_breadcrumbs
 	end
 
 	def all
-		@posts = Post.all.page(params[:page]).per(5)
+		@posts = Post.published.page(params[:page]).per(5)
 		render "index"
 	end
 
+	def publish
+		Post.find(params[:id]).update_attribute(:published, true)
+		redirect_to :list_posts
+	end
+
+	def suspend
+		Post.find(params[:id]).update_attribute(:published, false)
+		redirect_to :list_posts
+	end
+
 	private
+
+	## override
+	def show_action
+		@post = current_user.blank? ? Post.published.find(params[:id]) : Post.find(params[:id])
+	end
 
 	def _load_vars
 		@tags_all = Tag.all
@@ -68,9 +84,15 @@ class PostsController < ApplicationController
 
 	def decide_breadcrumbs
 		add_breadcrumb("Blog", blog_path)
-		#add_breadcrumb(request.url, blog_path)
 		add_breadcrumb(@blog.title, show_blog_path(@blog)) if @blog
-		add_breadcrumb(@post.title.html_safe, show_post_path(params[:page], @post)) if @post&&!@blog&&!@category
+		if (request.url =~ /\/vsetky-clanky(\/strana-\d)?$/)&&!@post&&!@blog&&!@category
+			add_breadcrumb("Všetky články", all_posts_path(params[:page]))
+		elsif (request.url =~ /\/vsetky-clanky\//)&&@post&&!@blog&&!@category
+			add_breadcrumb("Všetky články", all_posts_path(params[:page]))
+			add_breadcrumb(@post.title.html_safe, show_post_path(params[:page], @post))
+		elsif @post&&!@blog&&!@category
+			add_breadcrumb(@post.title.html_safe, show_post2_path(@post))
+		end
 		add_breadcrumb(@post.title.html_safe, show_blog_post_path(@blog, params[:page], @post)) if @post&&@blog&&!@category
 		add_breadcrumb(@category.title, show_blog_category_path(@blog, @category, params[:page])) if @category&&@blog
 		add_breadcrumb(@post.title.html_safe, show_blog_category_post_path(@blog, @category, params[:page], @post)) if @blog&&@category&&@post

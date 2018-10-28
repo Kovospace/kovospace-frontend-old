@@ -1,16 +1,18 @@
 <% content_for :head do %>
 
-    <%#= canonical_tag show_portfolio_url(@portfolio) %>
+    <%= canonical_tag show_post2_url(@post) %>
 
 <% end %>
 
 <% minimized_menu = (controller_name == "posts")||(!params[:category_id].blank?) %>
 
-<%= render('blogs/show/top',
-    klass: (minimized_menu ? "minimized" : "maximized"),
-    blog_id: :blog_id,
-    post_id: :id,
-    category_id: :category_id
+<% content_for :header do %>
+    <%= render('posts/show/admin_notice_not_published') if !@post.published %>
+<% end %>
+
+<%= render(
+    'blogs/show/top',
+    klass: (params[:category_id].blank? ? "maximized" : "minimized")
 ) %>
 
 <section id="show_post">

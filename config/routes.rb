@@ -315,6 +315,14 @@ Rails.application.routes.draw do
     to: "posts#edit",
     as: "edit_post"
 
+  post '/post/:id/publish',
+    to: "posts#publish",
+    as: "publish_post"
+
+  post '/post/:id/suspend',
+    to: "posts#suspend",
+    as: "suspend_post"
+
   post '/post',
     to: "posts#create"
 

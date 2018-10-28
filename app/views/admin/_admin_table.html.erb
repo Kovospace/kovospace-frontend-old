@@ -45,6 +45,15 @@
                     <% fields.each do |field| %>
                         <td> <%= row.send(field) %> </td>
                     <% end %>
+                    <% if buttons.include? :show %>
+                        <td>
+                            <%= link_to(
+                                "Zobraziť",
+                                { controller: cntrl, action: :show, id: row.id },
+                                class: "show_item"
+                            ) %>
+                        </td>
+                    <% end %>
                     <% if buttons.include? :edit %>
                         <td>
                             <%= link_to(
@@ -54,13 +63,23 @@
                             ) %>
                         </td>
                     <% end %>
-                    <% if buttons.include? :show %>
+                    <% if buttons.include? :published %>
                         <td>
-                            <%= link_to(
-                                "Zobraziť",
-                                { controller: cntrl, action: :show, id: row.id },
-                                class: "show_item"
-                            ) %>
+                            <% if !row.published %>
+                                <%= link_to(
+                                    "Publikovať",
+                                    { controller: cntrl, action: :publish, id: row.id },
+                                    method: :post,
+                                    class: "publish_item"
+                                ) %>
+                            <% else %>
+                                <%= link_to(
+                                    "Stiahnuť",
+                                    { controller: cntrl, action: :suspend, id: row.id },
+                                    method: :post,
+                                    class: "suspend_item"
+                                ) %>
+                            <% end %>
                         </td>
                     <% end %>
                     <% if buttons.include? :delete %>

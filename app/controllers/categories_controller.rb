@@ -4,6 +4,15 @@ class CategoriesController < ApplicationController
 
     private
 
+    def _around_edit
+        #build_if_empty :posts
+        #also runs around update
+    end
+
+    def _load_vars
+       #@posts = @category.posts
+    end
+
     def _after_ok_redirect_to
         { controller: "admin", action: "list_blogs" }
     end

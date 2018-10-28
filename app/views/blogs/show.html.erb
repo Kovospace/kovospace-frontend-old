@@ -1,9 +1,7 @@
 
-<%= render('blogs/show/top',
-    klass: (params[:category_id].blank? ? "maximized" : "minimized"),
-    blog_id: :id,
-    post_id: :post_id,
-    category_id: :category_id
+<%= render(
+    'blogs/show/top',
+    klass: (params[:category_id].blank? ? "maximized" : "minimized")
 ) %>
 
 <% if params[:category_id].blank? %>

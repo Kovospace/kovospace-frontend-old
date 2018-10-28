@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181026195339) do
+ActiveRecord::Schema.define(version: 20181028112851) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -179,6 +179,7 @@ ActiveRecord::Schema.define(version: 20181026195339) do
     t.string   "slug"
     t.text     "avatar"
     t.text     "intro"
+    t.boolean  "published"
   end
 
   add_index "posts", ["blog_id"], name: "index_posts_on_blog_id"

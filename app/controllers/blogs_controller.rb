@@ -10,11 +10,13 @@ class BlogsController < ApplicationController
         if params[:category_id].blank?
             posts_ids = Blog.where(sluggable_where :id)
                         .joins(categories: [:posts])
+                        .where('posts.published = ?', true)
                         .select('distinct "posts"."id"')
                         .map(&:id)
         else
             posts_ids = Blog.where(sluggable_where :id)
                         .joins(categories: [:posts])
+                        .where('posts.published = ?', true)
                         .where(sluggable_where :category_id, true)
                         .select('distinct "posts"."id"')
                         .map(&:id)
@@ -25,6 +27,7 @@ class BlogsController < ApplicationController
         @posts = Post.where(id: posts_ids).page(params[:page]).per(2)
 
         if params[:category_id].blank?
+            # dorobit
             @posts_best = @posts
             @posts_new = @posts
         end

@@ -28,6 +28,39 @@ html {
             text-align:center;
             flex: 0 0 auto;
 
+            div.admin_notice {
+                background-color: $bord;
+                color: $white;
+                line-height: 2em;
+                padding: 0 0.5em;
+                font-size:1.25em;
+                font-weight: bold;
+
+                a, span {
+                    margin: 0.25em 0.125em;
+                }
+
+                span {
+                    float:left;
+                }
+
+                a {
+                    float: right;
+                    background-color: $black;
+                    padding: 0 0.5em;
+
+                    &:hover {
+                        background-color: $mid_black;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+            }
+
             nav {
                 height:100%;
                 display: inline-table;

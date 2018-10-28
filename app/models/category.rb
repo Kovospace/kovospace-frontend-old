@@ -10,6 +10,8 @@ class Category < ActiveRecord::Base
 	has_many :category_posts, inverse_of: :category
 	has_many :posts, through: :category_posts
 
+    accepts_nested_attributes_for :posts
+
 	has_many(
         :blog_categories,
         inverse_of: :category,

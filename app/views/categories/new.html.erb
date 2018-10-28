@@ -25,6 +25,42 @@
         </picture>
     </div>
 
+    <div class="order_posts picture">
+        <%= s.label :order_posts %>
+        <table>
+            <caption>Poradie článkov v tejto kategórií</caption>
+            <thead>
+                <th>por.</th>
+                <th>Článok</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </thead>
+            <tbody>
+                <% i=0 %>
+                <%= s.fields_for :posts do |t| %>
+                    <%
+                        i += 1
+                        id = t.object.id
+                    %>
+                    <tr id="article_<%= id %>">
+                        <th><%= i %></th>
+                        <td><%= link_to(
+                            t.object.title.html_safe,
+                            show_post2_path(id),
+                            target: :_blank
+                        ) %></td>
+                        <td class="down" id="<%= id %>"> &#9660; </td>
+                        <td class="up" id="<%= id %>"> &#9650; </td>
+                        <%= t.hidden_field :id %>
+                    </tr>
+                <% end %>
+            </tbody>
+            <tfoot>
+                <th>celkom: <%= s.object.posts.size %></th>
+            </tfoot>
+        </table>
+    </div>
+
     <br>
 
     <div>

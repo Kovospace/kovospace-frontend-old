@@ -62,6 +62,10 @@ class Post < ActiveRecord::Base
 	validates :text, presence: true
 	validate :no_category_selected
 
+	scope :published, -> {
+        self.where(published: true)
+    }
+
 	def no_category_selected
 		if nested_selected_or_created_any?(:categories, :title)
 			self.errors.add(:categories_attributes, :not_selected_or_created)

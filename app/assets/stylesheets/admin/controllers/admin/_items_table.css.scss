@@ -38,6 +38,23 @@ body.admin {
                          background-color: $admin_hover_bg;
                     }
                 }
+
+                a.publish_item {
+                    background-color: $admin_ok_bg;
+
+                    &:hover {
+                         background-color: $admin_ok_bg_hover;
+                    }
+                }
+
+                a.suspend_item {
+                    background-color: $admin_aware_bg;
+
+                    &:hover {
+                         background-color: $admin_aware_bg_hover;
+                    }
+                }
+
             }
 
             caption {

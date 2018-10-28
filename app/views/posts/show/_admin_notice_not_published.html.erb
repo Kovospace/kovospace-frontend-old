@@ -1,0 +1,6 @@
+<div class="admin_notice">
+    <span>Náhľad</span>
+    <span><%= @post.published ? "už publikovaný" : "nepublikovaný" %></span>
+    <%= link_to "Publikovať", publish_post_path(@post.id), method: :post %>
+    <%= link_to "Naspäť", list_posts_path %>
+</div>

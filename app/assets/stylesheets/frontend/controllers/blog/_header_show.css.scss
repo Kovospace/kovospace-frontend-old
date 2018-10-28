@@ -116,7 +116,7 @@ header.blogs.show, header.posts.show, header.posts.all {
                     &:before {
                         display: block;
                         position: absolute;
-                        left: 99%;
+                        left: 99.5%;
                         margin-right: -0.5em;
                         overflow:hidden;
                         content: '';
@@ -152,6 +152,7 @@ header.blogs.show, header.posts.show, header.posts.all {
 
             ol {
                 @include rotate(-10deg);
+                -webkit-backface-visibility: hidden;
                 font-size: 2em;
             }
         }
