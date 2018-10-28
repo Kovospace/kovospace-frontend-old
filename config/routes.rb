@@ -235,18 +235,13 @@ Rails.application.routes.draw do
 
 ### blog
 
-  # kategorie
-
   get '/blog',
     to: "blogs#index",
     as: "blogs"
 
-  get '/blog/vsetky-clanky',
+  get '/blog/vsetky-clanky(/strana-:page)',
     to: "posts#all",
     as: "all_posts"
-
-  #get '/blog/vsetky-clanky/:id',
-   # to: "posts#all"
 
   get "/admin/blogs",
     to: "admin#list_blogs",
@@ -260,6 +255,7 @@ Rails.application.routes.draw do
     to: "blogs#show",
     as: "show_blog",
     constraints: BlogConstraint.new
+    # nebude strankovany, malo obsahu
 
   get '/blog(/vsetky-clanky)(/strana-:page)/:id',
     to: "posts#show",
@@ -274,20 +270,13 @@ Rails.application.routes.draw do
     as: "show_blog_category",
     constraints: BlogCategoryConstraint.new
 
-
   get 'blog/:blog_id(/strana-:page)/:id',
     to: "posts#show",
     as: "show_blog_post"
 
-  #get 'blog/:id/:category_id/strana-:page',
-    #to: "blogs#show"
-
   get 'blog/:blog_id/:category_id(/strana-:page)/:id',
     to: "posts#show",
     as: "show_blog_category_post"
-
-  #get 'blog/:blog_id/:category_id(/strana-:page)/:id',
-    #to: "posts#show"
 
   post '/blog',
     to: "blogs#create"
@@ -334,7 +323,7 @@ Rails.application.routes.draw do
     as: "destroy_post"
 
   # kategorie clankov
-  #
+
   get '/category',
     to: "categories#index",
     as: "categories"

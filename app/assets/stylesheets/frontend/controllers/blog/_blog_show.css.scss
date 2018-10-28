@@ -72,6 +72,11 @@ body.blog, body.post {
 
         section.posts {
 
+            &.all {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
             article {
                 margin: 3.5em 0;
 

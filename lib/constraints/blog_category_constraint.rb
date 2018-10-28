@@ -6,6 +6,7 @@ class BlogCategoryConstraint
 
     def matches?(request)
         id = (request.path)[/[a-z0-9-]+$/]
+        return true if id =~ /strana-\d/
         @categories.include?(id)
     end
 
