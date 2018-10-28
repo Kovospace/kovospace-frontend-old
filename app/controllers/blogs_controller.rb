@@ -2,9 +2,11 @@ class BlogsController < ApplicationController
 
     layout "admin", only: [:new, :create, :edit, :update]
 
+    add_breadcrumb "Blog", :blogs_path
+
     def show
         # na uvodke blogu len top clanky, bez strankovania
-        #
+        add_breadcrumb @blog.title, show_blog_path(@blog)
         if params[:category_id].blank?
             posts_ids = Blog.where(sluggable_where :id)
                         .joins(categories: [:posts])
@@ -17,6 +19,7 @@ class BlogsController < ApplicationController
                         .select('distinct "posts"."id"')
                         .map(&:id)
             @category = Category.find(params[:category_id])
+            add_breadcrumb @category.title, show_blog_category_path(@blog, @category, params[:page])
         end
 
         @posts = Post.where(id: posts_ids).page(params[:page]).per(2)

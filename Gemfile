@@ -49,6 +49,8 @@ gem 'friendly_id', '~> 5.2.0'
 
 gem 'ransack'
 
+gem "breadcrumbs_on_rails", github: "K0V0/breadcrumbs_on_rails"
+
 #gem 'canonical-rails', github: 'jumph4x/canonical-rails'
 
 #gem 'activeadmin'

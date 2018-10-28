@@ -8,48 +8,7 @@
         </ul>
 
         <ol>
-            <%= blog_topmenu_link blogs_path, "Blog" %>
-
-            <% if !params[blog_id].blank? %>
-A
-                <%= blog_topmenu_link show_blog_path(@blog), @blog.title %>
-
-                <% if !params[post_id].blank? %>
-
-                    <% if params[category_id].blank? %>
-B
-                        <%= blog_topmenu_link show_blog_post_path(@blog, params[:page], @post), @post.title %>
-                    <% end %>
-
-                <% end %>
-
-            <% else %>
-C
-                <% if !params[post_id].blank? %>
-                    <%= blog_topmenu_link all_posts_path, "Všetky články" %>
-D
-                    <%= blog_topmenu_link show_post_path(params[:page], @post), @post.title %>
-
-                <% else %>
-E
-                    <%= blog_topmenu_link all_posts_path, "Všetky články" %>
-
-                <% end %>
-
-            <% end %>
-
-            <% if !params[blog_id].blank?&&!params[category_id].blank? %>
-F
-                <%= blog_topmenu_link show_blog_category_path(@blog, @category, params[:page]), @category.title %>
-
-            <% end %>
-
-            <% if !params[blog_id].blank?&&!params[category_id].blank?&&!params[post_id].blank? %>
-G
-                <%= blog_topmenu_link show_blog_category_post_path(@blog, @category, params[:page], @post), @post.title %>
-
-            <% end %>
-
+            <%= render_breadcrumbs :tag => :li, :separator => "", include_current: true, inner_tag: :span %>
         </ol>
 
     </nav>

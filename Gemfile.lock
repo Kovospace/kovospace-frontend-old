@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/K0V0/breadcrumbs_on_rails.git
+  revision: 15c74f97041a402dee7063f33a921206006a411f
+  specs:
+    breadcrumbs_on_rails (3.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -195,6 +201,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_link_to
+  breadcrumbs_on_rails!
   browser_sync_rails
   byebug
   carrierwave (~> 1.0)

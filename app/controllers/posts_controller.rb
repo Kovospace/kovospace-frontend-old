@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 	## override
 	def show
 		if_urlpart_set_instance :blog, :category
+		decide_breadcrumbs
 	end
 
 	def all
@@ -63,6 +64,14 @@ class PostsController < ApplicationController
 				instance_variable_set("@#{mdl_name.to_s}", content)
 			end
 		end
+	end
+
+	def decide_breadcrumbs
+		add_breadcrumb("Blog", blog_path) if @blog
+		add_breadcrumb(@blog.title, show_blog_path(@blog)) if @blog
+		add_breadcrumb(@post.title.html_safe, show_blog_post_path(@blog, params[:page], @post)) if @post&&@blog&&!@category
+		add_breadcrumb(@category.title, show_blog_category_path(@blog, @category, params[:page])) if @category&&@blog
+		add_breadcrumb(@post.title.html_safe, show_blog_category_post_path(@blog, @category, params[:page], @post)) if @blog&&@category&&@post
 	end
 
 end
