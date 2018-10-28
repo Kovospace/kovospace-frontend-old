@@ -67,8 +67,10 @@ class PostsController < ApplicationController
 	end
 
 	def decide_breadcrumbs
-		add_breadcrumb("Blog", blog_path) if @blog
+		add_breadcrumb("Blog", blog_path)
+		#add_breadcrumb(request.url, blog_path)
 		add_breadcrumb(@blog.title, show_blog_path(@blog)) if @blog
+		add_breadcrumb(@post.title.html_safe, show_post_path(params[:page], @post)) if @post&&!@blog&&!@category
 		add_breadcrumb(@post.title.html_safe, show_blog_post_path(@blog, params[:page], @post)) if @post&&@blog&&!@category
 		add_breadcrumb(@category.title, show_blog_category_path(@blog, @category, params[:page])) if @category&&@blog
 		add_breadcrumb(@post.title.html_safe, show_blog_category_post_path(@blog, @category, params[:page], @post)) if @blog&&@category&&@post

@@ -257,6 +257,10 @@ Rails.application.routes.draw do
     constraints: BlogConstraint.new
     # nebude strankovany, malo obsahu
 
+  get '/blog/:id',
+    to: "posts#show",
+    as: "show_post2"
+
   get '/blog(/vsetky-clanky)(/strana-:page)/:id',
     to: "posts#show",
     as: "show_post"
