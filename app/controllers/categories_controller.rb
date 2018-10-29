@@ -22,7 +22,8 @@ class CategoriesController < ApplicationController
             :title,
             :slug,
             :title_bg,
-            :title_bg_cache
+            :title_bg_cache,
+            posts_attributes: [:id]
          )
     end
 
