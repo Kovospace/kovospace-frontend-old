@@ -30,6 +30,12 @@ class Category < ActiveRecord::Base
 
     before_update :create_order
 
+    scope :blog_order, -> (blog_id) {
+        includes(:blog_categories)
+        .where("blog_categories.blog_id = ?", blog_id)
+        .order("blog_categories.sequence")
+    }
+
     def create_order
         @posts_attributes.each_with_index do |pa, i|
             c = CategoryPost

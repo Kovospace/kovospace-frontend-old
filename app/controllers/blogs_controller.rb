@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
         add_breadcrumb @blog.title, show_blog_path(@blog)
 
         if params[:category_id].blank?
+            @categories = @blog.categories.blog_order(@blog.id)
             posts_ids = Blog.where(sluggable_where :id)
                         .joins(categories: [:posts])
                         .where('posts.published = ?', true)
@@ -68,7 +69,12 @@ class BlogsController < ApplicationController
             :description,
             :title_bg,
             :title_bg_cache,
-            category_ids: []
+            :slug,
+            category_orders: [:id],
+            tag_ids: [],
+            category_ids: [],
+            categories_attributes: [:title],
+            tags_attributes: [:title]
          )
     end
 

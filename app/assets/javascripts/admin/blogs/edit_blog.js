@@ -7,7 +7,7 @@ BlogsEdit.prototype = {
     constructor: BlogsEdit,
 
     init: function() {
-        this.categoriesOrdering = new orderCategories();
+        this.categoriesOrdering = new orderItems();
     },
 
     onready: function() {

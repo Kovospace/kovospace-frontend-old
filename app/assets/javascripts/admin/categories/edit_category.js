@@ -8,7 +8,7 @@ CategoriesEdit.prototype = {
     constructor: CategoriesEdit,
 
     init: function() {
-        this.postsOrdering = new orderPosts();
+        this.postsOrdering = new orderItems();
     },
 
     onready: function() {
