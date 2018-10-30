@@ -3,7 +3,10 @@ class Category < ActiveRecord::Base
     extend FriendlyId
     include FriendlyIdConcern
 	include ModelConcern
+    include NestedAttributesGetterConcern
     include BlogConcern
+
+    #serialize :sequence
 
     mount_uploader :title_bg, CategoryTitleBgUploader
 
@@ -11,6 +14,7 @@ class Category < ActiveRecord::Base
 	has_many :posts, through: :category_posts
 
     accepts_nested_attributes_for :posts
+    nested_attrs_getter_for :posts
 
 	has_many(
         :blog_categories,
@@ -24,11 +28,17 @@ class Category < ActiveRecord::Base
         # skip validations if saved using autosave of parent model (this model)
     )
 
-	#validate :test
+    before_update :create_order
 
-	#def test
-	#	Rails.logger.info " ----  #{self.posts.size}"
-	#	Rails.logger.info " ----  #{self.id}"
-	#end
+    def create_order
+        @posts_attributes.each_with_index do |pa, i|
+            c = CategoryPost
+                .where(category_id: self.id)
+                .where(post_id: pa[1]["id"])
+                .first()
+            # should be one always
+            c.update_attribute(:sequence, i)
+        end
+    end
 
 end

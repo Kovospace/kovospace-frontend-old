@@ -57,6 +57,12 @@ class Post < ActiveRecord::Base
         # skip validations if saved using autosave of parent model (this model)
     )
 
+    scope :order_as_story, -> (category_id) {
+        includes(:category_posts)
+        .where("category_posts.category_id = ?", category_id)
+        .order("category_posts.sequence")
+    }
+
 	nested_attrs_getter_for :categories, :tags
 
 	validates :text, presence: true

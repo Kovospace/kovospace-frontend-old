@@ -1,0 +1,32 @@
+@import "./admin/admin_vars";
+
+body.admin {
+
+    main {
+
+        form {
+
+            div.order.categories {
+
+                table {
+
+                    tbody {
+
+                        tr {
+                            vertical-align: middle;
+
+                            td, th {
+                                padding: 0.125em 0.25em;
+                                vertical-align: middle;
+
+                                label {
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

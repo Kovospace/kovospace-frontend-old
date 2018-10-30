@@ -30,20 +30,29 @@
         </picture>
     </div>
 
-    <div class="checkboxes">
+    <div class="checkboxes order categories">
         <%= s.label :categories %>
-        <div>
-            <%= s.collection_check_boxes(
-                :category_ids,
-                @categories_all,
-                :id,
-                :title
-            ) do |checkbox| %>
-                <span>
-                    <%= checkbox.label %> <%= checkbox.check_box %>
-                </span>
-            <% end %>
-        </div>
+        <table>
+            <tbody>
+                <% i=0; %>
+                <%= s.collection_check_boxes(
+                    :category_ids,
+                    @categories_all,
+                    :id,
+                    :title
+                ) do |checkbox| %>
+                    <% i+=1; id = checkbox.object.id %>
+                    <tr id="category_<%= id %>">
+                        <th><%= i %></th>
+                        <td><%= checkbox.check_box %></td>
+                        <td><%= checkbox.label %></td>
+                        <td class="down" id="<%= id %>"><span>&#9660;</span></td>
+                        <td class="up" id="<%= id %>"><span>&#9650;</span></td>
+                        <input type="hidden" name="blog[category_orders][<%= i %>][id]" value="<%= id %>">
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
     </div>
 
     <div>
@@ -89,6 +98,8 @@
             field: :tags_attributes
         ) %>
     </div>
+
+    <br>
 
     <div>
         <%= s.submit %>

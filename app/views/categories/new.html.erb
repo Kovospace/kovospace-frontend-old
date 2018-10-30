@@ -25,7 +25,7 @@
         </picture>
     </div>
 
-    <div class="order_posts picture">
+    <div class="order posts picture">
         <%= s.label :order_posts %>
         <table>
             <caption>Poradie článkov v tejto kategórií</caption>
@@ -37,7 +37,7 @@
             </thead>
             <tbody>
                 <% i=0 %>
-                <%= s.fields_for :posts do |t| %>
+                <%= s.fields_for :posts, Post.order_as_story(@category.id) do |t| %>
                     <%
                         i += 1
                         id = t.object.id
