@@ -1,0 +1,12 @@
+<article>
+    <h3> <%= title %> </h3>
+    <figure>
+        <picture>
+            <img src="kokot.jpg">
+        </picture>
+    </figure>
+    <div>
+        <h4><%= article.title.html_safe %></h4>
+        <%= article.intro.html_safe %>
+    </div>
+</article>

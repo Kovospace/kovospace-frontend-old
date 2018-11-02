@@ -4,7 +4,7 @@
 
 <% end %>
 
-<% minimized_menu = (controller_name == "posts")||(!params[:category_id].blank?) %>
+<% #minimized_menu = (controller_name == "posts")||(!params[:category_id].blank?) %>
 
 <% content_for :header do %>
     <%= render('posts/show/admin_notice_not_published') if !@post.published %>
@@ -20,8 +20,29 @@
     <%#= render 'portfolios/show/title_bg' %>
 
     <article>
+         <% if @category&&@blog %>
+            <h3> časť <%= @serial_posts_ids.index(@post.id) + 1 %>. </h3>
+         <% end %>
          <h2> <%= @post.title.html_safe %> </h2>
-         <%= @post.intro %>
+         <h4> <%#= @post.intro.html_safe %> </h4>
+         <div> <%= @post.text.html_safe %> </div>
     </article>
 
 </section>
+
+<% if @category&&@blog %>
+
+    <section id="next_in_category">
+        <%= render(
+            'posts/show/next_article_switch',
+             article: @prev_post,
+             title: "Predchádzajúci diel"
+        ) if @prev_post %>
+        <%= render(
+            'posts/show/next_article_switch',
+             article: @next_post,
+             title: "Nasledujúci diel"
+        ) if @next_post %>
+    </section>
+
+<% end %>

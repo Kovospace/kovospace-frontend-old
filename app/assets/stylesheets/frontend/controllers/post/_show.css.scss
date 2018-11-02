@@ -1,0 +1,68 @@
+@import "./frontend/variables";
+
+body.post {
+
+    main {
+
+        section#show_post {
+
+        }
+
+        section#next_in_category {
+
+            article {
+                display: table-cell;
+                width:48%;
+                padding: 1%;
+
+                h3 {
+                    margin-bottom: 0.5em;
+                }
+
+                figure {
+                    background-color: $half;
+                    float: left;
+                    margin-right: 0.5em;
+                    margin-bottom: 0.5em;
+                    border-radius: 0.5em;
+                    overflow:hidden;
+
+                    picture {
+                        //background-color: $half;
+
+                        img {
+                            display: block;
+                            width: 160px;
+                            height: 120px;
+                        }
+                    }
+                }
+
+                div {
+
+                    h4 {
+                        font-size: 1.25em;
+                        padding-bottom:0.5em;
+                    }
+
+                    p {
+
+                    }
+                }
+            }
+        }
+
+        h2 {
+
+        }
+
+        h3 {
+
+        }
+
+        h4 {
+
+        }
+
+    }
+}

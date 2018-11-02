@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
     include ApplicationConcern
-    #include BeforeRender
+    include BeforeRender
     include ClassOnInputWithError
     include ApplicationAbstract
 

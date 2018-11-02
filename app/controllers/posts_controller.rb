@@ -1,12 +1,27 @@
 class PostsController < ApplicationController
 
 	layout "admin", only: [:new, :create, :edit, :update]
-
-	before_action :decide_breadcrumbs, only: [:show, :all]
+	before_render :decide_breadcrumbs, only: [:show, :all]
 
 	## override
 	def show
 		if_urlpart_set_instance :blog, :category
+		if @category
+			#@curr_id = @post.id
+			@serial_posts_ids = CategoryPost
+				.where(category_id: @category.id)
+				.order(:sequence)
+				.pluck(:post_id)
+			@post_order_index = @serial_posts_ids.index(@post.id)
+			if @post_order_index == @serial_posts_ids.length-1
+				@prev_post = Post.find(@serial_posts_ids[@serial_posts_ids.length-2])
+			elsif @post_order_index == 0
+				@next_post = Post.find(@serial_posts_ids[1])
+			else
+				@prev_post = Post.find(@serial_posts_ids[@post_order_index-1])
+				@next_post = Post.find(@serial_posts_ids[@post_order_index+1])
+			end
+		end
 	end
 
 	def all

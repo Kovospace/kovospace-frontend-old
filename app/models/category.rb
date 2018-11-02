@@ -37,13 +37,15 @@ class Category < ActiveRecord::Base
     }
 
     def create_order
-        @posts_attributes.each_with_index do |pa, i|
-            c = CategoryPost
-                .where(category_id: self.id)
-                .where(post_id: pa[1]["id"])
-                .first()
-            # should be one always
-            c.update_attribute(:sequence, i)
+        if !@posts_attributes.nil?
+            @posts_attributes.each_with_index do |pa, i|
+                c = CategoryPost
+                    .where(category_id: self.id)
+                    .where(post_id: pa[1]["id"])
+                    .first()
+                # should be one always
+                c.update_attribute(:sequence, i)
+            end
         end
     end
 

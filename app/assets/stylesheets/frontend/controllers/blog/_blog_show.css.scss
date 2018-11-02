@@ -121,8 +121,15 @@ body.blog, body.post {
                         }
                     }
 
-                    p {
+                    & > div {
                         font-size: 1.25em;
+                        line-height: 1.125em;
+
+                        & > p {
+                            display: block;
+                            //white-space: pre-line;
+                            padding:0.125em;
+                        }
                     }
                 }
             }

@@ -13,7 +13,7 @@
         <%= link_to generate_post_url(p) do %>
             <h3> <%= p.title.html_safe %> </h3>
         <% end %>
-        <p> <%= p.intro %> </p>
+        <div> <%= p.intro.html_safe %> </div>
     </div>
 
     <div>
