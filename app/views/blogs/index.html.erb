@@ -2,5 +2,13 @@
 <%= render 'blogs/index/top' %>
 
 <section id="blogs">
+
     <%= render 'blogs/index/blogs' %>
+
+    <article class="all_posts">
+        <h1>
+            <%= link_to "Všetky články", all_posts_path %>
+        </h1>
+    </article>
+
 </section>

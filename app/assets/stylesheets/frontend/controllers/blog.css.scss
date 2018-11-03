@@ -26,11 +26,25 @@ body.blog {
 
         section#blogs {
 
-            article {
+            article.blog {
                 min-height: 320px;
                 min-height: 24em;
                 max-height: 480px;
                 //height:320px;
+            }
+
+            article.all_posts {
+                height: auto;
+
+                h1 {
+                    font-size: 6em;
+                    line-height: 1.5em;
+                    text-align: center;
+
+                    a {
+
+                    }
+                }
             }
         }
 
