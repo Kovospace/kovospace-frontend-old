@@ -28,7 +28,7 @@ class AdminController < ApplicationController
     end
 
     def list_users
-        @result = User.where(admin: false)
+        @result = User.where(admin: false||nil)
     end
 
 end

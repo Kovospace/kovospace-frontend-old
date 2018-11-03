@@ -364,6 +364,10 @@ Rails.application.routes.draw do
 
   devise_scope :user do
 
+    get "/users",
+      to: "users#all",
+      as: "users"
+
     get "/login",
       to: "devise/sessions#new",
       as: "new_user_session"
@@ -379,6 +383,13 @@ Rails.application.routes.draw do
     get "/admin/users/edit",
       to: "users#edit",
       as: "edit_user"
+
+    get "/admin/users/:id",
+      to: "users#show",
+      as: "show_user"
+
+    post "/users",
+      to: "users#create"
 
     delete "/admin/users/destroy",
       to: "users#destroy",

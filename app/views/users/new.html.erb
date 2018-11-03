@@ -1,0 +1,46 @@
+<%= form_for @user do |p| %>
+
+    <div>
+        <%= p.label :name %>
+        <%= p.text_field :name %>
+        <%= p.errors :name %>
+    </div>
+
+    <div>
+        <%= p.label :password %>
+        <%= p.text_field :password %>
+        <%= p.errors :password %>
+    </div>
+
+    <div>
+        <%= p.label :email %>
+        <%= p.text_field :email %>
+        <%= p.errors :email %>
+    </div>
+
+    <div class="checkboxes">
+        <%= p.label :role %>
+        <div>
+            <%= p.collection_radio_buttons(
+                :role,
+                @roles,
+                :id,
+                :title
+            ) do |radiobtn| %>
+                <span>
+                    <%= radiobtn.label %> <%= radiobtn.radio_button %>
+                </span>
+            <% end %>
+        </div>
+        <%= p.errors :role %>
+    </div>
+
+    <%= p.hidden_field :generated_password %>
+
+    <br>
+
+    <div>
+        <%= p.submit %>
+    </div>
+
+<% end %>
