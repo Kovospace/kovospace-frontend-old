@@ -27,4 +27,8 @@ class AdminController < ApplicationController
         @skillsets = Skillset.all
     end
 
+    def list_users
+        @result = User.where(admin: false)
+    end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181030011446) do
+ActiveRecord::Schema.define(version: 20181103033106) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -92,6 +92,18 @@ ActiveRecord::Schema.define(version: 20181030011446) do
   end
 
   add_index "ckeditor_assets", ["type"], name: "index_ckeditor_assets_on_type"
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "comment"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.text     "reply_to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "contacts", force: :cascade do |t|
     t.string   "sender"
@@ -230,6 +242,7 @@ ActiveRecord::Schema.define(version: 20181030011446) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.boolean  "admin"
+    t.integer  "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -368,6 +368,22 @@ Rails.application.routes.draw do
       to: "devise/sessions#new",
       as: "new_user_session"
 
+    get "/admin/users",
+      to: "admin#list_users",
+      as: "list_users"
+
+    get "/admin/users/new",
+      to: "users#new",
+      as: "new_user"
+
+    get "/admin/users/edit",
+      to: "users#edit",
+      as: "edit_user"
+
+    delete "/admin/users/destroy",
+      to: "users#destroy",
+      as: "destroy_user"
+
     # nvm
     post "/login",
       to: "devise/sessions#create",
@@ -387,9 +403,9 @@ Rails.application.routes.draw do
       to: "devise/passwords#new",
       as: "new_user_password"
 
-   get "/password/edit",
-     to: "devise/passwords#edit",
-     as: "edit_user_password"
+    get "/password/edit",
+      to: "devise/passwords#edit",
+      as: "edit_user_password"
 
    # patch "/password",
     #  to: "devise/passwords#update"

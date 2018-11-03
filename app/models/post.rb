@@ -57,6 +57,16 @@ class Post < ActiveRecord::Base
         # skip validations if saved using autosave of parent model (this model)
     )
 
+    has_many(
+        :comments,
+        inverse_of: :post
+    )
+
+    belongs_to(
+        :user,
+        inverse_of: :posts
+    )
+
     scope :order_as_story, -> (category_id) {
         includes(:category_posts)
         .where("category_posts.category_id = ?", category_id)
