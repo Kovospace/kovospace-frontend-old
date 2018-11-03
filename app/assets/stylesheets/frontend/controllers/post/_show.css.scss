@@ -4,16 +4,104 @@ body.post {
 
     main {
 
-        section#show_post {
+        section#post_title_bg {
+            padding:0;
+            min-height: 320px;
 
+            figure {
+                display: block;
+
+                picture {
+
+                    img {
+                        display: block;
+                        width:100%;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+        section#post_title {
+            padding: 0px 3%;
+            padding-bottom: 3%;
+            overflow: visible;
+            position: relative;
+
+            h2 {
+                margin:0;
+                border-bottom: 0.125em solid $earth_blue;
+                line-height: 1.125em;
+            }
+
+            h3 {
+                font-size: 1.25em;
+                height: 2em;
+                line-height: 2em;
+            }
+
+            figure {
+                @include transform(translateY(-50%));
+                position: absolute;
+
+
+                h3 {
+                    background-color: $logo_moon;
+                    display: inline-block;
+                    @include text_wrap_fix(0.5em, $logo_moon);
+
+                    a {
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                h2 {
+                    background-color: $earth_blue;
+                    display: inline;
+                    @include text_wrap_fix(0.125em, $earth_blue);
+                }
+            }
+
+            div.faux {
+                width:50%;
+                font-size: 50%;
+                visibility: hidden;
+            }
+        }
+
+        section#show_post {
+            font-size: 1.25em;
         }
 
         section#next_in_category {
 
+            &.show_both {
+
+                article {
+                    display: table-cell;
+                    width:48%;
+                }
+            }
+
+            &.show_single {
+
+                article {
+                    display: table;
+                    max-width: 98%;
+                }
+            }
+
             article {
-                display: table-cell;
-                width:48%;
                 padding: 1%;
+                @include background_transition(0.3s);
+                border-radius: 1em;
+
+                &:hover {
+                    background-color: $space_blue;
+                }
 
                 h3 {
                     margin-bottom: 0.5em;
@@ -28,7 +116,6 @@ body.post {
                     overflow:hidden;
 
                     picture {
-                        //background-color: $half;
 
                         img {
                             display: block;
@@ -46,23 +133,12 @@ body.post {
                     }
 
                     p {
-
+                        display: block;
+                        line-height: 1.125em;
+                        padding: 0.125em;
                     }
                 }
             }
         }
-
-        h2 {
-
-        }
-
-        h3 {
-
-        }
-
-        h4 {
-
-        }
-
     }
 }

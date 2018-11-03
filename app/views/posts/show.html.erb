@@ -1,7 +1,5 @@
 <% content_for :head do %>
-
     <%= canonical_tag show_post2_url(@post) %>
-
 <% end %>
 
 <% #minimized_menu = (controller_name == "posts")||(!params[:category_id].blank?) %>
@@ -15,34 +13,15 @@
     klass: (params[:category_id].blank? ? "maximized" : "minimized")
 ) %>
 
+<%= render 'posts/show/title_bg' %>
+
+<%= render 'posts/show/title' %>
+
 <section id="show_post">
-
-    <%#= render 'portfolios/show/title_bg' %>
-
     <article>
-         <% if @category&&@blog %>
-            <h3> časť <%= @serial_posts_ids.index(@post.id) + 1 %>. </h3>
-         <% end %>
-         <h2> <%= @post.title.html_safe %> </h2>
-         <h4> <%#= @post.intro.html_safe %> </h4>
-         <div> <%= @post.text.html_safe %> </div>
+        <div> <%= @post.text.html_safe %> </div>
     </article>
-
 </section>
 
-<% if @category&&@blog %>
+<%= render('posts/show/next_serial') if @category&&@blog %>
 
-    <section id="next_in_category">
-        <%= render(
-            'posts/show/next_article_switch',
-             article: @prev_post,
-             title: "Predchádzajúci diel"
-        ) if @prev_post %>
-        <%= render(
-            'posts/show/next_article_switch',
-             article: @next_post,
-             title: "Nasledujúci diel"
-        ) if @next_post %>
-    </section>
-
-<% end %>

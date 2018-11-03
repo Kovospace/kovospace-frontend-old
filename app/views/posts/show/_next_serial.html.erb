@@ -1,0 +1,16 @@
+<% klass = @prev_post&&@next_post ? "show_both" : "show_single" %>
+
+<section id="next_in_category" class="<%= klass %>">
+
+    <%= render(
+        'posts/show/next_article_switch',
+         article: @prev_post,
+         title: "Predchádzajúci diel"
+    ) if @prev_post %>
+    <%= render(
+        'posts/show/next_article_switch',
+         article: @next_post,
+         title: "Nasledujúci diel"
+    ) if @next_post %>
+
+</section>

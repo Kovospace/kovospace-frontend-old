@@ -1,0 +1,22 @@
+<section id="post_title">
+    <figure>
+        <% if @category&&@blog %>
+            <h3>
+                <%= link_to @category.title, show_blog_category_path(@blog, @category) %>
+                - časť <%= @serial_posts_ids.index(@post.id) + 1 %>.
+            </h3>
+            <br>
+        <% end %>
+        <h2> <%= @post.title.html_safe %> </h2>
+    </figure>
+    <div class="faux">
+        <% if @category&&@blog %>
+            <h3>
+                <%= link_to @category.title, show_blog_category_path(@blog, @category) %>
+                - časť <%= @serial_posts_ids.index(@post.id) + 1 %>.
+            </h3>
+            <br>
+        <% end %>
+        <h2> <%= @post.title.html_safe %> </h2>
+    </div>
+</section>

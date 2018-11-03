@@ -1,12 +1,15 @@
 <article>
-    <h3> <%= title %> </h3>
-    <figure>
-        <picture>
-            <img src="kokot.jpg">
-        </picture>
-    </figure>
-    <div>
-        <h4><%= article.title.html_safe %></h4>
-        <%= article.intro.html_safe %>
-    </div>
+    <%= link_to show_blog_category_post_path(@blog, @category, params[:page], article) do %>
+        <h3> <%= title %> </h3>
+        <figure>
+            <picture>
+                <img src="kokot.jpg">
+            </picture>
+        </figure>
+        <div>
+            <h4><%= article.title.html_safe %></h4>
+            <%= article.intro.html_safe %>
+        </div>
+        <br class="clear">
+    <% end %>
 </article>

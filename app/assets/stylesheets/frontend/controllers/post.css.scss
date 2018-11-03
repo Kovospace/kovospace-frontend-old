@@ -1,0 +1,16 @@
+body.post {
+    height:100%;
+
+    main {
+        display: flex;
+        flex-direction: column;
+
+        section#show_post {
+            flex: 1 0 auto;
+        }
+
+        section#foot {
+            flex: 0 0 auto;
+        }
+    }
+}

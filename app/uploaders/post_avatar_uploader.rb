@@ -33,6 +33,10 @@ class PostAvatarUploader < CarrierWave::Uploader::Base
      process resize_to_fill: [288, 216]
   end
 
+  version :thumb_160p do
+     process resize_to_fill: [160, 120]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist

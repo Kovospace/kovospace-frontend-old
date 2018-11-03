@@ -59,3 +59,9 @@
       vertical-align:middle;
   }
 }
+
+@mixin background_clip() {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
