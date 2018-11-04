@@ -25,3 +25,9 @@
 
 <%= render('posts/show/next_serial') if @category&&@blog %>
 
+<section id="comments">
+    <h3>Diskusia</h3>
+    <%= render('comments/add_comment') %>
+    <%= render('comments/comments') %>
+</section>
+

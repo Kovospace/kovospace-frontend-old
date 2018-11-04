@@ -359,6 +359,13 @@ Rails.application.routes.draw do
     to: "categories#destroy",
     as: "destroy_category"
 
+  # komentare
+
+  get "/comments",
+    to: "comments#all",
+    as: "comments"
+
+
 
   devise_for :users, skip: :all
 

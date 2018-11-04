@@ -30,7 +30,7 @@ body.post {
 
             h2 {
                 margin:0;
-                border-bottom: 0.125em solid $earth_blue;
+                padding-bottom: 0.125em;
                 line-height: 1.125em;
             }
 
@@ -44,24 +44,27 @@ body.post {
                 @include transform(translateY(-50%));
                 position: absolute;
 
+                div {
 
-                h3 {
-                    background-color: $logo_moon;
-                    display: inline-block;
-                    @include text_wrap_fix(0.5em, $logo_moon);
+                    h3 {
+                        background-color: $light_black;
+                        display: inline-block;
+                        @include text_wrap_fix(0.5em, $light_black);
 
-                    a {
+                        a {
 
-                        &:hover {
-                            text-decoration: underline;
+                            &:hover {
+                                text-decoration: underline;
+                            }
                         }
                     }
-                }
 
-                h2 {
-                    background-color: $earth_blue;
-                    display: inline;
-                    @include text_wrap_fix(0.125em, $earth_blue);
+                    h2 {
+                        background-color: $earth_blue;
+                        display: inline;
+                        position: relative;
+                        @include text_wrap_fix(0.125em, $earth_blue);
+                    }
                 }
             }
 
@@ -96,11 +99,12 @@ body.post {
 
             article {
                 padding: 1%;
-                @include background_transition(0.3s);
+                @include background_transition(0.25s);
                 border-radius: 1em;
 
                 &:hover {
-                    background-color: $space_blue;
+                    background-color: $logo_orange;
+                    color: $black;
                 }
 
                 h3 {
@@ -108,7 +112,7 @@ body.post {
                 }
 
                 figure {
-                    background-color: $half;
+                    background-color: $light_black;
                     float: left;
                     margin-right: 0.5em;
                     margin-bottom: 0.5em;

@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+    before_action :authorize_admin, except: [:index, :show]
+
     layout "admin", only: [:new, :create, :edit, :update]
 
     add_breadcrumb "Blog", :blogs_path

@@ -1,0 +1,121 @@
+@import "./frontend/variables";
+
+body.post {
+
+    main {
+
+        section#comments {
+
+            article#new_comment {
+                width:66%;
+
+                form {
+
+                    div {
+                        margin: 0.5em 0;
+
+                        textarea {
+                            width: 100%;
+                            height: 6em;
+                            padding:0.25em 0.375em;
+                            border-radius: 0.5em;
+                            background-color: $light_black;
+                            color: white;
+                            @include box_sizing();
+                        }
+
+                        &.submit {
+                            text-align: right;
+
+                            input[type=submit] {
+                                background-color: transparent;
+                                color: $white;
+                                border: 0.25em solid $logo_orange;
+                                border-radius: 0.25em;
+                                padding:0.25em 0.5em;
+                                font-size: 1.25em;
+                                cursor: pointer;
+                                @include background_transition(0.25s);
+
+                                &:hover {
+                                    background-color: $logo_orange;
+                                    color: $black;
+                                }
+                            }
+                        }
+
+                        span {
+                            display: inline-block;
+
+                            &.comments_notice {
+                                font-size: 1.25em;
+                                line-height: 2em;
+                                background-color: $light_black;
+                                padding: 0 0.5em;
+                                border-radius: 0.25em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            article#new_comments {
+                margin-top: 2em;
+
+                div.comment {
+                    background-color: $light_black;
+                    padding:0.25em 0.5em;
+                    display: table;
+                    border-radius: 0.25em;
+                    margin:0.5em 0.125em;
+                    max-width: 66%;
+
+                    &.sub1 {
+                        margin-left: 2em;
+                    }
+
+                    &.sub2 {
+                        margin-left: 4em;
+                    }
+
+                    &.sub3 {
+                        margin-left: 6em;
+                    }
+
+                    &.sub4 {
+                        margin-left: 6em;
+                    }
+
+                    &.sub5 {
+                        margin-left: 8em;
+                    }
+
+                    &.sub6 {
+                        margin-left: 10em;
+                    }
+
+                    span {
+                        font-size: 1.125em;
+                    }
+                    /*
+                    &.sub7 {
+                        margin-left: em;
+                    }
+
+                    &.sub8 {
+                        margin-left: em;
+                    }
+
+                    &.sub9 {
+                        margin-left: em;
+                    }
+
+                    &.sub10 {
+                        margin-left: em;
+                    }
+                    */
+                }
+            }
+        }
+    }
+}

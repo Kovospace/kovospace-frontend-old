@@ -1,5 +1,7 @@
 class ContactsController < ApplicationController
 
+    before_action :authorize_admin, except: [:index, :new, :create]
+
     layout "admin", only: [:new, :create, :edit, :update, :show]
 
     def index
@@ -31,13 +33,13 @@ class ContactsController < ApplicationController
     end
 
     def _permitted_params
-         params[:contact].permit(
+        params[:contact].permit(
             :sender,
             :title,
             :msg,
             :name,
             :seen
-         )
+        )
     end
 
 end

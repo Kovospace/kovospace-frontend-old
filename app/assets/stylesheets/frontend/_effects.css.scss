@@ -15,7 +15,7 @@
 }
 
 @mixin background_transition($time) {
-    @include transition(background-color $time ease-in-out);
+    @include transition(background-color $time ease-in-out, color $time ease-in-out);
 }
 
 @mixin underline_on_hover($color, $height:0.0625em) {

@@ -1,14 +1,11 @@
 class AdminController < ApplicationController
 
+    before_action :authorize_admin
+
     layout "admin"
-
-    def index
-
-    end
 
     def list_homepage
         @result = Skill.all
-        @work_progress = WorkState.all
         @contacts = Contact.all
         @newslog = Newslog.all
     end

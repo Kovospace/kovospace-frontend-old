@@ -1,0 +1,32 @@
+<article id="new_comment">
+
+    <%= form_for @comment do |p| %>
+
+        <% if current_user %>
+
+            <div>
+                <span class="comments_notice">Prihlásený ako <b><%= current_user.name %></b></span>
+            </div>
+
+            <div>
+                <%#= p.label :comment %>
+                <%= p.text_area :comment %>
+                <%= p.errors :comment %>
+            </div>
+
+            <%= p.hidden_field :reply_to %>
+
+        <% else %>
+
+            <div></div>
+
+        <% end %>
+
+        <div class="submit">
+            <%= p.submit %>
+        </div>
+
+    <% end %>
+
+
+</article>

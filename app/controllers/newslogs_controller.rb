@@ -1,5 +1,7 @@
 class NewslogsController < ApplicationController
 
+    before_action :authorize_admin, except: [:index, :show]
+
 	layout "admin", only: [:new, :create, :edit, :update]
 
     private
@@ -14,5 +16,5 @@ class NewslogsController < ApplicationController
             :txt
          )
     end
-	
+
 end

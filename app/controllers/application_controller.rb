@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       @model = model_exist?
     end
 
-    before_action :authenticate_user!, only: :admin
+    #before_action :authenticate_user!, only: :admin
 
     before_action :index_action, only: :index
 

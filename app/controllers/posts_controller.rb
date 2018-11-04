@@ -22,6 +22,8 @@ class PostsController < ApplicationController
 				@next_post = Post.find(@serial_posts_ids[@post_order_index+1])
 			end
 		end
+		@comments = @post.comments
+		@comment = @post.comments.new if !@comment
 	end
 
 	def all

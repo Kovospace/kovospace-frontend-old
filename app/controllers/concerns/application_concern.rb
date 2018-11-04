@@ -24,28 +24,7 @@ module ApplicationConcern
 	rescue NameError
 		return nil
 	end
-=begin
-	def build_if_empty(*assocs)
-		assocs.each do |a|
-			tmp = instance_variable_get(@singular_varname)
-			iv = tmp.send(a)
-			#logger logger a
-			if a.to_s.is_singular?
-				if iv.nil?
-					tmp.send("build_#{a}")
-				end
-			else
-				if iv.length == 0
-					instance_variable_set("@#{a.to_s}", iv.build)
-				elsif (iv.length != iv.persisted)
-					instance_variable_set("@#{a.to_s}", iv.build)
-				else
-					instance_variable_set("@#{a.to_s}", iv)
-				end
-			end
-		end
-	end
-=end
+
 
 	def build_if_empty(*assocs)
 
@@ -112,6 +91,10 @@ module ApplicationConcern
 		else
 			return (/^\d/ =~ p) ? { id: p.to_i } : { slug: p }
 		end
+	end
+
+	def authorize_admin
+		redirect_to(user_session_path(reason: "noadmin")) if current_user.role != 1
 	end
 
 	module ClassMethods

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+    before_action :authorize_admin
+
     skip_filter *_process_action_callbacks.map(&:filter)
 
     layout "admin"

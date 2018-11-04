@@ -1,0 +1,28 @@
+<article id="new_comments">
+
+    <% if (@comments.length == 0)||(@comments.all.blank?) %>
+
+     <div class="comment">
+        <span>
+            <b> Zatiaľ neboli k článku pridané žiadne komentáre </b>
+        </span>
+    </div>
+
+    <% else %>
+
+        <% @comments.each do |comment| %>
+
+            <div class="comment">
+                <span>
+                    <%= comment.comment %>
+                </span>
+            </div>
+
+        <% end %>
+
+    <% end %>
+
+</article>
+
+
+
