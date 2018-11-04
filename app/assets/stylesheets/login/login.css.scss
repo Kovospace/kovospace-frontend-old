@@ -1,1 +1,125 @@
 @import "./login/variables";
+
+* {
+    font-size: 1em;
+}
+
+input, select, textarea, button {
+    -webkit-appearance:     none;
+    -moz-appearance:        none;
+    -ms-appearance:         none;
+    -o-appearance:          none;
+    appearance:             none;
+    outline:    none;
+    border:0.125em solid $frames;
+    margin:0.125em;
+    padding:0.125em 0.375em;
+    background-color: $background;
+    color: $text;
+    border-radius: 0.5em;
+}
+
+input, select, textarea, button, label {
+    font-size: 1.25em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+input[type=checkbox] {
+    width:1em;
+    height:1em;
+    background-color: $checkbox_unchecked;
+    @include inner_shadow($background, 0.125em, 0.125em);
+
+    &:hover {
+        background-color: $checkbox_unchecked_hover;
+    }
+
+    &:checked {
+        background-color: $checkbox_checked;
+
+        &:hover {
+            background-color: $checkbox_checked_hover;
+        }
+    }
+}
+
+button, input[type=submit] {
+
+    &:hover {
+        background-color: $frames;
+        color: $background;
+    }
+}
+
+button, input[type=submit], input[type=checkbox], input[type=checkbox] + label  {
+    cursor: pointer;
+    @include background_transition();
+}
+
+
+html {
+    height: 100%;
+    padding:0;
+    margin:0;
+
+    body {
+        padding:0;
+        margin:0;
+        display: table;
+        height: 100%;
+        width: 100%;
+        background-color: $background;
+        color: $text;
+
+        header {
+           display: table-cell;
+           width:33%;
+        }
+
+        main {
+            display: table-cell;
+            vertical-align: middle;
+            width:66%;
+
+            section {
+                display: table;
+                margin: 0 auto;
+                position: relative;
+
+                form {
+
+                    div.field, div.actions {
+                        margin: 0.5em;
+
+                        input, label {
+                            vertical-align: middle;
+                        }
+                    }
+                }
+
+                div.links {
+                    margin: 0.5em;
+                    text-align: right;
+                }
+
+                figure.fighter:first-child {
+                    @include rotate(-10deg);
+                    margin-left: 100%;
+                }
+
+                figure.fighter:last-child {
+                    @include rotate(10deg);
+                    right: 7em;
+                }
+            }
+        }
+    }
+}

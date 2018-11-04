@@ -1,0 +1,39 @@
+@import "./login/variables";
+
+figure.deathstar {
+    display: block;
+    width:10em;
+    height: 10em;
+    border-radius:50%;
+    background-color: $deathstar_body;
+    position: relative;
+    margin:0;
+    margin-top:3em;
+    margin-left:3em;
+    //@include shadow(-1em, -1em, 2em, 0em, black, "inset");
+    -webkit-backface-visibility: hidden;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        display: block;
+    }
+
+    &:before {
+        top: 4.875em;
+        height: 0.25em;
+        width:100%;
+        background-color: $deathstar_equator;
+    }
+
+    &:after {
+        width:3em;
+        height:3em;
+        background-color: $deathstar_valley;
+        border-radius: 50%;
+        right: 2em;
+        top:1.25em;
+        //@include shadow(0.25em, 0.25em, 0.75em, 0em, black, "inset");
+        -webkit-backface-visibility: hidden;
+    }
+}

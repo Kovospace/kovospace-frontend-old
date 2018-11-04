@@ -1,0 +1,105 @@
+@import "./login/variables";
+
+figure.fighter {
+    width:7em;
+    height:8em;
+    position: relative;
+    margin:0;
+
+    &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width:0.5em;
+        background-color: $fighter_body;
+        border:0.25em solid $background;
+        z-index:10;
+    }
+
+    &:before {
+        left:0;
+    }
+
+    &:after {
+        right:0;
+    }
+
+    div {
+        position: absolute;
+        top: 2.25em;
+        left: 1.75em;
+        height: 3em;
+        width:3em;
+        background-color: $fighter_body;
+        border:0.25em solid $background;
+        border-radius: 50%;
+        z-index:12;
+
+        &:before, &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0.75em;
+            width:1.375em;
+            height: 1em;
+            background-color: $fighter_body;
+            border-top:0.25em solid $background;
+            border-bottom:0.25em solid $background;
+            z-index: 11;
+        }
+
+        &:before {
+            right: 2.875em;
+        }
+
+        &:after {
+            left: 2.875em;
+        }
+
+        span {
+            position: absolute;
+            top:0.875em;
+            left:0.25em;
+            display: block;
+            width:2.5em;
+            height: 1em;
+            background-color: $fighter_cabin;
+            border-radius: 50%;
+
+            &:before, &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0.25em;
+                width: 0.5em;
+                height: 0.5em;
+                background-color: $fighter_passenger;
+                border-radius: 50%;
+                @include inner_shadow($fighter_cabin, 0, 0.25em)
+            }
+
+            &:before {
+                left:0.375em;
+            }
+
+            &:after {
+                right:0.375em;
+            }
+        }
+    }
+
+    &:hover {
+
+        div {
+
+            span {
+
+                &:before, &:after {
+                    background-color: $fighter_passenger_hover;
+                }
+            }
+        }
+    }
+}

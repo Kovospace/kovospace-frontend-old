@@ -17,7 +17,7 @@
 
         <noscript>
             <nav class="for_nojs">
-                <%= render 'main_menu_top' %>
+                <%#= render 'main_menu_top' %>
             </nav>
         </noscript>
 
@@ -26,12 +26,13 @@
         </header>
 
         <nav class="regular">
-            <%= render 'main_menu_top' %>
+            <%#= render 'main_menu_top' %>
         </nav>
 
         <main>
-            <%= yield %>
-
+            <section>
+                 <%= yield %>
+            </section>
         </main>
 
         <footer>

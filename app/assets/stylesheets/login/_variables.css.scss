@@ -1,0 +1,62 @@
+$background: #000010;
+$text: #eeeeee;
+$frames: #FFAD00;
+
+$checkbox_unchecked: #555;
+$checkbox_unchecked_hover: #777;
+$checkbox_checked: #D00000;
+$checkbox_checked_hover: #FF0000;
+
+$fighter_body: #999;
+$fighter_passenger: #D00000;
+$fighter_passenger_hover: #ff0000;
+$fighter_cabin: #111;
+$deathstar_body: #666;
+$deathstar_equator: #111;
+$deathstar_valley: #444;
+
+
+$time: 0.25s;
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transform($args...) {
+    webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+@mixin background_transition() {
+    @include transition(background-color $time ease-in-out, color $time ease-in-out);
+}
+
+@mixin inner_shadow($color, $size, $blur:0) {
+  -moz-box-shadow: inset 0px 0px $blur $size $color;
+  -webkit-box-shadow: inset 0px 0px $blur $size $color;
+  box-shadow: inset 0px 0px $blur $size $color;
+}
+
+@mixin rotate($angle) {
+  @include transform(rotate($angle));
+  -webkit-backface-visibility: hidden;
+}
+
+/*@mixin shadow($x, $y, $blur:0, $expand:0, $color:none, $inset:none) {
+    @if $inset == none {
+        -moz-box-shadow:    $x $y $blur $expand $color;
+        -webkit-box-shadow: $x $y $blur $expand $color;
+        box-shadow:         $x $y $blur $expand $color;
+    } @else {
+        -moz-box-shadow:    inset $x $y $blur $expand $color;
+        -webkit-box-shadow: inset $x $y $blur $expand $color;
+        box-shadow:         inset $x $y $blur $expand $color;
+    }
+}*/

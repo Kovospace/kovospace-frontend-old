@@ -1,14 +1,19 @@
-<h2>Log in</h2>
+
+<% content_for :header do %>
+  <figure class="deathstar"></figure>
+<% end %>
+
+<%= render "devise/shared/fighter" %>
+
+<br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "e-mail" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", placeholder: "heslo" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -24,3 +29,11 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+<div class="links">
+    <%= link_to "Domov", home_path %>
+</div>
+
+<br>
+
+<%= render "devise/shared/fighter" %>
