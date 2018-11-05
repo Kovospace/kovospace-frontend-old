@@ -365,6 +365,10 @@ Rails.application.routes.draw do
     to: "comments#all",
     as: "comments"
 
+  post "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentare/pridat",
+      to: "posts#create_comment",
+      as: "add_comment"
+
 
 
   devise_for :users, skip: :all

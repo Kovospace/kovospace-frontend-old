@@ -5,6 +5,46 @@ class PostsController < ApplicationController
 
 	## override
 	def show
+		load_on_show
+		session[:comment_after_add_back_path] = request.env['PATH_INFO']
+	end
+
+	def all
+		@posts = Post.published.page(params[:page]).per(5)
+		render "index"
+	end
+
+	def publish
+		Post.find(params[:id]).update_attribute(:published, true)
+		redirect_to :list_posts
+	end
+
+	def suspend
+		Post.find(params[:id]).update_attribute(:published, false)
+		redirect_to :list_posts
+	end
+
+	def create_comment
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.build
+		@comment.user = current_user
+		saved = @comment.update(permitted_comment_params)
+		if saved
+			redirect_to (session[:comment_after_add_back_path] + "#new_comments")
+		else
+			load_on_show
+			render "show"
+		end
+	end
+
+	private
+
+	## override
+	def show_action
+		@post = (1..3) === current_user.role ? Post.find(params[:id]) : Post.published.find(params[:id])
+	end
+
+	def load_on_show
 		if_urlpart_set_instance :blog, :category
 		if @category
 			#@curr_id = @post.id
@@ -23,29 +63,7 @@ class PostsController < ApplicationController
 			end
 		end
 		@comments = @post.comments
-		@comment = @post.comments.new if !@comment
-	end
-
-	def all
-		@posts = Post.published.page(params[:page]).per(5)
-		render "index"
-	end
-
-	def publish
-		Post.find(params[:id]).update_attribute(:published, true)
-		redirect_to :list_posts
-	end
-
-	def suspend
-		Post.find(params[:id]).update_attribute(:published, false)
-		redirect_to :list_posts
-	end
-
-	private
-
-	## override
-	def show_action
-		@post = current_user.blank? ? Post.published.find(params[:id]) : Post.find(params[:id])
+		@comment = @post.comments.build if !@comment
 	end
 
 	def _load_vars
@@ -76,7 +94,7 @@ class PostsController < ApplicationController
     #end
 
 	def _permitted_params
-		 params[:post].permit(
+		params[:post].permit(
 		 	:title,
 		 	:text,
 		 	:slug,
@@ -86,8 +104,16 @@ class PostsController < ApplicationController
 		 	tags_attributes: [:id, :title],
 		 	tag_ids: [],
 		 	categories_attributes: [:id, :title],
-		 	category_ids: []
-		 )
+		 	category_ids: []#,
+		 	#comments_attributes: [:id, :comment, :reply_to]
+		)
+	end
+
+	def permitted_comment_params
+		params[:comment].permit(
+		 	:reply_to,
+		 	:comment
+		)
 	end
 
 	def if_urlpart_set_instance(*mdls)

@@ -61,6 +61,13 @@ class Post < ActiveRecord::Base
         :comments,
         inverse_of: :post
     )
+    #accepts_nested_attributes_for(
+       # :comments#,
+        #allow_destroy: true,
+        #reject_if: lambda { |c| c[:title].blank? }
+        # skip saving empty tag association if field for new tag is not filled
+        # but do not raise validation error
+    #)
 
     belongs_to(
         :user,

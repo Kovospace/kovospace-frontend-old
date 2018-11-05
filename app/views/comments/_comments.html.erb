@@ -2,21 +2,38 @@
 
     <% if (@comments.length == 0)||(@comments.all.blank?) %>
 
-     <div class="comment">
-        <span>
-            <b> Zatiaľ neboli k článku pridané žiadne komentáre </b>
-        </span>
-    </div>
+        <div class="comment">
+            <span>
+                <b> Zatiaľ neboli k článku pridané žiadne komentáre </b>
+            </span>
+        </div>
 
     <% else %>
 
         <% @comments.each do |comment| %>
 
-            <div class="comment">
-                <span>
-                    <%= comment.comment %>
-                </span>
-            </div>
+            <% if !comment.id.blank? %>
+
+                <% class_append = (comment.user == current_user) ? "my" : "" %>
+
+                <div class="comment <%= class_append %>" id="<%= comment.relation_id %>">
+                    <b> <%= comment.user.name %> </b>
+                    <i> <%= comment.created_at.strftime("%A %e. %B %Y, %H:%M") %> </i>
+                    <% if class_append %>
+                        <a href="">Upraviť</a>
+                        <a href="" class="danger">Odstrániť</a>
+                        <noscript>
+                            <a href="" class="danger">Odstrániť</a>
+                        </noscript>
+                    <% end %>
+                    <a href=""><b> Odpovedať </b></a>
+                    <br>
+                    <span>
+                        <%= comment.comment %>
+                    </span>
+                </div>
+
+            <% end %>
 
         <% end %>
 

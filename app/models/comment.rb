@@ -10,4 +10,10 @@ class Comment < ActiveRecord::Base
         inverse_of: :comments
     )
 
+    validates :comment, presence: true
+
+    def relation_id
+        reply_to.blank? ? id : reply_to
+    end
+
 end

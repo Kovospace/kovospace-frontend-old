@@ -69,6 +69,37 @@ body.post {
                     border-radius: 0.25em;
                     margin:0.5em 0.125em;
                     max-width: 66%;
+                    @include box_sizing();
+
+                    &.my {
+                        border: 0.25em solid $logo_orange;
+                    }
+
+                    & > b, i, a  {
+                        vertical-align: middle;
+                    }
+
+                    i {
+                        margin: 0 1em;
+                    }
+
+                    a {
+                        padding: 0 0.25em;
+                        border-radius: 0.125em;
+                        @include background_transition(0.15s);
+
+                        &:hover {
+                            color: $logo_orange;
+                        }
+
+                        &.danger {
+
+                            &:hover {
+                                background-color: $bord;
+                                color: $white;
+                            }
+                        }
+                    }
 
                     &.sub1 {
                         margin-left: 2em;
@@ -96,6 +127,10 @@ body.post {
 
                     span {
                         font-size: 1.125em;
+                        line-height: 1.125em;
+                        padding: 0.25em 0.125em;
+                        display: table;
+                        margin-top: 0.125em;
                     }
                     /*
                     &.sub7 {
