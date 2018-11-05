@@ -17,16 +17,22 @@
                 <% class_append = (comment.user == current_user) ? "my" : "" %>
 
                 <div class="comment <%= class_append %>" id="<%= comment.relation_id %>">
-                    <b> <%= comment.user.name %> </b>
-                    <i> <%= comment.created_at.strftime("%A %e. %B %Y, %H:%M") %> </i>
-                    <% if class_append %>
-                        <a href="">Upraviť</a>
-                        <a href="" class="danger">Odstrániť</a>
-                        <noscript>
+                    <div>
+                        <b> <%= comment.user.name %> </b>
+                    </div>
+                    <div>
+                        <i> <%= comment.created_at.strftime("%A %e. %B %Y, %H:%M") %> </i>
+                    </div>
+                    <div>
+                        <% if class_append %>
+                            <a href="">Upraviť</a>
                             <a href="" class="danger">Odstrániť</a>
-                        </noscript>
-                    <% end %>
-                    <a href=""><b> Odpovedať </b></a>
+                            <noscript>
+                                <a href="" class="danger">Odstrániť</a>
+                            </noscript>
+                        <% end %>
+                        <a href=""><b> Odpovedať </b></a>
+                    </div>
                     <br>
                     <span>
                         <%= comment.comment %>

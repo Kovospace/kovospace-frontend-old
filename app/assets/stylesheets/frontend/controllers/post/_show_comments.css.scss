@@ -71,36 +71,6 @@ body.post {
                     max-width: 66%;
                     @include box_sizing();
 
-                    &.my {
-                        border: 0.25em solid $logo_orange;
-                    }
-
-                    & > b, i, a  {
-                        vertical-align: middle;
-                    }
-
-                    i {
-                        margin: 0 1em;
-                    }
-
-                    a {
-                        padding: 0 0.25em;
-                        border-radius: 0.125em;
-                        @include background_transition(0.15s);
-
-                        &:hover {
-                            color: $logo_orange;
-                        }
-
-                        &.danger {
-
-                            &:hover {
-                                background-color: $bord;
-                                color: $white;
-                            }
-                        }
-                    }
-
                     &.sub1 {
                         margin-left: 2em;
                     }
@@ -132,6 +102,7 @@ body.post {
                         display: table;
                         margin-top: 0.125em;
                     }
+
                     /*
                     &.sub7 {
                         margin-left: em;
@@ -149,6 +120,40 @@ body.post {
                         margin-left: em;
                     }
                     */
+
+                    div {
+                        display: inline-block;
+
+                        &.my {
+                            border: 0.25em solid $logo_orange;
+                        }
+
+                        & > b, i, a  {
+                            vertical-align: middle;
+                        }
+
+                        i {
+                            margin: 0 1em;
+                        }
+
+                        a {
+                            padding: 0 0.25em;
+                            border-radius: 0.125em;
+                            @include background_transition(0.15s);
+
+                            &:hover {
+                                color: $logo_orange;
+                            }
+
+                            &.danger {
+
+                                &:hover {
+                                    background-color: $bord;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
