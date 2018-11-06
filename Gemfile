@@ -53,6 +53,14 @@ gem "breadcrumbs_on_rails", github: "K0V0/breadcrumbs_on_rails"
 
 gem 'order_as_specified'
 
+#gem 'wherex', '~> 1.0'
+
+gem 'sqlite3_ar_regexp', '~> 2.2'
+
+#gem 'version_sorter', github: 'github/version_sorter'
+#
+gem 'naturally'
+
 #gem 'canonical-rails', github: 'jumph4x/canonical-rails'
 
 #gem 'activeadmin'

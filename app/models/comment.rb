@@ -1,5 +1,7 @@
 class Comment < ActiveRecord::Base
 
+    #require 'version_sorter'
+
     belongs_to(
         :user,
         inverse_of: :comments
@@ -11,6 +13,8 @@ class Comment < ActiveRecord::Base
     )
 
     validates :comment, presence: true
+
+    #default_scope { VersionSorter.sort(self) { |r| r.reply_to } }
 
     def relation_id
         reply_to.blank? ? id : reply_to

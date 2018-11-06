@@ -6,10 +6,14 @@ body.post {
 
         section#comments {
 
-            article#new_comment {
+            h3 {
+                margin-bottom: 0.5em;
+            }
+
+            article#new_comment, article#comments_user_panel {
                 width:66%;
 
-                form {
+                //form {
 
                     div {
                         margin: 0.5em 0;
@@ -56,11 +60,11 @@ body.post {
                             }
                         }
                     }
-                }
+                //}
             }
 
             article#new_comments {
-                margin-top: 2em;
+                margin-top:1em;
 
                 div.comment {
                     background-color: $light_black;
@@ -71,28 +75,8 @@ body.post {
                     max-width: 66%;
                     @include box_sizing();
 
-                    &.sub1 {
-                        margin-left: 2em;
-                    }
-
-                    &.sub2 {
-                        margin-left: 4em;
-                    }
-
-                    &.sub3 {
-                        margin-left: 6em;
-                    }
-
-                    &.sub4 {
-                        margin-left: 6em;
-                    }
-
-                    &.sub5 {
-                        margin-left: 8em;
-                    }
-
-                    &.sub6 {
-                        margin-left: 10em;
+                    &.my {
+                        border: 0.25em solid $logo_orange;
                     }
 
                     span {
@@ -103,30 +87,8 @@ body.post {
                         margin-top: 0.125em;
                     }
 
-                    /*
-                    &.sub7 {
-                        margin-left: em;
-                    }
-
-                    &.sub8 {
-                        margin-left: em;
-                    }
-
-                    &.sub9 {
-                        margin-left: em;
-                    }
-
-                    &.sub10 {
-                        margin-left: em;
-                    }
-                    */
-
                     div {
                         display: inline-block;
-
-                        &.my {
-                            border: 0.25em solid $logo_orange;
-                        }
 
                         & > b, i, a  {
                             vertical-align: middle;
@@ -154,6 +116,50 @@ body.post {
                             }
                         }
                     }
+                }
+
+                div.comment, article#new_comment {
+
+                    &.sub1 {
+                        margin-left: 2em;
+                    }
+
+                    &.sub2 {
+                        margin-left: 4em;
+                    }
+
+                    &.sub3 {
+                        margin-left: 6em;
+                    }
+
+                    &.sub4 {
+                        margin-left: 8em;
+                    }
+
+                    &.sub5 {
+                        margin-left: 10em;
+                    }
+
+                    &.sub6 {
+                        margin-left: 12em;
+                    }
+                    /*
+                    &.sub7 {
+                        margin-left: em;
+                    }
+
+                    &.sub8 {
+                        margin-left: em;
+                    }
+
+                    &.sub9 {
+                        margin-left: em;
+                    }
+
+                    &.sub10 {
+                        margin-left: em;
+                    }
+                    */
                 }
             }
         }

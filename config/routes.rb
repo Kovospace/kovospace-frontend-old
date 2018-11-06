@@ -369,6 +369,10 @@ Rails.application.routes.draw do
       to: "posts#create_comment",
       as: "add_comment"
 
+  get "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentar/:id/odpoved",
+      to: "posts#reply_to_comment",
+      as: "reply_to_comment"
+
 
 
   devise_for :users, skip: :all

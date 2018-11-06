@@ -37,6 +37,15 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def reply_to_comment
+		@post = Post.find(params[:post_id])
+		comm_to_ans_rel_id = @post.comments.find(params[:id]).relation_id
+		thread_comments = @post.comments.where("reply_to REGEXP ?", '^'+comm_to_ans_rel_id.to_s+'-\d+$')
+		@relation_id = "#{comm_to_ans_rel_id.to_s}-#{(thread_comments.length+1).to_s}"
+		load_on_show
+		render "show"
+	end
+
 	private
 
 	## override
@@ -62,7 +71,7 @@ class PostsController < ApplicationController
 				@next_post = Post.find(@serial_posts_ids[@post_order_index+1])
 			end
 		end
-		@comments = @post.comments
+		@comments = Naturally.sort(@post.comments, by: :reply_to)
 		@comment = @post.comments.build if !@comment
 	end
 

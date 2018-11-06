@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
     include BeforeRender
     include ClassOnInputWithError
     include ApplicationAbstract
+    require 'naturally'
 
     protect_from_forgery with: :exception
 

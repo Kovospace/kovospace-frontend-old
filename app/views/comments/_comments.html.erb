@@ -1,6 +1,6 @@
 <article id="new_comments">
 
-    <% if (@comments.length == 0)||(@comments.all.blank?) %>
+    <% if (@comments.length == 0)#||(@comments.all.blank?) %>
 
         <div class="comment">
             <span>
@@ -14,7 +14,12 @@
 
             <% if !comment.id.blank? %>
 
-                <% class_append = (comment.user == current_user) ? "my" : "" %>
+                <%
+                    class_append = (comment.user == current_user) ? "my" : ""
+                    deepness = comment.relation_id.to_s.count('-')
+                    margin = (deepness > 6) ? 6 : deepness
+                    class_append += " sub#{margin}"
+                %>
 
                 <div class="comment <%= class_append %>" id="<%= comment.relation_id %>">
                     <div>
@@ -31,13 +36,26 @@
                                 <a href="" class="danger">Odstrániť</a>
                             </noscript>
                         <% end %>
-                        <a href=""><b> Odpovedať </b></a>
+                        <%= link_to(
+                                reply_to_comment_path(@blog, @category, params[:page], @post, comment.id, anchor: comment.relation_id)
+                            ) do %>
+                                <b> Odpovedať </b>
+                        <% end %>
                     </div>
                     <br>
                     <span>
                         <%= comment.comment %>
                     </span>
                 </div>
+
+                <% if comment.id == params[:id].to_i %>
+
+                    <%= render(
+                        'comments/add_comment',
+                        klass: class_append
+                    ) if action_name == "reply_to_comment" %>
+
+                <% end %>
 
             <% end %>
 

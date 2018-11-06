@@ -27,7 +27,8 @@
 
 <section id="comments">
     <h3>Diskusia</h3>
-    <%= render('comments/add_comment') %>
+    <%= render('comments/user_panel') %>
+    <%= render('comments/add_comment') if action_name != "reply_to_comment" %>
     <%= render('comments/comments') %>
 </section>
 
