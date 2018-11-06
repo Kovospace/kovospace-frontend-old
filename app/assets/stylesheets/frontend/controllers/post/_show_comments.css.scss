@@ -13,54 +13,52 @@ body.post {
             article#new_comment, article#comments_user_panel {
                 width:66%;
 
-                //form {
+                div {
+                    margin: 0.5em 0;
 
-                    div {
-                        margin: 0.5em 0;
+                    textarea {
+                        width: 100%;
+                        height: 6em;
+                        padding:0.25em 0.375em;
+                        border-radius: 0.5em;
+                        background-color: $light_black;
+                        color: white;
+                        @include box_sizing();
+                    }
 
-                        textarea {
-                            width: 100%;
-                            height: 6em;
-                            padding:0.25em 0.375em;
-                            border-radius: 0.5em;
-                            background-color: $light_black;
-                            color: white;
-                            @include box_sizing();
-                        }
+                    &.submit {
+                        text-align: right;
+                    }
 
-                        &.submit {
-                            text-align: right;
+                    input[type=submit], span.comments_notice > a {
+                        display: inline-block;
+                        background-color: transparent;
+                        color: $white;
+                        border: 0.25em solid $logo_orange;
+                        border-radius: 0.25em;
+                        padding:0.25em 0.5em;
+                        font-size: 1.25em;
+                        cursor: pointer;
+                        @include background_transition(0.25s);
 
-                            input[type=submit] {
-                                background-color: transparent;
-                                color: $white;
-                                border: 0.25em solid $logo_orange;
-                                border-radius: 0.25em;
-                                padding:0.25em 0.5em;
-                                font-size: 1.25em;
-                                cursor: pointer;
-                                @include background_transition(0.25s);
-
-                                &:hover {
-                                    background-color: $logo_orange;
-                                    color: $black;
-                                }
-                            }
-                        }
-
-                        span {
-                            display: inline-block;
-
-                            &.comments_notice {
-                                font-size: 1.25em;
-                                line-height: 2em;
-                                background-color: $light_black;
-                                padding: 0 0.5em;
-                                border-radius: 0.25em;
-                            }
+                        &:hover {
+                            background-color: $logo_orange;
+                            color: $black;
                         }
                     }
-                //}
+
+                    span {
+                        display: inline-block;
+
+                        &.comments_notice {
+                            display: inline-block;
+                            font-size: 1.25em;
+                            background-color: $light_black;
+                            padding: 0.5em;
+                            border-radius: 0.25em;
+                        }
+                    }
+                }
             }
 
             article#new_comments {

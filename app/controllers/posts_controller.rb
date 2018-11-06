@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
 
+	before_action :authorize_admin, except: [:all, :show, :create_comment, :reply_to_comment]
+
+	before_action :authenticate_user!, only: [:create_comment, :reply_to_comment]
+
 	layout "admin", only: [:new, :create, :edit, :update]
+
 	before_render :decide_breadcrumbs, only: [:show, :all]
 
 	## override
@@ -52,7 +57,11 @@ class PostsController < ApplicationController
 
 	## override
 	def show_action
-		@post = (1..3) === current_user.role ? Post.find(params[:id]) : Post.published.find(params[:id])
+		if current_user
+			@post = (1..3) === current_user.role ? Post.find(params[:id]) : Post.published.find(params[:id])
+		else
+			@post = Post.published.find(params[:id])
+		end
 	end
 
 	def load_on_show
@@ -73,9 +82,7 @@ class PostsController < ApplicationController
 				@next_post = Post.find(@serial_posts_ids[@post_order_index+1])
 			end
 		end
-		#@comments = Naturally.sort(@post.comments, by: :reply_to)
 		@comments = Naturally.sort(@post.comments, by: :relation_id)
-		#@comments =  @post.comments.sort_by { |v| Gem::Version.new(v.relation_id) }
 		@comment = @post.comments.build if !@comment
 	end
 

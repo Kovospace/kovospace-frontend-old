@@ -447,13 +447,13 @@ Rails.application.routes.draw do
      # to: "devise/registrations#cancel",
      # as: "cancel_user_registration"
 
-   # post "/",
-     # to: "devise/registrations#create",
-     # as: "user_registration"
+    post "/",
+      to: "devise/registrations#create",
+      as: "user_registration"
 
-   # get "/register",
-     # to: "devise/registrations#new",
-     # as: "new_user_registration"
+    get "/register",
+      to: "devise/registrations#new",
+      as: "new_user_registration"
 
     #get "/settings/users/user/edit",
      # to: "devise/registrations#edit",

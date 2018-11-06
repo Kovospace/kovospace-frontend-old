@@ -1,7 +1,16 @@
 <article id="comments_user_panel">
 
     <div>
-        <span class="comments_notice">Prihlásený ako <b><%= current_user.name %></b></span>
+        <% if current_user %>
+            <span class="comments_notice">Prihlásený ako <b><%= current_user.name %></b></span>
+        <% else %>
+             <span class="comments_notice">
+                Pre prispievanie do diskusie je potrebné
+                <%= link_to("Prihlásiť sa", user_session_path, rel: "nofollow") %>
+                alebo
+                <%= link_to "Registrácia", new_user_registration_path %>
+            </span>
+        <% end %>
     </div>
 
 </article>

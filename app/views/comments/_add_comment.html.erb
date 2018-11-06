@@ -24,15 +24,14 @@
 
             <%= p.hidden_field :reply_to, value: @relation_id %>
 
+            <div class="submit">
+                <%= p.submit %>
+            </div>
+
         <% else %>
 
-            <div></div>
 
         <% end %>
-
-        <div class="submit">
-            <%= p.submit %>
-        </div>
 
     <% end %>
 
