@@ -1,34 +1,34 @@
 
-<% klass = "" if klass.nil? %>
-
-<article id="new_comment" class="<%= klass %>">
-
-    <%= form_for(
-        @comment,
-        url: add_comment_path(
+<%
+    klass = "" if klass.nil?
+    args =  {
                 blog_id: @blog,
                 category_id: @category,
                 page: params[:page],
-                post_id: @post
-            ),
-        method: :post
-    ) do |p| %>
+                post_id: @post,
+                id: params[:id]
+            }
+    url = klass.blank? ? add_comment_path(args) : add_reply_path(args)
+%>
 
-            <% if current_user %>
+<article id="new_comment" class="<%= klass %>">
 
-                <div>
-                    <%#= p.label :comment %>
-                    <%= p.text_area :comment %>
-                    <%= p.errors :comment %>
-                </div>
+    <%= form_for(@comment, url: url, method: :post) do |p| %>
 
-                <%= p.hidden_field :reply_to, value: @relation_id %>
+        <% if current_user %>
 
-            <% else %>
+            <div>
+                <%= p.text_area :comment %>
+                <%= p.errors :comment %>
+            </div>
 
-                <div></div>
+            <%= p.hidden_field :reply_to, value: @relation_id %>
 
-            <% end %>
+        <% else %>
+
+            <div></div>
+
+        <% end %>
 
         <div class="submit">
             <%= p.submit %>

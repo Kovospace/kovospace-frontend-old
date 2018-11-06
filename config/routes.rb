@@ -373,6 +373,10 @@ Rails.application.routes.draw do
       to: "posts#reply_to_comment",
       as: "reply_to_comment"
 
+  post "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentar/:id/odpoved",
+      to: "posts#create_comment",
+      as: "add_reply"
+
 
 
   devise_for :users, skip: :all

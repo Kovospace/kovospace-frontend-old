@@ -30,8 +30,12 @@ class PostsController < ApplicationController
 		@comment.user = current_user
 		saved = @comment.update(permitted_comment_params)
 		if saved
-			redirect_to (session[:comment_after_add_back_path] + "#new_comments")
+			## presmerovat na novy comment id
+			redirect_to (session[:comment_after_add_back_path] + "##{@comment.relation_id}")
 		else
+			if !params[:comment][:reply_to].blank?
+				load_on_reply
+			end
 			load_on_show
 			render "show"
 		end
@@ -39,9 +43,7 @@ class PostsController < ApplicationController
 
 	def reply_to_comment
 		@post = Post.find(params[:post_id])
-		comm_to_ans_rel_id = @post.comments.find(params[:id]).relation_id
-		thread_comments = @post.comments.where("reply_to REGEXP ?", '^'+comm_to_ans_rel_id.to_s+'-\d+$')
-		@relation_id = "#{comm_to_ans_rel_id.to_s}-#{(thread_comments.length+1).to_s}"
+		load_on_reply
 		load_on_show
 		render "show"
 	end
@@ -71,8 +73,16 @@ class PostsController < ApplicationController
 				@next_post = Post.find(@serial_posts_ids[@post_order_index+1])
 			end
 		end
-		@comments = Naturally.sort(@post.comments, by: :reply_to)
+		#@comments = Naturally.sort(@post.comments, by: :reply_to)
+		@comments = Naturally.sort(@post.comments, by: :relation_id)
+		#@comments =  @post.comments.sort_by { |v| Gem::Version.new(v.relation_id) }
 		@comment = @post.comments.build if !@comment
+	end
+
+	def load_on_reply
+		comm_to_ans_rel_id = @post.comments.find(params[:id]).relation_id
+		thread_comments = @post.comments.where("reply_to REGEXP ?", '^'+comm_to_ans_rel_id.to_s+'-\d+$')
+		@relation_id = "#{comm_to_ans_rel_id.to_s}-#{(thread_comments.length+1).to_s}"
 	end
 
 	def _load_vars

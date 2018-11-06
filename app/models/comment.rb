@@ -14,7 +14,7 @@ class Comment < ActiveRecord::Base
 
     validates :comment, presence: true
 
-    #default_scope { VersionSorter.sort(self) { |r| r.reply_to } }
+    #default_scope { order(id: :asc) }
 
     def relation_id
         reply_to.blank? ? id : reply_to
