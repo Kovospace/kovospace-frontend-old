@@ -1,0 +1,58 @@
+div.admin_notice {
+    background-color: $bord;
+    color: $white;
+    line-height: 2em;
+    padding: 0 0.5em;
+    font-size:1.25em;
+    font-weight: bold;
+
+    a, span {
+        margin: 0.25em 0.125em;
+    }
+
+    span {
+        float:left;
+    }
+
+    a {
+        float: right;
+        background-color: $black;
+        padding: 0 0.5em;
+
+        &:hover {
+            background-color: $mid_black;
+        }
+    }
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+nav {
+    height:100%;
+    display: inline-table;
+    vertical-align: middle;
+    margin: 0.5em 0;
+
+    ul {
+
+        li {
+            display: inline-table;
+
+            a {
+                display: inline-table;
+                border-radius: 50%;
+                @include height_expander();
+
+                span {
+                    vertical-align:middle;
+                    padding: 0.25em;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,30 @@
+section {
+    padding: 3%;
+    @include box_sizing();
+    overflow-x: hidden;
+
+    h2 {
+        font-size:5em;
+    }
+
+    &#foot {
+        min-height:3em;
+        line-height: 3em;
+        padding: 0.25em 0.5em;
+        font-size:0.75em;
+
+        a, span {
+            padding: 0 0.375em;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        b {
+            font-weight: bold;
+        }
+    }
+}
+
+

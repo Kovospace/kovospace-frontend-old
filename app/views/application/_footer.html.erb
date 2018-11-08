@@ -5,11 +5,19 @@
 
 <div class="right">
 
+    <%= link_to(
+        "GDPR",
+        gdpr_path,
+        rel: "nofollow"
+    ) %>
+
+    <%= link_to(
+        "Cookies",
+        cookies_path,
+        rel: "nofollow"
+    ) %>
+
     <%= link_to "sitemap", user_sitemap_path %>
-
-    <a href="">HTML5</a>
-
-    <a href="">CSS3</a>
 
     <%= link_to(
         "login",
@@ -20,13 +28,16 @@
     <%= link_to(
         "logout",
         destroy_user_session_path,
-        method: :delete
+        method: :delete,
+        rel: "nofollow"
     ) if user_signed_in? %>
 
     <%= link_to(
         "admin",
-        admin_path
+        admin_path,
+        rel: "nofollow"
     ) if (user_signed_in?)&&(current_user.role==1) %>
+
 
 </div>
 

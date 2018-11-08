@@ -1,175 +1,168 @@
-@import "./frontend/variables";
+nav {
+    padding-top: 2%;
+    padding-left: 2%;
 
-header.blogs.show, header.posts.show, header.posts.all {
-    text-align: left;
-    padding:0;
+    ul, ol {
+        display: inline-block;
+        vertical-align: bottom;
 
-    nav {
-        padding-top: 2%;
-        padding-left: 2%;
+        li {
 
-        ul, ol {
-            display: inline-block;
-            vertical-align: bottom;
+            a:hover {
 
-            li {
-
-                a:hover {
-
-                    span {
-                        text-decoration: underline;
-                    }
+                span {
+                    text-decoration: underline;
                 }
             }
         }
+    }
 
-        ul {
+    ul {
 
-            li {
-                border-radius: 50%;
-                vertical-align: top;
+        li {
+            border-radius: 50%;
+            vertical-align: top;
 
-                &:first-child {
-                    background-color: $earth_blue;
-                }
+            &:first-child {
+                background-color: $earth_blue;
+            }
 
-                &:last-child {
-                    background-color: $logo_moon;
-                    margin-left: 1em;
-                    -moz-box-shadow:    inset -0.5em 0 0em -2px $logo_orange;
-                    -webkit-box-shadow: inset -0.5em 0 0em -2px $logo_orange;
-                    box-shadow:         inset -0.5em 0 0em -2px $logo_orange;
-                }
+            &:last-child {
+                background-color: $logo_moon;
+                margin-left: 1em;
+                -moz-box-shadow:    inset -0.5em 0 0em -2px $logo_orange;
+                -webkit-box-shadow: inset -0.5em 0 0em -2px $logo_orange;
+                box-shadow:         inset -0.5em 0 0em -2px $logo_orange;
+            }
 
-                a {
+            a {
 
-                    span {
-                        padding: 0 0.25em;
-                    }
+                span {
+                    padding: 0 0.25em;
                 }
             }
         }
+    }
 
-        ol {
-            display:inline-table;
+    ol {
+        display:inline-table;
 
-            li {
-                display:table-cell;
-                background-color: $rocket_2_bg;
-                vertical-align:middle;
-                border-left: 2px solid $black;
-                border-right: 2px solid $black;
+        li {
+            display:table-cell;
+            background-color: $rocket_2_bg;
+            vertical-align:middle;
+            border-left: 2px solid $black;
+            border-right: 2px solid $black;
 
-                a {
-                    display:inline-block;
-                    line-height: 2em;
-                    height: 100%;
+            a {
+                display:inline-block;
+                line-height: 2em;
+                height: 100%;
 
-                    span {
-                        display: block;
-                        background-color: $rocket_2_bg;
-                        color: #CD0000;
-                        position: relative;
-                        padding:0 0.25em;
-                    }
-                }
-
-                &:first-child {
-                    background-color: transparent;
-                    border-left: none;
-
-                    a {
-                        position: relative;
-                        z-index: 10;
-
-                        span {
-                            z-index: 10;
-                            border-top-left-radius: 0.25em;
-                            border-bottom-left-radius: 0.25em;
-                        }
-
-                        &:before {
-                            display: block;
-                            position: absolute;
-                            right: 100%;
-                            margin-right: -0.5em;
-                            overflow:hidden;
-                            content: '';
-                            border-right: 0px solid black;
-                            border-left: 2em solid $rocket_2_engine;
-                            border-top: 1em solid transparent;
-                            border-bottom: 1em solid transparent;
-                            border-top-left-radius: 0.25em;
-                            border-bottom-left-radius: 0.25em;
-                            top:0;
-                            bottom:0;
-                            z-index: 9;
-                        }
-                    }
-
-                }
-
-                &:last-child {
+                span {
+                    display: block;
+                    background-color: $rocket_2_bg;
+                    color: #CD0000;
                     position: relative;
-                    border-right: none;
+                    padding:0 0.25em;
+                }
+            }
+
+            &:first-child {
+                background-color: transparent;
+                border-left: none;
+
+                a {
+                    position: relative;
+                    z-index: 10;
+
+                    span {
+                        z-index: 10;
+                        border-top-left-radius: 0.25em;
+                        border-bottom-left-radius: 0.25em;
+                    }
 
                     &:before {
                         display: block;
                         position: absolute;
-                        left: 99.5%;
+                        right: 100%;
                         margin-right: -0.5em;
                         overflow:hidden;
                         content: '';
-                        border-right: 0px solid $space_black;
-                        border-left: 5em solid $rocket_2_bg;
+                        border-right: 0px solid black;
+                        border-left: 2em solid $rocket_2_engine;
                         border-top: 1em solid transparent;
                         border-bottom: 1em solid transparent;
+                        border-top-left-radius: 0.25em;
+                        border-bottom-left-radius: 0.25em;
                         top:0;
                         bottom:0;
                         z-index: 9;
                     }
                 }
+
             }
-        }
 
-        &.maximized {
-            padding-bottom: 3%;
-            margin-bottom: 3.5em;
+            &:last-child {
+                position: relative;
+                border-right: none;
 
-            ul {
-
-                li {
-
-                    &:first-child {
-                        font-size: 4em;
-                    }
-
-                    &:last-child {
-                        font-size: 2em;
-                    }
+                &:before {
+                    display: block;
+                    position: absolute;
+                    left: 99.5%;
+                    margin-right: -0.5em;
+                    overflow:hidden;
+                    content: '';
+                    border-right: 0px solid $space_black;
+                    border-left: 5em solid $rocket_2_bg;
+                    border-top: 1em solid transparent;
+                    border-bottom: 1em solid transparent;
+                    top:0;
+                    bottom:0;
+                    z-index: 9;
                 }
             }
+        }
+    }
 
-            ol {
-                @include rotate(-10deg);
-                -webkit-backface-visibility: hidden;
-                font-size: 2em;
+    &.maximized {
+        padding-bottom: 3%;
+        margin-bottom: 3.5em;
+
+        ul {
+
+            li {
+
+                &:first-child {
+                    font-size: 4em;
+                }
+
+                &:last-child {
+                    font-size: 2em;
+                }
             }
         }
 
-        &.minimized {
+        ol {
+            @include rotate(-10deg);
+            -webkit-backface-visibility: hidden;
+            font-size: 2em;
+        }
+    }
+
+    &.minimized {
+        vertical-align: middle;
+        padding:0.25em 3%;
+
+        ul {
             vertical-align: middle;
-            padding:0.25em 3%;
+            font-weight: bold;
+        }
 
-            ul {
-                vertical-align: middle;
-                font-weight: bold;
-            }
-
-            ol {
-                vertical-align: middle;
-                margin-left:4em;
-            }
+        ol {
+            vertical-align: middle;
+            margin-left:4em;
         }
     }
 }

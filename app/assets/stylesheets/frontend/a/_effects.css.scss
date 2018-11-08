@@ -1,0 +1,91 @@
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transform($args...) {
+    webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+@mixin background_transition($time) {
+    @include transition(background-color $time ease-in-out, color $time ease-in-out);
+}
+
+@mixin underline_on_hover($color, $height:0.0625em) {
+    & {
+        text-decoration:none;
+        position: relative;
+    }
+    &::after {
+        @include background_transition($transition_time_fast);
+        content: '';
+        display: block;
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        left:0;
+        right:0;
+        height: $height;
+    }
+    &:hover {
+
+        &::after {
+            background-color: $color;
+        }
+    }
+}
+
+@mixin shadow($x, $y, $blur:0, $expand:0, $color:none) {
+    @if $color == none {
+        -moz-box-shadow:    $x $y $blur $expand;
+        -webkit-box-shadow: $x $y $blur $expand;
+        box-shadow:         $x $y $blur $expand;
+    } @else {
+        -moz-box-shadow:    $x $y $blur $expand $color;
+        -webkit-box-shadow: $x $y $blur $expand $color;
+        box-shadow:         $x $y $blur $expand $color;
+    }
+}
+
+@mixin inner_border($color, $size, $blur:0) {
+  -moz-box-shadow: inset 0px 0px $blur $size $color;
+  -webkit-box-shadow: inset 0px 0px $blur $size $color;
+  box-shadow: inset 0px 0px $blur $size $color;
+}
+
+@mixin both_shadows($x_o, $y_o, $blur_o:0, $expand_o:0, $color_o:transparent, $x_i:0, $y_i:0, $blur_i:0, $expand_i:0, $color_i:transparent ) {
+    -moz-box-shadow:    inset $x_i $y_i $blur_i $expand_i $color_i, $x_o $y_o $blur_o $expand_o $color_o;
+    -webkit-box-shadow: inset $x_i $y_i $blur_i $expand_i $color_i, $x_o $y_o $blur_o $expand_o $color_o;
+    box-shadow:         inset $x_i $y_i $blur_i $expand_i $color_i, $x_o $y_o $blur_o $expand_o $color_o;
+}
+
+@mixin rotate($angle) {
+  @include transform(rotate($angle));
+}
+
+@mixin scale($x:-1, $y:-1) {
+    @include transform(scale($x, $y));
+}
+
+@mixin zoom($factor: 1.125) {
+    @include transition(all 0.25s ease-in-out);
+
+    &:hover {
+        @include transform(scale($factor));
+    }
+}
+
+@mixin text_wrap_fix($padding, $color) {
+    -moz-box-shadow:    $padding 0 0 0 $color, -$padding 0 0 0 $color;
+    -webkit-box-shadow: $padding 0 0 0 $color, -$padding 0 0 0 $color;
+    box-shadow:         $padding 0 0 0 $color, -$padding 0 0 0 $color;
+}
+
+

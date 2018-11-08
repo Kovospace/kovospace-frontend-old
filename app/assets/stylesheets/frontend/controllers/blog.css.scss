@@ -1,55 +1,45 @@
-@import "./frontend/variables";
+main {
+    display: flex;
+    flex-direction: column;
 
-body.blog {
-    height:100%;
-
-    header {
-        padding-top: 3%;
+    section {
+        flex: 1 0 auto;
     }
 
-    main {
-        display: flex;
-        flex-direction: column;
+    section#serials {
+        text-align: center;
 
-        section {
-            flex: 1 0 auto;
+        article {
+            width: 288px;
+            height: 216px;
+        }
+    }
+
+    section#blogs {
+
+        article.blog {
+            min-height: 320px;
+            min-height: 24em;
+            max-height: 480px;
+            //height:320px;
         }
 
-        section#serials {
-            text-align: center;
+        article.all_posts {
+            height: auto;
 
-            article {
-                width: 288px;
-                height: 216px;
-            }
-        }
+            h1 {
+                font-size: 6em;
+                line-height: 1.5em;
+                text-align: center;
 
-        section#blogs {
+                a {
 
-            article.blog {
-                min-height: 320px;
-                min-height: 24em;
-                max-height: 480px;
-                //height:320px;
-            }
-
-            article.all_posts {
-                height: auto;
-
-                h1 {
-                    font-size: 6em;
-                    line-height: 1.5em;
-                    text-align: center;
-
-                    a {
-
-                    }
                 }
             }
         }
+    }
 
-        section#foot {
-            flex: 0 0 auto;
-        }
+    section#foot {
+        flex: 0 0 auto;
     }
 }

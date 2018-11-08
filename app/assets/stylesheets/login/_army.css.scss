@@ -1,0 +1,81 @@
+@import "./login/variables";
+
+header.registrations {
+    vertical-align: middle;
+
+    figure.army {
+        text-align: center;
+        white-space: nowrap;
+        margin: 2em;
+        -webkit-backface-visibility: hidden;
+
+        div {
+            display: inline-block;
+            width: 1.5em;
+            height: 2em;
+            background-color: $soldier_body;
+            position: relative;
+            margin-left: 1em;
+            margin-right: 1em;
+            margin-top: 1em;
+            margin-bottom: 1.75em;
+
+            &:last-child {
+                background-color: $soldier_body_last;
+
+                i {
+                    border-color: $soldier_body_last;
+                }
+            }
+
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                display: block;
+                top: 100%;
+                width: 0.375em;
+                height: 1.5em;
+                background-color: inherit;
+            }
+
+            &:before {
+               left: 0.25em;
+            }
+
+            &:after {
+               right: 0.25em;
+            }
+
+            b, i {
+                position: absolute;
+            }
+
+            b {
+                height: 1.75em;
+                width: 0.25em;
+                background-color: inherit;
+
+                &:first-child {
+                    left:1.75em;
+                }
+
+                &:last-child {
+                    right:1.75em;
+                }
+            }
+
+            i {
+                bottom: 1.75em;
+                width:0.625em;
+                height:0.5em;
+                border-top-left-radius: 50%;
+                border-top-right-radius: 50%;
+                background-color: $soldier_helmet;
+                left:0.1875em;
+                border-width: 0.25em;
+                border-style: solid;
+                border-color: $soldier_body;
+            }
+        }
+    }
+}

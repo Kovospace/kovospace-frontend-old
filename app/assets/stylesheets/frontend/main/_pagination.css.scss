@@ -1,0 +1,41 @@
+section.pagination {
+    display: block;
+    flex: 1 0 auto;
+    text-align: center;
+    font-size: 2em;
+    @include box_sizing;
+
+    nav {
+
+        span {
+            background-color: $hell_grey;
+            display: inline-block;
+            vertical-align: middle;
+
+            &.page {
+                @include height_expander();
+                border-radius: 50%;
+
+                a {
+                    padding: 0 0.5em;
+                    font-weight: bold;
+                    vertical-align: middle;
+                }
+
+                &.current {
+                    background-color: $earth_blue;
+                }
+
+                &.gap {
+                    background: none;
+                    color: $hell_grey;
+                }
+            }
+
+            &.next, &.last, &.first, &.prev {
+                padding: 0.25em 0.5em;
+                border-radius:1em;
+            }
+        }
+    }
+}

@@ -14,10 +14,19 @@ class User < ActiveRecord::Base
     inverse_of: :user
   )
 
+  before_create :add_default_role
+
   validates :role, presence: true
+  validates :name, presence: true, uniqueness: true
 
   def role_human
       VirtualModel::UserRole.find(role).title
+  end
+
+  private
+
+  def add_default_role
+    (self.role = 9) if self.role.blank?
   end
 
 end

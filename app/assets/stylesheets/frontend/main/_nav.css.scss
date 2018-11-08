@@ -1,6 +1,4 @@
-@import "./frontend/variables";
-
-nav.regular, nav.for_nojs {
+&.regular, &.for_nojs {
     background-color: $black;
     color: $white;
     padding: 0.25em 0.5em;
@@ -64,3 +62,4 @@ nav.regular, nav.for_nojs {
 
     @include clearfix();
 }
+

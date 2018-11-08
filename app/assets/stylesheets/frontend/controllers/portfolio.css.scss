@@ -1,24 +1,18 @@
-@import "./frontend/variables";
+main {
+    display: flex;
+    flex-direction: column;
 
-body.portfolio {
-    height:100%;
+    section#portfolio {
+        flex: 1 0 auto;
 
-    main {
-        display: flex;
-        flex-direction: column;
-
-        section#portfolio {
-            flex: 1 0 auto;
-
-            article {
-                vertical-align: middle;
-                margin-bottom: 10%;
-            }
+        article {
+            vertical-align: middle;
+            margin-bottom: 10%;
         }
+    }
 
-        section#foot {
-            flex: 0 0 auto;
-        }
+    section#foot {
+        flex: 0 0 auto;
     }
 }
 

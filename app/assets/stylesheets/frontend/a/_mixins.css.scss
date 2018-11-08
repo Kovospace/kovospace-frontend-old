@@ -1,0 +1,67 @@
+@mixin clearfix() {
+  &::after {
+    content: '';
+    clear: both;
+    //display: table;
+  }
+}
+
+@mixin flex_container() {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin flex_children($arg) {
+  -webkit-box-flex: $arg;      /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: $arg;         /* OLD - Firefox 19- */
+  -webkit-flex: $arg;          /* Chrome */
+  -ms-flex: $arg;              /* IE 10 */
+  flex: $arg;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin box_sizing() {
+  -webkit-box-sizing: border-box;   // okrem IE 6 a 7 vraj všetko
+  -moz-box-sizing:    border-box;
+  -o-box-sizing:      border-box;
+  box-sizing:         border-box;
+}
+
+@mixin scrollbars($color_fg:#333, $color_bg:#e8e8e8) {
+  ::-webkit-scrollbar {
+      width:  1em;
+      height: 1em;
+      background-color: $color_bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background-color: $color_fg;
+      border: 0.25em solid transparent;
+      background-clip: padding-box;
+      min-height: 1.5em;
+      cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-track {
+      border-width: 0.25em;
+      box-shadow: inset 0 0 10px 10px $color_bg;
+  }
+}
+
+@mixin height_expander($size: 100%) {
+  &:before {
+      content: '\200B';
+      display: inline-block;
+      padding-top:$size;
+      height:0;
+      vertical-align:middle;
+  }
+}
+
+@mixin background_clip() {
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}

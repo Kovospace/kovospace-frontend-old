@@ -1,94 +1,89 @@
-@import "./frontend/variables";
+nav {
+    height: 100%;
+    font-size: 1.875em;
+    display: block;
+    margin-bottom: 3em;
 
-header.portfolios {
+    ul {
+        display: inline-block;
 
-    nav {
-        height: 100%;
-        font-size: 1.875em;
-        display: block;
-        margin-bottom: 3em;
+        li {
+            margin: 0 0.5em;
 
-        ul {
-            display: inline-block;
+            a {
+                background-color: $hell_grey;
+                text-align:center;
+            }
 
-            li {
-                margin: 0 0.5em;
+            &.active {
 
                 a {
-                    background-color: $hell_grey;
-                    text-align:center;
+                    font-size: 2em;
                 }
 
-                &.active {
-
-                    a {
-                        font-size: 2em;
-                    }
-
-                    & > a.active {
-                        background-color: $logo_orange;
-                        color: $black;
-                    }
-
-                    ul {
-                        margin-top: -2.5em;
-                    }
+                & > a.active {
+                    background-color: $logo_orange;
+                    color: $black;
                 }
 
                 ul {
-                    display: inline-table;
-                    vertical-align: baseline;
-                    text-align: left;
-                    height:100%;
+                    margin-top: -2.5em;
+                }
+            }
 
-                    li {
+            ul {
+                display: inline-table;
+                vertical-align: baseline;
+                text-align: left;
+                height:100%;
+
+                li {
+                    display: inline-block;
+                    margin:0 0.5em;
+                    white-space: nowrap;
+                    vertical-align: baseline;
+                    text-align: center;
+
+                    &.phantom {
+                        font-size: 0.707em; //sin 45 deg
+                        font-weight: bold;
+                        margin:0;
+                        opacity: 0;
+                    }
+
+                    a {
                         display: inline-block;
-                        margin:0 0.5em;
-                        white-space: nowrap;
-                        vertical-align: baseline;
                         text-align: center;
 
-                        &.phantom {
-                            font-size: 0.707em; //sin 45 deg
-                            font-weight: bold;
-                            margin:0;
-                            opacity: 0;
+                        &.active {
+                            background-color: $earth_blue;
                         }
+                    }
 
-                        a {
+                    a.title {
+                        text-emphasis: none;
+                        font-style: normal;
+                        font-size: 1em !important;
+                        background: none;
+                        writing-mode: vertical-rl;
+                        margin: 0 auto;
+                        padding-bottom: 0.25em;
+                        @include rotate(45deg);
+                        transform-origin: left bottom;
+                        position: relative;
+                        left:0.75em;
+
+                        b {
                             display: inline-block;
-                            text-align: center;
+                            @include rotate(180deg);
 
-                            &.active {
-                                background-color: $earth_blue;
+                            &:hover {
+                                text-decoration: underline;
                             }
                         }
 
-                        a.title {
-                            text-emphasis: none;
-                            font-style: normal;
-                            font-size: 1em !important;
-                            background: none;
-                            writing-mode: vertical-rl;
-                            margin: 0 auto;
-                            padding-bottom: 0.25em;
-                            @include rotate(45deg);
-                            transform-origin: left bottom;
-                            position: relative;
-                            left:0.75em;
-
-                            b {
-                                display: inline-block;
-                                @include rotate(180deg);
-
-                                &:hover {
-                                    text-decoration: underline;
-                                }
-                            }
-
-                            &:before {
-                                display: none !important;
-                            }
+                        &:before {
+                            display: none !important;
                         }
                     }
                 }

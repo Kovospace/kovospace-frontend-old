@@ -1,114 +1,106 @@
-@import "./frontend/variables";
+section#blogs {
 
-body.blog {
-
-    main {
-
-        section#blogs {
-
-            article {
-                background-color: $solar_panel_bg;
-                @include inner_border($space_black, 0.375em);
-                display: inline-block;
-                width: 100%;
-                position: relative;
-                height: 100%;
+    article {
+        background-color: $solar_panel_bg;
+        @include inner_border($space_black, 0.375em);
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        height: 100%;
 
 
-                figure {
+        figure {
+            position: absolute;
+            top:0.375em; left:0.375em; right:0.375em; bottom:0.375em;
+            overflow:hidden;
+            height: 100%;
+            text-align:center;
+            z-index:1;
+
+
+            picture {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
+
+                img {
                     position: absolute;
-                    top:0.375em; left:0.375em; right:0.375em; bottom:0.375em;
-                    overflow:hidden;
-                    height: 100%;
-                    text-align:center;
-                    z-index:1;
-
-
-                    picture {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        overflow: hidden;
-
-                        img {
-                            position: absolute;
-                            left: 0;
-                            right: 0;
-                            top: -9999px;
-                            bottom: -9999px;
-                            margin: auto 0;
-                            width: 100%;
-                        }
-                    }
+                    left: 0;
+                    right: 0;
+                    top: -9999px;
+                    bottom: -9999px;
+                    margin: auto 0;
+                    width: 100%;
                 }
+            }
+        }
 
-                h2, h3 {
+        h2, h3 {
+            display: table;
+            background-color: $solar_panel_item_bg;
+            position: relative;
+        }
+
+        a {
+            display: inline-block;
+        }
+
+        h2 {
+            vertical-align: middle;
+            line-height: 1.25em;
+            margin: 0.125em;
+            //@include shadow(0, 0, 0, 0.125em, $space_black);
+            font-size:3em;
+
+            a {
+                padding: 0em 0.25em;
+            }
+        }
+
+        h3 {
+            font-size: 1.5em;
+            //@include shadow(0, 0, 0, 0.25em, $space_black);
+            margin: 0.25em;
+            font-weight: normal;
+
+            a {
+               padding: 0.375em 0.5em;
+            }
+        }
+
+        div.top_serials, div.top_posts {
+            text-align: right;
+            position: relative;
+
+            b, span {
+                 vertical-align: bottom;
                     display: table;
+                    font-size:1.25em;
                     background-color: $solar_panel_item_bg;
-                    position: relative;
-                }
-
-                a {
-                    display: inline-block;
-                }
-
-                h2 {
-                    vertical-align: middle;
-                    line-height: 1.25em;
-                    margin: 0.125em;
-                    //@include shadow(0, 0, 0, 0.125em, $space_black);
-                    font-size:3em;
+                    margin-left:auto;
+                    margin-right:0;
 
                     a {
-                        padding: 0em 0.25em;
+                        padding: 0.5em;
                     }
-                }
+            }
 
-                h3 {
-                    font-size: 1.5em;
-                    //@include shadow(0, 0, 0, 0.25em, $space_black);
-                    margin: 0.25em;
-                    font-weight: normal;
+            b {
+                font-size: 1.5em;
+                margin:0.25em;
+                //@include shadow(0, 0, 0, 0.25em, $space_black);
+                margin-left:auto;
+                margin-bottom: 0;
+            }
 
-                    a {
-                       padding: 0.375em 0.5em;
-                    }
-                }
-
-                div.top_serials, div.top_posts {
-                    text-align: right;
-                    position: relative;
-
-                    b, span {
-                         vertical-align: bottom;
-                            display: table;
-                            font-size:1.25em;
-                            background-color: $solar_panel_item_bg;
-                            margin-left:auto;
-                            margin-right:0;
-
-                            a {
-                                padding: 0.5em;
-                            }
-                    }
-
-                    b {
-                        font-size: 1.5em;
-                        margin:0.25em;
-                        //@include shadow(0, 0, 0, 0.25em, $space_black);
-                        margin-left:auto;
-                        margin-bottom: 0;
-                    }
-
-                    span {
-                        margin:0.3125em;
-                        //@include shadow(0, 0, 0, 0.3125em, $space_black);
-                        margin-left:auto;
-                        display: inline-table;
-                    }
-                }
+            span {
+                margin:0.3125em;
+                //@include shadow(0, 0, 0, 0.3125em, $space_black);
+                margin-left:auto;
+                display: inline-table;
             }
         }
     }

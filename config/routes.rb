@@ -31,6 +31,14 @@ Rails.application.routes.draw do
     to: "homepage#user_sitemap",
     as: "user_sitemap"
 
+  get "cookies",
+    to: "homepage#cookies",
+    as: "cookies"
+
+  get "gdpr",
+    to: "homepage#gdpr",
+    as: "gdpr"
+
 ### HLAVNA STRANKA
 
   # skills
@@ -377,8 +385,25 @@ Rails.application.routes.draw do
       to: "posts#create_comment",
       as: "add_reply"
 
+devise_for(
+  :users,
+  path: '',
+  controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  },
+  path_names: {
+    sign_in: 'prihlasenie',
+    sign_out: 'odhlasenie',
+    password: 'secret',
+    confirmation: 'verification',
+    unlock: 'unblock',
+    registration: 'register',
+    sign_up: 'vytvorit_ucet'
+  }
+)
 
-
+=begin
   devise_for :users, skip: :all
 
   devise_scope :user do
@@ -451,7 +476,7 @@ Rails.application.routes.draw do
       to: "devise/registrations#create",
       as: "user_registration"
 
-    get "/register",
+    get "/register/",
       to: "devise/registrations#new",
       as: "new_user_registration"
 
@@ -469,5 +494,6 @@ Rails.application.routes.draw do
      # to: "devise/registrations#destroy"
 
   end
+=end
 
 end

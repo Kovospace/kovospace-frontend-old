@@ -1,38 +1,30 @@
-@import "./frontend/variables";
+section#show_work {
+    padding: 0;
 
-body.portfolio {
+    figure {
+        position: relative;
 
-    main {
+        picture {
+            display: block;
 
-        section#show_work {
-            padding: 0;
-
-            figure {
-                position: relative;
-
-                picture {
-                    display: block;
-
-                    img {
-                        display: block;
-                        margin: 0 auto;
-                        padding-top: 3%;
-                    }
-                }
+            img {
+                display: block;
+                margin: 0 auto;
+                padding-top: 3%;
             }
+        }
+    }
 
-            article {
-                padding: 0 3%;
+    article {
+        padding: 0 3%;
 
-                h2 {
-                    position: relative;
-                    bottom: 0.5em;
-                    //margin-left: 0.5em;
-                    padding: 0.125em;
-                    background-color: $black;
-                    display: inline-block;
-                }
-            }
+        h2 {
+            position: relative;
+            bottom: 0.5em;
+            //margin-left: 0.5em;
+            padding: 0.125em;
+            background-color: $black;
+            display: inline-block;
         }
     }
 }

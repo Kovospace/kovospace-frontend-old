@@ -1,215 +1,212 @@
-@import "./frontend/variables";
 
-body.homepage {
+main {
 
-    main {
+    section {
 
-        section {
+        &#top, &#skills {
+            min-height: 100%;
+        }
 
-            &#top, &#skills {
-                min-height: 100%;
-            }
+        &#novinky, &#o-mne {
+            min-height: 50%;
+        }
 
-            &#novinky, &#o-mne {
-                min-height: 50%;
-            }
+        &#kontakt {
+            min-height: 5em;
+        }
 
-            &#kontakt {
-                min-height: 5em;
-            }
+        &#top {
+            background-color: $space_softblack;
+            color: $white;
+        }
 
-            &#top {
-                background-color: $space_softblack;
-                color: $white;
-            }
+        &#novinky {
+            background-color: $space_lightblack;
+            color: $white;
+        }
 
-            &#novinky {
-                background-color: $space_lightblack;
-                color: $white;
-            }
+        &#skills {
+            color: $white;
+            background-color: $space_near;
+        }
 
-            &#skills {
-                color: $white;
-                background-color: $space_near;
-            }
+        &#o-mne {
+            color: $dirty_white;
+            background-color: $space_blue;
+        }
 
-            &#o-mne {
-                color: $dirty_white;
-                background-color: $space_blue;
-            }
+        &#kontakt {
+            background-color: $earth_blue;
+            color: $white;
+        }
 
-            &#kontakt {
-                background-color: $earth_blue;
-                color: $white;
-            }
-
-            &#foot {
-                background-color: $ground_beige;
-                color: $black;
-            }
+        &#foot {
+            background-color: $ground_beige;
+            color: $black;
+        }
 
 /* ----------------------------------------------------------------------------- */
 
-            &#top {
-                display: block;
+        &#top {
+            display: block;
+            display:flex;
+            flex-direction: column;
+
+            article#menu {
+                height: 100%;
+                width:100%;
+                max-width:100%;
+                padding-left:2em;
+                @include box_sizing();
+                display:table;      // kvoli IE srotom
                 display:flex;
-                flex-direction: column;
+                flex-direction: row;
+                flex: 1 0 100%;
 
-                article#menu {
-                    height: 100%;
-                    width:100%;
-                    max-width:100%;
-                    padding-left:2em;
-                    @include box_sizing();
-                    display:table;      // kvoli IE srotom
-                    display:flex;
-                    flex-direction: row;
-                    flex: 1 0 100%;
+                div#ship_body, div#ship_solar_panels {
+                    display:table-cell;     // pre srot IE
+                    vertical-align:middle;  // pre srot IE
+                    display: flex;
+                    flex-direction: column;
+                }
 
-                    div#ship_body, div#ship_solar_panels {
-                        display:table-cell;     // pre srot IE
-                        vertical-align:middle;  // pre srot IE
-                        display: flex;
-                        flex-direction: column;
-                    }
+                div#ship_body {
+                    width: 20%;
+                    vertical-align: top;
+                    flex: 0 0 20%;
+                    justify-content: center;
+                }
 
-                    div#ship_body {
-                        width: 20%;
-                        vertical-align: top;
-                        flex: 0 0 20%;
-                        justify-content: center;
-                    }
+                div#ship_solar_panels {
+                    flex: 1 0 80%;
+                    display: flex;
+                    flex-direction: column;
 
-                    div#ship_solar_panels {
-                        flex: 1 0 80%;
+                    nav {
+                        flex: 1 0 auto;
                         display: flex;
                         flex-direction: column;
 
-                        nav {
+                        ul {
+                            padding-left:5%;
+                            @include box_sizing();
                             flex: 1 0 auto;
                             display: flex;
                             flex-direction: column;
+                            justify-content: space-around;
 
-                            ul {
-                                padding-left:5%;
-                                @include box_sizing();
-                                flex: 1 0 auto;
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-around;
+                            li {
+                                display:table; // IE srot fallback
+                                width:100%;
+                                //margin: 3% 0;
 
-                                li {
-                                    display:table; // IE srot fallback
-                                    width:100%;
-                                    //margin: 3% 0;
+                                &:first-child {
+                                    margin-top: 5%;
+                                }
 
-                                    &:first-child {
-                                        margin-top: 5%;
-                                    }
-
-                                    &:last-child {
-                                        margin-bottom: 5%;
-                                    }
+                                &:last-child {
+                                    margin-bottom: 5%;
                                 }
                             }
                         }
                     }
                 }
             }
+        }
 
-            &#novinky {
-                display: table;
-                width: 100%;
+        &#novinky {
+            display: table;
+            width: 100%;
 
-                aside {
-                    display: table-cell;
-                    vertical-align: middle;
-                    padding-left:6em;
-                    padding-right:3.5em;
-                    padding-top:6em;
-                }
+            aside {
+                display: table-cell;
+                vertical-align: middle;
+                padding-left:6em;
+                padding-right:3.5em;
+                padding-top:6em;
+            }
 
-                article {
-                    padding-left:1em;
+            article {
+                padding-left:1em;
+            }
+        }
+
+        &#skills {
+
+            aside {
+                display: block;
+                position: relative;
+                padding-top:2.125em;
+                padding-bottom:1.5em;
+
+                figure {
+                    display: inline-block;
+                    padding-right: 6em;
+                    //@include box_sizing();
                 }
             }
 
-            &#skills {
+            article {
+                vertical-align: middle;
+                display: table;
+                vertical-align:middle;
+                margin: 5% auto;
 
-                aside {
-                    display: block;
-                    position: relative;
-                    padding-top:2.125em;
-                    padding-bottom:1.5em;
+                div.description {
+                    display: table-cell;
+                    vertical-align:middle;
 
                     figure {
-                        display: inline-block;
-                        padding-right: 6em;
-                        //@include box_sizing();
+                        width: 9em;
+                        height: 9em;
+                        display: inline-table;
                     }
                 }
 
-                article {
-                    vertical-align: middle;
-                    display: table;
-                    vertical-align:middle;
-                    margin: 5% auto;
-
-                    div.description {
-                        display: table-cell;
-                        vertical-align:middle;
-
-                        figure {
-                            width: 9em;
-                            height: 9em;
-                            display: inline-table;
-                        }
-                    }
-
-                    div.projects {
-                        display: table-cell;
-
-                         a {
-                            display: inline-table;
-                        }
-                    }
-                }
-            }
-
-            &#o-mne {
-
-                aside, article {
-                    display:table-cell;
-                    vertical-align: middle;
-                }
-
-                article {
-                    padding-left: 1em;
-                }
-            }
-
-            &#kontakt {
-                padding-bottom:0;
-                display: table;
-                width: 100%;
-
-                article, aside {
+                div.projects {
                     display: table-cell;
-                    vertical-align:bottom;
-                }
 
-                article {
-                    padding-right: 1.5%;
-                    padding-bottom: 3%;
+                     a {
+                        display: inline-table;
+                    }
                 }
+            }
+        }
 
-                aside {
-                    width:1%;
-                    padding-left: 1.5%;
-                }
+        &#o-mne {
+
+            aside, article {
+                display:table-cell;
+                vertical-align: middle;
+            }
+
+            article {
+                padding-left: 1em;
+            }
+        }
+
+        &#kontakt {
+            padding-bottom:0;
+            display: table;
+            width: 100%;
+
+            article, aside {
+                display: table-cell;
+                vertical-align:bottom;
+            }
+
+            article {
+                padding-right: 1.5%;
+                padding-bottom: 3%;
+            }
+
+            aside {
+                width:1%;
+                padding-left: 1.5%;
             }
         }
     }
 }
+
 
 
