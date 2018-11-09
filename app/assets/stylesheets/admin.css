@@ -2,5 +2,6 @@
  * Manifest file for admin styles, to be compiled into admin.scss
  *
  *= require_self
- *= require_tree ./admin
+ * require_tree ./admin
+ *= require ./admin/MAIN
  */
