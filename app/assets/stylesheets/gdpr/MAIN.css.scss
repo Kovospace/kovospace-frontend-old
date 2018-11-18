@@ -1,0 +1,18 @@
+@import "./gdpr/specials/variables";
+
+html {
+
+    body {
+        background-color: $background;
+        color: $text;
+
+        main {
+            padding:3%;
+
+            &.cookies {
+                @import "./gdpr/sections/cookies";
+            }
+
+        }
+    }
+}

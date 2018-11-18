@@ -1,201 +1,194 @@
-//@import "./frontend/variables";
 
-body.blog, body.post {
+h2 {
+    margin-bottom: 0.5em;
+    text-align: left;
+}
 
-    main {
+h3 {
+    font-size: 2.5em;
+}
 
-        h2 {
-            margin-bottom: 0.5em;
-            text-align: left;
+section#serials {
+
+    h2 {
+         margin-bottom: 0.625em;
+    }
+
+    article {
+        border-radius: 1em;
+        overflow: hidden;
+        display: inline-block;
+        margin: 0 1em;
+        margin-bottom: 3.5em;
+        position: relative;
+
+        figure {
+            position: absolute;
+            top:0;
+            bottom: 0;
+            left:0;
+            right:0;
+            z-index: 11;
+
+            picture {
+                display: block;
+                overflow:hidden;
+                border-radius: 1em;
+
+                img {
+                    max-width: 100%;
+                }
+            }
         }
 
-        h3 {
-            font-size: 2.5em;
+        a {
+            display: table;
+            width:100%;
+            height: 100%;
+            z-index: 12;
+            position: relative;
+
+            span {
+                display: table-cell;
+                text-align: left;
+                font-size: 1.75em;
+                padding-left: 0.5em;
+                padding-top: 0.375em;
+
+                h4 {
+                    display: inline;
+                    background: $black;
+                    @include text_wrap_fix(0.25em, $black);
+                }
+            }
+        }
+    }
+}
+
+section.posts {
+
+    &.all {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    article {
+        margin: 3.5em 0;
+
+        figure {
+            display: block;
+            float:left;
+            margin-right: 1em;
+            margin-bottom:0.5em;
+            overflow:hidden;
+            width: 288px;
+            height: 216px;
+
+            a {
+                display: block;
+                border-radius: 0em;
+                height: 100%;
+
+                picture {
+                    display: block;
+                    height: 100%;
+
+                    img {
+                        display: block;
+                        max-width: 100%;
+                        height: 100%;
+                        border: 0.125em solid $space_black;
+                        background-color: $half;
+                        border-radius:1em;
+                        overflow: hidden;
+                        @include box_sizing();
+                        @include background_clip();
+                    }
+                }
+            }
         }
 
-        section#serials {
+        div {
+            display: table;
 
-            h2 {
-                 margin-bottom: 0.625em;
+            a {
+
+                h3 {
+                    margin-bottom: 0.5em;
+                }
+
+                &:hover {
+                    h3 {
+                        text-decoration: underline;
+                    }
+                }
             }
 
-            article {
-                border-radius: 1em;
-                overflow: hidden;
-                display: inline-block;
-                margin: 0 1em;
-                margin-bottom: 3.5em;
-                position: relative;
+            & > div {
+                font-size: 1.25em;
+                line-height: 1.125em;
 
-                figure {
+                & > p {
+                    display: block;
+                    //white-space: pre-line;
+                    padding:0.125em;
+                }
+            }
+        }
+    }
+
+    &.categorized {
+        padding-top:0;
+
+        figure {
+            overflow: hidden;
+            position: relative;
+
+            &.title_bg {
+
+                &:after {
+                    content: "";
+                    display: block;
                     position: absolute;
                     top:0;
-                    bottom: 0;
+                    bottom:0;
                     left:0;
                     right:0;
-                    z-index: 11;
-
-                    picture {
-                        display: block;
-                        overflow:hidden;
-                        border-radius: 1em;
-
-                        img {
-                            max-width: 100%;
-                        }
-                    }
+                    @include inner_border($space_black, 0.5em, 0.5em);
                 }
+            }
 
-                a {
-                    display: table;
-                    width:100%;
-                    height: 100%;
-                    z-index: 12;
-                    position: relative;
+            picture {
 
-                    span {
-                        display: table-cell;
-                        text-align: left;
-                        font-size: 1.75em;
-                        padding-left: 0.5em;
-                        padding-top: 0.375em;
-
-                        h4 {
-                            display: inline;
-                            background: $black;
-                            @include text_wrap_fix(0.25em, $black);
-                        }
-                    }
+                img {
+                    max-width:100%;
                 }
             }
         }
 
-        section.posts {
+        h2 {
+            display: inline-table;
+            background-color: $earth_blue;
+            padding:0.1875em 0.3125em;
+            position: relative;
+            bottom:0.875em;
+            margin:0 0.5em;
+            border: 0.1875em solid $earth_blue;
+            @include both_shadows(0,0,0.125em,0.125em,$space_black, 0,0,0,0.125em,$white);
+            border-radius:0.25em;
 
-            &.all {
-                padding-top: 0;
-                padding-bottom: 0;
+            &:after {
+                display: inline-block;
+                content: '';
+                width:3em;
             }
 
-            article {
-                margin: 3.5em 0;
-
-                figure {
-                    display: block;
-                    float:left;
-                    margin-right: 1em;
-                    margin-bottom:0.5em;
-                    overflow:hidden;
-                    width: 288px;
-                    height: 216px;
-
-                    a {
-                        display: block;
-                        border-radius: 0em;
-                        height: 100%;
-
-                        picture {
-                            display: block;
-                            height: 100%;
-
-                            img {
-                                display: block;
-                                max-width: 100%;
-                                height: 100%;
-                                border: 0.125em solid $space_black;
-                                background-color: $half;
-                                border-radius:1em;
-                                overflow: hidden;
-                                @include box_sizing();
-                                @include background_clip();
-                            }
-                        }
-                    }
-                }
-
-                div {
-                    display: table;
-
-                    a {
-
-                        h3 {
-                            margin-bottom: 0.5em;
-                        }
-
-                        &:hover {
-                            h3 {
-                                text-decoration: underline;
-                            }
-                        }
-                    }
-
-                    & > div {
-                        font-size: 1.25em;
-                        line-height: 1.125em;
-
-                        & > p {
-                            display: block;
-                            //white-space: pre-line;
-                            padding:0.125em;
-                        }
-                    }
-                }
-            }
-
-            &.categorized {
-                padding-top:0;
-
-                figure {
-                    overflow: hidden;
-                    position: relative;
-
-                    &.title_bg {
-
-                        &:after {
-                            content: "";
-                            display: block;
-                            position: absolute;
-                            top:0;
-                            bottom:0;
-                            left:0;
-                            right:0;
-                            @include inner_border($space_black, 0.5em, 0.5em);
-                        }
-                    }
-
-                    picture {
-
-                        img {
-                            max-width:100%;
-                        }
-                    }
-                }
-
-                h2 {
-                    display: inline-table;
-                    background-color: $earth_blue;
-                    padding:0.1875em 0.3125em;
-                    position: relative;
-                    bottom:0.875em;
-                    margin:0 0.5em;
-                    border: 0.1875em solid $earth_blue;
-                    @include both_shadows(0,0,0.125em,0.125em,$space_black, 0,0,0,0.125em,$white);
-                    border-radius:0.25em;
-
-                    &:after {
-                        display: inline-block;
-                        content: '';
-                        width:3em;
-                    }
-
-                    i {
-                        text-align-last: right;
-                        text-align: right;
-                        position: absolute;
-                        right:0.3125em;
-                        bottom:0.1875em;
-                    }
-                }
+            i {
+                text-align-last: right;
+                text-align: right;
+                position: absolute;
+                right:0.3125em;
+                bottom:0.1875em;
             }
         }
     }

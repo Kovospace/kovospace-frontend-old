@@ -2,8 +2,6 @@ class PortfoliosController < ApplicationController
 
     before_action :authorize_admin, except: [:index, :show]
 
-    layout "admin", only: [:new, :create, :edit, :update]
-
     ## override
     def index
         @skillsets = Skillset.all
@@ -23,6 +21,15 @@ class PortfoliosController < ApplicationController
     end
 
     private
+
+    def _choose_layout
+        case action_name
+        when "index"
+            return "base"
+        when "new", "create", "edit", "update"
+            return "admin"
+        end
+    end
 
     ## override
     def index_action

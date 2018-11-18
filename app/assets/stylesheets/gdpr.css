@@ -2,5 +2,6 @@
  * Manifest file for admin styles, to be compiled into admin.scss
  *
  *= require_self
- *= require_tree ./gdpr
+ * require_tree ./gdpr
+ *= require ./gdpr/MAIN
  */

@@ -49,4 +49,8 @@ module ApplicationHelper
         tag(:link, href: url, :rel => 'canonical')
     end
 
+    def inside_layout(layout = "application", &block)
+        render inline: capture(&block), layout: "layouts/#{layout}"
+    end
+
 end

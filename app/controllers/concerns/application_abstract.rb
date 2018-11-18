@@ -41,4 +41,8 @@ module ApplicationAbstract
     def _after_save_fail
     end
 
+    def _choose_layout
+        return "application"
+    end
+
 end

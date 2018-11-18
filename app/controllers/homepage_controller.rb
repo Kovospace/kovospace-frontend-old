@@ -1,9 +1,5 @@
 class HomepageController < ApplicationController
 
-    layout "homepage", only: [:index]
-    #layout "user_sitemap", only: [:user_sitemap]
-    #layout "gdpr_cookies", only: [:cookies, :gdpr]
-
 	def index
         @skills = Skill.all
         @skillsets = Skillset.all
@@ -16,11 +12,23 @@ class HomepageController < ApplicationController
         @blogs = Blog.all
     end
 
-    def cookies
+    def cookies_info
 
     end
 
-    def gdpr
+    def gdpr_info
 
     end
+
+    private
+
+    def _choose_layout
+        case action_name
+        when "index"
+            return "base"
+        when "gdpr_info", "cookies_info"
+            return "gdpr_cookies"
+        end
+    end
+
 end

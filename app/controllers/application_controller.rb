@@ -6,16 +6,15 @@ class ApplicationController < ActionController::Base
     include ApplicationAbstract
     require 'naturally'
 
+    layout :_choose_layout
+
     protect_from_forgery with: :exception
 
-    def initialize
-      super
-      @singular_varname = "@#{controller_name.singularize}"
-      @plural_varname = "@#{controller_name.pluralize}"
-      @model = model_exist?
-    end
-
     #before_action :authenticate_user!, only: :admin
+    #
+    before_action :init
+
+    before_action :cookies_accept
 
     before_action :index_action, only: :index
 
@@ -61,6 +60,12 @@ class ApplicationController < ActionController::Base
     end
 
     private
+
+    def init
+      @singular_varname = "@#{controller_name.singularize}"
+      @plural_varname = "@#{controller_name.pluralize}"
+      @model = model_exist?
+    end
 
     def index_action
       instance_variable_set(@plural_varname, @model.all) if @model
@@ -146,6 +151,14 @@ class ApplicationController < ActionController::Base
           redirect_to controller: controller_name, action: 'index'
         end
       end
+    end
+
+    def cookies_accept
+      #render(partial: 'application/cookies_accept', layout: true)
+      #cookies = controller.send :cookies
+      @accept_cookie = cookies[:remember_cookies_accept]
+      #logger cookies.size
+
     end
 
 end

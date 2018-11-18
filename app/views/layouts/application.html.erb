@@ -1,5 +1,23 @@
+<!DOCTYPE html>
+<html lang="sk">
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <%= yield(:header) %>
+    </head>
 
-<%= yield %>
+    <body class="<%= controller_name.to_s.singularize %>">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+        <footer>
+            <%= content_for :foot %>
+            <% if @accept_cookie.blank? %>
+                <%= render 'cookies_accept' %>
+            <% end %>
+        </footer>
+    </body>
+
+</html>
+
+

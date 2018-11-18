@@ -4,8 +4,6 @@ class PostsController < ApplicationController
 
 	before_action :authenticate_user!, only: [:create_comment, :reply_to_comment]
 
-	layout "admin", only: [:new, :create, :edit, :update]
-
 	before_render :decide_breadcrumbs, only: [:show, :all]
 
 	## override
@@ -54,6 +52,15 @@ class PostsController < ApplicationController
 	end
 
 	private
+
+	def _choose_layout
+        case action_name
+        when "all", "show"
+            return "base"
+        when "new", "create", "edit", "update"
+            return "admin"
+        end
+    end
 
 	## override
 	def show_action

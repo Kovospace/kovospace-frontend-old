@@ -2,8 +2,6 @@ class BlogsController < ApplicationController
 
     before_action :authorize_admin, except: [:index, :show]
 
-    layout "admin", only: [:new, :create, :edit, :update]
-
     add_breadcrumb "Blog", :blogs_path
 
     def show
@@ -41,6 +39,15 @@ class BlogsController < ApplicationController
     end
 
     private
+
+    def _choose_layout
+        case action_name
+        when "index", "show"
+            return "base"
+        when "new", "create", "edit", "update"
+            return "admin"
+        end
+    end
 
     def _load_vars
         @categories_all = Category.all

@@ -1,147 +1,139 @@
-//@import "./frontend/variables";
+section#post_title_bg {
+    padding:0;
+    min-height: 320px;
 
-body.post {
+    figure {
+        display: block;
 
-    main {
+        picture {
 
-        section#post_title_bg {
-            padding:0;
-            min-height: 320px;
-
-            figure {
+            img {
                 display: block;
-
-                picture {
-
-                    img {
-                        display: block;
-                        width:100%;
-                        max-width: 100%;
-                    }
-                }
+                width:100%;
+                max-width: 100%;
             }
         }
+    }
+}
 
-        section#post_title {
-            padding: 0px 3%;
-            padding-bottom: 3%;
-            overflow: visible;
-            position: relative;
+section#post_title {
+    padding: 0px 3%;
+    padding-bottom: 3%;
+    overflow: visible;
+    position: relative;
 
-            h2 {
-                margin:0;
-                padding-bottom: 0.125em;
-                line-height: 1.125em;
-            }
+    h2 {
+        margin:0;
+        padding-bottom: 0.125em;
+        line-height: 1.125em;
+    }
+
+    h3 {
+        font-size: 1.25em;
+        height: 2em;
+        line-height: 2em;
+    }
+
+    figure {
+        @include transform(translateY(-50%));
+        position: absolute;
+
+        div {
 
             h3 {
+                background-color: $light_black;
+                display: inline-block;
+                @include text_wrap_fix(0.5em, $light_black);
+
+                a {
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            h2 {
+                background-color: $earth_blue;
+                display: inline;
+                position: relative;
+                @include text_wrap_fix(0.125em, $earth_blue);
+            }
+        }
+    }
+
+    div.faux {
+        width:50%;
+        font-size: 50%;
+        visibility: hidden;
+    }
+}
+
+section#show_post {
+    font-size: 1.25em;
+}
+
+section#next_in_category {
+
+    &.show_both {
+
+        article {
+            display: table-cell;
+            width:48%;
+        }
+    }
+
+    &.show_single {
+
+        article {
+            display: table;
+            max-width: 98%;
+        }
+    }
+
+    article {
+        padding: 1%;
+        @include background_transition(0.25s);
+        border-radius: 1em;
+
+        &:hover {
+            background-color: $logo_orange;
+            color: $black;
+        }
+
+        h3 {
+            margin-bottom: 0.5em;
+        }
+
+        figure {
+            background-color: $light_black;
+            float: left;
+            margin-right: 0.5em;
+            margin-bottom: 0.5em;
+            border-radius: 0.5em;
+            overflow:hidden;
+
+            picture {
+
+                img {
+                    display: block;
+                    width: 160px;
+                    height: 120px;
+                }
+            }
+        }
+
+        div {
+
+            h4 {
                 font-size: 1.25em;
-                height: 2em;
-                line-height: 2em;
+                padding-bottom:0.5em;
             }
 
-            figure {
-                @include transform(translateY(-50%));
-                position: absolute;
-
-                div {
-
-                    h3 {
-                        background-color: $light_black;
-                        display: inline-block;
-                        @include text_wrap_fix(0.5em, $light_black);
-
-                        a {
-
-                            &:hover {
-                                text-decoration: underline;
-                            }
-                        }
-                    }
-
-                    h2 {
-                        background-color: $earth_blue;
-                        display: inline;
-                        position: relative;
-                        @include text_wrap_fix(0.125em, $earth_blue);
-                    }
-                }
-            }
-
-            div.faux {
-                width:50%;
-                font-size: 50%;
-                visibility: hidden;
-            }
-        }
-
-        section#show_post {
-            font-size: 1.25em;
-        }
-
-        section#next_in_category {
-
-            &.show_both {
-
-                article {
-                    display: table-cell;
-                    width:48%;
-                }
-            }
-
-            &.show_single {
-
-                article {
-                    display: table;
-                    max-width: 98%;
-                }
-            }
-
-            article {
-                padding: 1%;
-                @include background_transition(0.25s);
-                border-radius: 1em;
-
-                &:hover {
-                    background-color: $logo_orange;
-                    color: $black;
-                }
-
-                h3 {
-                    margin-bottom: 0.5em;
-                }
-
-                figure {
-                    background-color: $light_black;
-                    float: left;
-                    margin-right: 0.5em;
-                    margin-bottom: 0.5em;
-                    border-radius: 0.5em;
-                    overflow:hidden;
-
-                    picture {
-
-                        img {
-                            display: block;
-                            width: 160px;
-                            height: 120px;
-                        }
-                    }
-                }
-
-                div {
-
-                    h4 {
-                        font-size: 1.25em;
-                        padding-bottom:0.5em;
-                    }
-
-                    p {
-                        display: block;
-                        line-height: 1.125em;
-                        padding: 0.125em;
-                    }
-                }
+            p {
+                display: block;
+                line-height: 1.125em;
+                padding: 0.125em;
             }
         }
     }

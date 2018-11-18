@@ -4,7 +4,7 @@
 
 <% #minimized_menu = (controller_name == "posts")||(!params[:category_id].blank?) %>
 
-<% content_for :header do %>
+<% content_for :top_menu do %>
     <%= render('posts/show/admin_notice_not_published') if !@post.published %>
 <% end %>
 

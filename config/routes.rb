@@ -32,11 +32,11 @@ Rails.application.routes.draw do
     as: "user_sitemap"
 
   get "cookies",
-    to: "homepage#cookies",
+    to: "homepage#cookies_info",
     as: "cookies"
 
   get "gdpr",
-    to: "homepage#gdpr",
+    to: "homepage#gdpr_info",
     as: "gdpr"
 
 ### HLAVNA STRANKA

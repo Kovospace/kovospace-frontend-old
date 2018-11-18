@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html lang="sk">
+<% content_for :header do %>
+    <%= stylesheet_link_tag 'gdpr' %>
+    <title> Kovo.Space </title>
+<% end %>
 
-<html>
+<header class="">
 
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <%#= stylesheet_link_tag 'gdpr' %>
-        <title> Kovo.Space </title>
-        <%= content_for :head %>
-    </head>
+</header>
 
-    <body class="sitemap">
+<nav class="">
 
-        <header class="">
+</nav>
 
-        </header>
+<main class="<%= action_name %>">
+    <%= yield %>
+</main>
 
-        <nav class="">
+<% parent_layout :application %>
 
-        </nav>
-
-        <main>
-            <%= yield %>
-        </main>
-
-        <footer>
-
-        </footer>
-
-     </body>
-
-</html>

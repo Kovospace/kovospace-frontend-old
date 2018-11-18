@@ -104,6 +104,14 @@ html {
             }
         }
 
+        &.post {
+            @import "./frontend/controllers/post";
+
+            main {
+                @import "./frontend/controllers/post/show";
+                @import "./frontend/controllers/post/show_comments";
+            }
+        }
 
     }
 }
