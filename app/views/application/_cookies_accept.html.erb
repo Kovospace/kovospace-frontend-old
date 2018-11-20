@@ -1,5 +1,62 @@
 
 <section id="cookies_accept">
+    <%= form_tag("/cookies", method: "post") do %>
 
+        <h3>Vesmír na to, aby fungoval musí obsahovať niektoré elementy</h3>
+        Sú to napríklad niektoré <b>cookies</b>
+
+        <br>
+        <br>
+
+        <div>
+            <span>
+                <%= check_box_tag(
+                    "cookie[base]",
+                    "1",
+                    true,
+                    disabled: true
+                ) %>
+                <%= label_tag "cookie[base]", raw("&#x2713;") %>
+            </span>
+            <p>
+                <b>Elementárne</b>
+                <br>
+                Tieto cookies sú nevyhnutné pre chod vesmíru a zapamätanie základných vlastností, ako sú napríklad aj tieto nastavenia.
+            </p>
+        </div>
+
+        <div>
+            <span>
+                <%= check_box_tag("cookie[personal]") %>
+                <%= label_tag "cookie[personal]", raw("&#x2713;") %>
+            </span>
+            <p>
+                <b>Osobné</b>
+                <br>
+                Tieto cookies môžu obsahovať dáta súvisiace s Vašou identitou a podliehajúce regulácií GDPR.
+                <br>
+                Môže to byť napríklad cookie, vďaka ktorej bude Vaše overenie a prihlásenie pre niektoré akcie na tomto webe prebiehať automaticky.
+            </p>
+        </div>
+
+        <div>
+            <span>
+                <%= check_box_tag("cookie[third]") %>
+                <%= label_tag "cookie[third]", raw("&#x2713;") %>
+            </span>
+            <p>
+                <b>Tretie strany</b>
+                <br>
+                Tieto cookies môžu byť požadované rôznymi monitorovacími a diagnostickými nástrojmi, napríklad na zisťovanie návštevnosti webu a jeho častí.
+                <br>
+                Takéto skúmanie ale býva anonymné.
+            </p>
+        </div>
+
+        <br>
+
+        <%= submit_tag "Uložiť nastavenie" %>
+
+    <% end %>
 </section>
 

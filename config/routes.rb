@@ -35,6 +35,9 @@ Rails.application.routes.draw do
     to: "homepage#cookies_info",
     as: "cookies"
 
+  post "cookies",
+    to: "cookies_settings#create"
+
   get "gdpr",
     to: "homepage#gdpr_info",
     as: "gdpr"

@@ -1,0 +1,93 @@
+footer {
+
+    section#cookies_accept {
+        font-size: 1.125em;
+        padding:1em;
+        background-color: $black;
+
+        h3 {
+            font-size: 1.5em;
+            color: $logo_orange;
+            margin-bottom: 0.25em;
+        }
+
+        div {
+            margin: 0.75em 0;
+            display: table;
+        }
+
+        p, span {
+              vertical-align: middle;
+              display: table-cell;
+        }
+
+        p {
+            line-height: 1.25em;
+
+            b {
+                color: $logo_orange;
+            }
+        }
+
+        input, label {
+            border-width: 0.25em;
+            border-style: solid;
+            border-color: $logo_orange;
+            border-radius: 0.25em;
+            margin: 0 1em;
+            background-color: $black;
+            font-size: 1em;
+            display: block;
+            font-weight: bold;
+            @include background_transition(0.15s);
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &[type=checkbox] {
+                display: none;
+
+                & + label {
+                    font-size:2em;
+                    border-width: 0.125em;
+                    min-width: 1em;
+                    min-height: 1em;
+                    text-align:center;
+                    vertical-align: middle;
+                    color: $black;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+
+                &:checked + label {
+                    background-color: $logo_orange;
+                }
+
+                &:disabled + label {
+                    background-color: $hell_grey;
+                    border-color: $hell_grey;
+
+                    &:hover {
+                        color: $black;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+
+            &[type=submit] {
+                color: $white;
+                padding: 0.25em 0.5em;
+                margin-left: auto;
+                margin-bottom: 1em;
+
+                &:hover {
+                    background-color: $logo_orange;
+                    color: $black;
+                }
+            }
+        }
+    }
+}

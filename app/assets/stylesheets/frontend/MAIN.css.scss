@@ -70,6 +70,7 @@ html {
         }
 
         @import "./frontend/main/footer";
+        @import "./frontend/main/cookies";
 
         &.homepage {
             @import "./frontend/controllers/homepage";
