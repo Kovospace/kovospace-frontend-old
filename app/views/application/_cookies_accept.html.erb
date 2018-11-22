@@ -10,6 +10,7 @@
 
         <div>
             <span>
+                <%#= hidden_field_tag "cookie[base]", "1" %>
                 <%= check_box_tag(
                     "cookie[base]",
                     "1",
@@ -27,7 +28,8 @@
 
         <div>
             <span>
-                <%= check_box_tag("cookie[personal]") %>
+                <%#= hidden_field_tag "cookie[personal]", "0" %>
+                <%= check_box_tag("cookie[personal]", "1", false) %>
                 <%= label_tag "cookie[personal]", raw("&#x2713;") %>
             </span>
             <p>
@@ -41,7 +43,8 @@
 
         <div>
             <span>
-                <%= check_box_tag("cookie[third]") %>
+                <%#= hidden_field_tag "cookie[third]", "0" %>
+                <%= check_box_tag("cookie[third]", "1", false) %>
                 <%= label_tag "cookie[third]", raw("&#x2713;") %>
             </span>
             <p>
