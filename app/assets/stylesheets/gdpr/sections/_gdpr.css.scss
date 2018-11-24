@@ -1,0 +1,53 @@
+h3 {
+    color: $frames;
+}
+
+h4 {
+    margin:0;
+    margin-bottom:0.75em;
+    color: $frames;
+}
+
+a.button {
+   font-size: 1.5em;
+   font-weight: bold;
+   padding: 0.25em 0.5em;
+   color: $frames;
+   border: 0.125em solid $frames;
+   text-decoration: none;
+   border-radius: 0.25em;
+   display: inline-block;
+   margin: 0.5em;
+
+   &:hover {
+        color: $background;
+        background-color: $frames;
+   }
+}
+
+section {
+    margin: 0 1em;
+
+    article {
+        margin: 0 1em;
+
+        p {
+            margin:0;
+            margin-left: 1em;
+        }
+
+        ul {
+            margin:0.5em;
+        }
+
+        div {
+            margin-left: 1em;
+            margin-top: 0.5em;
+        }
+
+        a {
+            color: $text;
+            font-weight: bold;
+        }
+    }
+}

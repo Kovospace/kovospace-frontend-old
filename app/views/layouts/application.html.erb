@@ -12,7 +12,7 @@
         <%= yield %>
         <footer>
             <%= content_for :foot %>
-            <% if @accept_cookie.blank? %>
+            <% if @accept_cookie.blank? && action_name != "cookies_info" %>
                 <%= render 'cookies_accept' %>
             <% end %>
         </footer>

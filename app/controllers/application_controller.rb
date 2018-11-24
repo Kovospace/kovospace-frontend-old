@@ -154,11 +154,11 @@ class ApplicationController < ActionController::Base
     end
 
     def cookies_accept
-      #render(partial: 'application/cookies_accept', layout: true)
-      #cookies = controller.send :cookies
-      @accept_cookie = cookies[:remember_cookies_accept]
-      #logger cookies.size
-
+      if !(c = cookies[:remember_cookies_accept]).nil?
+        @accept_cookie = JSON.parse(c)[0]
+      else
+        @accept_cookie = {}
+      end
     end
 
 end

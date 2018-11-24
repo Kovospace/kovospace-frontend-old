@@ -1,1 +1,116 @@
 <h2>Politika a nastavenia cookies</h2>
+<h3>Výpis a objasnenie funkcie jednotlivých súborov ukladaných na Vaše zariadenia</h3>
+
+<br>
+
+<%= form_tag("/cookies", method: "patch") do %>
+
+<section>
+    <div>
+        <span>
+            <%= hidden_field_tag "cookie[base]", "1" %>
+            <%= check_box_tag(
+                "cookie[base]",
+                "1",
+                true,
+                disabled: true
+            ) %>
+            <%= label_tag "cookie[base]", raw("&#x2713;") %>
+            <b>Elementárne</b>
+        </span>
+        <div>
+            Tieto cookies sú nevyhnutné pre chod webstránok.
+            <ul>
+                <li>
+                    <code>_mojWeb_session</code>
+                    <p>
+                        Základná, tzv. "session" cookie, tento typ cookies využívajú všetky web stránky na uloženie jedniečného tzv. "ID kľúča".
+                        <br>
+                        Vďaka nemu server (web stránka) vie, že keď uskutočníte dotaz - napríklad kliknutím na niečo - má obsah poslať práve Vám a nie niekomu druhému kto si v danej chvíli stránku tiež prezerá.
+                        <br><br>
+                        <b><i>Platnosť: </i></b>Tento kľúč, takzvané "session ID" je náhodne generovaný a anonymný a cookie s touto informáciou je vymazaná vždy po zavretí prehliadača a nanovo vytvorená nabudúce pri prvom spustení stránky.
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <code>remember_cookies_accept</code>
+                    <p>
+                        Táto cookie má za úlohu zapamätať si tieto nastavenia ohľadom cookies.
+                        <br>
+                        Ak ste postrehli, či už na tejto stránke alebo inde na internete, keď navštívite nejakú novú stránku zvykne vybehnúť okno ktoré Vás s otázkami o cookies otravuje. Opodstatnenie tejto cookie tkvie v tom, aby si Vaše voľby vedela stránka zapamätať a viac (po dobu jedného roka) Vás už s týmito otázkami neotravovala.
+                        <br><br>
+                        <b><i>Platnosť: </i></b>Táto cookie má nastavenú maximálnu možnú platnosť vyhovujúcu platnej Európskej legislatíve - 1 rok. Keď navštívite web rok po poslednej zmene nastavení, budem sa Vás pýtať na nastavenia znova.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <span>
+            <%#= hidden_field_tag "cookie[personal]", "0" %>
+            <%= check_box_tag(
+                "cookie[personal]",
+                "1",
+                !@accept_cookie["personal"].blank?
+            ) %>
+            <%= label_tag "cookie[personal]", raw("&#x2713;") %>
+            <b>Osobné</b>
+        </span>
+        <div>
+            Tieto cookies môžu obsahovať dáta súvisiace s Vašou identitou a podliehajúce regulácií GDPR.
+            <ul>
+                <li>
+                    <code>remember_user_token</code>
+                    <p>
+                        Cookie, ktorá bude použitá ak máte na webe vytvorený účet (kvôli sprístupneniu niektorých funkcií) a chcete svoje prihlásenie zapamätať, aby nebolo potrebné pri každej akcií vyžadujúcej prihlásenie prechádzať otravným procesom overovania.
+                        <br><br>
+                        <b><i>Platnosť: </i></b>Táto cookie má nastavenú platnosť na 12 týždňov. Po 12 týždňoch sa bude treba znovu prihlásiť.
+                    </p>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <span>
+            <%#= hidden_field_tag "cookie[third]", "0" %>
+            <%= check_box_tag(
+                "cookie[third]",
+                "1",
+                !@accept_cookie["third"].blank?
+            ) %>
+            <%= label_tag "cookie[third]", raw("&#x2713;") %>
+            <b>Tretie strany</b>
+        </span>
+        <div>
+            <b><i>Takúto architektúru a obsah na tomto webe zatiaľ nie je v pláne používať</i></b>
+            <br>
+            <ul>
+                <li>
+                    Tieto cookies môžu byť požadované rôznymi monitorovacími a diagnostickými nástrojmi, napríklad na zisťovanie návštevnosti webu a jeho častí, prípadne službami a obsahom tretích strán, ktoré budú na webe integrované.
+                </li>
+                <br>
+                <li>
+                    Takýmto obsahom môže byť napríklad integrácia so sociálnymi sieťami alebo vložený obsah ako napríklad YouTube videá, Google reklamy a podobné.
+                </li>
+                <br>
+                <li>
+                    Nastavenia cookies a splnenie podmienok daných reguláciou GDPR v tomto prípade bývajú v réžií jednotlivých tretích strán. Zvolením tejto možnosti vyjadrujete súhlas, že ste danej problematike porozumeli a prípadný obsah <b>Vám bude môcť byť sprístupnený. O nutnosti povoliť toto nastavenie budete prípadne informovaný pri pokuse o prístup k dotknutému obsahu.</b>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <br><br>
+
+    <%= submit_tag "Uložiť nastavenie" %>
+
+</section>
+
+<% end %>

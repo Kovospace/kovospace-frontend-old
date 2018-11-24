@@ -38,6 +38,9 @@ Rails.application.routes.draw do
   post "cookies",
     to: "cookies_settings#create"
 
+  patch "cookies",
+    to: "cookies_settings#update"
+
   get "gdpr",
     to: "homepage#gdpr_info",
     as: "gdpr"
