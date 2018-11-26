@@ -73,7 +73,7 @@ Rails.application.routes.draw do
     as: "destroy_skill"
 
   # popis progresu na skilloch
-
+=begin
   get '/work_state',
     to: "work_states#index",
     as: "work_states"
@@ -100,19 +100,19 @@ Rails.application.routes.draw do
   delete '/work_state.:id',
     to: "work_states#destroy",
     as: "destroy_work_state"
-
+=end
   # kontaktny formular
 
-  get '/contact',
-    to: "contacts#index",
-    as: "contacts"
+  #get '/#kontakt',
+    #to: "homepage#index",
+    #as: "contacts"
 
   get "/admin/contacts",
     to: "admin#list_contacts",
     as: "list_contacts"
 
   get '/contact/new',
-    to: "contacts#new",
+    to: "homepage#new_contact",
     as: "new_contact"
 
   get '/contact/:id/edit',
@@ -123,8 +123,8 @@ Rails.application.routes.draw do
     to: "contacts#show",
     as: "show_contact"
 
-  post '/contact',
-    to: "contacts#create"
+  post '/',
+    to: "homepage#create_contact"
 
   post '/contact/:id/seen',
     to: "contacts#seen"

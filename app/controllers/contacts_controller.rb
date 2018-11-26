@@ -2,11 +2,11 @@ class ContactsController < ApplicationController
 
     before_action :authorize_admin, except: [:index, :new, :create]
 
-    layout "admin", only: [:new, :create, :edit, :update, :show]
+    layout "admin", only: [:edit, :update, :show]
 
-    def index
-        redirect_to controller: "homepage", action: 'index'
-    end
+    #def index
+    #    redirect_to controller: "homepage", action: 'index'
+    #end
 
     def seen
         update_seen true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181104141425) do
+ActiveRecord::Schema.define(version: 20181125225246) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -109,10 +109,13 @@ ActiveRecord::Schema.define(version: 20181104141425) do
     t.string   "sender"
     t.text     "msg"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.text     "title"
     t.boolean  "seen"
+    t.boolean  "accept_gdpr"
+    t.string   "opt_out_token"
+    t.string   "opt_out_pass"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

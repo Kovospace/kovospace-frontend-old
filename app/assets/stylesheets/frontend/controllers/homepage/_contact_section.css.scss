@@ -6,17 +6,15 @@ section#kontakt {
         form {
 
             div {
-                display: table;
-                font-size: 1.5em;
+                margin: 0.5em 0;
                 width:100%;
 
                 span {
-                    display: table-cell;
-                    padding: 0.25em;
-                    vertical-align: top;
+                    display: block;
+                    font-size: 1.25em;
 
-                    &:first-child {
-                         width:1%;
+                    input {
+                        font-size: 1.25em;
                     }
 
                     input, textarea {
@@ -35,21 +33,32 @@ section#kontakt {
                     textarea {
                         min-height: 25vh;
                     }
-
                 }
 
                 &#no_sputnik_check {
-                    text-align: right;
-                    display: block;
+                    display: table;
+                    table-layout: fixed;
+                    color: $dirty_white;
 
                     span {
-                        display: inline-block;
+                        display: table-cell;
                         vertical-align: middle;
-                        width:auto;
+
+                        &:first-child {
+                            width: 2em;
+                        }
 
                         input, label {
                             vertical-align: middle;
                             cursor: pointer;
+
+                            a {
+                                text-decoration: underline;
+
+                                &:hover {
+                                    color: $pure_white;
+                                }
+                            }
                         }
 
                         input {

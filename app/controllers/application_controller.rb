@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
 
     before_action :new_action, only: :new
 
-    before_action :create_action, only: :create, if: :user_signed_in?
+    before_action :create_action, only: :create, if: :create_action_validation
 
     before_action :edit_action, only: :edit
 
@@ -159,6 +159,10 @@ class ApplicationController < ActionController::Base
       else
         @accept_cookie = {}
       end
+    end
+
+    def create_action_validation
+      user_signed_in?||controller_name='contact'
     end
 
 end

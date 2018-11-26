@@ -1,19 +1,21 @@
 <article>
 
-    <%= form_for @contact do |c| %>
+    <%= form_for @contact, url: '/#kontakt' do |c| %>
 
         <div>
-            <span> <%= c.label :sender %> </span>
-            <span> <%= c.text_field :sender %> </span>
+            <span>
+                <%= c.text_field(
+                    :sender,
+                    placeholder: "E-mail"
+                ) %>
+            </span>
         </div>
 
         <div>
-            <span> <%= c.label :title %> </span>
-            <span> <%= c.text_field :title %> </span>
+            <span> <%= c.text_field :title, placeholder: "Predmet" %> </span>
         </div>
 
         <div>
-            <span> <%= c.label :msg %> </span>
             <span> <%= c.text_area :msg %> </span>
         </div>
 
@@ -22,7 +24,20 @@
                 <%= c.check_box :i_am_not_sputnik %>
             </span>
             <span>
-                <%= c.label :i_am_not_sputnik %>
+                <%= c.label :i_am_not_sputnik, "Nie som robot" %>
+            </span>
+        </div>
+
+        <div id="no_sputnik_check">
+            <span>
+                <%= c.check_box :accept_gdpr %>
+            </span>
+            <span>
+                <%= c.label :accept_gdpr do %>
+                    Súhlasím so spracovaním osobných údajov a rozumiem
+                    <%= link_to "politike GDPR", gdpr_path %>
+                    platnej na tomto webe
+                <% end %>
             </span>
         </div>
 
