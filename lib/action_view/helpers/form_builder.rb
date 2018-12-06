@@ -1,18 +1,25 @@
 class ActionView::Helpers::FormBuilder
 
-  	def errors(field, continue: false)
+  	def errors(field, continue: false, full_msgs: true)
 
-	    if !@object.errors[field].blank? 
-	    	err = ""
+	    if !@object.errors[field].blank?
+	    	html = ""
+            errs = full_msgs ? @object.errors.full_messages_for(field) : @object.errors[field]
 	    	if continue
-		    	@object.errors[field].each do |e|
-		    		err += @template.content_tag(:span, e, class: "validation_error_message")
+		    	errs.each do |e|
+		    		html += @template.content_tag(:span, e, class: "validation_error_message")
 		    	end
 		    else
-		    	err += @template.content_tag(:span, @object.errors[field].first, class: "validation_error_message")
+		    	html += @template.content_tag(:span, errs.first, class: "validation_error_message")
 		    end
-	    	return err.html_safe
+	    	return html.html_safe
 	    end
+  	end
+
+  	def error_class(field)
+  		if !@object.errors[field].blank?
+  			return "error"
+  		end
   	end
 
 end

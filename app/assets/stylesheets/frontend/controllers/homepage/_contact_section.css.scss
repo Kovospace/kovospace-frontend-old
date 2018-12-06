@@ -13,6 +13,36 @@ section#kontakt {
                     display: block;
                     font-size: 1.25em;
 
+                    &.validation_error_message {
+                        font-weight: bold;
+                        line-height: 1.75em;
+                        vertical-align: middle;
+                        display: inline-block;
+                        color: $white;
+                        background-color: $hell_grey;
+                        padding: 0 0.625em;
+                        margin-top: 0.5em;
+                        border-radius: 0.75em;
+                        margin-left: 2.125em;
+                        position: relative;
+
+                        &:before {
+                            content: '!';
+                            position: absolute;
+                            right:100%;
+                            margin-right:0.5em;
+                            width:1.25em;
+                            height: 1.25em;
+                            line-height: 1.25em;
+                            border: 0.25em solid $white;
+                            background-color: $bord;
+                            text-align: center;
+                            border-radius: 50%;
+                            font-weight: bold;
+                            vertical-align: middle;
+                        }
+                    }
+
                     input {
                         font-size: 1.25em;
                     }
@@ -24,6 +54,10 @@ section#kontakt {
                         font-family: verdana,tahoma,"Bitstream Vera Sans","DejaVu Sans",arial,helvetica,sans-serif;
                         @include box_sizing();
                         background-color: $dirty_white;
+
+                        &.error {
+                            //background-color: $bord;
+                        }
 
                         &:active, &:focus {
                             background-color: $pure_white;
@@ -59,6 +93,15 @@ section#kontakt {
                                     color: $pure_white;
                                 }
                             }
+                        }
+
+                        span.validation_error_message {
+                            font-size: 1em;
+                            display: inline-block;
+                            margin-top: 0;
+                            margin: 0.125em;
+                            margin-left: 2.25em;
+
                         }
 
                         input {

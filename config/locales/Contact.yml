@@ -1,0 +1,43 @@
+en:
+  activerecord:
+    models:
+      Contact: Contact
+    attributes:
+      contact:
+        sender: e-mail
+        msg: message
+    errors:
+      models:
+        contact:
+          attributes:
+            sender:
+              blank: is empty
+              bad_format: wrong format
+            msg:
+              blank: is empty
+            accept_gdpr:
+              gdpr_accept: need permission to process personal data
+            i_am_not_sputnik:
+              i_am_kokot: entrance for robots is denied
+
+sk:
+  activerecord:
+    models:
+      Contact: Kontakt
+    attributes:
+      contact:
+        sender: e-mail
+        msg: správa
+    errors:
+      models:
+        contact:
+          attributes:
+            sender:
+              blank: nebol zadaný
+              bad_format: je zadaný nesprávne
+            msg:
+              blank: ostala nevyplnená
+            accept_gdpr:
+              gdpr_accept: potrebujem Váš súhlas na spracovanie osobných údajov
+            i_am_not_sputnik:
+              i_am_kokot: robot má vstup zakázaný
