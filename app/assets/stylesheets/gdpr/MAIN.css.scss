@@ -25,6 +25,15 @@ html {
                 margin-bottom: 0.75em;
             }
 
+            ul {
+                margin:0.75em 0;
+                margin-left: 0.75em;
+            }
+
+            section {
+                line-height: 115%;
+            }
+
             &.cookies_info {
                 @import "./gdpr/sections/cookies";
             }

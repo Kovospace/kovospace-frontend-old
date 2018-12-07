@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181125225246) do
+ActiveRecord::Schema.define(version: 20181207013559) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -247,6 +247,7 @@ ActiveRecord::Schema.define(version: 20181125225246) do
     t.boolean  "admin"
     t.integer  "role"
     t.text     "generated_password"
+    t.boolean  "accept_gdpr"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

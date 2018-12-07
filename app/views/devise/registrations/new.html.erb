@@ -26,6 +26,19 @@
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Zopakovať heslo" %>
   </div>
 
+  <div class="field" id="accept_gdpr">
+      <%= f.check_box(
+        :accept_gdpr
+      ) %>
+      <%= f.label(
+        :accept_gdpr
+      ) do %>
+        Prečítal som a rozumiem politike
+        <%= link_to "Ochrany osobných údajov - GDPR", gdpr_path %>
+        a súhlasím so spracovaním osobných údajov.
+      <% end %>
+    </div>
+
   <div class="actions">
     <%= f.submit "Zaregistrovať" %>
   </div>

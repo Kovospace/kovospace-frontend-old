@@ -1,9 +1,8 @@
-@import "./frontend/specials/variables";
-@import "./frontend/specials/mixins";
-@import "./frontend/specials/effects";
+@import "./_VARS/colors";
+@import "./_VARS/mixins";
+@import "./_VARS/effects";
 @import "./frontend/specials/sketches";
 
-@import "./frontend/main/reset_css";
 @import "./frontend/main/base";
 @import "./frontend/main/z_indexes";
 
@@ -68,9 +67,6 @@ html {
             @import "./frontend/main/main";
             @import "./frontend/main/pagination";
         }
-
-        @import "./frontend/main/footer";
-        @import "./frontend/main/cookies";
 
         &.homepage {
             @import "./frontend/controllers/homepage";

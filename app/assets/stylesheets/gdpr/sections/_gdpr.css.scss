@@ -37,7 +37,15 @@ section {
         }
 
         ul {
-            margin:0.5em;
+
+            li {
+
+                &:before {
+                    content: '\2022';
+                    vertical-align: middle;
+                    color: $frames;
+                }
+            }
         }
 
         div {
@@ -48,6 +56,10 @@ section {
         a {
             color: $text;
             font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;;
+            }
         }
     }
 }

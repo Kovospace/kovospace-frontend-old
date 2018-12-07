@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="sk">
 
-<html>
+    <% content_for :header do %>
 
-    <head>
         <%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track' => true %>
         <%#= javascript_include_tag "application" %>
         <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,9 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title> Kovo.Space </title>
         <%#= content_for :head %>
-    </head>
 
-    <body>
+    <% end %>
+
+
 
         <noscript>
             <nav class="for_nojs">
@@ -35,11 +33,7 @@
             </section>
         </main>
 
-        <footer>
 
-        </footer>
 
-     </body>
-
-</html>
+<% parent_layout :application %>
 

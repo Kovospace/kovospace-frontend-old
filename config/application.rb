@@ -37,6 +37,8 @@ module MojWeb
 
     config.eager_load_paths << Rails.root.join('lib')
 
+    require 'action_view/base/field_error_proc'
+
     require 'action_view/helpers/form_builder'
 
     require 'string'

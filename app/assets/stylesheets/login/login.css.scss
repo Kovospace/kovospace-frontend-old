@@ -11,7 +11,9 @@ input, select, textarea, button {
     -o-appearance:          none;
     appearance:             none;
     outline:    none;
-    border:0.125em solid $frames;
+    border-width:0.125em;
+    border-style: solid;
+    border-color: $frames;
     margin:0.125em;
     padding:0.125em 0.375em;
     background-color: $background;
@@ -49,6 +51,21 @@ input[type=checkbox] {
             background-color: $checkbox_checked_hover;
         }
     }
+
+    &:disabled {
+        border-color: $checkbox_unchecked;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: $checkbox_unchecked;
+        }
+
+        & + label {
+            color: $checkbox_unchecked;
+            cursor: not-allowed;
+        }
+    }
+
 }
 
 button, input[type=submit] {
@@ -79,6 +96,38 @@ html {
         background-color: $background;
         color: $text;
 
+        &.session {
+            main { section { max-width: 50%; } }
+        }
+
+        &.registration {
+            main {
+
+                section {
+                    padding: 10%;
+
+                    div#accept_gdpr {
+                        //display: table;
+
+                        input {
+                            display: block;
+                            float: left;
+                        }
+
+                        label {
+                            display: table;
+                            margin-left:1.5em;
+
+                            a {
+                                color: $frames;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         header {
            display: table-cell;
            width:33%;
@@ -101,6 +150,16 @@ html {
 
                         input, label {
                             vertical-align: middle;
+                        }
+                    }
+
+                    div.warn {
+                        padding: 0 0.75em;
+                        line-height:1.125em;
+
+                        a {
+                            color: $frames;
+                            cursor: pointer;
                         }
                     }
                 }

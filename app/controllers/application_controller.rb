@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
 
     include ApplicationConcern
     include BeforeRender
-    include ClassOnInputWithError
     include ApplicationAbstract
     require 'naturally'
 
