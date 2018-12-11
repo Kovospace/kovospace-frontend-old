@@ -396,7 +396,8 @@ devise_for(
   path: '',
   controllers: {
     sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
   },
   path_names: {
     sign_in: 'prihlasenie',

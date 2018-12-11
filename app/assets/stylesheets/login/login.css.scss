@@ -4,6 +4,10 @@
     font-size: 1em;
 }
 
+p.notice, p.alert {
+    display: none;
+}
+
 input, select, textarea, button {
     -webkit-appearance:     none;
     -moz-appearance:        none;
@@ -145,6 +149,15 @@ html {
 
                 form {
 
+                    div {
+
+                        span.validation_error_message {
+                            display: inline-block;
+                            margin-left: 0.75em;
+                            color: $error;
+                        }
+                    }
+
                     div.field, div.actions {
                         margin: 0.5em;
 
@@ -168,6 +181,15 @@ html {
                     margin: 0.5em;
                     text-align: right;
                     line-height: 2em;
+                }
+
+                div.error {
+                    margin: 0.5em;
+                    display: inline-block;
+                    padding: 0.5em;
+                    border-radius: 0.5em;
+                    background-color: $error;
+                    //font-weight: bold;
                 }
 
                 figure.fighter:first-child {

@@ -8,6 +8,7 @@
 <br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
   <div class="field">
     <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "meno" %>
   </div>
@@ -34,9 +35,16 @@
      <%= cookie_permissions_warn %>
   </div>
 
+  <% if !alert.blank? %>
+    <div class="error">
+      <%= alert %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Prihlásiť sa" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>

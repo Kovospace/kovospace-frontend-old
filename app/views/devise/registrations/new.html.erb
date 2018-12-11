@@ -4,14 +4,16 @@
 <% end %>
 
 <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-  <%= devise_error_messages! %>
+  <%#= devise_error_messages! %>
 
-   <div class="field">
+  <div class="field">
     <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Meno" %>
+    <br><%= f.errors :name %>
   </div>
 
   <div class="field">
     <%= f.email_field :email, autocomplete: "email",  placeholder: "E-mail" %>
+    <br><%= f.errors :email %>
   </div>
 
   <div class="field">
@@ -20,24 +22,28 @@
     <% if @minimum_password_length %>
       <em>&nbsp;&nbsp;&nbsp;minimálny počet znakov: <%= @minimum_password_length %></em>
     <% end %>
+    <br>
+    <%= f.errors :password %>
   </div>
 
   <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Zopakovať heslo" %>
+    <%= f.errors :password_confirmation%>
   </div>
 
   <div class="field" id="accept_gdpr">
-      <%= f.check_box(
-        :accept_gdpr
-      ) %>
-      <%= f.label(
-        :accept_gdpr
-      ) do %>
-        Prečítal som a rozumiem politike
-        <%= link_to "Ochrany osobných údajov - GDPR", gdpr_path %>
-        a súhlasím so spracovaním osobných údajov.
-      <% end %>
-    </div>
+    <%= f.check_box(
+      :accept_gdpr
+    ) %>
+    <%= f.label(
+      :accept_gdpr
+    ) do %>
+      Prečítal som a rozumiem politike
+      <%= link_to "Ochrany osobných údajov - GDPR", gdpr_path %>
+      a súhlasím so spracovaním osobných údajov.
+    <% end %>
+    <%= f.errors :accept_gdpr, full_msgs: false %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Zaregistrovať" %>

@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   validates :role, presence: true
   validates :name, presence: true, uniqueness: true
 
+  validates :accept_gdpr, acceptance: { accept: true, message: :gdpr_accept }, on: :create
+
   def role_human
       VirtualModel::UserRole.find(role).title
   end

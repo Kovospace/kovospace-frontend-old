@@ -1,0 +1,37 @@
+en:
+  activerecord:
+    models:
+      User: User
+    attributes:
+      user:
+        name: name
+        email: e-mail
+        password: password
+    errors:
+      models:
+        user:
+          attributes:
+            accept_gdpr:
+              gdpr_accept: You must accept personal information processing
+
+sk:
+  activerecord:
+    models:
+      User: User
+    attributes:
+      user:
+        name: Meno
+        email: E-mail
+        password: Heslo
+    errors:
+      models:
+        user:
+          attributes:
+            accept_gdpr:
+              gdpr_accept: Pre používanie účtu je potrebné súhlasiť so spracovaním osobmých údajov
+            email:
+              not_found: nenájdený
+
+
+
+
