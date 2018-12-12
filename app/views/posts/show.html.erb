@@ -28,7 +28,8 @@
 <section id="comments">
     <h3>Diskusia</h3>
     <%= render('comments/user_panel') %>
-    <%= render('comments/add_comment') if (action_name != "reply_to_comment")&&(@relation_id.blank?) %>
+    <%#= render('comments/add_comment') if (action_name != "reply_to_comment")&&(@relation_id.blank?) %>
+    <%= render('comments/add_comment', path: :add_comment, typ: :post) if (action_name != "reply_to_comment")&&(action_name != "edit_my_comment")&&(@relation_id.blank?) %>
     <%= render('comments/comments') %>
 </section>
 

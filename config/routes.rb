@@ -391,6 +391,14 @@ Rails.application.routes.draw do
       to: "posts#create_comment",
       as: "add_reply"
 
+  get "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentar/:id/upravit",
+      to: "posts#edit_my_comment",
+      as: "edit_my_comment"
+
+  patch "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentar/:id/upravit",
+      to: "posts#update_my_comment",
+      as: "update_my_comment"
+
 devise_for(
   :users,
   path: '',

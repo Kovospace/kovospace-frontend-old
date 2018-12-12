@@ -28,32 +28,53 @@
                     <div>
                         <i> <%= comment.created_at.strftime("%A %e. %B %Y, %H:%M") %> </i>
                     </div>
+
                     <div>
-                        <% if class_append %>
-                            <a href="">Upraviť</a>
+                        <% if comment.user == current_user %>
+                            <%= link_to("Upraviť", edit_my_comment_path(@blog, @category, params[:page], @post, comment.id, anchor: comment.relation_id)) %>
                             <a href="" class="danger">Odstrániť</a>
                             <noscript>
                                 <a href="" class="danger">Odstrániť</a>
                             </noscript>
                         <% end %>
-                        <%= link_to(
-                                reply_to_comment_path(@blog, @category, params[:page], @post, comment.id, anchor: comment.relation_id)
-                            ) do %>
-                                <b> Odpovedať </b>
+
+                        <% if user_signed_in? %>
+                            <%= link_to(
+                                    reply_to_comment_path(@blog, @category, params[:page], @post, comment.id, anchor: comment.relation_id)
+                                ) do %>
+                                    <b> Odpovedať </b>
+                            <% end %>
                         <% end %>
                     </div>
+
                     <br>
                     <span>
                         <%= comment.comment %>
                     </span>
                 </div>
 
+
                 <% if comment.id == params[:id].to_i %>
 
-                    <%= render(
-                        'comments/add_comment',
-                        klass: class_append
-                    ) %>
+                    <% if action_name == "reply_to_comment" %>
+
+                        <%= render(
+                            'comments/add_comment',
+                            klass: class_append,
+                            path: :add_reply,
+                            typ: :post
+                        ) %>
+
+                    <% elsif action_name == "edit_my_comment" %>
+
+                        <%= render(
+                            'comments/add_comment',
+                            klass: class_append,
+                            path: :update_my_comment,
+                            typ: :patch
+                        ) %>
+
+                    <% end %>
 
                 <% end %>
 

@@ -102,6 +102,7 @@ html {
         }
 
         &.post {
+            @import "./frontend/controllers/blog/blog_show";
             @import "./frontend/controllers/post";
 
             main {

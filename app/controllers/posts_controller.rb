@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-	before_action :authorize_admin, except: [:all, :show, :create_comment, :reply_to_comment]
+	before_action :authorize_admin, except: [:all, :show, :create_comment, :reply_to_comment, :edit_my_comment, :update_my_comment]
 
 	before_action :authenticate_user!, only: [:create_comment, :reply_to_comment]
 
@@ -31,14 +31,16 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.build
 		@comment.user = current_user
-		saved = @comment.update(permitted_comment_params)
+		if !params[:comment][:reply_to].blank?
+			saved = @comment.update(permitted_comment_params_reply)
+		else
+			saved = @comment.update(permitted_comment_params)
+		end
 		if saved
 			## presmerovat na novy comment id
 			redirect_to (session[:comment_after_add_back_path] + "##{@comment.relation_id}")
 		else
-			if !params[:comment][:reply_to].blank?
-				load_on_reply
-			end
+			load_on_reply if !params[:comment][:reply_to].blank?
 			load_on_show
 			render "show"
 		end
@@ -51,11 +53,38 @@ class PostsController < ApplicationController
 		render "show"
 	end
 
+	def edit_my_comment
+		@post = Post.find(params[:post_id])
+		@comment = Comment.find(params[:id])
+		load_on_show
+		render "show"
+	end
+
+	def update_my_comment
+		@post = Post.find(params[:post_id])
+		@comment = Comment.find(params[:id])
+		if @comment.user == current_user
+			saved = @comment.update(permitted_comment_params)
+			if saved
+				redirect_to (session[:comment_after_add_back_path] + "##{@comment.relation_id}")
+			else
+				#if !params[:comment][:reply_to].blank?
+				#	load_on_reply
+				#end
+				load_on_show
+				render "show"
+			end
+		else
+			# obrana #1 proti editovaniu cudzieho komentu
+			redirect_to (session[:comment_after_add_back_path])
+		end
+	end
+
 	private
 
 	def _choose_layout
         case action_name
-        when "all", "show"
+        when "all", "show", "reply_to_comment", "create_comment", "edit_my_comment"
             return "base"
         when "new", "create", "edit", "update"
             return "admin"
@@ -143,6 +172,12 @@ class PostsController < ApplicationController
 	end
 
 	def permitted_comment_params
+		params[:comment].permit(
+		 	:comment
+		)
+	end
+
+	def permitted_comment_params_reply
 		params[:comment].permit(
 		 	:reply_to,
 		 	:comment
