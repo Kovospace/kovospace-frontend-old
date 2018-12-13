@@ -379,6 +379,13 @@ Rails.application.routes.draw do
     to: "comments#all",
     as: "comments"
 
+  get "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentare",
+      to: "posts#show_comments",
+      as: "show_comments"
+
+  get "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentare/pridat",
+      to: "posts#show_comments"
+
   post "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentare/pridat",
       to: "posts#create_comment",
       as: "add_comment"
@@ -388,7 +395,7 @@ Rails.application.routes.draw do
       as: "reply_to_comment"
 
   post "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentar/:id/odpoved",
-      to: "posts#create_comment",
+      to: "posts#create_reply",
       as: "add_reply"
 
   get "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentar/:id/upravit",
@@ -398,6 +405,10 @@ Rails.application.routes.draw do
   patch "/blog(/:blog_id)(/:category_id)(/strana-:page)(/:post_id)/komentar/:id/upravit",
       to: "posts#update_my_comment",
       as: "update_my_comment"
+
+  delete "/komentar/:id/odstranit",
+    to: "posts#destroy_my_comment",
+    as: "destroy_my_comment"
 
 devise_for(
   :users,

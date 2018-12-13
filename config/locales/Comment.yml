@@ -1,0 +1,21 @@
+sk:
+  activerecord:
+    models:
+      Comment: Komentáre
+    attributes:
+      comment:
+        comment: Komentár
+    errors:
+      models:
+        comment:
+          attributes:
+            comment:
+              blank: nesmie byť prázdny
+
+
+  controllers:
+    posts:
+      links:
+        create_article: Vytvoriť nový článok
+        edit_article: Upraviť článok
+        delete_article: Odstrániť článok

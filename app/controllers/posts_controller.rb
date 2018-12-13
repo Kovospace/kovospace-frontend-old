@@ -1,10 +1,33 @@
 class PostsController < ApplicationController
 
-	before_action :authorize_admin, except: [:all, :show, :create_comment, :reply_to_comment, :edit_my_comment, :update_my_comment]
+	before_action :authorize_admin, except: [
+		:all,
+		:show,
+		:create_comment,
+		:reply_to_comment,
+		:create_reply,
+		:edit_my_comment,
+		:update_my_comment,
+		:destroy_my_comment,
+		:show_comments
+	]
 
-	before_action :authenticate_user!, only: [:create_comment, :reply_to_comment]
+	before_action :authenticate_user!, only: [
+		:create_comment,
+		:reply_to_comment,
+		:create_reply
+	]
 
-	before_render :decide_breadcrumbs, only: [:show, :all]
+	before_render :decide_breadcrumbs, only: [
+		:show,
+		:all,
+		:show_comments,
+		:create_comment,
+		:reply_to_comment,
+		:edit_my_comment,
+		:update_my_comment,
+		:destroy_my_comment,
+	]
 
 	## override
 	def show
@@ -27,20 +50,27 @@ class PostsController < ApplicationController
 		redirect_to :list_posts
 	end
 
+	def show_comments
+		#redirect_to (session[:comment_after_add_back_path] + "/komentare/pridat#comments")
+		@post = Post.find(params[:post_id])
+		load_on_show
+		render "show"
+	end
+
 	def create_comment
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.build
 		@comment.user = current_user
-		if !params[:comment][:reply_to].blank?
-			saved = @comment.update(permitted_comment_params_reply)
-		else
+		#if !params[:comment][:reply_to].blank?
+			#saved = @comment.update(permitted_comment_params_reply)
+		#else
 			saved = @comment.update(permitted_comment_params)
-		end
+		#end
 		if saved
 			## presmerovat na novy comment id
 			redirect_to (session[:comment_after_add_back_path] + "##{@comment.relation_id}")
 		else
-			load_on_reply if !params[:comment][:reply_to].blank?
+			#load_on_reply if !params[:comment][:reply_to].blank?
 			load_on_show
 			render "show"
 		end
@@ -51,6 +81,19 @@ class PostsController < ApplicationController
 		load_on_reply
 		load_on_show
 		render "show"
+	end
+
+	def create_reply
+		@post = Post.find(params[:post_id])
+		@comment = @post.comments.build
+		@comment.user = current_user
+		if @comment.update(permitted_comment_params_reply)
+			redirect_to (session[:comment_after_add_back_path] + "##{@comment.relation_id}")
+		else
+			load_on_reply
+			load_on_show
+			render "show"
+		end
 	end
 
 	def edit_my_comment
@@ -80,11 +123,20 @@ class PostsController < ApplicationController
 		end
 	end
 
+	def destroy_my_comment
+		@comment = Comment.find(params[:id])
+		if @comment.user == current_user
+			if @comment.destroy
+				redirect_to (session[:comment_after_add_back_path] + "#comments")
+			end
+		end
+	end
+
 	private
 
 	def _choose_layout
         case action_name
-        when "all", "show", "reply_to_comment", "create_comment", "edit_my_comment"
+        when "all", "show", "reply_to_comment", "create_comment", "edit_my_comment", "show_comments", "create_reply"
             return "base"
         when "new", "create", "edit", "update"
             return "admin"
@@ -166,8 +218,7 @@ class PostsController < ApplicationController
 		 	tags_attributes: [:id, :title],
 		 	tag_ids: [],
 		 	categories_attributes: [:id, :title],
-		 	category_ids: []#,
-		 	#comments_attributes: [:id, :comment, :reply_to]
+		 	category_ids: []
 		)
 	end
 

@@ -49,7 +49,7 @@ html {
                 }
             }
 
-            &.blogs.show, &.posts.show, &.posts.all  {
+            &.blogs.show, &.posts /*&.posts.show, &.posts.all*/  {
                 text-align: left;
                 padding:0;
                 @import "./frontend/controllers/blog/header_show";

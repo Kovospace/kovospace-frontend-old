@@ -1,14 +1,19 @@
 
 <%
     klass = "" if klass.nil?
-    args =  {
-                blog_id: @blog,
-                category_id: @category,
-                page: params[:page],
-                post_id: @post,
-                id: params[:id]
-            }
-    #url = klass.blank? ? add_comment_path(args) : add_reply_path(args)
+    args = {
+        blog_id: @blog,
+        category_id: @category,
+        page: params[:page],
+        post_id: @post,
+        id: (path == :add_comment ? nil : params[:id])
+    }
+    if path == :add_comment
+         reply_to_html_id = "comments"
+    elsif path == :add_reply
+        reply_to_html_id = @relation_id.sub(/-[0-9]+$/, "")
+    end
+    args.merge!({ anchor: reply_to_html_id })
     url = public_send(path.to_s+"_path", args)
 %>
 
@@ -27,6 +32,11 @@
 
             <div class="submit">
                 <%= p.submit %>
+                <%= link_to(
+                    "Storno",
+                    show_comments_path(@blog, @category, params[:page], @post, anchor: reply_to_html_id),
+                    class: "storno"
+                ) %>
             </div>
 
         <% else %>

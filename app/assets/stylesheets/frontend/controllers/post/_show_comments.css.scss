@@ -24,7 +24,7 @@ section#comments {
                 text-align: right;
             }
 
-            input[type=submit], span.comments_notice > a {
+            input[type=submit], span.comments_notice > a, a.storno {
                 display: inline-block;
                 background-color: transparent;
                 color: $white;
@@ -33,6 +33,9 @@ section#comments {
                 padding:0.25em 0.5em;
                 font-size: 1.25em;
                 cursor: pointer;
+                vertical-align: middle;
+                line-height:1.125em;
+                margin:0 0.25em;
                 @include background_transition(0.25s);
 
                 &:hover {
@@ -51,6 +54,14 @@ section#comments {
                     padding: 0.5em;
                     border-radius: 0.25em;
                 }
+
+                &.validation_error_message {
+                    color: $bord;
+                    margin-left: 0.5em;
+                    font-size: 1.25em;
+                    display: inline-block;
+                    line-height:1.5em;
+                }
             }
         }
     }
@@ -68,6 +79,10 @@ section#comments {
             @include box_sizing();
 
             &.my {
+                background-color: $earth_blue;
+            }
+
+            &.replying {
                 border: 0.25em solid $logo_orange;
             }
 

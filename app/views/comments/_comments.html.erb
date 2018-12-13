@@ -16,12 +16,16 @@
 
                 <%
                     class_append = (comment.user == current_user) ? "my" : ""
+                    class_append += " replying" if comment.id == params[:id].to_i
                     deepness = comment.relation_id.to_s.count('-')
                     margin = (deepness > 6) ? 6 : deepness
                     class_append += " sub#{margin}"
                 %>
 
-                <div class="comment <%= class_append %>" id="<%= comment.relation_id %>">
+                <div class="comment <%= class_append %>">
+
+                    <a class="anchor" id="<%= comment.relation_id %>"></a>
+
                     <div>
                         <b> <%= comment.user.name %> </b>
                     </div>
@@ -30,20 +34,37 @@
                     </div>
 
                     <div>
-                        <% if comment.user == current_user %>
-                            <%= link_to("Upraviť", edit_my_comment_path(@blog, @category, params[:page], @post, comment.id, anchor: comment.relation_id)) %>
-                            <a href="" class="danger">Odstrániť</a>
-                            <noscript>
-                                <a href="" class="danger">Odstrániť</a>
-                            </noscript>
-                        <% end %>
-
                         <% if user_signed_in? %>
+
+                            <% if comment.user == current_user %>
+                                <%= link_to(
+                                    "Upraviť",
+                                    edit_my_comment_path(
+                                        @blog,
+                                        @category,
+                                        params[:page],
+                                        @post,
+                                        comment.id,
+                                        anchor: comment.relation_id
+                                    )
+                                ) %>
+                                <%= link_to(
+                                    "Odstrániť",
+                                    destroy_my_comment_path(comment.id),
+                                    method: :delete,
+                                    class: "danger"
+                                ) %>
+                                <noscript>
+
+                                </noscript>
+                            <% end %>
+
                             <%= link_to(
                                     reply_to_comment_path(@blog, @category, params[:page], @post, comment.id, anchor: comment.relation_id)
                                 ) do %>
                                     <b> Odpovedať </b>
                             <% end %>
+
                         <% end %>
                     </div>
 
@@ -56,7 +77,7 @@
 
                 <% if comment.id == params[:id].to_i %>
 
-                    <% if action_name == "reply_to_comment" %>
+                    <% if (action_name=="reply_to_comment")||(action_name=="create_reply") %>
 
                         <%= render(
                             'comments/add_comment',
