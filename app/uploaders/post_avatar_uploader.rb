@@ -28,7 +28,10 @@ class PostAvatarUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  # Create different versions of your uploaded files:
+  process :quality => 80
+
+
+
   version :thumb_288p do
      process resize_to_fill: [288, 216]
   end
@@ -37,6 +40,17 @@ class PostAvatarUploader < CarrierWave::Uploader::Base
      process resize_to_fill: [160, 120]
   end
 
+
+
+  version :title_120p do
+     process resize_to_fit: [120, -1]
+  end
+
+  version :title_160p do
+     process resize_to_fit: [160, -1]
+  end
+
+  # nokia 3310
   version :title_240p do
      process resize_to_fit: [240, -1]
   end
@@ -45,54 +59,80 @@ class PostAvatarUploader < CarrierWave::Uploader::Base
      process resize_to_fit: [288, -1]
   end
 
+  # stare androidy
   version :title_320p do
      process resize_to_fit: [320, -1]
-  end
-
-  ## iPhone 4 and 4S
-  ## Galaxy S3
-  version :title_320p2 do
-     process resize_to_fit: [640, -1]
-  end
-
-  ## Galaxy S4, S5, Note 3
-  version :title_320p3 do
-     process resize_to_fit: [960, -1]
   end
 
   version :title_360p do
      process resize_to_fit: [360, -1]
   end
 
+  # galaxy ace 2
+  version :title_480p do
+     process resize_to_fit: [480, -1]
+  end
+
+  version :title_533p do
+     process resize_to_fit: [533, -1]
+  end
+
+  version :title_640p do
+     process resize_to_fit: [640, -1]
+  end
+
+  ## iPhone 6, 6S, 7, 8
+  version :title_750p do
+     process resize_to_fit: [640, -1]
+  end
+
+  # ipad 1, 2, mini, air
+  version :title_768p do
+     process resize_to_fit: [768, -1]
+  end
+
+  version :title_800p do
+     process resize_to_fit: [768, -1]
+  end
+
+  ## Galaxy S4, S5, Note 3
+  version :title_960p do
+     process resize_to_fit: [960, -1]
+  end
+
   ## Google pixel
   ## HTC One
-  version :title_360p3 do
+  version :title_1080p do
      process resize_to_fit: [1080, -1]
+  end
+
+  ## iPhone 6+, 7+, 8+
+  version :title_1125p do
+     process resize_to_fit: [1125, -1]
+  end
+  version :title_1242p do
+     process resize_to_fit: [1242, -1]
   end
 
   ## Galaxy S6
   ## Google pixel XL
-  version :title_360p4 do
+  version :title_1440 do
      process resize_to_fit: [1440, -1]
   end
 
-  ## iPhone 6, 6S, 7, 8
-  version :title_375p2 do
-     process resize_to_fit: [750, -1]
+  # ipad 3, 4, pro 9.7
+  version :title_1536 do
+     process resize_to_fit: [1536, -1]
   end
 
-  ## iPhone 6+, 7+, 8+
-  version :title_375p3 do
-     process resize_to_fit: [1125, -1]
-  end
-  version :title_414p3 do
-     process resize_to_fit: [1242, -1]
+  # ipad pro 10.5
+  version :title_1668 do
+     process resize_to_fit: [1668, -1]
   end
 
-  ## windows phone
-  ## galaxy ace 2
-  version :title_480p do
-     process resize_to_fit: [480, -1]
+  # ipad pro 10.5
+  version :title_2048 do
+     process resize_to_fit: [2048, -1]
   end
 
 
