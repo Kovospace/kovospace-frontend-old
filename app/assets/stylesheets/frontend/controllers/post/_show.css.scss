@@ -1,16 +1,22 @@
 section#post_title_bg {
     padding:0;
-    min-height: 320px;
+    //min-height: 320px;
+    //height: 100%;
+    //max-height: 480px;
+    overflow: hidden;
 
     figure {
         display: block;
+        //height: 100%;
 
         picture {
+            //object-fit: cover;
 
             img {
                 display: block;
-                width:100%;
-                max-width: 100%;
+                //width:100%;
+                //max-width: 100%;
+                //object-fit: cover;
             }
         }
     }

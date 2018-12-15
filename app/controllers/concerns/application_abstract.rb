@@ -45,4 +45,8 @@ module ApplicationAbstract
         return "application"
     end
 
+    def storable_location?
+      request.get? && is_navigational_format? && !devise_controller? && !request.xhr?
+    end
+
 end

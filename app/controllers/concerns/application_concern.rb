@@ -97,6 +97,10 @@ module ApplicationConcern
 		redirect_to(user_session_path(reason: "noadmin")) if current_user.role != 1
 	end
 
+	def create_action_validation
+      user_signed_in?||controller_name='contact'
+    end
+
 	module ClassMethods
 
 	end
