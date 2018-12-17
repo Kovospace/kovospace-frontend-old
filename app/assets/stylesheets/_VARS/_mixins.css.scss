@@ -65,3 +65,7 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+
+@mixin translate_y($length: 50%) {
+  @include transform(translate(0, $length));
+}

@@ -3,19 +3,7 @@
     <figure>
         <%= render(
             'picture',
-            fallback: @post.avatar,
-            versions: [
-                :title_480p,
-                :title_414p3,
-                :title_375p3,
-                :title_360p4,
-                :title_360p3,
-                :title_360p,
-                :title_320p2,
-                :title_320p,
-                :title_288p,
-                :title_240p
-            ].reverse
+            picture: @post.avatar,
         ) %>
     </figure>
 

@@ -5,22 +5,8 @@
 %>
 
 <picture>
-    <% versions.each do |version| %>
-        <% if version.is_a? Hash %>
-
-        <% else %>
-            <%
-                dimx = version.to_s[/(\d+)p\d?$/, 1]
-                pratio = (r = version.to_s[/\d+p(\d?)$/, 1]).blank? ? 1 : r
-            %>
-            <source
-                srcset="<%= fallback.send(version) %>"
-                media="
-                    (max-device-width:<%= dimx %>px) and
-                    (-webkit-min-device-pixel-ratio: <%= pratio %>)
-                "
-            >
-        <% end %>
-    <% end %>
-    <%= image_tag fallback %>
+    <source srcset="
+        <%= picture %>
+    ">
+    <%= image_tag picture %>
 </picture>

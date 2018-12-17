@@ -1,4 +1,4 @@
-class SkillIconUploader < CarrierWave::Uploader::Base
+class SkillIconUploader < BaseUploader
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick

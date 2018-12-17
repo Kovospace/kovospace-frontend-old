@@ -56,6 +56,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    carrierwave-imageoptim (0.1.5)
+      carrierwave (>= 0.10, < 1.3)
+      image_optim (~> 0.22)
     ckeditor (4.2.4)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -80,12 +83,25 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    exifr (1.3.5)
     friendly_id (5.2.4)
       activerecord (>= 4.0.0)
+    fspath (3.1.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hirb (0.7.3)
     i18n (0.8.1)
+    image_optim (0.26.3)
+      exifr (~> 1.2, >= 1.2.2)
+      fspath (~> 3.0)
+      image_size (>= 1.5, < 3)
+      in_threads (~> 1.3)
+      progress (~> 3.0, >= 3.0.1)
+    image_optim_pack (0.5.1.20181213)
+      fspath (>= 2.1, < 4)
+      image_optim (~> 0.19)
+    image_size (2.0.0)
+    in_threads (1.5.0)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
       multi_json (~> 1.2)
@@ -104,7 +120,6 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_magick (4.8.0)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
@@ -114,8 +129,17 @@ GEM
     order_as_specified (1.2)
       activerecord (>= 4.0.1)
     orm_adapter (0.5.0)
+    os (0.9.6)
+    piet (0.2.6)
+      png_quantizator
+    piet-binary (0.2.0)
+      os (~> 0.9.6)
+      piet (>= 0.2.0)
+      png_quantizator
+    png_quantizator (0.2.1)
     polyamorous (1.3.3)
       activerecord (>= 3.0)
+    progress (3.5.0)
     rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -159,6 +183,7 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rmagick (2.16.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -211,23 +236,28 @@ DEPENDENCIES
   browser_sync_rails
   byebug
   carrierwave (~> 1.0)
+  carrierwave-imageoptim
   ckeditor
   coffee-rails (~> 4.1.0)
   color
   devise
   friendly_id (~> 5.2.0)
   hirb
+  image_optim
+  image_optim_pack
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
-  mini_magick
   naturally
   order_as_specified
+  piet
+  piet-binary
   rails (= 4.2.6)
   rails-i18n
   ransack
   recursive-open-struct
   redcarpet
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

@@ -35,9 +35,19 @@ gem 'recursive-open-struct'
 
 gem 'carrierwave', '~> 1.0'
 
+#gem 'carrierwave-imageoptimizer'
+
 gem 'ckeditor'
 
-gem 'mini_magick'
+#gem 'mini_magick'
+gem 'rmagick'
+
+#gem 'piet'
+#gem 'piet-binary'
+
+gem 'image_optim'
+gem 'image_optim_pack'
+gem 'carrierwave-imageoptim'
 
 gem 'rails-i18n'
 

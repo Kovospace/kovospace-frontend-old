@@ -45,5 +45,7 @@ module MojWeb
 
     require 'color'
 
+    #require 'carrierwave/processing/rmagick'
+
   end
 end
