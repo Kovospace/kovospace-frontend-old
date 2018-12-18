@@ -2,9 +2,11 @@
     <%= link_to show_blog_category_post_path(@blog, @category, params[:page], article) do %>
         <h3> <%= title %> </h3>
         <figure>
-            <picture>
-                <img src="kokot.jpg">
-            </picture>
+            <%= render(
+                'picture',
+                picture: article.avatar,
+                version: "thumb_small"
+            ) %>
         </figure>
         <div>
             <h4><%= article.title.html_safe %></h4>

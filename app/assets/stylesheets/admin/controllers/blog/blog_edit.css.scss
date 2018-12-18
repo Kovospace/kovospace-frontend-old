@@ -1,28 +1,21 @@
-@import "./admin/admin_vars";
 
-body.admin {
+form {
 
-    main {
+    div.order.categories {
 
-        form {
+        table {
 
-            div.order.categories {
+            tbody {
 
-                table {
+                tr {
+                    vertical-align: middle;
 
-                    tbody {
+                    td, th {
+                        padding: 0.125em 0.25em;
+                        vertical-align: middle;
 
-                        tr {
+                        label {
                             vertical-align: middle;
-
-                            td, th {
-                                padding: 0.125em 0.25em;
-                                vertical-align: middle;
-
-                                label {
-                                    vertical-align: middle;
-                                }
-                            }
                         }
                     }
                 }

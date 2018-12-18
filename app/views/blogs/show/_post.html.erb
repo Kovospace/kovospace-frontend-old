@@ -3,9 +3,11 @@
 
     <figure>
         <%= link_to generate_post_url(p) do %>
-            <picture>
-                <%= image_tag p.avatar.thumb_288p %>
-            </picture>
+            <%= render(
+                'picture',
+                picture: p.avatar,
+                version: "thumb_big"
+            ) %>
         <% end %>
     </figure>
 

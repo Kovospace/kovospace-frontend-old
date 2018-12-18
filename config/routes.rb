@@ -410,24 +410,28 @@ Rails.application.routes.draw do
     to: "posts#destroy_my_comment",
     as: "destroy_my_comment"
 
-devise_for(
-  :users,
-  path: '',
-  controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations',
-    passwords: 'users/passwords'
-  },
-  path_names: {
-    sign_in: 'prihlasenie',
-    sign_out: 'odhlasenie',
-    password: 'secret',
-    confirmation: 'verification',
-    unlock: 'unblock',
-    registration: 'register',
-    sign_up: 'vytvorit_ucet'
-  }
-)
+  devise_for(
+    :users,
+    path: '',
+    controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations',
+      passwords: 'users/passwords'
+    },
+    path_names: {
+      sign_in: 'prihlasenie',
+      sign_out: 'odhlasenie',
+      password: 'secret',
+      confirmation: 'verification',
+      unlock: 'unblock',
+      registration: 'register',
+      sign_up: 'vytvorit_ucet'
+    }
+  )
+
+  get "/admin/users",
+    to: "admin#list_users",
+    as: "list_users"
 
 =begin
   devise_for :users, skip: :all

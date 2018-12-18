@@ -24,7 +24,7 @@ class BaseUploader < CarrierWave::Uploader::Base
       )
 
       meno = namespace.blank? ? "sizes" : "#{namespace.to_s}_sizes"
-      instance_variable_set("@sizes", {})
+      instance_variable_set("@sizes", {}) if @sizes.nil?
       @sizes[meno] = sizes.sort.reverse
       define_method(meno) { return self.class.sizes[meno] }
 

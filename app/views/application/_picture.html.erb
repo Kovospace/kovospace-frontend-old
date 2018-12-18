@@ -1,12 +1,9 @@
-<%
-## fallback - zakladny img subor
-## versions - jednotlive verzie ako uvedene v uploader classe
-##
-%>
 
 <picture>
     <source srcset="
-        <%= picture %>
+        <% picture.send("#{version}_sizes").each do |ver| %>
+            <%= picture.send("#{version}_size_#{ver[0]}") %> <%= "#{ver[0]}," %>
+        <% end %>
     ">
     <%= image_tag picture %>
 </picture>

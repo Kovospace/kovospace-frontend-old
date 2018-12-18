@@ -1,123 +1,117 @@
-@import "./admin/admin_vars";
 
-body.admin {
+table {
+    margin-bottom: 1.5em;
+    background-color: $admin_section_bg;
 
-    main {
+    td, th {
+        padding: 0 0.25em;
 
-        table {
-            margin-bottom: 1.5em;
-            background-color: $admin_section_bg;
+        a {
+            vertical-align: middle;
+            padding: 0 0.125em;
+            cursor: pointer;
 
-            td, th {
-                padding: 0 0.25em;
+            &:hover {
+                 background-color: $admin_hover_bg;
+            }
+        }
+
+        a.delete_item {
+            color: $admin_danger_fg;
+            background-color:$admin_danger_bg;
+
+            &:hover {
+                background-color:$admin_danger_hover_bg;
+                color: $admin_danger_hover_fg;
+            }
+        }
+
+        a.add_item {
+            background-color: $admin_bg;
+
+            &:hover {
+                 background-color: $admin_hover_bg;
+            }
+        }
+
+        a.publish_item {
+            background-color: $admin_ok_bg;
+
+            &:hover {
+                 background-color: $admin_ok_bg_hover;
+            }
+        }
+
+        a.suspend_item {
+            background-color: $admin_aware_bg;
+
+            &:hover {
+                 background-color: $admin_aware_bg_hover;
+            }
+        }
+
+    }
+
+    caption {
+        background-color: $admin_bg_invert;
+        color: $admin_fg_invert;
+        font-weight:bold;
+        font-size: 1.5em;
+        padding: 0.25em;
+        text-align: left;
+        margin-bottom: 0.25em;
+    }
+
+    tbody {
+
+        tr {
+            line-height:1.25em;
+
+            &:nth-child(2n-1) {
+                background-color: $admin_bg;
+            }
+
+            &:hover {
+                background-color: $admin_prelight_bg;
+            }
+
+            &.no_items {
+                background-color:$admin_danger_bg;
+                color: $admin_danger_fg;
+                font-weight: bold;
+            }
+        }
+    }
+
+    thead {
+
+        tr {
+            line-height: 1.5em;
+
+            th {
+
+            }
+        }
+    }
+
+    tfoot {
+        display: block;
+        margin-top: 1.25em;
+        width:100%;
+
+        tr {
+            background-color: white !important;
+
+            th {
+                padding:0;
+                display: inline-block;
 
                 a {
-                    vertical-align: middle;
-                    padding: 0 0.125em;
-                    cursor: pointer;
-
-                    &:hover {
-                         background-color: $admin_hover_bg;
-                    }
-                }
-
-                a.delete_item {
-                    color: $admin_danger_fg;
-                    background-color:$admin_danger_bg;
-
-                    &:hover {
-                        background-color:$admin_danger_hover_bg;
-                        color: $admin_danger_hover_fg;
-                    }
-                }
-
-                a.add_item {
-                    background-color: $admin_bg;
-
-                    &:hover {
-                         background-color: $admin_hover_bg;
-                    }
-                }
-
-                a.publish_item {
-                    background-color: $admin_ok_bg;
-
-                    &:hover {
-                         background-color: $admin_ok_bg_hover;
-                    }
-                }
-
-                a.suspend_item {
-                    background-color: $admin_aware_bg;
-
-                    &:hover {
-                         background-color: $admin_aware_bg_hover;
-                    }
-                }
-
-            }
-
-            caption {
-                background-color: $admin_bg_invert;
-                color: $admin_fg_invert;
-                font-weight:bold;
-                font-size: 1.5em;
-                padding: 0.25em;
-                text-align: left;
-                margin-bottom: 0.25em;
-            }
-
-            tbody {
-
-                tr {
-                    line-height:1.25em;
-
-                    &:nth-child(2n-1) {
-                        background-color: $admin_bg;
-                    }
-
-                    &:hover {
-                        background-color: $admin_prelight_bg;
-                    }
-
-                    &.no_items {
-                        background-color:$admin_danger_bg;
-                        color: $admin_danger_fg;
-                        font-weight: bold;
-                    }
-                }
-            }
-
-            thead {
-
-                tr {
-                    line-height: 1.5em;
-
-                    th {
-
-                    }
-                }
-            }
-
-            tfoot {
-                display: block;
-                margin-top: 1.25em;
-                width:100%;
-
-                tr {
-                    background-color: white !important;
-
-                    th {
-                        padding:0;
-                        display: inline-block;
-
-                        a {
-                            display: inline-block;
-                            padding:0.5em;
-                        }
-                    }
+                    display: inline-block;
+                    padding:0.5em;
                 }
             }
         }
     }
 }
+

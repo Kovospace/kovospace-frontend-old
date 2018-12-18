@@ -1,4 +1,16 @@
 
-<%= yield %>
+<% content_for :header do %>
+    <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'admin', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+<% end %>
 
-<% parent_layout '_admin' %>
+<nav>
+    <%= render 'admin/top_menu' %>
+</nav>
+
+<main>
+    <%= yield %>
+</main>
+
+<% parent_layout :application %>

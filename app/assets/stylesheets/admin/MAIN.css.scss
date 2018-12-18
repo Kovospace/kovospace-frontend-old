@@ -1,1 +1,19 @@
+@import "./admin/admin_vars";
+
+body {
+    font-size:1em;
+    height: auto;
+    background-color: #fff;
+    color:#111;
+
+    @import "./admin/controllers/admin/top_menu";
+
+    main {
+        padding:1em;
+        @import "./admin/controllers/admin/items_table";
+        @import "./admin/controllers/admin/new_order_table";
+        @import "./admin/controllers/admin/new";
+        @import "./admin/controllers/blog/blog_edit";
+    }
+}
 
