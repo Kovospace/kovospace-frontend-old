@@ -6,7 +6,7 @@ Router.prototype = {
     constructor: Router,
 
     load: function() {
-        var controller_string = $("body").attr("class").replace(/^admin\s*/, "").replace(/\s+/, "_");
+        var controller_string = $("body").attr("class");
         if ((fx = window[controller_string.classycase()]) !== undefined) {
             return (new fx());
         }

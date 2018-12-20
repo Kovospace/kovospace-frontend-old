@@ -13,14 +13,18 @@
 	</div>
 
     <div>
+        <%= p.label :intro %>
         <%= p.text_area :intro %>
         <%= p.errors :intro %>
     </div>
 
 	<div>
 		<%= p.label :text %>
+        <div class="trix_editor">
+            <%= p.trix_editor :text %>
+        </div>
 		<%#= p.text_area :text %>
-		<%= p.cktext_area :text %>
+		<%#= p.cktext_area :text %>
 		<%#= p.errors :text %>
 	</div>
 

@@ -26,7 +26,7 @@ form {
 
         textarea {
             min-width: 50vw;
-            min-height: 50vh;
+            min-height: 25vh;
         }
 
         input[type=checkbox], input[type=radio] {
@@ -51,6 +51,14 @@ form {
 
         & > span {
            line-height: 1.625em;
+        }
+
+        &.trix_editor {
+            display: inline-block;
+
+            .trix-content {
+                min-height: 25vh;
+            }
         }
 
         &.pictures {

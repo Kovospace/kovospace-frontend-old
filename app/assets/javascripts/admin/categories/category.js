@@ -1,11 +1,11 @@
 
-function CategoriesEdit() {
+function Category() {
     this.postsOrdering;
     this.init();
 }
 
-CategoriesEdit.prototype = {
-    constructor: CategoriesEdit,
+Category.prototype = {
+    constructor: Category,
 
     init: function() {
         this.postsOrdering = new orderItems();

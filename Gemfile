@@ -37,7 +37,8 @@ gem 'carrierwave', '~> 1.0'
 
 #gem 'carrierwave-imageoptimizer'
 
-gem 'ckeditor'
+#gem 'ckeditor'
+gem 'trix'
 
 #gem 'mini_magick'
 gem 'rmagick'

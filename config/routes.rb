@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  mount Ckeditor::Engine => '/ckeditor'
   root to: 'homepage#index'
 
   %w( 404 422 500 503 ).each do |code|

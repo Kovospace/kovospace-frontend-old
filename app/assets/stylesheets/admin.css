@@ -4,4 +4,5 @@
  *= require_self
  * require_tree ./admin
  *= require ./admin/MAIN
+ *= require trix
  */

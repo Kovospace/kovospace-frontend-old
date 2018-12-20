@@ -1,10 +1,10 @@
-function BlogsEdit() {
+function Blog() {
     this.categoriesOrdering;
     this.init();
 }
 
-BlogsEdit.prototype = {
-    constructor: BlogsEdit,
+Blog.prototype = {
+    constructor: Blog,
 
     init: function() {
         this.categoriesOrdering = new orderItems();
