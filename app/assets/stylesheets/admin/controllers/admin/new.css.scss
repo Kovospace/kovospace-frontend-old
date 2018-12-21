@@ -72,16 +72,40 @@ form {
                 margin-bottom: 1em;
                 height: 100%;
                 min-height: 8em;
+                position: relative;
 
-                /*input.hidden {
-                    visibility: hidden;
-                    width:0;
-                    height:0;
-                }*/
+                em, label.destroy {
+                    position: absolute;
+                    font-weight: bold;
+                    font-size: 1.25em;
+                    min-width: 1em;
+                    z-index: 9999;
+                    padding: 0.25em;
+                    text-align: center;
+                    border-radius: 50%;
+                    left:0.25em;
+                }
+
+                em {
+                    top:0.25em;
+                    background-color: $admin_bg;
+                }
+
+                label.destroy {
+                    bottom:0.25em;
+                    background-color: $admin_danger_bg;
+                    color: $admin_pure_white;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $admin_danger_hover_bg;
+                    }
+                }
 
                 span {
                     display: table-cell;
                     vertical-align: middle;
+                    position: relative;
 
                     textarea, label {
                         display: block;
@@ -93,7 +117,7 @@ form {
                         min-height: 100%;
                     }
 
-                    label {
+                    & > label {
                         position: relative;
                         min-height: 4em;
                         min-width: 4em;
@@ -137,6 +161,17 @@ form {
                                 height: 60%;
                             }
                         }
+
+                        /*label {
+                            position: absolute;
+
+
+                            &.destroy {
+                                top: 0.25em;
+                                right:0.25em;
+
+                            }
+                        }*/
 
                         input[type='checkbox'], input[type='radio'] {
                             position: absolute;
