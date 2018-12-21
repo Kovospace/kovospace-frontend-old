@@ -4,3 +4,44 @@ a.anchor {
   top: -4em;
   visibility: hidden;
 }
+
+@font-face {
+    font-family: "StarFont";
+    font-style: normal;
+    font-weight: normal;
+    src: asset-url('/assets/fonts/starjhol-webfont.ttf') format('truetype');
+}
+
+del {
+    position: relative;
+
+    &:after {
+        border-bottom: 0.125em solid red;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 50%;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.hidden {
+    display: none;
+}
+
+.clear {
+    clear: both;
+    height:0;
+}

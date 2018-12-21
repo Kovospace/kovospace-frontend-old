@@ -186,7 +186,7 @@ class PostsController < ApplicationController
 	end
 
 	def _around_new
-		build_if_empty :categories, :tags
+		build_if_empty :categories, :tags, :post_images
 	end
 
 	def _after_save_fail
@@ -194,7 +194,7 @@ class PostsController < ApplicationController
 	end
 
 	def _around_edit
-		build_if_empty :categories, :tags
+		build_if_empty :categories, :tags, :post_images
 		#also runs around update
 	end
 
@@ -218,7 +218,8 @@ class PostsController < ApplicationController
 		 	tags_attributes: [:id, :title],
 		 	tag_ids: [],
 		 	categories_attributes: [:id, :title],
-		 	category_ids: []
+		 	category_ids: [],
+		 	post_images_attributes: [:id, :post_id, :image, :remove_image, :image_cache, :_destroy, :alt_text, :identificator]
 		)
 	end
 

@@ -68,6 +68,13 @@ class Post < ActiveRecord::Base
         # skip saving empty tag association if field for new tag is not filled
         # but do not raise validation error
     #)
+    #
+    has_many :post_images, dependent: :destroy
+    accepts_nested_attributes_for(
+        :post_images,
+        allow_destroy: true,
+        reject_if: proc { |c| c[:image].blank? }
+    )
 
     belongs_to(
         :user,

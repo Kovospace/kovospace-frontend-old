@@ -43,6 +43,31 @@
         </picture>
     </div>
 
+    <div>
+        <%= p.label :images %>
+        <div class="pictures">
+            <%= p.fields_for :post_images do |ps| %>
+                <% blank = ps.object.image.blank? %>
+                <picture>
+                    <%= ps.file_field :image, class: "hidden" %>
+                    <%= ps.hidden_field :image_cache %>
+                    <%= ps.hidden_field :identificator %>
+                    <span>
+                        <%= ps.label :image do %>
+                            <%= ps.check_box(:_destroy) if !blank %>
+                            <%= image_tag(ps.object.image) if !blank %>
+                            <% if blank %> <q></q> <% end %>
+                        <% end %>
+                    </span>
+                    <span>
+                        <%= ps.text_area(:alt_text) %>
+                    </span>
+                </picture>
+            <% end %>
+            <br class="clear">
+        </div>
+    </div>
+
 	<div class="checkboxes">
 		<%= p.label :categories %>
 		<div>
