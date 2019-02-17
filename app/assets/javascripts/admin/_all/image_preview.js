@@ -44,7 +44,8 @@ imagePreview.prototype = {
         var some_empty = false
         var next_index = 0;
         $('div.pictures').children('picture').each(function() {
-            var index = parseInt($(this).find('input[type=file]').attr('name').match(/\d+/));
+            //var index = parseInt($(this).find('input[type=file]').attr('name').match(/\d+/));
+            var index = parseInt($(this).find('input.identificator').val());
             if (index > next_index) { next_index = index; }
         });
         next_index++;
@@ -56,7 +57,7 @@ imagePreview.prototype = {
             $(this).attr('id', new_id);
         });
         var label_name = $(tmp_obj).children('span').children('label').attr('for').replace(/\d+/, next_index);
-        tmp_obj.children('input#post_post_images_attributes_'+next_index+'_identificator').val(next_index+1);
+        tmp_obj.children('input#post_post_images_attributes_'+next_index+'_identificator').val(next_index/*+1*/);
         $(tmp_obj).children('span').children('label').attr('for', label_name)
         tmp_obj.appendTo('div.pictures');
     },
