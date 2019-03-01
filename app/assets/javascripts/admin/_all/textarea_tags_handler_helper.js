@@ -31,13 +31,13 @@ textAreaTagsHandlerHelper.prototype = {
             preCaretTextRange.setEndPoint("EndToEnd", textRange);
             caretOffset = preCaretTextRange.text.length;
         }
-        console.log(caretOffset);
+        //console.log(caretOffset);
         return caretOffset;
     },
 
     setCaretPosition: function(element, position) {
         element.focus();
-        console.log("element: ", element);
+        //console.log("element: ", element);
 
         function setPosition(el, pos) {
             for(var node of el.childNodes){

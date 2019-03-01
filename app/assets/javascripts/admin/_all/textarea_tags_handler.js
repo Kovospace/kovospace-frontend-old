@@ -35,6 +35,17 @@ textAreaTagsHandler.prototype = {
                 T.insertTag(tag);
             }
         });
+        console.log(T.text.match(/<#obrazok(\d+)#>/g));
+        var tags = T.text.match(/<#obrazok(\d+)#>/g);
+        for (var i=0; i<tags.length; i++) {
+            if (T.checkImageExistence(tags[i]) === true) {
+                //console.log("aaano");
+            } else {
+                //console.log("nieeeeeeee");
+                T.removeTag(tags[i]);
+            }
+        }
+        //T.checkImageExistence(tag);
     },
 
     trackCursorPosition: function(ref) {
@@ -45,7 +56,7 @@ textAreaTagsHandler.prototype = {
     insertTag: function(tag) {
         //$('.trix-content').focus();
         //$('.trix-content').selectionStart = 3;
-         //$('.trix-content').selectionEnd = 3;
+        //$('.trix-content').selectionEnd = 3;
         //document.getSelection().collapse($('.trix-content')[0], 0);
         //$('.trix-content')[0].setSelectionRange(0, 0);
         this.HELPER.setCaretPosition(document.getElementsByClassName('trix-content')[0], this.cursor_position);
@@ -54,17 +65,37 @@ textAreaTagsHandler.prototype = {
     },
 
     removeTag: function(tag) {
-         T.text = $('.trix-content').text();
-         console.log(T.text);
+        var text = $('.trix-content').html();
+        //console.log(text);
+        //console.log(escapeHTML(tag));
+        //console.log(text.replace(escapeHTML(tag), ""));
+        $('.trix-content').html(text.replace(escapeHTML(tag), ""));
+        //console.log(tag);
     },
 
-    checkTagExistence(tag) {
+    checkTagExistence: function(tag) {
         //console.log(tag);
         //console.log(this.text);
         //console.log(tag);
         //console.log(this.text.indexOf(tag) !== -1);
         //this.text = $('.trix-content').text()
         return (this.text.indexOf(tag) !== -1)
+    },
+
+    checkImageExistence: function(tag) {
+        //console.log(T.text.match(/<#obrazok(\d+)#>/g));
+        var tag_id = tag.match(/\d+/);
+        //console.log(tag_id);
+        var exists = false;
+        $(document).find('input.identificator').each(function() {
+            if ($(this).val() == tag_id) {
+                exists = true;
+                return false;
+            } /*else {
+
+            }*/
+        });
+        return exists;
     }
 
 }
