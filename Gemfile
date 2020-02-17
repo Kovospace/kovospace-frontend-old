@@ -72,6 +72,8 @@ gem 'sqlite3_ar_regexp', '~> 2.2'
 #
 gem 'naturally'
 
+gem 'yaml_db'
+
 #gem 'canonical-rails', github: 'jumph4x/canonical-rails'
 
 #gem 'activeadmin'
