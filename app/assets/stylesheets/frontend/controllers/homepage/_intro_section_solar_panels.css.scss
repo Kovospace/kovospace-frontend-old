@@ -14,8 +14,8 @@ section#top {
                     li {
                         // solarny panel
                         position: relative;
-                        //overflow-wrap: break-word;
-                        //word-break: break-word;
+                        background-color: $solar_panel_item_bg;
+                        @include border_shadow_inset(0.25em, 0.25em, $space_softblack);
 
                         div.triangle {
                             outline: 1px solid transparent;
@@ -24,7 +24,7 @@ section#top {
                             bottom:0;
                             right:100%;
                             width:5%;
-                            margin: 0.125em 0;
+                            margin: 0.25em 0;
 
                             &::before {
                                 content: '';
@@ -60,9 +60,13 @@ section#top {
                                     border-left: 0.25em solid black;
                                 }
                             }
+
+                            &.right {
+                                margin-right: 0.25em;
+                            }
                         }
 
-                        h2 {
+                        /*h2 {
                             // nadpis
                             font-size: 5em;
                             display: table;
@@ -74,35 +78,82 @@ section#top {
                                 margin-left: 0.05em;
                                 @include box_sizing();
                             }
-                        }
+                        }*/
 
                         div.menuitem_content {
                             display:table;
                             border-spacing:0;
-                            //white-space: nowrap;
                             height: 100%;
+                            width:100%;
+                            @include border_shadow_both(0.125em, 0.125em, $space_softblack);
 
-                            a, div {
+                            div {
+                                display: table-cell;
                                 vertical-align: middle;
+
+                                a {
+                                    @include background_transition($transition_time);
+                                    @include box_sizing();
+                                    @include border_shadow_both(0.125em, 0.125em, $space_softblack);
+                                    font-size: 1.25em;
+                                    line-height: 1em;
+                                    padding:0.375em;
+
+                                    &:hover {
+                                        background-color: $solar_panel_item_bg_hover;
+                                        color: $solar_panel_item_txt_hover;
+                                    }
+                                }
                             }
 
+                            div.skill_category {
+                                white-space: nowrap;
+                                width: 1%;
+
+                                a {
+                                    height: 100%;
+                                    display: table;
+
+                                    h3 {
+                                       display: table-cell;
+                                       vertical-align: middle;
+                                    }
+                                }
+                            }
+
+                            div.projects {
+
+                                a {
+                                    display: block;
+                                    float: left;
+                                }
+                            }
+
+                            /*a, div {
+                                vertical-align: middle;
+                                display: inline-block;
+                                //font-size: 1.25em;
+                                line-height: 1em;
+                            }*/
+
                             a {
-                                font-size: 1.25em;
+                                //font-size: 1.25em;
                             }
 
                             > a {
                                 //kategoria blogu
-                                display: table-cell;
-                                height: 100%;
-                                padding: 0.125em;
-                                padding-left:0;
-                                padding-right: 0.175em;
-                                background-color: $space_softblack;
+                                //display: table-cell;
+                                //
+                                //height: 100%;
+                                //padding: 0.125em;
+                                //padding-left:0;
+                                //padding-right: 0.175em;
+                                //background-color: $space_softblack;
                                 //white-space: nowrap;
-                                border-left: 0.3125em solid $space_softblack;
-                                @include box_sizing();
+                                //border-left: 0.3125em solid $space_softblack;
+                                //@include box_sizing();
 
-                                h3 {
+                                /*h3 {
                                     display:table;
                                     font-weight: bold;
                                     height: 100%;
@@ -114,26 +165,26 @@ section#top {
                                        vertical-align:middle;
                                        height:100%;
                                     }
-                                }
+                                }*/
                             }
 
                             div {
-                                display: inline-block;
+                                //display: inline-block;
 
                                 a {
-                                    display: block;
-                                    float: left;
-                                    margin:0.125em;
-                                    padding: 0.25em 0.375em;
-                                    overflow-wrap: break-word;
-                                    word-break: break-word;
+                                    //display: block;
+                                    //float: left;
+                                    //margin:0.125em;
+                                    //padding: 0.25em 0.375em;
+                                    //overflow-wrap: break-word;
+                                    //word-break: break-word;
                                 }
                             }
                         }
 
                         a, h3 {
                             // polozky v solarnom paneli
-                            @include background_transition($transition_time);
+                            /*@include background_transition($transition_time);
                             background-color: $solar_panel_item_bg;
                             color: $solar_panel_item_txt;
                             cursor: pointer;
@@ -141,7 +192,7 @@ section#top {
                             &:hover {
                                 background-color: $solar_panel_item_bg_hover;
                                 color: $solar_panel_item_txt_hover;
-                            }
+                            }*/
                         }
                     }
                 }

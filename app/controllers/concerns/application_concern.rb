@@ -25,7 +25,6 @@ module ApplicationConcern
 		return nil
 	end
 
-
 	def build_if_empty(*assocs)
 
 		record = instance_variable_get(@singular_varname)
@@ -69,11 +68,16 @@ module ApplicationConcern
 			assocs.each do |a, opts|
 				assoc_var_name = "@#{a.to_s.singularize}"
 				if a.to_s.is_singular?
+					if record.send(a).blank?
+						record.send("build_#{a.to_s}")
+					end
 					instance_variable_set(assoc_var_name, record.send(a))
 				else
 					any_builded_assoc = record.send(a).map { |r| r.id.blank? } .any?
 					if !any_builded_assoc
 						record.send(a).send(:build)
+					else
+						instance_variable_set(assoc_var_name, record.send(a))
 					end
 					#instance_variable_set(assoc_var_name, record.send(a))
 				end
@@ -94,7 +98,7 @@ module ApplicationConcern
 	end
 
 	def authorize_admin
-		redirect_to(user_session_path(reason: "noadmin")) if current_user.role != 1
+		redirect_to(user_session_path(reason: "noadmin")) if current_user.try(:role) != 1
 	end
 
 	def create_action_validation

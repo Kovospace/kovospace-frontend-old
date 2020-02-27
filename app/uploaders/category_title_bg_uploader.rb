@@ -1,3 +1,5 @@
+## titulny obrazok na stranke o jednotlivom projekte
+
 class CategoryTitleBgUploader < BaseUploader
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

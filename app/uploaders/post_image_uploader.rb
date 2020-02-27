@@ -1,3 +1,5 @@
+## obrazky v clanku
+
 class PostImageUploader < BaseUploader
 
   create_sizes(

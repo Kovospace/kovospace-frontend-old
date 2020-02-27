@@ -1,3 +1,5 @@
+## titulny obrazok na stranke o jednotlivom projekte
+
 class PortfolioTitleMobileUploader < BaseUploader
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

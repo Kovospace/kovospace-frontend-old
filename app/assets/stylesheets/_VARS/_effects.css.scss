@@ -66,6 +66,24 @@
     box-shadow:         inset $x_i $y_i $blur_i $expand_i $color_i, $x_o $y_o $blur_o $expand_o $color_o;
 }
 
+@mixin border_shadow($x, $y, $color) {
+    -moz-box-shadow:    $x $y 0 0 $color, -#{$x} -#{$y} 0 0 $color, $x -#{$y} 0 0 $color, -#{$x} $y 0 0 $color;
+    -webkit-box-shadow: $x $y 0 0 $color, -#{$x} -#{$y} 0 0 $color, $x -#{$y} 0 0 $color, -#{$x} $y 0 0 $color;
+    box-shadow:         $x $y 0 0 $color, -#{$x} -#{$y} 0 0 $color, $x -#{$y} 0 0 $color, -#{$x} $y 0 0 $color;
+}
+
+@mixin border_shadow_inset($x, $y, $color) {
+    -moz-box-shadow:    inset $x $y 0 0 $color, inset -#{$x} -#{$y} 0 0 $color, inset $x -#{$y} 0 0 $color, inset -#{$x} $y 0 0 $color;
+    -webkit-box-shadow: inset $x $y 0 0 $color, inset -#{$x} -#{$y} 0 0 $color, inset $x -#{$y} 0 0 $color, inset -#{$x} $y 0 0 $color;
+    box-shadow:         inset $x $y 0 0 $color, inset -#{$x} -#{$y} 0 0 $color, inset $x -#{$y} 0 0 $color, inset -#{$x} $y 0 0 $color;
+}
+
+@mixin border_shadow_both($x, $y, $color) {
+    -moz-box-shadow:    inset $x $y 0 0 $color, inset -#{$x} -#{$y} 0 0 $color, inset $x -#{$y} 0 0 $color, inset -#{$x} $y 0 0 $color, $x $y 0 0 $color, -#{$x} -#{$y} 0 0 $color, $x -#{$y} 0 0 $color, -#{$x} $y 0 0 $color;
+    -webkit-box-shadow: inset $x $y 0 0 $color, inset -#{$x} -#{$y} 0 0 $color, inset $x -#{$y} 0 0 $color, inset -#{$x} $y 0 0 $color, $x $y 0 0 $color, -#{$x} -#{$y} 0 0 $color, $x -#{$y} 0 0 $color, -#{$x} $y 0 0 $color;
+    box-shadow:         inset $x $y 0 0 $color, inset -#{$x} -#{$y} 0 0 $color, inset $x -#{$y} 0 0 $color, inset -#{$x} $y 0 0 $color, $x $y 0 0 $color, -#{$x} -#{$y} 0 0 $color, $x -#{$y} 0 0 $color, -#{$x} $y 0 0 $color;
+}
+
 @mixin rotate($angle) {
   @include transform(rotate($angle));
 }

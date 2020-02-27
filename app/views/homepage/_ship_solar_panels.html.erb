@@ -4,7 +4,7 @@
         <ul>
 
             <li>
-                <div class="triangle"> </div>
+                <div class="triangle right"> </div>
                 <div class="triangle left"> <span></span> </div>
                 <h2>
                     <%= link_to t(:portfolio), portfolio_path %>
@@ -14,15 +14,15 @@
 
                     <div class="menuitem_content">
 
-                        <a><h3><span>
-                            <%= skillset.title %>
-                        </span></h3></a>
+                        <div class="skill_category">
+                            <a><h3><%= skillset.title %></h3></a>
+                        </div>
 
-                        <% skillset.portfolios.all.each do |portfolio| %>
-                            <div>
+                        <div class="projects">
+                            <% skillset.portfolios.all.each do |portfolio| %>
                                 <%= link_to portfolio.title, show_portfolio_path(portfolio) %>
-                            </div>
-                        <% end %>
+                            <% end %>
+                        </div>
 
                     </div>
 

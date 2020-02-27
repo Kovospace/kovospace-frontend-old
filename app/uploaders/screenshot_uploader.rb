@@ -1,3 +1,5 @@
+## obrazok v zozname tvorby
+
 class ScreenshotUploader < BaseUploader
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

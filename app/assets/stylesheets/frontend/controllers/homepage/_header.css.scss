@@ -13,8 +13,14 @@ nav {
         li {
 
             a {
-                background: #c0c0c0;
+                @include background_transition(0.125s);
+                @include zoom(1.2);
+                background: $hell_grey;
                 margin: 0.375em;
+
+                &:hover {
+                    background: $half;
+                }
             }
         }
     }

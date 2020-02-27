@@ -1,3 +1,5 @@
+## titulny obrazok clanku
+
 class PostAvatarUploader < BaseUploader
 
   create_sizes(
