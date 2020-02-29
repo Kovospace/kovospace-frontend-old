@@ -5,7 +5,6 @@ section#top {
         div#ship_body {
             position: relative;
             border-radius: 1000em;
-            position: relative;
             background-color: $rocket_bg;
 
             &:before {
@@ -29,6 +28,28 @@ section#top {
                 writing-mode: vertical-rl;
                 text-orientation: upright;
                 margin: 0 auto;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        article#menu {
+
+            div#ship_body {
+
+                &:before {
+                    width: 4em;
+                    padding-bottom: 4em;
+                    margin: 1em;
+                    margin-left: 10%;
+                }
+
+                &:after {
+                    @include rotate(-90deg);
+                    margin: 0.5em;
+                    margin-right: auto;
+                }
             }
         }
     }
