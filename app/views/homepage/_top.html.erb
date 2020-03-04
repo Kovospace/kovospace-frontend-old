@@ -4,40 +4,40 @@
 
     <nav>
 
-        <!--<ul class="bookmarks">
-
-            <li>
-                <a href="#top"><span>TOP of...</span></a>
-            </li>
-
-            <li>
-                <a href="#novinky"><span>Novinky</span></a>
-            </li>
-
-            <li>
-                <a href="#skills"><span>Pracujem s...</span></a>
-            </li>
-
-            <li>
-                <a href="#o-mne"><span>O Mne</span></a>
-            </li>
-
-            <li>
-                <a href="#kontakt"><span>Kontakt</span></a>
-            </li>
-
-        </ul>-->
-
         <ul class="pagelinks">
 
             <li>
-                <%= link_to(portfolio_path) do %>
+                <%= active_link_to(home_path, class: "nav_home") do %>
+                    <span>Domov</span>
+                <% end %>
+
+                <ul>
+                    <li>
+                        <a href="#top" class="l2"><em>#</em><span>TOP of</span></a>
+                    </li>
+                    <li>
+                        <a href="#novinky" class="l1"><em>#</em><span>Novinky</span></a>
+                    </li>
+                    <li>
+                        <a href="#skills"><em>#</em><span>Schopnosti</span></a>
+                    </li>
+                    <li>
+                        <a href="#o-mne" class="l1"><em>#</em><span>O Mne</span></a>
+                    </li>
+                    <li>
+                        <a href="#kontakt" class="l2"><em>#</em><span>Kontakt</span></a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <%= active_link_to(portfolio_path) do %>
                     <span>Tvorba</span>
                 <% end %>
             </li>
 
             <li>
-                <%= link_to(blog_path) do %>
+                <%= active_link_to(blog_path) do %>
                     <span>Blog</span>
                 <% end %>
             </li>

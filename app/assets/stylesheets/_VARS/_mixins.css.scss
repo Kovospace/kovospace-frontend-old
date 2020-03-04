@@ -69,3 +69,7 @@
 @mixin translate_y($length: 50%) {
   @include transform(translate(0, $length));
 }
+
+@mixin translate_x($length: 50%) {
+  @include transform(translate($length, 0));
+}

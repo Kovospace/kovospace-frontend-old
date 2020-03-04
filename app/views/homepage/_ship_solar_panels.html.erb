@@ -6,9 +6,9 @@
             <li>
                 <div class="triangle right"> </div>
                 <div class="triangle left"> <span></span> </div>
-                <h2>
-                    <%= link_to t(:portfolio), portfolio_path %>
-                </h2>
+                <%= link_to portfolio_path do %>
+                    <h2> <%= t 'portfolio' %> </h2>
+                <% end %>
 
                 <% @skillsets.all.each do |skillset| %>
 
@@ -31,19 +31,14 @@
             </li>
 
             <li>
-                <div class="triangle"> </div>
+                <div class="triangle right"> </div>
                 <div class="triangle left"> <span></span></div>
-                <h2>
-                    <%= link_to t(:blog), blog_path %>
-                </h2>
+                <%= link_to blog_path do %>
+                   <h2> <%= t 'blog' %> </h2>
+                <% end %>
+
                 <div class="menuitem_content">
-                    <a><h3><span>
-                        Názov kategórie dlhsi
-                    </span></h3></a>
-                    <div>
-                        <a href="">kat 1</a>
-                        <a href="">kat 1</a>
-                    </div>
+
                 </div>
             </li>
 

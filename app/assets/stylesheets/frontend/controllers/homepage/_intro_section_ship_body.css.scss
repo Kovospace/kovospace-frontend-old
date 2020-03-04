@@ -53,6 +53,38 @@ section#top {
             }
         }
     }
+
+    @media only screen and (max-width: 640px) {
+
+        article#menu {
+
+            div#ship_body {
+
+                &:after {
+                    text-orientation: inherit;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        article#menu {
+
+            div#ship_body {
+                border-radius: 0;
+
+                &:before {
+                    margin:1em 0.5em;
+                }
+
+                &:after {
+                   margin:0 0.5em;
+                }
+
+            }
+        }
+    }
 }
 
 

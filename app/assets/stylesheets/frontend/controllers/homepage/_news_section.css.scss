@@ -1,6 +1,30 @@
 section#novinky {
 
     aside {
-        @include sputnik(0, 0em, 8em, -75deg);
+
+    }
+
+    @media only screen and (min-width: 641px) {
+
+        aside {
+            @include sputnik(0, 0em, 8em, -75deg);
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+
+        aside {
+            @include sputnik(0, 0em, 4em, -75deg);
+
+            div.sputnik {
+                margin: 0 auto;
+            }
+
+            margin-bottom: 3em;
+        }
+
+        article {
+            padding: 0.5em;
+        }
     }
 }

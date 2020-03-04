@@ -1,25 +1,121 @@
-@include web_logo();
+
+@media only screen and (min-width: 479px) {
+    @include web_logo();
+}
+
+@media only screen and (max-width: 480px) {
+    @include web_logo(2em);
+}
 
 nav {
     font-size: 1.5em;
 
-    ul {
+    & > ul {
 
         &.pagelinks {
             font-size:1.625em;
             padding: 0 1.125em;
         }
 
-        li {
+        & > li {
 
-            a {
+            & > a {
                 @include background_transition(0.125s);
-                @include zoom(1.2);
                 background: $hell_grey;
                 margin: 0.375em;
 
                 &:hover {
                     background: $half;
+                }
+
+                &.active {
+                    background-color: $earth_blue;
+
+                    &:hover {
+                        background-color: $earth_blue_hover;
+                    }
+                }
+
+                &:not(.active) {
+                    @include zoom(1.2);
+                }
+            }
+
+            & > ul {
+                @include transition(transform 0.125s ease-in-out);
+                font-size: 0.5em;
+                display: inline-table;
+                vertical-align: middle;
+                text-align: left;
+
+                li {
+                    display: table-row;
+
+                    a {
+                        font-weight: bold;
+                        padding: 0.25em;
+
+                        &:before { display: none; }
+
+                        &.l2 {
+                            margin-left: -1.625em;
+                        }
+
+                        &.l1 {
+                            margin-left: -0.5em;
+                        }
+
+                        em {
+                            border-radius: 50%;
+                            background-color: $hell_grey;
+                            min-width: 1em;
+                            display: inline-block;
+                            line-height: 1em;
+                            text-align: center;
+                            font-style: normal;
+                            padding:0.125em;
+                            font-weight: bold;
+                        }
+
+                        &:hover {
+
+                            span {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        ul.pagelinks {
+            padding: 0.125em;
+        }
+    }
+
+    @media only screen and (max-width: 320px) {
+
+        ul {
+
+            li {
+                display: block;
+
+                ul {
+                    margin-left: 50%;
+                    position:relative;
+
+                    li {
+                        position: relative;
+                        right: 1em;
+                        display: block;
+
+                        a.l1, a.l2 {
+                            margin:0;
+                        }
+                    }
                 }
             }
         }

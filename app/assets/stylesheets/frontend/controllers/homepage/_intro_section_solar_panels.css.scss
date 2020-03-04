@@ -15,7 +15,24 @@ section#top {
                         // solarny panel
                         position: relative;
                         background-color: $solar_panel_item_bg;
-                        @include border_shadow_inset(0.25em, 0.25em, $space_softblack);
+                        @include border_shadow_both(0.125em, 0.125em, $space_softblack);
+
+                        a {
+                            display: block;
+                            padding:0.375em;
+                            @include background_transition($transition_time);
+                            @include box_sizing();
+                            @include border_shadow_both(0.125em, 0.125em, $space_softblack);
+
+                            &:hover {
+                                background-color: $solar_panel_item_bg_hover;
+                                color: $solar_panel_item_txt_hover;
+                            }
+                        }
+
+                        & > a {
+                            width: 100%;
+                        }
 
                         div.triangle {
                             outline: 1px solid transparent;
@@ -71,6 +88,7 @@ section#top {
                             border-spacing:0;
                             height: 100%;
                             width:100%;
+                            font-size: 1.25em;
                             @include border_shadow_both(0.125em, 0.125em, $space_softblack);
 
                             div {
@@ -78,17 +96,7 @@ section#top {
                                 vertical-align: middle;
 
                                 a {
-                                    @include background_transition($transition_time);
-                                    @include box_sizing();
-                                    @include border_shadow_both(0.125em, 0.125em, $space_softblack);
-                                    font-size: 1.25em;
                                     line-height: 1em;
-                                    padding:0.375em;
-
-                                    &:hover {
-                                        background-color: $solar_panel_item_bg_hover;
-                                        color: $solar_panel_item_txt_hover;
-                                    }
                                 }
                             }
 
@@ -98,10 +106,8 @@ section#top {
 
                                 a {
                                     height: 100%;
-                                    display: table;
 
                                     h3 {
-                                       display: table-cell;
                                        vertical-align: middle;
                                     }
                                 }
@@ -126,6 +132,10 @@ section#top {
                     ul {
 
                         li {
+
+                            h2 {
+                                font-size: 4em;
+                            }
 
                             div.triangle {
                                 display: none;
@@ -158,6 +168,37 @@ section#top {
                                     &::after {
                                         left: 50%;
                                         background: linear-gradient(to bottom left, transparent 48%, $solar_panel_holder_bg 49%);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 480px) {
+                nav {
+
+                    ul {
+
+                        li {
+
+                            h3 {
+                                font-size: 1.5em;
+                            }
+
+                            div.menuitem_content {
+
+                                div {
+                                    display: block;
+                                }
+
+                                div.skill_category {
+                                    width:100%;
+
+                                    a {
+                                        width:100%;
+                                        line-height: 1.5em;
                                     }
                                 }
                             }
