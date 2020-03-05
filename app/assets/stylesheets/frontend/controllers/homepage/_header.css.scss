@@ -5,6 +5,10 @@
 
 @media only screen and (max-width: 480px) {
     @include web_logo(2em);
+
+    figure.web_logo {
+        font-size: 12vw;
+    }
 }
 
 nav {

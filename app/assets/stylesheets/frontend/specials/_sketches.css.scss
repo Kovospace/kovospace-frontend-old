@@ -258,7 +258,7 @@
         height:0.4375em;
         left:0.1875em;
         right:0.1875em;
-        bottom:0.125em;
+        bottom:0.25em;
     }
 
     &::after {
@@ -266,9 +266,8 @@
         background-color: transparent;
         width:0.125em;
         height:0.0625em;
-        //left:0.325em;
         right:0.375em;
-        top:0.3125em;
+        top:0.1875em;
     }
 }
 
@@ -392,6 +391,7 @@
                 right:100%;
                 transform: rotate(-60deg);
                 transform-origin: top right;
+                font-size: ($width/2.5);
             }
 
             &::before, &::after {
@@ -596,7 +596,7 @@
     span {
 
         display: block;
-        font-size: $size;
+        font-size: ($size*1.25);
         width: 0;
         height: 0;
         border-left: 1em solid transparent;
@@ -645,6 +645,7 @@
         border-top-left-radius: 0.125em;
         border-top-right-radius: 0.125em;
         position:relative;
+        font-size: ($size);
     }
 }
 

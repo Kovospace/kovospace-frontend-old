@@ -40,7 +40,8 @@ section#o-mne {
                 }
 
                 &:last-child {
-                    vertical-align: bottom;
+                    vertical-align: middle;
+                    padding-top: 0.25em;
                 }
 
                 &:first-child {
@@ -52,6 +53,39 @@ section#o-mne {
                     &:hover {
                         text-decoration: underline;
                         cursor:pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        article {
+            font-size: 1.5em;
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+
+        article {
+            font-size: 1.25em;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+
+        article {
+            text-align: center;
+
+            p {
+
+                span {
+                    padding: 0;
+                    display: block;
+
+                    i.icon {
+                        margin:0;
                     }
                 }
             }

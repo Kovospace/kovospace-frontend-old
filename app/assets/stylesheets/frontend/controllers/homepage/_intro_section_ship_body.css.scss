@@ -19,7 +19,7 @@ section#top {
             }
 
             &:after {
-                content: 'TOP10';
+                content: 'TOP OF';
                 font-family: "Courier New", Courier, monospace;
                 text-align: center;
                 font-size:4em;
@@ -28,6 +28,13 @@ section#top {
                 writing-mode: vertical-rl;
                 text-orientation: upright;
                 margin: 0 auto;
+                white-space: nowrap;
+                color: $bord;
+                text-shadow:
+                    -3px -3px 0 $pure_white,
+                    3px -3px 0 $pure_white,
+                    -3px 3px 0 $pure_white,
+                    3px 3px 0 $pure_white;
             }
         }
     }

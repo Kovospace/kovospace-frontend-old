@@ -156,6 +156,7 @@ main {
         @media only screen and (max-width: 480px) {
 
             &#top {
+                padding-top: 3em;
 
                 article#menu {
 
@@ -184,6 +185,8 @@ main {
             }
         }
 
+/* ----------------------------------------------------------------------------- */
+
         &#novinky {
             display: table;
             width: 100%;
@@ -198,6 +201,7 @@ main {
 
             article {
                 padding-left:1em;
+                padding: 0.5em;
             }
 
             @media only screen and (max-width: 640px) {
@@ -207,6 +211,8 @@ main {
                 }
             }
         }
+
+/* ----------------------------------------------------------------------------- */
 
         &#skills {
 
@@ -234,8 +240,8 @@ main {
                     vertical-align:middle;
 
                     figure {
-                        width: 9em;
-                        height: 9em;
+                        width: 8em;
+                        height: 8em;
                         display: inline-table;
                     }
                 }
@@ -250,6 +256,24 @@ main {
             }
         }
 
+        @media only screen and (max-width: 640px) {
+
+            &#skills {
+
+                article {
+                    margin: 3em auto;
+                    padding: 0.5em;
+
+                    div.description, div.projects {
+                        display: table;
+                        margin: 1em auto;
+                    }
+                }
+            }
+        }
+
+/* ----------------------------------------------------------------------------- */
+
         &#o-mne {
 
             aside, article {
@@ -259,6 +283,17 @@ main {
 
             article {
                 padding-left: 1em;
+            }
+
+            @media only screen and (max-width: 480px) {
+
+                aside, article {
+                    display: block;
+                }
+
+                article {
+                    padding: 0.5em;
+                }
             }
         }
 
@@ -281,6 +316,25 @@ main {
                 width:1%;
                 padding-left: 1.5%;
             }
+
+            @media only screen and (max-width: 640px) {
+
+                article, aside {
+                    display: block;
+                    padding:0;
+                }
+
+                aside {
+                    width:auto;
+                    padding-top: 12em;
+                }
+            }
+
+            @media only screen and (max-width: 480px) {
+                padding:0.5em;
+                padding-bottom: 0;
+            }
+
         }
     }
 }

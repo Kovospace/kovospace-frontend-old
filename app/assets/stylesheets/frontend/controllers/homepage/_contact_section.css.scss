@@ -156,5 +156,13 @@ section#kontakt {
         text-align:center;
         @include parabola(4em);
         @include box_sizing();
+
+        @media only screen and (min-width: 768px) {
+            @include parabola(4em);
+        }
+
+        @media only screen and (max-width: 768px) {
+            @include parabola(3em);
+        }
     }
 }
