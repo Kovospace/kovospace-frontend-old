@@ -4,6 +4,10 @@ nav {
     display: block;
     margin-bottom: 3em;
 
+    @media only screen and (max-width: 640px) {
+        font-size:1.25em;
+    }
+
     ul {
         display: inline-block;
 
@@ -157,7 +161,7 @@ nav {
                 }
             }
 
-            @media only screen and (min-width: 641px) {
+            @media only screen and (min-width: 534px) {
 
                 &.submenu {
 
@@ -177,6 +181,29 @@ nav {
 
                             a.number {
                                 @include rotate(-45deg);
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media only screen and (max-width: 533px) {
+
+                &.submenu {
+
+                    ul {
+
+                        li {
+                            display: table;
+                            text-align: right;
+                            margin-left:auto;
+                            padding: 0.25em;
+
+                            a.title {
+                                display: table-cell;
+                                width: auto;
+                                vertical-align: middle;
+                                padding-right: 0.25em;
                             }
                         }
                     }
