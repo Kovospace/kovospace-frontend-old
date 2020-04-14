@@ -8,11 +8,16 @@ nav {
         display: inline-block;
 
         li {
-            margin: 0 0.5em;
+            padding: 0 0.25em;
 
-            a {
+            & > a {
+                @include background_transition(0.125s);
                 background-color: $hell_grey;
                 text-align:center;
+
+                &:hover {
+                    background: $half;
+                }
             }
 
             &.active {
@@ -25,35 +30,109 @@ nav {
                     background-color: $logo_orange;
                     color: $black;
                 }
+            }
+
+            &.submenu {
 
                 ul {
-                    margin-top: -2.5em;
+
+                    li {
+
+                        a.title, a.number {
+
+                            b, span {
+                                text-decoration:none;
+                                position: relative;
+
+                                &::after {
+                                    @include background_transition($transition_time_fast);
+                                    content: '';
+                                    display: block;
+                                    background-color: transparent;
+                                    position: absolute;
+                                }
+                            }
+                        }
+
+                        a.title {
+
+                            b {
+
+                                &::after {
+                                    bottom: 0;
+                                    top:0;
+                                    left:0;
+                                    width: 0.125em;
+                                }
+                            }
+                        }
+
+                        a.number {
+
+                            span {
+
+                                &::after {
+                                    bottom: 50%;
+                                    left:0;
+                                    right:0;
+                                    height:0.125em;
+                                    margin-bottom: -0.0625em;
+                                }
+                            }
+
+                        }
+
+                        &:hover {
+
+                            a.title {
+
+                                b {
+
+                                    &::after {
+                                        background-color: $logo_orange;
+                                    }
+                                }
+
+                            }
+
+                            a.number {
+                                background-color: $half;
+
+                                span {
+
+                                    &::after {
+                                        background-color: $logo_orange;
+                                    }
+                                }
+
+                                &.active {
+                                    background-color: $earth_blue_hover;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
             ul {
-                display: inline-table;
                 vertical-align: baseline;
-                text-align: left;
                 height:100%;
 
                 li {
-                    display: inline-block;
-                    margin:0 0.5em;
+                    line-height: 1em;
                     white-space: nowrap;
                     vertical-align: baseline;
                     text-align: center;
 
-                    &.phantom {
-                        font-size: 0.707em; //sin 45 deg
-                        font-weight: bold;
-                        margin:0;
-                        opacity: 0;
+                    a {
+                        text-align: center;
                     }
 
-                    a {
-                        display: inline-block;
-                        text-align: center;
+                    a.number {
+
+                        span {
+                            padding: 0;
+                        }
 
                         &.active {
                             background-color: $earth_blue;
@@ -61,29 +140,44 @@ nav {
                     }
 
                     a.title {
-                        text-emphasis: none;
+                        display: block;
+                        width: 100%;
                         font-style: normal;
                         font-size: 1em !important;
                         background: none;
-                        writing-mode: vertical-rl;
-                        margin: 0 auto;
-                        padding-bottom: 0.25em;
-                        @include rotate(45deg);
-                        transform-origin: left bottom;
-                        position: relative;
-                        left:0.75em;
 
                         b {
-                            display: inline-block;
-                            @include rotate(180deg);
-
-                            &:hover {
-                                text-decoration: underline;
-                            }
+                            display: block;
                         }
 
                         &:before {
                             display: none !important;
+                        }
+                    }
+                }
+            }
+
+            @media only screen and (min-width: 641px) {
+
+                &.submenu {
+
+                    ul {
+
+                        li {
+
+                            a.title {
+                                writing-mode: vertical-rl;
+                                @include transform(rotate(45deg));
+                                transform-origin: right bottom;
+
+                                b {
+                                    @include rotate(-180deg);
+                                }
+                            }
+
+                            a.number {
+                                @include rotate(-45deg);
+                            }
                         }
                     }
                 }

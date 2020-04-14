@@ -45,6 +45,11 @@ nav {
                 }
             }
 
+            & > a:hover + ul {
+                @include transition(transform 0.25s ease-in-out);
+                @include transform(translate(1em));
+            }
+
             & > ul {
                 @include transition(transform 0.125s ease-in-out);
                 font-size: 0.5em;
