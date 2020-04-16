@@ -3,7 +3,7 @@
 
     <article>
 
-        <h2>
+        <h2 class="lores">
             <%= link_to p.title, show_portfolio_path(p) %>
         </h2>
 
@@ -16,6 +16,10 @@
                 </picture>
             <% end %>
         </figure>
+
+        <h2 class="hires">
+            <%= link_to p.title, show_portfolio_path(p) %>
+        </h2>
 
         <h3>
             <%= markdown p.intro %>
