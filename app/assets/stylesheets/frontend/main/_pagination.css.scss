@@ -11,6 +11,7 @@ section.pagination {
             background-color: $hell_grey;
             display: inline-block;
             vertical-align: middle;
+            margin:0.125em;
 
             &.page {
                 @include height_expander();
@@ -35,6 +36,14 @@ section.pagination {
             &.next, &.last, &.first, &.prev {
                 padding: 0.25em 0.5em;
                 border-radius:1em;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
             }
         }
     }

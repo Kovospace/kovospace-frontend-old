@@ -1,7 +1,8 @@
 class BaseUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::RMagick
-  include CarrierWave::ImageOptim
+  #include CarrierWave::RMagick
+  #include CarrierWave::ImageOptim
+  include CarrierWave::MiniMagick
 
   storage :file
 
@@ -31,6 +32,9 @@ class BaseUploader < CarrierWave::Uploader::Base
       @sizes[meno].each_with_index do |(size, v), index|
         if index == 0
           version "#{meno.singularize}_#{size.to_s}" do
+            #process :fix_exif_rotation
+            #process :strip
+            #process :gaussian_blur => 0.05
             work_on(process_method, v[0], v[1])
           end
         else
@@ -48,9 +52,12 @@ class BaseUploader < CarrierWave::Uploader::Base
 
   def self.work_on(meth, x, y)
       process meth => [x, y]
-      process optimize: [{
-        jpegtran: true
-      }]
+      #process optimize: [
+      #  { jpegoptim: true }
+      #]
+      #process optimize: [
+      #  { jpegtran: true }
+      #]
   end
 
 end

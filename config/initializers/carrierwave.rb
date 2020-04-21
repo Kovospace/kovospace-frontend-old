@@ -1,5 +1,6 @@
 module CarrierWave
 
+=begin
     module RMagick
 
         def quality(percentage)
@@ -30,7 +31,7 @@ module CarrierWave
         # Tiny gaussian blur to optimize the size
         def gaussian_blur(radius)
           manipulate! do |img|
-            img.gaussian_blur(radius.to_s)
+            img.gaussian_blur(radius.to_f)
             img = yield(img) if block_given?
             img
           end
@@ -59,6 +60,40 @@ module CarrierWave
           end
         end
 
+        def optimizer
+          manipulate! do |img|
+              return img unless img.mime_type.match /image\/jpeg/
+              img.strip
+              img.combine_options do |c|
+                  c.quality "80"
+                  c.depth "8"
+                  c.interlace "plane"
+              end
+              img
+          end
+        end
+
     end
+=end
+
+  module MiniMagick
+
+    def optimizer
+      manipulate! do |img|
+          #return img unless img.mime_type.match /image\/jpeg/
+          img.format "jpeg"
+          img.strip
+          img.combine_options do |c|
+              c.quality "80"
+              c.depth "8"
+              c.interlace "plane"
+          end
+          img
+      end
+    end
+
+  end
+
+
 
 end

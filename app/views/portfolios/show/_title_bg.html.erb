@@ -11,6 +11,10 @@
 
     <% elsif typ == :responsive %>
 
+        <picture <%= @portfolio.style %>>
+            <%= image_tag(@title_bgs.first.title_bg) %>
+        </picture>
+
     <% end %>
 
 </figure>

@@ -26,21 +26,57 @@ class PortfolioTitleUploader < BaseUploader
   # def scale(width, height)
   #   # do something
   # end
-
-  # Create different versions of your uploaded files:
-  version :thumb do
-    process resize_to_fit: [320, 320]
-  end
-
-  # Add a white list of extensions which are allowed to be uploaded.
-  # For images you might use something like this:
+  #
   def extension_whitelist
      %w(jpg jpeg gif png)
   end
 
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  #process :fix_exif_rotation
+  #process :strip
+  #process :gaussian_blur => 0.05
+
+  #version :bg_3x do
+   # process resize_to_fit: [4098, 2304]
+   # process :interlace# => :plane
+    #process :quality => 85
+  #end
+
+  #version :bg_2x do
+   # process resize_to_fit: [2732, 1536]
+    #process :interlace# => :plane
+    #process :quality => 85
+  #end
+
+  version :bg do
+    #process resize_to_fit: [1366, 768]
+    #process :interlace# => :plane
+    #process :quality => 50
+    process :optimizer
+  end
+
+
+  # Create different versions of your uploaded files:
+=begin
+  create_sizes(
+      sizes: {
+        "1x" => [1366, 768],
+        "2x" => [2732, 1536],
+        "3x" => [4098, 2304]
+      },
+      namespace: "bg"
+  )
+
+  create_sizes(
+      sizes: {
+        "1x" => [320, 320],
+        "2x" => [640, 640],
+        "3x" => [960, 960]
+      },
+      namespace: "thumb"
+  )
+=end
+  #def filename
+    # "bg.jpg" if original_filename
+  #end
+
 end

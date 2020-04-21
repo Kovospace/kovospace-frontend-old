@@ -33,7 +33,10 @@ class PortfoliosController < ApplicationController
 
     ## override
     def index_action
-        @portfolios = Portfolio.category_filter(params[:skillset_id]).page(params[:page]).per(2)
+        @portfolios = Portfolio
+            .category_filter(params[:skillset_id])
+            .page(params[:page])
+            .per(2)
     end
 
     def _load_vars

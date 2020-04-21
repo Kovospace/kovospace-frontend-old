@@ -30,8 +30,17 @@ class PortfolioTitleMobileUploader < BaseUploader
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process resize_to_fit: [320, 320]
+  #
+  version :thumb_mobile_3x do
+    process resize_to_fit: [912, 912]
+  end
+
+  version :thumb_mobile_2x do
+    process resize_to_fit: [608, 608]
+  end
+
+  version :thumb_mobile do
+    process resize_to_fit: [304, 304]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

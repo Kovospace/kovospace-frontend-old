@@ -30,10 +30,31 @@ class ScreenshotUploader < BaseUploader
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
-    process resize_to_fit: [360, 360]
+  #
+  #
+=begin
+  process :fix_exif_rotation
+  process :strip
+  process :gaussian_blur => 0.05
+
+  version :thumb_3x do
+    process resize_to_fit: [1080, 1080]
+    process :quality => 85
+    process :interlace => :plane
   end
 
+  version :thumb_2x do
+    process resize_to_fit: [720, 720]
+    process :quality => 85
+    process :interlace => :plane
+  end
+
+  version :thumb do
+    process resize_to_fit: [360, 360]
+    process :quality => 90
+    process :interlace => :plane
+  end
+=end
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist

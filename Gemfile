@@ -40,8 +40,8 @@ gem 'carrierwave', '~> 1.0'
 #gem 'ckeditor'
 gem 'trix'
 
-#gem 'mini_magick'
-gem 'rmagick'
+gem 'mini_magick'
+#gem 'rmagick'
 
 #gem 'piet'
 #gem 'piet-binary'
