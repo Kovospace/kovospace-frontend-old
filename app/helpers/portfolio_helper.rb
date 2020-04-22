@@ -33,4 +33,8 @@ module PortfolioHelper
          active_link_to_class("#{portfolio_url}/#{skillset.slug}")
     end
 
+    def imagePreviewUrl(p, size)
+        return p.portfolio_screenshot.screenshot.send(size).url.sub(/_orig\.png$/, '.jpg')
+    end
+
 end

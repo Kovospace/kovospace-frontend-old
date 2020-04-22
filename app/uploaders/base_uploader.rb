@@ -4,6 +4,9 @@ class BaseUploader < CarrierWave::Uploader::Base
   #include CarrierWave::ImageOptim
   include CarrierWave::MiniMagick
 
+  require 'mimemagic'
+  require 'rack/mime'
+
   storage :file
 
   def store_dir
@@ -18,10 +21,17 @@ class BaseUploader < CarrierWave::Uploader::Base
     attr_accessor :sizes
   end
 
+  def filename
+    if original_filename
+      extenstion = File.extname(original_filename)
+      return "orig#{extenstion}"
+    end
+  end
+
   def self.create_sizes(
       sizes: {},
       namespace: "",
-      process_method: :resize_to_fill
+      process_method: :resize_to_fit
       )
 
       meno = namespace.blank? ? "sizes" : "#{namespace.to_s}_sizes"
@@ -32,9 +42,6 @@ class BaseUploader < CarrierWave::Uploader::Base
       @sizes[meno].each_with_index do |(size, v), index|
         if index == 0
           version "#{meno.singularize}_#{size.to_s}" do
-            #process :fix_exif_rotation
-            #process :strip
-            #process :gaussian_blur => 0.05
             work_on(process_method, v[0], v[1])
           end
         else
@@ -52,6 +59,15 @@ class BaseUploader < CarrierWave::Uploader::Base
 
   def self.work_on(meth, x, y)
       process meth => [x, y]
+      process :optimizer
+      def full_filename(for_file)
+        if (super(for_file) == filename)
+          return filename
+        else
+          rgx = Regexp.new("_#{filename}$")
+          return super(for_file).sub(rgx, '.jpg')
+        end
+      end
       #process optimize: [
       #  { jpegoptim: true }
       #]

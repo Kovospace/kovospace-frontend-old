@@ -74,6 +74,8 @@ gem 'naturally'
 
 gem 'yaml_db'
 
+gem 'mimemagic'
+
 #gem 'canonical-rails', github: 'jumph4x/canonical-rails'
 
 #gem 'activeadmin'

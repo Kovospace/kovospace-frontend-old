@@ -1,6 +1,8 @@
 
 <% @portfolios.each do |p| %>
 
+
+
     <article>
 
         <h2 class="lores">
@@ -12,7 +14,23 @@
 
             <% else %>
                 <picture>
-                    <%= image_tag(p.portfolio_screenshot.screenshot.thumb) %>
+                    <source
+                        media="(max-width: 360px)"
+                        srcset="<%= imagePreviewUrl(p, :avatar_size_med_1x) %>,
+                                <%= imagePreviewUrl(p, :avatar_size_med_2x) %> 2x,
+                                <%= imagePreviewUrl(p, :avatar_size_med_3x) %> 3x"
+                    >
+                    <source
+                        media="(max-width: 320px)"
+                        srcset="<%= imagePreviewUrl(p, :avatar_size_small_1x) %>,
+                                <%= imagePreviewUrl(p, :avatar_size_small_2x) %> 2x,
+                                <%= imagePreviewUrl(p, :avatar_size_small_3x) %> 3x"
+                    >
+                    <img
+                        src="<%= imagePreviewUrl(p, :avatar_size_1x) %>"
+                        srcset="<%= imagePreviewUrl(p, :avatar_size_2x) %> 2x,
+                                <%= imagePreviewUrl(p, :avatar_size_3x) %> 3x"
+                    >
                 </picture>
             <% end %>
         </figure>

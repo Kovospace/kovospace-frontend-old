@@ -84,6 +84,7 @@ module CarrierWave
           img.format "jpeg"
           img.strip
           img.combine_options do |c|
+              #c.resize_to_fit(250,250)
               c.quality "80"
               c.depth "8"
               c.interlace "plane"
@@ -94,6 +95,22 @@ module CarrierWave
 
   end
 
+=begin
+  module Uploader
+    module Download
+      class RemoteFile
+        def original_filename
+          value = File.basename(file.base_uri.path)
+          mime_type = Mime::Type.lookup(file.content_type)
+          unless File.extname(value).present? || mime_type.blank?
+            value = "#{value}.#{mime_type.symbol}"
+          end
+          value
+        end
+      end
+    end
+  end
+=end
 
 
 end
