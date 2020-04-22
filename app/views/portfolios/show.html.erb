@@ -5,13 +5,19 @@
 
 <% end %>
 
-<section id="show_work">
-
+<header class="portfolios show">
     <%= render 'portfolios/show/title_bg' %>
+</header>
 
-    <article>
-         <h2> <%= @portfolio.title %> </h2>
-         <%= @portfolio.description %>
-    </article>
+<main>
+    <section id="show_work">
 
-</section>
+        <%#= render 'portfolios/show/title_bg' %>
+
+        <article>
+             <h2> <%= @portfolio.title %> </h2>
+             <%= @portfolio.description %>
+        </article>
+
+    </section>
+</main>

@@ -212,3 +212,15 @@ nav {
         }
     }
 }
+
+
+picture {
+    max-width: 100%;
+    display: block;
+
+    img {
+        display: block;
+        max-width: 100%;
+        max-height:100%;
+    }
+}

@@ -90,17 +90,12 @@ section#portfolio {
             width: 320px;
             position: relative;
             float:left;
-            //right:1.5em;
             padding-bottom:320px;
             border-radius: 50%;
             shape-outside: margin-box;
-            //border: 2em solid transparent;
             overflow:hidden;
             @include shadow(0, 0, 1em, 0.5em); // odstranit v prod.
             margin: 2em;
-            //margin-top: 2em;
-           // margin-left: 0;
-            //margin-right: 2em;
 
             picture {
                 position: absolute;
@@ -134,7 +129,6 @@ section#portfolio {
 
                 figure {
                     float:right;
-                    //left:1.5em;
                 }
 
                 & > div.portfolio_actions {
@@ -161,7 +155,8 @@ section#portfolio {
             }
 
             figure {
-                margin-top: 0;
+                margin: 1em;
+                @include shadow(0, 0, 0em, 0em);
             }
         }
     }
