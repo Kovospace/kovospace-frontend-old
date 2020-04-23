@@ -5,34 +5,16 @@
 
 <% end %>
 
-<%= render 'portfolios/show/title_bg' %>
+<% content_for :top_menu do %>
+
+    <%= render 'portfolios/show/title_bg' %>
+    <%= render 'portfolios/show/top' %>
+
+<% end %>
 
 <section id="show_work">
 
-    <article>
-
-        <div>
-            <h2 <%= @portfolio.style %>>
-                <a href="">
-                    <%= @portfolio.title %>
-                </a>
-            </h2>
-
-            <h2 <%= @portfolio.style %>>
-                <a href="">
-                    test
-                </a>
-            </h2>
-        </div>
-
-        <h3>
-            <%= markdown @portfolio.intro %>
-        </h3>
-        <p>
-        <br>
-        <%= markdown(@portfolio.description) %>
-
-    </article>
+    <%= render 'portfolios/show/article' %>
 
 </section>
 

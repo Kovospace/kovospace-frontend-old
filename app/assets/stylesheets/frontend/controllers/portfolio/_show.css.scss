@@ -9,35 +9,6 @@ section#show_work {
     article {
         padding: 0 3%;
 
-        div {
-            height:1em;
-            vertical-align:middle;
-            display: inline;
-            position: relative;
-            bottom: 2em;
-
-            h2 {
-                position: relative;
-                display: inline-table;
-                height: 1em;
-                font-size: 2.5em;
-                border-radius: 50%;
-                border: 0.125em solid black;
-                padding:0.125em;
-
-
-                @include height_expander();
-
-                a {
-                    //display: block;
-                    //padding:0.125em;
-                    //position: absolute;
-                    //bottom:0.5em;
-                    display: inline-block;
-                }
-            }
-        }
-
         h3 {
             font-size: 1.5em;
             margin-bottom: 0.75em;
