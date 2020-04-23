@@ -1,19 +1,25 @@
 
-<% typ = showsection_decide_titlebg_type(@portfolio) %>
+<% content_for :top_menu do %>
 
-
+    <% typ = showsection_decide_titlebg_type(@portfolio) %>
 
     <% if typ == :desktop %>
 
-        <picture <%= @portfolio.style %>>
-            <%= image_tag(@title_bgs.first.title_bg) %>
+    <figure class="desktop">
+
+        <picture <%#= @portfolio.style %>>
+            <img
+                src="<%= imageHeaderUrl(:bg_size_1x) %>"
+                srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
+                        <%= imageHeaderUrl(:bg_size_3x) %> 3x"
+            >
         </picture>
+
+    </figure>
 
     <% elsif typ == :responsive %>
 
-        <picture <%= @portfolio.style %>>
-            <%= image_tag(@title_bgs.first.title_bg) %>
-        </picture>
-
     <% end %>
+
+<% end %>
 

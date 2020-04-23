@@ -7,7 +7,16 @@ class BaseUploader < CarrierWave::Uploader::Base
   require 'mimemagic'
   require 'rack/mime'
 
+  class << self
+    attr_accessor :sizes
+    attr_accessor :original_width
+    attr_accessor :original_height
+  end
+
   storage :file
+
+  #process :store_dimensions
+  #process :calculate_retina_sizes_from_source
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
@@ -15,10 +24,6 @@ class BaseUploader < CarrierWave::Uploader::Base
 
   def extension_whitelist
     %w(jpg jpeg gif png)
-  end
-
-  class << self
-    attr_accessor :sizes
   end
 
   def filename
@@ -31,7 +36,8 @@ class BaseUploader < CarrierWave::Uploader::Base
   def self.create_sizes(
       sizes: {},
       namespace: "",
-      process_method: :resize_to_fit
+      process_method: :resize_to_limit,
+      only_retina_mode: false
       )
 
       meno = namespace.blank? ? "sizes" : "#{namespace.to_s}_sizes"
@@ -74,6 +80,23 @@ class BaseUploader < CarrierWave::Uploader::Base
       #process optimize: [
       #  { jpegtran: true }
       #]
+  end
+
+  def store_dimensions
+    if file && model
+      @original_width, @original_height = ::MiniMagick::Image.open(file.file)[:dimensions]
+    end
+    #Rails.logger.info "----------------------"
+   # Rails.logger.info @original_width
+    #Rails.logger.info "----------------------"
+    #Rails.logger.info "--------------------------------"
+    #Rails.logger.info a
+    #Rails.logger.info "-----------------------------"
+  end
+
+  def self.divide_and_round_to_even(num, divider)
+    tempres = num.to_f/divider
+    return tempres.floor.even? ? tempres.floor : tempres.ceil
   end
 
 end

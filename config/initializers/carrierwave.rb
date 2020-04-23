@@ -93,6 +93,22 @@ module CarrierWave
       end
     end
 
+    def retina_resize
+      manipulate! do |img|
+
+          #return img unless img.mime_type.match /image\/jpeg/
+          #img.format "jpeg"
+          #img.strip
+          #img.combine_options do |c|
+              #c.resize_to_fit(250,250)
+              #c.quality "80"
+              #c.depth "8"
+              #c.interlace "plane"
+          end
+          #img
+      end
+    end
+
   end
 
 =begin

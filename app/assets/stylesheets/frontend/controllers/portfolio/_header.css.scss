@@ -213,14 +213,37 @@ nav {
     }
 }
 
+figure {
+    //background-color: $space_background;
+    background-color: green;
 
-picture {
-    max-width: 100%;
-    display: block;
+    &.desktop {
+        padding-top:2em;
+        padding-left:2em;
+        padding-right: 2em;
 
-    img {
-        display: block;
+        picture {
+            border: 1.5em solid black;
+            border-top-left-radius: 1.5em;
+            border-top-right-radius: 1.5em;
+            border-bottom-width: 0;
+            /*padding-top:2em;
+            padding-left:2em;
+            padding-right: 2em;*/
+        }
+    }
+
+    picture {
         max-width: 100%;
-        max-height:100%;
+        display: table;
+        margin: 0 auto;
+
+        img {
+            display: block;
+            max-width: 100%;
+            max-height:100%;
+            //margin: 0 auto;
+            //border: 1em solid black;
+        }
     }
 }

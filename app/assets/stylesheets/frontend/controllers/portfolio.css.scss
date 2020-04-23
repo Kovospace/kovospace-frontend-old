@@ -2,7 +2,7 @@ main {
     display: flex;
     flex-direction: column;
 
-    section#portfolio {
+    section#portfolio, section#show_work {
         flex: 1 0 auto;
 
         article {

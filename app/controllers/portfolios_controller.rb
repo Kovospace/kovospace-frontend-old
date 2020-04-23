@@ -9,7 +9,7 @@ class PortfoliosController < ApplicationController
 
     ## override
     def show
-        @title_bgs = @portfolio.portfolio_titlebgs
+        #@title_bgs = @portfolio.portfolio_titlebgs
     end
 
     def add_screenshots
@@ -24,7 +24,7 @@ class PortfoliosController < ApplicationController
 
     def _choose_layout
         case action_name
-        when "index"
+        when "index", "show"
             return "base"
         when "new", "create", "edit", "update"
             return "admin"

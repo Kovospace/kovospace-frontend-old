@@ -5,19 +5,25 @@
 
 <% end %>
 
-<header class="portfolios show">
-    <%= render 'portfolios/show/title_bg' %>
-</header>
+<%= render 'portfolios/show/title_bg' %>
 
-<main>
-    <section id="show_work">
+<section id="show_work">
 
-        <%#= render 'portfolios/show/title_bg' %>
+    <article>
 
-        <article>
-             <h2> <%= @portfolio.title %> </h2>
-             <%= @portfolio.description %>
-        </article>
+        <h2>
+            <a href="" <%= @portfolio.style %>>
+                <%= @portfolio.title %>
+            </a>
+        </h2>
+        <h3>
+            <%= markdown @portfolio.intro %>
+        </h3>
+        <p>
+        <br>
+        <%= markdown(@portfolio.description) %>
 
-    </section>
-</main>
+    </article>
+
+</section>
+
