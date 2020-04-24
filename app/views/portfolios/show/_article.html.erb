@@ -1,10 +1,32 @@
 <article>
 
-    <h3>
-        <%= markdown @portfolio.intro %>
-    </h3>
-    <p>
+    <h3> <%= markdown @portfolio.intro %> </h3>
     <br>
-    <%= markdown(@portfolio.description) %>
+    <div> <%= markdown(@portfolio.description) %> </div>
+    <br>
+    <br>
+    <h4> Realizácia: <%= @portfolio.realis_date.strftime("%B %Y") %> </h4>
 
 </article>
+
+<br>
+
+<aside>
+    <ul>
+
+        <li >
+            <a href="" <%= @portfolio.style %> class="fakehover">
+                <span> <%= @portfolio.skillset.title %> </span>
+            </a>
+        </li>
+
+        <% @portfolio.skills.each do |skill| %>
+            <li>
+                <a href="" <%= skill.style %> class="fakehover">
+                   <span> <%= skill.title %> </span>
+                </a>
+            </li>
+        <% end %>
+
+    </ul>
+</aside>

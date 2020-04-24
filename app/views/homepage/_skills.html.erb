@@ -19,7 +19,7 @@
             <% skill.portfolios.each do |project| %>
 
                 <a href="<%= show_portfolio_path(project) %>"><!--
-                    --><b <%= project.bg_style %>></b><!--
+                    --><b <%= project.bg_style %> <%= project.fakehover %>></b><!--
                     --><span <%= project.style_inverted %>><%= project.title %></span><!--
                 --></a>
 

@@ -8,6 +8,7 @@ class Portfolio < ActiveRecord::Base
 
     has_and_belongs_to_many :skills
 
+    ### miniatura v zozname prac
     has_one :portfolio_screenshot, dependent: :destroy
     accepts_nested_attributes_for(
         :portfolio_screenshot,
@@ -15,6 +16,7 @@ class Portfolio < ActiveRecord::Base
         reject_if: proc { |c| c[:screenshot].blank? }
     )
 
+    ### obrazok na headeri prace
     has_many :portfolio_titlebgs, dependent: :destroy
     accepts_nested_attributes_for(
         :portfolio_titlebgs,
@@ -38,5 +40,13 @@ class Portfolio < ActiveRecord::Base
                     .references(:skillset)
         end
     }
+
+    def link_sanitized
+        if !(link =~ /^http\:\/\//).nil?
+            return link
+        else
+            return "http://" + link
+        end
+    end
 
 end

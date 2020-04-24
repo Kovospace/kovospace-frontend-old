@@ -105,6 +105,24 @@ module ApplicationConcern
       user_signed_in?||controller_name='contact'
     end
 
+    def set_path_back(controller: params[:controller], action: params[:action], id: nil, page: params[:page])
+        session[:path_back] = { controller: controller, action: action, id: id, page: page }
+    end
+
+    def get_path_back
+    	if !session[:path_back].nil?
+    		if !session[:path_back][:controller].nil?
+    			#return session[:path_back]
+    			@path_back = session[:path_back]
+    		else
+    			@path_back = { controller: params[:controller], action: 'index' }
+    		end
+    	else
+    		@path_back = { controller: params[:controller], action: 'index' }
+    	end
+    	return false
+    end
+
 	module ClassMethods
 
 	end

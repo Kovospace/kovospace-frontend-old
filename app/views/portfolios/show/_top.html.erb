@@ -4,26 +4,32 @@
     <ul itemscope itemtype="http://schema.org/BreadcrumbList">
 
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="" itemprop="item">
-                <span itemprop="name">&#x1F3E0;</span>
-            </a>
-            <meta itemprop="position" content="1" />
-        </li>
-
-        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="" itemprop="item">
+            <%= link_to(@path_back, itemprop:"item") do %>
                 <span itemprop="name">Naspäť</span>
-            </a>
+            <% end %>
             <meta itemprop="position" content="2" />
         </li>
 
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-            <a href="" <%= @portfolio.style %> itemprop="item">
+            <a
+                href="<%= @portfolio.link_sanitized %>"
+                <%= @portfolio.style %>
+                itemprop="item"
+                target="_blank"
+                class="fakehover"
+            >
                 <h2 itemprop="name">
                     <%= @portfolio.title %>
                 </h2>
             </a>
             <meta itemprop="position" content="3" />
+        </li>
+
+        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a href="/" itemprop="item">
+                <span itemprop="name">&#x1F3E0;</span>
+            </a>
+            <meta itemprop="position" content="1" />
         </li>
 
     </ul>

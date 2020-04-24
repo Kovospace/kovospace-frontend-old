@@ -33,6 +33,10 @@ class ApplicationController < ActionController::Base
 
     before_action :_load_vars, only: [:new, :edit, :update, :create]
 
+    before_action :set_path_back, only: [:index]
+
+    before_action :get_path_back, only: [:show]
+
     def index
     end
 

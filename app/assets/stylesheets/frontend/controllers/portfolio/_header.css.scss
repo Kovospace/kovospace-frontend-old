@@ -214,11 +214,9 @@ nav {
 
     &.show_work {
         font-size: 1.25em;
-        margin-bottom: 0;
         position: relative;
-        bottom: 2em;
-        text-align: left;
         padding: 0 2em;
+        margin: 2em 0;
 
         ul {
              display: inline;
@@ -230,7 +228,7 @@ nav {
 
                     h2 {
                         display: inline-block;
-                        font-size: 1.5em;
+                        font-size: 2em;
                         vertical-align: middle;
                         padding:0.25em;
                     }
@@ -240,7 +238,7 @@ nav {
                     }
                 }
 
-                &:first-child {
+                &:last-child {
                     font-size: 1.5em;
                 }
             }
@@ -272,18 +270,18 @@ figure {
 
         &::after {
             content: " ";
-            width:100%;
+            width:50%;
             height: 3em;
             display: block;
             background-color: $hell_grey;
             border-bottom-left-radius: 3em;
             border-bottom-right-radius: 3em;
+            margin: 0 auto;
         }
 
         picture {
             border: 1.5em solid $half;
-            border-top-left-radius: 1.5em;
-            border-top-right-radius: 1.5em;
+            border-radius: 1.5em;
             margin-bottom: 0.5em;
         }
     }

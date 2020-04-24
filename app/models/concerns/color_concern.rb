@@ -21,6 +21,12 @@ module ColorConcern
         end
     end
 
+    def fakehover_class
+        if !theme_color.blank?
+            return (Color::RGB.by_css(theme_color).brightness > 0.5) ? "fakehover dark" : "fakehover"
+        end
+    end
+
     def bg_style
         return "style=\"background-color:##{bg_color};\"".html_safe
     end
@@ -35,6 +41,10 @@ module ColorConcern
 
     def style_inverted
         return "style=\"color:##{bg_color};background-color:##{text_color};\"".html_safe
+    end
+
+    def fakehover
+        return "class=\"#{fakehover_class}\"".html_safe
     end
 
 end
