@@ -24,6 +24,14 @@ main {
             aside {
                 figure { z-index: 10; }
             }
+
+            article {
+                div.projects {
+                    a {
+                        span { z-index: 3; }
+                    }
+                }
+            }
         }
 
         &#portfolio {

@@ -7,7 +7,7 @@
     <article>
 
         <div class="description">
-             <figure class="size_<%= skill.degree %> " <%= skill.style %>>
+             <figure class="size_<%= skill.degree %> <%= skill.fakehover_class %>" <%= skill.style %>>
                 <h3>
                     <span> <%= skill.title %> </span>
                 </h3>
@@ -19,8 +19,8 @@
             <% skill.portfolios.each do |project| %>
 
                 <a href="<%= show_portfolio_path(project) %>"><!--
-                    --><b <%= project.bg_style %> <%= project.fakehover %>></b><!--
                     --><span <%= project.style_inverted %>><%= project.title %></span><!--
+                    --><b <%= project.bg_style %> <%= project.fakehover %>></b><!--
                 --></a>
 
             <% end %>

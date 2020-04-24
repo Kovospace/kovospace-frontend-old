@@ -78,6 +78,13 @@ section#skills {
                     background-color: $black;
                 }
 
+                span:hover + b.fakehover {
+
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+
                 b {
                    position: absolute;
                    top:0;
