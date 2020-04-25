@@ -106,4 +106,12 @@
     box-shadow:         $padding 0 0 0 $color, -$padding 0 0 0 $color;
 }
 
+@mixin gradient($angle, $start_color, $end_color) {
+    background: $start_color; /* Old browsers */
+    background: -moz-linear-gradient($angle, $start_color 0%, $end_color 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient($angle, $start_color 0%, $end_color 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient($angle+180deg, $start_color 0%, $end_color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$start_color', endColorstr='$end_color',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 

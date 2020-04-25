@@ -104,7 +104,7 @@ module CarrierWave
               #c.quality "80"
               #c.depth "8"
               #c.interlace "plane"
-          end
+          #end
           #img
       end
     end

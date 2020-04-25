@@ -1,20 +1,63 @@
 
-<% typ = showsection_decide_titlebg_type(@portfolio) %>
+<%# typ = showsection_decide_titlebg_type(@portfolio) %>
+
+<% typ = :responsive %>
 
 <% if typ == :desktop %>
 
-<figure class="desktop">
+    <figure class="desktop">
 
-    <picture>
-        <img
-            src="<%= imageHeaderUrl(:bg_size_1x) %>"
-            srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
-                    <%= imageHeaderUrl(:bg_size_3x) %> 3x"
-        >
-    </picture>
+        <picture class="pc">
+            <img
+                src="<%= imageHeaderUrl(:bg_size_1x) %>"
+                srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
+                        <%= imageHeaderUrl(:bg_size_3x) %> 3x"
+            >
+        </picture>
 
-</figure>
+    </figure>
 
 <% elsif typ == :responsive %>
+
+    <div class="preview responsive">
+
+        <figure class="cell">
+
+            <picture class="cell">
+                <img src="">
+                <!--<img
+                    src="<%= imageHeaderUrl(:bg_size_1x) %>"
+                    srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
+                            <%= imageHeaderUrl(:bg_size_3x) %> 3x"
+                >-->
+            </picture>
+
+        </figure>
+        <figure class="pc">
+
+            <picture class="pc">
+                <img src="">
+                <!--<img
+                    src="<%= imageHeaderUrl(:bg_size_1x) %>"
+                    srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
+                            <%= imageHeaderUrl(:bg_size_3x) %> 3x"
+                >-->
+            </picture>
+
+        </figure>
+        <figure class="tablet">
+
+            <picture class="tablet">
+                <img src="">
+                <!--<img
+                    src="<%= imageHeaderUrl(:bg_size_1x) %>"
+                    srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
+                            <%= imageHeaderUrl(:bg_size_3x) %> 3x"
+                >-->
+            </picture>
+
+        </figure>
+
+    </div>
 
 <% end %>
