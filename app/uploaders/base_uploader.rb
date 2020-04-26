@@ -36,8 +36,7 @@ class BaseUploader < CarrierWave::Uploader::Base
   def self.create_sizes(
       sizes: {},
       namespace: "",
-      process_method: :resize_to_limit,
-      only_retina_mode: false
+      process_method: :resize_to_limit
       )
 
       meno = namespace.blank? ? "sizes" : "#{namespace.to_s}_sizes"

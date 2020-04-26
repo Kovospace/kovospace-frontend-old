@@ -37,8 +37,8 @@ module PortfolioHelper
         return p.portfolio_screenshot.screenshot.send(size).url.sub(/_orig\.png$/, '.jpg')
     end
 
-    def imageHeaderUrl(size)
-        return @portfolio.portfolio_titlebgs.first.title_bg.send(size).url.sub(/_orig\.png$/, '.jpg')
+    def imageHeaderUrl(size, uploader)
+        return @portfolio.portfolio_titlebgs.first.send(uploader).send(size).url.sub(/_orig\.png$/, '.jpg')
     end
 
 end

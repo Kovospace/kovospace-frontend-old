@@ -9,9 +9,9 @@
 
         <picture class="pc">
             <img
-                src="<%= imageHeaderUrl(:bg_size_1x) %>"
-                srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
-                        <%= imageHeaderUrl(:bg_size_3x) %> 3x"
+                src="<%= imageHeaderUrl(:bg_desktop_size_1x) %>"
+                srcset="<%= imageHeaderUrl(:bg_desktop_size_2x) %> 2x,
+                        <%= imageHeaderUrl(:bg_desktop_size_3x) %> 3x"
             >
         </picture>
 
@@ -25,11 +25,11 @@
 
             <picture class="cell">
                 <img src="">
-                <!--<img
-                    src="<%= imageHeaderUrl(:bg_size_1x) %>"
-                    srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
-                            <%= imageHeaderUrl(:bg_size_3x) %> 3x"
-                >-->
+                <img
+                    src="<%= imageHeaderUrl(:bg_mobile_size_1x, :title_bg_mobile) %>"
+                    srcset="<%= imageHeaderUrl(:bg_mobile_size_2x, :title_bg_mobile) %> 2x,
+                            <%= imageHeaderUrl(:bg_mobile_size_3x, :title_bg_mobile) %> 3x"
+                >
             </picture>
 
         </figure>
@@ -37,11 +37,11 @@
 
             <picture class="pc">
                 <img src="">
-                <!--<img
-                    src="<%= imageHeaderUrl(:bg_size_1x) %>"
-                    srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
-                            <%= imageHeaderUrl(:bg_size_3x) %> 3x"
-                >-->
+                <img
+                    src="<%= imageHeaderUrl(:bg_desktop_size_1x, :title_bg) %>"
+                    srcset="<%= imageHeaderUrl(:bg_desktop_size_2x, :title_bg) %> 2x,
+                            <%= imageHeaderUrl(:bg_desktop_size_3x, :title_bg) %> 3x"
+                >
             </picture>
 
         </figure>
@@ -49,11 +49,11 @@
 
             <picture class="tablet">
                 <img src="">
-                <!--<img
-                    src="<%= imageHeaderUrl(:bg_size_1x) %>"
-                    srcset="<%= imageHeaderUrl(:bg_size_2x) %> 2x,
-                            <%= imageHeaderUrl(:bg_size_3x) %> 3x"
-                >-->
+                <img
+                    src="<%= imageHeaderUrl(:bg_tablet_size_1x, :title_bg_tablet) %>"
+                    srcset="<%= imageHeaderUrl(:bg_tablet_size_2x, :title_bg_tablet) %> 2x,
+                            <%= imageHeaderUrl(:bg_tablet_size_3x, :title_bg_tablet) %> 3x"
+                >
             </picture>
 
         </figure>

@@ -100,6 +100,7 @@ div.preview.responsive {
 
         &.pc {
             width:36%;
+            vertical-align: top;
 
             picture {
                 min-width: 768px;
@@ -123,6 +124,7 @@ div.preview.responsive {
 
         &.cell {
             width:22%;
+            margin-top:160px;
 
             picture {
                 width: 240px;
