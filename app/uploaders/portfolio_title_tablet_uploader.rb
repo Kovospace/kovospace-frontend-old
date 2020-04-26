@@ -8,7 +8,7 @@ class PortfolioTitleTabletUploader < BaseUploader
         "2x" => [960, 10000],
         "3x" => [1440, 10000]
       },
-      namespace: "bg_tablet"
+      namespace: "title_bg_tablet"
     )
 
 end

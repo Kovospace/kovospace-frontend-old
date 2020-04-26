@@ -1,6 +1,6 @@
 
 div.preview {
-    display: inline-table;
+    display: block;
     width: 100%;
     padding: 1em;
     box-sizing: border-box;
@@ -25,24 +25,28 @@ div.preview {
         &.pc {
 
             picture {
-                border: 1.5em solid $half;
-                border-radius: 1.5em;
-                margin-bottom: 4em;
+                border: 20px solid $half;
+                border-top-left-radius: 1.5em;
+                border-top-right-radius: 1.5em;
+                margin-bottom: 46px;
 
                 &::after {
                     content: " ";
-                    width:50%;
-                    height: 3em;
+                    width: 100%;
+                    height: 40px;
                     display: block;
                     background-color: $hell_grey;
+                    border-color: $hell_grey;
+                    border-style: solid;
+                    border-left-width: 20px;
+                    border-right-width: 20px;
                     border-bottom-left-radius: 3em;
                     border-bottom-right-radius: 3em;
                     margin: 0 auto;
                     position: absolute;
-                    margin-top: 2em;
+                    margin-top: 24px;
                     top: 100%;
-                    left:25%;
-                    right: 25%;
+                    right:-20px;
                 }
             }
         }
@@ -94,43 +98,42 @@ div.preview {
 }
 
 div.preview.responsive {
+    height:100%;
 
     figure {
-        padding:1%;
+        margin:0 1%;
 
         &.pc {
-            width:36%;
-            vertical-align: top;
+            width:42%;
+            vertical-align: bottom;
 
             picture {
                 min-width: 768px;
                 min-height: 480px;
-                margin-left: 50%;
-                @include translate_x(-50%);
             }
         }
 
         &.tablet {
-            width: 36%;
+            width: 26%;
 
             picture {
                 max-width:480px;
                 min-width:480px;
                 min-height: 360px;
-                margin-left: 100%;
-                @include translate_x(-100%);
             }
         }
 
         &.cell {
-            width:22%;
-            margin-top:160px;
+            width:26%;
+            max-width: 268px;
 
             picture {
                 width: 240px;
                 min-width: 240px;
                 min-height: 320px;
                 max-height: 480px;
+                margin-left: 100%;
+                @include translate_x(-100%);
             }
         }
     }

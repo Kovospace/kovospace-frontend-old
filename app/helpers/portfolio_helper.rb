@@ -1,7 +1,7 @@
 module PortfolioHelper
 
     def pbg_types
-        ['', '_tablet', '_mobile']
+        ['_desktop', '_tablet', '_mobile']
     end
 
     def showsection_decide_titlebg_type(obj)
@@ -37,8 +37,14 @@ module PortfolioHelper
         return p.portfolio_screenshot.screenshot.send(size).url.sub(/_orig\.png$/, '.jpg')
     end
 
-    def imageHeaderUrl(size, uploader)
-        return @portfolio.portfolio_titlebgs.first.send(uploader).send(size).url.sub(/_orig\.png$/, '.jpg')
+    def imageHeaderUrl(size='', uploader='', object=nil)
+        if object.nil?
+            return @portfolio.portfolio_titlebgs.first.send(uploader).send(size).url.sub(/_orig\.png$/, '.jpg')
+        else
+            tmp = object.send(uploader).send(size).url
+            res = tmp.nil? ? "" : tmp.sub(/_orig\.png$/, '.jpg')
+            return res
+        end
     end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181220211321) do
+ActiveRecord::Schema.define(version: 20200426213316) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -150,7 +150,7 @@ ActiveRecord::Schema.define(version: 20181220211321) do
   add_index "portfolio_screenshots", ["portfolio_id"], name: "index_portfolio_screenshots_on_portfolio_id"
 
   create_table "portfolio_titlebgs", force: :cascade do |t|
-    t.text    "title_bg"
+    t.text    "title_bg_desktop"
     t.text    "title_bg_tablet"
     t.text    "title_bg_mobile"
     t.integer "portfolio_id"

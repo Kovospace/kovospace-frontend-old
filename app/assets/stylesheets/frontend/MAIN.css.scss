@@ -43,6 +43,14 @@ html {
             }
 
             &.portfolios {
+                &.index {
+
+                }
+                &.show {
+                    height:100%;
+                    display: block;
+                    position: relative;
+                }
                 @import "./frontend/controllers/portfolio/header";
                 @import "./frontend/controllers/portfolio/nav";
             }

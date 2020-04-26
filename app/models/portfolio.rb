@@ -21,7 +21,7 @@ class Portfolio < ActiveRecord::Base
     accepts_nested_attributes_for(
         :portfolio_titlebgs,
         allow_destroy: true,
-        reject_if: proc { |c| (c[:title_bg].blank?&&c[:title_bg_tablet].blank?&&c[:title_bg_mobile].blank?) }
+        reject_if: proc { |c| (c[:title_bg_desktop].blank?&&c[:title_bg_tablet].blank?&&c[:title_bg_mobile].blank?) }
     )
 
     belongs_to :skillset, inverse_of: :portfolios, counter_cache: true

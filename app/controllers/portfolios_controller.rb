@@ -77,7 +77,7 @@ class PortfoliosController < ApplicationController
             portfolio_screenshot_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy],
             portfolio_titlebgs_attributes: [
                 :id, :portfolio_id,
-                :title_bg, :title_bg_cache, :remove_title_bg,
+                :title_bg_desktop, :title_bg_desktop_cache, :remove_title_bg_desktop,
                 :title_bg_tablet, :title_bg_tablet_cache, :remove_title_bg_tablet,
                 :title_bg_mobile, :title_bg_mobile_cache, :remove_title_bg_mobile,
                 :_destroy

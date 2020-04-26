@@ -8,7 +8,7 @@ class PortfolioTitleMobileUploader < BaseUploader
         "2x" => [480, 10000],
         "3x" => [720, 10000]
       },
-      namespace: "bg_mobile"
+      namespace: "title_bg_mobile"
     )
 
 end
