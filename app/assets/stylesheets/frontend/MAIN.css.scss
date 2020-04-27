@@ -24,18 +24,11 @@ html {
         display: flex;
         flex-direction: column;
 
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 800px) {
             font-size: 1em;
         }
 
         header {
-            color: $white;
-            width: 100%;
-            display:table;
-            vertical-align: middle;
-            text-align:center;
-            flex: 0 0 auto;
-            overflow: hidden;
             @import "./frontend/main/header";
 
             &.homepage {
@@ -43,20 +36,12 @@ html {
             }
 
             &.portfolios {
-                &.index {
-
-                }
-                &.show {
-                    height:100%;
-                    display: block;
-                    position: relative;
-                }
                 @import "./frontend/controllers/portfolio/header";
                 @import "./frontend/controllers/portfolio/nav";
             }
 
             &.blogs {
-                 padding-top: 3%;
+                padding-top: 3%;
 
                 &.index {
                     @import "./frontend/controllers/blog/header_index";

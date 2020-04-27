@@ -56,8 +56,14 @@ body.portfolio {
                     &.pc { z-index: 4; }
                     &.tablet { z-index: 5; }
                     &.cell { z-index: 6; }
+                    &:hover {
+                        z-index:7;
+                    }
                 }
             }
+        }
+        nav {
+            z-index:9;
         }
     }
 }

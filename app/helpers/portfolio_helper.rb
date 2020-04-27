@@ -25,7 +25,7 @@ module PortfolioHelper
     end
 
     def is_sortlink_show_all_active?
-        rgx = /(^\/portfolio\/strana\/\d$)|(^\/portfolio$)/
+        rgx = /(^\/portfolio\/strana\-\d$)|(^\/portfolio$)/
         active = !(rgx =~ request.path).nil?
     end
 
