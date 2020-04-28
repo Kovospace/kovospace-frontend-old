@@ -278,6 +278,13 @@ div.preview.responsive {
         padding-left: 0.5em;
         padding-right: 0.5em;
         //max-height: none;
+
+        figure {
+
+            picture {
+                @include border_shadow(2px, 2px, $space_black);
+            }
+        }
     }
 
     // 360 - m
