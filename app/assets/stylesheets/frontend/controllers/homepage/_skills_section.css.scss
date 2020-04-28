@@ -15,7 +15,7 @@ section#skills {
             }
         }
 
-        @media only screen and (max-width: 360px) {
+        @media only screen and (max-width: 375px) {
             @include voyager(6em, 55deg, 0);
         }
     }

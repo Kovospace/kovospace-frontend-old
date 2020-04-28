@@ -64,19 +64,21 @@
 
 <% end %>
 
-<% @portfolio.portfolio_titlebgs.each_with_index do |obj, index| %>
+<div>
+    <% @portfolio.portfolio_titlebgs.each_with_index do |obj, index| %>
 
-    <% versions.each do |version| %>
-        <% sizes.each do |size| %>
+        <% versions.each do |version| %>
+            <% sizes.each do |size| %>
 
-            <% namestring = "#{uploader.to_s}_#{version.to_s}_size_#{size.to_s}" %>
-            <%= hidden_field_tag(
-                "#{namestring}[#{index.to_s}]",
-                imageHeaderUrl(namestring, "#{uploader.to_s}_#{version.to_s}", obj)
-            ) %>
+                <% namestring = "#{uploader.to_s}_#{version.to_s}_size_#{size.to_s}" %>
+                <%= hidden_field_tag(
+                    "#{namestring}[#{index.to_s}]",
+                    imageHeaderUrl(namestring, "#{uploader.to_s}_#{version.to_s}", obj)
+                ) %>
 
+            <% end %>
         <% end %>
+
     <% end %>
+</div>
 
-
-<% end %>

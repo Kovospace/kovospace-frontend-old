@@ -212,6 +212,7 @@ nav {
     }
 
     &.show_work {
+        @include gradient_from_bottom_to_alpha();
         font-size: 1.25em;
         position: absolute;
         bottom: 0;
@@ -220,11 +221,6 @@ nav {
         height: auto;
         width:100%;
         padding: 1em 0;
-
-        background: -moz-linear-gradient(top, rgba(0,0,16,0) 0%, rgba(0,0,16,1) 100%);
-        background: -webkit-linear-gradient(top, rgba(0,0,16,0) 0%,rgba(0,0,16,1) 100%);
-        background: linear-gradient(to bottom, rgba(0,0,16,0) 0%,rgba(0,0,16,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000010', endColorstr='#000010',GradientType=0 );
 
         ul {
 
@@ -263,6 +259,8 @@ nav {
         }
 
         ul.preview_switcher {
+            margin: 0 0.125em;
+            margin-bottom: 1em;
 
             li {
 
@@ -281,6 +279,20 @@ nav {
 
         @media only screen and (max-width: 1024px) {
             padding:0;
+        }
+
+        @media only screen and (max-width: 800px) {
+
+            ul.breadcrumbs {
+                padding-right: 0;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+
+            ul.preview_switcher {
+                font-size: 1.25em;
+            }
         }
     }
 }

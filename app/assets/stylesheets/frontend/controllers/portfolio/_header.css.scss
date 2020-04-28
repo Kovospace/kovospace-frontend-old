@@ -19,6 +19,14 @@
     @media only screen and (max-width: 800px) {
         font-size: 0.75em;
     }
+
+    @media only screen and (max-width: 640px) {
+        max-height: none;
+
+        nav.show_work {
+            position: relative;
+        }
+    }
 }
 
 div.preview {
@@ -122,7 +130,9 @@ div.preview {
 
 div.preview.responsive {
     max-height:100%;
+    //max-height: 100vh; // neporiesi asi vsetky browsery
 
+    // 768 - xl
     figure {
         margin:0 0.5%;
 
@@ -165,6 +175,7 @@ div.preview.responsive {
         }
     }
 
+    // 600 - l
     @media only screen and (max-width: 1152px) {
 
         figure {
@@ -201,6 +212,7 @@ div.preview.responsive {
         }
     }
 
+    // 360 - m
     @media only screen and (max-width: 800px) {
 
         margin-bottom: 8em;
@@ -260,8 +272,128 @@ div.preview.responsive {
         }
     }
 
-    @media only screen and (max-width: 480px) {
+    // 360 - m
+    @media only screen and (max-width: 640px) {
+        margin-bottom:1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        //max-height: none;
+    }
 
+    // 360 - m
+    @media only screen and (max-width: 480px) {
+        margin-bottom: 0;
+
+        figure {
+            margin:0;
+            margin-bottom: 1em;
+
+            &.tablet, &.cell {
+                vertical-align:top;
+            }
+
+            &.pc, &.tablet, &.cell {
+                width:auto;
+            }
+
+            &.cell {
+
+                picture {
+                    margin-top: -100%;
+                }
+            }
+        }
+    }
+
+    // 320 - s
+    @media only screen and (max-width: 375px) {
+
+        figure {
+
+            &.pc, &.tablet {
+
+                picture {
+                    border-width: 6px;
+                }
+            }
+
+            &.pc {
+                width: 100%;
+
+                picture {
+                    min-width:320px;
+                    max-width:320px;
+                    min-height: 192px;
+
+                    margin-bottom: 23px;
+                    border-top-left-radius: 0.5em;
+                    border-top-right-radius: 0.5em;
+
+                    &::after {
+                        border-left-width: 6px;
+                        border-right-width: 6px;
+                        height: 12px;
+                        right: -6px;
+                        margin-top: 8px;
+                    }
+                }
+            }
+
+            &.tablet {
+                width: 55%;
+
+                picture {
+                    border-radius: 0.5em;
+                }
+            }
+
+            &.cell {
+                width:35%;
+
+                picture {
+                    border-width: 4px;
+                    border-top-width: 16px;
+                    border-bottom-width: 16px;
+                    border-radius: 0.75em;
+                }
+            }
+        }
+    }
+
+    // 240 - xs
+    @media only screen and (max-width: 320px) {
+
+        figure {
+
+            &.pc {
+
+                picture {
+                    min-width:240px;
+                    max-width:240px;
+                    min-height: 144px;
+                }
+            }
+
+            &.tablet {
+
+                picture {
+                    max-width: 144px;
+                    min-width: 144px;
+                    min-height: 106px;
+                }
+            }
+
+            &.cell {
+
+                picture {
+                    width: 74px;
+                    min-width: 74px;
+                    max-width: 74px;
+                    min-height: 96px;
+                    max-height: 144px;
+                }
+            }
+        }
     }
 }
 
