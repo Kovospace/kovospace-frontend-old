@@ -1,0 +1,65 @@
+<div class="preview responsive">
+
+    <%
+        desktop = :title_bg_desktop
+        tablet = :title_bg_tablet
+        cell = :title_bg_mobile
+    %>
+
+    <figure class="pc">
+        <picture>
+            <source
+                media="(max-width: 1152px)"
+                srcset="<%= imageHeaderUrl(:title_bg_desktop_size_l_1x, desktop) %>,
+                        <%= imageHeaderUrl(:title_bg_desktop_size_l_2x, desktop) %> 2x,
+                        <%= imageHeaderUrl(:title_bg_desktop_size_l_3x, desktop) %> 3x"
+            >
+            <source
+                media="(max-width: 800px)"
+                srcset="<%= imageHeaderUrl(:title_bg_desktop_size_m_1x, desktop) %>,
+                        <%= imageHeaderUrl(:title_bg_desktop_size_m_2x, desktop) %> 2x,
+                        <%= imageHeaderUrl(:title_bg_desktop_size_m_3x, desktop) %> 3x"
+            >
+            <!-- 640 to iste ako pre 800 -->
+            <!-- 480 to iste ako pre 800 -->
+            <source
+                media="(max-width: 375px)"
+                srcset="<%= imageHeaderUrl(p, desktop) %>,
+                        <%= imageHeaderUrl(p, desktop) %> 2x,
+                        <%= imageHeaderUrl(p, desktop) %> 3x"
+            >
+            <source
+                media="(max-width: 320px)"
+                srcset="<%= imageHeaderUrl(p, desktop) %>,
+                        <%= imageHeaderUrl(p, desktop) %> 2x,
+                        <%= imageHeaderUrl(p, desktop) %> 3x"
+            >
+
+            <img
+                src="<%= imageHeaderUrl(:title_bg_desktop_size_xl_1x, :title_bg_desktop) %>"
+                srcset="<%= imageHeaderUrl(:title_bg_desktop_size_xl_2x, :title_bg_desktop) %> 2x,
+                        <%= imageHeaderUrl(:title_bg_desktop_size_xl_3x, :title_bg_desktop) %> 3x"
+            >
+        </picture>
+    </figure>
+
+    <figure class="tablet">
+        <picture>
+            <img
+                src="<%= imageHeaderUrl(:title_bg_tablet_size_xl_1x, :title_bg_tablet) %>"
+                srcset="<%= imageHeaderUrl(:title_bg_tablet_size_xl_2x, :title_bg_tablet) %> 2x,
+                        <%= imageHeaderUrl(:title_bg_tablet_size_xl_3x, :title_bg_tablet) %> 3x"
+            >
+        </picture>
+    </figure>
+
+    <figure class="cell">
+        <picture>
+            <img
+                src="<%= imageHeaderUrl(:title_bg_mobile_size_xl_1x, :title_bg_mobile) %>"
+                srcset="<%= imageHeaderUrl(:title_bg_mobile_size_xl_2x, :title_bg_mobile) %> 2x,
+                        <%= imageHeaderUrl(:title_bg_mobile_size_xl_3x, :title_bg_mobile) %> 3x"
+            >
+        </picture>
+    </figure>
+</div>

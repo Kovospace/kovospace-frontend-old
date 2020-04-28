@@ -133,6 +133,9 @@ div.preview.responsive {
     //max-height: 100vh; // neporiesi asi vsetky browsery
 
     // 768 - xl
+    // 768x480
+    // 480x360
+    // 240x480
     figure {
         margin:0 0.5%;
 
@@ -176,6 +179,9 @@ div.preview.responsive {
     }
 
     // 600 - l
+    // 600x360
+    // 360x272
+    // 188x360
     @media only screen and (max-width: 1152px) {
 
         figure {
@@ -194,7 +200,7 @@ div.preview.responsive {
                 picture {
                     max-width: 360px;
                     min-width: 360px;
-                    min-height: 270px;
+                    min-height: 272px;
                 }
             }
 
@@ -213,6 +219,9 @@ div.preview.responsive {
     }
 
     // 360 - m
+    // 360x216
+    // 216x160
+    // 112x216
     @media only screen and (max-width: 800px) {
 
         margin-bottom: 8em;
@@ -273,6 +282,7 @@ div.preview.responsive {
     }
 
     // 360 - m
+    // to iste ako pre 800
     @media only screen and (max-width: 640px) {
         margin-bottom:1em;
         padding-left: 0.5em;
@@ -288,6 +298,7 @@ div.preview.responsive {
     }
 
     // 360 - m
+    // to iste ako pre 800
     @media only screen and (max-width: 480px) {
         margin-bottom: 0;
 
@@ -313,6 +324,9 @@ div.preview.responsive {
     }
 
     // 320 - s
+    // 320x192
+    // to iste ako pre 800
+    // to iste ako pre 800
     @media only screen and (max-width: 375px) {
 
         figure {
@@ -368,6 +382,9 @@ div.preview.responsive {
     }
 
     // 240 - xs
+    // 240x144
+    // 144x106
+    // 74x144
     @media only screen and (max-width: 320px) {
 
         figure {
