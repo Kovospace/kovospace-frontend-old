@@ -15,8 +15,7 @@ class PortfolioTitleUploader < BaseUploader
         "s_2x" => [640, 10000],
         "s_3x" => [960, 10000],
         "xs_1x" => [240, 10000],
-        "xs_2x" => [480, 10000],
-        #"xs_3x" => [720, 10000], - opakovacka m_2x
+        "xs_2x" => [480, 10000]
       },
       namespace: "title_bg_desktop"
     )

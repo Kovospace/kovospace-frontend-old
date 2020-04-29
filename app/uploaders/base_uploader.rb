@@ -42,21 +42,35 @@ class BaseUploader < CarrierWave::Uploader::Base
       meno = namespace.blank? ? "sizes" : "#{namespace.to_s}_sizes"
       instance_variable_set("@sizes", {}) if @sizes.nil?
       @sizes[meno] = sizes.sort.reverse
+      ##Rails.logger.info "============================="
+      ##Rails.logger.info @sizes[meno]
+      ##Rails.logger.info "============================="
       define_method(meno) { return self.class.sizes[meno] }
 
-      @sizes[meno].each_with_index do |(size, v), index|
-        if index == 0
-          version "#{meno.singularize}_#{size.to_s}" do
-            work_on(process_method, v[0], v[1])
+      version(
+        "#{meno}"
+      ) do
+          process :optimizer
+          def full_filename(for_file)
+            "orig.jpg"
           end
-        else
+        end
+
+
+      @sizes[meno].each_with_index do |(size, v), index|
+        #if index == 0
+          #version "#{meno.singularize}_#{size.to_s}" do
+           # work_on(process_method, v[0], v[1])
+          #end
+        #else
           version(
             "#{meno.singularize}_#{size.to_s}",
-            from_version: "#{meno.singularize}_#{(@sizes[meno][0])[0].to_s}".to_sym
+            from_version: meno.to_sym
+            #from_version: "#{meno.singularize}_#{(@sizes[meno][0])[0].to_s}".to_sym
           ) do
             work_on(process_method, v[0], v[1])
           end
-        end
+        #end
       end
   end
 
@@ -81,21 +95,21 @@ class BaseUploader < CarrierWave::Uploader::Base
       #]
   end
 
-  def store_dimensions
-    if file && model
-      @original_width, @original_height = ::MiniMagick::Image.open(file.file)[:dimensions]
-    end
+  #def store_dimensions
+   # if file && model
+     # @original_width, @original_height = ::MiniMagick::Image.open(file.file)[:dimensions]
+    #end
     #Rails.logger.info "----------------------"
    # Rails.logger.info @original_width
     #Rails.logger.info "----------------------"
     #Rails.logger.info "--------------------------------"
     #Rails.logger.info a
     #Rails.logger.info "-----------------------------"
-  end
+  #end
 
-  def self.divide_and_round_to_even(num, divider)
-    tempres = num.to_f/divider
-    return tempres.floor.even? ? tempres.floor : tempres.ceil
-  end
+  #def self.divide_and_round_to_even(num, divider)
+    #tempres = num.to_f/divider
+    #return tempres.floor.even? ? tempres.floor : tempres.ceil
+  #end
 
 end
