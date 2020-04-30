@@ -7,6 +7,7 @@ function PreviewsSwitcher() {
 
     this.current_id;
     this.current_order;
+    this.poll;
 }
 
 PreviewsSwitcher.prototype = {
@@ -16,6 +17,7 @@ PreviewsSwitcher.prototype = {
         this.getImageUrls();
         this.setNext();
         this.assignActions();
+        this.firstTimeLoad();
     },
 
     assignActions: function() {
@@ -38,6 +40,7 @@ PreviewsSwitcher.prototype = {
             toto.previews.push(preview);
             //console.log(preview.isCurrent());
             if (preview.isCurrent() === true) {
+                console.log("is current");
                 toto.current_id = preview.images_id;
                 toto.current_order = num;
                 toto.current_index = index;
@@ -83,7 +86,7 @@ PreviewsSwitcher.prototype = {
         var last = this.previews.length-1;
         if (index > last) { return 0; }
         else if (index < 0) { return last; }
-        else { return 0; }
+        else { return index; }
     },
 
     show: function(order) {
@@ -93,13 +96,23 @@ PreviewsSwitcher.prototype = {
         this.previews.forEach(function(item) {
             //console.log(item.image_order);
             if (item.image_order === order) {
-                console.log(item.image_order);
-                console.log(order);
+                //console.log(item.image_order);
+                //console.log(order);
                 //item.render();
-                toto.skipTo(index);
+                if (item.isCurrent() === true) {
+                    //console.log("kliknute je current");
+                } else {
+                    toto.skipTo(index);
+                }
             }
             index++;
         });
+    },
+
+    firstTimeLoad: function() {
+        this.setIndex(0);
+        this.setNext();
+        this.previews[this.next_index].preload();
     },
 
     prev: function() {
@@ -111,11 +124,12 @@ PreviewsSwitcher.prototype = {
     },
 
     skipTo: function(index) {
-        //console.log(index);
+        var toto = this;
+        console.log(index);
         //console.log(this.previews);
         //console.log(this.prev_index);
         this.setIndex(index);
-        console.log(this.current_index);
+        //console.log(this.current_index);
         this.decideLoadDirection();
         //console.log(this.load_direction);
         this.setNext();
@@ -129,11 +143,22 @@ PreviewsSwitcher.prototype = {
         //this.previews[0].preload();
         //this.previews[this.next_index].render();
         //this.previews[this.current_index].preload();
-        this.previews[this.next_index].preload();
-        //this.previews[this.current_index].render();
         //this.previews[this.next_index].preload();
-        console.log(this.previews);
-        var toto = this;
-        setTimeout(function(){ console.log(toto.previews); }, 3000);
+        this.previews[this.current_index].render();
+        this.poll = setInterval(function(){
+            //console.log(toto.previews[toto.current_index]);
+            if (toto.previews[toto.current_index].all_preloaded === true) {
+                clearInterval(toto.poll);
+                toto.previews[toto.next_index].preload();
+            }
+        }, 100);
+        //this.previews[this.next_index].preload();
+        //console.log(this.previews);
+        //var toto = this;
+        //setTimeout(function(){ console.log(toto.previews); }, 3000);
+    },
+
+    cycle: function() {
+
     }
 }

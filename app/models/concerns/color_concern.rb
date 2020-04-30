@@ -35,8 +35,12 @@ module ColorConcern
         return "style=\"color:##{text_color};\"".html_safe
     end
 
+    def style_css
+        return "color:##{text_color};background-color:##{bg_color} !important;".html_safe
+    end
+
     def style
-        return "style=\"color:##{text_color};background-color:##{bg_color};\"".html_safe
+        return "style=\"#{style_css}\"".html_safe
     end
 
     def style_inverted

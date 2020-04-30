@@ -3,6 +3,13 @@
 
     <%= canonical_tag show_portfolio_url(@portfolio) %>
 
+    <style>
+        nav.show_work ul.prewiew_switcher li a.active,
+        nav.show_work ul li a.active {
+            <%= @portfolio.style_css %>
+        }
+    </style>
+
 <% end %>
 
 <% content_for :top_menu do %>

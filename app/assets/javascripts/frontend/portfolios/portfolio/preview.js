@@ -9,6 +9,7 @@ function Preview(num) {
     this.poll_timer;
     this.images_id;
     this.base_adresses = [];
+    this.base_images = [];
     this.image_adresses = [];
     this.images = [];
 
@@ -24,10 +25,12 @@ Preview.prototype = {
     },
 
     extractBaseAdresses: function() {
-        var toto_base_adresses = this.base_adresses
+        var toto = this;
         $(document).find('div.preview').children('figure').each(function() {
-            var addr = $(this).children('picture').children('img').attr('src');
-            toto_base_adresses.push(addr);
+            var img = $(this).children('picture').children('img');
+            toto.base_images.push(img);
+            var addr = img.attr('src');
+            toto.base_adresses.push(addr);
         });
         //console.log(this.base_adresses);
         //console.log(this.base_adresses[0].match(this.addr_id_regex)[2]);
@@ -55,7 +58,15 @@ Preview.prototype = {
         var id_of_visible = parseInt(tmp_addr.match(this.addr_id_regex)[2]);
         //console.log(id_of_visible);
         //console.log(this.images_id);
-        return (id_of_visible === this.images_id);
+        if (id_of_visible === this.images_id) {
+            if (this.all_preloaded === false) {
+                this.images = this.base_images;
+                this.all_preloaded = true;
+            }
+            return true;
+        } else {
+            return false;
+        }
     },
 
     preload: function() {
@@ -65,19 +76,20 @@ Preview.prototype = {
         //if (this.images_loaded === false) {
             console.log("imagesov je nula");
             this.image_adresses.forEach(function(item) {
-                var img = $('<img>').clone();
+                var img = $('<img>');//.clone();
                 img.on('load', function() {
                     toto.images_loaded++;
                     if (toto.images_loaded == toto.images.length) {
                         //allImagesLoaded();
                         toto.all_preloaded = true;
-                        console.log("vsjo v pariadke");
+                        //console.log("vsjo v pariadke");
                     }
                 });
                 img.attr('src', item);
                 toto.images.push(img);
             });
             //console.log(this.images);
+            //console.log("preload");
         }
     },
 
@@ -89,7 +101,7 @@ Preview.prototype = {
             if (toto.all_preloaded === true) {
                 console.log('render() - obrazky nacitane');
                 clearInterval(toto.poll_timer);
-                toto.append(toto.images);
+                toto.append();
             } else {
                 console.log('render() - obrazky neboli este nacitane');
                 if (toto.preload_runned === false) {
@@ -98,43 +110,38 @@ Preview.prototype = {
                     toto.preload_runned = true;
                 }
             }
-        }, 100);
-
-        /*if (this.all_preloaded === true) {
-            console.log('render() - obrazky nacitane');
-            clearTimeout(this.poll_timer);
-            this.append();
-        } else {
-            var toto = this;
-            console.log('render() - obrazky neboli este nacitane');
-            if (this.preload_runned === false) {
-                console.log('render() - a este ani spusteny loader');
-                this.preload();
-                this.preload_runned = true;
-            }
-            this.poll_timer = setTimeout(function(){
-                toto.render();
-            }, this.poll_timeout);
-        }*/
-        //console.log(this.images);
+        }, this.poll_timeout);
     },
 
-    append: function(images) {
-
+    append: function() {
         //console.log(this.images);
-
         var index = 0;
         var toto = this;
         $(document).find('div.preview').children('figure').each(function() {
-            var img = $(this).children('picture').children('img');
-            //img.css({'opacity':'0'});
-            //console.log(toto.images[index].attr('src'));
-            //console.log(images);
-            //console.log(toto.images[index].attr('src'));
-            //img.attr('src', toto.images[index].attr('src'));
-            //img.css({'opacity':'1'});
+            var pic_elem = $(this).children('picture');
+            pic_elem.children('img').css({'opacity':'0'});
+            var tuto = $(this);
+            var i = index;
+            setTimeout(function() {
+                pic_elem.empty();
+                /*setTimeout(function() {
+                    $(document).find('ul.preview_switcher').find('a').removeClass('active').removeClass('fakehover');
+                }, 10);*/
+                //console.log(tamto.images);
+                //console.log(toto.images);
+                //console.log(i);
+                toto.images[i].css({'opacity':'0'});
+                toto.images[i].appendTo(tuto.children('picture'));
+                setTimeout(function() {
+                    toto.images[i].css({'opacity':'1'});
+                    //$(document).find('ul.preview_switcher').find('a#nahlad_'+toto.image_order).addClass('fakehover active');
+                }, 10);
+                //pic_elem.children('img').css({'opacity':'1'});
+            }, 490);
             index++;
         });
+        $(document).find('ul.preview_switcher').find('a').removeClass('active').removeClass('fakehover');
+        $(document).find('ul.preview_switcher').find('a#nahlad_'+toto.image_order).addClass('fakehover active');
     }
 
 }

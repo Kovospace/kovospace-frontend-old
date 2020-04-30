@@ -4,7 +4,13 @@
     <ul class="preview_switcher">
         <% @portfolio.portfolio_titlebgs.each_with_index do |p, i| %>
             <li>
-                <a href="?obrazok=<%= p.id %>" rel="nofollow"><span><em><%= i+1 %></em></span></a>
+                <a
+                href="?obrazok=<%= p.id %>"
+                rel="nofollow"
+                class="<%= "active fakehover" if @title_bg.id == p.id %>"
+                id="nahlad_<%= i+1 %>">
+                    <span><em><%= i+1 %></em></span>
+                </a>
             </li>
         <% end %>
     </ul>
@@ -14,10 +20,9 @@
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <a
                 href="<%= @portfolio.link_sanitized %>"
-                <%= @portfolio.style %>
                 itemprop="item"
                 target="_blank"
-                class="fakehover"
+                class="fakehover active"
             >
                 <h2 itemprop="name">
                     <%= @portfolio.title %>
