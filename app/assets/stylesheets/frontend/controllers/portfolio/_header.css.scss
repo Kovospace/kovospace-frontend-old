@@ -65,20 +65,19 @@ div.preview {
                     content: " ";
                     width: 100%;
                     height: 40px;
+                    padding: 0 20px;
                     display: block;
                     background-color: $hell_grey;
-                    border-color: $hell_grey;
+                    border-color: $space_black;
                     border-style: solid;
-                    border-left-width: 20px;
-                    border-right-width: 20px;
+                    border-width: 4px;
                     border-bottom-left-radius: 3em;
                     border-bottom-right-radius: 3em;
                     margin: 0 auto;
                     position: absolute;
-                    margin-top: 24px;
+                    margin-top: 20px;
                     top: 100%;
-                    right:-20px;
-                    @include border_shadow(4px, 4px, $space_black);
+                    right:-24px;
                 }
             }
         }
@@ -246,11 +245,10 @@ div.preview.responsive {
                     margin-bottom: 23px;
 
                     &::after {
-                        border-left-width: 10px;
-                        border-right-width: 10px;
                         height: 20px;
-                        right: -10px;
-                        margin-top: 12px;
+                        margin-top: 10px;
+                        padding: 0 10px;
+                        right: -14px;
                     }
                 }
             }
@@ -294,6 +292,17 @@ div.preview.responsive {
 
             picture {
                 @include border_shadow(2px, 2px, $space_black);
+            }
+
+            &.pc {
+
+                picture {
+
+                    &::after {
+                        border-width: 2px;
+                        right:-12px;
+                    }
+                }
             }
         }
     }
@@ -352,11 +361,10 @@ div.preview.responsive {
                     border-top-right-radius: 0.5em;
 
                     &::after {
-                        border-left-width: 6px;
-                        border-right-width: 6px;
                         height: 12px;
-                        right: -6px;
-                        margin-top: 8px;
+                        right: -8px;
+                        margin-top: 4px;
+                        padding: 0 6px;
                     }
                 }
             }
