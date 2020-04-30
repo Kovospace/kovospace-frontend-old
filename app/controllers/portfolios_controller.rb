@@ -10,6 +10,11 @@ class PortfoliosController < ApplicationController
     ## override
     def show
         #@title_bgs = @portfolio.portfolio_titlebgs
+        if params.has_key?(:obrazok)
+            @title_bg = @portfolio.portfolio_titlebgs.find(params[:obrazok].to_i)
+        else
+            @title_bg = @portfolio.portfolio_titlebgs.first
+        end
     end
 
     def add_screenshots

@@ -2,15 +2,11 @@
 <nav class="show_work">
 
     <ul class="preview_switcher">
-        <li>
-            <a href="#obrazok1" rel="nofollow"><span><em>1</em></span></a>
-        </li>
-        <li>
-            <a href="#obrazok2" rel="nofollow"><span><em>2</em></span></a>
-        </li>
-        <li>
-            <a href="#obrazok3" rel="nofollow"><span><em>3</em></span></a>
-        </li>
+        <% @portfolio.portfolio_titlebgs.each_with_index do |p, i| %>
+            <li>
+                <a href="?obrazok=<%= p.id %>" rel="nofollow"><span><em><%= i+1 %></em></span></a>
+            </li>
+        <% end %>
     </ul>
 
     <ul itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs">

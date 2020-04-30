@@ -39,7 +39,7 @@ module PortfolioHelper
 
     def imageHeaderUrl(size='', uploader='', object=nil)
         if object.nil?
-            return @portfolio.portfolio_titlebgs.first.send(uploader).send(size).url.sub(/_orig\.png$/, '.jpg')
+            return @title_bg.send(uploader).send(size).url.sub(/_orig\.png$/, '.jpg')
         else
             tmp = object.send(uploader).send(size).url
             res = tmp.nil? ? "" : tmp.sub(/_orig\.png$/, '.jpg')
