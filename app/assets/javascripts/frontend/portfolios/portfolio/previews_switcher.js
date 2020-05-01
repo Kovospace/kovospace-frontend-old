@@ -4,10 +4,12 @@ function PreviewsSwitcher() {
     this.current_index = 0;
     this.next_index = 0;
     this.prev_index = null;
+    this.cycle_time = 4000;
 
     this.current_id;
     this.current_order;
     this.poll;
+    this.cycler;
 }
 
 PreviewsSwitcher.prototype = {
@@ -18,16 +20,16 @@ PreviewsSwitcher.prototype = {
         this.setNext();
         this.assignActions();
         this.firstTimeLoad();
+        this.cycle();
     },
 
     assignActions: function() {
         var toto = this;
         $(document).on('click', 'ul.preview_switcher li', function(e) {
             e.preventDefault();
+            toto.stopCycling();
             var order = parseInt($(this).children('a').children('span').children('em').text());
             toto.show(order);
-            //console.log('clicked');
-            //toto.skipTo(order);
         });
     },
 
@@ -38,7 +40,6 @@ PreviewsSwitcher.prototype = {
             var num = parseInt($(this).children('a').children('span').children('em').text());
             var preview = new Preview(num);
             toto.previews.push(preview);
-            //console.log(preview.isCurrent());
             if (preview.isCurrent() === true) {
                 console.log("is current");
                 toto.current_id = preview.images_id;
@@ -47,7 +48,6 @@ PreviewsSwitcher.prototype = {
             }
             index++;
         });
-        //console.log(this.previews);
     },
 
     setIndex: function(index) {
@@ -56,9 +56,7 @@ PreviewsSwitcher.prototype = {
         } else {
             this.prev_index = this.current_index;
         }
-        //console.log(this.prev_index);
         if (index !== undefined) {
-            //console.log("set index");
             this.current_index = this.validIndex(index);
         }
     },
@@ -92,15 +90,9 @@ PreviewsSwitcher.prototype = {
     show: function(order) {
         var toto = this;
         var index = 0;
-        //console.log(this.previews);
         this.previews.forEach(function(item) {
-            //console.log(item.image_order);
             if (item.image_order === order) {
-                //console.log(item.image_order);
-                //console.log(order);
-                //item.render();
                 if (item.isCurrent() === true) {
-                    //console.log("kliknute je current");
                 } else {
                     toto.skipTo(index);
                 }
@@ -126,39 +118,30 @@ PreviewsSwitcher.prototype = {
     skipTo: function(index) {
         var toto = this;
         console.log(index);
-        //console.log(this.previews);
-        //console.log(this.prev_index);
         this.setIndex(index);
-        //console.log(this.current_index);
         this.decideLoadDirection();
-        //console.log(this.load_direction);
         this.setNext();
-        //console.log(this.previews.length);
-        //console.log(this.next_index); // chyba
-        //this.previews[this.current_index].render();
-        //this.previews[this.next_index].preload();
-        //console.log(this.current_index);
-        //console.log(this.next_index);
-        //this.previews[1].preload();
-        //this.previews[0].preload();
-        //this.previews[this.next_index].render();
-        //this.previews[this.current_index].preload();
-        //this.previews[this.next_index].preload();
         this.previews[this.current_index].render();
         this.poll = setInterval(function(){
-            //console.log(toto.previews[toto.current_index]);
             if (toto.previews[toto.current_index].all_preloaded === true) {
                 clearInterval(toto.poll);
                 toto.previews[toto.next_index].preload();
             }
         }, 100);
-        //this.previews[this.next_index].preload();
-        //console.log(this.previews);
-        //var toto = this;
-        //setTimeout(function(){ console.log(toto.previews); }, 3000);
     },
 
     cycle: function() {
+        // mozno implementovat obmedzenie na nejaky pocet cyklov
+        var toto = this;
+        this.cycler = setTimeout(function() {
+            if (toto.previews[toto.next_index].all_preloaded == true) {
+                toto.next();
+            }
+            toto.cycle();
+        }, toto.cycle_time);
+    },
 
+    stopCycling: function() {
+        clearTimeout(this.cycler);
     }
 }

@@ -10,8 +10,10 @@
     height:100%;
     display: block;
     position: relative;
+    min-height: 600px;
 
     @media only screen and (max-width: 1024px) {
+        min-height: none;
         height: auto;
         max-height: 100%;
     }
@@ -40,15 +42,19 @@ div.preview {
 
         picture {
             max-width: 100%;
-            display: inline-block;
+            //display: inline-block;
+            display:block;
             position: relative;
             @include gradient(-45deg, #000, #111);
-            @include border_shadow(4px, 4px, $space_black);
+            //@include border_shadow(4px, 4px, $space_black);
+            overflow: hidden;
 
             img {
+                display: inline-block;
                 display: block;
                 max-width: 100%;
                 max-height:100%;
+                height: 100%;
                 @include transition(opacity 0.5s ease-in-out);
             }
         }
@@ -56,12 +62,22 @@ div.preview {
         &.pc {
 
             picture {
-                border: 20px solid $half;
+                background-color: $half;
+                //border: 20px solid $half;
                 border-top-left-radius: 1.5em;
                 border-top-right-radius: 1.5em;
-                margin-bottom: 46px;
+                //border-bottom-width: 40px;
+                border-bottom: 40px solid red;
+                padding:20px;
+                border-bottom-left-radius: 2em;
+                    border-bottom-right-radius: 2em;
 
-                &::after {
+                img {
+                   // border: 20px solid green;
+                }
+                //margin-bottom: 46px;
+
+                /*&::after {
                     content: " ";
                     width: 100%;
                     height: 40px;
@@ -78,13 +94,15 @@ div.preview {
                     margin-top: 20px;
                     top: 100%;
                     right:-24px;
-                }
+                }*/
             }
         }
 
         &.tablet {
 
             picture {
+                //padding: 20px;
+                @include border_shadow(4px, 4px, $space_black);
                 border: 20px solid $half;
                 border-radius: 1em;
             }
@@ -95,11 +113,39 @@ div.preview {
 
             picture {
                 border: 10px solid $half;
-                border-top-width: 40px;
-                border-bottom-width: 40px;
+
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                padding: 40px 0;
                 border-radius: 20px;
+                @include border_shadow(4px, 4px, $space_black);
+
+                &::before, &::after {
+                    text-align: center;
+                    color: $hell_grey;
+                    line-height: 40px;
+                    font-size: 40px;
+                    display: block;
+                    position: absolute;
+                    left:0;
+                    right:0;
+                    height:40px;
+                    background-color: $half;
+                }
+
 
                 &::before {
+                    content: '---';
+                    top:0;
+                }
+
+                &::after {
+                    bottom:0;
+                    content: " ";
+                }
+
+
+                /*&::before {
                     content: " ";
                     display: block;
                     width: 40px;
@@ -122,14 +168,20 @@ div.preview {
                     top: 100%;
                     left: 104px;
                     margin-top: 4px;
-                }
+                }*/
             }
         }
     }
 }
 
 div.preview.responsive {
+    min-height: 600px;
     max-height:100%;
+    position: absolute;
+    bottom:0;
+    top:0;
+    //margin-top: -25%;
+    //top: 50%;
     //max-height: 100vh; // neporiesi asi vsetky browsery
 
     // 768 - xl
@@ -144,9 +196,11 @@ div.preview.responsive {
             vertical-align: bottom;
 
             picture {
+                height:480px;
                 min-width: 768px;
                 max-width: 768px;
                 min-height: 480px;
+                max-height: 533px;
                 //max-height: 480px;
             }
         }
@@ -155,10 +209,11 @@ div.preview.responsive {
             width: 26%;
 
             picture {
+                //height:360px;
                 max-width:480px;
                 min-width:480px;
                 min-height: 360px;
-                //max-height: 360px;
+                max-height: 480px;
             }
         }
 
@@ -171,7 +226,7 @@ div.preview.responsive {
                 max-width:240px;
                 min-width: 240px;
                 min-height: 320px;
-                max-height: 480px;
+                max-height: 442px;
                 margin-left: 100%;
                 @include translate_x(-100%);
             }
