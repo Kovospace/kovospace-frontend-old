@@ -62,7 +62,7 @@ Preview.prototype = {
                 //console.log("nacitany uz ");
                 //console.log(this.base_images);
                 //console.log(tmp_addr);
-                //this.images = this.base_images;
+                this.images = this.base_images;
                 this.all_preloaded = true;
             }
             return true;

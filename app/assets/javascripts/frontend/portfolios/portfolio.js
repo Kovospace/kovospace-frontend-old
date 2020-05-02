@@ -17,6 +17,12 @@ Portfolio.prototype = {
     },
 
     onload: function() {
-        this.previewSwitcher.init();
+        if ($(document).find('header').attr('class') == 'portfolios show') {
+            this.previewSwitcher.init();
+        }
+    },
+
+    turbolinks_load: function() {
+
     }
 }

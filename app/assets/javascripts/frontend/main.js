@@ -23,7 +23,7 @@ Main.prototype = {
         });
 
         $(window).on("load", function() {
-             T.CurrentController.onload();
+            T.CurrentController.onload();
         });
     }
 }
