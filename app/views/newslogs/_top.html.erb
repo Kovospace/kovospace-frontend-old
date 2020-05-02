@@ -1,0 +1,29 @@
+<% content_for :top_menu do %>
+
+    <nav>
+        <ul class="pagelinks">
+
+            <li>
+                <%= active_link_to(home_path) do %>
+                    <span>Domov</span>
+                <% end %>
+            </li>
+
+            <li>
+                <%= active_link_to(newslog_path) do %>
+                    <span>Novinky</span>
+                <% end %>
+            </li>
+
+            <% if action_name == 'show' %>
+                <li>
+                    <%= active_link_to(show_newslog_path(@newslog)) do %>
+                        <span>#<%= @newslog.id %></span>
+                    <% end %>
+                </li>
+            <% end %>
+
+        </ul>
+    </nav>
+
+<% end %>

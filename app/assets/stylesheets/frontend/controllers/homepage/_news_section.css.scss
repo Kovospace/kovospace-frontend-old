@@ -1,5 +1,22 @@
 section#novinky {
 
+    div {
+        text-align: right;
+
+        a {
+            font-size: 2em;
+            display: inline-block;
+            padding: 0.5em;
+            border-radius: 1em;
+            background-color: $solar_panel_item_bg;
+            @include background_transition($transition_time);
+
+            &:hover {
+                background-color: $solar_panel_item_bg_hover;
+            }
+        }
+    }
+
     @media only screen and (min-width: 641px) {
 
         aside {

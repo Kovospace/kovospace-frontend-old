@@ -157,6 +157,10 @@ Rails.application.routes.draw do
     to: "newslogs#edit",
     as: "edit_newslog"
 
+  get '/newslog/:id',
+    to: "newslogs#show",
+    as: "show_newslog"
+
   post '/newslog',
     to: "newslogs#create"
 

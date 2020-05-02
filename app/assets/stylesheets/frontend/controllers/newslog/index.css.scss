@@ -1,0 +1,48 @@
+
+section#news {
+
+    article {
+        margin-bottom: 5%;
+
+        table {
+
+            caption {
+                text-align: left;
+
+                h2 {
+                    margin-bottom: 0.25em;
+                }
+            }
+
+            tbody {
+
+                tr {
+                    font-size: 1.25em;
+
+                    td {
+                        padding:0.5em 0.25em;
+
+                        em {
+                            white-space: nowrap;
+                        }
+
+                        a {
+                            padding: 0.125em 0.25em;
+                            margin-left: 0.75em;
+                            font-weight: bold;
+                            text-decoration: underline;
+                            display: inline-block;
+                            border-radius: 0.25em;
+                            @include background_transition($transition_time_fast);
+
+                            &:hover {
+                                background-color: $half;
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

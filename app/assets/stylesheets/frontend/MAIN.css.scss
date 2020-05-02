@@ -31,7 +31,7 @@ html {
         header {
             @import "./frontend/main/header";
 
-            &.homepage {
+            &.homepage, &.newslogs {
                  @import "./frontend/controllers/homepage/header";
             }
 
@@ -87,6 +87,15 @@ html {
             main {
                 @import "./frontend/controllers/portfolio/portfolio_section";
                 @import "./frontend/controllers/portfolio/show";
+            }
+        }
+
+        &.newslog {
+            @import "./frontend/controllers/newslog";
+
+            main {
+                @import "./frontend/controllers/newslog/index";
+                @import "./frontend/controllers/newslog/show";
             }
         }
 

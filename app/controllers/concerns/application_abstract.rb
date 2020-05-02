@@ -42,7 +42,7 @@ module ApplicationAbstract
     end
 
     def _choose_layout
-        return "application"
+       return "application"
     end
 
     def storable_location?

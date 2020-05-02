@@ -1,0 +1,13 @@
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    section#news, section#note {
+        flex: 1 0 auto;
+    }
+
+    section#foot {
+        flex: 0 0 auto;
+    }
+}

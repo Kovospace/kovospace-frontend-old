@@ -1,0 +1,16 @@
+
+<%= render 'newslogs/top' %>
+
+<section id="note">
+
+    <article>
+        <h1>
+            <%= @newslog.title %>
+        </h1>
+        <em> <%= @newslog.created_at.strftime('%d. %B %Y') %> </em>
+        <div>
+            <%= @newslog.txt %>
+        </div>
+    </article>
+
+</section>
