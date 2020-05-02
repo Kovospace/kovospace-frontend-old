@@ -1,6 +1,9 @@
 function Preview(num) {
     this.image_order = num;
+
     this.addr_id_regex = /(^.+\/)(\d+)(\/.+$)/;
+    this.container = "div.preview > div > figure"
+
     this.all_preloaded = false;
     this.preload_runned = false;
     this.images_loaded = 0;
@@ -26,10 +29,14 @@ Preview.prototype = {
 
     extractBaseAdresses: function() {
         var toto = this;
-        $(document).find('div.preview').children('figure').each(function() {
+        $(document).find(this.container).each(function() {
             var img = $(this).children('picture').children('img');
+            // tu bunde niekde chyba preco natiahne full size
+            //console.log(img);
             toto.base_images.push(img);
-            var addr = img.attr('src');
+            var addr = img.prop('currentSrc');
+            //console.log(img.prop('src'));
+            //console.log(addr);
             toto.base_adresses.push(addr);
         });
     },
@@ -46,11 +53,16 @@ Preview.prototype = {
     },
 
     isCurrent: function() {
-        var tmp_addr = $(document).find('div.preview').children('figure').first().children('picture').children('img').attr('src');
+        var tmp_addr = $(document).find(this.container).first().children('picture').children('img').prop('currentSrc');
+        //console.log(tmp_addr);
         var id_of_visible = parseInt(tmp_addr.match(this.addr_id_regex)[2]);
         if (id_of_visible === this.images_id) {
             if (this.all_preloaded === false) {
-                this.images = this.base_images;
+                // tu bunde niekde chyba preco natiahne prvy full size
+                //console.log("nacitany uz ");
+                //console.log(this.base_images);
+                //console.log(tmp_addr);
+                //this.images = this.base_images;
                 this.all_preloaded = true;
             }
             return true;
@@ -62,15 +74,15 @@ Preview.prototype = {
     preload: function() {
         var toto = this;
         if (this.images.length === 0) {
-            console.log("imagesov je nula");
             this.image_adresses.forEach(function(item) {
-                var img = $('<img>');//.clone();
+                var img = $('<img>');
                 img.on('load', function() {
                     toto.images_loaded++;
                     if (toto.images_loaded == toto.images.length) {
                         toto.all_preloaded = true;
                     }
                 });
+                //console.log(item);
                 img.attr('src', item);
                 toto.images.push(img);
             });
@@ -99,7 +111,9 @@ Preview.prototype = {
     append: function() {
         var index = 0;
         var toto = this;
-        $(document).find('div.preview').children('figure').each(function() {
+        $(document).find(this.container).each(function() {
+            // debugger stopuje natahovanie povodneho src za vinu niekde tu
+            //
             var pic_elem = $(this).children('picture');
             pic_elem.children('img').css({'opacity':'0'});
             var tuto = $(this);

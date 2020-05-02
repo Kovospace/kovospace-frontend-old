@@ -21,6 +21,10 @@ Main.prototype = {
         $(document).ready(function() {
             T.CurrentController.onready();
         });
+
+        $(window).on("load", function() {
+             T.CurrentController.onload();
+        });
     }
 }
 

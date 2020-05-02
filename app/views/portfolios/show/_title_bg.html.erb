@@ -3,34 +3,33 @@
 
 <% typ = :responsive %>
 
-<% if typ == :desktop %>
+<div class="preview responsive">
+    <div class="bgs">
 
-    <figure class="desktop">
+        <% if typ == :desktop %>
 
-        <picture class="pc">
-            <img
-                src="<%= imageHeaderUrl(:bg_desktop_size_1x) %>"
-                srcset="<%= imageHeaderUrl(:bg_desktop_size_2x) %> 2x,
-                        <%= imageHeaderUrl(:bg_desktop_size_3x) %> 3x"
-            >
-        </picture>
+            <figure class="desktop">
 
-    </figure>
+                <picture class="pc">
+                    <img
+                        src="<%= imageHeaderUrl(:bg_desktop_size_1x) %>"
+                        srcset="<%= imageHeaderUrl(:bg_desktop_size_2x) %> 2x,
+                                <%= imageHeaderUrl(:bg_desktop_size_3x) %> 3x"
+                    >
+                </picture>
 
-<% elsif typ == :responsive %>
+            </figure>
 
-   <%= render('portfolios/show/title_bg/all_three') %>
+        <% elsif typ == :responsive %>
 
-<% end %>
+           <%= render('portfolios/show/title_bg/all_three') %>
 
-<div class="previews_ids">
+        <% end %>
 
-    <% @portfolio.portfolio_titlebgs.ids.each_with_index do |id, index| %>
-        <%= hidden_field_tag(
-            "bg_images_id[#{index.to_s}]",
-            "#{id}"
-        ) %>
-    <% end %>
+        <br>
+
+    </div>
 
 </div>
+
 

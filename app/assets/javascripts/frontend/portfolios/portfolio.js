@@ -1,5 +1,6 @@
 function Portfolio() {
     this.previewSwitcher;
+    this.bgOffset;
     this.init();
 }
 
@@ -8,10 +9,14 @@ Portfolio.prototype = {
 
     init: function() {
         this.previewSwitcher = new PreviewsSwitcher();
+        this.bgOffset = new BgOffset();
     },
 
     onready: function() {
-        //alert("dopiciiii");
+        this.bgOffset.offset();
+    },
+
+    onload: function() {
         this.previewSwitcher.init();
     }
 }

@@ -1,118 +1,114 @@
+<%
+    desktop = :title_bg_desktop
+    tablet = :title_bg_tablet
+    cell = :title_bg_mobile
+%>
 
-<div class="preview responsive">
+<figure class="pc">
+    <picture>
 
-    <%
-        desktop = :title_bg_desktop
-        tablet = :title_bg_tablet
-        cell = :title_bg_mobile
-    %>
+        <source
+            media="(max-width: 1152px)"
+            srcset="<%= imageHeaderUrl(:title_bg_desktop_size_l_1x, desktop) %>,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_l_2x, desktop) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_l_3x, desktop) %> 3x"
+        >
+        <source
+            media="(max-width: 800px)"
+            srcset="<%= imageHeaderUrl(:title_bg_desktop_size_m_1x, desktop) %>,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_m_2x, desktop) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_m_3x, desktop) %> 3x"
+        >
+        <!-- 640 to iste ako pre 800 -->
+        <!-- 480 to iste ako pre 800 -->
+        <source
+            media="(max-width: 375px)"
+            srcset="<%= imageHeaderUrl(:title_bg_desktop_size_s_1x, desktop) %>,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_s_2x, desktop) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_s_3x, desktop) %> 3x"
+        >
+        <source
+            media="(max-width: 320px)"
+            srcset="<%= imageHeaderUrl(:title_bg_desktop_size_xs_1x, desktop) %>,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_xs_2x, desktop) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_m_2x, desktop) %> 3x"
+        >
+        <!-- ^^ opakovacka pre retina 3x -->
 
-    <figure class="pc">
-        <picture>
+        <img
+            src="<%= imageHeaderUrl(:title_bg_desktop_size_xl_1x, desktop) %>"
+            srcset="<%= imageHeaderUrl(:title_bg_desktop_size_xl_2x, desktop) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_desktop_size_xl_3x, desktop) %> 3x"
+        >
 
-            <source
-                media="(max-width: 1152px)"
-                srcset="<%= imageHeaderUrl(:title_bg_desktop_size_l_1x, desktop) %>,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_l_2x, desktop) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_l_3x, desktop) %> 3x"
-            >
-            <source
-                media="(max-width: 800px)"
-                srcset="<%= imageHeaderUrl(:title_bg_desktop_size_m_1x, desktop) %>,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_m_2x, desktop) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_m_3x, desktop) %> 3x"
-            >
-            <!-- 640 to iste ako pre 800 -->
-            <!-- 480 to iste ako pre 800 -->
-            <source
-                media="(max-width: 375px)"
-                srcset="<%= imageHeaderUrl(:title_bg_desktop_size_s_1x, desktop) %>,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_s_2x, desktop) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_s_3x, desktop) %> 3x"
-            >
-            <source
-                media="(max-width: 320px)"
-                srcset="<%= imageHeaderUrl(:title_bg_desktop_size_xs_1x, desktop) %>,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_xs_2x, desktop) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_m_2x, desktop) %> 3x"
-            >
-            <!-- ^^ opakovacka pre retina 3x -->
+    </picture>
+</figure>
 
-            <img
-                src="<%= imageHeaderUrl(:title_bg_desktop_size_xl_1x, desktop) %>"
-                srcset="<%= imageHeaderUrl(:title_bg_desktop_size_xl_2x, desktop) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_desktop_size_xl_3x, desktop) %> 3x"
-            >
+<figure class="tablet">
+    <picture>
 
-        </picture>
-    </figure>
+        <source
+            media="(max-width: 1152px)"
+            srcset="<%= imageHeaderUrl(:title_bg_tablet_size_l_1x, tablet) %>,
+                    <%= imageHeaderUrl(:title_bg_tablet_size_l_2x, tablet) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_tablet_size_l_3x, tablet) %> 3x"
+        >
+        <source
+            media="(max-width: 800px)"
+            srcset="<%= imageHeaderUrl(:title_bg_tablet_size_m_1x, tablet) %>,
+                    <%= imageHeaderUrl(:title_bg_tablet_size_m_2x, tablet) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_tablet_size_m_3x, tablet) %> 3x"
+        >
+        <!-- 640 to iste ako pre 800 -->
+        <!-- 480 to iste ako pre 800 -->
+        <!-- 375 to iste ako pre 800 -->
+        <source
+            media="(max-width: 320px)"
+            srcset="<%= imageHeaderUrl(:title_bg_tablet_size_xs_1x, tablet) %>,
+                    <%= imageHeaderUrl(:title_bg_tablet_size_xs_2x, tablet) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_tablet_size_m_2x, tablet) %> 3x"
+        >
+        <!-- ^^ opakovacka pre retina 3x -->
 
-    <figure class="tablet">
-        <picture>
+        <img
+            src="<%= imageHeaderUrl(:title_bg_tablet_size_xl_1x, tablet) %>"
+            srcset="<%= imageHeaderUrl(:title_bg_tablet_size_xl_2x, tablet) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_tablet_size_xl_3x, tablet) %> 3x"
+        >
 
-            <source
-                media="(max-width: 1152px)"
-                srcset="<%= imageHeaderUrl(:title_bg_tablet_size_l_1x, tablet) %>,
-                        <%= imageHeaderUrl(:title_bg_tablet_size_l_2x, tablet) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_tablet_size_l_3x, tablet) %> 3x"
-            >
-            <source
-                media="(max-width: 800px)"
-                srcset="<%= imageHeaderUrl(:title_bg_tablet_size_m_1x, tablet) %>,
-                        <%= imageHeaderUrl(:title_bg_tablet_size_m_2x, tablet) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_tablet_size_m_3x, tablet) %> 3x"
-            >
-            <!-- 640 to iste ako pre 800 -->
-            <!-- 480 to iste ako pre 800 -->
-            <!-- 375 to iste ako pre 800 -->
-            <source
-                media="(max-width: 320px)"
-                srcset="<%= imageHeaderUrl(:title_bg_tablet_size_xs_1x, tablet) %>,
-                        <%= imageHeaderUrl(:title_bg_tablet_size_xs_2x, tablet) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_tablet_size_m_2x, tablet) %> 3x"
-            >
-            <!-- ^^ opakovacka pre retina 3x -->
+    </picture>
+</figure>
 
-            <img
-                src="<%= imageHeaderUrl(:title_bg_tablet_size_xl_1x, tablet) %>"
-                srcset="<%= imageHeaderUrl(:title_bg_tablet_size_xl_2x, tablet) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_tablet_size_xl_3x, tablet) %> 3x"
-            >
+<figure class="cell">
+    <picture>
 
-        </picture>
-    </figure>
+        <source
+            media="(max-width: 1152px)"
+            srcset="<%= imageHeaderUrl(:title_bg_mobile_size_l_1x, cell) %>,
+                    <%= imageHeaderUrl(:title_bg_mobile_size_l_2x, cell) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_mobile_size_l_3x, cell) %> 3x"
+        >
+        <source
+            media="(max-width: 800px)"
+            srcset="<%= imageHeaderUrl(:title_bg_mobile_size_m_1x, cell) %>,
+                    <%= imageHeaderUrl(:title_bg_mobile_size_m_2x, cell) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_mobile_size_m_3x, cell) %> 3x"
+        >
+        <!-- 640 to iste ako pre 800 -->
+        <!-- 480 to iste ako pre 800 -->
+        <source
+            media="(max-width: 320px)"
+            srcset="<%= imageHeaderUrl(:title_bg_mobile_size_xs_1x, cell) %>,
+                    <%= imageHeaderUrl(:title_bg_mobile_size_xs_2x, cell) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_mobile_size_m_2x, cell) %> 3x"
+        >
+        <!-- ^^ opakovacka pre retina 3x -->
 
-    <figure class="cell">
-        <picture>
+        <img
+            src="<%= imageHeaderUrl(:title_bg_mobile_size_xl_1x, cell) %>"
+            srcset="<%= imageHeaderUrl(:title_bg_mobile_size_xl_2x, cell) %> 2x,
+                    <%= imageHeaderUrl(:title_bg_mobile_size_xl_3x, cell) %> 3x"
+        >
 
-            <source
-                media="(max-width: 1152px)"
-                srcset="<%= imageHeaderUrl(:title_bg_mobile_size_l_1x, cell) %>,
-                        <%= imageHeaderUrl(:title_bg_mobile_size_l_2x, cell) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_mobile_size_l_3x, cell) %> 3x"
-            >
-            <source
-                media="(max-width: 800px)"
-                srcset="<%= imageHeaderUrl(:title_bg_mobile_size_m_1x, cell) %>,
-                        <%= imageHeaderUrl(:title_bg_mobile_size_m_2x, cell) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_mobile_size_m_3x, cell) %> 3x"
-            >
-            <!-- 640 to iste ako pre 800 -->
-            <!-- 480 to iste ako pre 800 -->
-            <source
-                media="(max-width: 320px)"
-                srcset="<%= imageHeaderUrl(:title_bg_mobile_size_xs_1x, cell) %>,
-                        <%= imageHeaderUrl(:title_bg_mobile_size_xs_2x, cell) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_mobile_size_m_2x, cell) %> 3x"
-            >
-            <!-- ^^ opakovacka pre retina 3x -->
-
-            <img
-                src="<%= imageHeaderUrl(:title_bg_mobile_size_xl_1x, cell) %>"
-                srcset="<%= imageHeaderUrl(:title_bg_mobile_size_xl_2x, cell) %> 2x,
-                        <%= imageHeaderUrl(:title_bg_mobile_size_xl_3x, cell) %> 3x"
-            >
-
-        </picture>
-    </figure>
-</div>
+    </picture>
+</figure>
