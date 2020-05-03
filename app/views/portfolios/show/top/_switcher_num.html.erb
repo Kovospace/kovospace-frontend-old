@@ -1,0 +1,20 @@
+<% obj.each_with_index do |p, i| %>
+    <li>
+        <a
+        href="?obrazok=<%= p.id %>"
+        rel="nofollow"
+        class="<%= "active fakehover" if @title_bg.id == p.id %>"
+        id="nahlad_<%= i+1 %>">
+            <span><em><%= i+1 %></em></span>
+        </a>
+    </li>
+<% end %>
+
+<div class="previews_ids">
+    <% obj.ids.each_with_index do |id, index| %>
+        <%= hidden_field_tag(
+            "bg_images_id[#{index.to_s}]",
+            "#{id}"
+        ) %>
+    <% end %>
+</div>

@@ -53,4 +53,8 @@ module ApplicationHelper
         render inline: capture(&block), layout: "layouts/#{layout}"
     end
 
+    def portfolio_header_class
+        return defined?(@header_type).nil? ? "" : @header_type.to_s
+    end
+
 end

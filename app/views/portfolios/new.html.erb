@@ -95,6 +95,33 @@
     </div>
 
     <div>
+        <%= s.label :title_bg_singles %>
+        <div class="pictures">
+            <%= s.fields_for :portfolio_titlebg_singles do |pbgs| %>
+                <% blank = pbgs.object.title_bg.blank? %>
+
+                <picture>
+                    <%= pbgs.file_field :title_bg, class: "hidden" %>
+                    <%= pbgs.hidden_field :title_bg_cache %>
+                    <span>
+                        <%= pbgs.label :title_bg do %>
+                            <%= pbgs.check_box(:_destroy) if !blank %>
+                            <%= image_tag(pbgs.object.title_bg) if !blank %>
+                            <% if blank %> <q></q> <% end %>
+                        <% end %>
+                    </span>
+                    <span>
+                        <%= pbgs.text_area(:alt_text) %>
+                    </span>
+                </picture>
+
+            <% end %>
+
+            <br class="clear">
+        </div>
+    </div>
+
+    <div>
         <%= s.label :title_bgs %>
         <div class="pictures">
             <%= s.fields_for :portfolio_titlebgs do |pbg| %>

@@ -1,28 +1,18 @@
 
-<%# typ = showsection_decide_titlebg_type(@portfolio) %>
-
-<% typ = :responsive %>
-
-<div class="preview responsive">
+<div class="preview <%= @header_type.to_s %>">
     <div class="bgs">
 
-        <% if typ == :desktop %>
+        <% if @header_type == :desktop %>
 
-            <figure class="desktop">
 
-                <picture class="pc">
-                    <img
-                        src="<%= imageHeaderUrl(:bg_desktop_size_1x) %>"
-                        srcset="<%= imageHeaderUrl(:bg_desktop_size_2x) %> 2x,
-                                <%= imageHeaderUrl(:bg_desktop_size_3x) %> 3x"
-                    >
-                </picture>
 
-            </figure>
-
-        <% elsif typ == :responsive %>
+        <% elsif @header_type == :responsive %>
 
            <%= render('portfolios/show/title_bg/all_three') %>
+
+        <% elsif @header_type == :single %>
+
+            <%= render('portfolios/show/title_bg/single') %>
 
         <% end %>
 

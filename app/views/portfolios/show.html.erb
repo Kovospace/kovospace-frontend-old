@@ -25,12 +25,4 @@
 
 </section>
 
-<div class="previews_ids">
-    <% @portfolio.portfolio_titlebgs.ids.each_with_index do |id, index| %>
-        <%= hidden_field_tag(
-            "bg_images_id[#{index.to_s}]",
-            "#{id}"
-        ) %>
-    <% end %>
-</div>
 

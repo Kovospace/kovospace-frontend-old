@@ -6,554 +6,171 @@
     }
 }
 
+// pre header tag
 &.show {
-    height:75%;
-    max-height:100%;
-    display: block;
-    position: relative;
-    min-height: 640px;
 
-    div.preview.responsive {
+    // pre header tag
+    &.nothing, &.single {
 
-        div.bgs {
-            height:100%;
-            position:relative;
-            display: flex;
-            align-items: flex-end;
-            //justify-content: space-around;
-            //justify-content: space-evenly; // - nebude sa prekryvat
-        }
-    }
-
-    @media only screen and (max-width: 1440px) {
-        height: 100%;
-    }
-
-    @media only screen and (max-width: 1024px) {
-        min-height: 512px;
-        height: 75%;
-    }
-
-    @media only screen and (max-width: 800px) {
-        font-size: 0.75em;
-        min-height: 400px;
-        max-height: 400px;
-        height: 66%;
-    }
-
-    @media only screen and (max-width: 640px) {
-        height: 60%;
-        max-height: 480px;
-
-        div.preview.responsive {
-            padding-left: 0.5em;
-            padding-right: 0.5em;
-            padding-bottom: 3em;
-        }
-    }
-
-    @media only screen and (max-width: 533px) {
-        height:auto ;
-        max-height:none;
-
-        div.preview.responsive {
-            height: auto;
-            min-height: initial;
-            max-height: none;
-
-            div.bgs {
-                height: auto;
-                min-height:360px;
-
-                figure {
-                    margin-bottom:0 !important;
-                }
-            }
-        }
-
-        nav.show_work {
+        nav {
             position: relative;
         }
     }
 
-    @media only screen and (max-width: 480px) {
-        height: 100%;
-        min-height:100%;
+    &.single {
 
-        div.preview.responsive {
+        nav {
+            padding:0;
+
+            ul {
+                margin-top: -50%;
+            }
+        }
+    }
+
+    // pre header tag
+    &.responsive {
+        height:75%;
+        max-height:100%;
+        display: block;
+        position: relative;
+        min-height: 640px;
+    }
+
+    div.preview {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+
+        // pre nahlady
+        &.nothing { display: none; }
+
+        // pre nahlady
+        &.single {  }
+
+        // pre nahlady
+        &.responsive {
+            padding: 1em;
             height: 100%;
-            min-height:100%;
-            padding-bottom:0;
-            padding-top: 0;
+            min-height: 100%;
+            max-height:100%;
 
             div.bgs {
-                min-height: 100%;
-                height: 100%;
-                display: block;
-                text-align: center;
-            }
-        }
-
-        nav.show_work {
-            position: absolute;
-        }
-    }
-}
-
-div.preview {
-    display: block;
-    width: 100%;
-    padding: 1em;
-    box-sizing: border-box;
-
-    div.bgs {
-
-        figure {
-            display: block;
-
-            picture {
-                max-width: 100%;
-                display:block;
-                position: relative;
-                @include gradient(-45deg, #000, #111);
-                @include border_shadow(4px, 4px, $space_black);
-
-                img {
-                    display: block;
-                    max-width: 100%;
-                    max-height:100%;
-                    @include transition(opacity 0.5s ease-in-out);
-                }
-            }
-
-            &.pc {
-
-                picture {
-                    border: 20px solid $half;
-                    border-top-left-radius: 1.5em;
-                    border-top-right-radius: 1.5em;
-                    border-bottom-width: 0;
-                    margin-bottom: 40px;
-
-                    &::after {
-                        content: " ";
-                        width: 100%;
-                        height: 40px;
-                        padding: 0 20px;
-                        display: block;
-                        background-color: $hell_grey;
-                        border-color: $space_black;
-                        border-style: solid;
-                        border-width: 4px;
-                        border-bottom-left-radius: 3em;
-                        border-bottom-right-radius: 3em;
-                        margin: 0 auto;
-                        position: absolute;
-                        top: 100%;
-                        right:-24px;
-                    }
-                }
-            }
-
-            &.tablet {
-
-                picture {
-                    border: 20px solid $half;
-                    border-radius: 1em;
-                }
-            }
-
-            &.cell {
-                text-align: left;
-
-                picture {
-                    border: 10px solid $half;
-                    border-top-width: 40px;
-                    border-bottom-width: 40px;
-                    border-radius: 20px;
-
-                    &::before {
-                        content: " ";
-                        display: block;
-                        width: 40px;
-                        height:6px;
-                        background-color: $hell_grey;
-                        position: absolute;
-                        bottom: 100%;
-                        left: 100px;
-                        left:100px;
-                        margin-bottom:17px;
-                    }
-
-                    &::after {
-                        content: " ";
-                        display: block;
-                        width: 32px;
-                        height: 32px;
-                        border-radius: 100%;
-                        background-color: $hell_grey;
-                        position: absolute;
-                        top: 100%;
-                        left: 104px;
-                        margin-top: 4px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-div.preview.responsive {
-    height: 100%;
-    min-height: 100%;
-    max-height:100%;
-
-    // 768 - xl
-    // 768x480
-    // 480x360
-    // 240x480
-    div.bgs {
-
-        figure {
-            margin:0 0.5%;
-            margin-bottom: 3em;
-            float:left;
-
-            &.pc {
-                width:45%;
-
-                picture {
-                    min-width: 768px;
-                    max-width: 768px;
-                    min-height: 480px;
-                }
-            }
-
-            &.tablet {
-                width: 35%;
-
-                picture {
-                    max-width:480px;
-                    min-width:480px;
-                    min-height: 360px;
-                }
-            }
-
-            &.cell {
-                width:17%;
-
-                picture {
-                    width: 240px;
-                    max-width:240px;
-                    min-width: 240px;
-                    min-height: 320px;
-                    margin-left: 100%;
-                    @include translate_x(-100%);
-                }
+                height:100%;
+                position:relative;
+                display: flex;
+                align-items: flex-end;
+                //justify-content: space-around;
+                //justify-content: space-evenly; // - nebude sa prekryvat
             }
         }
     }
 
-    // 600 - l
-    // 600x360
-    // 360x272
-    // 188x360
-    @media only screen and (max-width: 1152px) {
-
-        div.bgs {
-
-            figure {
-
-                &.pc {
-
-                    picture {
-                        min-width:600px;
-                        max-width:600px;
-                        min-height: 360px;
-                    }
-                }
-
-                &.tablet {
-
-                    picture {
-                        max-width: 360px;
-                        min-width: 360px;
-                        min-height: 272px;
-                    }
-                }
-
-                &.cell {
-
-                    picture {
-                        width: 188px;
-                        min-width:188px;
-                        max-width:188px;
-                        min-height:240px;
-
-                        &::before {
-                            left: 74px;
-                        }
-
-                        &::after {
-                            left: 78px;
-                        }
-                    }
-                }
-            }
+    @media only screen and (max-width: 1440px) {
+        // pre header tag
+        &.responsive {
+            height: 100%;
         }
     }
 
-    // 360 - m
-    // 360x216
-    // 216x160
-    // 112x216
+    @media only screen and (max-width: 1024px) {
+        // pre header tag
+        &.responsive {
+            min-height: 512px;
+            height: 75%;
+        }
+    }
+
     @media only screen and (max-width: 800px) {
-
-        div.bgs {
-
-            figure {
-
-                &.pc, &.tablet {
-
-                    picture {
-                        border-width: 10px;
-                    }
-                }
-
-                &.pc {
-                    width: 46%;
-
-                    picture {
-                        min-width:360px;
-                        max-width:360px;
-                        min-height: 216px;
-                        margin-bottom: 23px;
-
-                        &::after {
-                            height: 20px;
-                            margin-top: 10px;
-                            padding: 0 10px;
-                            right: -14px;
-                        }
-                    }
-                }
-
-                &.tablet {
-                    width:24.5%;
-
-                    picture {
-                        max-width: 216px;
-                        min-width: 216px;
-                        min-height: 160px;
-                    }
-                }
-
-                &.cell {
-                    width:24.5%;
-
-                    picture {
-                        width: 112px;
-                        min-width:112px;
-                        max-width:112px;
-                        min-height:144px;
-                        border-width: 6px;
-                        border-top-width: 20px;
-                        border-bottom-width: 20px;
-
-                        &::before {
-                            width: 30px;
-                            height:4px;
-                            left: 41px;
-                            margin-bottom:8px;
-                        }
-
-                        &::after {
-                            width: 16px;
-                            height: 16px;
-                            left: 48px;
-                            margin-top: 2px;
-                        }
-                    }
-                }
-            }
+        // pre header tag
+        &.responsive {
+            font-size: 0.75em;
+            min-height: 400px;
+            max-height: 400px;
+            height: 66%;
         }
     }
 
-    // 360 - m
-    // to iste ako pre 800
     @media only screen and (max-width: 640px) {
+        // pre header tag
+        &.responsive {
+            height: 60%;
+            max-height: 480px;
 
-        div.bgs {
+            div.preview {
 
-            figure {
-
-                picture {
-                    @include border_shadow(2px, 2px, $space_black);
-                }
-
-                &.pc {
-
-                    picture {
-
-                        &::after {
-                            border-width: 2px;
-                            right:-12px;
-                        }
-                    }
+                // pre nahlady
+                &.responsive {
+                    padding-left: 0.5em;
+                    padding-right: 0.5em;
+                    padding-bottom: 3em;
                 }
             }
         }
     }
 
-    // 360 - m
-    // to iste ako pre 800
+    @media only screen and (max-width: 533px) {
+        // pre header tag
+        &.responsive {
+            height:auto ;
+            max-height:none;
+
+            div.preview {
+
+                // pre nahlady
+                &.responsive {
+                    height: auto;
+                    min-height: initial;
+                    max-height: none;
+
+                    div.bgs {
+                        height: auto;
+                        min-height:360px;
+
+                        figure {
+                            margin-bottom:0 !important;
+                        }
+                    }
+                }
+            }
+
+            nav.show_work {
+                position: relative;
+            }
+        }
+    }
+
     @media only screen and (max-width: 480px) {
+        // pre header tag
+        &.responsive {
+            height: 100%;
+            min-height:100%;
 
-        div.bgs {
+            div.preview {
 
-            figure {
-                width:auto;
-                margin:8px;
-                display: inline-block;
-                float:none;
+                // pre nahlady
+                &.responsive {
+                    height: 100%;
+                    min-height:100%;
+                    padding-bottom:0;
+                    padding-top: 0;
 
-                &.tablet, &.cell {
-                    //max-height: 160px;
-                }
-
-                &.pc, &.tablet, &.cell {
-                    width:auto;
-                }
-
-                &.cell {
-
-                    picture {
-                        margin-top: -100%;
+                    div.bgs {
+                        min-height: 100%;
+                        height: 100%;
+                        display: block;
+                        text-align: center;
                     }
                 }
             }
-        }
-    }
 
-    // 320 - s
-    // 320x192
-    // to iste ako pre 800
-    // to iste ako pre 800
-    @media only screen and (max-width: 375px) {
-
-        div.bgs {
-
-            figure {
-                margin:1%;
-
-                &.pc, &.tablet {
-
-                    picture {
-                        border-width: 6px;
-                    }
-                }
-
-                &.pc {
-
-                    picture {
-                        min-width:320px;
-                        max-width:320px;
-                        min-height: 192px;
-
-                        margin-bottom: 14px;
-                        border-top-left-radius: 0.5em;
-                        border-top-right-radius: 0.5em;
-
-                        &::after {
-                            height: 12px;
-                            right: -8px;
-                            margin-top: 4px;
-                            padding: 0 6px;
-                        }
-                    }
-                }
-
-                &.tablet {
-                    width: 55%;
-
-                    picture {
-                        border-radius: 0.5em;
-                    }
-                }
-
-                &.cell {
-                    width:25%;
-
-                    picture {
-                        border-width: 4px;
-                        border-top-width: 16px;
-                        border-bottom-width: 16px;
-                        border-radius: 0.75em;
-
-                        &::before {
-                            width: 20px;
-                            height:3px;
-                            left: 46px;
-                            margin-bottom:6px;
-                        }
-
-                        &::after {
-                            width: 12px;
-                            height: 12px;
-                            left: 50px;
-                            margin-top: 2px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // 240 - xs
-    // 240x144
-    // 144x106
-    // 74x144
-    @media only screen and (max-width: 320px) {
-
-        div.bgs {
-
-            figure {
-
-                &.pc {
-
-                    picture {
-                        min-width:240px;
-                        max-width:240px;
-                        min-height: 144px;
-                    }
-                }
-
-                &.tablet {
-
-                    picture {
-                        max-width: 144px;
-                        min-width: 144px;
-                        min-height: 106px;
-                    }
-                }
-
-                &.cell {
-
-                    picture {
-                        width: 74px;
-                        min-width: 74px;
-                        max-width: 74px;
-                        min-height: 96px;
-
-                        &::before, &::after {
-                            display: none;
-                        }
-                    }
-                }
+            nav.show_work {
+                position: absolute;
             }
         }
     }
 }
+
 
 
 

@@ -9,12 +9,15 @@ class PortfoliosController < ApplicationController
 
     ## override
     def show
-        #@title_bgs = @portfolio.portfolio_titlebgs
-        if params.has_key?(:obrazok)
-            @title_bg = @portfolio.portfolio_titlebgs.find(params[:obrazok].to_i)
-        else
-            @title_bg = @portfolio.portfolio_titlebgs.first
+        @title_bg = @portfolio.portfolio_titlebgs.first
+        @title_bg_single = @portfolio.portfolio_titlebg_singles.first
+        @header_type = showsection_decide_titlebg_type(@portfolio)
+        if @header_type == :responsive
+            @images_to_switch = @portfolio.portfolio_titlebgs
+        elsif @header_type == :single
+            @images_to_switch = @portfolio.portfolio_titlebg_singles
         end
+        find_image
     end
 
     def add_screenshots
@@ -51,7 +54,7 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_new
-        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs
+        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs, :portfolio_titlebg_singles
         #@portfolio.portfolio_screenshots.build
     end
 
@@ -60,11 +63,51 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_edit
-        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs
+        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs, :portfolio_titlebg_singles
     end
 
     def _after_ok_redirect_to
         { controller: "admin", action: "list_portfolios" }
+    end
+
+    def showsection_decide_titlebg_type(obj)
+        b = obj.portfolio_titlebgs
+        c = obj.portfolio_titlebg_singles
+        i = b.first ## responsive
+        j = c.first ## single
+        if b.blank?&&c.blank?
+            return :nothing
+        else
+            if j.blank?
+                if !i.blank?
+                    ### tu je chyba preco ide tato podmienkya ???
+                    if !i.title_bg_desktop.blank?&&!i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
+                        ##return :responsive
+                    elsif !i.title_bg_desktop.blank?&&i.title_bg_tablet.blank?&&i.title_bg_mobile.blank?
+                        return :desktop
+                    elsif i.title_bg_desktop.blank?&&i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
+                        return :mobile
+                    elsif !i.title_bg.blank?
+                        return :desktop
+                    else
+                        return :missing_sth
+                    end
+                else
+                    return :nothing
+                end
+            else
+                ## dat full size obrazku prednost
+                return :single
+            end
+        end
+    end
+
+    def find_image
+        if params.has_key?(:obrazok)
+            @title_bg = @images_to_switch.find(params[:obrazok].to_i)
+        else
+            @title_bg = @images_to_switch.first
+        end
     end
 
     def _permitted_params
@@ -85,6 +128,11 @@ class PortfoliosController < ApplicationController
                 :title_bg_desktop, :title_bg_desktop_cache, :remove_title_bg_desktop,
                 :title_bg_tablet, :title_bg_tablet_cache, :remove_title_bg_tablet,
                 :title_bg_mobile, :title_bg_mobile_cache, :remove_title_bg_mobile,
+                :_destroy
+            ],
+            portfolio_titlebg_singles_attributes: [
+                :id, :portfolio_id,
+                :title_bg, :title_bg_cache, :remove_title_bg,
                 :_destroy
             ]
          )

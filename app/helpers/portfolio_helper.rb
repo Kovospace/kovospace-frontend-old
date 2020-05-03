@@ -4,24 +4,21 @@ module PortfolioHelper
         ['_desktop', '_tablet', '_mobile']
     end
 
-    def showsection_decide_titlebg_type(obj)
-        b = obj.portfolio_titlebgs
-        i = b.first
-        if b.blank?
-            return :nothing
-        elsif i.blank?
-            return :nothing
-        elsif !i.title_bg.blank?&&!i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
-            return :responsive
-        elsif !i.title_bg.blank?&&i.title_bg_tablet.blank?&&i.title_bg_mobile.blank?
-            return :desktop
-        elsif i.title_bg.blank?&&i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
-            return :mobile
-        elsif !i.title_bg.blank?
-            return :desktop
-        else
-            return :nothing
-        end
+    def retina_sizes
+        ['1x', '2x', '3x']
+    end
+
+    def single_sizes
+        {
+            'xxl' => 1920,
+            'xl' => 1366,
+            'l' => 1024,
+            'm' => 800,
+            's' => 640,
+            'xs' => 480,
+            'xxs' => 375,
+            'xxxs' => 320
+        }
     end
 
     def is_sortlink_show_all_active?
@@ -37,7 +34,8 @@ module PortfolioHelper
         return p.portfolio_screenshot.screenshot.send(size).url.sub(/_orig\.png$/, '.jpg')
     end
 
-    def imageHeaderUrl(size='', uploader='', object=nil)
+    ### len pre responsive, inak by sa nemala pustat
+    def imageHeaderUrlResponsive(size='', uploader='', object=nil)
         if object.nil?
             return @title_bg.send(uploader).send(size).url.sub(/_orig\.png$/, '.jpg')
         else

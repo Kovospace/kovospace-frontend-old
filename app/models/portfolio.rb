@@ -24,6 +24,14 @@ class Portfolio < ActiveRecord::Base
         reject_if: proc { |c| (c[:title_bg_desktop].blank?&&c[:title_bg_tablet].blank?&&c[:title_bg_mobile].blank?) }
     )
 
+    ### obrazok na headeri prace - osamoteny
+    has_many :portfolio_titlebg_singles, dependent: :destroy
+    accepts_nested_attributes_for(
+        :portfolio_titlebg_singles,
+        allow_destroy: true,
+        reject_if: proc { |c| (c[:title_bg].blank?) }
+    )
+
     belongs_to :skillset, inverse_of: :portfolios, counter_cache: true
 
     default_scope { order(realis_date: :asc) }

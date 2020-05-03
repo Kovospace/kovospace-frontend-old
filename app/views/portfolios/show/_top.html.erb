@@ -35,17 +35,7 @@
 
     <ul class="preview_switcher">
         <% #3.times do %>
-        <% @portfolio.portfolio_titlebgs.each_with_index do |p, i| %>
-            <li>
-                <a
-                href="?obrazok=<%= p.id %>"
-                rel="nofollow"
-                class="<%= "active fakehover" if @title_bg.id == p.id %>"
-                id="nahlad_<%= i+1 %>">
-                    <span><em><%= i+1 %></em></span>
-                </a>
-            </li>
-        <% end %>
+        <%= render('portfolios/show/top/switcher_num', obj: @images_to_switch) %>
         <% #end %>
     </ul>
 

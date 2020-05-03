@@ -1,0 +1,39 @@
+<figure class="single">
+    <picture>
+
+        <% single_sizes.reverse_each do |size, res| %>
+
+            <source
+                media="(max-width: <%= res %>px)"
+                srcset="
+
+                <% retina_sizes.each_with_index do |retina_variant, index| %>
+
+                    <%
+                    out = @title_bg_single
+                    .send("title_bg")
+                    .send("title_bg_single_size_#{size}_#{retina_variant}")
+                    .url
+                    .sub(/_orig\.png$/, '.jpg')
+                    out += " #{retina_variant}" if retina_variant != '1x'
+                    out += ", " if retina_sizes.size != index+1
+                    %>
+
+                    <%= out %>
+
+                <% end %>
+
+                ">
+
+        <% end %>
+
+        <img
+            src="<%= @title_bg_single.title_bg.title_bg_single_size_xxl_1x.url.sub(/_orig\.png$/, '.jpg') %>"
+            srcset="
+                <%= @title_bg_single.title_bg.title_bg_single_size_xxl_2x.url.sub(/_orig\.png$/, '.jpg') %> 2x,
+                <%= @title_bg_single.title_bg.title_bg_single_size_xxl_3x.url.sub(/_orig\.png$/, '.jpg') %> 3x
+            "
+        >
+
+    </picture>
+</figure>

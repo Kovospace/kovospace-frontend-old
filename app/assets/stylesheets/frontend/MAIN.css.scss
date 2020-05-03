@@ -37,6 +37,9 @@ html {
 
             &.portfolios {
                 @import "./frontend/controllers/portfolio/header";
+                @import "./frontend/controllers/portfolio/header/figures";
+                @import "./frontend/controllers/portfolio/header/figures_responsive";
+                @import "./frontend/controllers/portfolio/header/figure_single";
                 @import "./frontend/controllers/portfolio/nav";
             }
 
