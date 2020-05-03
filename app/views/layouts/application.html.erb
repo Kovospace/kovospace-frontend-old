@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <%= stylesheet_link_tag '_MAIN', media: 'all', 'data-turbolinks-track' => true %>
         <%= yield(:header) %>
+        <% if cookies_not_accepted %>
+            <style>
+                body { overflow-y: hidden; }
+            </style>
+        <% end %>
     </head>
 
     <body class="<%= controller_name.to_s.singularize %>">
@@ -13,7 +18,7 @@
         <%= yield %>
         <footer>
             <%= content_for :foot %>
-            <% if @accept_cookie.blank? && action_name != "cookies_info" %>
+            <% if cookies_not_accepted %>
                 <%= render 'cookies_accept' %>
             <% end %>
         </footer>

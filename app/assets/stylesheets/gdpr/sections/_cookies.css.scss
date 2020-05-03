@@ -89,4 +89,23 @@ section {
     }
 }
 
+@media only screen and (max-width: 533px) {
+
+    & {
+        padding: 1em;
+    }
+
+    section {
+        font-size: 1.25em;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+  section {
+    font-size: 1.5em;
+  }
+}
+
 

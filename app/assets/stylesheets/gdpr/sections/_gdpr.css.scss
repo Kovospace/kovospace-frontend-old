@@ -63,3 +63,15 @@ section {
         }
     }
 }
+
+@media only screen and (max-width: 533px) {
+  section {
+    font-size: 1.25em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  section {
+    font-size: 1.5em;
+  }
+}

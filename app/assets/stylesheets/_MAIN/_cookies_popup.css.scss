@@ -95,3 +95,82 @@ footer {
         }
     }
 }
+
+@media only screen and (max-width: 800px) {
+
+    body {
+        //overflow-y:hidden;
+
+        footer {
+            top:0;
+            z-index: 99;
+            min-height: 100%;
+            overflow-y: scroll;
+
+            section#cookies_accept {
+                min-height: 100%;
+                //overflow-y: scroll;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    body {
+
+        footer {
+
+            section#cookies_accept {
+                padding:0.5em;
+
+                form {
+
+                    div {
+
+                        span {
+
+                            label {
+                                margin: 0 0.5em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    body {
+
+        footer {
+
+            section#cookies_accept {
+                padding:0.5em;
+
+                form {
+
+                    div {
+
+                        span {
+                            display: block;
+
+                            label {
+                                display: inline-block;
+                                margin: 0.25em;
+                            }
+                        }
+
+                        p {
+                            display: block;
+                            padding-left: 0.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

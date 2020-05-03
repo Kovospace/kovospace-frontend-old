@@ -58,3 +58,8 @@ module ApplicationHelper
     end
 
 end
+
+def cookies_not_accepted
+  return @accept_cookie.blank? && action_name != "cookies_info"
+end
+
