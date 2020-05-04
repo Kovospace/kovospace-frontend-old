@@ -1,10 +1,10 @@
 
 @media only screen and (min-width: 479px) {
-    @include web_logo();
+    @include web_logo_2();
 }
 
 @media only screen and (max-width: 480px) {
-    @include web_logo(2em);
+    @include web_logo_2(2em);
 
     figure.web_logo {
         font-size: 12vw;
@@ -18,7 +18,8 @@ nav {
 
         &.pagelinks {
             font-size:1.625em;
-            padding: 0 1.125em;
+            //padding: 0 1.125em;
+            padding-right: 1.125em;
         }
 
         & > li {
@@ -63,11 +64,12 @@ nav {
                     a {
                         font-weight: bold;
                         padding: 0.25em;
+                        white-space: nowrap;
 
                         &:before { display: none; }
 
                         &.l2 {
-                            margin-left: -1.625em;
+                            margin-left: -1em;
                         }
 
                         &.l1 {
@@ -103,6 +105,22 @@ nav {
         ul.pagelinks {
             padding: 0.125em;
         }
+
+        ul {
+
+            li {
+
+                ul {
+
+                    li {
+
+                        a.l1, a.l2 {
+                            margin:0;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @media only screen and (max-width: 320px) {
@@ -120,10 +138,6 @@ nav {
                         position: relative;
                         right: 1em;
                         display: block;
-
-                        a.l1, a.l2 {
-                            margin:0;
-                        }
                     }
                 }
             }

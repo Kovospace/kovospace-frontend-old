@@ -1,13 +1,16 @@
 footer {
     position: fixed;
     bottom:0;
+    max-width:100%;
     left:0;
     right:0;
+    @include box_sizing();
 
     section#cookies_accept {
         font-size: 1.125em;
         padding:1em;
         background-color: $black;
+        @include box_sizing();
 
         h3 {
             font-size: 1.5em;
@@ -99,17 +102,15 @@ footer {
 @media only screen and (max-width: 800px) {
 
     body {
-        //overflow-y:hidden;
 
         footer {
             top:0;
             z-index: 99;
-            min-height: 100%;
-            overflow-y: scroll;
+            overflow-y: auto;
+            overflow-x: hidden;
 
             section#cookies_accept {
-                min-height: 100%;
-                //overflow-y: scroll;
+                min-height:100%;
             }
         }
     }
@@ -147,7 +148,6 @@ footer {
         footer {
 
             section#cookies_accept {
-                padding:0.5em;
 
                 form {
 

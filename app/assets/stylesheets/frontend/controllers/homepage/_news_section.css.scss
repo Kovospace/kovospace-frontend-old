@@ -9,6 +9,7 @@ section#novinky {
             padding: 0.5em;
             border-radius: 1em;
             background-color: $solar_panel_item_bg;
+            margin:0.5em;
             @include background_transition($transition_time);
 
             &:hover {

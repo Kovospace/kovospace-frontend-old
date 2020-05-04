@@ -1,4 +1,4 @@
-@mixin web_logo($size:4em, $fake_bg: #000) {
+/*@mixin web_logo($size:4em, $fake_bg: #000) {
 
     figure.web_logo {
         display: inline-table;
@@ -160,8 +160,80 @@
             }
         }
     }
-}
+}*/
 
+@mixin web_logo_2($size:4em) {
+
+    figure.web_logo {
+        @include rotate(-30deg);
+
+        display: inline-table;
+        vertical-align:middle;
+        position:relative;
+        font-size:$size;
+        height:4em;
+        margin:0.5em 0;
+
+        div.bg {
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            position: absolute;
+            display: block;
+
+            &::before {
+                content: '';
+                display: block;
+                background-color: #00A3FF;
+                margin: 0 auto;
+                width: 4em;
+                border-radius:50%;
+                height: 100%;
+            }
+        }
+
+        div.text {
+            display: table-cell;
+            vertical-align: middle;
+            position: relative;
+            line-height:1em;
+            padding-bottom: 1em;
+
+            &::after {
+                content: ' ';
+                display: block;
+                position: relative;
+                //top:0.125em;
+                border-radius:0.125em;
+                height:0.25em;
+                background-color: #fafafa;
+            }
+
+            span {
+                display: inline-block;
+                position: relative;
+                font-weight: bold;
+
+                &:first-child {
+
+                    &::after {
+                        content: ' ';
+                        display: inline-block;
+                        width:0.5em;
+                        height:0.5em;
+                        background-color: #fafafa;
+                        border-radius: 50%;
+                        position: relative;
+                        top:0.625em;
+                        z-index: 1;
+                        border: 0.125em solid #00A3FF;
+                    }
+                }
+            }
+        }
+    }
+}
 
 @mixin icons_base() {
     // pouzit EM na zmenu velkosti
