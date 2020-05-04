@@ -54,7 +54,7 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_new
-        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs, :portfolio_titlebg_singles
+        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs, :portfolio_titlebg_singles, :portfolio_galleries
         #@portfolio.portfolio_screenshots.build
     end
 
@@ -63,7 +63,7 @@ class PortfoliosController < ApplicationController
     end
 
     def _around_edit
-        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs, :portfolio_titlebg_singles
+        build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs, :portfolio_titlebg_singles, :portfolio_galleries
     end
 
     def _after_ok_redirect_to
@@ -80,9 +80,8 @@ class PortfoliosController < ApplicationController
         else
             if j.blank?
                 if !i.blank?
-                    ### tu je chyba preco ide tato podmienkya ???
                     if !i.title_bg_desktop.blank?&&!i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
-                        ##return :responsive
+                        return :responsive
                     elsif !i.title_bg_desktop.blank?&&i.title_bg_tablet.blank?&&i.title_bg_mobile.blank?
                         return :desktop
                     elsif i.title_bg_desktop.blank?&&i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
@@ -106,7 +105,7 @@ class PortfoliosController < ApplicationController
         if params.has_key?(:obrazok)
             @title_bg = @images_to_switch.find(params[:obrazok].to_i)
         else
-            @title_bg = @images_to_switch.first
+            @title_bg = @images_to_switch.try(:first)
         end
     end
 
@@ -134,6 +133,12 @@ class PortfoliosController < ApplicationController
                 :id, :portfolio_id,
                 :title_bg, :title_bg_cache, :remove_title_bg,
                 :_destroy
+            ],
+            portfolio_galleries_attributes: [
+                :id, :portfolio_id,
+                :image, :image_cache, :remove_image,
+                :_destroy,
+                :alt_text, :identificator
             ]
          )
     end

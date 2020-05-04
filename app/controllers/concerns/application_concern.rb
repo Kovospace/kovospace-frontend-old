@@ -111,8 +111,7 @@ module ApplicationConcern
 
     def get_path_back
     	if !session[:path_back].nil?
-    		if !session[:path_back][:controller].nil?
-    			#return session[:path_back]
+    		if !session[:path_back]['controller'].nil?
     			@path_back = session[:path_back]
     		else
     			@path_back = { controller: params[:controller], action: 'index' }

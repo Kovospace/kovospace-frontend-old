@@ -18,7 +18,7 @@
         <%= p.errors :intro %>
     </div>
 
-	<div>
+	<div class="text_editor">
 		<%= p.label :text %>
         <div class="trix_editor">
             <%= p.trix_editor :text, id: 'text' %>
@@ -43,7 +43,7 @@
         </picture>
     </div>
 
-    <div>
+    <div class="gallery">
         <%= p.label :images %>
         <div class="pictures">
             <% i = 0 %>

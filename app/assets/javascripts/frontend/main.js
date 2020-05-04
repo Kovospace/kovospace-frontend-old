@@ -25,6 +25,10 @@ Main.prototype = {
         $(window).on("load", function() {
             T.CurrentController.onload();
         });
+
+        $(document).on('turbolinks:load', function() {
+            T.CurrentController.onturbolinks();
+        });
     }
 }
 

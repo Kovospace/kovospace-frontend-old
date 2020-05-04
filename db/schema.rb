@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200502233909) do
+ActiveRecord::Schema.define(version: 20200504153329) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -137,6 +137,18 @@ ActiveRecord::Schema.define(version: 20200502233909) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "portfolio_galleries", force: :cascade do |t|
+    t.text     "image"
+    t.text     "alt_text"
+    t.integer  "type"
+    t.integer  "portfolio_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "identificator"
+  end
+
+  add_index "portfolio_galleries", ["portfolio_id"], name: "index_portfolio_galleries_on_portfolio_id"
 
   create_table "portfolio_screenshots", force: :cascade do |t|
     t.integer  "portfolio_id"

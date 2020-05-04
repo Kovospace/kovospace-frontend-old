@@ -53,13 +53,21 @@ form {
            line-height: 1.625em;
         }
 
-        &.trix_editor {
-            display: inline-block;
+        &.text_editor {
+            display: table;
 
-            .trix-content {
-                min-height: 25vh;
+            label, div.trix_editor {
+                display: table-cell;
+            }
+
+            div.trix_editor {
+
+                .trix-content {
+                    min-height: 25vh;
+                }
             }
         }
+
 
         &.pictures {
             display: inline-block;

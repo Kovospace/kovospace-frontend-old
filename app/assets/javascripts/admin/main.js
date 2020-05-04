@@ -20,6 +20,7 @@ Main.prototype = {
 
         $(document).ready(function() {
             T.CurrentController.onready();
+
         });
     }
 }

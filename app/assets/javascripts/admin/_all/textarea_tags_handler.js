@@ -3,6 +3,7 @@ function textAreaTagsHandler() {
     this.text = "";
     this.HELPER = new textAreaTagsHandlerHelper();
     this.TEMPLATE = textAreaTagsHandlerTemplates;
+    this.container = 'div.gallery > div.pictures';
 }
 
 textAreaTagsHandler.prototype = {
@@ -11,7 +12,7 @@ textAreaTagsHandler.prototype = {
     init: function() {
         this.HELPER.init();
         var T = this;
-        $(document).on('content_changed', 'div.pictures', function() {
+        $(document).on('content_changed', this.container, function() {
             T.reactToChanges($(this));
         });
         $(document).on('keyup mouseup', '.trix-content', function() {
@@ -35,17 +36,21 @@ textAreaTagsHandler.prototype = {
                 T.insertTag(tag);
             }
         });
-        console.log(T.text.match(/<#obrazok(\d+)#>/g));
+        //console.log(T.text.match(/<#obrazok(\d+)#>/g));
         var tags = T.text.match(/<#obrazok(\d+)#>/g);
-        for (var i=0; i<tags.length; i++) {
-            if (T.checkImageExistence(tags[i]) === true) {
-                //console.log("aaano");
-            } else {
-                //console.log("nieeeeeeee");
-                T.removeTag(tags[i]);
+        if (tags === null) {
+
+        } else {
+            for (var i=0; i<tags.length; i++) {
+                if (T.checkImageExistence(tags[i]) === true) {
+                    //console.log("aaano");
+                } else {
+                    //console.log("nieeeeeeee");
+                    T.removeTag(tags[i]);
+                }
             }
+            //T.checkImageExistence(tag);
         }
-        //T.checkImageExistence(tag);
     },
 
     trackCursorPosition: function(ref) {

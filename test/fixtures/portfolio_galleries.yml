@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  image: MyText
+  alt_text: MyText
+  type: 1
+  portfolio_id: 
+
+two:
+  image: MyText
+  alt_text: MyText
+  type: 1
+  portfolio_id: 

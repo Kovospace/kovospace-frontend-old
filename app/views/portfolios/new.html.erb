@@ -15,9 +15,11 @@
         <%= s.text_area :intro %>
     </div>
 
-    <div>
+    <div class="text_editor">
         <%= s.label :description %>
-        <%= s.text_area :description %>
+        <div class="trix_editor">
+            <%= s.trix_editor :description, id: 'text' %>
+        </div>
     </div>
 
     <div>
@@ -152,6 +154,40 @@
                     <div class="clear"></div>
                 </article>
 
+            <% end %>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <%= s.label :images %>
+        <div class="pictures">
+            <% i = 0 %>
+            <%= s.fields_for :portfolio_galleries do |ps| %>
+                <%
+                    blank = ps.object.image.blank?
+                    i += 1
+                    val = ps.object.identificator.nil? ? i : ps.object.identificator
+                %>
+                <picture>
+                    <% if !blank %>
+                        <em><%= val %></em>
+                        <%= ps.label(:_destroy, "X", class: 'destroy') %>
+                    <% end %>
+                    <%= ps.file_field :image, class: "hidden" %>
+                    <%= ps.hidden_field :image_cache %>
+                    <%= ps.hidden_field :id %>
+                    <%= ps.hidden_field :identificator, value: val, class: 'identificator' %>
+                    <span>
+                        <%= ps.label :image do %>
+                            <%= ps.check_box(:_destroy, class: 'hidden') if !blank %>
+                            <%= image_tag(ps.object.image) if !blank %>
+                            <% if blank %> <q></q> <% end %>
+                        <% end %>
+                    </span>
+                    <span>
+                        <%= ps.text_area(:alt_text) %>
+                    </span>
+                </picture>
             <% end %>
         </div>
     </div>

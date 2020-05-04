@@ -17,12 +17,21 @@ Portfolio.prototype = {
     },
 
     onload: function() {
-        if ($(document).find('header').attr('class') == 'portfolios show') {
+        if ($(document).find('header').hasClass('portfolios show')) {
             this.previewSwitcher.init();
         }
     },
 
-    turbolinks_load: function() {
-
+    onturbolinks: function() {
+        // zastavit ho, ide aj mimo stranky s projektom kvoli turbolinks js
+        var container = $(document).find('header');
+        if (container.hasClass('portfolios show')) {
+            var toto = this;
+            container.imagesLoaded(function() {
+                toto.previewSwitcher.init();
+            });
+        } else {
+            this.previewSwitcher.setVars();
+        }
     }
 }

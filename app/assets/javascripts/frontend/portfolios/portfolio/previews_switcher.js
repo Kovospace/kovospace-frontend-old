@@ -1,11 +1,10 @@
 function PreviewsSwitcher() {
-    this.previews = [];
-    this.load_direction = +1;
-    this.current_index = 0;
-    this.next_index = 0;
-    this.prev_index = null;
-    this.cycle_time = 4000;
-
+    this.previews;
+    this.load_direction;
+    this.current_index;
+    this.next_index;
+    this.prev_index;
+    this.cycle_time;
     this.current_id;
     this.current_order;
     this.poll;
@@ -16,11 +15,25 @@ PreviewsSwitcher.prototype = {
     constructor: PreviewsSwitcher,
 
     init: function() {
+        this.setVars();
         this.getImageUrls();
         this.setNext();
         this.assignActions();
         this.firstTimeLoad();
         this.cycle();
+    },
+
+    setVars: function() {
+        this.previews = [];
+        this.load_direction = +1;
+        this.current_index = 0;
+        this.next_index = 0;
+        this.prev_index = null;
+        this.cycle_time = 4000;
+        this.current_id = null;
+        this.current_order = null;
+        clearTimeout(this.cycler);
+        clearInterval(this.poll);
     },
 
     assignActions: function() {

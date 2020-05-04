@@ -32,6 +32,14 @@ class Portfolio < ActiveRecord::Base
         reject_if: proc { |c| (c[:title_bg].blank?) }
     )
 
+    ### galeria
+    has_many :portfolio_galleries, dependent: :destroy
+    accepts_nested_attributes_for(
+        :portfolio_galleries,
+        allow_destroy: true,
+        reject_if: proc { |c| (c[:image].blank?) }
+    )
+
     belongs_to :skillset, inverse_of: :portfolios, counter_cache: true
 
     default_scope { order(realis_date: :asc) }

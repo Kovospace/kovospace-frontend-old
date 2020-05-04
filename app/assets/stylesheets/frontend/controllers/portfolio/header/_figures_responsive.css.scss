@@ -211,10 +211,6 @@
                     display: inline-block;
                     float:none;
 
-                    &.tablet, &.cell {
-                        //max-height: 160px;
-                    }
-
                     &.pc, &.tablet, &.cell {
                         width:auto;
                     }

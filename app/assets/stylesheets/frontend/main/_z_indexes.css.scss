@@ -50,7 +50,7 @@ main {
 
 body.portfolio {
     header {
-        div {
+        div.preview.responsive {
             figure {
                 picture {
                     &.pc { z-index: 4; }
