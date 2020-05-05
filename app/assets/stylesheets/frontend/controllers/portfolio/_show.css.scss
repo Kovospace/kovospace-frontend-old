@@ -19,9 +19,31 @@ section#show_work {
             padding-left: 0.75em;
         }
 
-        div {
+        & > div {
             font-size: 1.25em;
             padding-left: 0.5em;
+        }
+
+        div {
+            line-height: 1.125em;
+
+            ul {
+
+                li {
+                    position: relative;
+                    margin-left:1em;
+
+                    &::before {
+                        position: absolute;
+                        text-align: center;
+                        right: 100%;
+                        content: "\2022";
+                        font-weight: bold;
+                        display: inline-block;
+                        width: 1em;
+                    }
+                }
+            }
         }
     }
 
@@ -57,6 +79,7 @@ section#show_work {
     @media only screen and (max-width: 533px) {
 
         article {
+            padding: 12px;
 
             div {
                 padding-left:0;

@@ -45,4 +45,26 @@ module PortfolioHelper
         end
     end
 
+    def kovodown(html)
+        #rgx = /\<\#obrazok(\d+)\#\>/
+        rgx = /\&lt\;\#obrazok(\d+)\#\&gt\;/
+        replacement = '<img>\1</img>'
+
+        ret = html.gsub(rgx) do |match|
+            Rails.logger.info "---------------------------"
+            #Rails.logger.info match
+            image_identificator = match.gsub(rgx, '\1').to_i
+            #Rails.logger.info image_identificator
+            image = @gallery.detect { |img| img.identificator == image_identificator }
+            ### IDE ### Rails.logger.info image.image.gallery_size_xl_1x
+            # spravit preload
+            #match.gsub(rgx, 'kokot \1 kokot')
+            #tiez roi query# Rails.logger.info image[:image]
+            Rails.logger.info "---------------------------"
+        end
+
+        #markdown html.gsub(rgx, replacement)
+        markdown ret
+    end
+
 end

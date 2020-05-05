@@ -8,6 +8,9 @@
         nav.show_work ul li a.active {
             <%= @portfolio.style_css %>
         }
+        main section#show_work article div ul li:before {
+            <%= @portfolio.style_css_fg_only_inverted %>
+        }
     </style>
 
 <% end %>

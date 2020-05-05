@@ -11,6 +11,7 @@ class PortfoliosController < ApplicationController
     def show
         @title_bg = @portfolio.portfolio_titlebgs.first
         @title_bg_single = @portfolio.portfolio_titlebg_singles.first
+        @gallery = @portfolio.portfolio_galleries
         @header_type = showsection_decide_titlebg_type(@portfolio)
         if @header_type == :responsive
             @images_to_switch = @portfolio.portfolio_titlebgs

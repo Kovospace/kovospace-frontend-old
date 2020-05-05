@@ -16,12 +16,11 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
-        <footer>
-            <%= content_for :foot %>
-            <% if cookies_not_accepted %>
-                <%= render 'cookies_accept' %>
-            <% end %>
-        </footer>
+        <% if content_for?(:foot) %>
+            <footer>
+                <%= content_for :foot %>
+            </footer>
+        <% end %>
     </body>
 
 </html>
