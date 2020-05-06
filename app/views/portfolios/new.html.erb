@@ -187,6 +187,18 @@
                     <span>
                         <%= ps.text_area(:alt_text) %>
                     </span>
+                    <span>
+                        <i>Velkosť:</i>
+                        <br>
+                        <%= ps.hidden_field :typ, value: 0 %>
+                        <%= ps.select(
+                            :typ,
+                            [
+                                ["Do galérie", 0],
+                                ["Naturálny", 1]
+                            ]
+                        ) %>
+                    </span>
                 </picture>
             <% end %>
         </div>

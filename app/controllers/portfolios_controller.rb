@@ -133,13 +133,14 @@ class PortfoliosController < ApplicationController
             portfolio_titlebg_singles_attributes: [
                 :id, :portfolio_id,
                 :title_bg, :title_bg_cache, :remove_title_bg,
-                :_destroy
+                :_destroy,
+                :alt_text
             ],
             portfolio_galleries_attributes: [
                 :id, :portfolio_id,
                 :image, :image_cache, :remove_image,
                 :_destroy,
-                :alt_text, :identificator
+                :alt_text, :identificator, :typ
             ]
          )
     end

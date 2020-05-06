@@ -10,7 +10,6 @@ imagePreview.prototype = {
     init: function() {
         var T = this;
         T.newImageClone = $(T.container).children('picture').last().clone();
-        //$(document).on('change', 'input[type=file]', function() {
         $(document).on('change', this.container+'> picture > input[type=file]', function() {
             T.readUrl(this);
         });
@@ -30,10 +29,7 @@ imagePreview.prototype = {
                     // novy obrazok
                     T.cloneNewImageButton(T);
                 }
-                //console.log($(input).parent());
-                //T.cloneNewImageButton(T);
                 T.appendPreview($(input), e.target.result);
-                //console.log('onload koniec');
                 T.triggerChange();
             }
             reader.readAsDataURL(input.files[0]);
@@ -46,7 +42,6 @@ imagePreview.prototype = {
         lbl.empty();
         lbl.append('<img>');
         lbl.children('img').attr('src', src);
-        //console.log(ref.parent());
         if (ref.parent().hasClass('loaded')) {
             // zmena obrazka
         } else {
@@ -56,27 +51,18 @@ imagePreview.prototype = {
                 .append('<label class="destroy new">X</label>')
                 .addClass('loaded');
         }
-        /*ref.parent()
-            .append('<em>'+i+'</em>')
-            .append('<label class="destroy new">X</label>');*/
     },
 
     cloneNewImageButton: function(ref) {
         var some_empty = false
         var next_index = 0;
 
-        //$(this.container).children('picture').each(function() {
-        //console.log(this.container);
         $(ref.container).children('picture').each(function() {
-            //var index = parseInt($(this).find('input[type=file]').attr('name').match(/\d+/));
             var index = parseInt($(this).find('input.identificator').val());
-            //if (index > next_index) { next_index = index; }
             if (index > ref.next_index) { ref.next_index = index; }
         });
         ref.next_index++;
         var tmp_obj = ref.newImageClone.clone();
-        //console.log('next index: ' + ref.next_index);
-        //var tmp_obj = ref.newImageClone.clone();
 
         tmp_obj.children('input').each(function() {
             // pre file input pole,
@@ -98,13 +84,17 @@ imagePreview.prototype = {
         var textarea_id = textarea.attr('id').replace(/\d+/, ref.next_index);
         textarea.attr('name', textarea_name);
         textarea.attr('id', textarea_id);
-
-
-        //tmp_obj.appendTo('div.pictures');
-        //console.log('attr name: ')
-        //console.log(tmp_obj.children('input'));
-        //console.log('id name: ' + tmp_obj.attr('id'));
-        //console.log('label for: ' + tmp_obj.children('span').children('label').attr('for'));
+        // typ obrazka vyberove menu
+        var select = tmp_obj.children('span').children('select');
+        if (select !== undefined) {
+            // hidden input a select
+            var select_name = select.attr('name').replace(/\d+/, ref.next_index);
+            var select_id = select.attr('id').replace(/\d+/, ref.next_index);
+            select.attr('name', select_name);
+            select.attr('id', select_id);
+            select.siblings('input').attr('name', select_name);
+            select.siblings('input').attr('id', select_id);
+        }
 
         tmp_obj.appendTo($(ref.container));
     },
