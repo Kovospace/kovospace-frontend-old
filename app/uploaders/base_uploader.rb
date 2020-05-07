@@ -69,6 +69,21 @@ class BaseUploader < CarrierWave::Uploader::Base
             #from_version: "#{meno.singularize}_#{(@sizes[meno][0])[0].to_s}".to_sym
           ) do
             work_on(process_method, v[0], v[1])
+            def full_filename(for_file)
+              if (super(for_file) == filename)
+                #Rails.logger.info "----------------------"
+                return filename
+              else
+                #Rails.logger.info "======================="
+                #rgx = Regexp.new("_#{filename}$")
+
+                #Rails.logger.info rgx
+                #Rails.logger.info filename
+                #Rails.logger.info super(for_file)
+                #return super(for_file).sub(rgx, '.jpg')
+                return super(for_file).sub(/_orig\.(png|jpg|jpeg|gif|svg)$/, '.jpg')
+              end
+            end
           end
         #end
       end
@@ -79,14 +94,24 @@ class BaseUploader < CarrierWave::Uploader::Base
   def self.work_on(meth, x, y)
       process meth => [x, y]
       process :optimizer
+=begin
       def full_filename(for_file)
         if (super(for_file) == filename)
+           Rails.logger.info "----------------------"
           return filename
+
         else
+          Rails.logger.info "======================="
           rgx = Regexp.new("_#{filename}$")
-          return super(for_file).sub(rgx, '.jpg')
+
+          Rails.logger.info rgx
+          Rails.logger.info filename
+          Rails.logger.info super(for_file)
+          #return super(for_file).sub(rgx, '.jpg')
+          return super(for_file).sub(/_orig\.(png|jpg|jpeg|gif|svg)$/, '.jpg')
         end
       end
+=end
       #process optimize: [
       #  { jpegoptim: true }
       #]
@@ -111,5 +136,11 @@ class BaseUploader < CarrierWave::Uploader::Base
     #tempres = num.to_f/divider
     #return tempres.floor.even? ? tempres.floor : tempres.ceil
   #end
+  #
+  def store_dimensions
+    if file && model
+      model.width, model.height = ::MiniMagick::Image.open(file.file)[:dimensions]
+    end
+  end
 
 end

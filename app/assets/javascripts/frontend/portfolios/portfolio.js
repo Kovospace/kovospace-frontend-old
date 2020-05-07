@@ -17,9 +17,7 @@ Portfolio.prototype = {
     },
 
     onload: function() {
-        if ($(document).find('header').hasClass('portfolios show')) {
-            this.previewSwitcher.init();
-        }
+
     },
 
     onturbolinks: function() {
