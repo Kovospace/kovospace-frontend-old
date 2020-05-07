@@ -90,6 +90,7 @@ html {
             main {
                 @import "./frontend/controllers/portfolio/portfolio_section";
                 @import "./frontend/controllers/portfolio/show";
+                @import "./frontend/controllers/portfolio/show/images";
             }
         }
 

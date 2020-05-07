@@ -35,6 +35,10 @@ module PortfolioHelper
         }
     end
 
+    def gallery_classes
+        ['for_gallery', 'natural']
+    end
+
     ### [index]
     def is_sortlink_show_all_active?
         rgx = /(^\/portfolio\/strana\-\d$)|(^\/portfolio$)/
@@ -67,12 +71,17 @@ module PortfolioHelper
         # spravit preload aby nerobilo n+1 query
         #tiez robi query - Rails.logger.info image[:image]
         rgx = /\&lt\;\#obrazok(\d+)\#\&gt\;/
+        rgx_to_wrap = /((?:)(\&lt\;\#obrazok\d+\#\&gt\;\s*)+)/
 
-        ret = html.gsub(rgx) do |match|
+        wrapped = html.gsub(rgx_to_wrap, '<figure> \1 </figure>')
+
+        ret = wrapped.gsub(rgx) do |match|
             image_identificator = match.gsub(rgx, '\1').to_i
-            image = @gallery.detect { |img| img.identificator == image_identificator }.image
+            obj = @gallery.detect { |img| img.identificator == image_identificator }
+            image = obj.image
+            typ = gallery_classes[obj.typ]
 
-            r = "<picture>"
+            r = "<picture class=\"#{typ}\">"
             gallery_sizes.each do |size, version|
                 r += "<source media=\"(max-width: #{size}px)\""
                 r += "srcset=\""
@@ -93,6 +102,27 @@ module PortfolioHelper
             r += "</picture>"
             r
         end
+=begin
+        Rails.logger.info "---------------------------------"
+
+        doc = Nokogiri::HTML(ret) { |c| c.noblanks }
+
+        doc.xpath('//div').each do |node|
+            #Rails.logger.info node.children.count
+            #Rails.logger.info node
+            elem_prev = nil
+            node.children.each_with_index do |n, i|
+                #Rails.logger.info i
+                Rails.logger.info n.name
+                if n.name == 'picture'
+                    if elem_prev.nil?
+                    else
+                    end
+                end
+            end
+        end
+=end
+
 
         markdown ret
     end

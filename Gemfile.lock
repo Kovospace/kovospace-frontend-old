@@ -240,6 +240,7 @@ DEPENDENCIES
   mimemagic
   mini_magick
   naturally
+  nokogiri
   order_as_specified
   rails (= 4.2.6)
   rails-i18n
