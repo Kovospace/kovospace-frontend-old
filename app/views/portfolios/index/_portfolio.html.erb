@@ -42,7 +42,14 @@
         </h3>
 
         <div class="portfolio_text_preview">
-            <%= limit_lines(markdown(p.description)) %>
+            <%#= limit_lines(markdown(p.description)) %>
+            <p>
+            <%= limit_lines(
+                strip_tags(
+                    p.description.gsub(/\<br\s?\/?\>/, "\r\n")
+                )
+            ).gsub("\r\n", "<br>").html_safe %>
+            </p>
         </div>
 
         <div class="portfolio_actions">
