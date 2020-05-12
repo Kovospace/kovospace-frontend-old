@@ -123,5 +123,23 @@ html {
             }
         }
 
+        &.error {
+            margin:0;
+
+            header {
+                @import "./frontend/controllers/homepage/header";
+
+                nav {
+
+                    a {
+                        color: $white;
+                    }
+                }
+            }
+
+            main {
+                @import "./errors/under_construction";
+            }
+        }
     }
 }

@@ -10,4 +10,8 @@ class ErrorsController < ApplicationController
         render status_code.to_s, status: status_code
     end
 
+    def under_construction
+
+    end
+
 end

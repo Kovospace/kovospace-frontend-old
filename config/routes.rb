@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     get code, :to => "errors#show", :code => code
   end
 
+  get 'under_construction',
+    :to => "errors#under_construction"
+
   get 'home',
     to: "homepage#index",
     as: "home"

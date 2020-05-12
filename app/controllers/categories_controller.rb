@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+    before_action :under_construction
+
     before_action :authorize_admin, except: [:index, :show]
 
     layout "admin", only: [:new, :create, :edit, :update]

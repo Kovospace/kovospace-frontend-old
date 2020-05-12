@@ -76,6 +76,8 @@ section#skills {
                     border-radius: 1em;
                     padding: 0 0.375em;
                     background-color: $black;
+                    display: inline-block;
+                    white-space: normal;
                 }
 
                 span:hover + b.fakehover {

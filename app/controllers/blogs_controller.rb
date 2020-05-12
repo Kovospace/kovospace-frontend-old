@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+    before_action :under_construction
+
     before_action :authorize_admin, except: [:index, :show]
 
     add_breadcrumb "Blog", :blogs_path

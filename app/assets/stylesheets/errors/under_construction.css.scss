@@ -1,0 +1,83 @@
+
+section.under_construction {
+    height: 100%;
+    padding:0;
+
+    h2 {
+        text-align: center;
+    }
+
+    figure {
+        width:50%;
+        height:50%;
+        margin: 0 auto;
+        position: relative;
+        border-bottom: 3em solid $ground_beige;
+        border-right: 3em double $half;
+        border-left: 3em solid transparent;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        justify-content: space-evenly;
+
+        &:before {
+            content: ' ';
+            display: block;
+            position: absolute;
+            top:0;
+            right:-3em;
+            width:50%;
+            height:1em;
+            border: 1em solid $half;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: bottom;
+            width:4em;
+            background-color: $dirty_white;
+            position: relative;
+            margin-bottom: 2.75em;
+
+            &::before, &::after {
+                content: ' ';
+                display: block;
+                position: absolute;
+                left:0;
+                right:0;
+                height: 0;
+            }
+
+            &::after {
+                top:100%;
+                border-bottom: 3em solid $mid_black;
+                border-left: 1em solid transparent;
+                border-right: 1em solid transparent;
+            }
+
+            &:first-child {
+                height: 25%;
+
+                &::before {
+                    bottom:103%;
+                    border-bottom: 5em solid $dirty_white;
+                    border-left: 2em solid transparent;
+                    border-right: 2em solid transparent;
+                }
+            }
+
+            &:last-child {
+                height: 50%;
+                margin-bottom: 10%;
+
+                &:before {
+                    bottom: 100%;
+                    height: 60%;
+                    background-color: $continent_brown;
+                    width:0.5em;
+                    left: 1.75em;
+                }
+            }
+        }
+    }
+}

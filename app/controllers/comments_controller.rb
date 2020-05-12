@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+    before_action :under_construction
+
     private
 
     def _permitted_params

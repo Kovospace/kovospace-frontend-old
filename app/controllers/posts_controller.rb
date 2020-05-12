@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+	before_action :under_construction
+
 	before_action :authorize_admin, except: [
 		:all,
 		:show,

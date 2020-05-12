@@ -170,4 +170,8 @@ class ApplicationController < ActionController::Base
       store_location_for(:user, request.fullpath)
     end
 
+    def under_construction
+        redirect_to '/under_construction'
+    end
+
 end
