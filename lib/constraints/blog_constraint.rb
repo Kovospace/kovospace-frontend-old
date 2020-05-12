@@ -1,7 +1,7 @@
 class BlogConstraint
 
     def initialize
-        #@blogs = Blog.pluck(:slug)
+        @blogs = Blog.pluck(:slug)
     end
 
     def matches?(request)

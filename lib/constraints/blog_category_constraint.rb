@@ -1,7 +1,7 @@
 class BlogCategoryConstraint
 
     def initialize
-        #@categories = Category.pluck(:slug)
+        @categories = Category.pluck(:slug)
     end
 
     def matches?(request)

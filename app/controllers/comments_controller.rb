@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
     def _permitted_params
         params[:comment].permit(
-            :id
+            :id,
             :comment#,
             #:reply_to
         )
