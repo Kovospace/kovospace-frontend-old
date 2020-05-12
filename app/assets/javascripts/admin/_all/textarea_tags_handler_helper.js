@@ -40,7 +40,10 @@ textAreaTagsHandlerHelper.prototype = {
         //console.log("element: ", element);
 
         function setPosition(el, pos) {
-            for(var node of el.childNodes){
+            var childNodes = el.childNodes;
+            //for(var node of el.childNodes){
+            for (var i=0; i<childNodes.length; i++) {
+                var node = childNodes[i];
                 if(node.nodeType == 3){ // we have a text node
                     if(node.length >= pos){
                         // finally add our range
