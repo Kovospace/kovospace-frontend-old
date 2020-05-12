@@ -45,7 +45,7 @@ module MojWeb
 
     require 'color'
 
-    require "ckeditor/orm/active_record"
+    #require "ckeditor/orm/active_record"
 
     #require 'carrierwave/processing/rmagick'
 

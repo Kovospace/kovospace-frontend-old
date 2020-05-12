@@ -20,4 +20,4 @@ Rails.application.config.assets.precompile += %w(gdpr.css)
 Rails.application.config.assets.precompile += %w(frontend.js)
 Rails.application.config.assets.precompile += %w(admin.js)
 
-Rails.application.config.assets.precompile += %w( ckeditor/*)
+#Rails.application.config.assets.precompile += %w( ckeditor/*)
