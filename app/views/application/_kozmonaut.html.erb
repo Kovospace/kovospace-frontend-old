@@ -2,11 +2,11 @@
 
     <picture>
         <source media=""
-                srcset="/assets/<%= image %>.jpg,
-                        /assets/<%= image %>_2x.jpg 2x,
-                        /assets/<%= image %>_3x.jpg 3x"
+                srcset="<%= asset_path(image) %>,
+                        <%= asset_path(image+'_2x') %> 2x,
+                        <%= asset_path(image+'_3x') %> 3x"
         >
-        <img src="/assets/<%= image %>.jpg">
+        <img src="<%= asset_path(image) %>">
     </picture>
 
     <div>
