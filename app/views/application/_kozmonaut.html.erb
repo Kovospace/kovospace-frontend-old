@@ -1,9 +1,12 @@
 <figure class="kozmonaut">
 
     <picture>
-        <source media="(min-width:768px)" srcset="/assets/<%= image %>.jpg">
-        <source media="" srcset="">
-        <%= image_tag "me_photo.jpg" %>
+        <source media=""
+                srcset="/assets/<%= image %>.jpg,
+                        /assets/<%= image %>_2x.jpg 2x,
+                        /assets/<%= image %>_3x.jpg 3x"
+        >
+        <%= image_tag "#{image}.jpg" %>
     </picture>
 
     <div>

@@ -111,6 +111,10 @@ group :development, :test do
   #
   gem 'browser_sync_rails'
 
+  gem "better_errors"
+  # dependency
+  gem "binding_of_caller"
+
 end
 
 group :development do
