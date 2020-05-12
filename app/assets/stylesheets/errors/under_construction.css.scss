@@ -1,24 +1,40 @@
 
+& {
+    position: relative;
+}
+
 section.under_construction {
     height: 100%;
     padding:0;
+    background-color: $earth_blue;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
 
     h2 {
         text-align: center;
+        font-size:2em;
     }
 
     figure {
         width:50%;
         height:50%;
-        margin: 0 auto;
-        position: relative;
+        min-height: 20em;
         border-bottom: 3em solid $ground_beige;
-        border-right: 3em double $half;
+        border-right: 3em double $light_black;
         border-left: 3em solid transparent;
         display: flex;
         align-items: flex-end;
         justify-content: center;
         justify-content: space-evenly;
+        position: absolute;
+        bottom:0;
+        margin:0;
+        left:25%;
+        box-sizing: border-box;
+        margin-top: 5em;
 
         &:before {
             content: ' ';
@@ -28,7 +44,9 @@ section.under_construction {
             right:-3em;
             width:50%;
             height:1em;
-            border: 1em solid $half;
+            border: 1em solid $light_black;
+            z-index: 2;
+            background-color: $earth_blue;
         }
 
         span {
@@ -78,6 +96,25 @@ section.under_construction {
                     left: 1.75em;
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+
+    & {
+        height: auto;
+    }
+
+    section.under_construction {
+        position: relative;
+
+        figure {
+            position: relative;
+            width:90%;
+            margin: 0 5%;
+            left:0;
+            right: 0;
         }
     }
 }
