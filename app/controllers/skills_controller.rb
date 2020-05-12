@@ -16,7 +16,7 @@ class SkillsController < ApplicationController
             :description,
             :degree,
             :work_state_id,
-            :bg,
+            :theme_color,
             :icon
          )
     end
