@@ -9,29 +9,42 @@ Main.prototype = {
     load: function() {
         var T = this;
         T.Router = new Router();
+
         $(document).ready(function() {
-            T.CurrentController = T.Router.load();
-            if (T.CurrentController !== undefined) { T.init(); }
+            T.prepareController();
+            T.init_ready();
+        });
+
+        // turbolinks - firuje aj pri onready
+        $(document).on('turbolinks:load', function() {
+            T.prepareController();
+            T.init_turbo();
         });
     },
 
-    init: function() {
-        var T = this;
+    prepareController: function() {
+        if (this.CurrentController === undefined) {
+            this.CurrentController = this.Router.load();
+        }
+    },
 
-        $(document).ready(function() {
-            T.CurrentController.onready();
-        });
+    init_ready: function() {
+        if (this.CurrentController !== undefined) {
+            this.CurrentController.onready();
+        }
+    },
 
-        $(window).on("load", function() {
-            T.CurrentController.onload();
-        });
-
-        $(document).on('turbolinks:load', function() {
-            T.CurrentController.onturbolinks();
-        });
+    init_turbo: function() {
+        if (this.CurrentController !== undefined) {
+            this.CurrentController.onturbolinks();
+            var T = this;
+            $(window).on("load", function() {
+                T.CurrentController.onload();
+            });
+        }
     }
 }
 
 var JS = new Main();
 JS.load();
-//JS.init();
+

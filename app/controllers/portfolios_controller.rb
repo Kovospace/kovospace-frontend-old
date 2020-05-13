@@ -87,7 +87,7 @@ class PortfoliosController < ApplicationController
                         return :desktop
                     elsif i.title_bg_desktop.blank?&&i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
                         return :mobile
-                    elsif !i.title_bg.blank?
+                    elsif !i.title_bg_desktop.blank?
                         return :desktop
                     else
                         return :missing_sth

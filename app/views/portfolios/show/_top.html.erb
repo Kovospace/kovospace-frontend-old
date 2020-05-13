@@ -12,7 +12,9 @@
 
         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
             <%= link_to(@path_back, itemprop:"item") do %>
-                <span itemprop="name">Tvorba</span>
+                <span itemprop="name"><!--
+                    --><%= @path_back[:controller] == "portfolios" ? "Tvorba" : "Naspäť" %><!--
+                --></span>
             <% end %>
             <meta itemprop="position" content="2" />
         </li>
