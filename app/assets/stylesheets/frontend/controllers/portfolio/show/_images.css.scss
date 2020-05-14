@@ -26,7 +26,7 @@ section#show_work {
                     height: 240px;
                     line-height:240px;
                     vertical-align: middle;
-                    margin: 1em auto;
+                    margin: 1em;
 
                     img {
                         display: inline-block;
@@ -87,6 +87,7 @@ section#show_work {
                         line-height:1em;
                         min-height: initial;
                         height: auto;
+                        margin: 0.75em 0;
                     }
 
                 }
