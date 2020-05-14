@@ -9,6 +9,7 @@ function PreviewsSwitcher() {
     this.current_order;
     this.poll;
     this.cycler;
+    this.continue;
 }
 
 PreviewsSwitcher.prototype = {
@@ -17,13 +18,16 @@ PreviewsSwitcher.prototype = {
     init: function() {
         this.setVars();
         this.getImageUrls();
-        this.setNext();
-        this.assignActions();
-        this.firstTimeLoad();
-        this.cycle();
+        if (this.continue === true) {
+            this.setNext();
+            this.assignActions();
+            this.firstTimeLoad();
+            this.cycle();
+        }
     },
 
     setVars: function() {
+        this.continue = false;
         this.previews = [];
         this.load_direction = +1;
         this.current_index = 0;
@@ -61,6 +65,9 @@ PreviewsSwitcher.prototype = {
             }
             index++;
         });
+        if (index > 0) {
+            this.continue = true;
+        }
     },
 
     setIndex: function(index) {
