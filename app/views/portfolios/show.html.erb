@@ -11,6 +11,9 @@
         main section#show_work article div ul li:before {
             <%= @portfolio.style_css_fg_only_inverted %>
         }
+        main section#show_work article div figure picture img {
+            border-color: #<%= @portfolio.bg_color %>;
+        }
     </style>
 
 <% end %>
