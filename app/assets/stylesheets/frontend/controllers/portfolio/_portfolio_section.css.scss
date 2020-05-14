@@ -151,7 +151,7 @@ section#portfolio {
 
             figure {
                 margin: 1em;
-                @include shadow(0, 0, 0em, 0em);
+                @include shadow(0, 0, 2px, 2px);
             }
         }
     }
