@@ -27,6 +27,8 @@ module MojWeb
 
     config.encoding = "utf-8"
 
+    config.i18n.available_locales = [:en, :sk]
+
     config.i18n.default_locale = :sk
 
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
@@ -51,3 +53,5 @@ module MojWeb
 
   end
 end
+
+##178.143.35.137

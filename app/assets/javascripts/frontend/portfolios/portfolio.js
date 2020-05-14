@@ -13,7 +13,7 @@ Portfolio.prototype = {
     },
 
     onready: function() {
-        this.bgOffset.offset();
+
     },
 
     onload: function() {
@@ -21,9 +21,11 @@ Portfolio.prototype = {
     },
 
     onturbolinks: function() {
+        this.bgOffset.offset();
         // zastavit ho, ide aj mimo stranky s projektom kvoli turbolinks js
         var container = $(document).find('header');
         if (container.hasClass('portfolios show')) {
+            this.bgOffset.offset();
             var toto = this;
             container.imagesLoaded(function() {
                 toto.previewSwitcher.init();
