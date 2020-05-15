@@ -179,7 +179,13 @@ nav {
                             }
 
                             a.number {
-                                @include rotate(-45deg);
+
+                                span {
+
+                                    &::after {
+                                        @include rotate(-45deg);
+                                    }
+                                }
                             }
                         }
                     }
