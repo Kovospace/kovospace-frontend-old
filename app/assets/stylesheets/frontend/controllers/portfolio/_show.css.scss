@@ -27,6 +27,20 @@ section#show_work {
         div {
             line-height: 1.125em;
 
+            a {
+                position: relative;
+
+                &::after {
+                    content: ' ';
+                    display: block;
+                    height: 0.0625em;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    background-color: $white;
+                }
+            }
+
             ul {
 
                 li {

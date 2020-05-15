@@ -15,7 +15,7 @@
     <ul>
 
         <li >
-            <a href="" <%= @portfolio.style %> class="fakehover">
+            <a href="<%= "#{portfolio_url}/#{@portfolio.skillset.slug}" %>" <%= @portfolio.style %> class="fakehover">
                 <span> <%= @portfolio.skillset.title %> </span>
             </a>
         </li>
