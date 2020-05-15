@@ -3,20 +3,8 @@
 
     <%= canonical_tag show_portfolio_url(@portfolio) %>
 
-    <style>
-        nav.show_work ul.prewiew_switcher li a.active,
-        nav.show_work ul li a.active {
-            <%= @portfolio.style_css %>
-        }
-        main section#show_work article div ul li:before {
-            <%= @portfolio.style_css_fg_only_inverted %>
-        }
-        main section#show_work article div a:hover:after {
-            background-color: #<%= @portfolio.bg_color %> !important;
-        }
-        main section#show_work article div figure picture img {
-            border-color: #<%= @portfolio.bg_color %>;
-        }
+    <style id="portfolio_<%= @portfolio.id %>">
+        <%= render 'portfolios/show/styles' %>
     </style>
 
 <% end %>
@@ -29,6 +17,8 @@
 <% end %>
 
 <section id="show_work">
+
+    <%= hidden_field_tag('portfolio_id', @portfolio.id) %>
 
     <%= render 'portfolios/show/article' %>
 

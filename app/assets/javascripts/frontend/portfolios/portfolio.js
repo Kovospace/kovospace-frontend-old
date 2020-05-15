@@ -1,6 +1,7 @@
 function Portfolio() {
     this.previewSwitcher;
     this.bgOffset;
+    this.stylesFix;
     this.init();
 }
 
@@ -10,6 +11,7 @@ Portfolio.prototype = {
     init: function() {
         this.previewSwitcher = new PreviewsSwitcher();
         this.bgOffset = new BgOffset();
+        this.stylesFix = new DynamicStylesFix();
     },
 
     onready: function() {
@@ -21,6 +23,7 @@ Portfolio.prototype = {
     },
 
     onturbolinks: function() {
+        this.stylesFix.init();
         this.bgOffset.offset();
         // zastavit ho, ide aj mimo stranky s projektom kvoli turbolinks js
         var container = $(document).find('header');
