@@ -13,6 +13,11 @@
                 margin-bottom: 3em;
                 float:left;
 
+                picture {
+                    @include gradient(-45deg, #000, #111);
+                    @include border_shadow(4px, 4px, $space_black);
+                }
+
                 &.pc {
                     width:45%;
 

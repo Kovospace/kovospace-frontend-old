@@ -11,8 +11,6 @@
                     max-width: 100%;
                     display:block;
                     position: relative;
-                    @include gradient(-45deg, #000, #111);
-                    @include border_shadow(4px, 4px, $space_black);
 
                     img {
                         display: block;
