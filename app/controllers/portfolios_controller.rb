@@ -45,7 +45,7 @@ class PortfoliosController < ApplicationController
         @portfolios = Portfolio
             .category_filter(params[:skillset_id])
             .page(params[:page])
-            .per(2)
+            .per(8)
     end
 
     def _load_vars
@@ -87,6 +87,8 @@ class PortfoliosController < ApplicationController
                         return :desktop
                     elsif i.title_bg_desktop.blank?&&i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
                         return :mobile
+                    elsif !i.title_bg_desktop.blank?&&i.title_bg_tablet.blank?&&!i.title_bg_mobile.blank?
+                        return :desktop_and_mobile
                     elsif !i.title_bg_desktop.blank?
                         return :desktop
                     else
