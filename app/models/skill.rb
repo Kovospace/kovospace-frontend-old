@@ -7,4 +7,6 @@ class Skill < ActiveRecord::Base
 
     mount_uploader :icon, SkillIconUploader
 
+    default_scope { order(degree: :asc) }
+
 end
