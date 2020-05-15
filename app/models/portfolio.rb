@@ -42,7 +42,7 @@ class Portfolio < ActiveRecord::Base
 
     belongs_to :skillset, inverse_of: :portfolios, counter_cache: true
 
-    default_scope { order(realis_date: :asc) }
+    default_scope { order(realis_date: :desc) }
 
     scope :category_filter, -> (category_slug) {
         if category_slug.blank?
