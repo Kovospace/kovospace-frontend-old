@@ -57,7 +57,7 @@ section#show_work {
 
             li {
                 display: inline-table;
-                padding: 0 1em;
+                margin: 1em;
 
                 a {
                     @include height_expander();
