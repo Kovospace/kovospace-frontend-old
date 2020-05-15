@@ -9,107 +9,108 @@ section#show_work {
 
         div {
 
-            figure {
+            div.imageswrapper {
                 text-align: center;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                justify-content: space-around;
-                justify-content: space-evenly;
-                align-items: center;
 
-
-                picture {
+                figure {
+                    text-align: left;
                     display: inline-block;
-                    min-height: 240px;
-                    height: 240px;
-                    line-height:240px;
-                    vertical-align: middle;
-                    margin: 1em;
 
-                    img {
+                    picture {
                         display: inline-block;
-                        max-width: 320px;
-                        max-height: 240px;
+                        min-height: 240px;
+                        height: 240px;
+                        line-height:240px;
                         vertical-align: middle;
-                        border-width:4px;
-                        border-radius: 0.5em;
-                        border-style: solid;
-                    }
-                }
-
-                @media only screen and (max-width: 640px) {
-
-                    picture {
-                        min-height: 228px;
-                        height: 228px;
-                        line-height: 228px;
+                        margin: 1em;
 
                         img {
-                            max-width: 304px;
-                            max-height: 228px;
-                        }
-                    }
-                }
-
-                @media only screen and (max-width: 533px) {
-
-                    picture {
-                        min-height: 360px;
-                        height: 360px;
-                        line-height: 360px;
-
-                        img {
-                            max-width: 480px;
-                            max-height: 360px;
-                        }
-                    }
-                }
-
-                @media only screen and (max-width: 480px) {
-
-                    picture {
-                        min-height: 270px;
-                        height: 270px;
-                        line-height: 270px;
-
-                        img {
-                            max-width: 360px;
-                            max-height: 270px;
-                        }
-                    }
-                }
-
-                @media only screen and (max-width: 375px) {
-
-                    picture {
-                        line-height:1em;
-                        min-height: initial;
-                        height: auto;
-                        margin: 0.75em 0;
-                    }
-
-                }
-
-                @media only screen and (max-width: 360px) {
-
-                    picture {
-
-                        img {
+                            display: inline-block;
                             max-width: 320px;
                             max-height: 240px;
+                            vertical-align: middle;
+                            border-width:4px;
+                            border-radius: 0.5em;
+                            border-style: solid;
                         }
                     }
-                }
 
-                @media only screen and (max-width: 320px) {
+                    @media only screen and (max-width: 640px) {
 
-                    picture {
+                        picture {
+                            min-height: 228px;
+                            height: 228px;
+                            line-height: 228px;
 
-                        img {
-                            max-width: 304px;
-                            max-height: 228px;
+                            img {
+                                max-width: 304px;
+                                max-height: 228px;
+                            }
+                        }
+                    }
+
+                    @media only screen and (max-width: 533px) {
+
+                        picture {
+                            min-height: 360px;
+                            height: 360px;
+                            line-height: 360px;
+
+                            img {
+                                max-width: 480px;
+                                max-height: 360px;
+                            }
+                        }
+                    }
+
+                    @media only screen and (max-width: 480px) {
+
+                        picture {
+                            min-height: 270px;
+                            height: 270px;
+                            line-height: 270px;
+
+                            img {
+                                max-width: 360px;
+                                max-height: 270px;
+                            }
+                        }
+                    }
+
+                    @media only screen and (max-width: 375px) {
+
+                        & {
+                            text-align: center;
+                        }
+
+                        picture {
+                            line-height:1em;
+                            min-height: initial;
+                            height: auto;
+                            margin: 0.75em 0;
+                        }
+
+                    }
+
+                    @media only screen and (max-width: 360px) {
+
+                        picture {
+
+                            img {
+                                max-width: 320px;
+                                max-height: 240px;
+                            }
+                        }
+                    }
+
+                    @media only screen and (max-width: 320px) {
+
+                        picture {
+
+                            img {
+                                max-width: 304px;
+                                max-height: 228px;
+                            }
                         }
                     }
                 }

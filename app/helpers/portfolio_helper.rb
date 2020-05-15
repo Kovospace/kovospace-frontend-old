@@ -74,7 +74,7 @@ module PortfolioHelper
         rgx = /\&lt\;\#obrazok(\d+)\#\&gt\;/
         rgx_to_wrap = /((?:)(\&lt\;\#obrazok\d+\#\&gt\;\s*)+)/
 
-        wrapped = html.gsub(rgx_to_wrap, '<figure> \1 </figure>')
+        wrapped = html.gsub(rgx_to_wrap, '<div class="imageswrapper"><figure> \1 </figure></div>')
 
         ret = wrapped.gsub(rgx) do |match|
             image_identificator = match.gsub(rgx, '\1').to_i
