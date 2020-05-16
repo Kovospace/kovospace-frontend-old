@@ -65,10 +65,15 @@ section#show_work {
 
                     @media only screen and (max-width: 480px) {
 
+                        & {
+                            text-align: center;
+                        }
+
                         picture {
                             min-height: 270px;
                             height: 270px;
                             line-height: 270px;
+                            margin: 0.75em 0;
 
                             img {
                                 max-width: 360px;
@@ -79,16 +84,11 @@ section#show_work {
 
                     @media only screen and (max-width: 375px) {
 
-                        & {
-                            text-align: center;
-                        }
-
                         picture {
                             display: block;
                             line-height:1em;
                             min-height: initial;
                             height: auto;
-                            margin: 0.75em 0;
                         }
 
                     }
