@@ -11,6 +11,8 @@ html {
     @include scrollbars($soft_black, $space_black);
     font-family: Arial, Helvetica, Sans-serif;
 
+    @import "./frontend/main/gallery";
+
     body {
         background-color: $space_black;
         color: $white;
