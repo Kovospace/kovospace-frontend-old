@@ -7,23 +7,29 @@ body {
         left:0;
         right:0;
         bottom:0;
-        z-index: -1;
+        //z-index: -1;
         background: rgba(0,0,0,0);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
+        opacity:0;
+        @include transition(opacity 300ms ease-in-out);
+        //display: none;
+
 
         &.visible {
-            z-index: 999;
-            background: rgba(0,0,0,0.5);
+            //display: block;
+            opacity:1;
+            //z-index: 999;
+            background: rgba(0,0,0,0.75);
         }
 
         div {
 
             &.top {
-
+                flex: 1 0 auto;
             }
 
             &.body {
@@ -32,6 +38,7 @@ body {
                 min-width: 0;
                 max-width: 100%;
                 position: relative;
+                flex: 1 1 auto;
 
                 span {
                     position: absolute;
@@ -43,14 +50,14 @@ body {
                     background-color: black;
                     z-index: 96;
                     cursor: pointer;
-                    //@include transition_for_transform(200ms);
+                    @include transition(transform 200ms ease-in-out);
                     -webkit-backface-visibility: hidden;
-                    //border:0.25em solid $white;
+                    border:0.25em solid $white;
                     margin-top: -1.75em;
 
                     &:hover {
-                        //@include transform(scale(1.2));
-                        //border-color: $strong_white;
+                        @include transform(scale(1.2));
+                        border-color: $pure_white;
                     }
 
                     p {
@@ -68,13 +75,13 @@ body {
                         p {
                             left:0.625em;
                             border-left-width: 0px;
-                            //border-right: 1.25em solid $white;
+                            border-right: 1.25em solid $white;
                         }
 
                         &:hover {
 
                             p {
-                               // border-right-color: $strong_white;
+                               border-right-color: $pure_white;
                             }
                         }
                     }
@@ -85,14 +92,14 @@ body {
                         p {
                             right:0.625em;
                             border-right-width: 0px;
-                            //border-left: 1.25em solid $white;
+                            border-left: 1.25em solid $white;
                         }
 
                         &:hover {
                             border
 
                             p {
-                                //border-left-color: $strong_white;
+                                border-left-color: $pure_white;
                             }
                         }
                     }
@@ -142,17 +149,17 @@ body {
             }
 
             &.switcher {
+                flex: 1 0 auto;
                 max-width: 100%;
                 min-width: 100%;
-                min-height: 5em;
-                margin-top: 0.5em;
+                padding-top: 0.5em;
+                padding-bottom: 0.25em;
                 white-space: nowrap;
                 text-align: center;
                 overflow: hidden;
                 box-sizing: border-box;
                 position: relative;
                 vertical-align: middle;
-                line-height: 5em;
                 background-color: rgba(0,0,0,0.5);
 
                 span {
@@ -164,7 +171,6 @@ body {
                     height: 5em;
                     background-color: black;
                     vertical-align: middle;
-                    //position: relative;
 
                     &.hidden {
                         opacity: 0;
@@ -179,12 +185,12 @@ body {
                     top: 1.5em;
                     margin:0;
                     cursor: pointer;
-                    //@include transition_for_transform(200ms);
+                    @include transition(tranform 0.2s ease-in-out);
                     -webkit-backface-visibility: hidden;
                     // pre nieco skace prva sipka ked bezi na druhej
 
                     &:hover {
-                        //@include transform(scale(1.2));
+                        @include transform(scale(1.2));
                     }
                 }
 
@@ -196,11 +202,11 @@ body {
                         border-left-width: 0px;
                         border-top: 1em solid transparent;
                         border-bottom: 1em solid transparent;
-                        //border-right: 1.25em solid $white;
+                        border-right: 1.25em solid $white;
                         left:0.25em;
 
                         &:hover {
-                            //border-right-color: $strong_white;
+                            border-right-color: $pure_white;
                         }
                     }
                 }
@@ -213,11 +219,11 @@ body {
                         border-right-width: 0px;
                         border-top: 1em solid transparent;
                         border-bottom: 1em solid transparent;
-                        //border-left: 1.25em solid $white;
+                        border-left: 1.25em solid $white;
                         right:0.25em;
 
                         &:hover {
-                           // border-left-color: $strong_white;
+                            border-left-color: $pure_white;
                         }
                     }
                 }
@@ -239,20 +245,13 @@ body {
                         margin-right: 1.5em;
                     }
 
-                    &.selected {
-                       // border-color: $strong_red;
-                    }
-
                     img {
                         display: block;
                         border-radius: 0.25em;
+                        height:64px;
                     }
                 }
             }
         }
-    }
-
-    div.gallery.visible {
-        background-color: rgba(0,0,0,0.80);
     }
 }

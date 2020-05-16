@@ -57,9 +57,9 @@ class PortfolioGalleryUploader < BaseUploader
 
     create_sizes(
       sizes: {
-        "1x" => [1000, 128],
-        "2x" => [1000, 256],
-        "3x" => [1000, 384]
+        "1x" => [1000, 64],
+        "2x" => [1000, 128],
+        "3x" => [1000, 192]
       },
       namespace: "gallery_preview"
     )
