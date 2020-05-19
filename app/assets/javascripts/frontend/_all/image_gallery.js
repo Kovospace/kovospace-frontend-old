@@ -1,10 +1,10 @@
 function ImageGallery() {
-    this.scrolled = 0;
+    this.scrolled;
     this.timer;
-    this.images_list = [];
-    this.images_ids = [];
-    this.chosen_version = '';
-    this.base_url = "";
+    this.images_list;
+    this.images_ids;
+    this.chosen_version;
+    this.base_url;
 
     this.scroll_speed = 250;
     this.step = 128;
@@ -21,10 +21,23 @@ function ImageGallery() {
         image_namespace: '',
         preview_namespace: ''
     };
+
+    // spravit premazanie premennych tak ako pri pozadiach
+    // upoader nekonvertuje niektore obrazky ak nedosiahnu poziadavky na resize to fit
+    //
 }
 
 ImageGallery.prototype = {
     constructor: ImageGallery,
+
+    setVars: function() {
+        this.scrolled = 0;
+        this.timer;
+        this.images_list = [];
+        this.images_ids = [];
+        this.chosen_version = '';
+        this.base_url = "";
+    },
 
     determineDpi: function() {
         this.display_properties.dpi = window.devicePixelRatio;
@@ -55,6 +68,7 @@ ImageGallery.prototype = {
 
     setup: function(settings) {
         //console.log(settings);
+        this.setVars();
         this.determineDpi();
         this.settings = settings;
         this.chooseVersion();
@@ -114,19 +128,21 @@ ImageGallery.prototype = {
         //this.images_list = [];
         //this.images_ids = [];
         var imgs_obj = $(totok.settings.images_container).find('img');
-        var tmp = imgs_obj.first().attr('src');
-        this.base_url = tmp.replace(/[a-z0-9\.\_]+$/, '');
+        if (imgs_obj.length > 0) {
+            var tmp = imgs_obj.first().attr('src');
+            this.base_url = tmp.replace(/[a-z0-9\.\_]+$/, '');
 
-        imgs_obj.each(function() {
-            var url = $(this).attr('src');
-            //console.log(url);
-            var id = parseInt(url.match(/\/(\d+)\//)[1]);
-            totok.images_ids.push(id);
-            totok.images_list.push(totok.generateImageUrl(id));
-            //totok.images_list.push(url);
-        })
-        //console.log(this.images_ids);
-        //console.log(this.base_url);
+            imgs_obj.each(function() {
+                var url = $(this).attr('src');
+                //console.log(url);
+                var id = parseInt(url.match(/\/(\d+)\//)[1]);
+                totok.images_ids.push(id);
+                totok.images_list.push(totok.generateImageUrl(id));
+                //totok.images_list.push(url);
+            })
+            //console.log(this.images_ids);
+            //console.log(this.base_url);
+        }
     },
 
     generateImageUrl: function(id) {

@@ -61,6 +61,7 @@ Portfolio.prototype = {
         } else {
             // zastavit vymienanie nahladov, ide aj mimo stranky s projektom kvoli turbolinks js
             this.previewSwitcher.setVars();
+            this.gallery.setVars();
         }
     }
 }

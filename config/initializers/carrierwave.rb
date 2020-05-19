@@ -93,6 +93,25 @@ module CarrierWave
       end
     end
 
+    def conversion(*limit)
+      manipulate! do |img|
+        # Convert to PNG
+        img.format("jpeg") do |i|
+          i.strip
+          # same as MiniMagick#resize_to_limit
+          i.resize "#{limit[0]}x#{limit[1]}>" unless limit.empty?
+          i.combine_options do |c|
+              #c.resize_to_fit(250,250)
+              c.quality "80"
+              c.depth "8"
+              c.interlace "plane"
+          end
+        end
+
+        img
+      end
+    end
+
     def retina_resize
       manipulate! do |img|
 

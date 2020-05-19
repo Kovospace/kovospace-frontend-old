@@ -69,6 +69,7 @@ class BaseUploader < CarrierWave::Uploader::Base
             #from_version: "#{meno.singularize}_#{(@sizes[meno][0])[0].to_s}".to_sym
           ) do
             work_on(process_method, v[0], v[1])
+            #process conversion: [v[0], v[1]]
             def full_filename(for_file)
               if (super(for_file) == filename)
                 #Rails.logger.info "----------------------"
@@ -81,7 +82,7 @@ class BaseUploader < CarrierWave::Uploader::Base
                 #Rails.logger.info filename
                 #Rails.logger.info super(for_file)
                 #return super(for_file).sub(rgx, '.jpg')
-                return super(for_file).sub(/_orig\.(png|jpg|jpeg|gif|svg)$/, '.jpg')
+                return super(for_file).sub(/_orig\.(png|jpg|jpeg|gif|svg)$/i, '.jpg')
               end
             end
           end
