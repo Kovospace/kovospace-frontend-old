@@ -5,7 +5,7 @@
     <div> <%= kovodown @portfolio.description %> </div>
     <br>
     <br>
-    <h4> Realizácia: <%= @portfolio.realis_date.strftime("%B %Y") %> </h4>
+    <h4> Realizácia: <%= l(@portfolio.realis_date, format: :short) %> </h4>
 
 </article>
 
