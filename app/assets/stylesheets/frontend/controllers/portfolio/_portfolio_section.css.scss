@@ -9,7 +9,7 @@ section#portfolio {
         h2 {
             font-size: 4em;
             margin-bottom:0.375em;
-            word-break: break-all;
+            word-break: break-word;
 
             a {
                 @include underline_on_hover($white, 0.125em);
