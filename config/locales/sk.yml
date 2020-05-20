@@ -6,10 +6,16 @@ sk:
   new: nová
   edit: upraviť
 
-  date:
+  datetime: &datetime
+    month_names:
+      [~, Január, Február, Marec, Apríl, Máj, Jún, Júl, August, September, Október, November, December]
     formats:
       short: "%B %Y"
       default: "%d %B, %Y"
-
-    month_names: [~, Január, Február, Marec, Apríl, Máj, Jún, Júl, August, September, Október, November, December]
     abbr_month_names: [~, Jan, Feb, Mar, Apr, Máj, Jún, Júl, Aug, Sep, Okt, Nov, Dec]
+
+  date:
+    <<: *datetime
+
+  time:
+    <<: *datetime

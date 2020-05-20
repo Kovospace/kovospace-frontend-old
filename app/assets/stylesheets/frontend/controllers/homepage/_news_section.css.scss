@@ -1,5 +1,21 @@
 section#novinky {
 
+    article {
+        //font-size:1.125em;
+
+        h3 {
+            font-size:1.25em;
+            margin: 0.375em 0;
+        }
+
+        em {
+            margin:0.375em 0;
+            text-align: right;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+
     div {
         text-align: right;
 

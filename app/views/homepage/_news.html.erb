@@ -3,16 +3,16 @@
 </aside>
 
 <article>
-    <% 2.times do %>
         <% @newslogs.each do |newslog| %>
 
             <h3> <%= newslog.title %> </h3>
             <p> <%= newslog.txt %>
             <br>
+            <em><%= l(newslog.created_at, format: :default) %></em>
+            <br>
             <br>
 
         <% end %>
-    <% end %>
 </article>
 
 <div>
