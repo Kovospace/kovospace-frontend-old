@@ -41,7 +41,7 @@ ImageGallery.prototype = {
     },
 
     determineDpi: function() {
-        this.display_properties.dpi = window.devicePixelRatio;
+        this.display_properties.dpi = Math.floor(window.devicePixelRatio);
         this.display_properties.width = $(window).width();
         //console.log(this.display_properties.dpi);
         //console.log(this.display_properties.width);
