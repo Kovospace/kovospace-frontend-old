@@ -86,10 +86,12 @@ Portfolio.prototype = {
                 });
                 toto.gallery.init();
 
+                $(document).find('head').find('style').remove();
                 var style = $(this).css('background-color');
                 var tmp = "<style>div.gallery div.switcher picture.selected { border-color:";
                 var tmp2 = "; }</style>";
                 $(tmp.concat(style, tmp2)).appendTo('head');
+                //$(document).find('head').find('style').remove();
             });
 
         }

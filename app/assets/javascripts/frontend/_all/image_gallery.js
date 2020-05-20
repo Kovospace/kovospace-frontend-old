@@ -110,7 +110,7 @@ ImageGallery.prototype = {
         });
 
         $(document).on('mousedown', 'div.gallery > div.switcher > span > p', function(e) {
-            console.log('sclolovat by malo');
+            //console.log('sclolovat by malo');
             totok.scrollWithArrows($(this));
             totok.stopEvents(e);
         }).on('mouseup', 'div.gallery > div.switcher > span > p', function(e) {
@@ -207,7 +207,7 @@ ImageGallery.prototype = {
 
     openViewer: function(pic) {
         //this.loadImagesList();
-        console.log(this.images_list);
+        //console.log(this.images_list);
         $(document).find('div.gallery').css({'z-index':'99'});
         var sw = $(document).find('div.gallery').children('div.switcher');
         //console.log(sw);

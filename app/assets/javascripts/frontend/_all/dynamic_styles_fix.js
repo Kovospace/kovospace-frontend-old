@@ -15,8 +15,11 @@ DynamicStylesFix.prototype = {
     cleanup: function () {
         var totok = this;
         $(document).find('head').children('style').each(function() {
-            var id = parseInt($(this).attr('id').replace(/\D+/, ''));
-            if (totok.id !== id) { $(this).remove(); }
+            var id = $(this).attr('id')
+            if (id !== undefined) {
+                var id = parseInt($(this).attr('id').replace(/\D+/, ''));
+                if (totok.id !== id) { $(this).remove(); }
+            }
         });
     }
 
