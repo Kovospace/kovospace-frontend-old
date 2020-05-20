@@ -57,9 +57,11 @@
                 <a href="<%= show_portfolio_url(p) %>" <%= p.style %> >
                     Dozvedieť sa viac
                 </a>
-                <a href="#" <%= p.style %> >
-                    Galéria
-                </a>
+                <% if p.portfolio_galleries.length > 0 %>
+                    <a href="#" <%= p.style %> >
+                        Galéria
+                    </a>
+                <% end %>
                 <% if !p.link.blank? %>
                     <a  href="http://<%= p.link %>" <%= p.style %> >
                         Navštíviť web
