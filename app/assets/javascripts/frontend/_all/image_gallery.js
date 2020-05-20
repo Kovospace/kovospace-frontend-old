@@ -17,6 +17,7 @@ function ImageGallery() {
 
     this.settings = {
         images_container: null,
+        images_list_container: null,
         image_sizes: {},
         image_namespace: '',
         preview_namespace: ''
@@ -75,11 +76,18 @@ ImageGallery.prototype = {
     },
 
     init: function() {
+        //console.log(this.settings.images_container);
         var totok = this;
-        totok.loadImagesList();
+        if ((totok.settings.images_container === null)||(totok.settings.images_container === undefined)) {
+            totok.loadImagesByIds();
+            //console.log('malo by');
+            totok.openViewer(totok.images_list[0]);
+        } else {
+            totok.loadImagesList();
+        }
 
         $(totok.settings.images_container).on('click', 'picture', function() {
-            console.log('klik na obrazok');
+            //console.log('klik na obrazok');
             totok.openViewer($(this));
         });
 
@@ -102,6 +110,7 @@ ImageGallery.prototype = {
         });
 
         $(document).on('mousedown', 'div.gallery > div.switcher > span > p', function(e) {
+            console.log('sclolovat by malo');
             totok.scrollWithArrows($(this));
             totok.stopEvents(e);
         }).on('mouseup', 'div.gallery > div.switcher > span > p', function(e) {
@@ -143,6 +152,21 @@ ImageGallery.prototype = {
             //console.log(this.images_ids);
             //console.log(this.base_url);
         }
+    },
+
+    loadImagesByIds: function() {
+        var totok = this;
+        var inputs = this.settings.images_list_container.find('input[type=hidden]');
+        this.base_url = inputs.first().val().replace(/[a-z0-9\.\_]+$/, '');
+        //console.log(this.base_url);
+        inputs.each(function() {
+            //console.log($(this).val());
+            var id = totok.getIdFromUrl($(this).val());
+            var url = totok.generateImageUrl(id);
+            //console.log(url);
+            totok.images_list.push(url);
+            totok.images_ids.push(id);
+        });
     },
 
     generateImageUrl: function(id) {
@@ -296,14 +320,25 @@ ImageGallery.prototype = {
         var fx;
         if (direction == 'left') { smer = -1; }
         else { smer = 1; }
+        //console.log(smer);
+        //console.log(toto.scrolled);
         fx = function() {
+            // nejde pre neico
+            //console.log(toto.scrolled+(toto.step*smer));
+            //console.log("scroll fx");
             $('div.switcher')
                 .stop()
                 .animate({ scrollLeft: toto.scrolled+(toto.step*smer) }, toto.scroll_speed, function() {
                     toto.scrolled = sw.scrollLeft();
                 });
         };
-        this.timer = setInterval(fx, this.scroll_speed+100);
+        //console.log(this.scroll_speed+100);
+        //fx();
+        //this.timer = setInterval(fx(), this.scroll_speed+100);
+        this.timer = setInterval(function() {
+            //console.log('kokot');
+            fx();
+        }, this.scroll_speed+100);
     },
 
     alignScrollbar: function(ref) {

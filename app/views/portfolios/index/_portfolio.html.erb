@@ -58,7 +58,7 @@
                     Dozvedieť sa viac
                 </a>
                 <% if p.portfolio_galleries.length > 0 %>
-                    <a href="#" <%= p.style %> >
+                    <a href="#" class="gallery_starter" <%= p.style %> rel="nofollow" id="portfolio_<%= p.id %>">
                         Galéria
                     </a>
                 <% end %>
@@ -69,6 +69,16 @@
                 <% end %>
             </div>
         </div>
+
+        <% if p.portfolio_galleries.length > 0 %>
+
+            <% p.portfolio_galleries.each do |gal| %>
+
+                <%= hidden_field_tag("portfolio_gallery[#{p.id}][#{gal.id}]", gal.image.url) %>
+
+            <% end %>
+
+        <% end %>
 
     </article>
 

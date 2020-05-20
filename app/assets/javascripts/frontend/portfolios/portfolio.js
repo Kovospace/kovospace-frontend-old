@@ -25,15 +25,17 @@ Portfolio.prototype = {
     },
 
     onturbolinks: function() {
+        var toto = this;
+        var container = $(document).find('header');
+
         // fixnutie problemu vlozeneho CSS - ostava po prehliadani predosleho diela
         this.stylesFix.init();
 
-        var container = $(document).find('header');
         if (container.hasClass('portfolios show')) {
+
             // offset nahladov v responsive rezime od menu
             this.bgOffset.offset();
 
-            var toto = this;
             container.imagesLoaded(function() {
                 // nahlady v responsive rezime hlavicky
                 toto.previewSwitcher.init();
@@ -59,9 +61,32 @@ Portfolio.prototype = {
             });
 
         } else {
+
             // zastavit vymienanie nahladov, ide aj mimo stranky s projektom kvoli turbolinks js
             this.previewSwitcher.setVars();
             this.gallery.setVars();
+
+            $(document).on('click', 'a.gallery_starter', function(e) {
+                e.preventDefault();
+                console.log('stlaceny spustac galerie');
+                toto.gallery.setup({
+                    image_sizes: {
+                        xxxl:1366,
+                        xxl: 1024,
+                        xl:  960,
+                        l:   768,
+                        m:   640,
+                        s:   480,
+                        xs:  360,
+                        xxs: 320,
+                    },
+                    image_namespace: 'gallery_full_size',
+                    preview_namespace: 'gallery_preview_size',
+                    images_list_container: $(this).closest('article')
+                });
+                toto.gallery.init();
+            });
+
         }
     }
 }
