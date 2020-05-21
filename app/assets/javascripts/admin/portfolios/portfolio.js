@@ -13,6 +13,10 @@ Portfolio.prototype = {
     },
 
     onready: function() {
+
+    },
+
+    onturbolinks: function() {
         this.imagePreview.init();
         this.textAreaTagsHandler.init();
     }
