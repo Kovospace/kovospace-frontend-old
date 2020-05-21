@@ -55,11 +55,13 @@ imagePreview.prototype = {
 
     cloneNewImageButton: function(ref) {
         var some_empty = false
-        var next_index = 0;
+        //var next_index = 0;
 
         $(ref.container).children('picture').each(function() {
             var index = parseInt($(this).find('input.identificator').val());
             if (index > ref.next_index) { ref.next_index = index; }
+            //console.log(index);
+            //console.log(ref.next_index);
         });
         ref.next_index++;
         var tmp_obj = ref.newImageClone.clone();

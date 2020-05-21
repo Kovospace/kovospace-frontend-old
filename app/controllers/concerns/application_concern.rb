@@ -122,6 +122,30 @@ module ApplicationConcern
     	return false
     end
 
+    def repair_new_image_identificator(image)
+    	if !image.nil?
+	    	ident = 1
+	    	image.each do |i|
+	    		if !i.identificator.nil?
+		    		if i.identificator > ident
+	    				ident = i.identificator
+		    		end
+		    	else
+		    		## novy obrazok
+		    		ident += 1
+		    		i.identificator = ident
+		    	end
+
+	    		#Rails.logger.info "------------------------------"
+	    		#Rails.logger.info(i.nil?)
+	    	end
+	    	#ident += 1
+	    	#image.last.identificator = ident
+	    	#Rails.logger.info "============================="
+	    	#Rails.logger.info(image.last.identificator)
+	    end
+    end
+
 	module ClassMethods
 
 	end

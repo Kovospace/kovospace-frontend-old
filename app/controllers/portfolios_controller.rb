@@ -52,10 +52,12 @@ class PortfoliosController < ApplicationController
        @skills_all = Skill.all
        @skillsets_all = Skillset.all
        #@portfolio_screenshots = @portfolio.portfolio_screenshots.all
+
     end
 
     def _around_new
         build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs, :portfolio_titlebg_singles, :portfolio_galleries
+        repair_new_image_identificator(@portfolio.portfolio_galleries)
         #@portfolio.portfolio_screenshots.build
     end
 
@@ -65,6 +67,7 @@ class PortfoliosController < ApplicationController
 
     def _around_edit
         build_if_empty :skills, :portfolio_screenshot, :portfolio_titlebgs, :portfolio_titlebg_singles, :portfolio_galleries
+        repair_new_image_identificator(@portfolio.portfolio_galleries)
     end
 
     def _after_ok_redirect_to
