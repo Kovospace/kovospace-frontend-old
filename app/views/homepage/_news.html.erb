@@ -6,7 +6,7 @@
         <% @newslogs.each do |newslog| %>
 
             <h3> <%= newslog.title %> </h3>
-            <p> <%= newslog.txt %>
+            <p> <%= newslog.txt.gsub(/\n/, '<br/>') %>
             <br>
             <em><%= l(newslog.created_at, format: :default) %></em>
             <br>
