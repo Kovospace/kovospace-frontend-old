@@ -60,7 +60,7 @@ gem 'friendly_id', '~> 5.2.0'
 
 gem 'ransack'
 
-gem "breadcrumbs_on_rails", github: "K0V0/breadcrumbs_on_rails"
+gem "breadcrumbs_on_rails" #, github: "K0V0/breadcrumbs_on_rails"
 
 gem 'order_as_specified'
 
