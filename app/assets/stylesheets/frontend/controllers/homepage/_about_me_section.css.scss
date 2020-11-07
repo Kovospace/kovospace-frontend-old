@@ -37,6 +37,14 @@ section#o-mne {
                     &#about_me_hobby_icon {
                         @include heart_icon($dirty_white);
                     }
+
+                    &#about_me_github_icon {
+                        @include github_icon($dirty_white);
+                    }
+
+                    &#about_me_stackoverflow_icon {
+                        @include stackoverflow_icon($dirty_white);
+                    }
                 }
 
                 &:last-child {

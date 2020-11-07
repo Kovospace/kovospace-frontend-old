@@ -205,6 +205,58 @@
     }
 }
 
+@mixin github_icon($bg_color) {
+
+    &::before {
+        background-color: $bg_color;
+        width: 0.75em;
+        height:0.5625em;
+        left:0.125em;
+        top:0.25em;
+        border-radius: 0.75em;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        content: '..';
+        color: $space_blue;
+        text-align: center;
+        line-height: 0em;
+        font-style: normal;
+    }
+
+    &::after {
+        top:0;
+        left:0.125em;
+        height: 0.375em;
+        width: 0.75em;
+        background-color: $space_blue;
+        border-radius: 50%;
+    }
+}
+
+@mixin stackoverflow_icon($bg_color) {
+
+
+    &::before {
+        background-color: $bg_color;
+        bottom:0.25em;
+        width:0.75em;
+        height: 0.375em;
+        left:0.125em;
+        right:0.125em;
+    }
+
+    &::after {
+        bottom: 0.4375em;
+        width: 0.375em;
+        height: 0.125em;
+        border-top: 0.125em solid $bg_color;
+        border-bottom: 0.125em solid $bg_color;
+        left:0.3125em;
+        box-shadow: 0 0 0 0.125em $space_blue;
+        background-color: $space_blue;
+    }
+}
+
 @mixin sputnik($x, $y, $size, $rotate) {
     // $x, $y - lubovolne jednotky
     // $size -  EM
