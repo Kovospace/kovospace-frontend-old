@@ -25,8 +25,14 @@ Portfolio.prototype = {
     },
 
     onturbolinks: function() {
+
+    },
+
+    once: function() {
         var toto = this;
         var container = $(document).find('header');
+
+        //console.log('ideeeee');
 
         // fixnutie problemu vlozeneho CSS - ostava po prehliadani predosleho diela
         this.stylesFix.init();

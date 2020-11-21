@@ -10,5 +10,9 @@ Router.prototype = {
         if ((fx = window[controller_string.classycase()]) !== undefined) {
             return (new fx());
         }
+    },
+
+    getControllerName: function() {
+    	return $("body").attr("class");
     }
 }

@@ -23,6 +23,8 @@ function ImageGallery() {
         preview_namespace: ''
     };
 
+    //console.log('ImageGallery()');
+
     // spravit premazanie premennych tak ako pri pozadiach
     // upoader nekonvertuje niektore obrazky ak nedosiahnu poziadavky na resize to fit
     //
