@@ -37,6 +37,10 @@ class ApplicationController < ActionController::Base
 
     before_action :get_path_back, only: [:show]
 
+    before_action :set_path_back_for_from_construction#, except: [:under_construction]
+
+    #before_action :get_path_back_from_construction#, only: [:under_construction]
+
     def index
     end
 

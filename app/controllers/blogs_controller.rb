@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
-
+    
+    skip_before_action :set_path_back_for_from_construction
     before_action :under_construction
 
     before_action :authorize_admin, except: [:index, :show]

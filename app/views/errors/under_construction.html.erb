@@ -2,9 +2,10 @@
 <% content_for :top_menu do %>
 
     <nav>
+
         <ul class="pagelinks">
             <li>
-                <%= link_to(:back) do %>
+                <%= link_to(@path_back_from_contruction) do %>
                     <span>Naspäť</span>
                 <% end %>
             </li>

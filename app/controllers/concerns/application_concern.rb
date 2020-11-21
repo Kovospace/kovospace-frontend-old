@@ -122,6 +122,25 @@ module ApplicationConcern
     	return false
     end
 
+    def set_path_back_for_from_construction
+    	#if controller_name != "blogs"
+    		session[:contruction_error_path_back] = params
+    	#end
+    	#@path_back_from_blog_construct = 
+    	#Rails.logger.info "----------------------------------------"
+    	#Rails.logger.info params
+    	#Rails.logger.info session[:contruction_error_path_back]
+    	#Rails.logger.info "----------------------------------------"
+    end
+
+    def get_path_back_from_construction
+    	if !session[:contruction_error_path_back].nil?
+    		@path_back_from_contruction = session[:contruction_error_path_back]
+    	else
+    		@path_back_from_contruction = { controller: params[:controller], action: 'index' }
+    	end
+    end
+
     def repair_new_image_identificator(image)
     	if !image.nil?
 	    	ident = 1
