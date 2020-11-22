@@ -24,11 +24,11 @@ Portfolio.prototype = {
 
     },
 
-    onturbolinks: function() {
+    once: function() {
 
     },
 
-    once: function() {
+    onturbolinks: function() {
         var toto = this;
         var container = $(document).find('header');
 
@@ -72,9 +72,10 @@ Portfolio.prototype = {
             this.previewSwitcher.setVars();
             this.gallery.setVars();
 
-            $(document).on('click', 'a.gallery_starter', function(e) {
+            //$(document).on('click', 'a.gallery_starter', function(e) {
+            $(document).find('a.gallery_starter').click(function(e) {
                 e.preventDefault();
-                console.log('stlaceny spustac galerie');
+                
                 toto.gallery.setup({
                     image_sizes: {
                         xxxl:1366,
@@ -97,6 +98,7 @@ Portfolio.prototype = {
                 var tmp = "<style>div.gallery div.switcher picture.selected { border-color:";
                 var tmp2 = "; }</style>";
                 $(tmp.concat(style, tmp2)).appendTo('head');
+                $(this).data('gallery-clicked', 'true');
                 //$(document).find('head').find('style').remove();
             });
 
