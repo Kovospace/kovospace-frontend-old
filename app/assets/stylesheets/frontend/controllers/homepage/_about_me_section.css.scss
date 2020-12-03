@@ -9,6 +9,7 @@ section#o-mne {
         font-size:2em;
         width: 99%;
         @include box_sizing();
+        word-break: break-word;
 
         p {
             padding-bottom: 1em;

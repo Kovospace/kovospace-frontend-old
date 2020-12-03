@@ -177,7 +177,7 @@ section#top {
                 }
             }
 
-            @media only screen and (max-width: 480px) {
+            @media only screen and (max-width: 533px) {
                 nav {
 
                     ul {
@@ -189,6 +189,7 @@ section#top {
                             }
 
                             div.menuitem_content {
+                                flex-direction: column;
 
                                 div {
                                     display: block;
