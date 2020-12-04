@@ -65,4 +65,12 @@ class Portfolio < ActiveRecord::Base
         end
     end
 
+    def priority
+        if proirity.nil?
+            return 3
+        else
+            return proirity
+        end
+    end
+
 end

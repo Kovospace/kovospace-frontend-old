@@ -64,6 +64,27 @@ section#skills {
             $planet_width: 66%;
 
             a {
+
+                &.size_1 {
+                    font-size: 2em;
+                }
+
+                &.size_2 {
+                    font-size: 1.5em;
+                }
+
+                &.size_3 {
+                    font-size: 1em;
+                }
+
+                &.size_4 {
+                    font-size: 0.875em;
+                }
+
+                &.size_5 {
+                    font-size: 0.75em;
+                }
+
                 position: relative;
                 margin: 0.5em;
                 vertical-align: middle;

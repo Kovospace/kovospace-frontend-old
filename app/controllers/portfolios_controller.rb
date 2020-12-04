@@ -125,6 +125,7 @@ class PortfoliosController < ApplicationController
             :skillset_id,
             :realis_date,
             :theme_color,
+            :proirity,
             :slug,
             skill_ids: [],
             portfolio_screenshot_attributes: [:id, :portfolio_id, :screenshot, :remove_screenshot, :screenshot_cache, :_destroy],

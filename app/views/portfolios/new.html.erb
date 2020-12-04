@@ -70,6 +70,11 @@
     </div>
 
     <div>
+        <%= s.label :proirity %>
+        <%= s.select :proirity,  options_for_select([ 1, 2, 3, 4, 5 ], @portfolio.proirity) %>
+    </div>
+
+    <div>
         <%= s.label :avatar %>
         <div class="pictures">
             <%= s.fields_for :portfolio_screenshot do |ps| %>
