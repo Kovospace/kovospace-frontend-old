@@ -1,8 +1,9 @@
+window.GALLERY2 = new ImageGallery2();
+
 function Portfolio() {
     this.previewSwitcher;
     this.bgOffset;
     this.stylesFix;
-    this.gallery;
     this.init();
 }
 
@@ -13,7 +14,6 @@ Portfolio.prototype = {
         this.previewSwitcher = new PreviewsSwitcher();
         this.bgOffset = new BgOffset();
         this.stylesFix = new DynamicStylesFix();
-        this.gallery = new ImageGallery();
     },
 
     onready: function() {
@@ -32,8 +32,6 @@ Portfolio.prototype = {
         var toto = this;
         var container = $(document).find('header');
 
-        //console.log('ideeeee');
-
         // fixnutie problemu vlozeneho CSS - ostava po prehliadani predosleho diela
         this.stylesFix.init();
 
@@ -42,56 +40,67 @@ Portfolio.prototype = {
             // offset nahladov v responsive rezime od menu
             this.bgOffset.offset();
 
+            // nahlady v responsive rezime hlavicky
             container.imagesLoaded(function() {
-                // nahlady v responsive rezime hlavicky
                 toto.previewSwitcher.init();
             });
 
+            // obrazky v texte
             $(document).find('section#show_work').children('article').imagesLoaded(function() {
-                toto.gallery.setup({
-                    images_container: $(document).find('article').children('div'),
-                    image_sizes: {
-                        xxxl:1366,
-                        xxl: 1024,
-                        xl:  960,
-                        l:   768,
-                        m:   640,
-                        s:   480,
-                        xs:  360,
-                        xxs: 320,
-                    },
-                    image_namespace: 'gallery_full_size',
-                    preview_namespace: 'gallery_preview_size'
+                window.GALLERY2.setup({
+                    id:                         $('input#portfolio_id').val(),
+                    images_container:           $(document).find('article').children('div'),
+                    images_list:                null,
+                    images_responsive_sizes:    {
+                                                    xxxl:1366,
+                                                    xxl: 1024,
+                                                    xl:  960,
+                                                    l:   768,
+                                                    m:   640,
+                                                    s:   480,
+                                                    xs:  360,
+                                                    xxs: 320,
+                                                },
+                    store_base_url:             "/uploads/portfolio_gallery/image/",
+                    image_namespace:            "gallery_full_size",
+                    preview_namespace:          "gallery_preview_size"
                 });
-                toto.gallery.init();
+                window.GALLERY2.init();
             });
 
         } else {
 
             // zastavit vymienanie nahladov, ide aj mimo stranky s projektom kvoli turbolinks js
             this.previewSwitcher.setVars();
-            this.gallery.setVars();
+            //this.gallery.setVars();
 
             //$(document).on('click', 'a.gallery_starter', function(e) {
             $(document).find('a.gallery_starter').click(function(e) {
                 e.preventDefault();
+
+                var imagesList = $(this).closest('article').children('input[type=hidden]');
                 
-                toto.gallery.setup({
-                    image_sizes: {
-                        xxxl:1366,
-                        xxl: 1024,
-                        xl:  960,
-                        l:   768,
-                        m:   640,
-                        s:   480,
-                        xs:  360,
-                        xxs: 320,
-                    },
-                    image_namespace: 'gallery_full_size',
-                    preview_namespace: 'gallery_preview_size',
-                    images_list_container: $(this).closest('article')
+                window.GALLERY2.setup({
+                    id:                         $('input#portfolio_id').val(),
+                    images_container:           null,
+                    images_list:                imagesList,
+                    images_responsive_sizes:    {
+                                                    xxxl:1366,
+                                                    xxl: 1024,
+                                                    xl:  960,
+                                                    l:   768,
+                                                    m:   640,
+                                                    s:   480,
+                                                    xs:  360,
+                                                    xxs: 320,
+                                                },
+                    store_base_url:             "/uploads/portfolio_gallery/image/",
+                    image_namespace:            "gallery_full_size",
+                    preview_namespace:          "gallery_preview_size"
                 });
-                toto.gallery.init();
+
+                window.GALLERY2.init();
+                window.GALLERY2.open();
 
                 $(document).find('head').find('style').remove();
                 var style = $(this).css('background-color');

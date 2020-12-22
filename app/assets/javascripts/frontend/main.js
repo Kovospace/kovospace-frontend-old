@@ -9,8 +9,6 @@ Main.prototype = {
     load: function() {
         var T = this;
         T.Router = new Router();
-        //console.log('JS.load();');
-        //this.CurrentController = this.Router.load();
         window.initOnceGuard = []
 
         $(document).ready(function() {
@@ -25,6 +23,14 @@ Main.prototype = {
             T.init_turbo();
             T.init_once();
         });
+
+        $(document).on('turbolinks:before-cache', function() {
+           T.before_cache();
+        });
+
+        $(document).on('turbolinks:before-render', function() {
+            T.before_render();
+        });
     },
 
     prepareController: function() {
@@ -34,17 +40,19 @@ Main.prototype = {
             //console.log(this.CurrentController);
             this.CurrentController = this.Router.load();
         //}
-        console.log(this.CurrentController);
+        //console.log(this.CurrentController);
     },
 
     init_ready: function() {
         if (this.CurrentController !== undefined) {
+            console.log("on ready");
             this.CurrentController.onready();
         }
     },
 
     init_turbo: function() {
         if (this.CurrentController !== undefined) {
+            console.log("on turbolinks");
             this.CurrentController.onturbolinks();
             var T = this;
             $(window).on("load", function() {
@@ -55,20 +63,31 @@ Main.prototype = {
 
     init_once: function() {
         if (this.CurrentController !== undefined) {
-            var guard = window.initOnceGuard[this.Router.getControllerName()];
-
-            //console.log(guard);
-
-            if (guard===false||guard===undefined) {
-                this.CurrentController.once();
+            if (this.CurrentController.once !== undefined) {
+                var guard = window.initOnceGuard[this.Router.getControllerName()];
+                if (guard===false||guard===undefined) {
+                    this.CurrentController.once();
+                }
+                window.initOnceGuard[this.Router.getControllerName()] = true
             }
-            
-            /*var T = this;*/
-            /*$(window).on("load", function() {
-                T.CurrentController.onload();
-            });*/
+        }
+    },
 
-            window.initOnceGuard[this.Router.getControllerName()] = true
+    before_cache: function() {
+        if (this.CurrentController !== undefined) {
+            if (this.CurrentController.onbeforecache !== undefined) {
+                console.log("before cache");
+                this.CurrentController.onbeforecache();
+            }
+        }
+    },
+
+    before_render: function() {
+        if (this.CurrentController !== undefined) {
+            if (this.CurrentController.onbeforerender !== undefined) {
+                console.log("before redner");
+                this.CurrentController.onbeforerender();
+            }
         }
     }
 }
