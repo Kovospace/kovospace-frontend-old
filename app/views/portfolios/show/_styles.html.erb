@@ -6,8 +6,8 @@ nav.show_work ul li a.active {
 main section#show_work article div ul li:before {
     <%= @portfolio.style_css_fg_only_inverted %>
 }
-main section#show_work article div a:hover:after {
-    background-color: #<%= @portfolio.bg_color %> !important;
+main section#show_work article div a:hover {
+    text-decoration-color: red; #<%= @portfolio.bg_color %> !important;
 }
 main section#show_work article div figure picture img {
     border-color: #<%= @portfolio.bg_color %>;

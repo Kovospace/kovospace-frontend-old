@@ -30,16 +30,8 @@ section#show_work {
             a {
                 position: relative;
 
-                &::after {
-                    content: ' ';
-                    display: block;
-                    height: 0.0625em;
-                    position: absolute;
-                    bottom: 0;
-                    left:0;
-                    right:0;
-                    width: 100%;
-                    background-color: $white;
+                &:hover {
+                    text-decoration: underline;
                 }
             }
 
