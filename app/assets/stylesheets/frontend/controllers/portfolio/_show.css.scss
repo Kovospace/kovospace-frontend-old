@@ -60,6 +60,15 @@ section#show_work {
                     }
                 }
             }
+
+            ol {
+                list-style: decimal;
+                margin-left: 1em;
+
+                li {
+                    margin: 0.25em 0;
+                }
+            }
         }
     }
 
