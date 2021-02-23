@@ -29,6 +29,7 @@ section#show_work {
 
             a {
                 position: relative;
+                word-break: break-all;
 
                 &:hover {
                     text-decoration: underline;
