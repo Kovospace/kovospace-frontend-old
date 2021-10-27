@@ -202,6 +202,12 @@ main {
             article {
                 padding-left:1em;
                 padding: 0.5em;
+
+                a {
+                    text-decoration: underline;
+                    font-weight: bold;
+                    font-style: italic;
+                }
             }
 
             @media only screen and (max-width: 640px) {

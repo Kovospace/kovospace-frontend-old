@@ -14,10 +14,10 @@
                 <tbody>
                     <% group[1].each do |note| %>
                         <tr>
-                            <td> <em> <%= note.created_at.strftime('%B %d.') %> </em> </td>
+                            <td> <em> <%= l(note.created_at, format: '%B %d.') %> </pre> </pre></em> </td>
                             <td>
                                 <%= note.title %>
-                                <% if !(txt = note.txt.strip).empty? %>
+                                <% if !(txt = note.preview.strip).empty? %>
                                     <%= link_to("Viac...", show_newslog_path(note)) %>
                                 <% end %>
                             </td>

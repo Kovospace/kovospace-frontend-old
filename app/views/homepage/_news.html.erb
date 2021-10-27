@@ -6,7 +6,11 @@
         <% @newslogs.each do |newslog| %>
 
             <h3> <%= newslog.title %> </h3>
-            <p> <%= newslog.txt.gsub(/\n/, '<br/>').html_safe %>
+            <p> <%= newslog.preview.gsub(/\n/, '<br/>').html_safe %>
+                <% if newslog.txt.size > 512 %>
+                    <%= "... " %>
+                    <%= link_to("zobraziť celý príspevok", show_newslog_path(newslog)) %>
+                <% end %>
             <br>
             <em><%= l(newslog.created_at, format: :default) %></em>
             <br>
