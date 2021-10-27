@@ -9,7 +9,7 @@
         </h1>
         <em> <%= @newslog.created_at.strftime('%d. %B %Y') %> </em>
         <div>
-            <%= @newslog.txt %>
+            <%= @newslog.txt.gsub(/\n/, '<br/>').html_safe %>
         </div>
     </article>
 
