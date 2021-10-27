@@ -6,7 +6,9 @@ class NewslogsController < ApplicationController
     #layout "base", only: [:index, :show]
 
     def index
-        @newslogs_groupped = @newslogs.all.group_by { |m| m.created_at.beginning_of_year }
+        @newslogs_groupped = @newslogs.all
+            .order(created_at: :desc)
+            .group_by { |m| m.created_at.beginning_of_year }
     end
 
     private
