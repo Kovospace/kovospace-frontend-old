@@ -1,7 +1,7 @@
 window.GALLERY2 = new ImageGallery2();
+window.RESPONSIVE_HEAD_PREVIEW = new PreviewsSwitcher();
 
 function Portfolio() {
-    this.previewSwitcher;
     this.bgOffset;
     this.stylesFix;
     this.init();
@@ -11,7 +11,6 @@ Portfolio.prototype = {
     constructor: Portfolio,
 
     init: function() {
-        this.previewSwitcher = new PreviewsSwitcher();
         this.bgOffset = new BgOffset();
         this.stylesFix = new DynamicStylesFix();
     },
@@ -42,7 +41,7 @@ Portfolio.prototype = {
 
             // nahlady v responsive rezime hlavicky
             container.imagesLoaded(function() {
-                toto.previewSwitcher.init();
+                window.RESPONSIVE_HEAD_PREVIEW.init();
             });
 
             // obrazky v texte
@@ -71,7 +70,7 @@ Portfolio.prototype = {
         } else {
 
             // zastavit vymienanie nahladov, ide aj mimo stranky s projektom kvoli turbolinks js
-            this.previewSwitcher.setVars();
+            window.RESPONSIVE_HEAD_PREVIEW.setVars();
             //this.gallery.setVars();
 
             //$(document).on('click', 'a.gallery_starter', function(e) {
