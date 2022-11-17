@@ -4,14 +4,21 @@
     buttons: [:edit, :delete, :new]
 }) %>
 
-<%= render(partial: 'admin_table', locals: {
-    fields: [:title, :sender],
-    buttons: [:show, :delete, :seen],
-    obj: @contacts
-}) %>
 
 <%= render(partial: 'admin_table', locals: {
     fields: [:title],
     buttons: [:edit, :delete, :new],
     obj: @newslog
+}) %>
+
+<%= render(partial: 'admin_table', locals: {
+    fields: [:title],
+    buttons: [:edit, :delete, :new],
+    obj: @work_experience
+}) %>
+
+<%= render(partial: 'admin_table', locals: {
+    fields: [:title, :sender],
+    buttons: [:show, :delete, :seen],
+    obj: @contacts
 }) %>

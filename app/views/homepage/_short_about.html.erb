@@ -5,69 +5,74 @@
 
 <article>
 
-    <p>
-    <span>
-        <i class="icon" id="about_me_info_icon"></i>
-    </span>
-    <span>Matej Kováč</span>
-    </p>
+    <summary>
+        <div>
+            <i class="icon" id="about_me_info_icon"></i>
+        </div>
+        <div>Matej Kováč</div>
+    </summary>
 
-    <p>
-    <span>
-        <i class="icon" id="about_me_home_icon"></i>
-    </span>
-    <span>Praha, Česká Republika</span>
-    </p>
+    <summary>
+        <div>
+            <i class="icon" id="about_me_home_icon"></i>
+        </div>
+        <div>Praha, Česká Republika</div>
+    </summary>
 
-    <p>
-    <span>
-        <i class="icon" id="about_me_work_icon"></i>
-    </span>
-    <span>
-    	Aaron Group s.r.o. <a href="https://www.aarongroup.net/">www.aarongroup.net</a>
-    	<br>Junior backend Java developer
-    	<br>Praha, Česká Republika
-    </span>
-    </p>
+    <summary>
+        <div>
+            <i class="icon" id="about_me_work_icon"></i>
+        </div>
+        <div>
+        	<%= @work_experience_current.title %> 
+            <%= link_to(@work_experience_current.web, @work_experience_current.web) %>
+        	<br> <%= @work_experience_current.position %>
+        	<br> <%= @work_experience_current.place %>
+            <% if @work_experiences.size > 1 %>
+                <%= render 'work_experiences/work_experiences' %>
+                <%= link_to("predchádzajúce (" + (@work_experiences.size - 1).to_s + ")", work_experiences_path(anchor: 'o-mne'), class: :more, id: :work_experiences_show_more) %>
+            <% end %>
+        </div>
+    </summary>
 
-    <p>
-    <span>
-        <i class="icon" id="about_me_education_icon"></i>
-    </span>
-    <span><a href="https://www.greenfoxacademy.cz/">Green Fox Academy Prague</a></span>
-    </p>
+    <summary>
+        <div>
+            <i class="icon" id="about_me_education_icon"></i>
+        </div>
+        <div><a href="https://www.greenfoxacademy.cz/">Green Fox Academy Prague</a></div>
+    </summary>
 
-    <p>
-    <span>
-        <i class="icon" id="about_me_linkedin_icon"></i>
-    </span>
-    <span><a href="https://www.linkedin.com/in/kovac-matej/">linkedin.com/in/kovac-matej</a></span>
-    </p>
+    <summary>
+        <div>
+            <i class="icon" id="about_me_linkedin_icon"></i>
+        </div>
+        <div><a href="https://www.linkedin.com/in/kovac-matej/">linkedin.com/in/kovac-matej</a></div>
+    </summary>
 
-    <p>
-    <span>
-        <i class="icon" id="about_me_github_icon"></i>
-    </span>
-    <span><a href="https://github.com/K0V0">github.com/K0V0</a></span>
-    </p>
+    <summary>
+        <div>
+            <i class="icon" id="about_me_github_icon"></i>
+        </div>
+        <div><a href="https://github.com/K0V0">github.com/K0V0</a></div>
+    </summary>
 
-    <p>
-    <span>
-        <i class="icon" id="about_me_stackoverflow_icon"></i>
-    </span>
-    <span><a href="https://stackoverflow.com/users/2856415/kovo">stackoverflow.com/users/2856415/kovo</a></span>
-    </p>
+    <summary>
+        <div>
+            <i class="icon" id="about_me_stackoverflow_icon"></i>
+        </div>
+        <div><a href="https://stackoverflow.com/users/2856415/kovo">stackoverflow.com/users/2856415/kovo</a></div>
+    </summary>
 
-    <p>
-    <span>
-        <i class="icon" id="about_me_hobby_icon"></i>
-    </span>
-    <span>
-        Webdesign & programovanie <br>
-        PC & hardware, elektronika & bastlenie, garáž & dielňa, DIY <br>
-        Cestovanie, turistika, hudba, festivaly & koncerty <br>
-        Literatúra, blogging
-    </span>
-    </p>
+    <summary>
+        <div>
+            <i class="icon" id="about_me_hobby_icon"></i>
+        </div>
+        <div>
+            Webdesign & programovanie <br>
+            PC & hardware, elektronika & bastlenie, garáž & dielňa, DIY <br>
+            Cestovanie, turistika, hudba, festivaly & koncerty <br>
+            Literatúra, blogging
+        </div>
+    </summary>
 
 </article>

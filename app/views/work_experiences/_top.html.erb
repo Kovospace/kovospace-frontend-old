@@ -1,0 +1,21 @@
+<% content_for :top_menu do %>
+
+    <nav>
+        <ul class="pagelinks">
+
+            <li>
+                <%= active_link_to(home_path(anchor: 'o-mne')) do %>
+                    <span>Domov</span>
+                <% end %>
+            </li>
+
+            <li>
+                <%= active_link_to(work_experiences_path) do %>
+                    <span>Prax</span>
+                <% end %>
+            </li>
+
+        </ul>
+    </nav>
+
+<% end %>

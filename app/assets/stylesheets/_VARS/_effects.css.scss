@@ -122,4 +122,8 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000010",endColorstr="#000010",GradientType=1);
 }
 
+@mixin rollette($time) {
+    @include transition(max-height $time ease-in-out);
+}
+
 

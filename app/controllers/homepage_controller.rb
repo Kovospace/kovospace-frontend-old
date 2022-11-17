@@ -47,6 +47,9 @@ class HomepageController < ApplicationController
         @skills = Skill.all
         @skillsets = Skillset.all
         @newslogs = Newslog.last3
+        @work_experiences = WorkExperience.all
+        @work_experience_current = @work_experiences.first
+        @work_experience_past = @work_experiences.select { |we| !we.end.nil? }
         @contact = Contact.new
     end
 

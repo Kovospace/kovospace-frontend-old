@@ -8,6 +8,7 @@ class AdminController < ApplicationController
         @result = Skill.all
         @contacts = Contact.all
         @newslog = Newslog.all
+        @work_experience = WorkExperience.all
     end
 
     def list_posts

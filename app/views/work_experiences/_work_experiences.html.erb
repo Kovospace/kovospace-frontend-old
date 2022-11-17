@@ -1,0 +1,22 @@
+<div class="tablewrap" id="work_experiences_table">
+	<table>
+		<tbody>
+			
+			<% @work_experience_past.each do |item| %>
+
+				<tr>
+					<td class="work_from"> <%= l(item.start, format: '%m/%Y') %> </td>
+					<td class="work_separator">-</td>
+					<td class="work_to"> <%= l(item.end, format: '%m/%Y') %> </td>
+					<td class="work_company"> <%= item.title %> </td>
+				</tr>
+				<tr>
+					<td class="work_title" colspan="5"> <i> <%= item.position %> </i> </td>
+				</tr>
+				<tr class="spacer"><td>&nbsp;</td></tr>
+
+			<% end %>
+
+		</tbody>
+	</table>
+</div>

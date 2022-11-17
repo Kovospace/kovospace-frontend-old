@@ -175,6 +175,39 @@ Rails.application.routes.draw do
     to: "newslogs#destroy",
     as: "destroy_newslog"
 
+  # pracovne skusenosti
+
+  get '/work_experience',
+    to: "work_experiences#index",
+    as: "work_experiences"
+
+  get "/admin/work_experiences",
+    to: "admin#list_work_experiences",
+    as: "list_work_experiences"
+
+  get '/work_experience/new',
+    to: "work_experiences#new",
+    as: "new_work_experience"
+
+  get '/work_experience/:id/edit',
+    to: "work_experiences#edit",
+    as: "edit_work_experience"
+
+  get '/work_experience/:id',
+    to: "work_experiences#show",
+    as: "show_work_experience"
+
+  post '/work_experience',
+    to: "work_experiences#create"
+
+  patch '/work_experience.:id',
+    to: "work_experiences#update",
+    as: "update_work_experience"
+
+  delete '/work_experience.:id',
+    to: "work_experiences#destroy",
+    as: "destroy_work_experience"
+
 ### portfolio
 
   # projekty
