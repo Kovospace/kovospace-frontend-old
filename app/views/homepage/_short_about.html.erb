@@ -25,7 +25,7 @@
         </div>
         <div>
         	<%= @work_experience_current.title %> 
-            <%= link_to(@work_experience_current.web, @work_experience_current.web) %>
+            <%= link_to(@work_experience_current.web, "https://" + @work_experience_current.web) %>
         	<br> <%= @work_experience_current.position %>
         	<br> <%= @work_experience_current.place %>
             <% if @work_experiences.size > 1 %>

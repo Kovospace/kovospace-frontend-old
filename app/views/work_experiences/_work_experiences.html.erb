@@ -8,7 +8,7 @@
 					<td class="work_from"> <%= l(item.start, format: '%m/%Y') %> </td>
 					<td class="work_separator">-</td>
 					<td class="work_to"> <%= l(item.end, format: '%m/%Y') %> </td>
-					<td class="work_company"> <%= item.title %> </td>
+					<td class="work_company"> <%= item.title %> <%= link_to(item.web, "https://" + item.web) %> </td>
 				</tr>
 				<tr>
 					<td class="work_title" colspan="5"> <i> <%= item.position %> </i> </td>
