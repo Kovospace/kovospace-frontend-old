@@ -98,58 +98,22 @@ section#o-mne {
                 }
 
                 div.tablewrap {
-                    height: 0;
+                    height: auto;
                     max-height: 0px;
                     display: block;
                     overflow: hidden;
                     @include rollette(1s);
 
                     &.visible {
-                        height: auto;
                         max-height: 2000px;
                     }
 
-                    table {
+                    div {
                         font-size: 0.75em;
-                        line-height: 1.125em;
-                        display: inline-table;
-                        margin-top: 0.5em;
-                        margin-bottom: 0.5em; 
-
-                        tr {
-
-                            &.spacer {
-                                line-height: 0.5em;
-                            }
-
-                            td {
-                                width: 1%;
-
-                                &.work_from, &.work_to {
-                                    white-space: nowrap;
-                                }
-
-                                &.work_separator {
-                                    padding: 0em 0.125em;
-                                }
-
-                                &.work_to {
-                                    padding-right: 1em;
-                                }
-
-                                &.work_company {
-                                    width: 97%;
-                                }
-
-                                &.work_title {
-
-                                    &::before {
-                                        content: "-";
-                                    }
-                                }
-                            }
-                        }   
+                        display: block;
+                        margin: 1em 0;
                     }
+                    
                 }
             }
         }

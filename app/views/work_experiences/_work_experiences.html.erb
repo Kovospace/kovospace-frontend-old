@@ -1,22 +1,15 @@
 <div class="tablewrap" id="work_experiences_table">
-	<table>
-		<tbody>
-			
-			<% @work_experience_past.each do |item| %>
 
-				<tr>
-					<td class="work_from"> <%= l(item.start, format: '%m/%Y') %> </td>
-					<td class="work_separator">-</td>
-					<td class="work_to"> <%= l(item.end, format: '%m/%Y') %> </td>
-					<td class="work_company"> <%= item.title %> <%= link_to(item.web, "https://" + item.web) %> </td>
-				</tr>
-				<tr>
-					<td class="work_title" colspan="5"> <i> <%= item.position %> </i> </td>
-				</tr>
-				<tr class="spacer"><td>&nbsp;</td></tr>
+	<% @work_experience_past.each do |item| %>
 
-			<% end %>
+		<div>
+			<span> <%= l(item.start, format: '%m/%Y') %> - <%= l(item.end, format: '%m/%Y') %> </span>
+			<br>
+			<span> <%= item.title %> <%= link_to(item.web, "https://" + item.web) %> </span>
+			<br>
+			<span> <i> <%= item.position %> </i> </span>
+		</div>
 
-		</tbody>
-	</table>
+	<% end %>
+
 </div>
