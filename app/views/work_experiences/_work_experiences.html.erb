@@ -3,7 +3,7 @@
 	<% @work_experience_past.each do |item| %>
 
 		<div>
-			<span> <%= l(item.start, format: '%m/%Y') %> - <%= l(item.end, format: '%m/%Y') %> </span>
+			<span> <%= l(item.start, format: '%m/%Y') %> <%= "-" if !item.end.nil? %> <%= l(item.end, format: '%m/%Y') if !item.end.nil? %> </span>
 			<br>
 			<span> <%= item.title %> <%= link_to(item.web, "https://" + item.web) %> </span>
 			<br>

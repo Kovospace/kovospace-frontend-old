@@ -5,6 +5,12 @@ class WorkExperiencesController < ApplicationController
 	#layout "admin", only: [:new, :create, :edit, :update]
     #layout "base", only: [:index, :show]
 
+    def index
+        #@work_experiences = WorkExperience.all
+        #@work_experience_current = @work_experiences.first
+        @work_experience_past = @work_experiences
+    end
+
     private
 
     def _choose_layout

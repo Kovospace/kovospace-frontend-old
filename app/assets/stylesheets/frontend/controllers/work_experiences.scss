@@ -1,0 +1,12 @@
+main {
+    display: flex;
+    flex-direction: column;
+
+    section#work_experiences {
+        flex: 1 0 auto;
+    }
+
+    section#foot {
+        flex: 0 0 auto;
+    }
+}

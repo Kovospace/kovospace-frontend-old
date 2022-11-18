@@ -9,12 +9,7 @@ Homepage.prototype = {
     },
 
     onready: function() {
-        var toto = this;
-        $(document).on('click', '#work_experiences_show_more', function(e) {
-            e.preventDefault();
-            $(document).find("#work_experiences_table").toggleClass("visible");
-            $(document).find("#work_experiences_show_more").toggleClass("visible");
-        });
+        
     },
 
     onload: function() {
@@ -26,6 +21,11 @@ Homepage.prototype = {
     },
 
     onturbolinks: function() {
-
+        var toto = this;
+        $(document).on('click', '#work_experiences_show_more', function(e) {
+            e.preventDefault();
+            $(document).find("#work_experiences_table").toggleClass("visible");
+            $(document).find("#work_experiences_show_more").toggleClass("visible");
+        });
     }
 }

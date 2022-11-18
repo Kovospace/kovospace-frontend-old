@@ -30,7 +30,7 @@
         	<br> <%= @work_experience_current.place %>
             <% if @work_experiences.size > 1 %>
                 <%= render 'work_experiences/work_experiences' %>
-                <%= link_to("predchádzajúce (" + (@work_experiences.size - 1).to_s + ")", work_experiences_path(anchor: 'o-mne'), class: :more, id: :work_experiences_show_more) %>
+                <%= link_to("predchádzajúce (" + (@work_experiences.size - 1).to_s + ")", work_experiences_path, class: :more, id: :work_experiences_show_more) %>
             <% end %>
         </div>
     </summary>
