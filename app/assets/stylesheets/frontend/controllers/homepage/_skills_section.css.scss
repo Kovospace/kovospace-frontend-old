@@ -37,11 +37,14 @@ section#skills {
                 text-align: center;
                 vertical-align:middle;
                 margin-right: 0.5em;
+                shape-outside: margin-box;
 
                 h3 {
                     vertical-align:middle;
                     display: table-cell;
                     position:relative;
+                    shape-outside: margin-box;
+                    border-radius: 50%;
 
                     span {
                         display:block;
@@ -109,14 +112,15 @@ section#skills {
                 }
 
                 b {
-                   position: absolute;
-                   top:0;
-                   bottom:0;
-                   width: $planet_width;
-                   left:(100%-$planet_width)/2;
-                   right:(100%-$planet_width)/2;
-                   border-radius: 50%;
-                   background-color: $black;
+                    position: absolute;
+                    top:0;
+                    bottom:0;
+                    width: $planet_width;
+                    left:(100%-$planet_width)/2;
+                    right:(100%-$planet_width)/2;
+                    border-radius: 50%;
+                    background-color: $black;
+                    shape-outside: margin-box;
                 }
             }
         }
@@ -130,5 +134,70 @@ section#skills {
                 }
             }
         }
+    }
+
+    div.tooltip {
+        @include voyager(2em, 55deg, 0);
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        display: none;
+        transition: top 1s, left 1s;
+
+        figure, span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        figure {
+            position: absolute;
+            z-index: 9998;
+            
+            div {
+                box-shadow: 4px 0px 4px #000;
+
+                &:before, &:after {
+                    box-shadow: 4px 0px 4px #000;
+                }
+
+                i {
+                    box-shadow: 4px 0px 4px #000;
+
+                    &:before {
+                        box-shadow: 4px 0px 4px #000;
+                    }
+                }
+            }
+        }
+
+        & > div.wrap {
+            position: absolute;
+            top: 0;
+            z-index: 9999;
+            width: 40vw;
+
+            span {
+                font-size: 1.25em;
+                padding: 0.375em;
+                background-color: black;
+                border-radius: 0.25em;
+                border: 1px solid white;
+                margin: 0.25em 0.5em;
+                opacity: 0.9;
+                line-height: 1.125em;
+                box-shadow: 4px 0px 4px #000;
+            }
+
+            &.right {
+                right: 100%;
+            }
+
+            &.left {
+                left: 100%;
+            }
+        }
+
     }
 }

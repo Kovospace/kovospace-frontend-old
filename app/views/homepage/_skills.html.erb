@@ -6,6 +6,8 @@
 
     <article>
 
+        <%= hidden_field_tag 'skillDescription_' + skill.id.to_s, skill.description, class: 'skillDescription' %>
+
         <div class="description">
              <figure class="size_<%= skill.degree %> <%= skill.fakehover_class %>" <%= skill.style %>>
                 <h3>
@@ -21,7 +23,7 @@
                 <a href="<%= show_portfolio_path(project) %>" class="size_<%= project.priority %>"><!--
                     --><span <%= project.style_inverted %>><%= project.title %></span><!--
                     --><b <%= project.bg_style %> <%= project.fakehover %>></b><!--
-                --></a>
+                --><%= hidden_field_tag 'projectDescription_' + project.id.to_s, project.intro, class: 'projectDescription' %></a>
 
             <% end %>
 
@@ -31,4 +33,11 @@
 
 
 <% end %>
+
+<div class="tooltip">
+    <%= render 'voyager', title: "" %>
+    <div class="wrap">
+        <span>test tuttktk kfdksd </span>
+    </div>
+</div>
 

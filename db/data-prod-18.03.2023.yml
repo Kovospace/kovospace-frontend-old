@@ -1,0 +1,2246 @@
+
+---
+newslogs:
+  columns:
+  - id
+  - title
+  - txt
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Spustený web
+    - Spustený web, treba ešte preveriť 100% funkčnosť blogu (komentáre, sekcie, seriály,
+      používatelia, hodnotenia, správa obsahu...), zatiaľ nemám obsah ani čas pre
+      túto sekciu, zatiaľ pozastavené.
+    - '2020-05-20 19:18:03.332049'
+    - '2020-05-20 19:18:03.332049'
+  - - 2
+    - React, Angular, Vue
+    - "Dal som sa na kurz React.js, Angular a Vue od learn2code.sk.\r\nVau, doteraz
+      som žil v jaskyni! Už po \"hello world\" príklade nechcem jQuery ani vidieť!\r\nĎalšia
+      stránka bude bežať na jednom z nich!  "
+    - '2020-05-29 01:25:32.902791'
+    - '2020-05-29 01:43:19.320340'
+  - - 3
+    - Človek sa učí celý život
+    - "Obzvlášť programovanie, hádam neexistuje na svete kód, ktorý by sa nedal napísať
+      lepšie a vždy sa bude dať naučiť sa niečo nové.\r\nOd 19.11.2020 hrdým študentom
+      GreenFoxAcademy.cz"
+    - '2020-11-22 00:34:52.710785'
+    - '2021-10-28 23:32:23.121100'
+  - - 4
+    - Kurz úspešne dokončený
+    - "3 moduly a 42 týždňov bootcampu na GreenFox academy je úspešne za mnou.\r\n\r\nNaša
+      skupina si na tretí modul zvolila orientáciu na backend a úlohou nášho 6-členného
+      týmu bolo vyvinúť REST API pre strategickú hru na štýl hier ako Travian alebo
+      Age of empires. Tento cieľ sa nám podarilo s množstvom implementovaných funkcií
+      ešte aj mierne prekročiť a vedomosti hlavne čo sa týka DevOps a simulovania
+      reálnej práce v tíme nám všetkým umožnili plynule naskočiť do robôt.\r\n\r\nOproti
+      skostnateným štátnym vzdelávacím inštitúciám toto pokladám pre väčšinu ľudí,
+      ktorí sa nejdú ďalej uberať akademickou/vedeckou cestou za budúcnosť vzdelávania
+      a náhradu za tento nefunkčný systém páchnuci niekde ešte stredovekom, nieto
+      totalitou.\r\n\r\nNa tomto kurze by som ocenil fair-play biznis model, ktorý
+      mi akosi dal istotu že sa nejedná o scam, vonkoncom online kurzov ktoré \"dačo
+      naučia\" a za ktoré treba zacvakať je dnes na nete za dve tatrovky. V ich biznis
+      modeli môžete začať splácať kurz až po jeho absolvovaní a až potom ako sa Vám
+      vďaka ich pomoci podarí nájsť prácu.\r\n\r\nToto je na dlhší monológ na ktorý
+      táto sekcia nebola stavaná - o tomto počine by som možno aj niekedy napísal
+      blog /alebo rovno celý seriál/ (ak bude niekedy v živote na tomto webe blok
+      odladený a hotový) pre ľudí, ktorí by uvažovali nad podobnou zmenou svojho odboru/kariéry."
+    - '2021-09-21 00:00:00.000000'
+    - '2021-10-28 23:30:52.317785'
+  - - 5
+    - Hurá mám robotu :D
+    - "Prvý týždeň v prvej robote v odbore a prvej v živote kde nejdem len kvôli peniazom
+      je za mnou :D\r\nMalá spoločnosť ale s dlhou tradíciou, pracujúca na svojom
+      vlastnom produkte v oblasti leteckého priemyslu a cestovného ruchu, malý a stabilný
+      kolektív, \"startup\" to proste znie cool, aj keď zaužívaný obraz o korporáciách
+      ako hnacom motore dystopickej spoločnosti budúcnosti sa vo veľa prípadoch nemusí
+      ani približovať tejto predstave, hlavne v odvetviach a dobe ktorá sa začína
+      čoraz viac riadiť princípmi vzdelanostnej ekonomiky. \r\n\r\nNa druhú stranu
+      je to obrovský tlak - snažiť sa nezfailovať všetko čo sa dostane pod ruku, zapracovať
+      sa do projektu a vykázať nejaký prínos a udržať sa tu."
+    - '2021-10-08 00:00:00.000000'
+    - '2022-11-09 21:04:27.750956'
+
+---
+portfolio_galleries:
+  columns:
+  - id
+  - image
+  - alt_text
+  - typ
+  - portfolio_id
+  - created_at
+  - updated_at
+  - identificator
+  - width
+  - height
+  records: 
+  - - 19
+    - orig.png
+    - ''
+    - 0
+    - 2
+    - '2020-05-16 15:53:33.059735'
+    - '2020-05-16 15:53:33.059735'
+    - 1
+    - 512
+    - 512
+  - - 26
+    - orig.png
+    - ''
+    - 0
+    - 4
+    - '2020-05-16 16:21:29.858020'
+    - '2020-05-16 16:21:29.858020'
+    - 1
+    - 3072
+    - 6378
+  - - 27
+    - orig.png
+    - ''
+    - 0
+    - 4
+    - '2020-05-16 16:21:29.924593'
+    - '2020-05-16 16:21:29.924593'
+    - 2
+    - 3072
+    - 3501
+  - - 28
+    - orig.png
+    - ''
+    - 0
+    - 4
+    - '2020-05-16 16:21:29.952345'
+    - '2020-05-16 16:21:29.952345'
+    - 3
+    - 3072
+    - 2400
+  - - 29
+    - orig.png
+    - ''
+    - 0
+    - 4
+    - '2020-05-16 16:21:29.972354'
+    - '2020-05-16 16:21:29.972354'
+    - 4
+    - 2880
+    - 2454
+  - - 30
+    - orig.PNG
+    - ''
+    - 0
+    - 2
+    - '2020-05-19 11:37:56.784786'
+    - '2020-05-19 11:37:56.784786'
+    - 2
+    - 1080
+    - 1920
+  - - 31
+    - orig.PNG
+    - ''
+    - 0
+    - 2
+    - '2020-05-19 11:37:56.802674'
+    - '2020-05-19 11:37:56.802674'
+    - 3
+    - 1080
+    - 1920
+  - - 32
+    - orig.PNG
+    - ''
+    - 0
+    - 2
+    - '2020-05-19 11:37:56.819055'
+    - '2020-05-19 11:37:56.819055'
+    - 4
+    - 1080
+    - 1920
+  - - 33
+    - orig.PNG
+    - ''
+    - 0
+    - 2
+    - '2020-05-19 11:37:56.836090'
+    - '2020-05-19 11:37:56.836090'
+    - 5
+    - 1080
+    - 1920
+  - - 34
+    - orig.PNG
+    - ''
+    - 0
+    - 2
+    - '2020-05-19 11:37:56.854481'
+    - '2020-05-19 11:37:56.854481'
+    - 6
+    - 1080
+    - 1920
+  - - 35
+    - orig.PNG
+    - ''
+    - 0
+    - 2
+    - '2020-05-19 11:37:56.870643'
+    - '2020-05-19 11:37:56.870643'
+    - 7
+    - 1080
+    - 1920
+  - - 36
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.253322'
+    - '2020-05-19 15:28:44.253322'
+    - 1
+    - 3072
+    - 2400
+  - - 37
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.287591'
+    - '2020-05-19 15:28:44.287591'
+    - 2
+    - 3072
+    - 2742
+  - - 38
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.314098'
+    - '2020-05-19 15:28:44.314098'
+    - 3
+    - 3072
+    - 2268
+  - - 39
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.337311'
+    - '2020-05-19 15:28:44.337311'
+    - 4
+    - 3072
+    - 2220
+  - - 40
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.363113'
+    - '2020-05-19 15:28:44.363113'
+    - 5
+    - 3072
+    - 2220
+  - - 41
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.392241'
+    - '2020-05-19 15:28:44.392241'
+    - 6
+    - 3072
+    - 4395
+  - - 42
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.422859'
+    - '2020-05-19 15:28:44.422859'
+    - 7
+    - 3072
+    - 2220
+  - - 43
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.442673'
+    - '2020-05-19 15:28:44.442673'
+    - 8
+    - 3072
+    - 2400
+  - - 44
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.494824'
+    - '2020-05-19 15:28:44.494824'
+    - 9
+    - 3072
+    - 2220
+  - - 45
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.525264'
+    - '2020-05-19 15:28:44.525264'
+    - 10
+    - 3072
+    - 2400
+  - - 46
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 15:28:44.551626'
+    - '2020-05-19 15:28:44.551626'
+    - 11
+    - 3072
+    - 2220
+  - - 47
+    - orig.png
+    - ''
+    - 0
+    - 5
+    - '2020-05-19 16:19:56.424011'
+    - '2020-05-19 16:19:56.424011'
+    - 12
+    - 4267
+    - 4267
+  - - 48
+    - orig.png
+    - ''
+    - 1
+    - 6
+    - '2020-05-19 22:51:31.170880'
+    - '2020-05-19 22:51:31.170880'
+    - 1
+    - 768
+    - 128
+  - - 49
+    - orig.png
+    - ''
+    - 0
+    - 6
+    - '2020-05-19 22:52:16.266075'
+    - '2020-05-19 22:52:16.266075'
+    - 2
+    - 768
+    - 128
+  - - 50
+    - orig.png
+    - ''
+    - 0
+    - 10
+    - '2020-05-20 11:22:26.842096'
+    - '2020-05-20 11:22:26.842096'
+    - 1
+    - 4098
+    - 2400
+  - - 51
+    - orig.png
+    - ''
+    - 0
+    - 10
+    - '2020-05-20 11:22:26.871655'
+    - '2020-05-20 11:22:26.871655'
+    - 2
+    - 4098
+    - 2400
+  - - 52
+    - orig.png
+    - ''
+    - 0
+    - 10
+    - '2020-05-20 11:22:26.899608'
+    - '2020-05-20 11:22:26.899608'
+    - 3
+    - 4098
+    - 2400
+  - - 53
+    - orig.png
+    - ''
+    - 0
+    - 10
+    - '2020-05-20 11:22:26.926795'
+    - '2020-05-20 11:22:26.926795'
+    - 4
+    - 4098
+    - 2400
+  - - 54
+    - orig.png
+    - ''
+    - 0
+    - 10
+    - '2020-05-20 11:22:26.951688'
+    - '2020-05-20 11:22:26.951688'
+    - 5
+    - 4098
+    - 2400
+  - - 55
+    - orig.png
+    - ''
+    - 0
+    - 10
+    - '2020-05-20 11:22:26.995438'
+    - '2020-05-20 11:22:26.995438'
+    - 6
+    - 4098
+    - 2400
+  - - 56
+    - orig.png
+    - ''
+    - 0
+    - 2
+    - '2020-05-20 11:49:19.458604'
+    - '2020-05-20 11:49:19.458604'
+    - 8
+    - 252
+    - 132
+  - - 57
+    - orig.png
+    - ''
+    - 0
+    - 2
+    - '2020-05-20 11:49:19.474726'
+    - '2020-05-20 11:49:19.474726'
+    - 9
+    - 252
+    - 452
+  - - 58
+    - orig.png
+    - ''
+    - 0
+    - 2
+    - '2020-05-20 11:49:19.490482'
+    - '2020-05-20 11:49:19.490482'
+    - 10
+    - 564
+    - 600
+  - - 59
+    - orig.png
+    - ''
+    - 0
+    - 11
+    - '2020-05-20 12:14:56.659979'
+    - '2020-05-20 12:16:11.259114'
+    - 1
+    - 417
+    - 506
+  - - 60
+    - orig.png
+    - ''
+    - 0
+    - 11
+    - '2020-05-20 12:14:56.675456'
+    - '2020-05-20 12:14:56.675456'
+    - 2
+    - 192
+    - 177
+  - - 61
+    - orig.png
+    - ''
+    - 0
+    - 11
+    - '2020-05-20 12:14:56.690251'
+    - '2020-05-20 12:14:56.690251'
+    - 3
+    - 331
+    - 137
+  - - 62
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 01:07:32.348213'
+    - '2020-05-21 01:07:32.348213'
+    - 1
+    - 3030
+    - 2100
+  - - 63
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 01:07:32.376384'
+    - '2020-05-21 01:07:32.376384'
+    - 2
+    - 3030
+    - 1953
+  - - 64
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 01:07:32.397013'
+    - '2020-05-21 01:07:32.397013'
+    - 3
+    - 3030
+    - 1953
+  - - 72
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 02:29:10.718573'
+    - '2020-05-21 02:29:10.718573'
+    - 11
+    - 3030
+    - 1953
+  - - 73
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 02:29:10.739589'
+    - '2020-05-21 02:29:10.739589'
+    - 12
+    - 3030
+    - 1953
+  - - 74
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 02:29:10.765427'
+    - '2020-05-21 02:29:10.765427'
+    - 13
+    - 3030
+    - 1953
+  - - 75
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 02:29:10.791165'
+    - '2020-05-21 02:29:10.791165'
+    - 14
+    - 3072
+    - 2472
+  - - 76
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 02:29:10.811114'
+    - '2020-05-21 02:29:10.811114'
+    - 15
+    - 3072
+    - 3381
+  - - 77
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 02:42:50.578384'
+    - '2020-05-21 11:28:29.579385'
+    - 16
+    - 3072
+    - 2304
+  - - 79
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 09:00:32.872671'
+    - '2020-05-21 09:00:32.872671'
+    - 17
+    - 3030
+    - 1953
+  - - 84
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 10:23:41.046979'
+    - '2020-05-21 10:23:41.046979'
+    - 22
+    - 3030
+    - 1953
+  - - 85
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 10:23:41.067878'
+    - '2020-05-21 10:23:41.067878'
+    - 23
+    - 3030
+    - 1953
+  - - 86
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 10:47:31.115629'
+    - '2020-05-21 10:47:31.115629'
+    - 24
+    - 3072
+    - 2304
+  - - 87
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 10:54:47.569814'
+    - '2020-05-21 10:54:47.569814'
+    - 25
+    - 3072
+    - 2304
+  - - 88
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 10:54:47.590990'
+    - '2020-05-21 10:54:47.590990'
+    - 26
+    - 3072
+    - 2304
+  - - 89
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 10:54:47.613349'
+    - '2020-05-21 10:54:47.613349'
+    - 27
+    - 3072
+    - 2304
+  - - 90
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:03:30.046161'
+    - '2020-05-21 11:03:30.046161'
+    - 28
+    - 3072
+    - 2304
+  - - 91
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:03:30.066326'
+    - '2020-05-21 11:03:30.066326'
+    - 29
+    - 3072
+    - 2304
+  - - 92
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:15:51.716702'
+    - '2020-05-21 11:15:51.716702'
+    - 30
+    - 3072
+    - 2304
+  - - 93
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:15:51.736275'
+    - '2020-05-21 11:15:51.736275'
+    - 31
+    - 3072
+    - 2304
+  - - 94
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:43:01.066470'
+    - '2020-05-21 11:43:01.066470'
+    - 32
+    - 3072
+    - 2304
+  - - 95
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:43:01.089256'
+    - '2020-05-21 11:43:01.089256'
+    - 33
+    - 3072
+    - 2304
+  - - 96
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:43:01.112540'
+    - '2020-05-21 11:43:01.112540'
+    - 34
+    - 1038
+    - 872
+  - - 97
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:56:42.283687'
+    - '2020-05-21 11:56:42.283687'
+    - 35
+    - 3072
+    - 2304
+  - - 98
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:56:42.305126'
+    - '2020-05-21 11:56:42.305126'
+    - 36
+    - 3072
+    - 2304
+  - - 99
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 11:56:42.325103'
+    - '2020-05-21 11:56:42.325103'
+    - 37
+    - 3072
+    - 2304
+  - - 100
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 12:04:22.637965'
+    - '2020-05-21 12:04:22.637965'
+    - 38
+    - 3072
+    - 2472
+  - - 101
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 12:04:22.661342'
+    - '2020-05-21 12:04:22.661342'
+    - 39
+    - 3072
+    - 2472
+  - - 102
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 13:56:11.724123'
+    - '2020-05-21 13:56:11.724123'
+    - 40
+    - 3030
+    - 1953
+  - - 103
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 13:56:11.745213'
+    - '2020-05-21 13:56:11.745213'
+    - 41
+    - 3030
+    - 1953
+  - - 104
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 13:56:11.766919'
+    - '2020-05-21 13:56:11.766919'
+    - 42
+    - 3030
+    - 1953
+  - - 105
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 13:56:11.787789'
+    - '2020-05-21 13:56:11.787789'
+    - 43
+    - 3030
+    - 1953
+  - - 106
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 13:56:11.809105'
+    - '2020-05-21 13:56:11.809105'
+    - 44
+    - 3072
+    - 2304
+  - - 107
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 14:23:12.546713'
+    - '2020-05-21 14:23:12.546713'
+    - 45
+    - 1080
+    - 2304
+  - - 108
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 14:23:12.566669'
+    - '2020-05-21 14:23:12.566669'
+    - 46
+    - 1080
+    - 2304
+  - - 109
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 14:23:12.585759'
+    - '2020-05-21 14:23:12.585759'
+    - 47
+    - 1080
+    - 2304
+  - - 110
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 14:23:12.603479'
+    - '2020-05-21 14:23:12.603479'
+    - 48
+    - 1080
+    - 2304
+  - - 111
+    - orig.png
+    - ''
+    - 0
+    - 12
+    - '2020-05-21 14:23:12.621818'
+    - '2020-05-21 14:23:12.621818'
+    - 49
+    - 1080
+    - 2304
+  - - 112
+    - orig.png
+    - ''
+    - 0
+    - 13
+    - '2020-11-19 16:31:14.330039'
+    - '2020-11-19 16:31:14.330039'
+    - 2
+    - 2362
+    - 4252
+  - - 113
+    - orig.png
+    - ''
+    - 0
+    - 13
+    - '2020-11-19 16:31:14.819364'
+    - '2020-11-19 16:31:14.819364'
+    - 3
+    - 11250
+    - 6250
+  - - 114
+    - orig.png
+    - ''
+    - 0
+    - 13
+    - '2020-11-19 17:08:13.578950'
+    - '2020-11-19 17:08:13.578950'
+    - 4
+    - 11250
+    - 6250
+  - - 116
+    - orig.png
+    - ''
+    - 0
+    - 13
+    - '2020-11-20 23:39:11.602088'
+    - '2020-11-20 23:39:11.602088'
+    - 6
+    - 5625
+    - 3125
+  - - 117
+    - orig.png
+    - ''
+    - 0
+    - 14
+    - '2020-12-03 10:22:27.705531'
+    - '2020-12-03 10:22:27.705531'
+    - 2
+    - 1280
+    - 800
+  - - 118
+    - orig.png
+    - ''
+    - 0
+    - 14
+    - '2020-12-03 10:22:27.754987'
+    - '2020-12-03 10:22:27.754987'
+    - 3
+    - 1280
+    - 800
+  - - 119
+    - orig.png
+    - ''
+    - 0
+    - 15
+    - '2021-01-14 02:39:18.969203'
+    - '2021-01-14 02:39:18.969203'
+    - 2
+    - 1080
+    - 1920
+  - - 120
+    - orig.png
+    - ''
+    - 0
+    - 17
+    - '2021-02-22 20:17:13.403846'
+    - '2021-02-22 20:17:13.403846'
+    - 2
+    - 1080
+    - 2340
+  - - 121
+    - orig.png
+    - ''
+    - 0
+    - 17
+    - '2021-02-22 20:17:13.433464'
+    - '2021-02-22 20:17:13.433464'
+    - 3
+    - 1080
+    - 2340
+  - - 122
+    - orig.png
+    - ''
+    - 0
+    - 17
+    - '2021-02-22 20:17:13.461852'
+    - '2021-02-22 20:17:13.461852'
+    - 4
+    - 1080
+    - 2340
+  - - 123
+    - orig.png
+    - ''
+    - 0
+    - 17
+    - '2021-02-22 20:17:13.490142'
+    - '2021-02-22 20:17:13.490142'
+    - 5
+    - 1080
+    - 2340
+  - - 124
+    - orig.png
+    - ''
+    - 0
+    - 17
+    - '2021-02-22 20:17:13.516610'
+    - '2021-02-22 20:17:13.516610'
+    - 6
+    - 1080
+    - 2340
+  - - 125
+    - orig.png
+    - ''
+    - 0
+    - 17
+    - '2021-02-22 20:17:13.552655'
+    - '2021-02-22 20:17:13.552655'
+    - 7
+    - 1080
+    - 2340
+  - - 126
+    - orig.png
+    - ''
+    - 0
+    - 16
+    - '2021-02-23 02:38:55.393863'
+    - '2021-02-23 02:38:55.393863'
+    - 2
+    - 1536
+    - 1536
+  - - 127
+    - orig.png
+    - ''
+    - 0
+    - 16
+    - '2021-02-23 02:38:55.441400'
+    - '2021-02-23 02:38:55.441400'
+    - 3
+    - 1536
+    - 1536
+  - - 128
+    - orig.png
+    - ''
+    - 0
+    - 16
+    - '2021-02-23 02:38:55.492516'
+    - '2021-02-23 02:38:55.492516'
+    - 4
+    - 2160
+    - 2160
+  - - 129
+    - orig.png
+    - ''
+    - 0
+    - 16
+    - '2021-02-23 02:38:55.545051'
+    - '2021-02-23 02:38:55.545051'
+    - 5
+    - 2160
+    - 2108
+  - - 130
+    - orig.png
+    - ''
+    - 0
+    - 16
+    - '2021-02-23 02:38:55.590689'
+    - '2021-02-23 02:38:55.590689'
+    - 6
+    - 2160
+    - 2108
+  - - 131
+    - orig.png
+    - Simson budíky
+    - 0
+    - 19
+    - '2021-11-04 00:37:33.999378'
+    - '2021-11-04 00:37:33.999378'
+    - 2
+    - 2717
+    - 1323
+  - - 134
+    - orig.png
+    - felicia spodny rad kontroliek
+    - 0
+    - 19
+    - '2021-11-04 01:18:49.970478'
+    - '2021-11-04 01:18:49.970478'
+    - 5
+    - 2400
+    - 149
+  - - 135
+    - orig.png
+    - felicia 1.9D ovladanie kurenia
+    - 0
+    - 19
+    - '2021-11-04 01:18:49.987703'
+    - '2021-11-04 01:18:49.987703'
+    - 6
+    - 2400
+    - 779
+  - - 136
+    - orig.png
+    - ''
+    - 0
+    - 19
+    - '2021-11-04 01:27:58.837389'
+    - '2021-11-04 01:27:58.837389'
+    - 7
+    - 3200
+    - 3200
+  - - 137
+    - orig.png
+    - ''
+    - 0
+    - 19
+    - '2021-11-04 01:27:58.874902'
+    - '2021-11-04 01:27:58.874902'
+    - 8
+    - 4267
+    - 4267
+
+---
+portfolio_screenshots:
+  columns:
+  - id
+  - portfolio_id
+  - screenshot
+  - created_at
+  - updated_at
+  - alt_text
+  - explicit_order
+  records: 
+  - - 1
+    - 1
+    - orig.png
+    - '2020-05-12 23:27:48.845957'
+    - '2020-05-12 23:27:48.845957'
+    - 
+    - 
+  - - 3
+    - 3
+    - orig.png
+    - '2020-05-15 02:12:16.297876'
+    - '2020-05-15 02:12:16.297876'
+    - 
+    - 
+  - - 4
+    - 4
+    - orig.png
+    - '2020-05-15 13:57:01.101048'
+    - '2020-05-15 13:57:01.101048'
+    - 
+    - 
+  - - 5
+    - 2
+    - orig.PNG
+    - '2020-05-19 11:46:28.061443'
+    - '2020-05-19 11:46:28.061443'
+    - 
+    - 
+  - - 6
+    - 5
+    - orig.png
+    - '2020-05-19 15:04:50.263078'
+    - '2020-05-19 15:04:50.263078'
+    - 
+    - 
+  - - 7
+    - 6
+    - orig.png
+    - '2020-05-19 23:02:08.534640'
+    - '2020-05-19 23:05:39.319254'
+    - 
+    - 
+  - - 11
+    - 10
+    - orig.png
+    - '2020-05-20 09:18:45.172470'
+    - '2020-05-20 09:18:45.172470'
+    - 
+    - 
+  - - 12
+    - 11
+    - orig.png
+    - '2020-05-20 12:12:36.388004'
+    - '2020-05-20 12:12:36.388004'
+    - 
+    - 
+  - - 13
+    - 12
+    - orig.png
+    - '2020-05-21 00:34:29.805540'
+    - '2020-05-21 00:34:29.805540'
+    - 
+    - 
+  - - 15
+    - 14
+    - orig.png
+    - '2020-12-03 10:44:53.515662'
+    - '2020-12-03 10:44:53.515662'
+    - 
+    - 
+  - - 16
+    - 9
+    - orig.png
+    - '2020-12-05 17:51:08.159883'
+    - '2020-12-05 17:51:08.159883'
+    - 
+    - 
+  - - 17
+    - 8
+    - orig.png
+    - '2020-12-05 18:13:14.096787'
+    - '2020-12-05 18:13:14.096787'
+    - 
+    - 
+  - - 18
+    - 13
+    - orig.png
+    - '2020-12-05 18:53:20.506289'
+    - '2020-12-05 18:53:20.506289'
+    - 
+    - 
+  - - 19
+    - 15
+    - orig.png
+    - '2021-01-14 02:32:25.640821'
+    - '2021-01-14 02:32:25.640821'
+    - 
+    - 
+  - - 20
+    - 17
+    - orig.png
+    - '2021-02-22 19:40:48.778635'
+    - '2021-02-22 19:40:48.778635'
+    - 
+    - 
+  - - 21
+    - 16
+    - orig.png
+    - '2021-02-23 02:38:55.374984'
+    - '2021-02-23 02:38:55.374984'
+    - 
+    - 
+  - - 22
+    - 18
+    - orig.png
+    - '2021-03-21 23:54:54.744587'
+    - '2021-03-22 00:02:52.704520'
+    - 
+    - 
+  - - 23
+    - 19
+    - orig.png
+    - '2021-11-04 01:46:47.773079'
+    - '2021-11-04 01:46:47.773079'
+    - 
+    - 
+  - - 24
+    - 7
+    - orig.png
+    - '2021-11-04 01:54:29.415857'
+    - '2021-11-04 01:54:29.415857'
+    - 
+    - 
+  - - 25
+    - 20
+    - orig.png
+    - '2022-11-13 21:11:05.705435'
+    - '2022-11-13 21:11:05.705435'
+    - 
+    - 
+
+---
+portfolio_titlebg_singles:
+  columns:
+  - id
+  - title_bg
+  - alt_text
+  - portfolio_id
+  records: 
+  - - 1
+    - orig.png
+    - ''
+    - 2
+  - - 2
+    - orig.png
+    - ''
+    - 4
+  - - 3
+    - orig.png
+    - ''
+    - 4
+  - - 4
+    - orig.png
+    - ''
+    - 7
+  - - 6
+    - orig.png
+    - ''
+    - 10
+  - - 7
+    - orig.png
+    - ''
+    - 12
+  - - 8
+    - orig.png
+    - ''
+    - 15
+
+---
+portfolio_titlebgs:
+  columns:
+  - id
+  - title_bg_desktop
+  - title_bg_tablet
+  - title_bg_mobile
+  - portfolio_id
+  records: 
+  - - 1
+    - orig.png
+    - orig.png
+    - orig.png
+    - 1
+  - - 2
+    - orig.png
+    - orig.png
+    - orig.png
+    - 1
+  - - 3
+    - orig.png
+    - orig.png
+    - orig.png
+    - 1
+  - - 4
+    - orig.png
+    - orig.png
+    - orig.png
+    - 1
+  - - 5
+    - orig.png
+    - orig.png
+    - orig.png
+    - 1
+  - - 6
+    - orig.png
+    - orig.png
+    - orig.png
+    - 3
+  - - 7
+    - orig.png
+    - orig.png
+    - orig.png
+    - 3
+  - - 8
+    - orig.png
+    - orig.png
+    - orig.png
+    - 3
+  - - 9
+    - orig.png
+    - orig.png
+    - orig.png
+    - 3
+  - - 10
+    - orig.png
+    - orig.png
+    - orig.png
+    - 20
+  - - 11
+    - orig.png
+    - orig.png
+    - orig.png
+    - 20
+  - - 12
+    - orig.png
+    - orig.png
+    - orig.png
+    - 20
+  - - 13
+    - orig.png
+    - orig.png
+    - orig.png
+    - 20
+  - - 14
+    - orig.png
+    - orig.png
+    - orig.png
+    - 20
+
+---
+portfolios:
+  columns:
+  - id
+  - title
+  - intro
+  - description
+  - link
+  - created_at
+  - updated_at
+  - skillset_id
+  - realis_date
+  - theme_color
+  - slug
+  - proirity
+  records: 
+  - - 1
+    - Roulage.sk
+    - Jednoduchá prezentačná internetová stránka pre firmu zaoberajúcu sa zasielateľstvom
+      a colnými službami
+    - <div>Stránka bola vyhotovená na zakázku ako náhrada staršej stránky v štýle
+      90-tych rokov ktorá bola vytvorená v ťažkopádnom redakčnom systéme.&nbsp;<br><br>Zameranie
+      bolo:&nbsp;<br><br></div><ul><li>vytvoriť graficky minimalistickú prehľadnú
+      stránku v štýle tzv. "flat design" nadväzujúcu ale na pôvodný web a celkovú
+      grafickú prezentáciu a image firmy&nbsp;</li></ul><div><br></div><ul><li>sprostredkovať
+      čo najefektívnejším a stručným spôsobom prípadnému záujemcovi o služby všetky
+      potrebné informácie o firme a jej portfóliu služieb&nbsp;</li></ul><div><br></div><ul><li>vytvoriť
+      stránku odpovedajúcu trendu mobilných zariadení - responsive design prispôsobenú
+      na prehliadanie na mobilných zariadeniach a ovládanie dotykom - základy SEO
+      a integrácie so sociálnymi sieťami&nbsp;</li></ul><div><br></div><ul><li>dodržať
+      normy a štandardy W3&nbsp;</li></ul><div><br></div><ul><li>dodržať kompatibilitu
+      aj s prehliadačmi ktoré nedodržujú dohodnuté webové štandardy a nové funkcie
+      implementujú nesprávne alebo len čiastočne (Microsoft Internet Explorer a to
+      spätne až do verzie 6.0)</li></ul><div><br></div><div>Web bol vytvorený s použitím
+      HTML ešte verzie 4, na serveri beží jednoduchá MVC šablóna bez frameworku v
+      jazyku PHP.</div>
+    - www.roulage.sk
+    - '2020-05-12 22:20:23.784797'
+    - '2020-05-12 22:21:02.728539'
+    - 1
+    - '2016-05-01'
+    - "#8D0000"
+    - roulage-sk
+    - 
+  - - 2
+    - DeltaX app
+    - 'Mobilná aplikácia na štatistické spracovanie výsledkov meraní '
+    - <div><strong>DeltaX</strong> je aplikácia určená na štatistické spracovávanie
+      výsledkov z laboratórnych meraní, resp. akýchkoľvek meraní, kde je za účelom
+      čo najpresnejšieho merania a eliminácie chyby merania daná veličina meraná opakovane.&nbsp;<br><br>Cieľom
+      tejto aplikácie je človeka odbremeniť človeka od času konzumujúcej a repetitívnej
+      činnosti, ktorá nie je predmetom a cieľom skúmania a pochopenia skúmaného deja,
+      ale len nutným procesom, ktorý sám o sebe zvyšuje riziko zanesenia chyby do
+      výslednej práce.<br><br>V neposlednom rade je to lenivosť, ktorá bola veľmi
+      často v histórií ľudstva motorom pokroku, keď človek za účelom uľahčenia&nbsp;
+      niektorých činností hľadá a špekuluje, ako by ich bolo možné zjednodušiť alebo
+      úplne eliminovať. Mám za to, že prirodzenosťou človeka a niekedy aj naplnením
+      života je objavovať a tvoriť a stereotyp ubíja a tieto činnosti by mali vykonávať
+      stroje.<br><br>Trocha odbočenie k filozofickému okienku, funkčnosť aplikácie
+      je veľmi jednoduchá:&nbsp;<br><br></div><ul><li>na začiatku je užívateľ opýtaný,
+      koľko chce uskutočniť meraní a na násobok, pri ktorom sú dané hodnoty merané
+      (napríklad, meria sa hodnota prúdu v miliampéroch, základná jednotka je ale
+      ampér, teda je aplikácií potrebné zdeliť, že hodnoty, ktoré sú zadávné sú tisícinou
+      základnej jednotky - teda 10^-3)&nbsp;</li></ul><div><br></div><ul><li>potom
+      nasleduje samostatné zadávanie hodnôt, aplikácia používateľa nepustí ďalej ak
+      zadal napríklad hodnotu, ktorá je chybná (nepovolený znak / vstup nie je číslom)
+      prípadne zadbudol niektorú hodnotu zadať</li></ul><div><br></div><ul><li>posledným
+      krokom už je samotné vygenerovanie tabuľky a základných údajov, ktoré sú štandartne
+      požadované pri uskutočňovaní hádam 99% laboratórnych meraní - teda v kontexte
+      a rozsahu štúdia určitého predmetu na škole.&nbsp;<br>Čísla a údaje v tabuľke
+      sú prehodnotené a vždy vypísané v "esteticky" čo najlepšom tvare - aby sme nemali
+      nekonečne dlhé desatinné číslo alebo miliardu niečoho - a násobok je potom uvedený
+      v stĺpci tabuľky.</li></ul><div><br>Pri návrhu aplikácie bolo myslené aj na
+      to, akým spôsobom bežné programovacie jazyky spracovávajú a uchovávajú desatinné
+      čísla a že primárne nebývajú určené len na uskutočňovanie výpočtov a že spôsob,
+      akým "pod kapotou" toto funguje môže byť zdrojom veľkých nepresností alebo aj
+      fatálnych chýb algoritmu. Našťastie existujú postupy a nástroje ako tieto nedostatky
+      obmedziť alebo eliminovať, táto aplikácia je napríklad celá postavená na triede
+      BigDecimal(), ktorá je špeciálne určená na aritmetické operácie s desatinnými
+      číslami.&nbsp;<br><br><br>&lt;#obrazok1#&gt;&lt;#obrazok2#&gt;&lt;#obrazok3#&gt;&lt;#obrazok4#&gt;&lt;#obrazok5#&gt;&lt;#obrazok6#&gt;&lt;#obrazok7#&gt;<br><br>Táto
+      aplikácia bola vyhotovená aj vo verzii pre desktop pc v jazyku C++ s pomocou
+      frameworku QT4, no nie je zďaleka tak odladená a pekná ako android verzia.<br><br>&lt;#obrazok8#&gt;&lt;#obrazok9#&gt;&lt;#obrazok10#&gt;<br><br><br></div><div><br></div>
+    - www.deltax.cekuj.net
+    - '2020-05-14 21:20:59.744675'
+    - '2020-05-20 11:49:19.457008'
+    - 2
+    - '2015-01-01'
+    - "#44a0ff"
+    - deltax-app
+    - 
+  - - 3
+    - Taric.sk
+    - Prehľadávač tovarových nomenklatúr k colnému sadzobníku
+    - "<div>Vlastná implementácia nástroja na prehliadanie tovarových nomenklatúr
+      (preberaných z jednotného európskeho colného sadzobníka) - vývoj tohoto nástroja
+      bol začatý ako alternatíva k nástroju, ktorý poskytuje Finančná správa Slovenskej
+      republiky alebo internetový portál Európskej komisie.<br><br>Dôvody na vytvorenie
+      vlastnej implementácie:<br><br></div><ul><li>zdĺhavé a stresujúce ovládanie
+      nástroja poskytovaného Finančnou správou, zbytočne spomaľujúce pracovný proces,
+      neintuitívne správanie tohoto nástroja v danom nasadení</li></ul><div><br></div><ul><li>vyhľadávací
+      algoritmus zobrazujúci len cieľovú položku bez položiek stromu, ktoré k nej
+      viedli</li></ul><div><br></div><ul><li>texty obsahujúce citácie ďalších položiek,
+      avšak neobsahujúce odkaz na tieto položky</li></ul><div><br></div><ul><li>pridanie
+      funkcií ako napríklad JSON API pre inú aplikáciu na ktorej pracujem a bude potrebovať
+      občas preveriť aktuálne dáta</li></ul><div><br></div><ul><li>grafický vzhľad
+      nástroja Finančnej správy</li></ul><div><br>Aplikácia však čerpá dáta od Finančnej
+      správy pomocou XML súborov, ktoré vydávajú.&nbsp;<br>Nástroj je len zoznamom
+      nomenklatúr a neobsauje napríklad zoznam colných zadzieb a exportných/importných
+      podmienok a obmedzení pre jednotlivé položky, je hlavne využitelný pri zostavovaní
+      vnútroeurópskej štatistiky o pohybe tovaru, tzv. Intrastat.</div><div><br><br></div>"
+    - www.taric.sk
+    - '2020-05-15 01:59:57.586283'
+    - '2020-12-04 03:28:46.871884'
+    - 1
+    - '2020-02-01'
+    - "#8D0000"
+    - taric-sk
+    - 2
+  - - 4
+    - Deltax.cekuj.net
+    - Webová stránka hostiaca výpočtové aplikácie na stiahnutie
+    - '<div>K tomuto nemám moc čo povedať, hádam prvý web v živote ktorý som spravil.<br><br>Web
+      obsahuje len dve stránky, kde sa užívateľ dozvie nejaké nepodstatné informácie
+      (ktoré sa mi už nechce vymazať) a potom aj to, čo vlastne aplikácia robí a na
+      čo sa používa. Táto sekcia je ešte obohatená galériou a prehliadačom, kde je
+      možné vidieť screenshoty z aplikácií.<br><br>Na druhej stránke sa nachádzajú
+      odkazy na stiahnutie a zoznam so zmenami a staršími verziami.<br><br>Tretí list
+      obsahuje len pár slov k inštalácií.<br><br>O spomínaných aplikáciach bude v
+      tomto portfóliu písané osobitne: <br><a href="https://kovo.space/portfolio/deltax-app">https://kovo.space/portfolio/deltax-app</a><br><br>&lt;#obrazok1#&gt;&lt;#obrazok3#&gt;&lt;#obrazok2#&gt;&lt;#obrazok4#&gt;<br><br></div>'
+    - www.deltax.cekuj.net
+    - '2020-05-15 13:47:12.624854'
+    - '2020-12-04 18:52:59.053383'
+    - 1
+    - '2015-01-01'
+    - "#13CC00"
+    - deltax-www
+    - 4
+  - - 5
+    - SPST Dolný kubín
+    - Informačný web stolnotenisového športového klubu
+    - "<div>Informačný web pre miestny športový klub, nakoniec ostal nevyužitý, keďže
+      daný športový klub (občianske združenie) ukončil svoju činnosť.<br><br>Web obsahuje
+      aj jednoduché rozhranie vlastnej implementácie na správu obsahu (pridávanie,
+      úprava, mazanie), ktoré je určené pre použitie laickým používateľom.<br><br>Web
+      je napísaný primitívnym spôsobom v PHP bez využitia frameworkov alebo hoci len
+      MVC štruktúry.&nbsp;<br>Implementácia galérie, uploadovača a konvertora obrázkov
+      a prehliadača obrázkov je taktiež vlastná.<br><br>Jednou špeciálnou požiadavkov
+      pri tomto projekte bola ešte tvorba klubového loga.<br><br>&lt;#obrazok12#&gt;&lt;#obrazok1#&gt;&lt;#obrazok2#&gt;&lt;#obrazok3#&gt;&lt;#obrazok4#&gt;&lt;#obrazok5#&gt;&lt;#obrazok6#&gt;&lt;#obrazok7#&gt;&lt;#obrazok8#&gt;&lt;#obrazok9#&gt;&lt;#obrazok10#&gt;&lt;#obrazok11#&gt;<br><br></div>"
+    - http://spstdolnykubin.cekuj.net/
+    - '2020-05-19 15:03:42.921720'
+    - '2020-05-19 16:23:19.689357'
+    - 1
+    - '2015-03-01'
+    - "#337565"
+    - spst-dolny-kubin
+    - 
+  - - 6
+    - DockbarX toggle
+    - Applet pre obľúbený panel aplikácií v systémoch Linux
+    - <div>Táto mini-aplikácia je appletom pre panel a spúštač aplikácií Dockbar X,
+      jeden z najviac používaných alternatívkych dokov s operačných systémoch Linux,
+      ktoré napodobňujú tie používané na počítačoch Apple v systémoch MacOS.<br><br>Tento
+      panel môže mať viacero režimov správania sa a zobrazenia, no tieto nastavenia
+      nie sú dostatočne ľahko prístupné.&nbsp;<br>Niekedy, keď chcete maximalizovať
+      čo najviac využitelnú voľnú plochu napríklad na malej obrazovke notebooku, je
+      vhodné tento panel prepnúť do režimu "automatického skrývania", kedy sa objaví
+      len vtedy, keď sa myšou budete pokúšať zájsť "za hranu" za ktorú sa "schoval".&nbsp;<br>Prepínať
+      medzi pôvodným nastavením a nastavením "autohide" je teraz možné jedným kliknutím.</div>
+    - https://github.com/K0V0/DockBarXToggler
+    - '2020-05-19 22:51:31.168755'
+    - '2020-12-04 18:57:12.722163'
+    - 3
+    - '2015-01-01'
+    - "#BB00FF"
+    - dockbarx-toggle
+    - 4
+  - - 7
+    - Bandzone downloader
+    - Bandzone downloader je nástroj na sprístupnenie skladieb aj v miestach bez pokrytia
+      internetom.
+    - "<div>BandzoneDownloader je rozšírenie pre prehliadač Google Chrome, ktoré v
+      prehrávači na portáli Bandzone.cz pridá tlačidlá na stiahnutie ku skladbám,
+      pri ktorých chýbali.<br><br>Niekto by mohol namietať, že sa jedná o pirátsky
+      software, ja si to však nemyslím, nakoľko skladby je možné na tomto portáli
+      počúvať zadarmo a neobmedzený počet krát.&nbsp;<br>Cieľom tejto aplikácie je
+      sprístupniť obsah aj offline ma miesta a časy, kedy internetové pripojenie nie
+      je možné alebo schválne nežiadúce.&nbsp;</div>"
+    - https://github.com/K0V0/BandzoneDownloader
+    - '2020-05-19 23:26:21.215050'
+    - '2021-11-04 01:56:38.320004'
+    - 4
+    - '2017-06-01'
+    - "#EBB11D"
+    - bandzone-downloader
+    - 3
+  - - 8
+    - Emerald unmaximize fix
+    - 'Monkeypatch problému v grafickom prostredí systémov Linux '
+    - <div>Jedná sa o démon napísaný v jazyku C a beží na pozadí po sustení systému.&nbsp;<br><br>Linux
+      už viaceré roky trpí zvláštnym problémom, kedy súbežné používanie efektov Compiz
+      Fusion a dekorátora okien Emerald pri použití hacku, ktorý odstráni dekorácie
+      okien (t.j. titulok - pás s názvom okna a tlačidlami ako maximalizovať, minimalizovať,
+      zavrieť) na maximalizovaných oknách a tieto sú potom ovládané tlačidlami (applet)
+      XFCE alebo Gnome (Mate) panela.&nbsp;<br><br>Pri návrate z maximalizácie do
+      pôvodného stavu sa však dekorácie okna niekedy neobnovia. Dekorácie sa však
+      záhadne vrátia, ak sa oknu nastaví nejaký príznak alebo zmení text - názov okna
+      (napríklad v okne programu na IM - príde nová správa)<br><br>Tento fakt bol
+      dostačujúci na zhotovenie tohoto programu, jeho princíp je v podstate v tom,
+      že keď nejaké okno zaznamená zmenu stavu z maximalizovaného na iný, je k názvu
+      okna pridaná medzera alebo odstránená, ak bola na koniec názvu pridaná predtým,
+      čím sa zabezepčí to, že sa "niečo v systéme pohne" a dekorácie sa vykreslia.<br><br></div>
+    - https://github.com/K0V0/emerald-unmaximize-fix/blob/master/emerald_fix.c
+    - '2020-05-20 00:34:47.788998'
+    - '2020-12-04 19:01:52.868303'
+    - 3
+    - '2019-03-01'
+    - "#56A00F"
+    - emerald-unmaximize-fix
+    - 4
+  - - 9
+    - X41rotate
+    - Démon pre nastavenie orientácie obrazovky na starých tablet zariadeniach
+    - "<div>Software pre starý konvertibilný laptop IBM ThinkPad x41t, prinášajúci
+      do systému Linux funkčnosť na otáčanie obrazovky na tomto zariadení podľa jeho
+      aktuálnej polohy získanej z akcelerometra. Funkčnosť, ktorá je dnes úplne bežná
+      napríklad na mobilných telefónoch alebo tabletoch.&nbsp;</div>"
+    - https://github.com/K0V0/X41rotate
+    - '2020-05-20 00:57:55.801874'
+    - '2020-12-04 19:04:09.027460'
+    - 3
+    - '2015-01-01'
+    - "#E82C2E"
+    - x41-rotate
+    - 5
+  - - 10
+    - Energy2000mixy.cekuj.net
+    - Web na sťahovanie MP3 - Poľské techno
+    - "<div>Web bol vytvorený so zámerom na upload MP3 zo setov Techno Energy 2000
+      mix. <br>Problémom pri týchto setoch je to, že by si ich mali sťahovať ľudia,
+      ktorí sa chcú v prvom rade naučiť po poľsky, až potom počúvať techno. Nie je
+      neobvyklé, že 80% hracieho času skladby poliak prekecá a opakovane odprezentuje
+      akcie v klube na dva mesiace dopredu. Naviac v mixoch sa nachádzajú mierne odlišné
+      verzie trackov.<br><br>Biznis modelom tohoto nápadu bolo to, že veľa ludí počúva
+      toto poľské techno a možno by aj boli radi, keby mali mix bez poľštiny cez skoro
+      celý track, a teda že by web aj generoval nejakú návštevnosť. <br>Malo to jeden
+      zádrhel, prečo projekt ostal zašlapaný - autorské práva. V tej dobe už podobné
+      weby a ľudí čo som poznal začali riešiť <del>výpalnícke</del> autorské zväzy
+      a rôzne organizácie, tak som si povedal že za päť korún to nestojí. &nbsp;<br><br>&lt;#obrazok1#&gt;&lt;#obrazok2#&gt;&lt;#obrazok3#&gt;&lt;#obrazok4#&gt;&lt;#obrazok5#&gt;&lt;#obrazok6#&gt;<br><br><br></div>"
+    - http://energy2000mixy.cekuj.net/
+    - '2020-05-20 09:11:00.252174'
+    - '2020-12-04 18:59:08.986652'
+    - 1
+    - '2015-01-01'
+    - "#009CDA"
+    - energy-2000-mixy
+    - 5
+  - - 11
+    - trayCommandSwitch
+    - Applet pre Gnome/XFCE panel na cyklické prepínanie medzi zadanými príkazmi.
+    - "<div>Táto aplikácia je jenoduchý applet, ktorý sa usídli v oblasti indikátorov,
+      kde po kliknutí na indikátor tohoto appletu sa spustí nakonfigurovaný príkaz
+      a pri ďalšom kliknutí sa spustí druhý príkaz. Stav o tom, ktorý príkaz bol spustený
+      naposledy je znázornený ikonou indikátora.<br><br>&lt;#obrazok2#&gt;&lt;#obrazok1#&gt;&lt;#obrazok3#&gt;</div>"
+    - ''
+    - '2020-05-20 12:11:59.997305'
+    - '2020-12-04 03:35:46.568570'
+    - 3
+    - '2015-01-01'
+    - "#D4D0C7"
+    - tray-command-switch
+    - 5
+  - - 12
+    - istatDB
+    - 'Know-how databáza a management pre spracovávanie tovarovej štiatistiky a colnej
+      deklarácie. '
+    - <div>Aplikácia bola navrhnutá ako databáza znalostí a menežment/organizér činností
+      pre administratívneho pracovníka pripravujúceho podklady pre vypracovanie tovarovej
+      štatistiky Intrastat (štatistika ktorú vykazujú firmy s vyšším obratom o pohybe
+      tovaru po Európskej únií) a colnú deklaráciu.<br><br>Fundamentálnym základom
+      aplikácie je zoznam tovarov, kde tovar je vždy priradený k určitému číslu, ktoré
+      ho charakterizuje v colnom sadzobníku. Okrem toho aplikácia zhromažďuje ďalšie
+      množstvo doplňujúcich údajov o tovare, výrobcoch, odberateľoch, spravodajských
+      jednotkách (= firma, ktorá si objedná zastupovanie vo veci odovzdania tovarovej
+      štatistiky alebo colej deklarácie), vzťahoch medzi nimi a tokoch.<br><br>Jednotlivé
+      komponenty aplikácie sú navrhnuté za účelom zrýchlenia a zefektívnenia pracovného
+      procesu, odbremenenia ľudského článku od mechanickej a pre človeka časovo náročnej
+      a zbytočnej monotónnej ubíjajúcej práce. <br><br>Aplikácia je navrhnutá pre
+      chod na vnútropodnikovej počítačovej sieti (LAN), obsahuje používateľské účty
+      s rôznymi právami, je možné nastaviť pravidelné automatické zálohy (FTP), exportovanie
+      zvolených údajov podľa zvolených kritérií napríklad priamo do tabuľky Microsoft
+      Excel.<br><br>* <em>Ukážkové dáta v aplikácií sú vymyslené a nie je ich mnoho.
+      Prácu s reálnymi dátami v tejto aplikácií nie je možné ukázať, lebo tieto dáta
+      sú obchodným tajomstvom a firemným know-how a sú často poskytované subjektmi,
+      ktoré od firmy odoberajú predmetné služby, teda podliehajú aj smernici GDPR.</em><br><br>Hlavnou
+      funkciou celého rozhrania je inteligentné fulltextové vyhľadávanie položky v
+      databáze - používateľ zadáva kľúčové slovo a medzičasom aplikácia už zobrazuje
+      a zvýrazňuje výsledky v intelignetnom režime, napríklad pri prehľadávaní tovarov
+      sú najskôr zobrazené položky, kde výsledkom hľadania vyhovuje referencia a začínajú
+      sa hľadaným výrazom, potom ostatné, kde vyhľadávaný reťazec obsahuje referencia
+      a ako posledné tie, pri ktorých sa hľadaný výraz nachádza v popise tovaru a
+      doplnkových informáciách.<br><br>&lt;#obrazok24#&gt;<br><br>Na vyhľadávanie
+      je možné okrem samotného hľadaného výrazu aplikovať ešte rôzne filtre a kritériá.<br>V
+      prípade, že nie je položka nájdená, je ponúknuté užívateľovi ju ihneď pridať
+      s tým, že známe polia (pole vyhľadávača a ak sú napríklad aplikované nejaké
+      filtre hľadania) bude formulár predvyplnený.&nbsp;<br><br>&lt;#obrazok25#&gt;&lt;#obrazok26#&gt;&lt;#obrazok27#&gt;<br><br>Možnosť
+      vyhľadávania je používaná naprieč celou aplikáciou, aj vo formulároch. Vyhľadávanie
+      aj vo formulároch vždy začína automaticky po dosiahnutí určitého času po tom,
+      ako používateľ prestal zadávať vstup.<br>V prípade, že daná možnosť nie je vo
+      formulári pri pridávaní/editácií položky nájdená, ponúkne aplikácia túto položku
+      na pridanie ako novú.<br><br>&lt;#obrazok30#&gt;&lt;#obrazok31#&gt;<br><br>Aplikácia
+      je delená do sekcií - kariet podľa zamerania. Prvá karta ale prehľadáva na hľadaný
+      výraz všetky sekcie naraz.<br><br>&lt;#obrazok28#&gt;&lt;#obrazok29#&gt;<br><br>Grafické
+      prostredie aplikácie okrem toho, že všetky údaje a položky sú vzájomne prelinkované
+      obsahuje aj drobné ikonky, ktoré po nabehnutí myšou nad môžu zobrazovať doplnkové
+      informácie ktoré často šetria nutnosť otvoriť celú prelinkovanú položku.<br>Po
+      otvorení položky sa ale zobrazia všetky vyčerpávajúce informácie, ktoré sú s
+      touto položkou zviazané.&nbsp;<br>K niektorým, hlavne číselným údajom je k dispozícií
+      modul kalkulačky, ktorá má pri prechádzaní položkami pamäť až pokiaľ nie je
+      explicitne vymazaná a je na nej možné zrátavať naraz viacero druhov veličín.<br><br>&lt;#obrazok17#&gt;&lt;#obrazok11#&gt;&lt;#obrazok12#&gt;&lt;#obrazok13#&gt;&lt;#obrazok14#&gt;&lt;#obrazok15#&gt;<br><br>Ak
+      boli ku položke priradené aj nejaké obrázky, je možné ich v plnej veľkosti/väčšie
+      zobrazovať pomocou galérie.<br><br>&lt;#obrazok16#&gt;<br><br>Pri stavbe aplikácie
+      nebolo o nej rozmýšlané len ako o nástroji na uchovávanie údajov, ale aj ako
+      nástroji, ktorý organizuje pracovný proces. Aplikácia napríklad umožňuje uloženie
+      položky a priradenie stavu, o ktorej treba pre zaradenie zistiť ešte dodatočné
+      údaje (od niektorého subjektu) a jej priradenie ku konkrétnej zodpovednej osobe,
+      pracovnej úlohe alebo časovému obdobiu.<br>Tieto položky je potom možné podľa
+      rôznych filtrov alebo osobitnej sekcie dohľadať a napríklad exportovať do Excel
+      tabuľky, ktorú je možné odoslať subjektu ako dopyt na poskytnutie potrebných
+      údajov.<br><br>&lt;#obrazok32#&gt;&lt;#obrazok33#&gt;&lt;#obrazok34#&gt;<br><br>Tu
+      sú sporné položky vo vlastnej sekcii, radené k obdobiu/pracovnej úlohe. K pracovným
+      úlohám je možné nahrávať dodatočné súbory a sledovať bilanciu vyriešených/zostávajúcich
+      prípadov.<br><br>&lt;#obrazok35#&gt;&lt;#obrazok36#&gt;&lt;#obrazok37#&gt;<br><br>Samozrejmosťou
+      je aj jednoduchý modul na zápis poznámok a zadávanie úloh, a zoznam zmien. Osobne
+      som ho skôr využíval na zápis nápadov/úloh čo treba na aplikácií opraviť/vylepšíť/pridať.<br><br>&lt;#obrazok22#&gt;&lt;#obrazok23#&gt;<br><br>Obsah
+      každej sekcie je samozrejme možné spravovať. Buď tak možno spraviť po zobrazení
+      položky alebo je možné prepnúť vyhľadávač do "administratívneho" režimu, kedy
+      budú zobrazované tlačidlá pre jednotlivé operácie na konci riadka.<br><br>&lt;#obrazok38#&gt;&lt;#obrazok39#&gt;<br><br>Aplikácia
+      je prispôsobená aj na zobrazenie na obmedzenej ploche (responzívny design),
+      nejedná sa ale primárne o prípad využitia na mobilných zariadeniach, tento prípad
+      je z praktického hľadiska veľmi málo pravdepodobný, jedná sa skôr o prípad,
+      keď sa aplikácia nachádza na obrazovke počítača spolu s oknami iných aplikácí,
+      popri ktorých je súbežne využívaná.&nbsp;<br><br>&lt;#obrazok45#&gt;&lt;#obrazok46#&gt;&lt;#obrazok47#&gt;&lt;#obrazok48#&gt;&lt;#obrazok49#&gt;<br><br>Používateľské
+      účty, základné nastavenia, sekcie na úpravu rôznych atribútov.<br><br>&lt;#obrazok1#&gt;&lt;#obrazok2#&gt;&lt;#obrazok3#&gt;&lt;#obrazok40#&gt;&lt;#obrazok41#&gt;&lt;#obrazok42#&gt;&lt;#obrazok43#&gt;&lt;#obrazok44#&gt;<br><br></div>
+    - ''
+    - '2020-05-21 00:27:07.411471'
+    - '2020-12-04 03:26:50.166433'
+    - 4
+    - '2019-12-01'
+    - "#8D0000"
+    - istatdb
+    - 1
+  - - 13
+    - Vizitky
+    - Vizitky/propagačné materiály/grafika pre rôzne subjekty.
+    - "<div>&lt;#obrazok6#&gt;&lt;#obrazok4#&gt;&lt;#obrazok3#&gt;&lt;#obrazok2#&gt;</div>"
+    - ''
+    - '2020-11-19 16:15:35.545209'
+    - '2020-12-04 03:34:46.799600'
+    - 5
+    - '2015-01-01'
+    - "#FF00ED"
+    - vizitky
+    - 2
+  - - 14
+    - CheckDone for GitHub
+    - "CheckDone pre GitHub je rozšírenie pre Google Chrome, ktoré transformuje zoznamy
+      položiek v readme sekciách na GitHube na TO-DO list s odškrtávacími políčkami.
+      \r\n\r\n"
+    - <div><strong>CheckDone</strong> pre GitHub je rozšírenie pre prehliadač Google
+      Chrome, ktoré po aktivácií pre danú stránku (zložku repozitára) na GitHube pridá
+      v sekcii README zaškrtávacie políčka ku jednotlivým položkám v zoznamoch položiek
+      - transformuje ich na "TO-DO" list.<br>Nastavenia a označené položky sú samozrejme
+      zapamätané aj po zavretí webu/prehliadača a načítané pri ďaľšej návšteve.<br>Do
+      budúcnosti plánujem pridať možnosť pridávať aj poznámky.<br><br>&lt;#obrazok2#&gt;&lt;#obrazok3#&gt;<br><br><br></div>
+    - https://github.com/K0V0/CheckDoneForGithub
+    - '2020-12-03 10:22:27.689467'
+    - '2020-12-04 03:24:52.077358'
+    - 4
+    - '2020-12-01'
+    - "#44CC00"
+    - github-checkdone
+    - 4
+  - - 15
+    - BandzoneScraper
+    - BandzoneScraper je aplikácia na získavanie dát z Československého hudobného
+      portálu venujúcemu sa hlavne českým a slovenským garážovým a undergroundovým
+      kapelám aj sólo hudobníkom a hudobným projektom.
+    - '<div>Aplikácia slúži ako prostredník, ktorý na základe požadovaného dotazu
+      získava dáta zo stránky - z jej HTML elementov - a prevádza chcené dáta na formát
+      JSON.<br><br>Formát JSON je jeden zo štandardizovaných a široko používaných
+      formátov na import/export/zdieľanie dát medzi rozličnými platformami a aplikáciami
+      napísanými v rozličných programovacích jazykoch.<br>Slúži teda ako API (rozhranie)
+      na poskytovanie dát, ktorým tento webový portál nedisponuje.<br><br>Získavanie
+      dát by bolo síce možné aj priamym prístupom na web BandZone.cz z koncového zariadenia,
+      avšak takéto riešenie zbytočne kladie nároky na objem prenášaných dát a výpočtový
+      výkon koncového zariadenia a v neposlednom rade aj na komplexnosť aplikácie
+      bežiacej na koncovom zariadení.<br><br>Medzičasom ako je písaný tento príspevok
+      už je vo vývoji android aplikácia pre mobilné zariadenia, ktorá má byť <del>alternatívou</del>
+      doplnkom k iným aplikáciám so streamovaným hudobným obsahom, ktoré ale obsahujú
+      minimum československej a hlavne nekomerčnej undergroundovej scény v štýloch
+      ako sú punk-rock, rock, metal. Má to byť niečo ako "československé spotify".<br><br>Každopádne
+      rozhranie je verejné a ak má niekto podobný nápad alebo využitie, môže z neho
+      čerpať, prípadne ho rozbehnúť na vlastnej platforme/serveri, zdrojový kód je
+      otvorený a verejne prístupný na GitHube: <br><br><a href="https://github.com/K0V0/BandzoneScraper">https://github.com/K0V0/BandzoneScraper</a><br><br>Funkcie
+      a nastavenia môžu v budúcnosti pribudnúť.<br><br>O android aplikácií a pripravovaných
+      funkciách zatiaľ v tomto portfóliu informácie udávať nebudem, aplikácia sa zatiaľ
+      stále nachádza v rannom štádiu vývoja a momentálne na ňu nemám čas.<br><br><strong>UPDATE
+      (február 2021):<br>&nbsp;<br></strong>O aplikácií sa viac môžete dozvedieť tu:
+      <a href="https://kovo.space/portfolio/bandzone-android-unofficial">https://kovo.space/portfolio/bandzone-android-unofficial</a><br>Alebo
+      repozitár so zdrojovým kódom: <a href="https://github.com/K0V0/BandzoneAndroidUnofficial">https://github.com/K0V0/BandzoneAndroidUnofficial</a><br><br>&lt;#obrazok2#&gt;</div>'
+    - 172.104.155.216:3030/search/bands
+    - '2021-01-14 01:23:47.670609'
+    - '2021-02-22 19:49:06.764260'
+    - 4
+    - '2020-12-01'
+    - "#EBB11D"
+    - bandzone-scraper
+    - 3
+  - - 16
+    - kovo.space
+    - 'Osobný web, portfólio '
+    - "<div>Osobná web stránka, rýchly náhľad do neprístupných sekcií (administračné
+      rozhranie)<br><br>&lt;#obrazok5#&gt;&lt;#obrazok6#&gt;&lt;#obrazok4#&gt;&lt;#obrazok3#&gt;&lt;#obrazok2#&gt;</div>"
+    - kovo.space
+    - '2021-02-22 19:27:47.415324'
+    - '2021-02-23 02:38:55.369479'
+    - 1
+    - '2020-04-01'
+    - "#0000ff"
+    - kovospace
+    - 3
+  - - 17
+    - Bandzone Player unofficial
+    - Android aplikácia "Československé spotify" na prehrávanie skladieb z hudobného
+      portálu Bandzone.cz
+    - <div>BandzonePlayer unofficial je android aplikácia, ktorá umožňuje prehrávanie
+      skladieb, ktoré sú na prehrávanie a sťahovanie inak dostupné len v prehrávači
+      na tomto webe.<br>Na tomto webe sa nachádza hádam každá kapela ktorá kedy v
+      Čechách a na Slovensku vznikla, a teda tento portál je využívaný predovšetkým
+      fanúšikmi mimo hlavný a komerčný prúd, čo však bolo motiváciou k vytvoreniu
+      tejto aplikácie je:<br><br></div><ol><li>Tento web je v svojej nezmenenej podobe
+      už hádam odkedy začal existovať v CZ/SK internet - čo by až tak nevadilo - pokiaľ
+      niečo funguje, načo do toho zbytočne rýpať - ale web s neresponzívnym dizajnom
+      je v roku 2021, kedy už hádam polovica návštev pochádza z mobilných zariadení
+      naozaj bolesť.</li><li>Samotná webstránka nerieši situáciu keď budem offline
+      - čo aplikácie, napríklad aj spotify umožňujú skladby "poukladať" a púšťať offline.&nbsp;</li><li>Úspora
+      dát - pri vyhľadávaní kapiel a púštaní skladieb nie je nutnosť načítavať celú
+      web stránku, v najlepších prípadoch kedy je zo servera je stiahnutých len pár
+      bajtov/kilobajtov, prípadne ak je sladba púštaná opakovane a bola v minulosti
+      už uložená, tak sa prehrá s pamäti zariadenia.</li><li>Zúčastňujem sa kurzu
+      - kvázi súkromnej akadémie - kde je hlavným vyučovacím predmetom jazyk Java
+      a okrem rôznych cvičení a a cvičných projektov, ktoré nás majú pripraviť na
+      juniorské pozície softvérových vývojárov som chcel robiť aj niečo viac "reálne".&nbsp;</li></ol><div><br>&lt;#obrazok2#&gt;&lt;#obrazok3#&gt;&lt;#obrazok4#&gt;&lt;#obrazok6#&gt;&lt;#obrazok7#&gt;&lt;#obrazok5#&gt;<br><br>Je
+      ale otázne, či vo vývoji tejto aplikácie budem ďalej pokračovať a nebudem sa
+      venovať ďalším nápadom, prípadne len zlepšeniu a "skrášleniu" zdrojového kódu
+      s novými vedomosťami.<br><br>Kto má o aplikáciu záujem, môže nájsť na GitHube
+      inštalačný balíček (<a href="https://github.com/K0V0/BandzoneAndroidUnofficial/releases/download/0.4-alpha/bandZoneUnofficial-0.4-alpha.apk">https://github.com/K0V0/BandzoneAndroidUnofficial/releases/download/0.4-alpha/bandZoneUnofficial-0.4-alpha.apk</a>)
+      a zdrojový kód (<a href="https://github.com/K0V0/BandzoneAndroidUnofficial">https://github.com/K0V0/BandzoneAndroidUnofficial</a>)<br><br>Aplikáciu
+      nie je možné nájsť (a ani nebude) na Google Play Store práve kvôli svojej povahe
+      ponúkajúcej obsah, ktorý je z hľadiska legislatívy ochrany duševného vlastníctva
+      sporný - aj keď reálne si myslím, že komunita a hudobná scéna, ktorá by túto
+      aplikáciu predovšetkým používala a pomáhala šíriť by túto iniciatívu ocenila.<br><br></div>
+    - github.com/K0V0/BandzoneAndroidUnofficial
+    - '2021-02-22 19:40:18.825243'
+    - '2021-02-22 21:31:41.638499'
+    - 2
+    - '2021-02-01'
+    - "#EBB11D"
+    - bandzone-android-unofficial
+    - 3
+  - - 18
+    - MusicPagesScraper
+    - "MusicPagesScraper je rozšíriteľná a modulárna aplikácia na zber dát z viacerých
+      internetových stránok a ich následnú transformáciu na jednotný formát.\r\n"
+    - '<div>MusicPagesScraper je rozšíriteľná a modulárna aplikácia na zber dát z
+      viacerých internetových stránok a ich následnú transformáciu na jednotný formát.<br><br>Táto
+      Java Spring Boot aplikácia je prepis mnou dávnejšie vytvorenej webovej aplikácie
+      BandzoneScraper (Portfólio: <a href="https://kovo.space/portfolio/bandzone-scraper">https://kovo.space/portfolio/bandzone-scraper</a>,
+      GitHub: <a href="https://github.com/K0V0/BandzoneScraper">https://github.com/K0V0/BandzoneScraper</a>)
+      napísanej v jazyku Ruby, ktorá obsluhovala len jednu webstránku.<br><br>Bude
+      slúžiť ako súčasť pre tiež nedávno realizovaný projekt BandzoneAndroidUnofficial
+      (Portfólio: <a href="https://kovo.space/portfolio/bandzone-android-unofficial">https://kovo.space/portfolio/bandzone-android-unofficial</a>,
+      GitHub: <a href="https://github.com/K0V0/BandzoneAndroidUnofficial">https://github.com/K0V0/BandzoneAndroidUnofficial</a>)
+      prehrávača, keď sa chystá jeho rozsiahlejšia zmena a pridanie viacerých funkcií,
+      pridanie podpory viacerých undergroundových a nezávislých hudobných platform.</div>'
+    - https://github.com/K0V0/MusicPagesScraper
+    - '2021-03-21 23:47:55.003105'
+    - '2021-03-21 23:47:55.003105'
+    - 4
+    - '2021-03-01'
+    - "#1BC3A2"
+    - music-pages-scraper
+    - 3
+  - - 19
+    - Iná grafická tvorba
+    - Iná grafická tvorba, predovšetkým vektorová grafika - aplikácie inkScape, GIMP
+    - "<div><strong>Budíky pre motocykel Simson S51</strong><br><br>Jedna z voľnočasových
+      aktivít - reštaurácia a jazdenie na starej motorke. <br>Budíky na mojej motorke
+      boli už dosť zničené, pôvodný náter na budíkoch bol vyblednutý a po stranách
+      vydratý - od tieniaceho krúžka ktorý lemuje zvnútra okraj a mal by aj pomáhať
+      pri smerovaní svetla na plochu budíka.<br>Nové budíky však stáli neskutočné
+      peniaze a napríklad nový aj druhovýrobný tachometer je takmer nezohnateľný.
+      Riešenie bolo teda skúsiť podklad podľa pôvodnej predlohy nakresliť a dať vytlačiť
+      na čiernu matnú samolepiacu fóliu. Rozdiel oproti originálu ide poznať až pri
+      blízkom pohľade. Sivé miesta boli vyrezané plotrom.<br><br>&lt;#obrazok2#&gt;<br><br><strong>Spodný
+      rad kontroliek Škoda Felicia 1.9 D</strong><br><br>Úlohou bolo zjednotiť vzhľad
+      horizontálneho a vertikálneho radu kontroliek na prístrojovej doske. Horizontálny
+      (spodný) rad kontroliek je vo Felde realizovaný ako tmavé piktogramy vo svietiacich
+      obdĺžnikoch, zatiaľ čo vertikálny rad kontroliek je len svietiaci piktogram.<br>Polep
+      kúrenia bol realizovaný kvôli vysokej náročnosti nedeštruktívneho odstránenia
+      pôvodného polepu a odstránenia zelenej podkladovej farby, ktorá zafarbovala
+      svetlo bielych (žltých vláknových) žiaroviek. Pri ciferníkoch budíkov a kontrolkách
+      je táto úprava jednoduchá. <br><br> &lt;#obrazok6#&gt;&lt;#obrazok5#&gt;<br><br><strong>Reprezentačná
+      grafika pre miestny stolnotenisový klub</strong><br><br>Motív symbolov klubu
+      vychádza z mestského erbu.<br><br>&lt;#obrazok7#&gt;&lt;#obrazok8#&gt;<br><br><br><br><br><br><br><br></div>"
+    - ''
+    - '2021-11-04 00:37:33.991080'
+    - '2021-11-04 01:27:58.834645'
+    - 5
+    - '2018-08-01'
+    - "#009505"
+    - grafika
+    - 3
+  - - 20
+    - Paster.cloud
+    - 'Paster.cloud synchronizuje a zálohuje schránku skopírovaného obsahu (clipboard)
+      medzi rôznymi zariadeniami. '
+    - '<div><strong>Paster.cloud</strong> je projekt zdieľanej schránky s dočasným
+      skopírovaným obsahom, tzv. "clipboard" medzi rôznymi zariadeniami a operačnými
+      systémami.<br>Clipboard je to, čo pracuje keď používate CTRL + C a CTRL + V
+      na počítači alebo proste "kopírovať" a "vložiť", aj na hocijakom inom zariadení,
+      napríklad telefóne.<br><br><br>Cieľom tejto aplikácie je:<br><br></div><ul><li>Poskytnúť
+      funkčnosť, kedy jednoduchým skopírovaním obsahu na jednom zariadení budeme mať
+      tento obsah baz ďalších zbytočných obštrukcií ihneď dostupný aj na svojich ďalších
+      spárovaných zariadeniach.&nbsp;<br>Predstavujem si to napríklad takto: Na počítači
+      niečo skopírujem pomocou CTRL + C. Zoberem telefón do ruky a použijem "Vložiť".
+      Žiadne obštrukcie s prepisovaním niečoho, preposielaním cez mail alebo kopírovaním
+      do telefónu cez kábel, posielaním cez bluetooth alebo google cloud, žiadne takéto
+      opičky pre jednoduchú triviálnu úlohu.</li></ul><div><br></div><ul><li>Ďalšia
+      funkčnosť, ktorú by mala aplikácia poskytovať je história a záloha. Obvykle
+      akonáhle nahráme do schránky nový obsah, o starý prídeme. Táto aplikácia si
+      však bude vedeiť pamätať minulosť.</li></ul><div><br><br>Momentálne sú stále
+      vo vývoji prvé tri časti aplikácie:<br><br></div><ul><li>Backend napísaný v
+      Jave a frameworku Spring Boot - toto je jadro aplikácie, akýsi prostredník kde
+      sa nachádzajú všetky dáta a hlavná logika.</li></ul><div><br></div><ul><li>Frontend
+      napísaný v Angulari - webová stránka/aplikácia na prístup k dátam a správu používateľov
+      (zatiaľ obsahuje základnú funkčnosť vytvorenia používateľa/prihlásenia sa)</li></ul><div><br></div><ul><li>Java
+      aplikácia pre Androidy</li></ul><div><br><br>Aplikácia je vyvíjaná ako open-source
+      projekt, zdrojové kódy možno nájsť na mojom githube:<br><br></div><ul><li>Backend:
+      <a href="https://github.com/K0V0/paster-backend">https://github.com/K0V0/paster-backend</a></li></ul><div><br></div><ul><li>Frontend:
+      <a href="https://github.com/K0V0/paster-frontend">https://github.com/K0V0/paster-frontend</a></li></ul><div><br></div><ul><li>Android:
+      <a href="https://github.com/K0V0/paster-android">https://github.com/K0V0/paster-android</a></li></ul><div><br></div>'
+    - https://www.paster.cloud/
+    - '2022-11-13 19:45:21.667420'
+    - '2022-11-13 22:11:35.631800'
+    - 4
+    - '2022-08-01'
+    - "#B0DDFF"
+    - paster
+    - 2
+
+---
+portfolios_skills:
+  columns:
+  - portfolio_id
+  - skill_id
+  records: 
+  - - 1
+    - 1
+  - - 1
+    - 2
+  - - 2
+    - 4
+  - - 2
+    - 12
+  - - 3
+    - 1
+  - - 3
+    - 6
+  - - 4
+    - 1
+  - - 4
+    - 2
+  - - 5
+    - 1
+  - - 5
+    - 2
+  - - 6
+    - 10
+  - - 7
+    - 1
+  - - 8
+    - 12
+  - - 9
+    - 12
+  - - 10
+    - 1
+  - - 10
+    - 2
+  - - 11
+    - 12
+  - - 12
+    - 1
+  - - 12
+    - 6
+  - - 13
+    - 18
+  - - 14
+    - 1
+  - - 15
+    - 6
+  - - 16
+    - 1
+  - - 16
+    - 6
+  - - 17
+    - 4
+  - - 18
+    - 4
+  - - 19
+    - 18
+  - - 20
+    - 1
+  - - 20
+    - 4
+  - - 20
+    - 24
+
+---
+skills:
+  columns:
+  - id
+  - title
+  - description
+  - degree
+  - created_at
+  - updated_at
+  - work_state_id
+  - theme_color
+  - icon
+  records: 
+  - - 1
+    - JavaScript
+    - Plain old JavaScript alebo jQuery, client-side funkcionalita tradičných webov
+      alebo Google Chrome rozšírenia
+    - 1
+    - '2020-05-12 21:51:48.915305'
+    - '2023-03-18 11:47:43.079382'
+    - 
+    - EF652A
+    - 
+  - - 2
+    - PHP
+    - Staré projekty v neobjektovom PHP
+    - 4
+    - '2020-05-12 22:00:26.760468'
+    - '2023-03-18 11:42:44.390999'
+    - 
+    - 4F5B93
+    - 
+  - - 4
+    - Java
+    - Android aplikácie, Java backend, REST API(s)
+    - 3
+    - '2020-05-14 21:16:20.684965'
+    - '2023-03-18 11:41:12.140932'
+    - 
+    - A4C639
+    - 
+  - - 6
+    - Ruby
+    - jazyk Ruby, webový framework Ruby on Rails
+    - 1
+    - '2020-05-15 01:55:22.614748'
+    - '2023-03-18 11:40:20.158123'
+    - 
+    - "#CC0000"
+    - 
+  - - 10
+    - Python
+    - ''
+    - 5
+    - '2020-05-19 22:36:19.554925'
+    - '2020-05-19 22:36:19.554925'
+    - 
+    - "#FFD140"
+    - 
+  - - 12
+    - C/C++
+    - Malé konzolové aplikácie alebo utility pre PC
+    - 5
+    - '2020-05-20 00:15:22.491443'
+    - '2023-03-18 11:46:00.221574'
+    - 
+    - "#515151"
+    - 
+  - - 18
+    - Iné
+    - Grafická / iná tvorba
+    - 5
+    - '2020-11-19 16:17:23.275973'
+    - '2023-03-18 11:44:13.389991'
+    - 
+    - "#ffad00"
+    - 
+  - - 24
+    - TypeScript
+    - Frontend frameworky Angualar a Vue, Google Chrome rozšírenia
+    - 3
+    - '2022-11-13 19:36:05.840291'
+    - '2023-03-18 11:46:41.169231'
+    - 
+    - D82D2F
+    - 
+
+---
+skillsets:
+  columns:
+  - id
+  - title
+  - description
+  - created_at
+  - updated_at
+  - slug
+  - portfolios_count
+  records: 
+  - - 1
+    - Webstránky
+    - Tvorba webstránok
+    - '2020-05-12 22:11:34.730559'
+    - '2020-05-12 22:11:34.730559'
+    - weby
+    - 6
+  - - 2
+    - Mobilné aplikácie
+    - Aplikácie primárne pre mobilné telefóny a mobilné zariadenia
+    - '2020-05-14 21:17:25.433005'
+    - '2020-05-14 21:17:25.433005'
+    - mobilne-aplikacie
+    - 2
+  - - 3
+    - Aplikácie
+    - PC Programy, software pre iné ako mobilné zariadenia
+    - '2020-05-19 22:53:45.704650'
+    - '2020-05-19 22:54:11.718138'
+    - aplikacie
+    - 4
+  - - 4
+    - Web aplikácie
+    - Aplikácie založené na webových technológiách
+    - '2020-05-19 23:36:39.649202'
+    - '2020-05-19 23:36:39.649202'
+    - web-aplikacie
+    - 6
+  - - 5
+    - Iné
+    - 'Iná tvorba, nesúvisiaca alebo priamo nesúvisiaca s programovaním a tvorbou
+      aplikácií '
+    - '2020-11-19 16:12:30.996728'
+    - '2020-11-19 16:39:54.338137'
+    - ine
+    - 2
+
+---
+users:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - admin
+  - role
+  - generated_password
+  - accept_gdpr
+  records: 
+  - - 1
+    - kovo
+    - '2020-05-12 21:07:25.167990'
+    - '2023-03-18 11:28:10.609122'
+    - kovo.mato@gmail.com
+    - "$2a$11$87Yivped7eU4cX4Li77knesueFpnMBt9XE.lAGkTmDF9t.4ob8kQ6"
+    - 
+    - 
+    - 
+    - 25
+    - '2023-03-18 11:28:10.606092'
+    - '2022-11-04 20:14:45.075101'
+    - 91.139.82.5
+    - 91.139.15.34
+    - true
+    - 1
+    - 
+    - true
+  - - 2
+    - hellodearadminilikeyoursite https://google.com 76856
+    - '2020-09-05 12:07:36.166084'
+    - '2020-09-05 12:07:36.193922'
+    - iramisjd2882@gmail.com
+    - "$2a$11$6F7.7GWMM/FnKrZNyjb0T.qISo54WNNAmQ1HbZoXTXmLATkB6hW5."
+    - 
+    - 
+    - 
+    - 1
+    - '2020-09-05 12:07:36.191133'
+    - '2020-09-05 12:07:36.191133'
+    - 185.64.221.27
+    - 185.64.221.27
+    - false
+    - 9
+    - 
+    - true
+  - - 3
+    - hellodearadminilikeyoursite https://google.com 76840
+    - '2020-09-14 23:27:28.236453'
+    - '2020-09-14 23:27:28.261991'
+    - tani-dani9@mail.ru
+    - "$2a$11$zbtE42GkhI86gmQAe4P3nuqc5yopJfa9eYTqmCiVCfKNHsLWTd0Ra"
+    - 
+    - 
+    - 
+    - 1
+    - '2020-09-14 23:27:28.257428'
+    - '2020-09-14 23:27:28.257428'
+    - 196.244.192.14
+    - 196.244.192.14
+    - false
+    - 9
+    - 
+    - true
+  - - 4
+    - hellodearadminilikeyoursite https://google.com 99803
+    - '2020-10-05 08:59:21.777144'
+    - '2020-10-05 08:59:21.797077'
+    - gali.sel1977@mail.ru
+    - "$2a$11$de9tzM8XGSi9TNniDOwVK.HepuQ35ppYXLb7cUOYgRG58QfgMbCOi"
+    - 
+    - 
+    - 
+    - 1
+    - '2020-10-05 08:59:21.792734'
+    - '2020-10-05 08:59:21.792734'
+    - 185.181.246.65
+    - 185.181.246.65
+    - false
+    - 9
+    - 
+    - true
+  - - 5
+    - hitsmumtadu1981
+    - '2021-08-11 00:02:05.687358'
+    - '2021-08-11 00:02:05.692632'
+    - nikolaj.konstantinov.1975@mail.ru
+    - "$2a$11$AMJBdbmJyN3BiPo0yiBlIuiJWvZIfi9Bh18eic6V6W/V2oR1D7qiG"
+    - 
+    - 
+    - 
+    - 1
+    - '2021-08-11 00:02:05.691913'
+    - '2021-08-11 00:02:05.691913'
+    - 63.141.240.26
+    - 63.141.240.26
+    - false
+    - 9
+    - 
+    - true
+
+---
+work_experiences:
+  columns:
+  - id
+  - title
+  - web
+  - position
+  - place
+  - start
+  - end
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - AARON Group spol. s r. o.
+    - www.aarongroup.com
+    - Junior Java backend developer
+    - Praha, Česká Republika
+    - '2021-10-04'
+    - '2022-12-01'
+    - '2022-11-17 22:12:46.811183'
+    - '2022-11-17 22:33:01.505091'
+  - - 2
+    - Roulage SK s.r.o.
+    - www.roulage.sk
+    - Colný deklarant / Administratívny pracovník
+    - Dolný Kubín, Slovenská Republika
+    - '2015-12-01'
+    - '2020-11-01'
+    - '2022-11-17 22:19:01.199233'
+    - '2022-11-17 22:19:01.199233'
+  - - 3
+    - PowerFLOW a.s.
+    - www.powerflow.cz
+    - Junior Java developer
+    - Praha, Česká Republika
+    - '2022-12-01'
+    - 
+    - '2022-11-17 22:22:25.776474'
+    - '2023-03-18 11:30:02.833389'
