@@ -47,6 +47,8 @@ class HomepageController < ApplicationController
         @skills = Skill.all
         @skillsets = Skillset.all
         @newslogs = Newslog.last3
+        @newslogs_count = Newslog.count
+        @newslogs_others_count = @newslogs_count - 3 >= 0 ? @newslogs_count : 0
         @work_experiences = WorkExperience.all
         @work_experience_current = @work_experiences.first
         @work_experience_past = @work_experiences.select { |we| !we.end.nil? }

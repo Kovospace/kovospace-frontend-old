@@ -1,0 +1,9 @@
+sk:
+  newslog:
+    news_count:
+      zero: "Žiadne ďaľšie novinky"
+      one: "+1 ďaľšia novinka"
+      two: "+2 ďaľšie novinky"
+      three: "+3 ďaľšie novinky"
+      four: "+4 ďaľšie novinky"
+      other: "+%{count} ďaľších noviniek"

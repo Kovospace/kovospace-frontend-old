@@ -20,5 +20,5 @@
 </article>
 
 <div>
-    <%= link_to("Viacej...", newslogs_path) %>
+    <%= link_to(I18n.t('newslog.news_count', count: @newslogs_others_count), newslogs_path) %>
 </div>
