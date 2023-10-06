@@ -6,4 +6,6 @@ sk:
       two: "+2 ďaľšie novinky"
       three: "+3 ďaľšie novinky"
       four: "+4 ďaľšie novinky"
+      few: "+%{count} ďaľšie novinky"
+      many: "+%{count} ďaľších noviniek"
       other: "+%{count} ďaľších noviniek"
