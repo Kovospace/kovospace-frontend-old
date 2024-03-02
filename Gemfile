@@ -74,7 +74,7 @@ gem 'naturally'
 
 gem 'yaml_db'
 
-gem 'mimemagic'
+gem 'mimemagic', '~> 0.3.9'
 
 gem 'nokogiri'
 
