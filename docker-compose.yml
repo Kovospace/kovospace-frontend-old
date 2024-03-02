@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  kovo-space:
+    image: myapp_image:latest
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      RAILS_ENV: ${RAILS_ENV:-production}
+    volumes:
+      - ${KOVO_SPACE_DATABASES_VOLUME}:/var/app/db/databases 
+      - ${KOVO_SPACE_UPLOADS_VOLUME}:/var/app/public/uploads  

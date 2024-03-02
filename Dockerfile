@@ -7,7 +7,7 @@ FROM ruby:2.5.0-alpine
 # refresh outdated repos && intall nodejs and npm
 #
 RUN apk add --no-cache --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-    wget libuv nodejs nodejs-npm shared-mime-info sqlite sqlite-dev tzdata build-base libxml2-dev libxslt-dev
+    wget libuv nodejs nodejs-npm shared-mime-info sqlite sqlite-dev tzdata build-base libxml2-dev libxslt-dev bash
 
 
 # install required node packages
