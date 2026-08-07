@@ -17,7 +17,7 @@ on:
 
 jobs:
   pipeline:
-    uses: Kovospace/kovostack-github-workflows/.github/workflows/build-deploy.yml@2.0.1
+    uses: Kovospace/kovostack-github-workflows/.github/workflows/build-deploy.yml@2.0.2
     with:
       image_name: kovospace-frontend-old
       app_namespace: kovo-old
