@@ -1,0 +1,26 @@
+name: Build, push & deploy docker image
+
+# Thin caller — the actual pipeline lives in the central gitops repo.
+# Per-project values are passed as `with:`; shared credentials come from
+# ORG-level secrets via `secrets: inherit` (nothing secret is set in this repo).
+on:
+  workflow_dispatch:
+    inputs:
+      build:
+        description: 'Build and push the image'
+        type: boolean
+        default: true
+      deploy:
+        description: 'Deploy image tag Kubernetes cluster gitOps repo'
+        type: boolean
+        default: true
+
+jobs:
+  pipeline:
+    uses: Kovospace/kovostack-github-workflows/.github/workflows/build-deploy.yml@2.0.1
+    with:
+      image_name: kovospace-frontend-old
+      app_namespace: kovo-old
+      build: ${{ inputs.build }}
+      deploy: ${{ inputs.deploy }}
+    secrets: inherit
