@@ -30,10 +30,5 @@ WORKDIR /var/app
 # Install Ruby dependencies
 RUN bundle install
 
-ENV RAILS_ENV=production
-ENV SECRET_KEY_BASE=build-only-placeholder
-
-RUN bundle exec rake assets:precompile --trace
-
 # Run Rails
 CMD ["rails", "s", "-b", "0.0.0.0"]
