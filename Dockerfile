@@ -30,6 +30,9 @@ WORKDIR /var/app
 # Install Ruby dependencies
 RUN bundle install
 
+ENV RAILS_ENV=production
+#ENV SECRET_KEY_BASE=build-only-placeholder
+
 # Compile Rails assets into the Docker image
 RUN bundle exec rake assets:precompile
 
