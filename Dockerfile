@@ -30,5 +30,8 @@ WORKDIR /var/app
 # Install Ruby dependencies
 RUN bundle install
 
+# Compile Rails assets into the Docker image
+RUN bundle exec rake assets:precompile
+
 # Run Rails
 CMD ["rails", "s", "-b", "0.0.0.0"]
